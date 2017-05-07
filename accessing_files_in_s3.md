@@ -1,0 +1,22 @@
+[Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) is used as the
+primary storage area for large data files. In contrast to files in your
+personal home directory, files in S3 can be accessed by multiple
+Platform users.
+
+Accessing files from S3 in R
+----------------------------
+
+We are working on a GUI to make it easy to navigate
+
+In the meantime we have developed an R package that provides you with
+some helper function. This enables you to do things like write
+`read_s3_csv` to read directly from S3 into a data frame in R.
+
+You can install this package as follows:
+
+    install.packages("devtools")
+    devtools::install_github("moj-analytical-services/s3tools")
+
+See the
+[documentation](https://github.com/moj-analytical-services/s3tools) for
+further details.
