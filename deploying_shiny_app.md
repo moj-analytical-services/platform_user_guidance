@@ -82,5 +82,15 @@ The platform automatically scans git repositories in the [moj-analytical-service
 
 To deploy your app, go [here](https://jenkins.services.alpha.mojanalytics.xyz/job/moj-analytical-services-github/).  
 
+You will see a list of apps which have been detected.  Find yours and click on the link:
 
+![](images/deploy_jenkins_interface.PNG?raw=true  "")
+
+Then click on the branch you wish to deploy (this will usually be 'master'):
+
+![](images/deploy_jenkins_branch.PNG?raw=true  "")
+
+Finally, click 'Build':
+
+![](images/deploy_jenkins_build.PNG?raw=true  "")
 
