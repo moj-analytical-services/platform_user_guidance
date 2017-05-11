@@ -15,4 +15,15 @@ Further details are below:
 
 Begin by making a copy of the R Shiny template project.  
 
-![](images/copy_template.png?raw=true  "Logo Title Text 1")
+![](images/copy_template.png?raw=true  "")
+
+Enter `https://github.com/moj-analytical-services/rshiny-template` in the input box entitled 'Your old repository’s clone URL':
+
+![](images/copy_template_choose_name.png?raw=true  "")
+
+Ensure the 'owner' of the new repository is 'moj-analytical-services' and choose a name for your repository.
+
+Make sure that the repository is set to 'private', otherwise your code will be publically visible on the internet.
+
+Finally, click 'begin import'.
+
