@@ -49,6 +49,8 @@ git@github.com:moj-analytical-services/your_name_goes_here.git
 If you navigate to your new repository's home page (which will have a url in the form `https://github.com/moj-analytical-services/your_name_goes_here`), you can use the following buttons to access this url (make sure you click the 'ssh' button):
 
 
+![](images/use_ssh.PNG?raw=true  "")
 
+![](images/ssh_url.PNG?raw=true  "")
 
 
