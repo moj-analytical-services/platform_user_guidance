@@ -15,7 +15,7 @@ Further details are below:
 
 Begin by making a copy of the R Shiny template project.  
 
-![](images/import_repository.png?raw=true  "")
+![](images/import_repository.png "")
 
 Enter `https://github.com/moj-analytical-services/rshiny-template` in the input box entitled 'Your old repository’s clone URL':
 
