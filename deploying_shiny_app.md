@@ -98,5 +98,9 @@ Finally, click 'Build':
 
 Users are granted access to the app using a list of email addresses separated with a space ` `, comma `,`, or semicolon `;`.
 
-To grant access, complete the form [here](https://controlpanel.services.alpha.mojanalytics.xyz/job/grant-access-to-app/), and press 'Build'
+To grant access, complete the form [here](https://controlpanel.services.alpha.mojanalytics.xyz/job/grant-access-to-app/build?delay=0sec), and press 'Build'.
+
+For example, your form might look like this:
+
+
 
