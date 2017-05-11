@@ -11,19 +11,28 @@ The following steps to deploy a Shiny app are as follows
 
 Further details are below:
 
-## 1. Copy the template project
+## 1. Copy the template project into a new Github repository
 
 Begin by making a copy of the R Shiny template project.  
 
-![](images/copy_template.png?raw=true  "")
+![](images/import_repository.png?raw=true  "")
 
 Enter `https://github.com/moj-analytical-services/rshiny-template` in the input box entitled 'Your old repository’s clone URL':
 
-![](images/copy_template_choose_name.png?raw=true  "")
+![](images/repo_clone_url.png?raw=true  "")
 
-Ensure the 'owner' of the new repository is 'moj-analytical-services' and choose a name for your repository.
+Ensure the 'owner' of the new repository is 'moj-analytical-services' and choose a name for your repository:
 
-Make sure that the repository is set to 'private', otherwise your code will be publically visible on the internet.
+![](images/name_copied_repo.png?raw=true  "")
 
-Finally, click 'begin import'.
+Make sure the repo is 'private' (this should be the default value):
+
+![](images/repo_private.png?raw=true  "")
+
+and then click 'Begin import'
+
+![](images/begin_import.png?raw=true  "")
+
+
+## 2. In R Studio in the platoform, create a new project from your new Github repository 
 
