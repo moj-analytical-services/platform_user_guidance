@@ -15,23 +15,23 @@ Further details are below:
 
 Begin by making a copy of the R Shiny template project.  
 
-![](images/import_repository.png "")
+![](images/import_repository.PNG?raw=true  "")
 
 Enter `https://github.com/moj-analytical-services/rshiny-template` in the input box entitled 'Your old repository’s clone URL':
 
-![](images/repo_clone_url.png?raw=true  "")
+![](images/repo_clone_url.PNG?raw=true  "")
 
 Ensure the 'owner' of the new repository is 'moj-analytical-services' and choose a name for your repository:
 
-![](images/name_copied_repo.png?raw=true  "")
+![](images/name_copied_repo.PNG?raw=true  "")
 
 Make sure the repo is 'private' (this should be the default value):
 
-![](images/repo_private.png?raw=true  "")
+![](images/repo_private.PNG?raw=true  "")
 
 and then click 'Begin import'
 
-![](images/begin_import.png?raw=true  "")
+![](images/begin_import.PNG?raw=true  "")
 
 
 ## 2. In R Studio in the platoform, create a new project from your new Github repository 
