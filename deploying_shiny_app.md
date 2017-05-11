@@ -34,5 +34,21 @@ and then click 'Begin import'
 ![](images/begin_import.PNG?raw=true  "")
 
 
-## 2. In R Studio in the platoform, create a new project from your new Github repository 
+## 2. In R Studio in the platoform, create a new project from your new Github repository
+
+In R Studio, navigate through the following menus:
+
+File -> New project -> Version control -> Git)
+
+In 'Repository URL', enter the URL of the repository you just created.  This needs to be the SSH URL (starting with `git@github`), **NOT** the HTTPS url (which starts with `https`).  It is therefore in the following format:
+
+```
+git@github.com:moj-analytical-services/your_name_goes_here.git
+```
+
+If you navigate to your new repository's home page (which will have a url in the form `https://github.com/moj-analytical-services/your_name_goes_here`), you can use the following buttons to access this url (make sure you click the 'ssh' button):
+
+
+
+
 
