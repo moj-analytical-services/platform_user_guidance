@@ -94,7 +94,7 @@ Finally, click 'Build':
 
 ![](images/deploy_jenkins_build.PNG?raw=true  "")
 
-6. Grant secure access to the app
+## 6. Grant secure access to the app
 
 Users are granted access to the app using a list of email addresses separated with a space, comma, or semicolon.
 
