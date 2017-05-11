@@ -94,3 +94,9 @@ Finally, click 'Build':
 
 ![](images/deploy_jenkins_build.PNG?raw=true  "")
 
+6. Grant secure access to the app
+
+Users are granted access to the app using a list of email addresses separated with a space ` `, comma `,`, or semicolon `;`.
+
+To grant access, complete the form [here](https://controlpanel.services.alpha.mojanalytics.xyz/job/grant-access-to-app/), and press 'Build'
+
