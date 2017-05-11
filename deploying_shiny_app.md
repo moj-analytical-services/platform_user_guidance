@@ -12,7 +12,7 @@ The following steps to deploy a Shiny app are as follows:
 
 Further details are below:
 
-For advanced users, the guidance [here] discusses customisability and options for deployment.  Refer to this guidance if you're already familiar with git, packrat etc.
+For advanced users, the guidance [here](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/advanced_deployment.md) discusses customisability and options for deployment.  Refer to this guidance if you're already familiar with git, packrat etc.
 
 ## 1. Copy the template project into a new Github repository
 
