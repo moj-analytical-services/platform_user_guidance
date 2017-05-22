@@ -12,12 +12,11 @@ You can find more detailed notes about setting up Git with R Studio [here](http:
 
 The steps are as follows:
 
-1. Create an 'SSH key' within the platform.  This is an unique code which will be stored in your account and mean you don't need to enter your password when interacting with Github 
+1. Create an 'SSH key' within the platform.  This is an unique code which will be stored in your account and mean you don't need to enter your password when interacting with Github]
 2. Register the key with Github.
 3. Configure git to set you username and password
 
-git config --global user.name 'Your Name'
-git config --global user.email 'your@email.com'
+
 
 ### Step 1 - create an SSH key
 
@@ -41,7 +40,38 @@ You can find more information about SSH keys in [this](https://help.github.com/a
 
 ### Step 2:  Register the key with Github.
 
-The next step is to register your SSH public key with Github.  You should have copied your key to your computer's clipboard at the previous step.
+The next step is to register your SSH public key with Github, using the interface on [www.github.com](https://www.github.com).  This guidance assumes you have copied your public key to your computer's clipboard in the previous step.
+
+First navigate to the Github homepage.  If you are not logged in already, you will need to log in.
+
+Access your settings, from the menu that appears when you click on your profile picture in the top right.  Once in settings, access you SSH and GPG keys.  [Here's](https://github.com/settings/keys) a direct link.
+
+![](images/github_settings.PNG?raw=true  "")
+
+Click on 'New SSH key'.
+
+![](images/github_new_ssh.PNG?raw=true  "")
+
+Paste your key into the dialogue that pops up and click 'Add SSH key'.  You can choose whatever name you like for the 'title' of the key.
+
+![](images/git_paste_key.PNG?raw=true  "")
+
+The link with Github and the Analytical Platform is now established.  You can now return to the analytical platform.
+
+3. Configure your Git name and email address within the analytical platform.
+
+To start syncing your work with Github, Git needs to know a bit more about you.
+
+Within the platform, access the shell using Tools -> Shell...
+
+You then need to type the following commands (substitute your name and email):
+
+```
+git config --global user.name 'Your Name'
+git config --global user.email 'your@email.com'
+```
+
+You're now ready to start using Github!  See [here](https://try.github.io/levels/1/challenges/1) for a basic tutorial.
 
 
 
