@@ -20,7 +20,7 @@ Recommended external links:
     - More in depth materials:
     - [Learn Git branching](http://learngitbranching.js.org/)
     - [Git from the inside out](https://maryrosecook.com/blog/post/git-from-the-inside-out)
-- R/R Studio
+- R/R Studio/R Shiny
     - The data science team maintain a list of R training [here](https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit#heading=h.3iqas7tttbbd).
 - Coding standards
     - The Data Science team maintain guidance on coding standards, [here](https://github.com/moj-analytical-services/our-coding-standards)
