@@ -8,6 +8,7 @@ Note that this guidance covers user interactions which are unique to the platfor
 
 - Git and Github
     - [Setting up Github for use with the analytical platform in  R](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/git_setup.md)
+    - [Using Github with R](http://happygitwithr.com/)
 - [Working with big datasets and sharing them: Accessing data in Amazon S3](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/accessing_files_in_s3.md)
 - [Dealing with errors](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/errors.md)
 - [Building and deploying Shiny apps](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/deploying_shiny_app.md)
