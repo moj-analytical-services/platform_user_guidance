@@ -1,6 +1,6 @@
 # Platform User Guidance
 
-View the userguidance here: https://moj-analytical-services.github.io/platform_user_guidance/
+View the user guidance here: https://moj-analytical-services.github.io/platform_user_guidance/
 
 ## To update
 
