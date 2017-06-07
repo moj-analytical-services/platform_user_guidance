@@ -10,4 +10,4 @@ Make changes to ##-chapter.Rmd files
 bookdown::render_book('index.Rmd', 'bookdown::gitbook')
 ```
 
-Rendered bookdown in content in `/docs/`
+Rendered bookdown content in `/docs/`
