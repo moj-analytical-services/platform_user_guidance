@@ -1,0 +1,40 @@
+# Working with big datasets and sharing them: Accessing data in Amazon S3
+
+[Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) is used as the
+primary storage area for large data files. In contrast to files in your
+personal home directory, files in S3 can be accessed by multiple
+Platform users.
+
+## Importing data from S3 into R
+
+There are currently two methods of browsing and importing data held in S3 into RStudio.
+
+### User Interface
+
+We have developed a user interface that allows you to search and browse the files that you have been given access to. 
+
+![](images/s3browser.png)
+
+You can install the package as follows:
+```r
+install.packages("devtools")
+devtools::install_github("moj-analytical-services/s3browser")
+```
+
+See the [documentation](https://github.com/moj-analytical-services/s3browser) for
+further details.
+
+
+### Command line tool
+
+We have also developed a command line tool that provides you with
+some helper function. This enables you to do things like write
+`read_s3_csv` to read directly from S3 into a data frame in R.
+
+You can install this package as follows:
+```r
+install.packages("devtools")
+devtools::install_github("moj-analytical-services/s3tools")
+```
+See the [documentation](https://github.com/moj-analytical-services/s3tools) for
+further details.
