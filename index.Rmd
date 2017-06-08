@@ -12,7 +12,7 @@ description: "This repository contains user guidance for the Analytical Platform
 
 # About this guidance {-}
 
-Note that this guidance covers user interactions which are unique to the platform.  We do not provide guidance on how to use off-the-shelf tools like R Studio and Git as high quality training materials are available online for free, and training and coaching is also provided within Analytical Services Directorate.  
+Note that this guidance covers user interactions which are unique to the platform.  We do not provide guidance on how to use off-the-shelf tools like R Studio and Git as high quality training materials are available online for free, and training and coaching is also provided within Analytical Services Directorate. 
 
 Some recommendations of online training are provided throughout. 
 

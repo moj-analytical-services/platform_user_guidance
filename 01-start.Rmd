@@ -2,17 +2,40 @@
 
 This section will detail each step you need to go through to get setup on the  platform. 
 
+## Getting an account
+### Sign up for github 
+In order to provide you with an account on the platform, we require your github username. If you do not already have an account, head off to https://github.com/, and sign up. When signing up, use all the default options.
+ 
+If you already have a personal Github account, it will be easiest to just use that. We recommend new users use their @justice email address, but note that it’s also fine for your account to be attached to a personal email address.
+ 
+### Enable two-factor authentication. 
+Once you’ve signed up, you must enable two factor authentication. This is what enables us to store OFFICIAL data in the platform. You can do this in your Github [settings page](https://github.com/settings/security). 
+
+You are given the option of doing this via SMS or an authentication app (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)) - choose whichever you prefer.
+
+For step-by-step instructions see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/). 
+
+### Email us your Github username
+
+Once you've got a Github account setup, email you account name [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) and [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) who will create an Analytical Platform account for you. 
+
+### Read the Security Operating Procedure
+
+Before you start using the platform, please read the [Security Operating Procedures][Security Operating Procedures].  
+
 ## Accessing your platform instance
 
 As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this: for example if your github username is `moj1234` your platform will be available at `https://moj1234-rstudio.tools.alpha.mojanalytics.xyz`. 
 
-##  Setting up Git and Github for use on the Analytical Platform
+##  Configuring Git and Github for use on the Analytical Platform
+
+If you are new to Git and Github it is worth clarifying the difference between Git and Git**hub**. Git is the software that looks after the version control of code, whereas Github is the website that hosts that version controlled code. In practise this means that using Git to track versions of your code and then submit those changes to Github.
 
 This guide runs through how to set up connectivity between your Analytical Platform account and Github.  This is a one-time set up procedure that you only need to do once when you first use the platform.
 
 Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.  
 
-This page covers only the initial setup.  For guidance on how to use Git to sync your work with Github, please see the following guidance [TODO:  Insert basic Git guidance]
+This page covers only the initial setup.  For guidance on how to use Git to sync your work with Github, please see the following guidance [TODO:  Insert basic Git guidance].
 
 You can find more detailed notes about setting up Git with R Studio [here](http://adamwilson.us/RDataScience/GitSSHNotes.html) and [here](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
