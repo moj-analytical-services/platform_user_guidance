@@ -3,7 +3,10 @@ title: "Platform Guidance"
 author: "MoJ Analytical Services"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output: 
+  bookdown::gitbook:
+    config:
+      sharing: no
 documentclass: book
 biblio-style: apalike
 link-citations: yes
