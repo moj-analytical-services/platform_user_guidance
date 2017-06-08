@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html">
+<link rel="prev" href="user-administration.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -167,127 +167,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="getting-started" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Getting Started</h1>
-<p>This section will detail each step you need to go through to get setup on the platform.</p>
-<div id="getting-an-account" class="section level2">
-<h2><span class="header-section-number">1.1</span> Getting an account</h2>
-<div id="sign-up-for-github" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> Sign up for github</h3>
-<p>In order to provide you with an account on the platform, we require your github username. If you do not already have an account, head off to <a href="https://github.com/" class="uri">https://github.com/</a>, and sign up. When signing up, use all the default options.</p>
-<p>If you already have a personal Github account, it will be easiest to just use that. We recommend new users use their <span class="citation">@justice</span> email address, but note that it’s also fine for your account to be attached to a personal email address.</p>
-</div>
-<div id="enable-two-factor-authentication." class="section level3">
-<h3><span class="header-section-number">1.1.2</span> Enable two-factor authentication.</h3>
-<p>Once you’ve signed up, you must enable two factor authentication. This is what enables us to store OFFICIAL data in the platform. You can do this in your Github <a href="https://github.com/settings/security">settings page</a>.</p>
-<p>You are given the option of doing this via SMS or an authentication app (such as <a href="https://authy.com/download/">Authy</a> or <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a>) - choose whichever you prefer.</p>
-<p>For step-by-step instructions see the Github guidance for <a href="https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/">authentication apps</a> or <a href="https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/">SMS authentication</a>.</p>
-</div>
-<div id="email-us-your-github-username" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> Email us your Github username</h3>
-<p>Once you’ve got a Github account setup, email you account name <a href="mailto:Robin.Linacre@justice.gsi.gov.uk">Robin Linacre</a> and <a href="mailto:leanne.mills@digital.justice.gov.uk">Leanne Mills</a> who will create an Analytical Platform account for you.</p>
-</div>
-<div id="read-the-security-operating-procedure" class="section level3">
-<h3><span class="header-section-number">1.1.4</span> Read the Security Operating Procedure</h3>
-<p>Before you start using the platform, please read the <a href="security-operating-procedures.html#security-operating-procedures">Security Operating Procedures</a>.</p>
-</div>
-</div>
-<div id="accessing-your-platform-instance" class="section level2">
-<h2><span class="header-section-number">1.2</span> Accessing your platform instance</h2>
-<p>As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this: for example if your github username is <code>moj1234</code> your platform will be available at <code>https://moj1234-rstudio.tools.alpha.mojanalytics.xyz</code>.</p>
-</div>
-<div id="configuring-git-and-github-for-use-on-the-analytical-platform" class="section level2">
-<h2><span class="header-section-number">1.3</span> Configuring Git and Github for use on the Analytical Platform</h2>
-<p>If you are new to Git and Github it is worth clarifying the difference between Git and Git<strong>hub</strong>. Git is the software that looks after the version control of code, whereas Github is the website that hosts that version controlled code. In practise this means that using Git to track versions of your code and then submit those changes to Github.</p>
-<p>This guide runs through how to set up connectivity between your Analytical Platform account and Github. This is a one-time set up procedure that you only need to do once when you first use the platform.</p>
-<p>Github enables you to collaborate with colleagues on code and share you work with them. It puts your code in a centralised, searchable place. It also enables you to version control your work.</p>
-<p>This page covers only the initial setup. For guidance on how to use Git to sync your work with Github, please see the following guidance [TODO: Insert basic Git guidance].</p>
-<p>You can find more detailed notes about setting up Git with R Studio <a href="http://adamwilson.us/RDataScience/GitSSHNotes.html">here</a> and <a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">here</a></p>
-<div id="instructions" class="section level3">
-<h3><span class="header-section-number">1.3.1</span> Instructions</h3>
-<p>The steps are as follows:</p>
-<ol style="list-style-type: decimal">
-<li>Create an ‘SSH key’ within the platform. This is an unique code which will be stored in your account and mean you don’t need to enter your password when interacting with Github]</li>
-<li>Register the key with Github.</li>
-<li>Configure git to set you username and password</li>
-</ol>
-<div id="step-1---create-an-ssh-key" class="section level4">
-<h4><span class="header-section-number">1.3.1.1</span> Step 1 - create an SSH key</h4>
-<p>You can create your SSH key within the platform</p>
-<p>Tools -&gt; Global options -&gt; Git/SVN -&gt; Create RSA key:</p>
-<div class="figure">
-<img src="images/git_create_key.PNG" />
-
-</div>
-<p>You will be presented with dialog showing your key fingerprint, amongst other details. You don’t this information, and may close the window:</p>
-<div class="figure">
-<img src="images/git_close.PNG" />
-
-</div>
-<p>For the next step, you’ll need to copy and paste your SSH public key. You can copy this to the clipboard using the following dialogues:</p>
-<div class="figure">
-<img src="images/git_view_public.PNG" />
-
-</div>
-<div class="figure">
-<img src="images/git-public-key.PNG" />
-
-</div>
-<p>You can find more information about SSH keys in <a href="https://help.github.com/articles/connecting-to-github-with-ssh/">this</a> guidance.</p>
-</div>
-<div id="step-2-register-the-key-with-github." class="section level4">
-<h4><span class="header-section-number">1.3.1.2</span> Step 2: Register the key with Github.</h4>
-<p>The next step is to register your SSH public key with Github, using the interface on <a href="https://www.github.com">www.github.com</a>. This guidance assumes you have copied your public key to your computer’s clipboard in the previous step.</p>
-<p>First navigate to the Github homepage. If you are not logged in already, you will need to log in.</p>
-<p>Access your settings, from the menu that appears when you click on your profile picture in the top right. Once in settings, access you SSH and GPG keys. <a href="https://github.com/settings/keys">Here’s</a> a direct link.</p>
-<div class="figure">
-<img src="images/github_settings.PNG" />
-
-</div>
-<p>Click on ‘New SSH key’.</p>
-<div class="figure">
-<img src="images/github_new_ssh.PNG" />
-
-</div>
-<p>Paste your key into the dialogue that pops up and click ‘Add SSH key’. You can choose whatever name you like for the ‘title’ of the key.</p>
-<div class="figure">
-<img src="images/git_paste_key.PNG" />
-
-</div>
-<p>The link with Github and the Analytical Platform is now established. You can now return to the analytical platform.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Configure your Git name and email address within the analytical platform.</li>
-</ol>
-<p>To start syncing your work with Github, Git needs to know a bit more about you.</p>
-<p>Within the platform, access the shell using Tools -&gt; Shell…</p>
-<p>You then need to type the following commands (substitute your name and email):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> config --global user.name <span class="st">&#39;Your Name&#39;</span>
-<span class="kw">git</span> config --global user.email <span class="st">&#39;your@email.com&#39;</span></code></pre></div>
-<p>You’re now ready to start using Github!</p>
-</div>
-</div>
-<div id="git-training-resources" class="section level3">
-<h3><span class="header-section-number">1.3.2</span> Git training resources</h3>
-<p>If you are new to github we recommend that you complete the basic tutorial <a href="https://try.github.io/levels/1/challenges/1">available here</a>.</p>
+<div id="security-operating-procedures" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Security Operating Procedures</h1>
 <ul>
-<li><a href="http://happygitwithr.com/">Using Github with R</a></li>
-<li><a href="https://try.github.io/levels/1/challenges/1">Introductory interactive tutorial</a>.</li>
-<li>Quickstart guide and cheatsheet <a href="http://rogerdudler.github.io/git-guide/">here</a> and in pdf format <a href="http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf">here</a>.</li>
-<li>More in depth materials:
-<ul>
-<li><a href="http://learngitbranching.js.org/">Learn Git branching</a></li>
-<li><a href="https://maryrosecook.com/blog/post/git-from-the-inside-out">Git from the inside out</a></li>
-</ul></li>
+<li>You must not put sensitive (OFFICIAL) data into the platform without getting permission from <a href="mailto:robin.linacre@digital.justice.gov.uk">Robin Linacre</a> or get in contact on the <code>#analytical-platform</code> channel on Slack.</li>
+<li>Don’t rely on the platform for anything yet, especially for saving your work. We cannot guarantee that your data is safe and won’t get lost.<br />
+</li>
+<li>If you are responsible for a team, ensure that users have the <a href="user-administration.html#team-member-permissions">correct permissions</a>.</li>
 </ul>
-</div>
-</div>
-<div id="before-you-start-writing-code" class="section level2">
-<h2><span class="header-section-number">1.4</span> Before you start writing code</h2>
-<p>Please read the <a href="https://github.com/moj-analytical-services/our-coding-standards">coding standards</a>.</p>
-</div>
-<div id="training-resources" class="section level2">
-<h2><span class="header-section-number">1.5</span> Training Resources</h2>
-<p>The data science team maintain a list of R training <a href="https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit#heading=h.3iqas7tttbbd">here</a>.</p>
+<div id="general-security-guidance" class="section level2">
+<h2><span class="header-section-number">6.1</span> General security guidance</h2>
+<ul>
+<li>Don’t access the platform from your personal computer.</li>
+<li>Keep passwords secure and do not share accounts with anyone else. You are responsible for the security of your passwords and you will be required to change it at frequent intervals.</li>
+</ul>
 
 </div>
 </div>
@@ -296,8 +189,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="user-administration.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

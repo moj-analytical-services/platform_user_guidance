@@ -1,0 +1,44 @@
+# User Administration
+
+## Teams and data access groups
+Users, teams, and data access are all managed from [Github Teams](https://github.com/orgs/moj-analytical-services/teams). 
+
+Every team is automatically granted an S3 Bucket (a shared storage area). 
+
+Teams and the associated S3 Bucket can be used in two ways: 
+
+- As as a shared area for a team 
+- As "data access groups" where each member of the Github "team" is cleared to access a given dataset. 
+
+For how to access buckets from within R see [here][Importing data from S3 into R]. 
+
+### Team creation
+See [Githubs Guidence](https://help.github.com/articles/creating-a-team/) for step-by-step guide on how to setup teams. A list of teams can be found [here](https://github.com/orgs/moj-analytical-services/teams). 
+
+When creating a team make sure that the name of the team is **clear, concise, and unique**. Particularly as this will be the name of the folder where the associated data will be stored. Also note that team names may not contain spaces. We recommend that `you_use_underscores` instead. 
+
+Teams can be **visable** or **secret**. Visible teams can be viewed by all members of the organisation (those who are on Github but not on your team). Secret teams can only be viewed by members of that team.
+
+You will only be able to add team members that are part of the organisation. As part of the [setup process][Getting Started] users should already be added to the organisation. 
+
+If they're not then email [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) or [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk). 
+
+### Adding or removing users from a team
+
+Step-by-step guidance on how to  [add](https://help.github.com/articles/adding-organization-members-to-a-team/) or [remove](https://help.github.com/articles/removing-a-member-from-your-organization/) team members is available on Github. 
+
+Note that when a user is added they are also authorised to access the data. Similarly, when they are removed, access to the data is revoked. 
+
+### Team member permissions
+
+Members of a team can be **Maintainers** or **Members**. See the [Github Guidance](https://help.github.com/articles/giving-team-maintainer-permissions-to-an-organization-member/) on how to set permissions for members of your team. 
+
+Maintainers have the following additional permissions, and can be thought of as team administrators. 
+
+- Change the team's name and description
+- Change the team's visibility
+- Add organization members to the team
+- Remove organization members from the team
+- Promote an existing team member to team maintainer
+- Remove the team's access to repositories
+- Reinstate a former organization member
