@@ -1,5 +1,6 @@
 book_filename: "Platform-Guidance"
 output_dir: "docs"
+repo: https://github.com/moj-analytical-services/platform_user_guidance
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Part "
