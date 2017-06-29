@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-06-08">
+<meta name="date" content="2017-06-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -123,6 +123,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1.1" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#user-interface"><i class="fa fa-check"></i><b>2.1.1</b> User Interface</a></li>
 <li class="chapter" data-level="2.1.2" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#command-line-tool"><i class="fa fa-check"></i><b>2.1.2</b> Command line tool</a></li>
 </ul></li>
+<li class="chapter" data-level="2.2" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#uploading-data-to-s3"><i class="fa fa-check"></i><b>2.2</b> Uploading data to S3</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#where-data-is-stored"><i class="fa fa-check"></i><b>2.2.1</b> Where data is stored</a></li>
+<li class="chapter" data-level="2.2.2" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#uploading-data"><i class="fa fa-check"></i><b>2.2.2</b> Uploading data</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><i class="fa fa-check"></i><b>3</b> Building a Shiny app that you can deploy on the Analytical Platform</a><ul>
 <li class="chapter" data-level="3.1" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#step-by-step-guide-to-deplying-an-app"><i class="fa fa-check"></i><b>3.1</b> Step-by-step guide to deplying an app</a><ul>
@@ -183,7 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <p>You can install the package as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
-devtools::<span class="kw">install_github</span>(<span class="st">&quot;moj-analytical-services/s3browser&quot;</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;moj-analytical-services/s3browser&quot;</span>)</code></pre></div>
 <p>See the <a href="https://github.com/moj-analytical-services/s3browser">documentation</a> for further details.</p>
 </div>
 <div id="command-line-tool" class="section level3">
@@ -191,9 +195,44 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;moj-anal
 <p>We have also developed a command line tool that provides you with some helper function. This enables you to do things like write <code>read_s3_csv</code> to read directly from S3 into a data frame in R.</p>
 <p>You can install this package as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
-devtools::<span class="kw">install_github</span>(<span class="st">&quot;moj-analytical-services/s3tools&quot;</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;moj-analytical-services/s3tools&quot;</span>)</code></pre></div>
 <p>See the <a href="https://github.com/moj-analytical-services/s3tools">documentation</a> for further details.</p>
+</div>
+</div>
+<div id="uploading-data-to-s3" class="section level2">
+<h2><span class="header-section-number">2.2</span> Uploading data to S3</h2>
+<div id="where-data-is-stored" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Where data is stored</h3>
+<p>An S3 bucket is automatically created for every team; for how to create and manage teams see <a href="user-administration.html#user-administration">User Administration</a>. By default all members of the team have <strong>read and write</strong> access to the bucket.</p>
+</div>
+<div id="uploading-data" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Uploading data</h3>
+<p>In Amazon S3 storage areas are refered to as ‘Buckets’. To access the buckets you need to visit the Amazon management console with the following link: <a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y" class="uri">https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y</a> (if you regularly upload data it may be worth bookmarking this link).</p>
+<p>Authentication is managed by GitHub so if this is the first time you are connecting to the Amazon S3 Management console you may have to approve it.</p>
+<p>You’ll be able to see all buckets, <strong>including</strong> those you <strong>do not</strong> have access to.</p>
+<p>To upload data, find the bucket you want to upload data to. From within the bucket you can create folders and upload files by following the on screen instructions. When uploading files <strong>you will be prompted to set the settings for that file</strong>. If this happens the default settings are okay.</p>
+<div id="step-by-step-instructions" class="section level4">
+<h4><span class="header-section-number">2.2.2.1</span> Step-by-step instructions</h4>
+<ol style="list-style-type: decimal">
+<li><p>Use the following <a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y">link</a> to login</p></li>
+<li><p>Select the S3 service <img src="images/s3_service.png" /></p></li>
+<li><p>Select the bucket you wish to upload data to (the bucket will have the same name as the team, but spaces are replaced with <code>-</code> and all letters are lower case, so <code>Test Team</code> will have a bucket called <code>test-team</code>). While in <strong>alpha</strong> all buckets will also have the alpha prefix. ​ The easiest way is to use the search: <img src="images/s3_bucket_search.gif" /></p></li>
+<li><p>Use the interface to <strong>create folders</strong> or <strong>upload files</strong>. The default settings are fine.</p></li>
+</ol>
+<div class="figure">
+<img src="images/s3_bucket_upload.gif" />
 
+</div>
+</div>
+<div id="manipulating-data" class="section level4">
+<h4><span class="header-section-number">2.2.2.2</span> Manipulating data</h4>
+<p>You can also move, rename, and delete data using the S3 management console. Select the files by checking the text box then use the <code>More</code> button so see the options.</p>
+<div class="figure">
+<img src="images/s3_options.png" />
+
+</div>
+
+</div>
 </div>
 </div>
 </div>

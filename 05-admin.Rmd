@@ -15,9 +15,19 @@ For how to access buckets from within R see [here][Importing data from S3 into R
 ### Team creation
 See [Githubs Guidence](https://help.github.com/articles/creating-a-team/) for step-by-step guide on how to setup teams. A list of teams can be found [here](https://github.com/orgs/moj-analytical-services/teams). 
 
-When creating a team make sure that the name of the team is **clear, concise, and unique**. Particularly as this will be the name of the folder where the associated data will be stored. Also note that team names may not contain spaces. We recommend that `you_use_underscores` instead. 
+#### Team name
+
+When creating a team make sure that the name of the team is **clear, concise, and unique**. Particularly as this will be the name of the folder where the associated data will be stored. Team names may contain spaces, but we recommend that `you_use_underscores` or `you-use-dashes` instead. 
+
+Teams can either be **teams** or **data access groups**. If a bucket contains a core data set then it should be uploaded to a **data access group** and not a **team** shared storage area. In practise, individuals will probably be members of multiple teams and data access groups. 
+
+Importantly, data access groups should be <u>prefixed</u> **DAG**_team_name. 
+
+#### Team visability
 
 Teams can be **visable** or **secret**. Visible teams can be viewed by all members of the organisation (those who are on Github but not on your team). Secret teams can only be viewed by members of that team.
+
+#### Troubleshooting: I can't create teams 
 
 You will only be able to add team members that are part of the organisation. As part of the [setup process][Getting Started] users should already be added to the organisation. 
 

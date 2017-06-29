@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-06-08">
+<meta name="date" content="2017-06-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -123,6 +123,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1.1" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#user-interface"><i class="fa fa-check"></i><b>2.1.1</b> User Interface</a></li>
 <li class="chapter" data-level="2.1.2" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#command-line-tool"><i class="fa fa-check"></i><b>2.1.2</b> Command line tool</a></li>
 </ul></li>
+<li class="chapter" data-level="2.2" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#uploading-data-to-s3"><i class="fa fa-check"></i><b>2.2</b> Uploading data to S3</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#where-data-is-stored"><i class="fa fa-check"></i><b>2.2.1</b> Where data is stored</a></li>
+<li class="chapter" data-level="2.2.2" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#uploading-data"><i class="fa fa-check"></i><b>2.2.2</b> Uploading data</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><i class="fa fa-check"></i><b>3</b> Building a Shiny app that you can deploy on the Analytical Platform</a><ul>
 <li class="chapter" data-level="3.1" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#step-by-step-guide-to-deplying-an-app"><i class="fa fa-check"></i><b>3.1</b> Step-by-step guide to deplying an app</a><ul>
@@ -179,7 +183,7 @@ Try removing ‘/home/robinl/R/library/00LOCK-readr’</code></pre>
 <p><strong>Solution</strong></p>
 <p>Run the following:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;pacman&#39;</span>)
-pacman::<span class="kw">p_unlock</span>()</code></pre></div>
+pacman<span class="op">::</span><span class="kw">p_unlock</span>()</code></pre></div>
 <p>If that doesn’t work or if you have trouble installing the <code>pacman</code> package try the following:</p>
 <blockquote>
 <p>Go to Tools -&gt; Shell and type:</p>
