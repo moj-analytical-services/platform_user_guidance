@@ -15,7 +15,7 @@ We have developed a user interface that allows you to search and browse the file
 
 ![](images/s3browser.png)
 
-You can install the package as follows:
+You can install the package as follows: 
 ```r
 install.packages("devtools")
 devtools::install_github("moj-analytical-services/s3browser")
