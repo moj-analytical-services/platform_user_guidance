@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="Platform Guidance" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-06-29">
+<meta name="date" content="2017-06-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -174,7 +174,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3" class="section level1">
 <h1><span class="header-section-number">Part 2</span> Working with big datasets and sharing them: Accessing data in Amazon S3</h1>
-<p><a href="https://en.wikipedia.org/wiki/Amazon_S3">Amazon S3</a> is used as the primary storage area for large data files. In contrast to files in your personal home directory, files in S3 can be accessed by multiple Platform users. You will be only be able to access buckets that you have been granted access to (see <a href="user-administration.html#user-administration">User Administration</a>).</p>
+<p><a href="https://en.wikipedia.org/wiki/Amazon_S3">Amazon S3</a> is used as the primary storage area for large data files. In contrast to files in your personal home directory, files in S3 can be accessed by multiple Platform users. You will only be able to access buckets that you have been granted access to (see <a href="user-administration.html#user-administration">User Administration</a>).</p>
 <div id="importing-data-from-s3-into-r" class="section level2">
 <h2><span class="header-section-number">2.1</span> Importing data from S3 into R</h2>
 <p>There are currently two methods of browsing and importing data held in S3 into RStudio.</p>
@@ -187,7 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <p>You can install the package as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
-devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;moj-analytical-services/s3browser&quot;</span>)</code></pre></div>
+devtools::<span class="kw">install_github</span>(<span class="st">&quot;moj-analytical-services/s3browser&quot;</span>)</code></pre></div>
 <p>See the <a href="https://github.com/moj-analytical-services/s3browser">documentation</a> for further details.</p>
 </div>
 <div id="command-line-tool" class="section level3">
@@ -195,7 +195,7 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <p>We have also developed a command line tool that provides you with some helper function. This enables you to do things like write <code>read_s3_csv</code> to read directly from S3 into a data frame in R.</p>
 <p>You can install this package as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
-devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;moj-analytical-services/s3tools&quot;</span>)</code></pre></div>
+devtools::<span class="kw">install_github</span>(<span class="st">&quot;moj-analytical-services/s3tools&quot;</span>)</code></pre></div>
 <p>See the <a href="https://github.com/moj-analytical-services/s3tools">documentation</a> for further details.</p>
 </div>
 </div>
@@ -203,21 +203,21 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <h2><span class="header-section-number">2.2</span> Uploading data to S3</h2>
 <div id="where-data-is-stored" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Where data is stored</h3>
-<p>An S3 bucket is automatically created for every team; for how to create and manage teams see <a href="user-administration.html#user-administration">User Administration</a>. By default all members of the team have <strong>read and write</strong> access to the bucket.</p>
+<p>An S3 bucket is automatically created for every team; for how to create and manage teams see <a href="user-administration.html#user-administration">User Administration</a>. By default, all members of the team have <strong>read and write</strong> access to the bucket.</p>
 </div>
 <div id="uploading-data" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Uploading data</h3>
 <p>In Amazon S3 storage areas are refered to as ‘Buckets’. To access the buckets you need to visit the Amazon management console with the following link: <a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y" class="uri">https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y</a> (if you regularly upload data it may be worth bookmarking this link).</p>
-<p>Authentication is managed by GitHub so if this is the first time you are connecting to the Amazon S3 Management console you may have to approve it.</p>
+<p>Authentication is managed by GitHub, so if this is the first time you are connecting to the Amazon S3 Management console you may have to approve it.</p>
 <p>You’ll be able to see all buckets, <strong>including</strong> those you <strong>do not</strong> have access to.</p>
-<p>To upload data, find the bucket you want to upload data to. From within the bucket you can create folders and upload files by following the on screen instructions. When uploading files <strong>you will be prompted to set the settings for that file</strong>. If this happens the default settings are okay.</p>
+<p>To upload data, find the bucket you want to upload data to. Within the bucket you can create folders and upload files by following the on screen instructions. When uploading files <strong>you will be prompted to set the settings for that file</strong>. If this happens, the default settings are okay.</p>
 <div id="step-by-step-instructions" class="section level4">
 <h4><span class="header-section-number">2.2.2.1</span> Step-by-step instructions</h4>
 <ol style="list-style-type: decimal">
 <li><p>Use the following <a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y">link</a> to login</p></li>
 <li><p>Select the S3 service <img src="images/s3_service.png" /></p></li>
 <li><p>Select the bucket you wish to upload data to (the bucket will have the same name as the team, but spaces are replaced with <code>-</code> and all letters are lower case, so <code>Test Team</code> will have a bucket called <code>test-team</code>). While in <strong>alpha</strong> all buckets will also have the alpha prefix. ​ The easiest way is to use the search: <img src="images/s3_bucket_search.gif" /></p></li>
-<li><p>Use the interface to <strong>create folders</strong> or <strong>upload files</strong>. The default settings are fine.</p></li>
+<li><p>Use the interface to <strong>create folders</strong> or <strong>upload files</strong>. Note: The default settings are fine.</p></li>
 </ol>
 <div class="figure">
 <img src="images/s3_bucket_upload.gif" />
@@ -226,7 +226,7 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 </div>
 <div id="manipulating-data" class="section level4">
 <h4><span class="header-section-number">2.2.2.2</span> Manipulating data</h4>
-<p>You can also move, rename, and delete data using the S3 management console. Select the files by checking the text box then use the <code>More</code> button so see the options.</p>
+<p>You can also move, rename and delete data using the S3 management console. Select the files by checking the text box, use the <code>More</code> button so see the options.</p>
 <div class="figure">
 <img src="images/s3_options.png" />
 

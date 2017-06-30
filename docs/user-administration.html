@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="Platform Guidance" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-06-29">
+<meta name="date" content="2017-06-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -176,26 +176,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Part 5</span> User Administration</h1>
 <div id="teams-and-data-access-groups" class="section level2">
 <h2><span class="header-section-number">5.1</span> Teams and data access groups</h2>
-<p>Users, teams, and data access are all managed from <a href="https://github.com/orgs/moj-analytical-services/teams">Github Teams</a>.</p>
+<p>Users, teams and data access are all managed from <a href="https://github.com/orgs/moj-analytical-services/teams">Github Teams</a>.</p>
 <p>Every team is automatically granted an S3 Bucket (a shared storage area).</p>
 <p>Teams and the associated S3 Bucket can be used in two ways:</p>
 <ul>
-<li>As as a shared area for a team</li>
+<li>As as a shared area for a team.</li>
 <li>As “data access groups” where each member of the Github “team” is cleared to access a given dataset.</li>
 </ul>
 <p>For how to access buckets from within R see <a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#importing-data-from-s3-into-r">here</a>.</p>
 <div id="team-creation" class="section level3">
 <h3><span class="header-section-number">5.1.1</span> Team creation</h3>
-<p>See <a href="https://help.github.com/articles/creating-a-team/">Githubs Guidence</a> for step-by-step guide on how to setup teams. A list of teams can be found <a href="https://github.com/orgs/moj-analytical-services/teams">here</a>.</p>
+<p>See <a href="https://help.github.com/articles/creating-a-team/">Githubs Guidence</a> for a step-by-step guide on how to setup teams. A list of teams can be found <a href="https://github.com/orgs/moj-analytical-services/teams">here</a>.</p>
 <div id="team-name" class="section level4">
 <h4><span class="header-section-number">5.1.1.1</span> Team name</h4>
-<p>When creating a team make sure that the name of the team is <strong>clear, concise, and unique</strong>. Particularly as this will be the name of the folder where the associated data will be stored. Team names may contain spaces, but we recommend that <code>you_use_underscores</code> or <code>you-use-dashes</code> instead.</p>
+<p>When creating a team, make sure that the name of the team is <strong>clear, concise, and unique</strong>. Particularly as this will be the name of the folder where the associated data will be stored. Team names may contain spaces, but we recommend that <code>you_use_underscores</code> or <code>you-use-dashes</code> instead.</p>
 <p>Teams can either be <strong>teams</strong> or <strong>data access groups</strong>. If a bucket contains a core data set then it should be uploaded to a <strong>data access group</strong> and not a <strong>team</strong> shared storage area. In practise, individuals will probably be members of multiple teams and data access groups.</p>
 <p>Importantly, data access groups should be <u>prefixed</u> <strong>DAG</strong>_team_name.</p>
 </div>
 <div id="team-visability" class="section level4">
 <h4><span class="header-section-number">5.1.1.2</span> Team visability</h4>
-<p>Teams can be <strong>visable</strong> or <strong>secret</strong>. Visible teams can be viewed by all members of the organisation (those who are on Github but not on your team). Secret teams can only be viewed by members of that team.</p>
+<p>Teams can be <strong>visable</strong> or <strong>secret</strong>. Visible teams can be viewed by all members of the organisation (those who are on Github but not on your team), whereas secret teams can only be viewed by members of that team.</p>
 </div>
 <div id="troubleshooting-i-cant-create-teams" class="section level4">
 <h4><span class="header-section-number">5.1.1.3</span> Troubleshooting: I can’t create teams</h4>
@@ -210,8 +210,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="team-member-permissions" class="section level3">
 <h3><span class="header-section-number">5.1.3</span> Team member permissions</h3>
-<p>Members of a team can be <strong>Maintainers</strong> or <strong>Members</strong>. See the <a href="https://help.github.com/articles/giving-team-maintainer-permissions-to-an-organization-member/">Github Guidance</a> on how to set permissions for members of your team.</p>
-<p>Maintainers have the following additional permissions, and can be thought of as team administrators.</p>
+<p>Members of a team can be <strong>Maintainers</strong> or <strong>Members</strong>. See the <a href="https://help.github.com/articles/giving-team-maintainer-permissions-to-an-organization-member/">Github Guidance</a> on how to set permissions for team members.</p>
+<p>Maintainers have the following additional permissions, and can be thought of as team administrators:</p>
 <ul>
 <li>Change the team’s name and description</li>
 <li>Change the team’s visibility</li>

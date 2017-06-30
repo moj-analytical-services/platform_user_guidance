@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="Platform Guidance" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-06-29">
+<meta name="date" content="2017-06-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -176,16 +176,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Part 3</span> Building a Shiny app that you can deploy on the Analytical Platform</h1>
 <p>The following steps to deploy a Shiny app are as follows:</p>
 <ol style="list-style-type: decimal">
-<li>Copy the <a href="https://github.com/moj-analytical-services/rshiny-example">template project</a> within Github to a new repository, with a name of your choosing</li>
+<li>Copy the <a href="https://github.com/moj-analytical-services/rshiny-example">template project</a> within Github to a new repository, with a name of your choice.</li>
 <li>In R Studio, start a new project from version control (file -&gt; new project -&gt; version control -&gt; git). TODO: Remember to make sure the template has a Rproj that enables packrat</li>
 <li>Work on your Shiny app, using the template <code>ui.R</code> and <code>server.R</code> files.<br />
 </li>
 <li>Ensure that your package dependencies are snapshotted using <code>packrat::snapshot()</code></li>
-<li>When you’re ready to share it, access the <a href="https://jenkins.services.alpha.mojanalytics.xyz/">Services control panel</a>, find your app, and click ‘Build now’</li>
+<li>When you’re ready to share it, access the <a href="https://jenkins.services.alpha.mojanalytics.xyz/">Services control panel</a>, find your app, and click ‘Build now’.</li>
 <li>Once deployed, grant users access to the app by inserting their names into the <a href="https://controlpanel.services.alpha.mojanalytics.xyz/">Grant user access control panel</a>.</li>
 </ol>
 <p>Step-by-step instructions are below.</p>
-<p>For advanced users, the guidance <a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#advanced-deployment">here</a> discusses customisability and options for deployment. Refer to this guidance if you’re already familiar with git, packrat etc.</p>
+<p>For advanced users, the guidance <a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#advanced-deployment">here</a> discusses customisability and options for deployment. Refer to this guidance if you are already familiar with git, packrat etc.</p>
 <div id="step-by-step-guide-to-deplying-an-app" class="section level2">
 <h2><span class="header-section-number">3.1</span> Step-by-step guide to deplying an app</h2>
 <div id="copy-the-template-project-into-a-new-github-repository" class="section level3">
@@ -195,7 +195,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <img src="images/import_repository.PNG" />
 
 </div>
-<p>Enter <code>https://github.com/moj-analytical-services/rshiny-template</code> in the input box entitled ‘Your old repository’s clone URL’:</p>
+<p>Enter <code>https://github.com/moj-analytical-services/rshiny-template</code> in the input box entitled ‘your old repository’s clone URL:’</p>
 <div class="figure">
 <img src="images/repo_clone_url.PNG" />
 
@@ -219,14 +219,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="in-r-studio-in-the-platform-create-a-new-project-from-your-new-github-repository" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> In R Studio in the platform, create a new project from your new Github repository</h3>
 <p>In R Studio, navigate through the following menus:</p>
-<p>File -&gt; New project -&gt; Version control -&gt; Git)</p>
+<p>File -&gt; New project -&gt; Version control -&gt; Git</p>
 <p>TODO: Add screenshot of dialogue</p>
-<p>In ‘Repository URL’, enter the URL of the repository you just created. This needs to be the SSH URL (starting with <code>git@github</code>), <strong>NOT</strong> the HTTPS url (which starts with <code>https</code>). It is therefore in the following format:</p>
+<p>In ‘Repository URL’, enter the URL of the repository you just created. This needs to be the SSH URL (starting with <code>git@github</code>), <strong>NOT</strong> the HTTPS url (which starts with <code>https</code>). Therefore, it is in the following format:</p>
 <pre><code>git@github.com:moj-analytical-services/your_name_goes_here.git</code></pre>
-<p>R Studio will create a new project folder for you with all the template files in.</p>
+<p>R Studio will create a new project folder with all the template files in.</p>
 <p>You can now start building your Shiny app by editing <code>server.R</code> and <code>ui.R</code> files.</p>
-<div id="further-notes-for-if-youre-having-trouble-finding-your-new-repos-url" class="section level4">
-<h4><span class="header-section-number">3.1.2.1</span> Further notes for if you’re having trouble finding your new repo’s url</h4>
+<div id="further-notes-if-youre-having-trouble-finding-your-new-repos-url" class="section level4">
+<h4><span class="header-section-number">3.1.2.1</span> Further notes if you’re having trouble finding your new repo’s url</h4>
 <p>If you navigate to your new repository’s home page (which will have a url in the form <code>https://github.com/moj-analytical-services/your_name_goes_here</code>), you can use the following buttons to access this url (make sure you click the ‘ssh’ button):</p>
 <div class="figure">
 <img src="images/use_ssh.PNG" />
@@ -244,15 +244,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="snapshot-dependencies-using-packrat" class="section level3">
 <h3><span class="header-section-number">3.1.4</span> Snapshot dependencies using packrat</h3>
-<p>Your Shiny app will have dependencies on various third-party R packages (e.g. <code>dplyr</code>). These packages change through time, and sometimes these changes are not backwards compatible. When we deploy you Shiny app, it is therefore essential to include a manifest of all of the package dependencies and their specific versions.</p>
-<p>The R package<code>packrat</code> automates this process. Before deploying your app, you need to call <code>packrat::snapshot()</code> to automatically create this manifest. You will then probably want to call <code>packrat::clean()</code> to remove any dependencies which are no longer in use.</p>
-<p>This creates a file called <code>packrat/packrat.lock</code>. You need to ensure you have committed this to the Github repository prior to deployment</p>
+<p>Your Shiny app will have dependencies on various third-party R packages (e.g. <code>dplyr</code>). These packages change through time, and sometimes these changes are not backwards compatible. When we deploy your Shiny app, it is therefore essential to include a manifest of all of the package dependencies and their specific versions.</p>
+<p>The R package<code>packrat</code> automates this process. Before deploying your app, you need to call <code>packrat::snapshot()</code> to automatically create this manifest. You may want to call <code>packrat::clean()</code> to remove any dependencies that are no longer in use.</p>
+<p>This creates a file called <code>packrat/packrat.lock</code>. You need to ensure you have committed this to the Github repository prior to deployment.</p>
 </div>
 <div id="scan-organisation-and-deploy" class="section level3">
 <h3><span class="header-section-number">3.1.5</span> Scan organisation and deploy</h3>
-<p>The platform automatically scans git repositories in the <a href="https://github.com/moj-analytical-services/">moj-analytical-services</a> Github organisation to find repos which are ready to deploy. It does this by checking whether repositories contains two ‘magic’ files which control deployment: <code>Jenkinsfile</code> and <code>Dockerfile</code>.</p>
+<p>The platform automatically scans git repositories in the <a href="https://github.com/moj-analytical-services/">moj-analytical-services</a> Github organisation to find repos that are ready to deploy. It does this by checking whether repositories contains two ‘magic’ files that control deployment: <code>Jenkinsfile</code> and <code>Dockerfile</code>.</p>
 <p>To deploy your app, go <a href="https://jenkins.services.alpha.mojanalytics.xyz/job/moj-analytical-services-github/">here</a>.</p>
-<p>You will see a list of apps which have been detected. Find yours and click on the link:</p>
+<p>You will see a list of apps that have been detected. Find yours and click on the link:</p>
 <div class="figure">
 <img src="images/deploy_jenkins_interface.PNG" />
 
@@ -270,7 +270,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="grant-secure-access-to-the-app" class="section level3">
 <h3><span class="header-section-number">3.1.6</span> Grant secure access to the app</h3>
-<p>Users are granted access to the app using a list of email addresses separated with a space, comma, or semicolon.</p>
+<p>Users are granted access to the app using a list of email addresses separated with a space, comma or semicolon.</p>
 <p>To grant access, complete the form <a href="https://controlpanel.services.alpha.mojanalytics.xyz/job/grant-access-to-app/build?delay=0sec">here</a>, and press ‘Build’.</p>
 <p>For example, your form might look like this:</p>
 <div class="figure">
@@ -285,7 +285,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This section contains guidance for advanced users on app deployment.</p>
 <div id="what-is-run-when-i-deploy-a-shiny-app" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> What is run when I deploy a Shiny app?</h3>
-<p>When you deploy an app, the R Shiny server runs <code>shiny::runApp()</code> within the project. This is equivalent to what it does when you press ‘run’ in a R Shiny project within R Studio.</p>
+<p>When you deploy an app, the R Shiny server runs <code>shiny::runApp()</code> within the project. This is equivalent to when you press ‘run’ in a R Shiny project within R Studio.</p>
 <p>To understand how you can use this to deploy apps of different types, we can refer to the <code>runApp</code> <a href="https://shiny.rstudio.com/reference/shiny/latest/runApp.html">docs</a>. Specifically, the ‘arguments’ section is useful:</p>
 <pre><code>Arguments
     appDir  The application to run. Should be one of the following:
@@ -295,7 +295,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         A list with ui and server components.
         A Shiny app object created by shinyApp.</code></pre>
 <p>One of those options is <code>A directory containing app.R.</code>, which should contain: <code>An .R file containing a Shiny application, ending with an expression that produces a Shiny app object.</code>.</p>
-<p>This gives the developer a wider range of options of how to deploy a Shiny app, and makes it possible to deploy shiny apps which are bundled into pre-existing packages e.g. see <a href="https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20">here</a>.</p>
+<p>This gives the developer a wider range of options of how to deploy a Shiny app, and makes it possible to deploy shiny apps that are bundled into pre-existing packages e.g. see <a href="https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20">here</a>.</p>
 </div>
 <div id="can-i-change-my-build" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Can I change my build?</h3>

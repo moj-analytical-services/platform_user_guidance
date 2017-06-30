@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="Platform Guidance" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-06-29">
+<meta name="date" content="2017-06-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -179,7 +179,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">1.1</span> Getting an account</h2>
 <div id="sign-up-for-github" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> Sign up for github</h3>
-<p>In order to provide you with an account on the platform, we require your github username. If you do not already have an account, head off to <a href="https://github.com/" class="uri">https://github.com/</a>, and sign up. When signing up, use all the default options.</p>
+<p>In order to provide you with an account on the platform, we require your github username. If you do not already have an account, head to <a href="https://github.com/" class="uri">https://github.com/</a> and sign up. When signing up, use all the default options.</p>
 <p>If you already have a personal Github account, it will be easiest to just use that. We recommend new users use their <span class="citation">@justice</span> email address, but note that it’s also fine for your account to be attached to a personal email address.</p>
 </div>
 <div id="enable-two-factor-authentication." class="section level3">
@@ -190,7 +190,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="email-us-your-github-username" class="section level3">
 <h3><span class="header-section-number">1.1.3</span> Email us your Github username</h3>
-<p>Once you’ve got a Github account setup, email you account name <a href="mailto:Robin.Linacre@justice.gsi.gov.uk">Robin Linacre</a> and <a href="mailto:leanne.mills@digital.justice.gov.uk">Leanne Mills</a> who will create an Analytical Platform account for you.</p>
+<p>Once you’ve got a Github account setup, email you account name <a href="mailto:Robin.Linacre@justice.gsi.gov.uk">Robin Linacre</a> and <a href="mailto:leanne.mills@digital.justice.gov.uk">Leanne Mills</a> who will create your Analytical Platform account.</p>
 </div>
 <div id="read-the-security-operating-procedure" class="section level3">
 <h3><span class="header-section-number">1.1.4</span> Read the Security Operating Procedure</h3>
@@ -199,7 +199,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="accessing-your-platform-instance" class="section level2">
 <h2><span class="header-section-number">1.2</span> Accessing your platform instance</h2>
-<p>As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this: for example if your github username is <code>moj1234</code> your platform will be available at <code>https://moj1234-rstudio.tools.alpha.mojanalytics.xyz</code>.</p>
+<p>As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this- for example, if your github username is <code>moj1234</code> your platform will be available at <code>https://moj1234-rstudio.tools.alpha.mojanalytics.xyz</code>.</p>
 </div>
 <div id="configuring-git-and-github-for-use-on-the-analytical-platform" class="section level2">
 <h2><span class="header-section-number">1.3</span> Configuring Git and Github for use on the Analytical Platform</h2>
@@ -212,19 +212,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">1.3.1</span> Instructions</h3>
 <p>The steps are as follows:</p>
 <ol style="list-style-type: decimal">
-<li>Create an ‘SSH key’ within the platform. This is an unique code which will be stored in your account and mean you don’t need to enter your password when interacting with Github]</li>
+<li>Create an ‘SSH key’ within the platform. This is an unique code that will be stored in your account, meaning you will not need to enter your password when interacting with Github.</li>
 <li>Register the key with Github.</li>
-<li>Configure git to set you username and password</li>
+<li>Configure git to set you username and password.</li>
 </ol>
 <div id="step-1---create-an-ssh-key" class="section level4">
 <h4><span class="header-section-number">1.3.1.1</span> Step 1 - create an SSH key</h4>
-<p>You can create your SSH key within the platform</p>
+<p>You can create your SSH key within the platform-</p>
 <p>Tools -&gt; Global options -&gt; Git/SVN -&gt; Create RSA key:</p>
 <div class="figure">
 <img src="images/git_create_key.PNG" />
 
 </div>
-<p>You will be presented with dialog showing your key fingerprint, amongst other details. You don’t this information, and may close the window:</p>
+<p>You will be presented with dialog showing your key fingerprint, amongst other details. You do not need this information, therefore close the window:</p>
 <div class="figure">
 <img src="images/git_close.PNG" />
 
@@ -243,8 +243,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="step-2-register-the-key-with-github." class="section level4">
 <h4><span class="header-section-number">1.3.1.2</span> Step 2: Register the key with Github.</h4>
 <p>The next step is to register your SSH public key with Github, using the interface on <a href="https://www.github.com">www.github.com</a>. This guidance assumes you have copied your public key to your computer’s clipboard in the previous step.</p>
-<p>First navigate to the Github homepage. If you are not logged in already, you will need to log in.</p>
-<p>Access your settings, from the menu that appears when you click on your profile picture in the top right. Once in settings, access you SSH and GPG keys. <a href="https://github.com/settings/keys">Here’s</a> a direct link.</p>
+<p>First, navigate to the Github homepage. If you are not logged in already, you will need to log in.</p>
+<p>Access your settings from the menu that appears when you click on your profile picture in the top right. Once in settings, access your SSH and GPG keys. <a href="https://github.com/settings/keys">Here’s</a> a direct link.</p>
 <div class="figure">
 <img src="images/github_settings.PNG" />
 
@@ -254,7 +254,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <img src="images/github_new_ssh.PNG" />
 
 </div>
-<p>Paste your key into the dialogue that pops up and click ‘Add SSH key’. You can choose whatever name you like for the ‘title’ of the key.</p>
+<p>Paste your key into the dialogue that pops up and click ‘Add SSH key’. You can choose any name you like for the ‘title’ of the key.</p>
 <div class="figure">
 <img src="images/git_paste_key.PNG" />
 
@@ -265,9 +265,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <p>To start syncing your work with Github, Git needs to know a bit more about you.</p>
 <p>Within the platform, access the shell using Tools -&gt; Shell…</p>
-<p>You then need to type the following commands (substitute your name and email):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> config --global user.name <span class="st">&#39;Your Name&#39;</span>
-<span class="fu">git</span> config --global user.email <span class="st">&#39;your@email.com&#39;</span></code></pre></div>
+<p>Then, you need to type the following commands (substitute your name and email):</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> config --global user.name <span class="st">&#39;Your Name&#39;</span>
+<span class="kw">git</span> config --global user.email <span class="st">&#39;your@email.com&#39;</span></code></pre></div>
 <p>You’re now ready to start using Github!</p>
 </div>
 </div>
