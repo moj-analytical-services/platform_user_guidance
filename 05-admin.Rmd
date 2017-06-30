@@ -1,23 +1,23 @@
 # User Administration
 
 ## Teams and data access groups
-Users, teams, and data access are all managed from [Github Teams](https://github.com/orgs/moj-analytical-services/teams). 
+Users, teams and data access are all managed from [Github Teams](https://github.com/orgs/moj-analytical-services/teams). 
 
 Every team is automatically granted an S3 Bucket (a shared storage area). 
 
 Teams and the associated S3 Bucket can be used in two ways: 
 
-- As as a shared area for a team 
+- As as a shared area for a team. 
 - As "data access groups" where each member of the Github "team" is cleared to access a given dataset. 
 
 For how to access buckets from within R see [here][Importing data from S3 into R]. 
 
 ### Team creation
-See [Githubs Guidence](https://help.github.com/articles/creating-a-team/) for step-by-step guide on how to setup teams. A list of teams can be found [here](https://github.com/orgs/moj-analytical-services/teams). 
+See [Githubs Guidence](https://help.github.com/articles/creating-a-team/) for a step-by-step guide on how to setup teams. A list of teams can be found [here](https://github.com/orgs/moj-analytical-services/teams). 
 
 #### Team name
 
-When creating a team make sure that the name of the team is **clear, concise, and unique**. Particularly as this will be the name of the folder where the associated data will be stored. Team names may contain spaces, but we recommend that `you_use_underscores` or `you-use-dashes` instead. 
+When creating a team, make sure that the name of the team is **clear, concise, and unique**. Particularly as this will be the name of the folder where the associated data will be stored. Team names may contain spaces, but we recommend that `you_use_underscores` or `you-use-dashes` instead. 
 
 Teams can either be **teams** or **data access groups**. If a bucket contains a core data set then it should be uploaded to a **data access group** and not a **team** shared storage area. In practise, individuals will probably be members of multiple teams and data access groups. 
 
@@ -25,7 +25,7 @@ Importantly, data access groups should be <u>prefixed</u> **DAG**_team_name.
 
 #### Team visability
 
-Teams can be **visable** or **secret**. Visible teams can be viewed by all members of the organisation (those who are on Github but not on your team). Secret teams can only be viewed by members of that team.
+Teams can be **visable** or **secret**. Visible teams can be viewed by all members of the organisation (those who are on Github but not on your team), whereas secret teams can only be viewed by members of that team.
 
 #### Troubleshooting: I can't create teams 
 
@@ -41,9 +41,9 @@ Note that when a user is added they are also authorised to access the data. Simi
 
 ### Team member permissions
 
-Members of a team can be **Maintainers** or **Members**. See the [Github Guidance](https://help.github.com/articles/giving-team-maintainer-permissions-to-an-organization-member/) on how to set permissions for members of your team. 
+Members of a team can be **Maintainers** or **Members**. See the [Github Guidance](https://help.github.com/articles/giving-team-maintainer-permissions-to-an-organization-member/) on how to set permissions for team members. 
 
-Maintainers have the following additional permissions, and can be thought of as team administrators. 
+Maintainers have the following additional permissions, and can be thought of as team administrators:
 
 - Change the team's name and description
 - Change the team's visibility
