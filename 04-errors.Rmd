@@ -17,7 +17,7 @@ install.packages('pacman')
 pacman::p_unlock()
 ```
 
-If that doesn't work or if you have trouble installing the `pacman` package try the following:
+If that does not work, or if you have trouble installing the `pacman` package, try the following:
 
 >Go to 
 >Tools -> Shell
