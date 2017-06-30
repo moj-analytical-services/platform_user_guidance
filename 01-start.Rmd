@@ -4,7 +4,7 @@ This section will detail each step you need to go through to get setup on the  p
 
 ## Getting an account
 ### Sign up for github 
-In order to provide you with an account on the platform, we require your github username. If you do not already have an account, head off to https://github.com/, and sign up. When signing up, use all the default options.
+In order to provide you with an account on the platform, we require your github username. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options.
  
 If you already have a personal Github account, it will be easiest to just use that. We recommend new users use their @justice email address, but note that it’s also fine for your account to be attached to a personal email address.
  
@@ -17,7 +17,7 @@ For step-by-step instructions see the Github guidance for [authentication apps](
 
 ### Email us your Github username
 
-Once you've got a Github account setup, email you account name [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) and [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) who will create an Analytical Platform account for you. 
+Once you've got a Github account setup, email you account name [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) and [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) who will create your Analytical Platform account. 
 
 ### Read the Security Operating Procedure
 
@@ -25,7 +25,7 @@ Before you start using the platform, please read the [Security Operating Procedu
 
 ## Accessing your platform instance
 
-As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this: for example if your github username is `moj1234` your platform will be available at `https://moj1234-rstudio.tools.alpha.mojanalytics.xyz`. 
+As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this- for example, if your github username is `moj1234` your platform will be available at `https://moj1234-rstudio.tools.alpha.mojanalytics.xyz`. 
 
 ##  Configuring Git and Github for use on the Analytical Platform
 
@@ -43,21 +43,21 @@ You can find more detailed notes about setting up Git with R Studio [here](http:
 
 The steps are as follows:
 
-1. Create an 'SSH key' within the platform.  This is an unique code which will be stored in your account and mean you don't need to enter your password when interacting with Github]
+1. Create an 'SSH key' within the platform.  This is an unique code that will be stored in your account, meaning you will not need to enter your password when interacting with Github. 
 2. Register the key with Github.
-3. Configure git to set you username and password
+3. Configure git to set you username and password.
 
 
 
 #### Step 1 - create an SSH key
 
-You can create your SSH key within the platform 
+You can create your SSH key within the platform-  
 
 Tools -> Global options -> Git/SVN -> Create RSA key:
 
 ![](images/git_create_key.PNG)
 
-You will be presented with dialog showing your key fingerprint, amongst other details.  You don't this information, and may close the window:
+You will be presented with dialog showing your key fingerprint, amongst other details.  You do not need this information, therefore close the window:
 
 ![](images/git_close.PNG)
 
@@ -73,9 +73,9 @@ You can find more information about SSH keys in [this](https://help.github.com/a
 
 The next step is to register your SSH public key with Github, using the interface on [www.github.com](https://www.github.com).  This guidance assumes you have copied your public key to your computer's clipboard in the previous step.
 
-First navigate to the Github homepage.  If you are not logged in already, you will need to log in.
+First, navigate to the Github homepage.  If you are not logged in already, you will need to log in.
 
-Access your settings, from the menu that appears when you click on your profile picture in the top right.  Once in settings, access you SSH and GPG keys.  [Here's](https://github.com/settings/keys) a direct link.
+Access your settings from the menu that appears when you click on your profile picture in the top right.  Once in settings, access your SSH and GPG keys.  [Here's](https://github.com/settings/keys) a direct link.
 
 ![](images/github_settings.PNG)
 
@@ -83,11 +83,11 @@ Click on 'New SSH key'.
 
 ![](images/github_new_ssh.PNG)
 
-Paste your key into the dialogue that pops up and click 'Add SSH key'.  You can choose whatever name you like for the 'title' of the key.
+Paste your key into the dialogue that pops up and click 'Add SSH key'. You can choose any name you like for the 'title' of the key.
 
 ![](images/git_paste_key.PNG)
 
-The link with Github and the Analytical Platform is now established.  You can now return to the analytical platform.
+The link with Github and the Analytical Platform is now established. You can now return to the analytical platform.
 
 3. Configure your Git name and email address within the analytical platform.
 
@@ -95,7 +95,7 @@ To start syncing your work with Github, Git needs to know a bit more about you.
 
 Within the platform, access the shell using Tools -> Shell...
 
-You then need to type the following commands (substitute your name and email):
+Then, you need to type the following commands (substitute your name and email):
 
 ```bash
 git config --global user.name 'Your Name'
