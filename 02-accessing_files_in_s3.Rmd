@@ -3,7 +3,7 @@
 [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) is used as the
 primary storage area for large data files. In contrast to files in your
 personal home directory, files in S3 can be accessed by multiple
-Platform users. You will be only be able to access buckets that you have been granted access to (see [User Administration][User Administration]).
+Platform users. You will only be able to access buckets that you have been granted access to (see [User Administration][User Administration]).
 
 ## Importing data from S3 into R
 
@@ -45,7 +45,7 @@ further details.
 
 ### Where data is stored 
 
-An S3 bucket is automatically created for every team; for how to create and manage teams see [User Administration][User Administration]. By default all members of the team have **read and write** access to the bucket. 
+An S3 bucket is automatically created for every team; for how to create and manage teams see [User Administration][User Administration]. By default, all members of the team have **read and write** access to the bucket. 
 
 
 
@@ -53,11 +53,11 @@ An S3 bucket is automatically created for every team; for how to create and mana
 
 In Amazon S3 storage areas are refered to as 'Buckets'. To access the buckets you need to visit the Amazon management console with the following link: https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y (if you regularly upload data it may be worth bookmarking this link). 
 
-Authentication is managed by GitHub so if this is the first time you are connecting to the Amazon S3 Management console you may have to approve it. 
+Authentication is managed by GitHub, so if this is the first time you are connecting to the Amazon S3 Management console you may have to approve it. 
 
 You'll be able to see all buckets, **including** those you **do not** have access to. 
 
-To upload data, find the bucket you want to upload data to. From within the bucket you can create folders and upload files by following the on screen instructions. When uploading files **you will be prompted to set the settings for that file**. If this happens the default settings are okay. 
+To upload data, find the bucket you want to upload data to. Within the bucket you can create folders and upload files by following the on screen instructions. When uploading files **you will be prompted to set the settings for that file**. If this happens, the default settings are okay. 
 
 
 
@@ -70,10 +70,10 @@ To upload data, find the bucket you want to upload data to. From within the buck
 
 3. Select the bucket you wish to upload data to (the bucket will have the same name as the team, but spaces are replaced with `-` and all letters are lower case, so `Test Team` will have a bucket called `test-team`). While in **alpha** all buckets will also have the alpha prefix. 
    ​
-   The easiest way is to use the search: 
+The easiest way is to use the search: 
    ![](images/s3_bucket_search.gif)
 
-4. Use the interface to **create folders** or **upload files**. The default settings are fine. 
+4. Use the interface to **create folders** or **upload files**. Note: The default settings are fine. 
 
    ![](images/s3_bucket_upload.gif)
 
@@ -81,6 +81,6 @@ To upload data, find the bucket you want to upload data to. From within the buck
 
 #### Manipulating data
 
-You can also move, rename, and delete data using the S3 management console. Select the files by checking the text box then use the `More` button so see the options. 
+You can also move, rename and delete data using the S3 management console. Select the files by checking the text box, use the `More` button so see the options. 
 
 ![](images/s3_options.png)
