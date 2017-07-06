@@ -6,8 +6,8 @@ The following steps to deploy a Shiny app are as follows:
 2. In R Studio, start a new project from version control (file -> new project -> version control -> git).   TODO:  Remember to make sure the template has a Rproj that enables packrat
 3. Work on your Shiny app, using the template `ui.R` and `server.R` files.  
 4. Ensure that your package dependencies are snapshotted using `packrat::snapshot()`
-4. When you're ready to share it, access the [Services control panel](https://jenkins.services.alpha.mojanalytics.xyz/), find your app, and click 'Build now'.
-5. Once deployed, grant users access to the app by inserting their names into the [Grant user access control panel](https://controlpanel.services.alpha.mojanalytics.xyz/).
+5. When you're ready to share it, access the [Services control panel](https://jenkins.services.alpha.mojanalytics.xyz/), find your app, and click 'Build now'.
+6. Once deployed, grant users access to the app by inserting their names into the [Grant user access control panel](https://controlpanel.services.alpha.mojanalytics.xyz/).
 
 Step-by-step instructions are below. 
 
@@ -17,25 +17,18 @@ For advanced users, the guidance [here][Advanced deployment] discusses customisa
 
 ### Copy the template project into a new Github repository
 
-Begin by making a copy of the R Shiny template project.  
+1. Begin by making a copy of the R Shiny template project.  
 
-![](images/import_repository.PNG)
+2. Enter `https://github.com/moj-analytical-services/rshiny-template` in the input box entitled 'your old repository’s clone URL:'
 
-Enter `https://github.com/moj-analytical-services/rshiny-template` in the input box entitled 'your old repository’s clone URL:'
+3. Ensure the 'owner' of the new repository is 'moj-analytical-services' and choose a name for your repository:
 
-![](images/repo_clone_url.PNG)
+4. Make sure the repo is 'private' (this should be the default value):
 
-Ensure the 'owner' of the new repository is 'moj-analytical-services' and choose a name for your repository:
+5. Click 'Begin import'
 
-![](images/name_copied_repo.PNG)
 
-Make sure the repo is 'private' (this should be the default value):
-
-![](images/repo_private.PNG)
-
-and then click 'Begin import'
-
-![](images/begin_import.PNG)
+![](images/github_shiny_import.gif)
 
 
 ### In R Studio in the platform, create a new project from your new Github repository
@@ -44,7 +37,7 @@ In R Studio, navigate through the following menus:
 
 File -> New project -> Version control -> Git
 
-TODO:  Add screenshot of dialogue
+![](images/github_shiny_rstudio.gif)
 
 In 'Repository URL', enter the URL of the repository you just created.  This needs to be the SSH URL (starting with `git@github`), **NOT** the HTTPS url (which starts with `https`). Therefore, it is in the following format:
 
@@ -77,23 +70,23 @@ The R package`packrat` automates this process.  Before deploying your app, you n
 
 This creates a file called `packrat/packrat.lock`.  You need to ensure you have committed this to the Github repository prior to deployment.
 
+![](images/github_packrat_snapshot.gif)
+
 ### Scan organisation and deploy
 
 The platform automatically scans git repositories in the [moj-analytical-services](https://github.com/moj-analytical-services/) Github organisation to find repos that are ready to deploy.  It does this by checking whether repositories contains two 'magic' files that control deployment:  `Jenkinsfile` and `Dockerfile`.
 
 To deploy your app, go [here](https://jenkins.services.alpha.mojanalytics.xyz/job/moj-analytical-services-github/).  
 
-You will see a list of apps that have been detected.  Find yours and click on the link:
+1. You will see a list of apps that have been detected.  Find yours and click on the link with its name
 
-![](images/deploy_jenkins_interface.PNG)
+2. Then click on the branch you wish to deploy (this will usually be 'master')
 
-Then click on the branch you wish to deploy (this will usually be 'master'):
+3. Finally, click 'Build'
 
-![](images/deploy_jenkins_branch.PNG)
+![](images/jenkins_build.gif)
 
-Finally, click 'Build':
 
-![](images/deploy_jenkins_build.PNG)
 
 ### Grant secure access to the app
 
@@ -103,7 +96,7 @@ To grant access, complete the form [here](https://controlpanel.services.alpha.mo
 
 For example, your form might look like this:
 
-![](images/grant_access_email.PNG)
+![](images/jenkins_email.gif)
 
 NOTE:  Any characters which are not alphanumeric or dashes are converted into dashes.  
 
@@ -130,8 +123,8 @@ Arguments
 One of those options is `A directory containing app.R.`, which should contain: `An .R file containing a Shiny application, ending with an expression that produces a Shiny app object.`.
 
 This gives the developer a wider range of options of how to deploy a Shiny app, and makes it possible to deploy shiny apps that are bundled into pre-existing packages e.g. see [here](https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20).
- 
+
 ### Can I change my build?
- 
+
 Yes - if you know Docker, you are welcome to change the
 [Dockerfile](https://github.com/moj-analytical-services/rshiny-template/blob/master/Dockerfile).

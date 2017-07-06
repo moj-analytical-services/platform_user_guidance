@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
-  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="Platform Guidance" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-06-30">
+<meta name="date" content="2017-07-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -190,29 +190,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">3.1</span> Step-by-step guide to deplying an app</h2>
 <div id="copy-the-template-project-into-a-new-github-repository" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Copy the template project into a new Github repository</h3>
-<p>Begin by making a copy of the R Shiny template project.</p>
+<ol style="list-style-type: decimal">
+<li><p>Begin by making a copy of the R Shiny template project.</p></li>
+<li><p>Enter <code>https://github.com/moj-analytical-services/rshiny-template</code> in the input box entitled ‘your old repository’s clone URL:’</p></li>
+<li><p>Ensure the ‘owner’ of the new repository is ‘moj-analytical-services’ and choose a name for your repository:</p></li>
+<li><p>Make sure the repo is ‘private’ (this should be the default value):</p></li>
+<li><p>Click ‘Begin import’</p></li>
+</ol>
 <div class="figure">
-<img src="images/import_repository.PNG" />
-
-</div>
-<p>Enter <code>https://github.com/moj-analytical-services/rshiny-template</code> in the input box entitled ‘your old repository’s clone URL:’</p>
-<div class="figure">
-<img src="images/repo_clone_url.PNG" />
-
-</div>
-<p>Ensure the ‘owner’ of the new repository is ‘moj-analytical-services’ and choose a name for your repository:</p>
-<div class="figure">
-<img src="images/name_copied_repo.PNG" />
-
-</div>
-<p>Make sure the repo is ‘private’ (this should be the default value):</p>
-<div class="figure">
-<img src="images/repo_private.PNG" />
-
-</div>
-<p>and then click ‘Begin import’</p>
-<div class="figure">
-<img src="images/begin_import.PNG" />
+<img src="images/github_shiny_import.gif" />
 
 </div>
 </div>
@@ -220,7 +206,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">3.1.2</span> In R Studio in the platform, create a new project from your new Github repository</h3>
 <p>In R Studio, navigate through the following menus:</p>
 <p>File -&gt; New project -&gt; Version control -&gt; Git</p>
-<p>TODO: Add screenshot of dialogue</p>
+<div class="figure">
+<img src="images/github_shiny_rstudio.gif" />
+
+</div>
 <p>In ‘Repository URL’, enter the URL of the repository you just created. This needs to be the SSH URL (starting with <code>git@github</code>), <strong>NOT</strong> the HTTPS url (which starts with <code>https</code>). Therefore, it is in the following format:</p>
 <pre><code>git@github.com:moj-analytical-services/your_name_goes_here.git</code></pre>
 <p>R Studio will create a new project folder with all the template files in.</p>
@@ -247,24 +236,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Your Shiny app will have dependencies on various third-party R packages (e.g. <code>dplyr</code>). These packages change through time, and sometimes these changes are not backwards compatible. When we deploy your Shiny app, it is therefore essential to include a manifest of all of the package dependencies and their specific versions.</p>
 <p>The R package<code>packrat</code> automates this process. Before deploying your app, you need to call <code>packrat::snapshot()</code> to automatically create this manifest. You may want to call <code>packrat::clean()</code> to remove any dependencies that are no longer in use.</p>
 <p>This creates a file called <code>packrat/packrat.lock</code>. You need to ensure you have committed this to the Github repository prior to deployment.</p>
+<div class="figure">
+<img src="images/github_packrat_snapshot.gif" />
+
+</div>
 </div>
 <div id="scan-organisation-and-deploy" class="section level3">
 <h3><span class="header-section-number">3.1.5</span> Scan organisation and deploy</h3>
 <p>The platform automatically scans git repositories in the <a href="https://github.com/moj-analytical-services/">moj-analytical-services</a> Github organisation to find repos that are ready to deploy. It does this by checking whether repositories contains two ‘magic’ files that control deployment: <code>Jenkinsfile</code> and <code>Dockerfile</code>.</p>
 <p>To deploy your app, go <a href="https://jenkins.services.alpha.mojanalytics.xyz/job/moj-analytical-services-github/">here</a>.</p>
-<p>You will see a list of apps that have been detected. Find yours and click on the link:</p>
+<ol style="list-style-type: decimal">
+<li><p>You will see a list of apps that have been detected. Find yours and click on the link with its name</p></li>
+<li><p>Then click on the branch you wish to deploy (this will usually be ‘master’)</p></li>
+<li><p>Finally, click ‘Build’</p></li>
+</ol>
 <div class="figure">
-<img src="images/deploy_jenkins_interface.PNG" />
-
-</div>
-<p>Then click on the branch you wish to deploy (this will usually be ‘master’):</p>
-<div class="figure">
-<img src="images/deploy_jenkins_branch.PNG" />
-
-</div>
-<p>Finally, click ‘Build’:</p>
-<div class="figure">
-<img src="images/deploy_jenkins_build.PNG" />
+<img src="images/jenkins_build.gif" />
 
 </div>
 </div>
@@ -274,7 +261,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>To grant access, complete the form <a href="https://controlpanel.services.alpha.mojanalytics.xyz/job/grant-access-to-app/build?delay=0sec">here</a>, and press ‘Build’.</p>
 <p>For example, your form might look like this:</p>
 <div class="figure">
-<img src="images/grant_access_email.PNG" />
+<img src="images/jenkins_email.gif" />
 
 </div>
 <p>NOTE: Any characters which are not alphanumeric or dashes are converted into dashes.</p>
