@@ -100,6 +100,20 @@ For example, your form might look like this:
 
 NOTE:  Any characters which are not alphanumeric or dashes are converted into dashes.  
 
+
+
+## Accessing the app
+
+Only users who you have granted access to will be able to access your app - the url for the app will be the `respository-name` followed by `apps.alpha.mojanalytics.xyz`. 
+
+So for the example project above "test-shiny-project", the deployment url will be `https://test-shiny-project.apps.alpha.mojanalytics.xyz`. 
+
+Users will be prompted to enter their email and, if they are on the approved list, be sent a access link to view the app. 
+
+![](images/shiny_app_auth.gif)
+
+
+
 ## Advanced deployment
 
 This section contains guidance for advanced users on app deployment.
