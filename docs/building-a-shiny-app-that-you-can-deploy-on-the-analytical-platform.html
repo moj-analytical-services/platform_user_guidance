@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-07-06">
+<meta name="date" content="2017-07-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -137,9 +137,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.1.5" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#scan-organisation-and-deploy"><i class="fa fa-check"></i><b>3.1.5</b> Scan organisation and deploy</a></li>
 <li class="chapter" data-level="3.1.6" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#grant-secure-access-to-the-app"><i class="fa fa-check"></i><b>3.1.6</b> Grant secure access to the app</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#advanced-deployment"><i class="fa fa-check"></i><b>3.2</b> Advanced deployment</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#what-is-run-when-i-deploy-a-shiny-app"><i class="fa fa-check"></i><b>3.2.1</b> What is run when I deploy a Shiny app?</a></li>
-<li class="chapter" data-level="3.2.2" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#can-i-change-my-build"><i class="fa fa-check"></i><b>3.2.2</b> Can I change my build?</a></li>
+<li class="chapter" data-level="3.2" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#accessing-the-app"><i class="fa fa-check"></i><b>3.2</b> Accessing the app</a></li>
+<li class="chapter" data-level="3.3" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#advanced-deployment"><i class="fa fa-check"></i><b>3.3</b> Advanced deployment</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#what-is-run-when-i-deploy-a-shiny-app"><i class="fa fa-check"></i><b>3.3.1</b> What is run when I deploy a Shiny app?</a></li>
+<li class="chapter" data-level="3.3.2" data-path="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html"><a href="building-a-shiny-app-that-you-can-deploy-on-the-analytical-platform.html#can-i-change-my-build"><i class="fa fa-check"></i><b>3.3.2</b> Can I change my build?</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html"><i class="fa fa-check"></i><b>4</b> Common Errors and Sollutions</a><ul>
@@ -267,11 +268,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>NOTE: Any characters which are not alphanumeric or dashes are converted into dashes.</p>
 </div>
 </div>
+<div id="accessing-the-app" class="section level2">
+<h2><span class="header-section-number">3.2</span> Accessing the app</h2>
+<p>Only users who you have granted access to will be able to access your app - the url for the app will be the <code>respository-name</code> followed by <code>apps.alpha.mojanalytics.xyz</code>.</p>
+<p>So for the example project above “test-shiny-project”, the deployment url will be <code>https://test-shiny-project.apps.alpha.mojanalytics.xyz</code>.</p>
+<p>Users will be prompted to enter their email and, if they are on the approved list, be sent a access link to view the app.</p>
+<div class="figure">
+<img src="images/shiny_app_auth.gif" />
+
+</div>
+</div>
 <div id="advanced-deployment" class="section level2">
-<h2><span class="header-section-number">3.2</span> Advanced deployment</h2>
+<h2><span class="header-section-number">3.3</span> Advanced deployment</h2>
 <p>This section contains guidance for advanced users on app deployment.</p>
 <div id="what-is-run-when-i-deploy-a-shiny-app" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> What is run when I deploy a Shiny app?</h3>
+<h3><span class="header-section-number">3.3.1</span> What is run when I deploy a Shiny app?</h3>
 <p>When you deploy an app, the R Shiny server runs <code>shiny::runApp()</code> within the project. This is equivalent to when you press ‘run’ in a R Shiny project within R Studio.</p>
 <p>To understand how you can use this to deploy apps of different types, we can refer to the <code>runApp</code> <a href="https://shiny.rstudio.com/reference/shiny/latest/runApp.html">docs</a>. Specifically, the ‘arguments’ section is useful:</p>
 <pre><code>Arguments
@@ -285,7 +296,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This gives the developer a wider range of options of how to deploy a Shiny app, and makes it possible to deploy shiny apps that are bundled into pre-existing packages e.g. see <a href="https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20">here</a>.</p>
 </div>
 <div id="can-i-change-my-build" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Can I change my build?</h3>
+<h3><span class="header-section-number">3.3.2</span> Can I change my build?</h3>
 <p>Yes - if you know Docker, you are welcome to change the <a href="https://github.com/moj-analytical-services/rshiny-template/blob/master/Dockerfile">Dockerfile</a>.</p>
 
 </div>
