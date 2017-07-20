@@ -1,12 +1,43 @@
 # Quick Start
 
+Read this if you're new to the tools on the platform or want a quick introduction to how they fit together. 
+
 ## What is the platform?
 
 The platform is a collection of of-the-shelf data science and web tools that work together in order to allow you to develop analysis scripts and web apps. 
 
 ![](images/platform.png)
 
+Note that the below list contains **links to those services**. I recommend bookmarking them. 
+
 - **R-studio:** An indegrated development enviroment for the R programming language. In practise, this is where you develop code, import data from Amazon S3, and save (refered to as a "commit") your code to Github. When using the platform, you'll spend the bulk of your time in R-studio. 
-- **Github:** Primarily a place to store and track changes to code, but also used to create teams who have shared access to data and code.
-- **Amazon S3:** Simple cloud file storage where you can upload secure data to folders (called "buckets").
-- **Jenkins:** Automates the process of publishing your developed web content (stored in Github) to the web.  
+  `https://YOUR_USERNAME-rstudio.tools.alpha.mojanalytics.xyz`
+- [**Github:**](https://github.com/moj-analytical-services) Primarily a place to store and track changes to code, but also used to create teams who have shared access to data and code. 
+- [**Amazon S3:**](https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y) Simple cloud file storage where you can upload secure data to folders (called "buckets").
+- [**Jenkins:**](https://jenkins.services.alpha.mojanalytics.xyz/) Automates the process of publishing your developed web content (stored in Github) to the web. 
+
+##  FAQ: How do I?
+
+This section covers common tasks you may want to complete on the platform. If we've missed something then let us know. 
+
+##### Get access to the platform{-}
+
+See [Getting Started][Getting Started]. 
+
+##### Share data or code with a team{-}
+If you haven't set up a team yet, see [User Administration][User Administration]. 
+If you've got a team but want to upload data see [Uploading data to S3][Uploading data to S3]. 
+If you want to share code see guidance on [Github][Configuring Git and Github for use on the Analytical Platform]. 
+
+
+##### Upload and work with data{-}
+
+If the data isn't shared and is <100mb you can upload it directly to R-studio. 
+
+If you want to share the data or if its >100mb you'll need to [set up a team][User Administration], then upload data see [Uploading data to S3][Uploading data to S3]. 
+
+To import data from S3 into R for analysis see [Importing data from S3 into R][Importing data from S3 into R].
+
+##### Make an interactive dashboard and deploy it securely 
+
+See [Building a Shiny app that you can deploy on the Analytical Platform][Building a Shiny app that you can deploy on the Analytical Platform]. 
