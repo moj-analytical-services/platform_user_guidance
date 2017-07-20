@@ -69,8 +69,13 @@ To upload data, find the bucket you want to upload data to. Within the bucket yo
    ![](images/s3_service.png)
 
 3. Select the bucket you wish to upload data to (the bucket will have the same name as the team, but spaces are replaced with `-` and all letters are lower case, so `Test Team` will have a bucket called `test-team`). While in **alpha** all buckets will also have the alpha prefix. 
+
    ​
-The easiest way is to use the search: 
+
+   You'll notice two buckets are created; **use the one prefixed `alpha-`** and ignore the one prefixed `dev-`.
+
+   ​
+   **The easiest way is to use the search**: 
    ![](images/s3_bucket_search.gif)
 
 4. Use the interface to **create folders** or **upload files**. Note: The default settings are fine. 
