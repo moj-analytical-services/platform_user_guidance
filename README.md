@@ -5,8 +5,9 @@ View the user guidance here: https://moj-analytical-services.github.io/platform_
 
 ## To update
 
-Make changes to ##-chapter.Rmd files and commit to master.
-Travis will build the book for you automatically and publish to the `gh-pages` branch.
+Make changes to ##-chapter.Rmd files in a branch and pull request into master to publish. 
+
+Travis will build the book for you automatically and check that each commit renders in bookdown. Travis will only publish changes on the `master` branch, which are committed to the `gh-pages` branch.
 
 ## To render book locally
 
