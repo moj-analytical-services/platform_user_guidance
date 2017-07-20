@@ -1,6 +1,6 @@
 # Quick Start
 
-Read this if you're new to the tools on the platform or want a quick introduction to how they fit together. 
+Read this if you're new to the tools on the platform or require a quick introduction as to how they fit together. 
 
 ## What is the platform?
 
