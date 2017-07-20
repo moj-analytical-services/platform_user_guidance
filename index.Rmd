@@ -1,5 +1,7 @@
 ---
-title: "Platform Guidance"
+title: | 
+    | ![](images/logo.png)
+    | Platform Guidance
 author: "MoJ Analytical Services"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -12,6 +14,7 @@ biblio-style: apalike
 link-citations: yes
 description: "This repository contains user guidance for the Analytical Platform."
 ---
+
 
 # About this guidance {-}
 
