@@ -11,4 +11,4 @@ before_script:
 
 script:
   - ./_build.sh
-  - ./_deploy.sh
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./_deploy.sh; fi'
