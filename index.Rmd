@@ -1,9 +1,9 @@
---- 
+---
 title: "Platform Guidance"
 author: "MoJ Analytical Services"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: 
+output:
   bookdown::gitbook:
     config:
       sharing: no
@@ -15,14 +15,14 @@ description: "This repository contains user guidance for the Analytical Platform
 
 # About this guidance {-}
 
-Note that this guidance covers user interactions that are unique to the platform.  We do not provide guidance on how to use off-the-shelf tools like R Studio and Git as high quality training materials are available online for free, and training and coaching is also provided within Analytical Services Directorate. 
+Note that this guidance covers user interactions that are unique to the platform.  We do not provide guidance on how to use off-the-shelf tools like R Studio and Git as high quality training materials are available online for free, and training and coaching is also provided within Analytical Services Directorate.
 
-Some online training recommendations are provided throughout. 
+Some online training recommendations are provided throughout.
 
 ### Platform is in ALPHA development {-}
 The platform is being actively developed. We have given early access to the platform in order to receive feedback from the users. Please get in contact to **tell us what you like, what you don’t like, and what doesn’t work**.  
 
-You can do this by [email](mailto:robin.linacre@digital.justice.gov.uk), on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/C4PF7QAJZ/), or via [Github](https://github.com/ministryofjustice/analytics-platform-ops/issues). 
+You can do this by [email](mailto:robin.linacre@digital.justice.gov.uk), on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/C4PF7QAJZ/), or via [Github](https://github.com/ministryofjustice/analytics-platform-ops/issues).
 
 
 ### Reporting problems {-}
