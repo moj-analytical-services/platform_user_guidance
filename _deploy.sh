@@ -1,5 +1,6 @@
 #!/bin/bash
 if [[ $TRAVIS_BRANCH == 'master' ]]
+then
   # configure your name and email if you have not done so
   git config --global user.email "will@bowdit.ch"
   git config --global user.name "willbowditch"
