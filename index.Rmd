@@ -1,7 +1,6 @@
 ---
-title: | 
-    | ![](images/logo.png)
-    | Platform Guidance
+title: "![](images/logo.png)"
+subtitle: "Platform Guidance"
 author: "MoJ Analytical Services"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
