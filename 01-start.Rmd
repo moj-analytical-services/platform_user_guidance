@@ -1,23 +1,23 @@
 # Getting Started
 
-This section will detail each step you need to go through to get setup on the  platform. 
+This section will detail each step you need to go through to get setup on the  platform.
 
 ## Getting an account
-### Sign up for github 
+### Sign up for github
 In order to provide you with an account on the platform, we require your github username. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options.
- 
+
 If you already have a personal Github account, it will be easiest to just use that. We recommend new users use their @justice email address, but note that it’s also fine for your account to be attached to a personal email address.
- 
-### Enable two-factor authentication. 
-Once you’ve signed up, you must enable two factor authentication. This is what enables us to store OFFICIAL data in the platform. You can do this in your Github [settings page](https://github.com/settings/security). 
+
+### Enable two-factor authentication.
+Once you’ve signed up, you must enable two factor authentication. This is what enables us to store OFFICIAL data in the platform. You can do this in your Github [settings page](https://github.com/settings/security).
 
 You are given the option of doing this via SMS or an authentication app (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)) - choose whichever you prefer.
 
-For step-by-step instructions see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/). 
+For step-by-step instructions see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
 
 ### Email us your Github username
 
-Once you've got a Github account setup, email you account name [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) and [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) who will create your Analytical Platform account. 
+Once you've got a Github account setup, email you account name [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) and [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) who will create your Analytical Platform account.
 
 ### Read the Security Operating Procedure
 
@@ -25,7 +25,7 @@ Before you start using the platform, please read the [Security Operating Procedu
 
 ## Accessing your platform instance
 
-As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this- for example, if your github username is `moj1234` your platform will be available at `https://moj1234-rstudio.tools.alpha.mojanalytics.xyz`. 
+As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this- for example, if your github username is `moj1234` your platform will be available at `https://moj1234-rstudio.tools.alpha.mojanalytics.xyz`.
 
 ##  Configuring Git and Github for use on the Analytical Platform
 
@@ -39,11 +39,11 @@ This page covers only the initial setup.  For guidance on how to use Git to sync
 
 You can find more detailed notes about setting up Git with R Studio [here](http://adamwilson.us/RDataScience/GitSSHNotes.html) and [here](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
-### Instructions 
+### Instructions
 
 The steps are as follows:
 
-1. Create an 'SSH key' within the platform.  This is an unique code that will be stored in your account, meaning you will not need to enter your password when interacting with Github. 
+1. Create an 'SSH key' within the platform.  This is an unique code that will be stored in your account, meaning you will not need to enter your password when interacting with Github.
 2. Register the key with Github.
 3. Configure git to set you username and password.
 
@@ -55,17 +55,17 @@ You can create your SSH key within the platform-
 
 Tools -> Global options -> Git/SVN -> Create RSA key:
 
-![](images/git_create_key.PNG)
+![](images/start/git_create_key.PNG)
 
 You will be presented with dialog showing your key fingerprint, amongst other details.  You do not need this information, therefore close the window:
 
-![](images/git_close.PNG)
+![](images/start/git_close.PNG)
 
 For the next step, you'll need to copy and paste your SSH public key.  You can copy this to the clipboard using the following dialogues:
 
-![](images/git_view_public.PNG)
+![](images/start/git_view_public.PNG)
 
-![](images/git-public-key.PNG)
+![](images/start/git-public-key.PNG)
 
 You can find more information about SSH keys in [this](https://help.github.com/articles/connecting-to-github-with-ssh/) guidance.  
 
@@ -77,15 +77,15 @@ First, navigate to the Github homepage.  If you are not logged in already, you w
 
 Access your settings from the menu that appears when you click on your profile picture in the top right.  Once in settings, access your SSH and GPG keys.  [Here's](https://github.com/settings/keys) a direct link.
 
-![](images/github_settings.PNG)
+![](images/start/github_settings.PNG)
 
 Click on 'New SSH key'.
 
-![](images/github_new_ssh.PNG)
+![](images/start/github_new_ssh.PNG)
 
 Paste your key into the dialogue that pops up and click 'Add SSH key'. You can choose any name you like for the 'title' of the key.
 
-![](images/git_paste_key.PNG)
+![](images/start/git_paste_key.PNG)
 
 The link with Github and the Analytical Platform is now established. You can now return to the analytical platform.
 
@@ -102,7 +102,7 @@ git config --global user.name 'Your Name'
 git config --global user.email 'your@email.com'
 ```
 
-You're now ready to start using Github! 
+You're now ready to start using Github!
 
 ### Git training resources
 If you are new to github we recommend that you complete the basic tutorial [available here](https://try.github.io/levels/1/challenges/1).
