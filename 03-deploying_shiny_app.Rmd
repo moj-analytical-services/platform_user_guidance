@@ -1,4 +1,4 @@
-# Building a Shiny app that you can deploy on the Analytical Platform
+# Deploying a Shiny App
 
 The following steps to deploy a Shiny app are as follows:
 
@@ -9,7 +9,7 @@ The following steps to deploy a Shiny app are as follows:
 5. When you're ready to share it, access the [Services control panel](https://jenkins.services.alpha.mojanalytics.xyz/), find your app, and click 'Build now'.
 6. Once deployed, grant users access to the app by inserting their names into the [Grant user access control panel](https://controlpanel.services.alpha.mojanalytics.xyz/).
 
-Step-by-step instructions are below. 
+Step-by-step instructions are below.
 
 For advanced users, the guidance [here][Advanced deployment] discusses customisability and options for deployment.  Refer to this guidance if you are already familiar with git, packrat etc.
 
@@ -28,7 +28,7 @@ For advanced users, the guidance [here][Advanced deployment] discusses customisa
 5. Click 'Begin import'
 
 
-![](images/github_shiny_import.gif)
+![](images/shiny/github_shiny_import.gif)
 
 
 ### In R Studio in the platform, create a new project from your new Github repository
@@ -37,7 +37,7 @@ In R Studio, navigate through the following menus:
 
 File -> New project -> Version control -> Git
 
-![](images/github_shiny_rstudio.gif)
+![](images/shiny/github_shiny_rstudio.gif)
 
 In 'Repository URL', enter the URL of the repository you just created.  This needs to be the SSH URL (starting with `git@github`), **NOT** the HTTPS url (which starts with `https`). Therefore, it is in the following format:
 
@@ -53,9 +53,9 @@ You can now start building your Shiny app by editing `server.R` and `ui.R` files
 
 If you navigate to your new repository's home page (which will have a url in the form `https://github.com/moj-analytical-services/your_name_goes_here`), you can use the following buttons to access this url (make sure you click the 'ssh' button):
 
-![](images/use_ssh.PNG)
+![](images/shiny/use_ssh.PNG)
 
-![](images/ssh_url.PNG)
+![](images/shiny/ssh_url.PNG)
 
 
 ### Work on your app
@@ -64,13 +64,13 @@ You can now work on your Shiny app in R Studio as normal.  As you work, commit y
 
 ### Snapshot dependencies using packrat
 
-Your Shiny app will have dependencies on various third-party R packages (e.g. `dplyr`).  These packages change through time, and sometimes these changes are not backwards compatible.  When we deploy your Shiny app, it is therefore essential to include a manifest of all of the package dependencies and their specific versions. 
+Your Shiny app will have dependencies on various third-party R packages (e.g. `dplyr`).  These packages change through time, and sometimes these changes are not backwards compatible.  When we deploy your Shiny app, it is therefore essential to include a manifest of all of the package dependencies and their specific versions.
 
 The R package`packrat` automates this process.  Before deploying your app, you need to call `packrat::snapshot()` to automatically create this manifest.  You may want to call `packrat::clean()` to remove any dependencies that are no longer in use.
 
 This creates a file called `packrat/packrat.lock`.  You need to ensure you have committed this to the Github repository prior to deployment.
 
-![](images/github_packrat_snapshot.gif)
+![](images/shiny/github_packrat_snapshot.gif)
 
 ### Scan organisation and deploy
 
@@ -84,7 +84,7 @@ To deploy your app, go [here](https://jenkins.services.alpha.mojanalytics.xyz/jo
 
 3. Finally, click 'Build'
 
-![](images/jenkins_build.gif)
+![](images/shiny/jenkins_build.gif)
 
 
 
@@ -96,7 +96,7 @@ To grant access, complete the form [here](https://controlpanel.services.alpha.mo
 
 For example, your form might look like this:
 
-![](images/jenkins_email.gif)
+![](images/shiny/jenkins_email.gif)
 
 NOTE:  Any characters which are not alphanumeric or dashes are converted into dashes.  
 
@@ -104,13 +104,13 @@ NOTE:  Any characters which are not alphanumeric or dashes are converted into da
 
 ## Accessing the app
 
-Only users who you have granted access to will be able to access your app - the url for the app will be the `respository-name` followed by `apps.alpha.mojanalytics.xyz`. 
+Only users who you have granted access to will be able to access your app - the url for the app will be the `respository-name` followed by `apps.alpha.mojanalytics.xyz`.
 
-So for the example project above "test-shiny-project", the deployment url will be `https://test-shiny-project.apps.alpha.mojanalytics.xyz`. 
+So for the example project above "test-shiny-project", the deployment url will be `https://test-shiny-project.apps.alpha.mojanalytics.xyz`.
 
-Users will be prompted to enter their email and, if they are on the approved list, be sent a access link to view the app. 
+Users will be prompted to enter their email and, if they are on the approved list, be sent a access link to view the app.
 
-![](images/shiny_app_auth.gif)
+![](images/shiny/shiny_app_auth.gif)
 
 
 

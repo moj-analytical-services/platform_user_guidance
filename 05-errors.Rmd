@@ -1,0 +1,28 @@
+# Common Errors and Sollutions 
+## Failed to lock directory
+
+This error is typically encountered after a failed package install. 
+
+**Error**
+```
+ERROR: failed to lock directory ‘/home/robinl/R/library’ for modifying
+Try removing ‘/home/robinl/R/library/00LOCK-readr’
+```
+
+**Solution**
+
+Run the following:
+```r
+install.packages('pacman')
+pacman::p_unlock()
+```
+
+If that does not work, or if you have trouble installing the `pacman` package, try the following:
+
+>Go to 
+>Tools -> Shell
+>and type:
+>
+>`rm -rf /home/robinl/R/library/00LOCK-readr`
+>
+>See [here](http://linuxcommand.org/man_pages/rm1.html) for more details.  Be careful with the `rm` command!

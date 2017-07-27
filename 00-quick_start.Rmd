@@ -6,7 +6,7 @@ Read this if you're new to the tools on the platform or require a quick introduc
 
 The platform is a collection of of-the-shelf data science and web tools that work together in order to allow you to develop analysis scripts and web apps.
 
-![](images/platform.png)
+![](images/quick_start/platform.png)
 
 Note that the below list contains **links to those services**. I recommend bookmarking them.
 
@@ -40,4 +40,4 @@ To import data from S3 into R for analysis see [Importing data from S3 into R][I
 
 ##### Make an interactive dashboard and deploy it securely{-}
 
-See [Building a Shiny app that you can deploy on the Analytical Platform][Building a Shiny app that you can deploy on the Analytical Platform].
+See [Deploying a Shiny App ][Deploying a Shiny App ].
