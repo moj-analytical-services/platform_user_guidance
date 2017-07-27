@@ -40,4 +40,4 @@ To import data from S3 into R for analysis see [Importing data from S3 into R][I
 
 ##### Make an interactive dashboard and deploy it securely{-}
 
-See [Building a Shiny app that you can deploy on the Analytical Platform][Building a Shiny app that you can deploy on the Analytical Platform].
+See [Deploying a Shiny App ][Deploying a Shiny App ].

@@ -1,4 +1,4 @@
-# Building a Shiny app that you can deploy on the Analytical Platform
+# Deploying a Shiny App 
 
 The following steps to deploy a Shiny app are as follows:
 
