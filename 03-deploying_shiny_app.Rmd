@@ -17,7 +17,7 @@ For advanced users, the guidance [here][Advanced deployment] discusses customisa
 
 ### Copy the template project into a new Github repository
 
-1. Begin by making a copy of the R Shiny template project.  
+1. Begin by making a **copy** of the R Shiny template project on Github: https://github.com/new/import.  
 
 2. Enter `https://github.com/moj-analytical-services/rshiny-template` in the input box entitled 'your old repository’s clone URL:'
 
