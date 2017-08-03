@@ -58,9 +58,10 @@ To deploy your app, go [here](https://jenkins.services.alpha.mojanalytics.xyz/jo
 
 3. Click 'Build'.
 
-   1. If this is the first time you've deployed the webpage will be setup, but you'll need to build again to grant by running the build a second time.
+   1. If this is the first time you've deployed the webpage it will be setup as a private page (only accessable to users with a given email).  If you wish to grant access based on IP or make the website public you'll need to build again:
 
-   2. You will need to decide whether email authentication is enabled (where you grant users access on an email or if access is restricted based on network). For a ellaboration on this see [Access levels][Access levels].
+   2. For the second build you be asked whether email authentication should be enabled (where you grant users access using their email address or if access is restricted based on network). 
+      For a ellaboration on this see [Access levels][Access levels].
 
       In the example below, I grant unrestricted access to the app.  
 
