@@ -1,12 +1,8 @@
 language: r
-cache: packages
 
 env:
   global:
     - secure: "dKOsIMxd3mKU9nadQZG0huwvBdEniqcX+2qnWGvqXEBcM6WSmgFLpZDrybzO8ZRVHkv7wH1d3xf7p9b0Bo9C1SL91jq+xRbNgMbgCS+QsEVDu2ZoETjC9u140I1M7wU2d6S1uDsFUtV9vJ20gHfjdeJ7XBHpm+3ysBvxpSu5JUBho2p4J/07rOjI6lGtF0y7z9T0zhf8N2bfvN2CFqHJPd4YpeSCqKk/nsgfnnkIjvtfUW3vSmCXbDSDq64ZsUtNomRN48Gkw2n1L1Q+iZ+0ENehy9BUxSRFOjgt7ga+KukT70GMp0UPbaxFXiK01bM2QolPZJTJ0yawBwZP1nnvbwC1T3XR8xRFZq+zSyzsdUl6Dtpki19IUYivd9RdPSVS0OcdJa+7iZkCnGzomtoStRrzNcBDOhRusFvsY3knE63NnE8iR3wcbAdJx7dt294XzE5ZmosCOE5HU24OyJs/l1/OJznr/PH1t0Kf+JqmV/TJOm0iI6gr3wfEmHYZNvJ4soqktBNK19zn5peeKUB3oH8qm1y280LspHka9+v/d4c9WB8JLmM+gELlAgCYanULKcfQGL+Hy2VnZxw4Mxduc4NhHI5XR5xCXbBH8h2coNaueOT9WrH4YumgPGgbAvVPHMMF/3EFfIW3LzvUyPvYTqg27zinjXS54Y1kDdS94f0="
-
-r_github_packages:
-  - rstudio/bookdown
 
 install: "npm install"
 
