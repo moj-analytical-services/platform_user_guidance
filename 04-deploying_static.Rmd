@@ -72,9 +72,11 @@ To deploy your app, go [here](https://jenkins.services.alpha.mojanalytics.xyz/jo
 
 ## Accessing the app
 
-Depending on the settings you selected, the website will either be available directly or authenticated via email. The url for the app will be the `respository-name` followed by `apps.alpha.mojanalytics.xyz`.
+Depending on the settings you selected, the website will either be available directly or authenticated via email. The URL for the app will be the `respository-name` followed by `apps.alpha.mojanalytics.xyz`.
 
-So for the example project above "static-web-deploy", the deployment url will be `https://static-web-deploy.apps.alpha.mojanalytics.xyz`.
+So for the example project above "static-web-deploy", the deployment URL will be `https://static-web-deploy.apps.alpha.mojanalytics.xyz`.
+
+Note that characters that are not compatible with website URLs are converted. So, repositories with underscores in their name (e.g. `repository_name.apps...`) will be converted to dashes for the URL (e.g. `repository_name.apps...`). 
 
 ![](images/static/static_deployed.gif)
 
