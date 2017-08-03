@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="Platform Guidance" />
   <meta property="og:type" content="book" />
@@ -217,7 +217,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>Click ‘Begin import’</p></li>
 </ol>
 <div class="figure">
-<img src="images/shiny/github_shiny_import.gif" />
+<img src="images/shiny/github_shiny_import.gif" alt="" />
 
 </div>
 </div>
@@ -226,7 +226,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In R Studio, navigate through the following menus:</p>
 <p>File -&gt; New project -&gt; Version control -&gt; Git</p>
 <div class="figure">
-<img src="images/shiny/github_shiny_rstudio.gif" />
+<img src="images/shiny/github_shiny_rstudio.gif" alt="" />
 
 </div>
 <p>In ‘Repository URL’, enter the URL of the repository you just created. This needs to be the SSH URL (starting with <code>git@github</code>), <strong>NOT</strong> the HTTPS url (which starts with <code>https</code>). Therefore, it is in the following format:</p>
@@ -237,11 +237,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h4><span class="header-section-number">4.1.2.1</span> Further notes if you’re having trouble finding your new repo’s url</h4>
 <p>If you navigate to your new repository’s home page (which will have a url in the form <code>https://github.com/moj-analytical-services/your_name_goes_here</code>), you can use the following buttons to access this url (make sure you click the ‘ssh’ button):</p>
 <div class="figure">
-<img src="images/shiny/use_ssh.PNG" />
+<img src="images/shiny/use_ssh.PNG" alt="" />
 
 </div>
 <div class="figure">
-<img src="images/shiny/ssh_url.PNG" />
+<img src="images/shiny/ssh_url.PNG" alt="" />
 
 </div>
 </div>
@@ -256,7 +256,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The R package<code>packrat</code> automates this process. Before deploying your app, you need to call <code>packrat::snapshot()</code> to automatically create this manifest. You may want to call <code>packrat::clean()</code> to remove any dependencies that are no longer in use.</p>
 <p>This creates a file called <code>packrat/packrat.lock</code>. You need to ensure you have committed this to the Github repository prior to deployment.</p>
 <div class="figure">
-<img src="images/shiny/github_packrat_snapshot.gif" />
+<img src="images/shiny/github_packrat_snapshot.gif" alt="" />
 
 </div>
 </div>
@@ -273,7 +273,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In the example below, I grant unrestricted access to the app.</p></li>
 </ol>
 <div class="figure">
-<img src="images/static/static_deploy.gif" />
+<img src="images/static/static_deploy.gif" alt="" />
 
 </div>
 </div>
@@ -283,7 +283,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>To grant access, complete the form <a href="https://controlpanel.services.alpha.mojanalytics.xyz/job/grant-access-to-app/build?delay=0sec">here</a>, and press ‘Build’.</p>
 <p>For example, your form might look like this:</p>
 <div class="figure">
-<img src="images/shiny/jenkins_email.gif" />
+<img src="images/shiny/jenkins_email.gif" alt="" />
 
 </div>
 <p>NOTE: Any characters which are not alphanumeric or dashes are converted into dashes.</p>
@@ -296,7 +296,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Note that characters that are not compatible with website URLs are converted. So, repositories with underscores in their name (e.g. <code>repository_name.apps...</code>) will be converted to dashes for the URL (e.g. <code>repository_name.apps...</code>).</p>
 <p>Users will be prompted to enter their email and, if they are on the approved list, be sent a access link to view the app.</p>
 <div class="figure">
-<img src="images/shiny/shiny_app_auth.gif" />
+<img src="images/shiny/shiny_app_auth.gif" alt="" />
 
 </div>
 </div>
