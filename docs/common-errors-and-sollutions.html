@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Platform Guidance</title>
+  <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Platform Guidance" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This repository contains user guidance for the Analytical Platform." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Platform Guidance" />
+  
+  <meta name="twitter:description" content="This repository contains user guidance for the Analytical Platform." />
+  
+
+<meta name="author" content="MoJ Analytical Services">
+
+
+<meta name="date" content="2017-08-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="deploying-a-static-web-app.html">
+<link rel="next" href="user-administration.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this guidance</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#platform-is-in-alpha-development"><i class="fa fa-check"></i>Platform is in ALPHA development</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reporting-problems"><i class="fa fa-check"></i>Reporting problems</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="quick-start.html"><a href="quick-start.html"><i class="fa fa-check"></i><b>1</b> Quick Start</a><ul>
+<li class="chapter" data-level="1.1" data-path="quick-start.html"><a href="quick-start.html#what-is-the-platform"><i class="fa fa-check"></i><b>1.1</b> What is the platform?</a></li>
+<li class="chapter" data-level="1.2" data-path="quick-start.html"><a href="quick-start.html#faq-how-do-i"><i class="fa fa-check"></i><b>1.2</b> FAQ: How do I?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting Started</a><ul>
+<li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#getting-an-account"><i class="fa fa-check"></i><b>2.1</b> Getting an account</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="getting-started.html"><a href="getting-started.html#sign-up-for-github"><i class="fa fa-check"></i><b>2.1.1</b> Sign up for github</a></li>
+<li class="chapter" data-level="2.1.2" data-path="getting-started.html"><a href="getting-started.html#enable-two-factor-authentication."><i class="fa fa-check"></i><b>2.1.2</b> Enable two-factor authentication.</a></li>
+<li class="chapter" data-level="2.1.3" data-path="getting-started.html"><a href="getting-started.html#email-us-your-github-username"><i class="fa fa-check"></i><b>2.1.3</b> Email us your Github username</a></li>
+<li class="chapter" data-level="2.1.4" data-path="getting-started.html"><a href="getting-started.html#read-the-security-operating-procedure"><i class="fa fa-check"></i><b>2.1.4</b> Read the Security Operating Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#accessing-your-platform-instance"><i class="fa fa-check"></i><b>2.2</b> Accessing your platform instance</a></li>
+<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#configuring-git-and-github-for-use-on-the-analytical-platform"><i class="fa fa-check"></i><b>2.3</b> Configuring Git and Github for use on the Analytical Platform</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="getting-started.html"><a href="getting-started.html#instructions"><i class="fa fa-check"></i><b>2.3.1</b> Instructions</a></li>
+<li class="chapter" data-level="2.3.2" data-path="getting-started.html"><a href="getting-started.html#git-training-resources"><i class="fa fa-check"></i><b>2.3.2</b> Git training resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="getting-started.html"><a href="getting-started.html#before-you-start-writing-code"><i class="fa fa-check"></i><b>2.4</b> Before you start writing code</a></li>
+<li class="chapter" data-level="2.5" data-path="getting-started.html"><a href="getting-started.html#training-resources"><i class="fa fa-check"></i><b>2.5</b> Training Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><i class="fa fa-check"></i><b>3</b> Working with big datasets and sharing them: Accessing data in Amazon S3</a><ul>
+<li class="chapter" data-level="3.1" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#importing-data-from-s3-into-r"><i class="fa fa-check"></i><b>3.1</b> Importing data from S3 into R</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#user-interface"><i class="fa fa-check"></i><b>3.1.1</b> User Interface</a></li>
+<li class="chapter" data-level="3.1.2" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#command-line-tool"><i class="fa fa-check"></i><b>3.1.2</b> Command line tool</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#uploading-data-to-s3"><i class="fa fa-check"></i><b>3.2</b> Uploading data to S3</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#where-data-is-stored"><i class="fa fa-check"></i><b>3.2.1</b> Where data is stored</a></li>
+<li class="chapter" data-level="3.2.2" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#uploading-data"><i class="fa fa-check"></i><b>3.2.2</b> Uploading data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html"><i class="fa fa-check"></i><b>4</b> Deploying a Shiny App</a><ul>
+<li class="chapter" data-level="4.1" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#step-by-step-guide-to-deplying-an-app"><i class="fa fa-check"></i><b>4.1</b> Step-by-step guide to deplying an app</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#copy-the-template-project-into-a-new-github-repository"><i class="fa fa-check"></i><b>4.1.1</b> Copy the template project into a new Github repository</a></li>
+<li class="chapter" data-level="4.1.2" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#in-r-studio-in-the-platform-create-a-new-project-from-your-new-github-repository"><i class="fa fa-check"></i><b>4.1.2</b> In R Studio in the platform, create a new project from your new Github repository</a></li>
+<li class="chapter" data-level="4.1.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#work-on-your-app"><i class="fa fa-check"></i><b>4.1.3</b> Work on your app</a></li>
+<li class="chapter" data-level="4.1.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#snapshot-dependencies-using-packrat"><i class="fa fa-check"></i><b>4.1.4</b> Snapshot dependencies using packrat</a></li>
+<li class="chapter" data-level="4.1.5" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#scan-organisation-and-deploy"><i class="fa fa-check"></i><b>4.1.5</b> Scan organisation and deploy</a></li>
+<li class="chapter" data-level="4.1.6" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#grant-secure-access-to-the-app"><i class="fa fa-check"></i><b>4.1.6</b> Grant secure access to the app</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#accessing-the-app"><i class="fa fa-check"></i><b>4.2</b> Accessing the app</a></li>
+<li class="chapter" data-level="4.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#access-levels"><i class="fa fa-check"></i><b>4.3</b> Access Levels</a></li>
+<li class="chapter" data-level="4.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#advanced-deployment"><i class="fa fa-check"></i><b>4.4</b> Advanced deployment</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#what-is-run-when-i-deploy-a-shiny-app"><i class="fa fa-check"></i><b>4.4.1</b> What is run when I deploy a Shiny app?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#can-i-change-my-build"><i class="fa fa-check"></i><b>4.4.2</b> Can I change my build?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html"><i class="fa fa-check"></i><b>5</b> Deploying a Static Web App</a><ul>
+<li class="chapter" data-level="5.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#step-by-step-guide-to-depolying-an-static-web-app"><i class="fa fa-check"></i><b>5.1</b> Step-by-step guide to depolying an static web app</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#copy-the-template-project-into-a-new-github-repository-1"><i class="fa fa-check"></i><b>5.1.1</b> Copy the template project into a new Github repository</a></li>
+<li class="chapter" data-level="5.1.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#in-your-chosen-development-enviroment-clone-the-git-repository"><i class="fa fa-check"></i><b>5.1.2</b> In your chosen development enviroment, clone the git repository</a></li>
+<li class="chapter" data-level="5.1.3" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#work-on-your-web-app"><i class="fa fa-check"></i><b>5.1.3</b> Work on your web app</a></li>
+<li class="chapter" data-level="5.1.4" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#scan-organisation-and-deploy-1"><i class="fa fa-check"></i><b>5.1.4</b> Scan organisation and deploy</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#accessing-the-app-1"><i class="fa fa-check"></i><b>5.2</b> Accessing the app</a></li>
+<li class="chapter" data-level="5.3" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#access-levels-1"><i class="fa fa-check"></i><b>5.3</b> Access Levels</a></li>
+<li class="chapter" data-level="5.4" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#advanced-deployment-1"><i class="fa fa-check"></i><b>5.4</b> Advanced deployment</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#can-i-change-my-build-1"><i class="fa fa-check"></i><b>5.4.1</b> Can I change my build?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html"><i class="fa fa-check"></i><b>6</b> Common Errors and Sollutions</a><ul>
+<li class="chapter" data-level="6.1" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#failed-to-lock-directory"><i class="fa fa-check"></i><b>6.1</b> Failed to lock directory</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="user-administration.html"><a href="user-administration.html"><i class="fa fa-check"></i><b>7</b> User Administration</a><ul>
+<li class="chapter" data-level="7.1" data-path="user-administration.html"><a href="user-administration.html#teams-and-data-access-groups"><i class="fa fa-check"></i><b>7.1</b> Teams and data access groups</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="user-administration.html"><a href="user-administration.html#team-creation"><i class="fa fa-check"></i><b>7.1.1</b> Team creation</a></li>
+<li class="chapter" data-level="7.1.2" data-path="user-administration.html"><a href="user-administration.html#adding-or-removing-users-from-a-team"><i class="fa fa-check"></i><b>7.1.2</b> Adding or removing users from a team</a></li>
+<li class="chapter" data-level="7.1.3" data-path="user-administration.html"><a href="user-administration.html#team-member-permissions"><i class="fa fa-check"></i><b>7.1.3</b> Team member permissions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="security-operating-procedures.html"><a href="security-operating-procedures.html"><i class="fa fa-check"></i><b>8</b> Security Operating Procedures</a><ul>
+<li class="chapter" data-level="8.1" data-path="security-operating-procedures.html"><a href="security-operating-procedures.html#general-security-guidance"><i class="fa fa-check"></i><b>8.1</b> General security guidance</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Platform Guidance</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="common-errors-and-sollutions" class="section level1">
+<h1><span class="header-section-number">Part 6</span> Common Errors and Sollutions</h1>
+<div id="failed-to-lock-directory" class="section level2">
+<h2><span class="header-section-number">6.1</span> Failed to lock directory</h2>
+<p>This error is typically encountered after a failed package install.</p>
+<p><strong>Error</strong></p>
+<pre><code>ERROR: failed to lock directory ‘/home/robinl/R/library’ for modifying
+Try removing ‘/home/robinl/R/library/00LOCK-readr’</code></pre>
+<p><strong>Solution</strong></p>
+<p>Run the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;pacman&#39;</span>)
+pacman<span class="op">::</span><span class="kw">p_unlock</span>()</code></pre></div>
+<p>If that does not work, or if you have trouble installing the <code>pacman</code> package, try the following:</p>
+<blockquote>
+<p>Go to Tools -&gt; Shell and type:</p>
+<p><code>rm -rf /home/robinl/R/library/00LOCK-readr</code></p>
+<p>See <a href="http://linuxcommand.org/man_pages/rm1.html">here</a> for more details. Be careful with the <code>rm</code> command!</p>
+</blockquote>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="deploying-a-static-web-app.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="user-administration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
