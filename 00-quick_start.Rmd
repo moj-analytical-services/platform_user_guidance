@@ -2,9 +2,13 @@
 
 Read this if you're new to the tools on the platform or require a quick introduction as to how they fit together.
 
-## What is the platform?
+## What is the Analytical Platform?
 
-The platform is a collection of of-the-shelf data science and web tools that work together in order to allow you to develop analysis scripts and web apps.
+The Platform provides four main services to analysts:
+- Accesss to analytical software
+- Data storage and access to datasets
+- The ability to build and deploy interactive data products and websites
+- Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects.
 
 ![](images/quick_start/platform.png)
 
