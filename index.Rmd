@@ -29,4 +29,6 @@ You can do this by [email](mailto:robin.linacre@digital.justice.gov.uk), on the 
 
 ### Reporting problems {-}
 
+If you have issues with the platform, please raise an issue [here](https://github.com/ministryofjustice/analytics-platform)
+
 If you find any issues with the guidance, please report them [here](https://github.com/moj-analytical-services/platform_user_guidance/issues).
