@@ -21,14 +21,11 @@ Note that this guidance covers user interactions that are unique to the platform
 
 Some online training recommendations are provided throughout.
 
-### Platform is in ALPHA development {-}
+### Platform is in early development {-}
 The platform is being actively developed. We have given early access to the platform in order to receive feedback from the users. Please get in contact to **tell us what you like, what you don’t like, and what doesn’t work**.  
 
-You can do this by [email](mailto:robin.linacre@digital.justice.gov.uk), on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/C4PF7QAJZ/), or via [Github](https://github.com/ministryofjustice/analytics-platform-ops/issues).
+For bugs and problem reports, please raise a ticket via Github, [here](https://github.com/ministryofjustice/analytics-platform/issues).
 
-
-### Reporting problems {-}
-
-If you have issues with the platform, please raise an issue [here](https://github.com/ministryofjustice/analytics-platform)
+For immediate support, contact us by [email](mailto:robin.linacre@digital.justice.gov.uk), or on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/anaytical_platform/)
 
 If you find any issues with the guidance, please report them [here](https://github.com/moj-analytical-services/platform_user_guidance/issues).
