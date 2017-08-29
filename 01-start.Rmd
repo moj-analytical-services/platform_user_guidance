@@ -35,7 +35,7 @@ This guide runs through how to set up connectivity between your Analytical Platf
 
 Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.  
 
-This page covers only the initial setup.  For guidance on how to use Git to sync your work with Github, please see the following guidance [TODO:  Insert basic Git guidance].
+This page covers only the initial setup.  For guidance on how to use Git to sync your work with Github, please see the following guidance [here](http://r-pkgs.had.co.nz/git.html#git-rstudio).
 
 You can find more detailed notes about setting up Git with R Studio [here](http://adamwilson.us/RDataScience/GitSSHNotes.html) and [here](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
