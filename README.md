@@ -21,5 +21,4 @@ or from shell/terminal `make` (requires GNU Make):
 Rendered bookdown content will be in `/docs/`
 
 ### Notes on Travis
-Auto building requires Travis to have a Github token so it can write to the repo.
-To get this use the [Travis CI Client](https://github.com/travis-ci/travis.rb) and run `travis encrypt GITHUB_PAT=TOKEN` and update `env: global: - secure` secection of the `travis.yml` file. 
+Auto building requires Travis to be set up with and encrypted SSH key - see [here](https://oncletom.io/2016/travis-ssh-deploy/).
