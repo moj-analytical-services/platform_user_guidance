@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
-  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Platform Guidance" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-08-03">
+<meta name="date" content="2017-09-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -100,12 +100,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this guidance</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#platform-is-in-alpha-development"><i class="fa fa-check"></i>Platform is in ALPHA development</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reporting-problems"><i class="fa fa-check"></i>Reporting problems</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#platform-is-in-early-development"><i class="fa fa-check"></i>Platform is in early development</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="quick-start.html"><a href="quick-start.html"><i class="fa fa-check"></i><b>1</b> Quick Start</a><ul>
-<li class="chapter" data-level="1.1" data-path="quick-start.html"><a href="quick-start.html#what-is-the-platform"><i class="fa fa-check"></i><b>1.1</b> What is the platform?</a></li>
-<li class="chapter" data-level="1.2" data-path="quick-start.html"><a href="quick-start.html#faq-how-do-i"><i class="fa fa-check"></i><b>1.2</b> FAQ: How do I?</a></li>
+<li class="chapter" data-level="1.1" data-path="quick-start.html"><a href="quick-start.html#what-is-the-analytical-platform"><i class="fa fa-check"></i><b>1.1</b> What is the Analytical Platform?</a></li>
+<li class="chapter" data-level="1.2" data-path="quick-start.html"><a href="quick-start.html#why-should-i-use-the-analytical-platform"><i class="fa fa-check"></i><b>1.2</b> Why should I use the Analytical Platform?</a></li>
+<li class="chapter" data-level="1.3" data-path="quick-start.html"><a href="quick-start.html#faq-how-do-i"><i class="fa fa-check"></i><b>1.3</b> FAQ: How do I?</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting Started</a><ul>
 <li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#getting-an-account"><i class="fa fa-check"></i><b>2.1</b> Getting an account</a><ul>
@@ -163,6 +163,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="6" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html"><i class="fa fa-check"></i><b>6</b> Common Errors and Sollutions</a><ul>
 <li class="chapter" data-level="6.1" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#failed-to-lock-directory"><i class="fa fa-check"></i><b>6.1</b> Failed to lock directory</a></li>
+<li class="chapter" data-level="6.2" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#unable-to-access-data-using-aws.s3-package."><i class="fa fa-check"></i><b>6.2</b> Unable to access data using <code>aws.s3</code> package.</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="user-administration.html"><a href="user-administration.html"><i class="fa fa-check"></i><b>7</b> User Administration</a><ul>
 <li class="chapter" data-level="7.1" data-path="user-administration.html"><a href="user-administration.html#teams-and-data-access-groups"><i class="fa fa-check"></i><b>7.1</b> Teams and data access groups</a><ul>
@@ -194,23 +195,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="quick-start" class="section level1">
 <h1><span class="header-section-number">Part 1</span> Quick Start</h1>
 <p>Read this if you’re new to the tools on the platform or require a quick introduction as to how they fit together.</p>
-<div id="what-is-the-platform" class="section level2">
-<h2><span class="header-section-number">1.1</span> What is the platform?</h2>
-<p>The platform is a collection of of-the-shelf data science and web tools that work together in order to allow you to develop analysis scripts and web apps.</p>
+<div id="what-is-the-analytical-platform" class="section level2">
+<h2><span class="header-section-number">1.1</span> What is the Analytical Platform?</h2>
+<p>The Platform provides four main services to analysts: - Accesss to analytical software. - Data storage and access to datasets. - The ability to build and deploy interactive data products and websites. - Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects.</p>
 <div class="figure">
 <img src="images/quick_start/platform.png" alt="" />
 
 </div>
 <p>Note that the below list contains <strong>links to those services</strong>. I recommend bookmarking them.</p>
 <ul>
-<li><strong>R-studio:</strong> An indegrated development enviroment for the R programming language. In practise, this is where you develop code, import data from Amazon S3, and save (refered to as a “commit”) your code to Github. When using the platform, you’ll spend the bulk of your time in R-studio. <code>https://YOUR_USERNAME-rstudio.tools.alpha.mojanalytics.xyz</code></li>
-<li><a href="https://github.com/moj-analytical-services"><strong>Github:</strong></a> Primarily a place to store and track changes to code, but also used to create teams who have shared access to data and code.</li>
-<li><a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y"><strong>Amazon S3:</strong></a> Simple cloud file storage where you can upload secure data to folders (called “buckets”).</li>
+<li><strong>R Studio:</strong> Allows you to write R code. You can read in data from Amazon S3, and save (refered to as a “commit”) your code to Github. When using the platform, you’ll spend the bulk of your time in R Studio. <code>https://YOUR_USERNAME-rstudio.tools.alpha.mojanalytics.xyz</code></li>
+<li><a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y"><strong>Amazon S3:</strong></a> Cloud file storage where you can upload secure data to folders (called “buckets”), with no limit on storage space.</li>
 <li><a href="https://jenkins.services.alpha.mojanalytics.xyz/"><strong>Jenkins:</strong></a> Automates the process of publishing your developed web content (stored in Github) to the web.</li>
+<li><a href="https://github.com/moj-analytical-services"><strong>Github:</strong></a> Primarily a place to store and collaborate on projects (code), but also used to create teams who have shared access to data and code.</li>
+</ul>
+</div>
+<div id="why-should-i-use-the-analytical-platform" class="section level2">
+<h2><span class="header-section-number">1.2</span> Why should I use the Analytical Platform?</h2>
+<p>The Platform provides a number of advantages over existing analytical infrastructure:</p>
+<ul>
+<li>It provides access to the latest versions of modern analytical software, such as R Studio,</li>
+<li>It provides greater computational resources (12Gb RAM and fast CPUs) than DOM1 machines.</li>
+<li>It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS’s system), and Macbooks.</li>
+<li>It allows analysts to securely deploy data products such as R Shiny applications and javascript data visualisations.</li>
+<li>The platform is hosted in the cloud, which means it is scalable. Data storage is unlimited, and computational resource can be scaled to demand.</li>
 </ul>
 </div>
 <div id="faq-how-do-i" class="section level2">
-<h2><span class="header-section-number">1.2</span> FAQ: How do I?</h2>
+<h2><span class="header-section-number">1.3</span> FAQ: How do I?</h2>
 <p>This section covers common tasks you may want to complete on the platform. If we’ve missed something then let us know.</p>
 <div id="get-access-to-the-platform" class="section level5 unnumbered">
 <h5>Get access to the platform</h5>
@@ -222,7 +234,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="upload-and-work-with-data" class="section level5 unnumbered">
 <h5>Upload and work with data</h5>
-<p>If the data isn’t shared and is &lt;100mb you can upload it directly to R-studio.</p>
+<p>If the data isn’t shared and is &lt;100mb you can upload it directly to R Studio.</p>
 <p>If you want to share the data or if its &gt;100mb you’ll need to <a href="user-administration.html#user-administration">set up a team</a>, then upload data see <a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#uploading-data-to-s3">Uploading data to S3</a>.</p>
 <p>To import data from S3 into R for analysis see <a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html#importing-data-from-s3-into-r">Importing data from S3 into R</a>.</p>
 </div>
