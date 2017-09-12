@@ -14,7 +14,7 @@ then
 
   # clone the repository to the book-output directory
   git clone -b gh-pages \
-    https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git \
+    git@github.com:moj-analytical-services/platform_user_guidance.git \
     book-output
   cd book-output
   git rm -rf *
