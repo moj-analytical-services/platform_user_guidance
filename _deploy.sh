@@ -1,9 +1,16 @@
 #!/bin/bash
+
+# Start ssh agent and add key
+eval "$(ssh-agent -s)" # Start the ssh agent
+chmod 600 deploy_rsa
+ssh-add deploy_rsa
+
+
 if [[ $TRAVIS_BRANCH == 'master' ]]
 then
   # configure your name and email if you have not done so
-  git config --global user.email "will@bowdit.ch"
-  git config --global user.name "willbowditch"
+  git config --global user.email "robinlinacre@hotmail.com"
+  git config --global user.name "Robin Linacre"
 
   # clone the repository to the book-output directory
   git clone -b gh-pages \
