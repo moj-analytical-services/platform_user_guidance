@@ -348,18 +348,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">4.4.4</span> Troubleshooting using Docker (installed locally on a Macbook)</h3>
 <p>First <code>cd</code> into the directory containing the Dockerfile. Then run:</p>
 <p><code>docker build . -t your_name_here</code> (<code>your_name_here</code> is the tag you want to give to the image)</p>
-<p>By building the image, it will test the installation of of the packrat dependencies into an identical Linux environment to what’s on the platform.</p>
+<p>By building the image, it will test the installation of the packrat dependencies and package your shiny app into a Linux environment identical to what’s on the platform.</p>
 <p>Run the Shiny server in a linux container with <code>docker run -p 80:80 your_name_here</code></p>
 <p>You can then go to <a href="http://127.0.0.1:80" class="uri">http://127.0.0.1:80</a> to see if the app is working.</p>
 <p>If it is not, you can investigate what’s going on in the server using:</p>
 <p><code>docker run -it your_name_here bash</code></p>
-<p>First, change the logging settings to make the error logs more verbose:</p>
-<pre><code>export SHINY_LOG_LEVEL=TRACE</code></pre>
+<p>Install the nano text editor:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">apt-get</span> update
+<span class="kw">apt-get</span> install nano</code></pre></div>
 <p>Then edit the config file at <code>nano /etc/shiny-server/shiny-server.conf</code> to add the following two lines at the beginning:</p>
 <pre><code>access_log /var/log/shiny-server/access.log tiny;
 preserve_logs true;</code></pre>
-<p>Finally start the shiny server:</p>
-<pre><code>/bin/shiny-server.sh</code></pre>
+<p>Save by pressing <code>[CTRL]+[O]</code> and then exit with <code>[CTRL]+[X]</code>.</p>
+<p>Finally change the log level to be more verbose and start the shiny server:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">export</span> <span class="ot">SHINY_LOG_LEVEL=</span>TRACE
+<span class="kw">/bin/shiny-server.sh</span></code></pre></div>
 <p>For further details see the <a href="http://docs.rstudio.com/shiny-server">rshiny-server documetation</a></p>
 </div>
 <div id="if-all-else-fails" class="section level3">
