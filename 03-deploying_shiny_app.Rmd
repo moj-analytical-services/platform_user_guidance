@@ -182,7 +182,7 @@ First `cd` into the directory containing the Dockerfile.  Then run:
 
 `docker build . -t your_name_here`    (`your_name_here` is the tag you want to give to the image)
 
-By building the image, it will test the installation of of the packrat dependencies into an identical Linux environment to what's on the platform.
+By building the image, it will test the installation of the packrat dependencies and package your shiny app into a Linux environment identical to what's on the platform.
 
 Run the Shiny server in a linux container with 
 `docker run -p 80:80 your_name_here`
@@ -193,11 +193,13 @@ If it is not, you can investigate what's going on in the server using:
 
 `docker run -it your_name_here bash`
 
-First, change the logging settings to make the error logs more verbose:
+Install the nano text editor:
 
+```bash
+apt-get update
+apt-get install nano
 ```
-export SHINY_LOG_LEVEL=TRACE
-```
+
 Then edit the config file at `nano /etc/shiny-server/shiny-server.conf` to add the following two lines at the beginning:
 
 ```
@@ -205,9 +207,12 @@ access_log /var/log/shiny-server/access.log tiny;
 preserve_logs true;
 ```
 
-Finally start the shiny server:
+Save by pressing `[CTRL]+[O]` and then exit with `[CTRL]+[X]`.
 
-```
+Finally change the log level to be more verbose and start the shiny server:
+
+```bash
+export SHINY_LOG_LEVEL=TRACE
 /bin/shiny-server.sh
 ```
 For further details see the  [rshiny-server documetation](http://docs.rstudio.com/shiny-server)
