@@ -148,6 +148,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.4.2" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#can-i-change-my-build"><i class="fa fa-check"></i><b>4.4.2</b> Can I change my build?</a></li>
 <li class="chapter" data-level="4.4.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#how-can-i-troubleshoot-problems"><i class="fa fa-check"></i><b>4.4.3</b> How can I troubleshoot problems?</a></li>
 <li class="chapter" data-level="4.4.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#troubleshooting-using-docker-installed-locally-on-a-macbook"><i class="fa fa-check"></i><b>4.4.4</b> Troubleshooting using Docker (installed locally on a Macbook)</a></li>
+<li class="chapter" data-level="4.4.5" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#if-all-else-fails"><i class="fa fa-check"></i><b>4.4.5</b> If all else fails…</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html"><i class="fa fa-check"></i><b>5</b> Deploying a Static Web App</a><ul>
@@ -345,12 +346,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="troubleshooting-using-docker-installed-locally-on-a-macbook" class="section level3">
 <h3><span class="header-section-number">4.4.4</span> Troubleshooting using Docker (installed locally on a Macbook)</h3>
-<p>First <code>cd</code> into the directory containing the Dockerfile <code>docker build . -t your_name_here</code> (your_name_here is the tag you want to give to the image)</p>
+<p>First <code>cd</code> into the directory containing the Dockerfile. Then run:</p>
+<p><code>docker build . -t your_name_here</code> (<code>your_name_here</code> is the tag you want to give to the image)</p>
 <p>By building the image, it will test the installation of of the packrat dependencies into an identical Linux environment to what’s on the platform.</p>
-<p>Run the shiny server in a linux container with <code>docker run -p 80:80 imagename</code></p>
+<p>Run the Shiny server in a linux container with <code>docker run -p 80:80 your_name_here</code></p>
 <p>You can then go to <a href="http://127.0.0.1:80" class="uri">http://127.0.0.1:80</a> to see if the app is working.</p>
 <p>If it is not, you can investigate what’s going on in the server using:</p>
-<p><code>docker run -it imagename bash</code></p>
+<p><code>docker run -it your_name_here bash</code></p>
 <p>First, change the logging settings to make the error logs more verbose:</p>
 <pre><code>export SHINY_LOG_LEVEL=TRACE</code></pre>
 <p>Then edit the config file at <code>nano /etc/shiny-server/shiny-server.conf</code> to add the following two lines at the beginning:</p>
@@ -359,6 +361,19 @@ preserve_logs true;</code></pre>
 <p>Finally start the shiny server:</p>
 <pre><code>/bin/shiny-server.sh</code></pre>
 <p>For further details see the <a href="http://docs.rstudio.com/shiny-server">rshiny-server documetation</a></p>
+</div>
+<div id="if-all-else-fails" class="section level3">
+<h3><span class="header-section-number">4.4.5</span> If all else fails…</h3>
+<p>Sometimes, the following steps can resolve problems with <code>packrat.lock</code>:</p>
+<ul>
+<li>Delete the entire <code>packrat</code> directory</li>
+<li>Comment out all code in the project</li>
+<li>Enable packrat with <code>packrat::init()</code></li>
+<li>Freeze packrat dependencies with <code>packrat::snapshot()</code></li>
+<li>Uncomment all code in project, and install dependencies one at a time using <code>install.packages()</code></li>
+<li><code>packrat::snapshot()</code> again</li>
+<li>Try redeploying</li>
+</ul>
 
 </div>
 </div>
