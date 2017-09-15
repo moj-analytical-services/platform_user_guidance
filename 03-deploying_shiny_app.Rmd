@@ -191,7 +191,7 @@ You can then go to http://127.0.0.1:80 to see if the app is working.
 
 If it is not, you can investigate what's going on in the server using:
 
-`docker run -it your_name_here bash`
+`docker run -it -p 80:80 your_name_here bash`
 
 Install the nano text editor:
 
