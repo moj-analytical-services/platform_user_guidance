@@ -217,6 +217,11 @@ export SHINY_LOG_LEVEL=TRACE
 ```
 For further details see the  [rshiny-server documetation](http://docs.rstudio.com/shiny-server)
 
+Now we need another terminal window, to get back into the docker container
+
+`docker ps` to find the name of the container and then 
+
+`docker exec -it container_name bash `
 
 ### If all else fails...
 
