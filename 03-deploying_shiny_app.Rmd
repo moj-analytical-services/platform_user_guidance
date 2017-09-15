@@ -223,6 +223,8 @@ Now we need another terminal window, to get back into the docker container
 
 `docker exec -it container_name bash `
 
+Logs are then written to `cd /var/log/shiny-server/`
+
 ### If all else fails...
 
 Sometimes, the following steps can resolve problems with `packrat.lock`:
