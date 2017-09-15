@@ -364,6 +364,10 @@ preserve_logs true;</code></pre>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">export</span> <span class="ot">SHINY_LOG_LEVEL=</span>TRACE
 <span class="kw">/bin/shiny-server.sh</span></code></pre></div>
 <p>For further details see the <a href="http://docs.rstudio.com/shiny-server">rshiny-server documetation</a></p>
+<p>Now we need another terminal window, to get back into the docker container</p>
+<p><code>docker ps</code> to find the name of the container and then</p>
+<p><code>docker exec -it container_name bash</code></p>
+<p>Logs are then written to <code>cd /var/log/shiny-server/</code></p>
 </div>
 <div id="if-all-else-fails" class="section level3">
 <h3><span class="header-section-number">4.4.5</span> If all else fails…</h3>
