@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-09-14">
+<meta name="date" content="2017-09-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -352,7 +352,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Run the Shiny server in a linux container with <code>docker run -p 80:80 your_name_here</code></p>
 <p>You can then go to <a href="http://127.0.0.1:80" class="uri">http://127.0.0.1:80</a> to see if the app is working.</p>
 <p>If it is not, you can investigate what’s going on in the server using:</p>
-<p><code>docker run -it your_name_here bash</code></p>
+<p><code>docker run -it -p 80:80 your_name_here bash</code></p>
 <p>Install the nano text editor:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">apt-get</span> update
 <span class="kw">apt-get</span> install nano</code></pre></div>
