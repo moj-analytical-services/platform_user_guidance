@@ -1,7 +1,5 @@
 # Quick Start
 
-Read this if you're new to the tools on the platform or require a quick introduction as to how they fit together.
-
 ## What is the Analytical Platform?
 
 The Platform provides four main services to analysts:
