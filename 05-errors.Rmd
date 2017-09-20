@@ -1,4 +1,5 @@
 # Common Errors and Sollutions 
+
 ## Failed to lock directory
 
 This error is typically encountered after a failed package install. 
@@ -26,6 +27,15 @@ If that does not work, or if you have trouble installing the `pacman` package, t
 >`rm -rf /home/robinl/R/library/00LOCK-readr`
 >
 >See [here](http://linuxcommand.org/man_pages/rm1.html) for more details.  Be careful with the `rm` command!
+
+## Platform two factor authentication failing
+
+If the clock on your phone is inaccurate, then the two factor authentication codes it produces may be out of sync, and therefore not work.
+
+**Solution**
+
+Ensure that your phone's clock is up to date.  Most phones will sync time automatically with an internet time server, but if you don't have internet access, you can update the clock manually.  Try and make sure it's in sync with your DOM1 clock.
+
 
 ## Unable to access data using `aws.s3` package.
 
