@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-09-19">
+<meta name="date" content="2017-09-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -166,7 +166,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="6" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html"><i class="fa fa-check"></i><b>6</b> Common Errors and Sollutions</a><ul>
 <li class="chapter" data-level="6.1" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#failed-to-lock-directory"><i class="fa fa-check"></i><b>6.1</b> Failed to lock directory</a></li>
-<li class="chapter" data-level="6.2" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#unable-to-access-data-using-aws.s3-package."><i class="fa fa-check"></i><b>6.2</b> Unable to access data using <code>aws.s3</code> package.</a></li>
+<li class="chapter" data-level="6.2" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#platform-two-factor-authentication-failing"><i class="fa fa-check"></i><b>6.2</b> Platform two factor authentication failing</a></li>
+<li class="chapter" data-level="6.3" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#unable-to-access-data-using-aws.s3-package."><i class="fa fa-check"></i><b>6.3</b> Unable to access data using <code>aws.s3</code> package.</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="user-administration.html"><a href="user-administration.html"><i class="fa fa-check"></i><b>7</b> User Administration</a><ul>
 <li class="chapter" data-level="7.1" data-path="user-administration.html"><a href="user-administration.html#teams-and-data-access-groups"><i class="fa fa-check"></i><b>7.1</b> Teams and data access groups</a><ul>
@@ -214,8 +215,14 @@ pacman::<span class="kw">p_unlock</span>()</code></pre></div>
 <p>See <a href="http://linuxcommand.org/man_pages/rm1.html">here</a> for more details. Be careful with the <code>rm</code> command!</p>
 </blockquote>
 </div>
+<div id="platform-two-factor-authentication-failing" class="section level2">
+<h2><span class="header-section-number">6.2</span> Platform two factor authentication failing</h2>
+<p>If the clock on your phone is inaccurate, then the two factor authentication codes it produces may be out of sync, and therefore not work.</p>
+<p><strong>Solution</strong></p>
+<p>Ensure that your phone’s clock is up to date. Most phones will sync time automatically with an internet time server, but if you don’t have internet access, you can update the clock manually. Try and make sure it’s in sync with your DOM1 clock.</p>
+</div>
 <div id="unable-to-access-data-using-aws.s3-package." class="section level2">
-<h2><span class="header-section-number">6.2</span> Unable to access data using <code>aws.s3</code> package.</h2>
+<h2><span class="header-section-number">6.3</span> Unable to access data using <code>aws.s3</code> package.</h2>
 <p>Unfortuntely <code>aws.s3</code> does support the granular file access permission model we are using on the platform. Specifically, it is unable to automatically provide the user with the right file access credentials. We provide <code>s3tools</code> as a solution to this problem, which manages your credentials for you.</p>
 <p>We recommend that, where possible, users should use <code>s3tools</code>. Where this is not possible, include a call to <code>s3tools::get_credentials()</code> prior to making the call to <code>aws.s3</code>, and this will guarantee that fresh credentials are generated before your call to <code>aws.s3</code></p>
 
