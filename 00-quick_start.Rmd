@@ -3,12 +3,13 @@
 ## What is the Analytical Platform?
 
 The Platform provides four main services to analysts:
+
 - Accesss to analytical software.
 - Data storage and access to datasets.
 - The ability to build and deploy interactive data products and websites.
 - Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.
 
-Note that the below list contains **links to those services**. I recommend bookmarking them.
+### Links to components of the Analytical Platform
 
 - **R Studio:** Gives you access to R, a popular data analysis package. When using the platform, you'll spend the bulk of your time in R Studio.  Each user's R Studio is provided at a personal URL, in the following format:
   `https://YOUR_USERNAME-rstudio.tools.alpha.mojanalytics.xyz`
@@ -16,7 +17,7 @@ Note that the below list contains **links to those services**. I recommend bookm
 - [**Jenkins:**](https://jenkins.services.alpha.mojanalytics.xyz/) Allows you to publishing your data products such as R Shiny apps to the web.
 - [**Github:**](https://github.com/moj-analytical-services) The central store of your work (your code).  Allows you to share your code with others and collaborate on code projects together.
 
-The following is a high level diagram of the platform:
+### High level diagram of the platform:
 
 ![](images/quick_start/platform.png)
 
