@@ -201,17 +201,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="what-is-the-analytical-platform" class="section level2">
 <h2><span class="header-section-number">1.1</span> What is the Analytical Platform?</h2>
 <p>The Platform provides four main services to analysts: - Accesss to analytical software. - Data storage and access to datasets. - The ability to build and deploy interactive data products and websites. - Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.</p>
+<p>Note that the below list contains <strong>links to those services</strong>. I recommend bookmarking them.</p>
+<ul>
+<li><strong>R Studio:</strong> Gives you access to R, a popular data analysis package. When using the platform, you’ll spend the bulk of your time in R Studio. Each user’s R Studio is provided at a personal URL, in the following format: <code>https://YOUR_USERNAME-rstudio.tools.alpha.mojanalytics.xyz</code></li>
+<li><a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y"><strong>Amazon S3:</strong></a> Shared data storage for large data sets. You upload secure data to folders (in S3, these are called “buckets”), with no limit on storage space.</li>
+<li><a href="https://jenkins.services.alpha.mojanalytics.xyz/"><strong>Jenkins:</strong></a> Allows you to publishing your data products such as R Shiny apps to the web.</li>
+<li><a href="https://github.com/moj-analytical-services"><strong>Github:</strong></a> The central store of your work (your code). Allows you to share your code with others and collaborate on code projects together.</li>
+</ul>
+<p>The following is a high level diagram of the platform:</p>
 <div class="figure">
 <img src="images/quick_start/platform.png" alt="" />
 
 </div>
-<p>Note that the below list contains <strong>links to those services</strong>. I recommend bookmarking them.</p>
-<ul>
-<li><strong>R Studio:</strong> Gives you access to R, a popular data analysis package. When using the platform, you’ll spend the bulk of your time in R Studio. Each user’s R Studio is provided at a personal URL, in the following format: <code>https://YOUR_USERNAME-rstudio.tools.alpha.mojanalytics.xyz</code></li>
-<li><a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y"><strong>Amazon S3:</strong></a> Shared data storage for large data sets, in the cloud. You upload secure data to folders (called “buckets”), with no limit on storage space.</li>
-<li><a href="https://jenkins.services.alpha.mojanalytics.xyz/"><strong>Jenkins:</strong></a> Automates the process of publishing your data products such as R Shiny apps to the web.</li>
-<li><a href="https://github.com/moj-analytical-services"><strong>Github:</strong></a> Primarily a place to store and collaborate on projects.</li>
-</ul>
 </div>
 <div id="why-should-i-use-the-analytical-platform" class="section level2">
 <h2><span class="header-section-number">1.2</span> Why should I use the Analytical Platform?</h2>
@@ -220,7 +221,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>It provides access to the latest versions of modern analytical software, such as R Studio,</li>
 <li>It provides greater computational resources (12Gb RAM and fast CPUs) than DOM1 machines.</li>
 <li>It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS’s system), and Macbooks.</li>
-<li>It allows analysts to securely deploy data products such as R Shiny applications and javascript data visualisations.</li>
+<li>It allows analysts to securely deploy data products such as R Shiny applications and web sites (including web-base data visualisations).</li>
 <li>The platform is hosted in the cloud, which means it is scalable. Data storage is unlimited, and computational resource can be scaled to demand.</li>
 </ul>
 </div>
