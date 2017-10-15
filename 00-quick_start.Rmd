@@ -6,7 +6,7 @@ The Platform provides four main services to analysts:
 - Accesss to analytical software.
 - Data storage and access to datasets.
 - The ability to build and deploy interactive data products and websites.
-- Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects.
+- Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.
 
 ![](images/quick_start/platform.png)
 
