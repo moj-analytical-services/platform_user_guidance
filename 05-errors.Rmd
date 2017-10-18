@@ -55,8 +55,10 @@ This allows you to specify what function you want to use to attempt to read the 
 `s3tools::read_using(openxlsx::readWorkbook, path = "alpha-everyone/my_excel.xlsx")` to attempt to read the file `alpha-everyone/my_excel.xlsx` using `openxlsx::readWorkbook`
 
 #### Option 2:  Save the file to your project directory and load it from there, rather than from S3
-
-`aws.s3::save_object("my_excel.xlsx", "alpha-everyone", "file_name_to_save_to_in_home_directory.xlsx")`
+```
+s3tools::get_credentials()
+aws.s3::save_object("my_excel.xlsx", "alpha-everyone", "file_name_to_save_to_in_home_directory.xlsx")
+```
 
 and then read it in using e.g.
 
