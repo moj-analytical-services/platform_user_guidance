@@ -43,7 +43,7 @@ Unfortuntely `aws.s3` does not support the granular file access permission model
 
 We recommend that, where possible, users should use `s3tools`.  Where this is not possible, include a call to `s3tools::get_credentials()` prior to making the call to `aws.s3`, and this will guarantee that fresh credentials are generated before your call to `aws.s3`
 
-## `s3tools::s3_path_to_full_df() fails on Excel file
+## `s3tools::s3_path_to_full_df()` fails on Excel file
 
 `s3tools::s3_path_to_full_df` attempts to read in data from various filetypes, including Excel, but this sometimes fails.
 
@@ -61,4 +61,6 @@ This allows you to specify what function you want to use to attempt to read the 
 and then read it in using e.g.
 
 `openxlsx::readWorkbook("file_name_to_save_to_in_home_directory.xlsx")`
+
+Note, it's best to avoid using `aws.s3` directly, see [here](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#unable-to-access-data-using-awss3-package)
 
