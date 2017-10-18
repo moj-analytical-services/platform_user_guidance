@@ -171,7 +171,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.1" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#failed-to-lock-directory"><i class="fa fa-check"></i><b>6.1</b> Failed to lock directory</a></li>
 <li class="chapter" data-level="6.2" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#platform-two-factor-authentication-failing"><i class="fa fa-check"></i><b>6.2</b> Platform two factor authentication failing</a></li>
 <li class="chapter" data-level="6.3" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#unable-to-access-data-using-aws.s3-package."><i class="fa fa-check"></i><b>6.3</b> Unable to access data using <code>aws.s3</code> package.</a></li>
-<li class="chapter" data-level="6.4" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#s3toolss3_path_to_full_df-fails-on-excel-file"><i class="fa fa-check"></i><b>6.4</b> <code>s3tools::s3_path_to_full_df()</code> fails on Excel file</a></li>
+<li class="chapter" data-level="6.4" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#s3toolss3_path_to_full_df-fails-on-excel-file"><i class="fa fa-check"></i><b>6.4</b> `s3tools::s3_path_to_full_df() fails on Excel file</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="user-administration.html"><a href="user-administration.html"><i class="fa fa-check"></i><b>7</b> User Administration</a><ul>
 <li class="chapter" data-level="7.1" data-path="user-administration.html"><a href="user-administration.html#teams-and-data-access-groups"><i class="fa fa-check"></i><b>7.1</b> Teams and data access groups</a><ul>
@@ -231,7 +231,7 @@ pacman::<span class="kw">p_unlock</span>()</code></pre></div>
 <p>We recommend that, where possible, users should use <code>s3tools</code>. Where this is not possible, include a call to <code>s3tools::get_credentials()</code> prior to making the call to <code>aws.s3</code>, and this will guarantee that fresh credentials are generated before your call to <code>aws.s3</code></p>
 </div>
 <div id="s3toolss3_path_to_full_df-fails-on-excel-file" class="section level2">
-<h2><span class="header-section-number">6.4</span> <code>s3tools::s3_path_to_full_df()</code> fails on Excel file</h2>
+<h2><span class="header-section-number">6.4</span> `s3tools::s3_path_to_full_df() fails on Excel file</h2>
 <p><code>s3tools::s3_path_to_full_df</code> attempts to read in data from various filetypes, including Excel, but this sometimes fails.</p>
 <p>If it does, you have two options:</p>
 <div id="option-1-use-s3toolsread_using" class="section level4">
@@ -243,7 +243,6 @@ pacman::<span class="kw">p_unlock</span>()</code></pre></div>
 <p><code>aws.s3::save_object(&quot;my_excel.xlsx&quot;, &quot;alpha-everyone&quot;, &quot;file_name_to_save_to_in_home_directory.xlsx&quot;)</code></p>
 <p>and then read it in using e.g.</p>
 <p><code>openxlsx::readWorkbook(&quot;file_name_to_save_to_in_home_directory.xlsx&quot;)</code></p>
-<p>Note, it’s best to avoid using <code>aws.s3</code> directly, see <a href="https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#unable-to-access-data-using-awss3-package">here</a></p>
 
 </div>
 </div>
