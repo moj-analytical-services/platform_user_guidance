@@ -39,7 +39,26 @@ Ensure that your phone's clock is up to date.  Most phones will sync time automa
 
 ## Unable to access data using `aws.s3` package.
 
-Unfortuntely `aws.s3` does support the granular file access permission model we are using on the platform.  Specifically, it is unable to automatically provide the user with the right file access credentials.  We provide `s3tools` as a solution to this problem, which manages your credentials for you.
+Unfortuntely `aws.s3` does not support the granular file access permission model we are using on the platform.  Specifically, it is unable to automatically provide the user with the right file access credentials.  We provide `s3tools` as a solution to this problem, which manages your credentials for you.
 
 We recommend that, where possible, users should use `s3tools`.  Where this is not possible, include a call to `s3tools::get_credentials()` prior to making the call to `aws.s3`, and this will guarantee that fresh credentials are generated before your call to `aws.s3`
+
+## `s3tools::s3_path_to_full_df() fails on Excel file
+
+`s3tools::s3_path_to_full_df` attempts to read in data from various filetypes, including Excel, but this sometimes fails.
+
+If it does, you have two options:
+
+#### Option 1:  Use s3tools::read_using()
+
+This allows you to specify what function you want to use to attempt to read the file. So, for example you can do: 
+`s3tools::read_using(openxlsx::readWorkbook, path = "alpha-everyone/my_excel.xlsx")` to attempt to read the file `alpha-everyone/my_excel.xlsx` using `openxlsx::readWorkbook`
+
+#### Option 2:  Save the file to your project directory and load it from there, rather than from S3
+
+`aws.s3::save_object("my_excel.xlsx", "alpha-everyone", "file_name_to_save_to_in_home_directory.xlsx")`
+
+and then read it in using e.g.
+
+`openxlsx::readWorkbook("file_name_to_save_to_in_home_directory.xlsx")`
 
