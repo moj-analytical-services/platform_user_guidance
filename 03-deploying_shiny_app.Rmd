@@ -13,7 +13,7 @@ Step-by-step instructions are below.
 
 For advanced users, the guidance [here][Advanced deployment] discusses customisability and options for deployment.  Refer to this guidance if you are already familiar with git, packrat etc.
 
-## Step-by-step guide to deplying an app
+## Step-by-step guide to deploying an app
 
 ### Copy the template project into a new Github repository
 
@@ -182,7 +182,9 @@ First `cd` into the directory containing the Dockerfile.  Then run:
 
 `docker build . -t your_name_here`    (`your_name_here` is the tag you want to give to the image)
 
-By building the image, it will test the installation of the packrat dependencies and package your shiny app into a Linux environment identical to what's on the platform.
+By building the image, it will test the installation of the packrat dependencies and package your shiny app into a Linux environment identical to what's on the platform. 
+
+Remember to refresh Docker if you are re-building a previously built app in the directory (the previous build will show when you view the app otherwise).
 
 Run the Shiny server in a linux container with 
 `docker run -p 80:80 your_name_here`
