@@ -17,7 +17,7 @@ For step-by-step instructions see the Github guidance for [authentication apps](
 
 ### Email us your Github username
 
-Once you've got a Github account setup, email you account name [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) and [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) who will create your Analytical Platform account.
+Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) (or [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) if she's out of office) who will create your Analytical Platform account.
 
 ### Read the Security Operating Procedure
 
