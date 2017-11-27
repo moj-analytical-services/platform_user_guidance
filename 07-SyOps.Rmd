@@ -6,6 +6,6 @@
 
 
 ## General security guidance
-- Do not access the platform from your personal computer.
+- Do not access the platform from your personal (i.e. home) computer.
 - Choose a complex password for your Github account that cannot be guessed.  For further advice, see [here](https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0)
 - You must not share your account with anyone else. 
