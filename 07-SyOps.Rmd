@@ -1,10 +1,11 @@
 # Security Operating Procedures
 
 - You must not put any sensitive (OFFICIAL) data into the platform without getting permission from [Robin Linacre](mailto:robin.linacre@digital.justice.gov.uk) or get in contact on the `#analytical-platform` channel on Slack.
-- Do not rely on the platform for anything yet, especially for saving your work.  We cannot guarantee that your data is safe and will not be lost.  
+- The platform is still in Beta, which means we cannot guarantee its stability.  Please do not use the platform for time-critical tasks.  Specifically, you need to be prepared for the eventuality of downtime, which could last up to a week. 
 - If you are responsible for a team, ensure that users have the [correct permissions][Team member permissions].
 
 
 ## General security guidance
 - Do not access the platform from your personal computer.
-- Keep passwords secure and do not share accounts with anyone else. You are responsible for the security of your passwords and you will be required to change it at frequent intervals.
+- Choose a complex password for your Github account that cannot be guessed.  For further advice, see [here](https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0)
+- You must not share your account with anyone else. 
