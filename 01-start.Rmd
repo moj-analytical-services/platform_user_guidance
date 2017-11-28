@@ -1,22 +1,21 @@
 # Getting Started
 
-This section will detail each step you need to go through to get setup on the  platform.
+This section will detail each step you need to go through to get setup on the platform.
 
 ## Getting an account
 ### Sign up for github
-In order to provide you with an account on the platform, we require your github username. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options.
+In order to provide you with an account on the platform, we require your Github username. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options.
 
 If you already have a personal Github account, it will be easiest to just use that. We recommend new users use their @justice email address, but note that it’s also fine for your account to be attached to a personal email address.
 
 ### Enable two-factor authentication.
-Once you’ve signed up, you must enable two factor authentication. This is what enables us to store OFFICIAL data in the platform. You can do this in your Github [settings page](https://github.com/settings/security).
+Once you’ve signed to Github, you must enable two factor authentication to enhance security. You can do this in your Github [settings page](https://github.com/settings/security).
 
-You are given the option of doing this via SMS or an authentication app (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)) - choose whichever you prefer.
+You are given the option of doing this via SMS or an authentication app (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)) - choose whichever you prefer.  Please save a copy of your recovery codes e.g. by emailing them to your secure government email address.
 
 For step-by-step instructions see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
 
 ### Email us your Github username
-
 Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) (or [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) if she's out of office) who will create your Analytical Platform account.
 
 ### Read the Security Operating Procedure
@@ -25,17 +24,20 @@ Before you start using the platform, please read the [Security Operating Procedu
 
 ## Accessing your platform instance
 
-As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this- for example, if your github username is `moj1234` your platform will be available at `https://moj1234-rstudio.tools.alpha.mojanalytics.xyz`.
+The Analytical Platform team will email you when your platform account has been set up, with details of how to access you account.
+
+If you lose this information, you can access your platform account at a personalised link, dependent on your Github user name.
+For example, if your github username is `moj1234` your platform will be available at `https://moj1234-rstudio.tools.alpha.mojanalytics.xyz`.  
 
 ##  Configuring Git and Github for use on the Analytical Platform
 
-If you are new to Git and Github it is worth clarifying the difference between Git and Git**hub**. Git is the software that looks after the version control of code, whereas Github is the website that hosts that version controlled code. In practise this means that using Git to track versions of your code and then submit those changes to Github.
+Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.  
+
+If you are new to Git and Github it is worth clarifying the difference between Git and Git**hub**. Git is the software that looks after the version control of code, whereas Github is the website on which you publish and share your version controlled code. In practice this means that using Git to track versions of your code and then submit those changes to Github.
 
 This guide runs through how to set up connectivity between your Analytical Platform account and Github.  This is a one-time set up procedure that you only need to do once when you first use the platform.
 
-Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.  
-
-This page covers only the initial setup.  For guidance on how to use Git to sync your work with Github, please see the following guidance [here](http://r-pkgs.had.co.nz/git.html#git-rstudio).
+This page covers only the initial setup.  For guidance on how to use Git to sync your work with Github, please see the following guidance [here](http://happygitwithr.com/) or [here](http://r-pkgs.had.co.nz/git.html#git-rstudio).   We have also published a suggested working pattern [here](https://github.com/moj-analytical-services/our-coding-standards/blob/master/version_control_pattern.md).
 
 You can find more detailed notes about setting up Git with R Studio [here](http://adamwilson.us/RDataScience/GitSSHNotes.html) and [here](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
@@ -43,11 +45,9 @@ You can find more detailed notes about setting up Git with R Studio [here](http:
 
 The steps are as follows:
 
-1. Create an 'SSH key' within the platform.  This is an unique code that will be stored in your account, meaning you will not need to enter your password when interacting with Github.
+1. Create an 'SSH key' within the your platform R Studio.  This is an unique code that will be stored in your account, meaning you will not need to enter your password when interacting with Github.
 2. Register the key with Github.
-3. Configure git to set you username and password.
-
-
+3. Configure git to set you username and email address.
 
 #### Step 1 - create an SSH key
 
@@ -115,7 +115,7 @@ If you are new to github we recommend that you complete the basic tutorial [avai
     - [Git from the inside out](https://maryrosecook.com/blog/post/git-from-the-inside-out)
 
 
-## Before you start writing code
+## Guidance on writing code
 Please read the [coding standards](https://github.com/moj-analytical-services/our-coding-standards).
 
 ## Training Resources
