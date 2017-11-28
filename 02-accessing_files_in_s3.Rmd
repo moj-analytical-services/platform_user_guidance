@@ -1,9 +1,6 @@
 # Working with big datasets and sharing them: Accessing data in Amazon S3
 
-[Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) is used as the
-primary storage area for large data files. In contrast to files in your
-personal home directory, files in S3 can be accessed by multiple
-Platform users. You will only be able to access buckets that you have been granted access to (see [User Administration][User Administration]).
+[Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) is used as the primary storage area for large data files. In contrast to data in your Platform's home directory, data in S3 can be accessed by multiple Platform users. You will only be able to access S3 buckets (folders) that you have been granted access to (see [User Administration][User Administration]).
 
 ## Importing data from S3 into R
 
@@ -15,51 +12,37 @@ We have developed a user interface that allows you to search and browse the file
 
 ![](images/s3/s3browser.png)
 
-You can install the package as follows:
+You can access this interface by typing the following command into your R Studio console:
 ```r
-install.packages("devtools")
-devtools::install_github("moj-analytical-services/s3browser")
+s3browser::file_explorer_s3()
 ```
 
-See the [documentation](https://github.com/moj-analytical-services/s3browser) for
-further details.
-
+See the [documentation](https://github.com/moj-analytical-services/s3browser) for further details.
 
 ### Command line tool
 
-We have also developed a command line tool that provides you with
-some helper function. This enables you to do things like write
-`read_s3_csv` to read directly from S3 into a data frame in R.
+We have also developed a command line tool that provides you with some helper function. This enables you to do things like write `s3tools::s3_path_to_full_df("alpha-everyone/CW iris.xlsx")` to read directly from S3 into a data frame in R.
 
-You can install this package as follows:
-```r
-install.packages("devtools")
-devtools::install_github("moj-analytical-services/s3tools")
-```
 See the [documentation](https://github.com/moj-analytical-services/s3tools) for
 further details.
-
-
 
 ## Uploading data to S3
 
 ### Where data is stored
 
-An S3 bucket is automatically created for every team; for how to create and manage teams see [User Administration][User Administration]. By default, all members of the team have **read and write** access to the bucket.
+Data in s3 is stored in 'buckets', which are conceptually very similar to folders. 
 
-
+An S3 bucket is automatically created for every team that's created in Github; for how to create and manage teams see [User Administration][User Administration]. By default, all members of a Github team have **read and write** access to their corresponding bucket.
 
 ### Uploading data
 
-In Amazon S3 storage areas are refered to as 'Buckets'. To access the buckets you need to visit the Amazon management console with the following link: https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y (if you regularly upload data it may be worth bookmarking this link).
+To access the buckets you need to visit the Amazon management console with the following link: https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y (if you regularly upload data it may be worth bookmarking this link).
 
 Authentication is managed by GitHub, so if this is the first time you are connecting to the Amazon S3 Management console you may have to approve it.
 
-You'll be able to see all buckets, **including** those you **do not** have access to.
+You'll be able to see all buckets, **including** those you **do not** have access to.  You can only see the _contents_ of buckets to which you have access.
 
 To upload data, find the bucket you want to upload data to. Within the bucket you can create folders and upload files by following the on screen instructions. When uploading files **you will be prompted to set the settings for that file**. If this happens, the default settings are okay.
-
-
 
 #### Step-by-step instructions
 
@@ -78,8 +61,6 @@ To upload data, find the bucket you want to upload data to. Within the bucket yo
 4. Use the interface to **create folders** or **upload files**. Note: The default settings are fine.
 
    ![](images/s3/s3_bucket_upload.gif)
-
-
 
 #### Manipulating data
 
