@@ -6,15 +6,15 @@ The Platform provides four main services to analysts:
 
 - Accesss to analytical software.
 - Data storage and access to datasets.
-- The ability to build and deploy interactive data products and websites.
+- The ability to create and share interactive data products and websites.
 - Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.
 
 ### Links to components of the Analytical Platform
 
 - **R Studio:** Gives you access to R, a popular data analysis package. When using the platform, you'll spend the bulk of your time in R Studio.  Each user's R Studio is provided at a personal URL, in the following format:
-  `https://YOUR_USERNAME-rstudio.tools.alpha.mojanalytics.xyz`
+  `https://YOUR_GITHUB_USERNAME-rstudio.tools.alpha.mojanalytics.xyz`
 - [**Amazon S3:**](https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y) Shared data storage for large data sets.  You upload secure data to folders (in S3, these are called "buckets"), with no limit on storage space.
-- [**Jenkins:**](https://jenkins.services.alpha.mojanalytics.xyz/) Allows you to publishing your data products such as R Shiny apps to the web.
+- [**Jenkins:**](https://jenkins.services.alpha.mojanalytics.xyz/) Allows you to publish your data products such as R Shiny apps securely to your customers.
 - [**Github:**](https://github.com/moj-analytical-services) The central store of your work (your code).  Allows you to share your code with others and collaborate on code projects together.
 
 ### High level diagram of the platform:
@@ -26,7 +26,7 @@ The Platform provides four main services to analysts:
 The Platform provides a number of advantages over existing analytical infrastructure:
 
 - It provides access to the latest versions of modern analytical software, such as R Studio,
-- It provides greater computational resources (12Gb RAM and fast CPUs) than DOM1 machines.
+- It provides more powerful computational resources (12Gb RAM and fast CPUs) than DOM1 machines.
 - It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS's system), and Macbooks. 
 - It allows analysts to securely deploy data products such as R Shiny applications and web sites (including web-base data visualisations).
 - The platform is hosted in the cloud, which means it is scalable.  Data storage is unlimited, and computational resource can be scaled to demand.
@@ -46,7 +46,7 @@ If you want to share code see guidance on [Github][Configuring Git and Github fo
 
 ##### Upload and work with data{-}
 
-If the data isn't shared and is <100mb you can upload it directly to R Studio.
+If the data isn't shared and is <100mb you can upload it directly to R Studio. See 'uploading files' [here](https://support.rstudio.com/hc/en-us/articles/200713893-Uploading-and-Downloading-Files).
 
 If you want to share the data or if its >100mb you'll need to [set up a team][User Administration], then upload data see [Uploading data to S3][Uploading data to S3].
 
