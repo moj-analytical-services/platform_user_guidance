@@ -122,7 +122,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.3.1" data-path="getting-started.html"><a href="getting-started.html#instructions"><i class="fa fa-check"></i><b>2.3.1</b> Instructions</a></li>
 <li class="chapter" data-level="2.3.2" data-path="getting-started.html"><a href="getting-started.html#git-training-resources"><i class="fa fa-check"></i><b>2.3.2</b> Git training resources</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="getting-started.html"><a href="getting-started.html#before-you-start-writing-code"><i class="fa fa-check"></i><b>2.4</b> Before you start writing code</a></li>
+<li class="chapter" data-level="2.4" data-path="getting-started.html"><a href="getting-started.html#guidance-on-writing-code"><i class="fa fa-check"></i><b>2.4</b> Guidance on writing code</a></li>
 <li class="chapter" data-level="2.5" data-path="getting-started.html"><a href="getting-started.html#training-resources"><i class="fa fa-check"></i><b>2.5</b> Training Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html"><i class="fa fa-check"></i><b>3</b> Working with big datasets and sharing them: Accessing data in Amazon S3</a><ul>
@@ -207,13 +207,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">2.1</span> Getting an account</h2>
 <div id="sign-up-for-github" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Sign up for github</h3>
-<p>In order to provide you with an account on the platform, we require your github username. If you do not already have an account, head to <a href="https://github.com/" class="uri">https://github.com/</a> and sign up. When signing up, use all the default options.</p>
+<p>In order to provide you with an account on the platform, we require your Github username. If you do not already have an account, head to <a href="https://github.com/" class="uri">https://github.com/</a> and sign up. When signing up, use all the default options.</p>
 <p>If you already have a personal Github account, it will be easiest to just use that. We recommend new users use their <span class="citation">@justice</span> email address, but note that it’s also fine for your account to be attached to a personal email address.</p>
 </div>
 <div id="enable-two-factor-authentication." class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Enable two-factor authentication.</h3>
-<p>Once you’ve signed up, you must enable two factor authentication. This is what enables us to store OFFICIAL data in the platform. You can do this in your Github <a href="https://github.com/settings/security">settings page</a>.</p>
-<p>You are given the option of doing this via SMS or an authentication app (such as <a href="https://authy.com/download/">Authy</a> or <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a>) - choose whichever you prefer.</p>
+<p>Once you’ve signed to Github, you must enable two factor authentication to enhance security. You can do this in your Github <a href="https://github.com/settings/security">settings page</a>.</p>
+<p>You are given the option of doing this via SMS or an authentication app (such as <a href="https://authy.com/download/">Authy</a> or <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a>) - choose whichever you prefer. Please save a copy of your recovery codes e.g. by emailing them to your secure government email address.</p>
 <p>For step-by-step instructions see the Github guidance for <a href="https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/">authentication apps</a> or <a href="https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/">SMS authentication</a>.</p>
 </div>
 <div id="email-us-your-github-username" class="section level3">
@@ -227,22 +227,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="accessing-your-platform-instance" class="section level2">
 <h2><span class="header-section-number">2.2</span> Accessing your platform instance</h2>
-<p>As part of the signup process you will have created a github account. The location of your analytical platform instance is dependent on this- for example, if your github username is <code>moj1234</code> your platform will be available at <code>https://moj1234-rstudio.tools.alpha.mojanalytics.xyz</code>.</p>
+<p>The Analytical Platform team will email you when your platform account has been set up, with details of how to access you account.</p>
+<p>If you lose this information, you can access your platform account at a personalised link, dependent on your Github user name. For example, if your github username is <code>moj1234</code> your platform will be available at <code>https://moj1234-rstudio.tools.alpha.mojanalytics.xyz</code>.</p>
 </div>
 <div id="configuring-git-and-github-for-use-on-the-analytical-platform" class="section level2">
 <h2><span class="header-section-number">2.3</span> Configuring Git and Github for use on the Analytical Platform</h2>
-<p>If you are new to Git and Github it is worth clarifying the difference between Git and Git<strong>hub</strong>. Git is the software that looks after the version control of code, whereas Github is the website that hosts that version controlled code. In practise this means that using Git to track versions of your code and then submit those changes to Github.</p>
-<p>This guide runs through how to set up connectivity between your Analytical Platform account and Github. This is a one-time set up procedure that you only need to do once when you first use the platform.</p>
 <p>Github enables you to collaborate with colleagues on code and share you work with them. It puts your code in a centralised, searchable place. It also enables you to version control your work.</p>
-<p>This page covers only the initial setup. For guidance on how to use Git to sync your work with Github, please see the following guidance <a href="http://r-pkgs.had.co.nz/git.html#git-rstudio">here</a>.</p>
+<p>If you are new to Git and Github it is worth clarifying the difference between Git and Git<strong>hub</strong>. Git is the software that looks after the version control of code, whereas Github is the website on which you publish and share your version controlled code. In practice this means that using Git to track versions of your code and then submit those changes to Github.</p>
+<p>This guide runs through how to set up connectivity between your Analytical Platform account and Github. This is a one-time set up procedure that you only need to do once when you first use the platform.</p>
+<p>This page covers only the initial setup. For guidance on how to use Git to sync your work with Github, please see the following guidance <a href="http://happygitwithr.com/">here</a> or <a href="http://r-pkgs.had.co.nz/git.html#git-rstudio">here</a>. We have also published a suggested working pattern <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/version_control_pattern.md">here</a>.</p>
 <p>You can find more detailed notes about setting up Git with R Studio <a href="http://adamwilson.us/RDataScience/GitSSHNotes.html">here</a> and <a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">here</a></p>
 <div id="instructions" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Instructions</h3>
 <p>The steps are as follows:</p>
 <ol style="list-style-type: decimal">
-<li>Create an ‘SSH key’ within the platform. This is an unique code that will be stored in your account, meaning you will not need to enter your password when interacting with Github.</li>
+<li>Create an ‘SSH key’ within the your platform R Studio. This is an unique code that will be stored in your account, meaning you will not need to enter your password when interacting with Github.</li>
 <li>Register the key with Github.</li>
-<li>Configure git to set you username and password.</li>
+<li>Configure git to set you username and email address.</li>
 </ol>
 <div id="step-1---create-an-ssh-key" class="section level4">
 <h4><span class="header-section-number">2.3.1.1</span> Step 1 - create an SSH key</h4>
@@ -314,8 +315,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </div>
 </div>
-<div id="before-you-start-writing-code" class="section level2">
-<h2><span class="header-section-number">2.4</span> Before you start writing code</h2>
+<div id="guidance-on-writing-code" class="section level2">
+<h2><span class="header-section-number">2.4</span> Guidance on writing code</h2>
 <p>Please read the <a href="https://github.com/moj-analytical-services/our-coding-standards">coding standards</a>.</p>
 </div>
 <div id="training-resources" class="section level2">
