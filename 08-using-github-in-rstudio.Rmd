@@ -1,0 +1,12 @@
+# Using Github with R Studio
+
+Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.  
+
+This guide provides a step-by-step run through of how to create a project and sync your work with Github.  You can find more in-dept Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#training-resources)
+
+## Step 1 - Create a new project ('repo') in Github
+
+This is conceptually similar to setting up a folder on the shared drive to save your work in.
+
+![](images/github/create_repo.gif)
+
