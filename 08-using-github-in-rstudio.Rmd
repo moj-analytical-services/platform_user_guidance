@@ -68,8 +68,20 @@ Up until now, we've been working on a single branch called 'master'.
 
 ![](images/github/checkout_branch.gif)
 
-# Step 3:  Make some changes to address the Github issue
+### Step 3:  Make some changes to address the Github issue, and push (sync) them with Github
 
+
+![](images/github/make_changes_and_push.gif)
+
+
+### Step 4: View changes on Github and create pull request
+
+
+![](images/github/view_on_github_and_pr.gif)
+
+### Step 5:  Sync the changes you made on github.com with your local platform
+
+![](images/github/pull.gif)
 
 ## Other tips and tricks:
 
