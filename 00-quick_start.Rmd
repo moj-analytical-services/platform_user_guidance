@@ -55,3 +55,8 @@ To import data from S3 into R for analysis see [Importing data from S3 into R][I
 ##### Make an interactive dashboard and deploy it securely{-}
 
 See [Deploying a Shiny App ][Deploying a Shiny App ].
+
+
+## Contacting us
+
+For immediate support, contact us on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/anaytical_platform/), or you can conduct us by [email](mailto:robin.linacre@digital.justice.gov.uk)
