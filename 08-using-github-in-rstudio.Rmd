@@ -40,5 +40,5 @@ Follow the steps in this gif:
  
  Follow the steps in thie gif:
  
- ![](images/github/push.gif)
+ ![](images/github/push_to_github.gif)
  
