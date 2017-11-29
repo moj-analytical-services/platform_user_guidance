@@ -8,7 +8,7 @@ In order to provide you with an account on the platform, we require your Github 
 
 If you already have a personal Github account, it will be easiest to just use that. We recommend new users use their @justice email address, but note that it’s also fine for your account to be attached to a personal email address.
 
-### Enable two-factor authentication.
+### Enable two-factor authentication on your Github account
 Once you’ve signed to Github, you must enable two factor authentication to enhance security. You can do this in your Github [settings page](https://github.com/settings/security).
 
 You are given the option of doing this via SMS or an authentication app (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)) - choose whichever you prefer.  Please save a copy of your recovery codes e.g. by emailing them to your secure government email address.
@@ -28,6 +28,8 @@ The Analytical Platform team will email you when your platform account has been 
 
 If you lose this information, you can access your platform account at a personalised link, dependent on your Github user name.
 For example, if your github username is `moj1234` your platform will be available at `https://moj1234-rstudio.tools.alpha.mojanalytics.xyz`.  
+
+When you first access your platform account, you will be asked to set up two factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)).  There is no SMS option.
 
 ##  Configuring Git and Github for use on the Analytical Platform
 
