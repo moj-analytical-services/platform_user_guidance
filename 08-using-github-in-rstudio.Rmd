@@ -8,5 +8,6 @@ This guide provides a step-by-step run through of how to create a project and sy
 
 This is conceptually similar to setting up a folder on the shared drive to save your work in.
 
-![](images/github/create_repo.gif)
+  ![](images/github/create_repo.gif)
+  
 
