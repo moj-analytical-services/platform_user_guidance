@@ -4,10 +4,41 @@ Github enables you to collaborate with colleagues on code and share you work wit
 
 This guide provides a step-by-step run through of how to create a project and sync your work with Github.  You can find more in-dept Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#training-resources)
 
-## Step 1 - Create a new project ('repo') in Github
+## Step 1 - Create a new project ('repo') in the moj-analytical-services Github page
 
-This is conceptually similar to setting up a folder on the shared drive to save your work in.
+This is conceptually similar to setting up a folder on the shared drive to save your work in.  
+
+First, navigate to www.github.com and make sure you're logged in.
+
+Then he following gif shows you what you need to do:
 
   ![](images/github/create_repo.gif)
   
+## Step 2:  Navigate to your platform R Studio and check out the project
 
+Follow the steps in this gif:
+
+  ![](images/github/clone_repo.gif)
+  
+Notes:
+
+* When you copy the link to the repo from Github, ensure you use the ssh link, which start `git@github.com` as opposed to the https one, which start `https://github.com/`
+  
+## Step 3: Edit your files, 'stage' the changes, and then commit them.  
+
+Each commit creates an 'undo point' on in your personal files on the Platform.  You can can always revert back to this point.  
+
+Each commit would typically include changes to a number of different files, rather than the single file shown in the gif.
+
+Note that 'commiting' does not sync your changes with github.com.
+
+Follow the steps in this gif:
+
+ ![](images/github/make_changes_and_stage.gif)
+ 
+ ## Step 3: 'Push' (sync) your work with github.com
+ 
+ Follow the steps in thie gif:
+ 
+ ![](images/github/push.gif)
+ 
