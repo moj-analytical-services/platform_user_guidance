@@ -31,6 +31,8 @@ For example, if your github username is `moj1234` your platform will be availabl
 
 When you first access your platform account, you will be asked to set up two factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)).  There is no SMS option.
 
+For troubleshooting 2FA issues, please see [this section](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#two-factor-authentication-problems) of the user guidance.
+
 ##  Configuring Git and Github for use on the Analytical Platform
 
 Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.  
