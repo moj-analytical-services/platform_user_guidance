@@ -172,6 +172,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.2" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#platform-two-factor-authentication-failing"><i class="fa fa-check"></i><b>6.2</b> Platform two factor authentication failing</a></li>
 <li class="chapter" data-level="6.3" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#unable-to-access-data-using-aws.s3-package."><i class="fa fa-check"></i><b>6.3</b> Unable to access data using <code>aws.s3</code> package.</a></li>
 <li class="chapter" data-level="6.4" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#s3toolss3_path_to_full_df-fails-on-excel-file"><i class="fa fa-check"></i><b>6.4</b> <code>s3tools::s3_path_to_full_df()</code> fails on Excel file</a></li>
+<li class="chapter" data-level="6.5" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#two-factor-authentication-problems"><i class="fa fa-check"></i><b>6.5</b> Two Factor Authentication problems</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#ive-lost-my-platform-2fa"><i class="fa fa-check"></i><b>6.5.1</b> I’ve lost my platform 2FA</a></li>
+<li class="chapter" data-level="6.5.2" data-path="common-errors-and-sollutions.html"><a href="common-errors-and-sollutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it"><i class="fa fa-check"></i><b>6.5.2</b> I have entered my 2FA code, but the platform will not accept it</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="user-administration.html"><a href="user-administration.html"><i class="fa fa-check"></i><b>7</b> User Administration</a><ul>
 <li class="chapter" data-level="7.1" data-path="user-administration.html"><a href="user-administration.html#teams-and-data-access-groups"><i class="fa fa-check"></i><b>7.1</b> Teams and data access groups</a><ul>
@@ -245,6 +249,26 @@ aws.s3::save_object(&quot;my_excel.xlsx&quot;, &quot;alpha-everyone&quot;, &quot
 <p>and then read it in using e.g.</p>
 <p><code>openxlsx::readWorkbook(&quot;file_name_to_save_to_in_home_directory.xlsx&quot;)</code></p>
 <p>Note, it’s best to avoid using <code>aws.s3</code> directly, see <a href="https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#unable-to-access-data-using-awss3-package">here</a></p>
+</div>
+</div>
+<div id="two-factor-authentication-problems" class="section level2">
+<h2><span class="header-section-number">6.5</span> Two Factor Authentication problems</h2>
+<p>Two factor authentication is critical to the security of the platform. We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log in to DOM1.</p>
+<p>Note that there are two layers of two factor authentication (2FA) in action on the platform:</p>
+<ul>
+<li><p>Your Github account must have 2FA enabled. When you log in to Github, your session will stay active for a month before you need to re-enter your 2FA code. Your Github username identifies you to the platform, and we use this identity to control access to data and other resources once you’ve logged into the platform. You therefore must be logged into Github to use the platform.</p></li>
+<li><p>You Analytical Platform account has a separate 2FA step. You will be prompted to set this up the first time you access the platform. This code must be entered once a day. This security step lets you log into the platform and use it.</p></li>
+</ul>
+<p>Usually, when you log into the platform, you will be prompted to enter your platform 2FA, but you will not need to enter your Github 2FA because this is remembered for a month.</p>
+<p>However, if you have not logged into the platform for more than a month, you will first have to login to Github (and enter your Github 2FA code), and you will then also be prompted to enter your platform 2FA code.</p>
+<div id="ive-lost-my-platform-2fa" class="section level3">
+<h3><span class="header-section-number">6.5.1</span> I’ve lost my platform 2FA</h3>
+<p>If you’ve lost your platform 2FA code because e.g. you’ve broken or lost your phone, please contact the Analytical Platform team and we will reset it for you.</p>
+</div>
+<div id="i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it" class="section level3">
+<h3><span class="header-section-number">6.5.2</span> I have entered my 2FA code, but the platform will not accept it</h3>
+<p>Smartphone based 2FA apps require the phone’s clock (the time) to be up to date. If your phone’s clock is out of sync by more than 30 seconds or so, this can cause the 2FA codes to be out of sync.</p>
+<p>Most phones syncronise their time with the network provider, so this is not a problem. If your time is out of sync, you need to navigate to your clock settings in your phone, and enable the option to sync the time. See e.g. <a href="https://android.stackexchange.com/questions/114644/how-to-force-a-time-date-update-in-my-phone">here</a></p>
 
 </div>
 </div>
