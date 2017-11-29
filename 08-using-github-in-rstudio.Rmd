@@ -4,7 +4,9 @@ Github enables you to collaborate with colleagues on code and share you work wit
 
 This guide provides a step-by-step run through of how to create a project and sync your work with Github.  You can find more in-dept Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#training-resources)
 
-## Step 1 - Create a new project ('repo') in the moj-analytical-services Github page
+## Simple syncing of your projects
+
+### Step 1 - Create a new project ('repo') in the moj-analytical-services Github page
 
 This is conceptually similar to setting up a folder on the shared drive to save your work in.  
 
@@ -14,7 +16,7 @@ Then he following gif shows you what you need to do:
 
   ![](images/github/create_repo.gif)
   
-## Step 2:  Navigate to your platform R Studio and check out the project
+### Step 2:  Navigate to your platform R Studio and check out the project
 
 Follow the steps in this gif:
 
@@ -24,7 +26,7 @@ Notes:
 
 * When you copy the link to the repo from Github, ensure you use the ssh link, which start `git@github.com` as opposed to the https one, which start `https://github.com/`
   
-## Step 3: Edit your files, 'stage' the changes, and then commit them.  
+### Step 3: Edit your files, 'stage' the changes, and then commit them.  
 
 Each commit creates an 'undo point' on in your personal files on the Platform.  You can can always revert back to this point.  
 
@@ -36,9 +38,45 @@ Follow the steps in this gif:
 
  ![](images/github/make_changes_and_stage.gif)
  
- ## Step 3: 'Push' (sync) your work with github.com
+ ### Step 3: 'Push' (sync) your work with github.com
  
  Follow the steps in thie gif:
  
  ![](images/github/push_to_github.gif)
+ 
+
+## Working on a branch.
+
+One of the most useful aspects of git is 'branching'.  This enables the following benefits:
+
+* Allows you to separate out work in progress from completed work.  This means there is always a single 'latest' working version of the code.
+
+* Allows you and collaborators to work on the same project and files concurrently, resolving conflicts if you edit the same parts of the same files.
+
+* Through Github, enables you to coordinate work on several new features or bugs at once, keeping track of how the code has changed and why, and whether it's been quality assured.
+
+* Creates intutitive, tagged 'undo points' which allow you to revert back to previous version of the project e.g. we may wish to revert to the exact code that was tagged 'model run 2015Q1'.
+
+Up until now, we've been working on a single branch called 'master'.
+
+
+### Step 1 (optional):  Create an Issue in github that describes the piece of work you're about to do (the purpose of the branch)
+
+![](images/github/create_issue.gif)
+
+### Step 2:  Create a new branch in R Studio and tell Github about its existence
+
+![](images/github/checkout_branch.gif)
+
+# Step 3:  Make some changes to address the Github issue
+
+
+## Other tips and tricks:
+
+
+### View how files have changed on the platform and on 
+
+ ![](images/github/view_history.gif)
+ 
+ 
  
