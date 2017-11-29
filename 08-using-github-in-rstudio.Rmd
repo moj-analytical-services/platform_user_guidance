@@ -1,22 +1,22 @@
 # Using Github with R Studio
 
-Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.  
+Github enables you to collaborate with colleagues on code and share you work with them. It puts your code in a centralised, searchable place. It enables easier and more robust approaches to quality assurance, and it enables you to version control your work.
 
-This guide provides a step-by-step run through of how to create a project and sync your work with Github.  You can find more in-dept Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#training-resources)
+This guide provides a step-by-step run through of how to create a project and sync your work with Github.  You can find more in-depth Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#training-resources)
 
-## Simple syncing of your projects
+## Syncing you R Studio work with Github
 
 ### Step 1 - Create a new project ('repo') in the moj-analytical-services Github page
 
-This is conceptually similar to setting up a folder on the shared drive to save your work in.  
+This is conceptually similar to setting up a folder on the shared drive to save your work in.  The files in this Github repo represent the definitive version of the project.  Everyone who works on the project makes contributions to this definitive version from their personal versions.
 
-First, navigate to www.github.com and make sure you're logged in.
+To begin, navigate to www.github.com and make sure you're logged in.
 
-Then he following gif shows you what you need to do:
+Then follow the steps in this gif to create a new repository.  If you want to contribute to an existing project, you can skip this step.
 
   ![](images/github/create_repo.gif)
   
-### Step 2:  Navigate to your platform R Studio and check out the project
+### Step 2:  Navigate to your platform R Studio and make a copy of the Github project in your R Studio
 
 Follow the steps in this gif:
 
@@ -26,28 +26,36 @@ Notes:
 
 * When you copy the link to the repo from Github, ensure you use the ssh link, which start `git@github.com` as opposed to the https one, which start `https://github.com/`
   
-### Step 3: Edit your files, 'stage' the changes, and then commit them.  
+### Step 3: Edit your files, track them using Git, and sync ('push') changes to Github
 
-Each commit creates an 'undo point' on in your personal files on the Platform.  You can can always revert back to this point.  
+Each git commit creates a snapshot (an 'undo point') of your personal files on the Platform.  You can can always revert back to this point.  
 
-Each commit would typically include changes to a number of different files, rather than the single file shown in the gif.
+In the gif, we demonstrate changing a single file, staging the changes, and committing them.  Each commit would typically include changes to a number of different files, rather than the single file shown in the gif.
 
-Note that 'commiting' does not sync your changes with github.com.
+Note that 'commiting' does not sync your changes with github.com.  It just creates a snapshot of your personal files.
 
-Follow the steps in this gif:
+To do this, follow the steps in this gif:
 
  ![](images/github/make_changes_and_stage.gif)
  
- ### Step 3: 'Push' (sync) your work with github.com
+ ### Step 3: Sync ('push') your work with github.com
+ 
+ In R Studio, click the 'Push' button (the green up arrow).  This will send your changes to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.
+ 
+ Notes:
+ 
+ * After pushing, make sure you refresh the web browser to see changes.
  
  Follow the steps in thie gif:
  
  ![](images/github/push_to_github.gif)
  
+ 
+**That's it!  If you're working on a personal project, and are not collaborating with others, those three basic steps will allow you to work with Github**
 
 ## Working on a branch.
 
-One of the most useful aspects of git is 'branching'.  This enables the following benefits:
+One of the most useful aspects of git is 'branching'.  This is a little more complicated that the three steps above, but it enables the following benefits:
 
 * Allows you to separate out work in progress from completed work.  This means there is always a single 'latest' working version of the code.
 
@@ -56,6 +64,8 @@ One of the most useful aspects of git is 'branching'.  This enables the followin
 * Through Github, enables you to coordinate work on several new features or bugs at once, keeping track of how the code has changed and why, and whether it's been quality assured.
 
 * Creates intutitive, tagged 'undo points' which allow you to revert back to previous version of the project e.g. we may wish to revert to the exact code that was tagged 'model run 2015Q1'.
+
+We therefore recommend using branches.
 
 Up until now, we've been working on a single branch called 'master'.
 
