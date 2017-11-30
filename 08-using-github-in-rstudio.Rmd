@@ -136,7 +136,7 @@ The final step is therefore to switch back to the 'master' branch in R Studio, a
 
 ![](images/github/pull.gif)
 
-## Other tips and tricks:
+## Other tips and tricks [Work in progress!]:
 
 ### Search the code in MoJ Analytical Services to see who else has used a package.
 
