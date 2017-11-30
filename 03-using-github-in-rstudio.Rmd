@@ -136,6 +136,18 @@ The final step is therefore to switch back to the 'master' branch in R Studio, a
 
 ![](images/github/pull.gif)
 
+## Git training Resources
+
+If you are new to git and you want to learn more, we recommend that you complete the basic tutorial [available here](https://try.github.io/levels/1/challenges/1).
+
+- [Using Github with R](http://happygitwithr.com/)
+- [Introductory interactive tutorial](https://try.github.io/levels/1/challenges/1).
+- Quickstart guide and cheatsheet [here](http://rogerdudler.github.io/git-guide/) and in pdf format  [here](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf).
+- More in depth materials:
+    - [Learn Git branching](http://learngitbranching.js.org/)
+    - [Git from the inside out](https://maryrosecook.com/blog/post/git-from-the-inside-out)
+
+
 ## Other tips and tricks [Work in progress!]:
 
 ### Search the code in MoJ Analytical Services to see who else has used a package.
