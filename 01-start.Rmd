@@ -110,7 +110,7 @@ You're now ready to start using Github!
 
 ### Using Git with the Analytical Platform
 
-We have written an introductory guide to using Git which you can access here: [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-in-rstudio.html)
+We have written an introductory guide to using Git which you can access [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html).
 
 
 ## Guidance on writing code
