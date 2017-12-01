@@ -43,24 +43,24 @@ Notes:
 
 Edit your files as usual using R Studio.  
 
-Once you're happy with your changes, Git enables you to create a 'commit'. Each git commit creates a snapshot (an 'undo point') of your personal files on the Platform. You can can always revert back to this point.  This 'snapshotting' ability is why git is a 'verson control' system.  
+Once you're happy with your changes, Git enables you to create a 'commit'. Each git commit creates a snapshot of your personal files on the Platform. You can can always undo changes to your work by reverting back to any of the snapshots.  This 'snapshotting' ability is why git is a 'verson control' system.  
 
 In the following gif, we demonstrate changing a single file, staging the changes, and committing them.  In reality, each commit would typically include changes to a number of different files, rather than the single file shown in the gif.
 
 Notes:
 
 * 'commiting' does **not** sync your changes with github.com.  It just creates a snapshot of your personal files in your R Studio environment.
-* Git will only become aware of changes you've made after you've saved the file as shown in the gif.  Unsaved changes are signified when the filename in the tab in the code editior is red, with an asterix.
+* Git will only become aware of changes you've made after you've saved the file as shown in the gif.  Unsaved changes are signified when the filename in the code editior tab is red with an asterix.
 
  ![](images/github/make_changes_and_stage.gif)
  
- ### Step 3: Sync ('push') your work with github.com
+ ### Step 4: Sync ('push') your work with github.com
  
  In R Studio, click the 'Push' button (the green up arrow).  This will send any change you have committed to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.
  
  Notes:
  
- * After pushing, make sure you refresh the web browser to see changes.
+ * After pushing, make sure you refresh the GitHub page in your web browser to see changes.
 
  
  ![](images/github/push_to_github.gif)
@@ -69,9 +69,13 @@ Notes:
  
  
  
-**That's it!  If you're working on a personal project, and are not collaborating with others, those three basic steps will allow you to work with Github**
+**That's it!  If you're working on a personal project, and are not collaborating with others, those three basic steps will allow you to apply version control to your work with Github**
 
-
+### Using the shell
+If you are more comfortable using the shell (terminal) you can do steps 3 and 4 using the following git commands:
+* Select the files you want to commit (known as staging): `git add <filename1> <filename2>`
+* Commit the files you have staged: `git commit`. After calling this command a popup will ask you to write in a commit message. After doing so press enter.
+* Finally push your changes to GitHub: `git push origin <branch_name>`. Most likely your branch name will be `master` which is the default. So your code would be `git push origin master`.
 
 
 ## Working on a branch.
@@ -124,7 +128,7 @@ Github recognises that you've synced some code on a branch, and asks you whether
 
 You merge the changes using something called a 'pull request'.  A 'pull request' is a set of suggested changes to your project.  You can merge these changes in yourself, or you can ask another collaborator to review the changes.
 
-One way of using this process is for quality assurance. For instance, a team may agree that each pull request must be reviewed by a second team member before it is merged.  The code on the main 'master' branch is then considered to be quality assured at all times.
+One way of using this process is for quality assurance. For instance, a team may agree that each pull request must be reviewed by a second team member before it is merged.  The code on the main 'master' branch is then considered to be quality assured at all times. Pull requests also allow you and others working on the project to leave comments and feedback about the code. You can also leave comments that reference issues on the issue log (by writing `#` followed by the issue number). For example you might comment saying "This pull request now fixes issue #102 and completes task #103".
 
 ![](images/github/view_on_github_and_pr.gif)
 
@@ -139,6 +143,8 @@ The final step is therefore to switch back to the 'master' branch in R Studio, a
 ## Git training Resources
 
 If you are new to git and you want to learn more, we recommend that you complete the basic tutorial [available here](https://try.github.io/levels/1/challenges/1).
+
+The slides from from the ASD git training are [available here (dom1 access only)](S:\hq\102PF\Shared\Group_LCDSHD2\Analytical Services\ASD Training\Training materials\git\git_training_slides.pdf)
 
 - [Using Github with R](http://happygitwithr.com/)
 - [Introductory interactive tutorial](https://try.github.io/levels/1/challenges/1).
