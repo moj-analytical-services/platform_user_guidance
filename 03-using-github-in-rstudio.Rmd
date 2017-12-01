@@ -144,7 +144,7 @@ The final step is therefore to switch back to the 'master' branch in R Studio, a
 
 If you are new to git and you want to learn more, we recommend that you complete the basic tutorial [available here](https://try.github.io/levels/1/challenges/1).
 
-The slides from from the ASD git training are [available here (dom1 access only)](S:\hq\102PF\Shared\Group_LCDSHD2\Analytical Services\ASD Training\Training materials\git\git_training_slides.pdf)
+The slides from from the ASD git training are [available here (dom1 access only)](\\dom1.infra.int\data\hq\102PF\Shared\Group_LCDSHD2\Analytical Services\ASD Training\Training materials\git\git_training_slides.pdf)
 
 - [Using Github with R](http://happygitwithr.com/)
 - [Introductory interactive tutorial](https://try.github.io/levels/1/challenges/1).
