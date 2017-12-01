@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2017-11-30">
+<meta name="date" content="2017-12-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -141,6 +141,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.1.1" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-1---create-a-new-project-repo-in-the-moj-analytical-services-github-page"><i class="fa fa-check"></i><b>4.1.1</b> Step 1 - Create a new project (‘repo’) in the moj-analytical-services Github page</a></li>
 <li class="chapter" data-level="4.1.2" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-2-navigate-to-your-platform-r-studio-and-make-a-copy-of-the-github-project-in-your-r-studio"><i class="fa fa-check"></i><b>4.1.2</b> Step 2: Navigate to your platform R Studio and make a copy of the Github project in your R Studio</a></li>
 <li class="chapter" data-level="4.1.3" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-3-edit-your-files-track-them-using-git-and-sync-push-changes-to-github"><i class="fa fa-check"></i><b>4.1.3</b> Step 3: Edit your files, track them using Git, and sync (‘push’) changes to Github</a></li>
+<li class="chapter" data-level="4.1.4" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#using-the-shell"><i class="fa fa-check"></i><b>4.1.4</b> Using the shell</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#working-on-a-branch."><i class="fa fa-check"></i><b>4.2</b> Working on a branch.</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-1-optional-create-an-issue-in-github-that-describes-the-piece-of-work-youre-about-to-do-the-purpose-of-the-branch"><i class="fa fa-check"></i><b>4.2.1</b> Step 1 (optional): Create an Issue in github that describes the piece of work you’re about to do (the purpose of the branch)</a></li>
@@ -266,28 +267,32 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="step-3-edit-your-files-track-them-using-git-and-sync-push-changes-to-github" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> Step 3: Edit your files, track them using Git, and sync (‘push’) changes to Github</h3>
 <p>Edit your files as usual using R Studio.</p>
-<p>Once you’re happy with your changes, Git enables you to create a ‘commit’. Each git commit creates a snapshot (an ‘undo point’) of your personal files on the Platform. You can can always revert back to this point. This ‘snapshotting’ ability is why git is a ‘verson control’ system.</p>
+<p>Once you’re happy with your changes, Git enables you to create a ‘commit’. Each git commit creates a snapshot of your personal files on the Platform. You can can always undo changes to your work by reverting back to any of the snapshots. This ‘snapshotting’ ability is why git is a ‘verson control’ system.</p>
 <p>In the following gif, we demonstrate changing a single file, staging the changes, and committing them. In reality, each commit would typically include changes to a number of different files, rather than the single file shown in the gif.</p>
 <p>Notes:</p>
 <ul>
 <li>‘commiting’ does <strong>not</strong> sync your changes with github.com. It just creates a snapshot of your personal files in your R Studio environment.</li>
-<li>Git will only become aware of changes you’ve made after you’ve saved the file as shown in the gif. Unsaved changes are signified when the filename in the tab in the code editior is red, with an asterix.</li>
+<li>Git will only become aware of changes you’ve made after you’ve saved the file as shown in the gif. Unsaved changes are signified when the filename in the code editior tab is red with an asterix.</li>
 </ul>
 <div class="figure">
 <img src="images/github/make_changes_and_stage.gif" alt="" />
 
 </div>
-<p>### Step 3: Sync (‘push’) your work with github.com</p>
+<p>### Step 4: Sync (‘push’) your work with github.com</p>
 <p>In R Studio, click the ‘Push’ button (the green up arrow). This will send any change you have committed to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.</p>
 <p>Notes:</p>
 <ul>
-<li>After pushing, make sure you refresh the web browser to see changes.</li>
+<li>After pushing, make sure you refresh the GitHub page in your web browser to see changes.</li>
 </ul>
 <div class="figure">
 <img src="images/github/push_to_github.gif" alt="" />
 
 </div>
-<p><strong>That’s it! If you’re working on a personal project, and are not collaborating with others, those three basic steps will allow you to work with Github</strong></p>
+<p><strong>That’s it! If you’re working on a personal project, and are not collaborating with others, those three basic steps will allow you to apply version control to your work with Github</strong></p>
+</div>
+<div id="using-the-shell" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> Using the shell</h3>
+<p>If you are more comfortable using the shell (terminal) you can do steps 3 and 4 using the following git commands: * Select the files you want to commit (known as staging): <code>git add &lt;filename1&gt; &lt;filename2&gt;</code> * Commit the files you have staged: <code>git commit</code>. After calling this command a popup will ask you to write in a commit message. After doing so press enter. * Finally push your changes to GitHub: <code>git push origin &lt;branch_name&gt;</code>. Most likely your branch name will be <code>master</code> which is the default. So your code would be <code>git push origin master</code>.</p>
 </div>
 </div>
 <div id="working-on-a-branch." class="section level2">
@@ -336,7 +341,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>You can now view the changes in Github.</p>
 <p>Github recognises that you’ve synced some code on a branch, and asks you whether you want to merge these changes onto the main ‘master’ branch.</p>
 <p>You merge the changes using something called a ‘pull request’. A ‘pull request’ is a set of suggested changes to your project. You can merge these changes in yourself, or you can ask another collaborator to review the changes.</p>
-<p>One way of using this process is for quality assurance. For instance, a team may agree that each pull request must be reviewed by a second team member before it is merged. The code on the main ‘master’ branch is then considered to be quality assured at all times.</p>
+<p>One way of using this process is for quality assurance. For instance, a team may agree that each pull request must be reviewed by a second team member before it is merged. The code on the main ‘master’ branch is then considered to be quality assured at all times. Pull requests also allow you and others working on the project to leave comments and feedback about the code. You can also leave comments that reference issues on the issue log (by writing <code>#</code> followed by the issue number). For example you might comment saying “This pull request now fixes issue #102 and completes task #103”.</p>
 <div class="figure">
 <img src="images/github/view_on_github_and_pr.gif" alt="" />
 
@@ -355,6 +360,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="git-training-resources" class="section level2">
 <h2><span class="header-section-number">4.3</span> Git training Resources</h2>
 <p>If you are new to git and you want to learn more, we recommend that you complete the basic tutorial <a href="https://try.github.io/levels/1/challenges/1">available here</a>.</p>
+<p>The slides from from the ASD git training are <a href="S:\hq\102PF\Shared\Group_LCDSHD2\Analytical%20Services\ASD%20Training\Training%20materials\git\git_training_slides.pdf">available here (dom1 access only)</a></p>
 <ul>
 <li><a href="http://happygitwithr.com/">Using Github with R</a></li>
 <li><a href="https://try.github.io/levels/1/challenges/1">Introductory interactive tutorial</a>.</li>
