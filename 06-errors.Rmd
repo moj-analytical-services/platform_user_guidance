@@ -28,13 +28,27 @@ If that does not work, or if you have trouble installing the `pacman` package, t
 >
 >See [here](http://linuxcommand.org/man_pages/rm1.html) for more details.  Be careful with the `rm` command!
 
-## Platform two factor authentication failing
+## Out of memory
 
-If the clock on your phone is inaccurate, then the two factor authentication codes it produces may be out of sync, and therefore not work.
+If you see an error like:
 
-**Solution**
+```
+ [rsession-aidanmews] ERROR session hadabend; LOGGED FROM: rstudio::core::Error {anonymous}::rInit(const rstudio::r::session::RInitInfo&) /home/ubuntu/rstudio/src/cpp/session/SessionMain.cpp:1934
+ ```
+ 
+That often means you've run out of memory.  Your R Studio will restart, and you'll need to re-run your scripts to bring your data back into memory.
 
-Ensure that your phone's clock is up to date.  Most phones will sync time automatically with an internet time server, but if you don't have internet access, you can update the clock manually.  Try and make sure it's in sync with your DOM1 clock.
+We are currently working on giving users greater visibility of their memory usage.
+
+## Status Code 502 error message
+
+R Studio Server is single-cpu (single thread), which means it can’t ‘do two things at once’.
+
+If you ask it to, sometimes one of the operations will timeout.  The 'Status code 502' message is basically a timeout message.
+
+Usually this doesn't cause anything to crash.  You just need to wait for the currently-running code to finish executing and try again.
+
+One example of when this can happen is if you attempt to save a file whilst a long-running script is running.  R Studio has to wait until the script has finished running to attempt to save the file.  However, sometimes the wait is too long, causing a timeout.  In this case, you just need to wait for the code to finish running, and then press save again.
 
 
 ## Unable to access data using `aws.s3` package.
