@@ -54,6 +54,7 @@ Notes:
 
  ![](images/github/make_changes_and_stage.gif)
  
+ 
  ### Step 4: Sync ('push') your work with github.com
  
  In R Studio, click the 'Push' button (the green up arrow).  This will send any change you have committed to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.
