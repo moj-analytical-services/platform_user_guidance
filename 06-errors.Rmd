@@ -34,8 +34,9 @@ If you see an error like:
 
 ```
  [rsession-aidanmews] ERROR session hadabend; LOGGED FROM: rstudio::core::Error {anonymous}::rInit(const rstudio::r::session::RInitInfo&) /home/ubuntu/rstudio/src/cpp/session/SessionMain.cpp:1934
- ```
- 
+```
+
+
 That often means you've run out of memory.  Your R Studio will restart, and you'll need to re-run your scripts to bring your data back into memory.
 
 We are currently working on giving users greater visibility of their memory usage.
