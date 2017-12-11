@@ -9,6 +9,7 @@ The Platform provides four main services to analysts:
 - The ability to create and share interactive data products and websites.
 - Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.
 
+
 ### Links to components of the Analytical Platform
 
 - **R Studio:** Gives you access to R, a popular data analysis package. When using the platform, you'll spend the bulk of your time in R Studio.  Each user's R Studio is provided at a personal URL, in the following format:
