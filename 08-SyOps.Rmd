@@ -13,22 +13,20 @@
 
 ## Guidance on the use of Github
 
-The advice in this document relates to PRIVATE REPOSITORIES only.  Do not store OFFICIAL work in public repositories unless you are sure it is not sensitive.
+The advice in this document relates to private repositories which are part of the [MoJ Analytical Services organisation](https://github.com/moj-analytical-services/) only.  You **must not** store OFFICIAL work in public repositories unless you are sure it is not sensitive and have permission from your line manager.
 
 ### What can I use GitHub for?
 
 You may use GitHub to store your analytical code at OFFICIAL level.  This means that you can use Git for work where the code itself is sensitive, such as work on court or prison closures.
 
-You may use GitHub to store project writeups, so long as the write ups do not contain information or data which would violate the prohibitions on the use of GitHub set out below.
+You may also use GitHub to store project writeups, so long as the write ups do not contain information or data which would violate the prohibitions on the use of GitHub set out below.
 
 ### Prohibitions: What can’t I use GitHub for?
 
-In general, you should not be using GitHub to store datasets.
+In general, you must not use GitHub to store datasets.  Specifically, you **MUST NOT** use GitHub for the following purposes:
 
-You **MUST NOT** use GitHub for the following purposes:
+* To store any large datasets classified at OFFICIAL or above. Our working definition is that a large dataset contains over 1,000 records.
 
-To store any large datasets classified at OFFICIAL or above. Our working definition is that a large dataset contains over 1,000 records.
+* To store any data whatsoever (in code or in datasets) where individuals are potentially identifiable and the data is not already in the public domain.  
 
-To store any data whatsoever (in code or in datasets) where individuals are potentially identifiable and the data is not already in the public domain.  
-
-To store credentials such as usernames and passwords, or secrets such as database connection strings.
+* To store credentials such as usernames and passwords, or secrets such as database connection strings.
