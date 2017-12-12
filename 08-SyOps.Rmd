@@ -6,10 +6,17 @@
 
 
 ## General security guidance
+
 - Do not access the platform from your personal (i.e. home) computer.
 - Choose a complex password for your Github account that cannot be guessed.  For further advice, see [here](https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0)
-- You must not share your account with anyone else. 
+- You must not share your account or your login credentials with anyone else. 
 
+
+## Transferring and management of data
+
+- You should transfer the minimum datasets to the platform needed for the work you are doing
+- All data transfers should be made from a secure computer system that is accredited to store OFFICIAL data such as DOM1 or QUANTUM
+- Access to sensitive data should be provided on a 'need to know' basis.  You can use [data access groups](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups) to control data access.
 
 ## Guidance on the use of Github
 
@@ -30,3 +37,7 @@ In general, you must not use GitHub to store datasets.  Specifically, you **MUST
 * To store any data whatsoever (in code or in datasets) where individuals are potentially identifiable and the data is not already in the public domain.  
 
 * To store credentials such as usernames and passwords, or secrets such as database connection strings.
+
+## Reporting security incidents
+
+You must report actual, attempted or suspected breaches of security as soon as discovered to: OperationalSecurityTeam@justice.gsi.gov.uk 
