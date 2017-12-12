@@ -1,4 +1,4 @@
-# Security Operating Procedures
+# Acceptable Use Policy (Security Operating Procedures)
 
 - You must not put any sensitive (OFFICIAL) data into the platform without getting permission from [Robin Linacre](mailto:robin.linacre@digital.justice.gov.uk) or get in contact on the `#analytical-platform` channel on Slack.
 - The platform is still in Beta, which means we cannot guarantee its stability.  Please do not use the platform for time-critical tasks.  Specifically, you need to be prepared for the eventuality of downtime, which could last up to a week. 
