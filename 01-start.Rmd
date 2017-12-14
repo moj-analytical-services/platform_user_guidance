@@ -20,7 +20,7 @@ Once you've got a Github account setup, email your github username to [Leanne Mi
 
 ### Read the Security Operating Procedure
 
-Before you start using the platform, please read the [Security Operating Procedures][Security Operating Procedures].  
+Before you start using the platform, please read the [Acceptable use policy](https://moj-analytical-services.github.io/platform_user_guidance/acceptable-use-policy-security-operating-procedures.html).  
 
 ## Accessing your platform instance
 
