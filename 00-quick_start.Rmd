@@ -4,7 +4,7 @@
 
 The Platform provides four main services to analysts:
 
-- Accesss to analytical software.
+- Access to analytical software.
 - Data storage and access to datasets.
 - The ability to create and share interactive data products and websites.
 - Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.
@@ -12,11 +12,11 @@ The Platform provides four main services to analysts:
 
 ### Links to components of the Analytical Platform
 
-- **R Studio:** Gives you access to R, a popular data analysis package. When using the platform, you'll spend the bulk of your time in R Studio.  Each user's R Studio is provided at a personal URL, in the following format:
+- **R Studio:** Gives you access to R, a popular data analysis package. When using the platform, you'll spend much of your time in R Studio.  Each user has access to R Studio using a personal URL. The address is in the following format:
   `https://YOUR_GITHUB_USERNAME-rstudio.tools.alpha.mojanalytics.xyz`
-- [**Amazon S3:**](https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y) Shared data storage for large data sets.  You upload secure data to folders (in S3, these are called "buckets"), with no limit on storage space.
-- [**Jenkins:**](https://jenkins.services.alpha.mojanalytics.xyz/) Allows you to publish your data products such as R Shiny apps securely to your customers.
-- [**Github:**](https://github.com/moj-analytical-services) The central store of your work (your code).  Allows you to share your code with others and collaborate on code projects together.
+- [**Amazon S3:**](https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y) Shared data storage for large data sets.  You upload secure data to folders, with no limit on storage space. S3 uses the term 'buckets' for folders.
+- [**Jenkins:**](https://jenkins.services.alpha.mojanalytics.xyz/) Allows you to publish your data products - such as R Shiny apps - securely to your customers.
+- [**Github:**](https://github.com/moj-analytical-services) The central store of your work (your code).  Allows you to share your code with others, and collaborate on code projects together.
 
 ### High level diagram of the platform:
 
@@ -28,30 +28,31 @@ The Platform provides a number of advantages over existing analytical infrastruc
 
 - It provides access to the latest versions of modern analytical software, such as R Studio,
 - It provides more powerful computational resources (12Gb RAM and fast CPUs) than DOM1 machines.
-- It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS's system), and Macbooks. 
-- It allows analysts to securely deploy data products such as R Shiny applications and web sites (including web-base data visualisations).
-- The platform is hosted in the cloud, which means it is scalable.  Data storage is unlimited, and computational resource can be scaled to demand.
+- It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS's system), and MacBooks. 
+- It allows analysts to securely deploy data products such as R Shiny applications and web sites, including web-base data visualisations.
+- The platform is hosted in the cloud, which means it is scalable and easy to access remotely. Data storage is unlimited, and computational resource can be scaled to demand.
 
 ##  FAQ: How do I?
 
-This section covers common tasks you may want to complete on the platform. If we've missed something then let us know.
+This section covers common tasks you may want to complete on the platform. If we've missed something, let us know.
 
 ##### Get access to the platform{-}
 
 See [Getting Started][Getting Started].
 
 ##### Share data or code with a team{-}
+
 If you haven't set up a team yet, see [User Administration][User Administration].
 If you've got a team but want to upload data see [Uploading data to S3][Uploading data to S3].
 If you want to share code see guidance on [Github][Configuring Git and Github for use on the Analytical Platform].
 
 ##### Upload and work with data{-}
 
-If the data isn't shared and is <100mb you can upload it directly to R Studio. See 'uploading files' [here](https://support.rstudio.com/hc/en-us/articles/200713893-Uploading-and-Downloading-Files).
+If the data isn't shared, and is less than 100 MB, you can upload it directly to R Studio. See 'uploading files' [here](https://support.rstudio.com/hc/en-us/articles/200713893-Uploading-and-Downloading-Files).
 
-If you want to share the data or if its >100mb you'll need to [set up a team][User Administration], then upload data see [Uploading data to S3][Uploading data to S3].
+If you want to share the data, or if it's more than 100 MB, you'll need to [set up a team][User Administration], then upload data (see [Uploading data to S3][Uploading data to S3] ).
 
-To import data from S3 into R for analysis see [Importing data from S3 into R][Importing data from S3 into R].
+To import data from S3 into R for analysis, see [Importing data from S3 into R][Importing data from S3 into R].
 
 ##### Make an interactive dashboard and deploy it securely{-}
 
@@ -60,4 +61,4 @@ See [Deploying a Shiny App ][Deploying a Shiny App ].
 
 ## Contacting us
 
-For immediate support, contact us on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/anaytical_platform/), or you can conduct us by [email](mailto:robin.linacre@digital.justice.gov.uk)
+For quick support, contact us on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/anaytical_platform/). Alternatively, contact us by [email](mailto:robin.linacre@digital.justice.gov.uk)
