@@ -4,6 +4,8 @@ Github enables you to collaborate with colleagues on code and share you work wit
 
 This guide provides a step-by-step guide of how to create a project and sync your work with Github.  You can find more in-depth Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#training-resources)
 
+Note:  If any of the animated gifs below do not display correctly, try a different web browser e.g. Microsoft Edge, which is installed on your DOM1 machine.
+
 ## Syncing you R Studio work with Github
 
 ### Step 1 - Create a new project ('repo') in the moj-analytical-services Github page
