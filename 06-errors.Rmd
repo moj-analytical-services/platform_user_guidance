@@ -20,13 +20,11 @@ pacman::p_unlock()
 
 If that does not work, or if you have trouble installing the `pacman` package, try the following:
 
->Go to 
->Tools -> Shell
->and type:
->
->`rm -rf /home/robinl/R/library/00LOCK-readr`
->
->See [here](http://linuxcommand.org/man_pages/rm1.html) for more details.  Be careful with the `rm` command!
+Go to  `Tools -> Shell` and type:
+
+`rm -rf /home/robinl/R/library/00LOCK-readr`
+
+See [here](http://linuxcommand.org/man_pages/rm1.html) for more details.  Be careful with the `rm` command!
 
 ## `rsession-username ERROR session hadabend` 
 
