@@ -275,5 +275,5 @@ This is a generic error which means that there is an error in your R code or the
 Try the following two steps:
 
 - Make sure you've run `packrat::snapshot()` and committed the resultant `packrat.lock` file to Github
-- We've encountered issues due to ambiguous references to function calls.  Make sure that function calls include the full reference (e.g. `shiny::hr()` rather than just `hr()`).  For an example of this type of problems, see [here)(https://stackoverflow.com/questions/33408878/shinyapps-shinythemes-package-not-loading-when-deployed-on-shinyapps-io)
+- We've encountered issues due to ambiguous references to function calls.  Make sure that function calls include the full reference (e.g. `shiny::hr()` rather than just `hr()`).  For an example of this type of problems, see [here](https://stackoverflow.com/questions/33408878/shinyapps-shinythemes-package-not-loading-when-deployed-on-shinyapps-io)
 
