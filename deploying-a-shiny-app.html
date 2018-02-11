@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2018-02-06">
+<meta name="date" content="2018-02-11">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -176,6 +176,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.4.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#how-can-i-troubleshoot-problems"><i class="fa fa-check"></i><b>5.4.3</b> How can I troubleshoot problems?</a></li>
 <li class="chapter" data-level="5.4.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#troubleshooting-using-docker-installed-locally-on-a-macbook"><i class="fa fa-check"></i><b>5.4.4</b> Troubleshooting using Docker (installed locally on a Macbook)</a></li>
 <li class="chapter" data-level="5.4.5" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#if-all-else-fails"><i class="fa fa-check"></i><b>5.4.5</b> If all else fails…</a></li>
+<li class="chapter" data-level="5.4.6" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#some-problems-weve-encountered-and-their-solutions"><i class="fa fa-check"></i><b>5.4.6</b> Some problems we’ve encountered and their solutions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html"><i class="fa fa-check"></i><b>6</b> Deploying a Static Web App</a><ul>
@@ -386,6 +387,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="troubleshooting-using-docker-installed-locally-on-a-macbook" class="section level3">
 <h3><span class="header-section-number">5.4.4</span> Troubleshooting using Docker (installed locally on a Macbook)</h3>
+<p>Docker enables us to fully specify a computing environment (an operating system and the software installed on that system). This allows us to test and troubleshoot our Shiny app in Docker on our Macbooks. If it runs in Docker on the Macbook, it will also run on the platform, because Docker guarantees the computing environments will be the same.</p>
+<p>This guarantee only applies if we build the Docker image from exactly the same code (the same Shiny code, and the same Dockerfile).</p>
+<p>When we deploy a Shiny app on the platform, the following steps take place:</p>
+<ul>
+<li>The platform clones your git repository</li>
+<li>The platform runs docker build on the resultant code</li>
+<li>The platform runs resultant the docker image.</li>
+</ul>
+<p><strong>To test your Shiny app in Docker on your Macbook, we highly recommend that you <code>git clone</code> your repository to a new folder on your macbook. This guarantees that the code used to build your Docker image is exactly the same code that is checked into github. If you build from your local working copy, your build may rely on local modifications to files which you haven’t committed to github, and therefore may differ from what is built on the platform.</strong></p>
+<p>The following provides more detailed instructions.</p>
 <p>First <code>cd</code> into the directory containing the Dockerfile. Then run:</p>
 <p><code>docker build . -t your_name_here</code> (<code>your_name_here</code> is the tag you want to give to the image)</p>
 <p>By building the image, it will test the installation of the packrat dependencies and package your shiny app into a Linux environment identical to what’s on the platform.</p>
@@ -394,6 +405,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>You can then go to <a href="http://127.0.0.1:80" class="uri">http://127.0.0.1:80</a> to see if the app is working.</p>
 <p>If it is not, you can investigate what’s going on in the server using:</p>
 <p><code>docker run -it -p 80:80 your_name_here bash</code></p>
+<p>Note this will start a bash session in the container, but it will not start the shiny server. i.e. it starts bash <em>instead</em> of running <code>/bin/shiny-server.sh</code>.</p>
+<p>We can then configure logging in the container, before starting the shiny server as follows:</p>
 <p>Install the nano text editor:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">apt-get</span> update
 <span class="kw">apt-get</span> install nano</code></pre></div>
@@ -422,7 +435,20 @@ preserve_logs true;</code></pre>
 <li><code>packrat::snapshot()</code> again</li>
 <li>Try redeploying</li>
 </ul>
+</div>
+<div id="some-problems-weve-encountered-and-their-solutions" class="section level3">
+<h3><span class="header-section-number">5.4.6</span> Some problems we’ve encountered and their solutions</h3>
+<div id="shiny-app-deploys-successfully-but-application-failed-to-start-error-occurs" class="section level4">
+<h4><span class="header-section-number">5.4.6.1</span> Shiny app deploys successfully, but ‘application failed to start’ error occurs</h4>
+<p>Sometimes, your Shiny app deploys successfully but you get the following error:</p>
+<pre><code>An error has occurred
+The application failed to start.
 
+The application exited during initialization.</code></pre>
+<p>This is a generic error which means that there is an error in your R code or there are missing packages (e.g. your code includes references to packages which aren’t in your <code>packrat.lock</code>.</p>
+<p>Try the following two steps:</p>
+
+</div>
 </div>
 </div>
 </div>
