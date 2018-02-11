@@ -178,6 +178,20 @@ If you're still having problems, you can deploy the app locally using Docker.
 
 ### Troubleshooting using Docker (installed locally on a Macbook)
 
+Docker enables us to fully specify a computing environment (an operating system and the software installed on that system).  This allows us to test and troubleshoot our Shiny app in Docker on our Macbooks.  If it runs in Docker on the Macbook, it will also run on the platform, because Docker guarantees the computing environments will be the same.
+
+This guarantee only applies if we build the Docker image from exactly the same code (the same Shiny code, and the same Dockerfile). 
+
+When we deploy a Shiny app on the platform, the following steps take place:
+
+- The platform clones your git repository
+- The platform runs docker build on the resultant code
+- The platform runs resultant the docker image.
+
+**To test your Shiny app in Docker on your Macbook, we highly recommend that you `git clone` your repository to a new folder on your macbook.  This guarantees that the code used to build your Docker image is exactly the same code that is checked into github.  If you build from your local working copy, your build may rely on local modifications to files which you haven't committed to github, and therefore may differ from what is built on the platform.**
+
+The following provides more detailed instructions. 
+
 First `cd` into the directory containing the Dockerfile.  Then run:
 
 `docker build . -t your_name_here`    (`your_name_here` is the tag you want to give to the image)
@@ -194,6 +208,10 @@ You can then go to http://127.0.0.1:80 to see if the app is working.
 If it is not, you can investigate what's going on in the server using:
 
 `docker run -it -p 80:80 your_name_here bash`
+
+Note this will start a bash session in the container, but it will not start the shiny server. i.e. it starts bash *instead* of running `/bin/shiny-server.sh`.  
+
+We can then configure logging in the container, before starting the shiny server as follows:
 
 Install the nano text editor:
 
@@ -238,4 +256,21 @@ Sometimes, the following steps can resolve problems with `packrat.lock`:
 - Uncomment all code in project, and install dependencies one at a time using `install.packages()`
 - `packrat::snapshot()` again
 - Try redeploying
+
+### Some problems we've encountered and their solutions
+
+#### Shiny app deploys successfully, but 'application failed to start' error occurs
+
+Sometimes, your Shiny app deploys successfully but you get the following error:
+
+```
+An error has occurred
+The application failed to start.
+
+The application exited during initialization.
+```
+
+This is a generic error which means that there is an error in your R code or there are missing packages (e.g. your code includes references to packages which aren't in your `packrat.lock`.
+
+Try the following two steps:
 
