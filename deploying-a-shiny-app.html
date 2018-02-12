@@ -384,6 +384,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="how-can-i-troubleshoot-problems" class="section level3">
 <h3><span class="header-section-number">5.4.3</span> How can I troubleshoot problems?</h3>
 <p>To view the logs, see the <a href="https://kibana.services.dev.mojanalytics.xyz/login">Kibana dashboard</a>.</p>
+<p>Here are some tips to reduce problems:</p>
+<ol style="list-style-type: decimal">
+<li>Test early and often by deploying work in progress rather that building an entire app and testing</li>
+<li>Explicitly reference all packages (e.g. <code>shiny::hr()</code> rather than <code>hr()</code>. This is particularly important if you’re using loads of packages.<br />
+</li>
+<li>If you’re having problems, delete everything in <code>packrat/</code> and re-run <code>packrat::init()</code>.<br />
+</li>
+<li>The most useful logs which Shiny produces are in Kibana. You can also access them by locally building Docker on your mac, but it’s a bit of a faff.<br />
+</li>
+<li>Try to minimise the number of packages you’re using, each additional package is another source of problems</li>
+<li>When testing, clone the repo to another folder and test the cloned code. This guarantees that the code you’re testing is the same code which will be deployed on the platform</li>
+</ol>
 <p>If you’re still having problems, you can deploy the app locally using Docker.</p>
 </div>
 <div id="troubleshooting-using-docker-installed-locally-on-a-macbook" class="section level3">
