@@ -174,6 +174,15 @@ Yes - if you know Docker, you are welcome to change the
 
 To view the logs, see the [Kibana dashboard](https://kibana.services.dev.mojanalytics.xyz/login).
 
+Here are some tips to reduce problems:
+
+1.  Test early and often by deploying work in progress rather  that building an entire app and testing 
+2.  Explicitly reference all packages (e.g. `shiny::hr()` rather than `hr()`.  This is particularly important if you’re using loads of packages.  
+3. If you’re having problems, delete everything in `packrat/` and re-run `packrat::init()`.  
+4. The most useful logs which Shiny produces are in Kibana.  You can also access them by locally building Docker on your mac, but it’s a bit of a faff.  
+5. Try to minimise the number of packages you’re using, each additional package is another source of problems 
+6. When testing, clone the repo to another folder and test the cloned code.  This guarantees that the code you’re testing is the same code which will be deployed on the platform
+
 If you're still having problems, you can deploy the app locally using Docker.  
 
 ### Troubleshooting using Docker (installed locally on a Macbook)
