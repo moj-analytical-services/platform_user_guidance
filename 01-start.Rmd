@@ -3,33 +3,35 @@
 This section details each step you must perform to get setup on the platform.
 
 ## Getting an account
-### Sign up for github
-In order to provide you with an account on the platform, we require your Github username. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options.
 
-If you already have a personal Github account, it will be easiest to just use that. We recommend new users use their `@justice` email address, but note that it'’'s also fine for your account to be attached to a personal email address.
+### Sign up to Github
+You need a Github account to be able to access the platform. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options.
+
+We recommend new users use their `@justice` email address.  If you already have a personal Github account, you may also just use that.
 
 ### Enable two-factor authentication on your Github account
-Once you've signed to Github, you must enable two factor authentication to enhance security. You can do this in your Github [settings page](https://github.com/settings/security).
+Once you've signed to Github, you must enable two factor authentication on your Github account to enhance security. You can do this in your Github [settings page](https://github.com/settings/security).
 
-You are given the option of doing this using SMS, or an authentication appsuch as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) . Choose whichever you prefer. Save a copy of your recovery codes, for example by emailing them to your secure government email address.
+You are given the option of doing this using SMS, or an authentication app such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) . Choose whichever you prefer. Save a copy of your recovery codes, for example by emailing them to your secure government email address.
 
 For step-by-step instructions, see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
 
 ### Email us your Github username
-Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) (or [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) if she's out of office) who will create your Analytical Platform account.
+Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) (or [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) if she's out of office) who will invite you to the [MoJ Analytical Services](github.com/moj-analytical-services/) organisation.  
+
+This invitation will trigger an email notification, or you can accept the invitation by visiting [MoJ Analytical Services](github.com/moj-analytical-services/) organisation. 
+
+Once you've accpted the invitation, you've now completed all the security prerequisites, and you're ready to access the platform. 
 
 ### Read the Security Operating Procedure
 
 Before you start using the platform, please read the [Acceptable use policy](https://moj-analytical-services.github.io/platform_user_guidance/acceptable-use-policy-security-operating-procedures.html).  
 
-## Accessing your platform instance
+## Accessing the platform
 
-The Analytical Platform team will email you when your platform account has been set up, with details of how to access you account.
+Click [here](cpanel-master.services.alpha.mojanalytics.xyz) to access the platform.
 
-If you lose this information, you can access your platform account at a personalised link, dependent on your Github user name.
-For example, if your github username is `moj1234` your platform will be available at `https://moj1234-rstudio.tools.alpha.mojanalytics.xyz`.  
-
-When you first access your platform account, you will be asked to set up two factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)).  There is no SMS option.
+When you first access your platform account, you will be asked to set up additional two factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)).  There is no SMS option.
 
 For troubleshooting 2FA issues, please see [this section](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#two-factor-authentication-problems) of the user guidance.
 
