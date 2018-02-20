@@ -172,7 +172,7 @@ Yes - if you know Docker, you are welcome to change the
 
 ### How can I troubleshoot problems?
 
-To view the logs, see the [Kibana dashboard](https://kibana.services.dev.mojanalytics.xyz/login).
+To view the logs, see the [Kibana dashboard](https://kibana.services.alpha.mojanalytics.xyz/login).
 
 Here are some tips to reduce problems:
 
