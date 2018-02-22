@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="quick-start.html">
-<link rel="next" href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html">
+<link rel="prev" href="acceptable-use-policy-security-operating-procedures.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -240,121 +240,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="getting-started" class="section level1">
-<h1><span class="header-section-number">Part 2</span> Getting Started</h1>
-<p>This section details each step you must perform to get setup on the platform.</p>
-<div id="getting-an-account" class="section level2">
-<h2><span class="header-section-number">2.1</span> Getting an account</h2>
-<div id="sign-up-to-github" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Sign up to Github</h3>
-<p>You need a Github account to be able to access the platform. If you do not already have an account, head to <a href="https://github.com/" class="uri">https://github.com/</a> and sign up. When signing up, use all the default options.</p>
-<p>We recommend new users use their <code>@justice</code> email address. If you already have a personal Github account, you may also just use that.</p>
-</div>
-<div id="enable-two-factor-authentication-on-your-github-account" class="section level3">
-<h3><span class="header-section-number">2.1.2</span> Enable two-factor authentication on your Github account</h3>
-<p>Once you’ve signed to Github, you must enable two factor authentication on your Github account to enhance security. You can do this in your Github <a href="https://github.com/settings/security">settings page</a>.</p>
-<p>You are given the option of doing this using SMS, or an authentication app such as <a href="https://authy.com/download/">Authy</a> or <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> . Choose whichever you prefer. Save a copy of your recovery codes, for example by emailing them to your secure government email address.</p>
-<p>For step-by-step instructions, see the Github guidance for <a href="https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/">authentication apps</a> or <a href="https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/">SMS authentication</a>.</p>
-</div>
-<div id="email-us-your-github-username" class="section level3">
-<h3><span class="header-section-number">2.1.3</span> Email us your Github username</h3>
-<p>Once you’ve got a Github account setup, email your github username to <a href="mailto:leanne.mills@digital.justice.gov.uk">Leanne Mills</a> (or <a href="mailto:Robin.Linacre@justice.gsi.gov.uk">Robin Linacre</a> if she’s out of office) who will invite you to the <a href="github.com/moj-analytical-services/">MoJ Analytical Services</a> organisation.</p>
-<p>This invitation will trigger an email notification, or you can accept the invitation by visiting <a href="github.com/moj-analytical-services/">MoJ Analytical Services</a> organisation.</p>
-<p>Once you’ve accpted the invitation, you’ve now completed all the security prerequisites, and you’re ready to access the platform.</p>
-</div>
-<div id="read-the-security-operating-procedure" class="section level3">
-<h3><span class="header-section-number">2.1.4</span> Read the Security Operating Procedure</h3>
-<p>Before you start using the platform, please read the <a href="https://moj-analytical-services.github.io/platform_user_guidance/acceptable-use-policy-security-operating-procedures.html">Acceptable use policy</a>.</p>
-</div>
-</div>
-<div id="accessing-the-platform" class="section level2">
-<h2><span class="header-section-number">2.2</span> Accessing the platform</h2>
-<p>Click <a href="cpanel-master.services.alpha.mojanalytics.xyz">here</a> to access the platform.</p>
-<p>When you first access your platform account, you will be asked to set up additional two factor authentication for the platform itself. You must do this using an authentication app on your personal or work phone (such as <a href="https://authy.com/download/">Authy</a> or <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a>). There is no SMS option.</p>
-<p>For troubleshooting 2FA issues, please see <a href="https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#two-factor-authentication-problems">this section</a> of the user guidance.</p>
-</div>
-<div id="configuring-git-and-github-for-use-on-the-analytical-platform" class="section level2">
-<h2><span class="header-section-number">2.3</span> Configuring Git and Github for use on the Analytical Platform</h2>
-<p>Github enables you to collaborate with colleagues on code and share you work with them. It puts your code in a centralised, searchable place. It also enables you to version control your work.</p>
-<p>If you are new to Git and Github, it is worth clarifying the difference between Git and Git<strong>hub</strong>. Git is the software that looks after the version control of code, whereas Github is the website on which you publish and share your version controlled code. In practice this means you use Git to track versions of your code, and then submit those changes to Github.</p>
-<p>This guide runs through how to set up connectivity between your Analytical Platform account and Github. This is a one-time set up procedure; you only need to do this once, when you first use the platform.</p>
-<p>This page covers only the initial setup. For guidance on how to use Git to sync your work with Github, please see the information <a href="http://happygitwithr.com/">here</a> or <a href="http://r-pkgs.had.co.nz/git.html#git-rstudio">here</a>. We have also published a suggested working pattern <a href="https://github.com/moj-analytical-services/our-coding-standards/blob/master/version_control_pattern.md">here</a>.</p>
-<p>You can find more detailed notes about setting up Git with R Studio <a href="http://adamwilson.us/RDataScience/GitSSHNotes.html">here</a> and <a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">here</a></p>
-<div id="instructions" class="section level3">
-<h3><span class="header-section-number">2.3.1</span> Instructions</h3>
-<p>The overview is as follows:</p>
-<ol style="list-style-type: decimal">
-<li>Create an ‘SSH key’ within your platform R Studio. This is an unique code that is stored in your account. Having the key means you will not need to enter your password when interacting with Github.</li>
-<li>Register the key with Github.</li>
-<li>Configure git to use your username and email address.</li>
-</ol>
-<div id="step-1---create-an-ssh-key" class="section level4">
-<h4><span class="header-section-number">2.3.1.1</span> Step 1 - create an SSH key</h4>
-<p>You can create your SSH key within the platform:</p>
-<p><code>Tools</code> -&gt; <code>Global options</code> -&gt; <code>Git/SVN</code> -&gt; <code>Create RSA key...</code></p>
-<div class="figure">
-<img src="images/start/git_create_key.PNG" alt="" />
-
-</div>
-<p>You will be presented with dialog showing your key fingerprint, amongst other details. You do not need this information, therefore close the window:</p>
-<div class="figure">
-<img src="images/start/git_close.PNG" alt="" />
-
-</div>
-<p>For the next step, you’ll need to copy and paste your SSH public key. You can copy this to the clipboard using the following dialogues:</p>
-<div class="figure">
-<img src="images/start/git_view_public.PNG" alt="" />
-
-</div>
-<div class="figure">
-<img src="images/start/git-public-key.PNG" alt="" />
-
-</div>
-<p>You can find more information about SSH keys in <a href="https://help.github.com/articles/connecting-to-github-with-ssh/">this</a> guidance.</p>
-</div>
-<div id="step-2-register-the-key-with-github." class="section level4">
-<h4><span class="header-section-number">2.3.1.2</span> Step 2: Register the key with Github.</h4>
-<p>The next step is to register your SSH public key with Github, using the interface on <a href="https://www.github.com">www.github.com</a>. This guidance assumes you have copied your public key to your computer’s clipboard in the previous step.</p>
-<p>First, navigate to the Github homepage. If you are not logged in already, you will need to log in.</p>
-<p>Access your settings from the menu that appears when you click on your profile picture in the top right. Once in settings, access your SSH and GPG keys. <a href="https://github.com/settings/keys">Here’s</a> a direct link.</p>
-<div class="figure">
-<img src="images/start/github_settings.PNG" alt="" />
-
-</div>
-<p>Click on <code>New SSH key</code>.</p>
-<div class="figure">
-<img src="images/start/github_new_ssh.PNG" alt="" />
-
-</div>
-<p>Paste your key into the dialogue that pops up and click <code>Add SSH key</code>. You can choose any name you like for the ‘title’ of the key.</p>
-<div class="figure">
-<img src="images/start/git_paste_key.PNG" alt="" />
-
-</div>
-<p>The link with Github and the Analytical Platform is now established. You can now return to the analytical platform.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Configure your Git name and email address within the analytical platform.</li>
-</ol>
-<p>To start syncing your work with Github, Git needs to know a bit more about you.</p>
-<p>Within the platform, access the shell using <code>Tools</code> -&gt; <code>Shell...</code></p>
-<p>Then, you need to type the following commands (substitute your name and email):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> config --global user.name <span class="st">&#39;Your Name&#39;</span>
-<span class="kw">git</span> config --global user.email <span class="st">&#39;your@email.com&#39;</span></code></pre></div>
-<p>You’re now ready to start using Github!</p>
-</div>
-</div>
-<div id="using-git-with-the-analytical-platform" class="section level3">
-<h3><span class="header-section-number">2.3.2</span> Using Git with the Analytical Platform</h3>
-<p>We have written an introductory guide to using Git which you can access <a href="https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html">here</a>.</p>
-</div>
-</div>
-<div id="guidance-on-writing-code" class="section level2">
-<h2><span class="header-section-number">2.4</span> Guidance on writing code</h2>
-<p>Please read the <a href="https://github.com/moj-analytical-services/our-coding-standards">coding standards</a>.</p>
-</div>
-<div id="training-resources" class="section level2">
-<h2><span class="header-section-number">2.5</span> Training Resources</h2>
-<p>The data science team maintain a list of R training <a href="https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit#heading=h.3iqas7tttbbd">here</a>.</p>
+<div id="annexes" class="section level1">
+<h1><span class="header-section-number">Part 10</span> Annexes</h1>
+<div id="what-are-the-benefits-of-github-and-why-do-we-recommend-it" class="section level2">
+<h2><span class="header-section-number">10.1</span> What are the benefits of Github and why do we recommend it?</h2>
+<p>Github is a central place to store our analytical projects - particularly those which are built primarily in code.</p>
+<p>It provides a range of poweful tools and functionality which will help you manage your work. This is useful if you’re work on your own, but the benefits are greatest when you’re working in a team.</p>
+<p>Here are some of the things that Git offers:</p>
+<ul>
+<li><p>It provides a single, unambigous master version of a project. No more <code>model_final.r</code>, <code>model_finalv2_final.r</code>. etc.</p></li>
+<li><p>Enables you and collaborators to work on the same project and files concurrently, resolving conflicts if you edit the same parts of the same files, whilst keeping track of who made what edits and when.</p></li>
+<li><p>It enables work in progress to be shareed with team members, without compromising the master version. You never get confused between what’s not yet final, and what’s trusted, quality assured code. The work in progress can be seemlessly merged into the master version when it’s ready.</p></li>
+<li><p>It provides a history of all previous versions of the projects, which can be meaningfully tagged, and reverted to (undo points). e.g. we may wish to revert to the exact code that was tagged ‘model run 2015Q1’.</p></li>
+<li><p>It provides extremely powerful search. The ability to search all code written by Ministry of Justice analysts in milliseconds. Or all code written by anyone, for that matter.</p></li>
+<li><p>It enables an easier, more robust, more enjoyable approach to quality assurance. In particular, it offers the potential to continuously quality assure a project as it’s built, rather than QA being an activity that’s only done once the work is complete.</p></li>
+<li><p>Productivity tools like issues (a to do list), and a trello style workflow, with automation.</p></li>
+<li><p>Git stores a huge amount of meta data about <em>why</em> changes were made and by whom. This dramatically reduces the danger of code becoming a ‘black box’.</p></li>
+<li><p>It makes it much easier to build reusable components and open source. And we use R code written by statisticians around the world that’s been put on Github. We know that people across government have been using Xltabr. We can collaborate easily with other government deparments and anyone else for that matter</p></li>
+<li><p>It makes it easier to ask for help with your work, particularly with colleagues who are working remotely. You can hyperlink and comment on specific lines of code.</p></li>
+<li><p>You can write rich, searchable documentation - e.g. this user guide is hosted on Github!</p></li>
+</ul>
 
 </div>
 </div>
@@ -363,8 +268,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="quick-start.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="acceptable-use-policy-security-operating-procedures.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
