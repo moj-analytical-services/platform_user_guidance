@@ -29,7 +29,7 @@ Before you start using the platform, please read the [Acceptable use policy](htt
 
 ## Accessing the platform
 
-Click [here](cpanel-master.services.alpha.mojanalytics.xyz) to access the platform.
+Click [here](https://cpanel-master.services.alpha.mojanalytics.xyz/#Analytical%20tools) to access the platform.
 
 When you first access your platform account, you will be asked to set up additional two factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)).  There is no SMS option.
 
