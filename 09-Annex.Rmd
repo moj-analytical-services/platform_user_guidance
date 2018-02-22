@@ -31,6 +31,40 @@ Here are some of the things that Git offers:
 
 - You can write rich, searchable documentation - e.g. this user guide is hosted on Github!
 
+## Step by step guide to setup of Two Factor Authentication 
+
+Two factor authentication (2FA) is critical to the security of the platform.  We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log in to DOM1.
+
+Note that there are two layers of two factor authentication (2FA) in action on the platform:
+
+* *Github Account 2FA* Your Github account must have 2FA enabled.  When you log in to Github, your session will stay active for a month before you need to re-enter your 2FA code.  Your Github username identifies you to the platform, and we use this identity to control access to data and other resources once you've logged into the platform.  You therefore must be logged into Github to use the platform.
+
+* *Analytical Platform 2FA* You Analytical Platform account has a separate 2FA step.  You will be prompted to set this up the first time you access the platform.  This code must be entered once a day.  This security step lets you log into the platform and use it.
+
+Usually, when you log into the platform, you will be prompted to enter your platform 2FA, but you will not need to enter your Github 2FA because this is remembered for a month.
+
+However, if you have not logged into the platform for more than a month, you will first have to login to Github (and enter your Github 2FA code), and you will then also be prompted to enter your platform 2FA code.
+
+### Step by step - logging into the platform for the first time
+
+The first time you log into the Analytical Platform, you will be asked to set up 2FA.  
+
+Your welcome email will direct you to the platform [Control Panel](https://cpanel-master.services.alpha.mojanalytics.xyz/).
+
+#### Step 1: Log into Github to identify yourself to the Analytical Platform
+
+If you're already logged into Github, you will not see the 'Sign in to GitHub to continue to Analytics platform' screen.
+
+#### Step 2: Set up your 2FA using your smartphone
+
+Note: If you get the error 'x', you need to make sure that your phone's clock is accurate.  See [here](https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it)
+
+
+
+
+
+
+
 
 
 
