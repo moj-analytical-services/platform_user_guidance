@@ -57,7 +57,7 @@ Your welcome email will direct you to the platform [Control Panel](https://cpane
 
 If you're already logged into Github, you will not see the 'Sign in to GitHub to continue to Analytics platform' screen.
 
-#### Step 2: Set up your 2FA using your smartphone
+#### Step 2: Set up your Platform 2FA using your smartphone
 
 In this step, you set up the second layer of 2FA, your Platform 2FA.
 
@@ -66,6 +66,11 @@ Scan the code using your smartphone app, and enter the code that comes up on you
 Note: If you get the error 'Wrong or expired code', you need to make sure that your phone's clock is accurate.  See [here](https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it)
 
 ![](images/2fa/platform_2fa.png)
+
+#### You're now done
+
+Once you're entered your platform 2FA code in the interface above, you should now have access to the platform.  You will need to enter your platform 2FA code around once a day as you use the platform.
+
 
 
 
