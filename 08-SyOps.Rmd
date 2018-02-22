@@ -1,10 +1,8 @@
 # Acceptable Use Policy (Security Operating Procedures)
 
-- You must not put any sensitive (OFFICIAL) data into the platform. Sensitive data is classified `OFFICIAL` or higher. If you really need to put this kind of data into the platform, either:
-  - get formal permission from [Robin Linacre](mailto:robin.linacre@digital.justice.gov.uk), or
-  - get in contact on the `#analytical-platform` channel on Slack.
+- You must not put any sensitive (OFFICIAL) data into the platform without first gaining permission. Sensitive data is classified `OFFICIAL` or higher. To get permission, contact [Robin Linacre](mailto:robin.linacre@digital.justice.gov.uk)
 - Remember that the platform is still in Beta. This means there is no guarantee of stability. Do not use the platform for time-critical tasks. Allow for the possibility of unannounced downtime, which could last up to a week. 
-- If you are responsible for a team, ensure that users have the [correct permissions][Team member permissions].
+- If you are responsible for a team, ensure that users have the [correct permissions](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#team-creation).
 
 ## General security guidance
 
