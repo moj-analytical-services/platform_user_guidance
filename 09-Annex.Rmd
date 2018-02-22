@@ -61,7 +61,7 @@ If you're already logged into Github, you will not see the 'Sign in to GitHub to
 
 Note: If you get the error 'x', you need to make sure that your phone's clock is accurate.  See [here](https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it)
 
-![](images/2fa/Platform 2FA.png)
+![]("images/2fa/Platform 2FA.png")
 
 
 
