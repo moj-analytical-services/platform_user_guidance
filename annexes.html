@@ -222,6 +222,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10" data-path="annexes.html"><a href="annexes.html"><i class="fa fa-check"></i><b>10</b> Annexes</a><ul>
 <li class="chapter" data-level="10.1" data-path="annexes.html"><a href="annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it"><i class="fa fa-check"></i><b>10.1</b> What are the benefits of Github and why do we recommend it?</a></li>
+<li class="chapter" data-level="10.2" data-path="annexes.html"><a href="annexes.html#step-by-step-guide-to-setup-of-two-factor-authentication"><i class="fa fa-check"></i><b>10.2</b> Step by step guide to setup of Two Factor Authentication</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="annexes.html"><a href="annexes.html#step-by-step---logging-into-the-platform-for-the-first-time"><i class="fa fa-check"></i><b>10.2.1</b> Step by step - logging into the platform for the first time</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -260,7 +263,39 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>It makes it easier to ask for help with your work, particularly with colleagues who are working remotely. You can hyperlink and comment on specific lines of code.</p></li>
 <li><p>You can write rich, searchable documentation - e.g. this user guide is hosted on Github!</p></li>
 </ul>
+</div>
+<div id="step-by-step-guide-to-setup-of-two-factor-authentication" class="section level2">
+<h2><span class="header-section-number">10.2</span> Step by step guide to setup of Two Factor Authentication</h2>
+<p>Two factor authentication (2FA) is critical to the security of the platform. We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log in to DOM1.</p>
+<p>Note that there are two layers of two factor authentication (2FA) in action on the platform:</p>
+<ul>
+<li><p><em>Github Account 2FA</em> Your Github account must have 2FA enabled. When you log in to Github, your session will stay active for a month before you need to re-enter your 2FA code. Your Github username identifies you to the platform, and we use this identity to control access to data and other resources once you’ve logged into the platform. You therefore must be logged into Github to use the platform.</p></li>
+<li><p><em>Analytical Platform 2FA</em> You Analytical Platform account has a separate 2FA step. You will be prompted to set this up the first time you access the platform. This code must be entered once a day. This security step lets you log into the platform and use it.</p></li>
+</ul>
+<p>Usually, when you log into the platform, you will be prompted to enter your platform 2FA, but you will not need to enter your Github 2FA because this is remembered for a month.</p>
+<p>However, if you have not logged into the platform for more than a month, you will first have to login to Github (and enter your Github 2FA code), and you will then also be prompted to enter your platform 2FA code.</p>
+<div id="step-by-step---logging-into-the-platform-for-the-first-time" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> Step by step - logging into the platform for the first time</h3>
+<p>The first time you log into the Analytical Platform, you will be asked to set up 2FA.</p>
+<p>Your welcome email will direct you to the platform <a href="https://cpanel-master.services.alpha.mojanalytics.xyz/">Control Panel</a>.</p>
+<div id="step-1-log-into-github-to-identify-yourself-to-the-analytical-platform" class="section level4">
+<h4><span class="header-section-number">10.2.1.1</span> Step 1: Log into Github to identify yourself to the Analytical Platform</h4>
+<div class="figure">
+<img src="images/2fa/github.gif" alt="" />
 
+</div>
+<p>If you’re already logged into Github, you will not see the ‘Sign in to GitHub to continue to Analytics platform’ screen.</p>
+</div>
+<div id="step-2-set-up-your-2fa-using-your-smartphone" class="section level4">
+<h4><span class="header-section-number">10.2.1.2</span> Step 2: Set up your 2FA using your smartphone</h4>
+<p>Note: If you get the error ‘x’, you need to make sure that your phone’s clock is accurate. See <a href="https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it">here</a></p>
+<div class="figure">
+<embed src="%22images/2fa/Platform%202FA.png%22" />
+
+</div>
+
+</div>
+</div>
 </div>
 </div>
             </section>
