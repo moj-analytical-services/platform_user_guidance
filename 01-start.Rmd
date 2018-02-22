@@ -1,13 +1,13 @@
 # Getting Started
 
-This section details each step you must perform to get setup on the platform.
-
 ## Getting an account
 
 ### Sign up to Github
-You need a Github account to be able to access the platform. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options.
+You need a Github account to be able to access the platform. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options. 
 
 We recommend new users use their `@justice` email address.  If you already have a personal Github account, you may also just use that.
+
+For more information about why we've made Github a core part of the platform, see [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it).
 
 ### Enable two-factor authentication on your Github account
 Once you've signed to Github, you must enable two factor authentication on your Github account to enhance security. You can do this in your Github [settings page](https://github.com/settings/security).
@@ -17,7 +17,7 @@ You are given the option of doing this using SMS, or an authentication app such 
 For step-by-step instructions, see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
 
 ### Email us your Github username
-Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) (or [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) if she's out of office) who will invite you to the [MoJ Analytical Services](github.com/moj-analytical-services/) organisation.  
+Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) (or [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) if she's out of office) who will invite you to the private [MoJ Analytical Services](github.com/moj-analytical-services/) organisation.  
 
 This invitation will trigger an email notification, or you can accept the invitation by visiting [MoJ Analytical Services](github.com/moj-analytical-services/) organisation. 
 
