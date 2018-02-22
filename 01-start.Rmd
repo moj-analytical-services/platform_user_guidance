@@ -33,6 +33,8 @@ Click [here](https://cpanel-master.services.alpha.mojanalytics.xyz/#Analytical%2
 
 When you first access your platform account, you will be asked to set up additional two factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)).  There is no SMS option.
 
+For step by step instructions on setting up this 2FA, see [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#step-by-step-guide-to-setup-of-two-factor-authentication).
+
 For troubleshooting 2FA issues, please see [this section](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#two-factor-authentication-problems) of the user guidance.
 
 ##  Configuring Git and Github for use on the Analytical Platform
