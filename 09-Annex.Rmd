@@ -1,0 +1,37 @@
+# Annexes
+
+## What are the benefits of Github and why do we recommend it?
+
+Github is a central place to store our analytical projects - particularly those which are built primarily in code.
+
+It provides a range of poweful tools and functionality which will help you manage your work.  This is useful if you're work on your own, but the benefits are greatest when you're working in a team.
+
+Here are some of the things that Git offers:
+
+
+- It provides a single, unambigous master version of a project.  No more `model_final.r`, `model_finalv2_final.r`. etc.
+
+- Enables you and collaborators to work on the same project and files concurrently, resolving conflicts if you edit the same parts of the same files, whilst keeping track of who made what edits and when.
+
+- It enables work in progress to be shareed with team members, without compromising the master version. You never get confused between what's not yet final, and what's trusted, quality assured code.  The work in progress can be seemlessly merged into the master version when it's ready.
+
+- It provides a history of all previous versions of the projects, which can be meaningfully tagged, and reverted to (undo points).   e.g. we may wish to revert to the exact code that was tagged ‘model run 2015Q1’.
+
+- It provides extremely powerful search.  The ability to search all code written by Ministry of Justice analysts in milliseconds.  Or all code written by anyone, for that matter.
+
+- It enables an easier, more robust, more enjoyable approach to quality assurance.  In particular, it offers the potential to continuously quality assure a project as it's built, rather than QA being an activity that's only done once the work is complete.
+
+- Productivity tools like issues (a to do list), and a trello style workflow, with automation.
+
+- Git stores a huge amount of meta data about *why* changes were made and by whom.  This dramatically reduces the danger of code becoming a 'black box'.
+
+- It makes it much easier to build reusable components and open source.  And we use R code written by statisticians around the world that's been put on Github.   We know that people across government have been using Xltabr.  We can collaborate easily with other government deparments and anyone else for that matter
+
+- It makes it easier to ask for help with your work, particularly with colleagues who are working remotely.  You can hyperlink and comment on specific lines of code.
+
+- You can write rich, searchable documentation - e.g. this user guide is hosted on Github!
+
+
+
+
+
