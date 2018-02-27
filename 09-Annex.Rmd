@@ -4,7 +4,7 @@
 
 Github is a central place to store our analytical projects - particularly those which are built primarily in code.
 
-It provides a range of poweful tools and functionality which will help you manage your work.  This is useful if you're work on your own, but the benefits are greatest when you're working in a team.
+It provides a range of poweful tools and functionality which will help you manage your work.  This is useful if you're working on your own, but the benefits are greatest when you're working in a team.
 
 Here are some of the things that Git offers:
 
@@ -13,11 +13,13 @@ Here are some of the things that Git offers:
 
 - It enables you and collaborators to work on the same project and files *concurrently*, resolving conflicts if you edit the same parts of the same files, whilst keeping track of who made what edits and when.
 
-- It enables work in progress to be shareed with team members, without compromising the master version. You never get confused between what's not yet final, and what's trusted, quality assured code.  The work in progress can be seemlessly merged into the master version when it's ready.
+- It enables work in progress to be shared with team members, without compromising the master version. You never get confused between what's not yet final, and what's trusted, quality assured code.  The work in progress can be seemlessly merged into the master version when it's ready.
 
 - It provides a history of all previous versions of the projects, which can be meaningfully tagged, and reverted to (undo points).   e.g. we may wish to revert to the exact code that was tagged ‘model run 2015Q1’.
 
-- It provides extremely powerful search.  The ability to search all code written by Ministry of Justice analysts in milliseconds.  Or all code written by anyone, for that matter.
+- It reduces the likelihood of code being lost in messy file systems, such as on DOM1. Files sits within defined project 'repositories', with all code accessible from this location.
+
+- It provides an extremely powerful search function.  The ability to search all code written by Ministry of Justice analysts in milliseconds.  Or all code written by anyone, for that matter.
 
 - It enables an easier, more robust, more enjoyable approach to quality assurance.  In particular, it offers the potential to continuously quality assure a project as it's built, rather than QA being an activity that's only done once the work is complete.  For example, all additions to the codebase can be reviewed and accepted by a peer before being integrated into the master version.
 
@@ -33,15 +35,15 @@ Here are some of the things that Git offers:
 
 Finally, we have chosed git specifically because it seems to be by far the most popular version control system - see [here](https://insights.stackoverflow.com/survey/2017#work-version-control) and [here](https://trends.google.co.uk/trends/explore?date=all&q=tfs,svn,mercurial,git)
 
-## Step by step guide to setup of Two Factor Authentication 
+## Step by step guide to setup Two Factor Authentication 
 
-Two factor authentication (2FA) is critical to the security of the platform.  We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log in to DOM1.
+Two factor authentication (2FA) is critical to the security of the platform.  We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log into DOM1.
 
 Note that there are two layers of two factor authentication (2FA) in action on the platform:
 
 * *Github Account 2FA* Your Github account must have 2FA enabled.  When you log in to Github, your session will stay active for a month before you need to re-enter your 2FA code.  Your Github username identifies you to the platform, and we use this identity to control access to data and other resources once you've logged into the platform.  You therefore must be logged into Github to use the platform.
 
-* *Analytical Platform 2FA* You Analytical Platform account has a separate 2FA step.  You will be prompted to set this up the first time you access the platform.  This code must be entered once a day.  This security step lets you log into the platform and use it.
+* *Analytical Platform 2FA* Your Analytical Platform account has a separate 2FA step.  You will be prompted to set this up the first time you access the platform.  This code must be entered once a day.  This security step lets you log into the platform and use it.
 
 Usually, when you log into the platform, you will be prompted to enter your platform 2FA, but you will not need to enter your Github 2FA because this is remembered for a month.
 
