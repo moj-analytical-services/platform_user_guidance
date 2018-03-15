@@ -17,7 +17,7 @@ You are given the option of doing this using SMS, or an authentication app such 
 For step-by-step instructions, see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
 
 ### Email us your Github username
-Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) (or [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) if she's out of office) who will invite you to the private [MoJ Analytical Services](github.com/moj-analytical-services/) organisation.  
+Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) (or [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) if she's out of office) who will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.  
 
 This invitation will trigger an email notification, or you can accept the invitation by visiting [MoJ Analytical Services](github.com/moj-analytical-services/) organisation. 
 
