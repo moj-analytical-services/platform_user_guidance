@@ -4,9 +4,9 @@
 
 Github is a central place to store our analytical projects - particularly those which are built primarily in code.
 
-It provides a range of poweful tools and functionality which will help you manage your work.  This is useful if you're work on your own, but the benefits are greatest when you're working in a team.  
-
 **Github keeps track of who wrote what, when, why they wrote it, why we can trust its correctness, and which version of the code was run to produce an analytical result.**
+
+This is useful if you're work on your own, but the benefits are greatest when you're working in a team.
 
 Here is some more details of what Git offers:
 
