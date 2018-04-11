@@ -165,6 +165,12 @@ An example of a code search is [here](https://github.com/search?q=org%3Amoj-anal
 
 ### Hyperlink to a specific line of code in your project
 
+See [here] for how to do this
+
+### View who made changes to code, when and why using Git blame.
+
+See [here](https://help.github.com/articles/tracing-changes-in-a-file/).  An example of this is [here](https://github.com/moj-analytical-services/our-coding-standards/blame/master/version_control_pattern.md).
+
 ### Make your project available to people on different teams
 
 ### Assign a reviewer to a pull request, and leave comments.
