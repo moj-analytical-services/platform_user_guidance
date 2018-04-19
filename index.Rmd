@@ -30,7 +30,7 @@ For immediate support, contact us by [email](mailto:robin.linacre@digital.justic
 
 If you find any issues with the guidance, please report them [here](https://github.com/moj-analytical-services/platform_user_guidance/issues).
 
-# What's new?
+## What's new?
 
 - April 2018:  Substantial improvements to [`s3tools`](github.com/moj-analytical-services/s3tools) and [`s3browser`](github.com/moj-analytical-services/s3tools).  s3browser is now much faster, and s3tools has more functionality
 - March 2018:  Users' R Studio 'hibernate' at 22:00 each evening, reducing overall resource utilisation
