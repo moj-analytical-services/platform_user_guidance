@@ -1,0 +1,43 @@
+# How to get Support
+
+Key Points:
+
+* Step by step (what is the process you should go through)
+    + Built in support (e.g. for R try looking at package guides and functions, for github...?, for platform look at user guidance) 
+    + Google/stack overflow
+    + 
+
+
+* Platform Support
+    + Platform team (MOJ Digitech) is only there to 
+    + Slack channel link   
+
+
+
+* R-support
+    + R slack channel
+    + Stack overflow/Google
+    + Package guidance
+    + R training group
+    + Data Science team - last resort, if exhausted the others (need reproducable example, see below)
+
+
+
+* Git-support
+    + Git slack channel
+    + Git training course
+    + Data science team - again last resort, 
+
+
+
+* Creating a reproducable example
+    + Minimal example
+    + Cut out any large data, use R-datasets if possible (mtcars etc.)
+    + Reproduce the problem with a clear input, line of code etc.
+    
+
+
+* Raising Issues
+    + Github issue pages
+    + Package specific issues (github also)
+    + Guidance for how to structure issues
