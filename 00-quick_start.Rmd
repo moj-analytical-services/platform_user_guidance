@@ -12,6 +12,7 @@ The Platform provides four main services to analysts:
 
 ### Links to components of the Analytical Platform
 
+- [**The Control panel**](http://cpanel-master.services.alpha.mojanalytics.xyz/)   The central portal from which you can access your software etc
 - **R Studio:** Gives you access to R, a popular data analysis package. When using the platform, you'll spend much of your time in R Studio.  Each user has access to R Studio using a personal URL. The address is in the following format:
   `https://YOUR_GITHUB_USERNAME-rstudio.tools.alpha.mojanalytics.xyz`
 - [**Amazon S3:**](https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y) Shared data storage for large data sets.  You upload secure data to folders, with no limit on storage space. S3 uses the term 'buckets' for folders.
