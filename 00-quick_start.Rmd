@@ -12,6 +12,7 @@ The Platform provides four main services to analysts:
 
 ### Links to components of the Analytical Platform
 
+- [**The Control panel**](http://cpanel-master.services.alpha.mojanalytics.xyz/)   The central portal from which you can access your software etc
 - **R Studio:** Gives you access to R, a popular data analysis package. When using the platform, you'll spend much of your time in R Studio.  Each user has access to R Studio using a personal URL. The address is in the following format:
   `https://YOUR_GITHUB_USERNAME-rstudio.tools.alpha.mojanalytics.xyz`
 - [**Amazon S3:**](https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y) Shared data storage for large data sets.  You upload secure data to folders, with no limit on storage space. S3 uses the term 'buckets' for folders.
@@ -27,7 +28,7 @@ The Platform provides four main services to analysts:
 The Platform provides a number of advantages over existing analytical infrastructure:
 
 - It provides access to the latest versions of modern analytical software, such as R Studio,
-- It provides more powerful computational resources (12Gb RAM and fast CPUs) than DOM1 machines.
+- It provides more powerful computational resources (>10Gb RAM and fast CPUs) than DOM1 machines.
 - It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS's system), and MacBooks. 
 - It allows analysts to securely deploy data products such as R Shiny applications and web sites, including web-base data visualisations.
 - The platform is hosted in the cloud, which means it is scalable and easy to access remotely. Data storage is unlimited, and computational resource can be scaled to demand.

@@ -4,10 +4,11 @@
 
 Github is a central place to store our analytical projects - particularly those which are built primarily in code.
 
-It provides a range of poweful tools and functionality which will help you manage your work.  This is useful if you're working on your own, but the benefits are greatest when you're working in a team.
+**Github keeps track of who wrote what, when, why they wrote it, why we can trust its correctness, and which version of the code was run to produce an analytical result.**
 
-Here are some of the things that Git offers:
+This is useful if you're work on your own, but the benefits are greatest when you're working in a team.
 
+Here is some more details of what Git offers:
 
 - It provides a single, unambigous master version of a project.  No more `model_final.r`, `model_finalv2_final.r`. etc.
 
@@ -23,9 +24,9 @@ Here are some of the things that Git offers:
 
 - It enables an easier, more robust, more enjoyable approach to quality assurance.  In particular, it offers the potential to continuously quality assure a project as it's built, rather than QA being an activity that's only done once the work is complete.  For example, all additions to the codebase can be reviewed and accepted by a peer before being integrated into the master version.
 
-- It includes productivity tools like Github issues (essentially a tagged to do list), and a trello style workflow (Github projects), with automation.  The to do list is automatically linked to the implementation - e.g. The issue of 'fix number formatting' is automatically linked to the specific changes in the code that fixed the number formatting.
+- It includes productivity tools like Github issues (essentially a tagged to-do list), and a trello style workflow (Github projects), with automation.  
 
-- Git stores a huge amount of meta data about *why* changes were made and by whom.  This dramatically reduces the danger of code becoming a 'black box'.
+- Git stores a huge amount of meta data about *why* changes were made and by whom.  This dramatically reduces the danger of code becoming a 'black box'.  The to-do list is automatically linked to the implementation - e.g. The issue of 'improve number formatting' is automatically linked to the specific changes in the code that fixed the number formatting.  
 
 - It makes it much easier to build reusable components, and make parts of our code open source (available to the public).  For example, we use R code written by statisticians around the world that's been put on Github, and we know that people across government have been using some of our R code.  We can collaborate easily with other government deparments and anyone else for that matter.
 

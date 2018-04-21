@@ -161,7 +161,15 @@ The slides from from the ASD git training are [available here (dom1 access only)
 
 ### Search the code in MoJ Analytical Services to see who else has used a package.
 
+An example of a code search is [here](https://github.com/search?q=org%3Amoj-analytical-services+xltabr&type=Code).  Further guidance is [here](https://help.github.com/articles/about-searching-on-github/)
+
 ### Hyperlink to a specific line of code in your project
+
+See [here] for how to do this
+
+### View who made changes to code, when and why using Git blame.
+
+See [here](https://help.github.com/articles/tracing-changes-in-a-file/).  An example of this is [here](https://github.com/moj-analytical-services/our-coding-standards/blame/master/version_control_pattern.md).
 
 ### Make your project available to people on different teams
 
