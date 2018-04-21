@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2018-04-20">
+<meta name="date" content="2018-04-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -224,7 +224,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10" data-path="annexes.html"><a href="annexes.html"><i class="fa fa-check"></i><b>10</b> Annexes</a><ul>
 <li class="chapter" data-level="10.1" data-path="annexes.html"><a href="annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it"><i class="fa fa-check"></i><b>10.1</b> What are the benefits of Github and why do we recommend it?</a></li>
-<li class="chapter" data-level="10.2" data-path="annexes.html"><a href="annexes.html#step-by-step-guide-to-setup-of-two-factor-authentication"><i class="fa fa-check"></i><b>10.2</b> Step by step guide to setup of Two Factor Authentication</a><ul>
+<li class="chapter" data-level="10.2" data-path="annexes.html"><a href="annexes.html#step-by-step-guide-to-setup-two-factor-authentication"><i class="fa fa-check"></i><b>10.2</b> Step by step guide to setup Two Factor Authentication</a><ul>
 <li class="chapter" data-level="10.2.1" data-path="annexes.html"><a href="annexes.html#step-by-step---logging-into-the-platform-for-the-first-time"><i class="fa fa-check"></i><b>10.2.1</b> Step by step - logging into the platform for the first time</a></li>
 </ul></li>
 </ul></li>
@@ -258,7 +258,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>It enables you and collaborators to work on the same project and files <em>concurrently</em>, resolving conflicts if you edit the same parts of the same files, whilst keeping track of who made what edits and when.</p></li>
 <li><p>It enables work in progress to be shared with team members, without compromising the master version. You never get confused between what’s not yet final, and what’s trusted, quality assured code. The work in progress can be seemlessly merged into the master version when it’s ready.</p></li>
 <li><p>It provides a history of all previous versions of the projects, which can be meaningfully tagged, and reverted to (undo points). e.g. we may wish to revert to the exact code that was tagged ‘model run 2015Q1’.</p></li>
-<li><p>It provides extremely powerful search. The ability to search all code written by Ministry of Justice analysts in milliseconds. Or all code written by anyone, for that matter.</p></li>
+<li><p>It reduces the likelihood of code being lost in messy file systems, such as on DOM1. Files sits within defined project ‘repositories’, with all code accessible from this location.</p></li>
+<li><p>It provides an extremely powerful search function. The ability to search all code written by Ministry of Justice analysts in milliseconds. Or all code written by anyone, for that matter.</p></li>
 <li><p>It enables an easier, more robust, more enjoyable approach to quality assurance. In particular, it offers the potential to continuously quality assure a project as it’s built, rather than QA being an activity that’s only done once the work is complete. For example, all additions to the codebase can be reviewed and accepted by a peer before being integrated into the master version.</p></li>
 <li><p>It includes productivity tools like Github issues (essentially a tagged to-do list), and a trello style workflow (Github projects), with automation.</p></li>
 <li><p>Git stores a huge amount of meta data about <em>why</em> changes were made and by whom. This dramatically reduces the danger of code becoming a ‘black box’. The to-do list is automatically linked to the implementation - e.g. The issue of ‘improve number formatting’ is automatically linked to the specific changes in the code that fixed the number formatting.</p></li>
@@ -268,13 +269,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>Finally, we have chosed git specifically because it seems to be by far the most popular version control system - see <a href="https://insights.stackoverflow.com/survey/2017#work-version-control">here</a> and <a href="https://trends.google.co.uk/trends/explore?date=all&amp;q=tfs,svn,mercurial,git">here</a></p>
 </div>
-<div id="step-by-step-guide-to-setup-of-two-factor-authentication" class="section level2">
-<h2><span class="header-section-number">10.2</span> Step by step guide to setup of Two Factor Authentication</h2>
-<p>Two factor authentication (2FA) is critical to the security of the platform. We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log in to DOM1.</p>
+<div id="step-by-step-guide-to-setup-two-factor-authentication" class="section level2">
+<h2><span class="header-section-number">10.2</span> Step by step guide to setup Two Factor Authentication</h2>
+<p>Two factor authentication (2FA) is critical to the security of the platform. We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log into DOM1.</p>
 <p>Note that there are two layers of two factor authentication (2FA) in action on the platform:</p>
 <ul>
 <li><p><em>Github Account 2FA</em> Your Github account must have 2FA enabled. When you log in to Github, your session will stay active for a month before you need to re-enter your 2FA code. Your Github username identifies you to the platform, and we use this identity to control access to data and other resources once you’ve logged into the platform. You therefore must be logged into Github to use the platform.</p></li>
-<li><p><em>Analytical Platform 2FA</em> You Analytical Platform account has a separate 2FA step. You will be prompted to set this up the first time you access the platform. This code must be entered once a day. This security step lets you log into the platform and use it.</p></li>
+<li><p><em>Analytical Platform 2FA</em> Your Analytical Platform account has a separate 2FA step. You will be prompted to set this up the first time you access the platform. This code must be entered once a day. This security step lets you log into the platform and use it.</p></li>
 </ul>
 <p>Usually, when you log into the platform, you will be prompted to enter your platform 2FA, but you will not need to enter your Github 2FA because this is remembered for a month.</p>
 <p>However, if you have not logged into the platform for more than a month, you will first have to login to Github (and enter your Github 2FA code), and you will then also be prompted to enter your platform 2FA code.</p>
