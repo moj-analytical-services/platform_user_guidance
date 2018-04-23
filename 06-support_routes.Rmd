@@ -43,7 +43,7 @@ User's are responsible for the code they create and are expected to debug and so
 * Stack Overflow and Google are powerful tools when you encounter a problem - it's incredibly unlikely that you are the first to come across it. Stack Overflow also has the added benefit of allowing you to sign up and post questions publicly, massively widening the chance of finding someone who can help. Be aware not to publish data with questions and be sure to follow the guidance of reproducable examples below. (Link)
 * There is an R slack channel (Link) which is visited frequently by R users from across ASD, please use this forum to ask questions or post examples of code, putting your problem out in the open is also a great way to help others who may be experiencing the same thing.
 * An ASD R training group also exists who can help getting you up to speed with R (unfortunately there isn't yet one for Python), this is led by Aiden Mews (contact details and direct towards?) who can be contacted to discuss the option of formal R training or guidance on online based tutorials.
-* If none of the above methods have helped to solve the problem then the Data Science Hub (DaSH) team is happy to provide assistance, although please be aware that team members are under no obligation to do so and appreciate the time this may take away from their other work. Generally posting on the R slack channel is the best way to reach DaSH although... (email or just say post on slack?)
+* If none of the above methods have helped to solve the problem then the Data Science Hub (DaSH) team is happy to provide assistance, although please be aware that team members are under no obligation to do so and appreciate the time this may take away from their other work. Data science team members are active contributors to the Slack channels and creating a post there is preferred method of contact.
 
 
 ### Git Support (Version control)
@@ -57,15 +57,26 @@ Similarly using git and interfacing with Github are processes that users are exp
 ** If you have accidentally put data into a Github repository please highlight this to the data science team immediately ** (do we need to specify this?)
     
 
-## Creating a reproducable example
-    + Minimal example
-    + Cut out any large data, use R-datasets if possible (mtcars etc.)
-    + Reproduce the problem with a clear input, line of code etc.
+## Creating a Reproducable Example
 
+When posting a problem or question on a forum (whether this be the ASD slack channel or a public website such as Stack Overflow) it is vital to ensure that other users can reproduce your example, and therefore understand your issue. Posting a question with no example or an example which is too large will prevent otheres from being able to help effectively. When creating a minimal reproducable example:
 
+* Isolate the section of code which is causing the problem, ensure that the example can be run without the need for any prior processing or code.
+* Remove any real data, helpers cannot be expect to have access to the same dataset so providing a small dummy dataset is important. In R you could use the built in datasets such as `mtcars` or `iris` which all R users have access to.
+* Provide the expected output, be clear as to what you are trying to achieve and what the correct outcome will look like.
+
+Details on how to produce a good reproducible example can be found here:
+https://stackoverflow.com/help/mcve
+https://github.com/tidyverse/reprex 
 
 
 ## Raising Issues
     + Github issue pages
     + Package specific issues (github also)
     + Guidance for how to structure issues
+  
+Rather than posting questions on Slack you could also visit the analytical platform [Github page](https://github.com/ministryofjustice/analytics-platform/issues) and raise a formal issue ticket. This will then flag your issue directly to the MoJ Digitech team who will respond through the issue log on Github. There is a fixed format for raising issues which should be followed to ensure the team can help:
+https://github.com/ministryofjustice/analytics-platform/blob/master/.github/ISSUE_TEMPLATE.md 
+
+
+This approach of raising issues also applies to any package, model or project that has a Github page. These issue logs are the most common method for highlighting problems in open source project, many R packages for example have a Github page where you can raise issues with the developer or search to see whether your problem has already been raised. 
