@@ -5,76 +5,62 @@ If you are having any issues or problems whilst using the analytical platform th
 For every problem though there are a few quick steps you can try that will make it easier to provide help and may even fix your issue outright. With the exception of direct administration issues such as resetting authorisation try to:
 
 1. Reproduce the issue: if you can reliably recreate the issue time after time this will make it easier to pin point exactly what is going wrong. This may not always be possible with intermittent faults.
+
 2. Be specific: isolate the problem as much as possible and narrow it down to the smallest segment. It's much easier and quicker if you can pin point a function or line of code, or the exact step that is causing a failure.
-3. Check if it is a known issue: it could be that the problem is experienced regularly by others or is a known bug currently being fixed. The place to go to check this will vary on the problem but checking Github issue logs, googling the problem, checking stackoverflow and browsing the Slack channels can often highlight the right next steps to take. 
+
+3. Check if it is a known issue: it could be that the problem is experienced regularly by others or is a known bug currently being fixed. The place to go to check this will vary on the problem but checking Github issue logs, googling the problem, checking stackoverflow and browsing the Slack channels can often highlight the best next steps to take. 
 
 ## Routes of Support
 
 ### Platform Support
-    + Platform team (MOJ Digitech) is only there to...
-    + Slack channel link   
-    + Github link
-    
 
+The MoJ Digitech team is responsible solely for supporting problems with the underlying analytical platform. If there is a issue relating to the running of the platform or surrounding infrastructure then they can provide support. Examples of this include:
 
 * Administration of accounts
     + Reset authorisation
-    + anything else?
+    + Access priviledges? (or is this user controlled through github?)
     
 * Bugs or unexpected issues
     + Platform crashing?
     + Jenkins not working?
     + anything else?
     
+This **does not** include any problems which occur as a result of the limitations or incorrect use of software by users on the platform. If issues occur whilst running code or using version control please see the sections below. Remember the first port of call for using the platform should always be this user document.
+
+The MoJ Digitech team have a slack channel where you can post questions and a Github page where you can raise a formal issue ticket (link). Please allow sufficient time for the team to get back to you and be aware that (something about non essential support being a favour...)
+(Link)
+(Link)
+
+For only those users who cannot access slack or Github (all DOM1 users can use slack on their windows laptop) there is a direct email address which can be used:
+(Address)
+
     
-What do do:
-* Post on the slack channel in the first instance (please leave time for the team to get back to you)
-* If you understand the problem, raise an issue on the github page (see link for raising issues)
-    
-### R-support (Coding support?)
-    + R slack channel
-    + Stack overflow/Google (you can sign up and ask questions here, important to follow repro example...)
-    + Package guidance
-    + R training group
-    + Data Science team - last resort, if exhausted the others (need reproducable example, see below)
-    
-### Git-support
-    + Git slack channel
-    + Git training course
-    + Data science team - again last resort, 
-    
-    
-    
+### Coding Support (R & Python)
+
+User's are responsible for the code they create and are expected to debug and solve problems themselves. There are a number of resources which will be helpful in supporting you do this:
+
+* This platform user guidance document contains a number of different sections explaining how the platform interfaces with R and common issues that may occur.
+* Stack Overflow and Google are powerful tools when you encounter a problem - it's incredibly unlikely that you are the first to come across it. Stack Overflow also has the added benefit of allowing you to sign up and post questions publicly, massively widening the chance of finding someone who can help. Be aware not to publish data with questions and be sure to follow the guidance of reproducable examples below. (Link)
+* There is an R slack channel (Link) which is visited frequently by R users from across ASD, please use this forum to ask questions or post examples of code, putting your problem out in the open is also a great way to help others who may be experiencing the same thing.
+* An ASD R training group also exists who can help getting you up to speed with R (unfortunately there isn't yet one for Python), this is led by Aiden Mews (contact details and direct towards?) who can be contacted to discuss the option of formal R training or guidance on online based tutorials.
+* If none of the above methods have helped to solve the problem then the Data Science Hub (DaSH) team is happy to provide assistance, although please be aware that team members are under no obligation to do so and appreciate the time this may take away from their other work. Generally posting on the R slack channel is the best way to reach DaSH although... (email or just say post on slack?)
 
 
-## Step by step process
+### Git Support (Version control)
 
-### Non-platform issue
+Similarly using git and interfacing with Github are processes that users are expected to learn and manage themselves. Git and Github are hugely beneficially to analysts as they provide a single version of the truth, incorporate continual QA and allow multiple users to work consectutively on a single file (just to name a few of the benefits). The set up and configuration of Git is covered in this guidance but ff you have any further queries related to the use of git or Github there are the following routes of support: 
 
-* Explain a bit about what these are (R, coding, etc.)
-    + Built in support (e.g. for R try looking at package guides and functions, for github...?, for platform look at user guidance) 
-    + Google/stack overflow
-    + Communal support routes - Slack channel
-    + Training group (R, etc.)
-    + Data science team (through the approiate slack channel?)
+* There is a Git/Github training course being run by the Data Science Hub which will introduce you to the key concepts and provide you a practical example of how it works. It is highly recommended you take this course when first starting out with git. (Details on how to get on course?)
+* In a similar vein to R there is also a git slack channel (Link). This should be the first port of call for specific questions, highlighting issues or general advice.
+* If this does not solve your problem then the Data Science Hub (DaSH) team is happy to provide assistance, although again please be aware that team members are under no obligation to do so and appreciate the time this may take away from their other work.
 
-### Platform issue
+** If you have accidentally put data into a Github repository please highlight this to the data science team immediately ** (do we need to specify this?)
+    
 
-* What counts as a platform issue and the different types. Whether this be a genuine bug, auth, etc. etc.
-    + Communal support routes (AP slack)
-    + Issue logs
-    + MoJ Digitech
-    
-    
-    
-    
-    
-    
 ## Creating a reproducable example
     + Minimal example
     + Cut out any large data, use R-datasets if possible (mtcars etc.)
     + Reproduce the problem with a clear input, line of code etc.
-
 
 
 
