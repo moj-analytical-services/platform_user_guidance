@@ -1,43 +1,85 @@
 # How to get Support
 
-Key Points:
+If you are having any issues or problems whilst using the analytical platform there are a number of routes you can take to get help and support and a few things you can do to make this easier. When using the analytical platform you may experience problems with administration (such as logging in and authorisation) issues with your code (running R or Python scripts) or the platform not functioning as expected, each of these will have a different support path as set out below.
 
-* Step by step (what is the process you should go through)
-    + Built in support (e.g. for R try looking at package guides and functions, for github...?, for platform look at user guidance) 
-    + Google/stack overflow
-    + 
+For every problem though there are a few quick steps you can try that will make it easier to provide help and may even fix your issue outright. With the exception of direct administration issues such as resetting authorisation try to:
 
+1. Reproduce the issue: if you can reliably recreate the issue time after time this will make it easier to pin point exactly what is going wrong. This may not always be possible with intermittent faults.
+2. Be specific: isolate the problem as much as possible and narrow it down to the smallest segment. It's much easier and quicker if you can pin point a function or line of code, or the exact step that is causing a failure.
+3. Check if it is a known issue: it could be that the problem is experienced regularly by others or is a known bug currently being fixed. The place to go to check this will vary on the problem but checking Github issue logs, googling the problem, checking stackoverflow and browsing the Slack channels can often highlight the right next steps to take. 
 
-* Platform Support
-    + Platform team (MOJ Digitech) is only there to 
+## Routes of Support
+
+### Platform Support
+    + Platform team (MOJ Digitech) is only there to...
     + Slack channel link   
-
-
-
-* R-support
-    + R slack channel
-    + Stack overflow/Google
-    + Package guidance
-    + R training group
-    + Data Science team - last resort, if exhausted the others (need reproducable example, see below)
-
-
-
-* Git-support
-    + Git slack channel
-    + Git training course
-    + Data science team - again last resort, 
-
-
-
-* Creating a reproducable example
-    + Minimal example
-    + Cut out any large data, use R-datasets if possible (mtcars etc.)
-    + Reproduce the problem with a clear input, line of code etc.
+    + Github link
     
 
 
-* Raising Issues
+* Administration of accounts
+    + Reset authorisation
+    + anything else?
+    
+* Bugs or unexpected issues
+    + Platform crashing?
+    + Jenkins not working?
+    + anything else?
+    
+    
+What do do:
+* Post on the slack channel in the first instance (please leave time for the team to get back to you)
+* If you understand the problem, raise an issue on the github page (see link for raising issues)
+    
+### R-support (Coding support?)
+    + R slack channel
+    + Stack overflow/Google (you can sign up and ask questions here, important to follow repro example...)
+    + Package guidance
+    + R training group
+    + Data Science team - last resort, if exhausted the others (need reproducable example, see below)
+    
+### Git-support
+    + Git slack channel
+    + Git training course
+    + Data science team - again last resort, 
+    
+    
+    
+
+
+## Step by step process
+
+### Non-platform issue
+
+* Explain a bit about what these are (R, coding, etc.)
+    + Built in support (e.g. for R try looking at package guides and functions, for github...?, for platform look at user guidance) 
+    + Google/stack overflow
+    + Communal support routes - Slack channel
+    + Training group (R, etc.)
+    + Data science team (through the approiate slack channel?)
+
+### Platform issue
+
+* What counts as a platform issue and the different types. Whether this be a genuine bug, auth, etc. etc.
+    + Communal support routes (AP slack)
+    + Issue logs
+    + MoJ Digitech
+    
+    
+    
+    
+    
+    
+## Creating a reproducable example
+    + Minimal example
+    + Cut out any large data, use R-datasets if possible (mtcars etc.)
+    + Reproduce the problem with a clear input, line of code etc.
+
+
+
+
+
+## Raising Issues
     + Github issue pages
     + Package specific issues (github also)
     + Guidance for how to structure issues
