@@ -27,12 +27,10 @@ The MoJ Digitech team is responsible solely for supporting problems with the und
     
 This **does not** include any problems which occur as a result of the limitations or incorrect use of software by users on the platform. If issues occur whilst running code or using version control please see the sections below. Remember the first port of call for using the platform should always be this user document.
 
-The MoJ Digitech team have a slack channel where you can post questions and a Github page where you can raise a formal issue ticket (link). Please allow sufficient time for the team to get back to you and be aware that (something about non essential support being a favour...)
-(Link)
-(Link)
+The MoJ Digitech team have a slack channel where you can post questions and a Github page where you can raise a formal [issue ticket](https://github.com/ministryofjustice/analytics-platform/issues). Please allow sufficient time for the team to get back to you and be aware that (something about non essential support being a favour...)
 
 For only those users who cannot access slack or Github (all DOM1 users can use slack on their windows laptop) there is a direct email address which can be used:
-(Address)
+(Robin email address?)
 
     
 ### Coding Support (R & Python)
@@ -40,10 +38,14 @@ For only those users who cannot access slack or Github (all DOM1 users can use s
 User's are responsible for the code they create and are expected to debug and solve problems themselves. There are a number of resources which will be helpful in supporting you do this:
 
 * This platform user guidance document contains a number of different sections explaining how the platform interfaces with R and common issues that may occur.
-* Stack Overflow and Google are powerful tools when you encounter a problem - it's incredibly unlikely that you are the first to come across it. Stack Overflow also has the added benefit of allowing you to sign up and post questions publicly, massively widening the chance of finding someone who can help. Be aware not to publish data with questions and be sure to follow the guidance of reproducable examples below. (Link)
-* There is an R slack channel (Link) which is visited frequently by R users from across ASD, please use this forum to ask questions or post examples of code, putting your problem out in the open is also a great way to help others who may be experiencing the same thing.
+
+* [Stack Overflow](https://stackoverflow.com/) and [Google](https://www.google.co.uk/) are powerful tools when you encounter a problem - it's incredibly unlikely that you are the first to come across it. Stack Overflow also has the added benefit of allowing you to sign up and post questions publicly, massively widening the chance of finding someone who can help. Be aware not to publish data with questions and be sure to follow the guidance of reproducable examples [below](#creating-a-reproducable-example). 
+
+* There is an R [slack channel](https://asdslack.slack.com/) which is visited frequently by R users from across ASD, please use this forum to ask questions or post examples of code, putting your problem out in the open is also a great way to help others who may be experiencing the same thing.
+
 * An ASD R training group also exists who can help getting you up to speed with R (unfortunately there isn't yet one for Python), this is led by Aiden Mews (contact details and direct towards?) who can be contacted to discuss the option of formal R training or guidance on online based tutorials.
-* If none of the above methods have helped to solve the problem then the Data Science Hub (DaSH) team is happy to provide assistance, although please be aware that team members are under no obligation to do so and appreciate the time this may take away from their other work. Data science team members are active contributors to the Slack channels and creating a post there is preferred method of contact.
+
+* If none of the above methods have helped to solve the problem then the Data Science Hub (DaSH) team is happy to provide assistance, although please be aware that team members are under no obligation to do so and appreciate the time this may take away from their other work. Data science team members are active contributors to the Slack channels and creating a post there is the preferred method of contact.
 
 
 ### Git Support (Version control)
@@ -51,7 +53,9 @@ User's are responsible for the code they create and are expected to debug and so
 Similarly using git and interfacing with Github are processes that users are expected to learn and manage themselves. Git and Github are hugely beneficially to analysts as they provide a single version of the truth, incorporate continual QA and allow multiple users to work consectutively on a single file (just to name a few of the benefits). The set up and configuration of Git is covered in this guidance but ff you have any further queries related to the use of git or Github there are the following routes of support: 
 
 * There is a Git/Github training course being run by the Data Science Hub which will introduce you to the key concepts and provide you a practical example of how it works. It is highly recommended you take this course when first starting out with git. (Details on how to get on course?)
-* In a similar vein to R there is also a git slack channel (Link). This should be the first port of call for specific questions, highlighting issues or general advice.
+
+* In a similar vein to R there is also a git [slack channel](https://asdslack.slack.com/). This should be the first port of call for specific questions, highlighting issues or general advice.
+
 * If this does not solve your problem then the Data Science Hub (DaSH) team is happy to provide assistance, although again please be aware that team members are under no obligation to do so and appreciate the time this may take away from their other work.
 
 ** If you have accidentally put data into a Github repository please highlight this to the data science team immediately ** (do we need to specify this?)
@@ -62,7 +66,9 @@ Similarly using git and interfacing with Github are processes that users are exp
 When posting a problem or question on a forum (whether this be the ASD slack channel or a public website such as Stack Overflow) it is vital to ensure that other users can reproduce your example, and therefore understand your issue. Posting a question with no example or an example which is too large will prevent otheres from being able to help effectively. When creating a minimal reproducable example:
 
 * Isolate the section of code which is causing the problem, ensure that the example can be run without the need for any prior processing or code.
-* Remove any real data, helpers cannot be expect to have access to the same dataset so providing a small dummy dataset is important. In R you could use the built in datasets such as `mtcars` or `iris` which all R users have access to.
+
+* Remove any real data, helpers cannot be expect to have access to the same dataset so providing a small dummy dataset is important. In R you could use the built in datasets such as [mtcars](https://www.rdocumentation.org/packages/datasets/versions/3.4.3/topics/mtcars) or [iris](https://rpubs.com/moeransm/intro-iris) which all R users have access to.
+
 * Provide the expected output, be clear as to what you are trying to achieve and what the correct outcome will look like.
 
 Details on how to produce a good reproducible example can be found here:
@@ -71,9 +77,6 @@ https://github.com/tidyverse/reprex
 
 
 ## Raising Issues
-    + Github issue pages
-    + Package specific issues (github also)
-    + Guidance for how to structure issues
   
 Rather than posting questions on Slack you could also visit the analytical platform [Github page](https://github.com/ministryofjustice/analytics-platform/issues) and raise a formal issue ticket. This will then flag your issue directly to the MoJ Digitech team who will respond through the issue log on Github. There is a fixed format for raising issues which should be followed to ensure the team can help:
 https://github.com/ministryofjustice/analytics-platform/blob/master/.github/ISSUE_TEMPLATE.md 
