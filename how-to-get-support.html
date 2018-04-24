@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="getting-started.html">
-<link rel="next" href="using-github-with-r-studio.html">
+<link rel="prev" href="deploying-a-static-web-app.html">
+<link rel="next" href="common-errors-and-solutions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -256,69 +256,84 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3" class="section level1">
-<h1><span class="header-section-number">Part 3</span> Working with big datasets and sharing them: Accessing data in Amazon S3</h1>
-<p><a href="https://en.wikipedia.org/wiki/Amazon_S3">Amazon S3</a> is used as the primary storage area for large data files. In contrast to data in your Platform’s home directory, data in S3 can be accessed by multiple Platform users. You will only be able to access S3 buckets (folders) that you have been granted access to (see <a href="user-administration.html#user-administration">User Administration</a>).</p>
-<div id="importing-data-from-s3-into-r" class="section level2">
-<h2><span class="header-section-number">3.1</span> Importing data from S3 into R</h2>
-<p>There are currently two methods of browsing and importing data held in S3 into RStudio.</p>
-<div id="user-interface" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> User Interface</h3>
-<p>We have developed a user interface that allows you to search and browse the files that you have been given access to.</p>
-<div class="figure">
-<img src="images/s3/s3browser.png" alt="" />
-
+<div id="how-to-get-support" class="section level1">
+<h1><span class="header-section-number">Part 7</span> How to get Support</h1>
+<div id="summary" class="section level2">
+<h2><span class="header-section-number">7.1</span> Summary</h2>
+<ul>
+<li>The Analytical Platform team in Digitech are responsible for providing access to software like R Studio and Jupyter.</li>
+<li>Analysts themselves are responsible for the code they write in these tools, and the Platform team is not responsible for assisting with problems with this code. As a rule of thumb, if the problem you’re experiencing would also occur with R Studio or Python installed on a standalone computer, then the platform team cannot offer support.</li>
+<li>If you’ve read through this user guidance and are still stuck, the best place to go for support is the <a href="https://asdslack.slack.com/messages/C4PF7QAJZ/#">analytical-platform</a> Slack channel for issues with the platform, or <a href="https://asdslack.slack.com/messages/C1PUCG719/#">the R channel</a> and <a href="https://asdslack.slack.com/messages/C1Q09V86S/#">python channel</a> to get support from peers in your code.</li>
+</ul>
+<p>What follows provides further details about how to ask for support, and what you can do to get your issues resolved as quickly as possible.</p>
 </div>
-<p>You can access this interface by typing the following command into your R Studio console:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s3browser::<span class="kw">file_explorer_s3</span>()</code></pre></div>
-<p>See the <a href="https://github.com/moj-analytical-services/s3browser">documentation</a> for further details.</p>
-</div>
-<div id="command-line-tool" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> Command line tool</h3>
-<p>We have also developed a command line tool that provides you with some helper function. This enables you to do things like write <code>s3tools::s3_path_to_full_df(&quot;alpha-everyone/CW iris.xlsx&quot;)</code> to read directly from S3 into a data frame in R.</p>
-<p>See the <a href="https://github.com/moj-analytical-services/s3tools">documentation</a> for further details.</p>
-</div>
-</div>
-<div id="uploading-data-to-s3" class="section level2">
-<h2><span class="header-section-number">3.2</span> Uploading data to S3</h2>
-<div id="where-data-is-stored" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> Where data is stored</h3>
-<p>Data in s3 is stored in ‘buckets’, which are conceptually very similar to folders.</p>
-<p>An S3 bucket is automatically created for every team that’s created in Github; for how to create and manage teams see <a href="user-administration.html#user-administration">User Administration</a>. By default, all members of a Github team have <strong>read and write</strong> access to their corresponding bucket.</p>
-</div>
-<div id="uploading-data" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Uploading data</h3>
-<p>To access the buckets you need to visit the Amazon management console with the following link: <a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y" class="uri">https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y</a> (if you regularly upload data it may be worth bookmarking this link).</p>
-<p>Authentication is managed by GitHub, so if this is the first time you are connecting to the Amazon S3 Management console you may have to approve it.</p>
-<p>You’ll be able to see all buckets, <strong>including</strong> those you <strong>do not</strong> have access to. You can only see the <em>contents</em> of buckets to which you have access.</p>
-<p>To upload data, find the bucket you want to upload data to. Within the bucket you can create folders and upload files by following the on screen instructions. When uploading files <strong>you will be prompted to set the settings for that file</strong>. If this happens, the default settings are okay.</p>
-<div id="step-by-step-instructions" class="section level4">
-<h4><span class="header-section-number">3.2.2.1</span> Step-by-step instructions</h4>
+<div id="intro" class="section level2">
+<h2><span class="header-section-number">7.2</span> Intro</h2>
+<p>When using the analytical platform you may experience problems with administration and the platform infrastructure (such as logging in and authorisation) issues with your code (running R or Python scripts) or the platform not functioning as expected, each of these will have a different support path as set out below.</p>
+<p>For every problem though there are a few quick steps you can try that will make it easier to provide help and may even fix your issue outright. With the exception of direct administration issues such as resetting authorisation try to:</p>
 <ol style="list-style-type: decimal">
-<li><p>Use the following <a href="https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y">link</a> to login</p></li>
-<li><p>Select the S3 service <img src="images/s3/s3_service.png" alt="" /></p></li>
-<li><p>Select the bucket you wish to upload data to (the bucket will have the same name as the team, but spaces are replaced with <code>-</code> and all letters are lower case, so <code>Test Team</code> will have a bucket called <code>test-team</code>). While in <strong>alpha</strong> all buckets will also have the alpha prefix.</p></li>
+<li><p>Reproduce the issue: if you can reliably recreate the issue time after time this will make it easier to pin point exactly what is going wrong. This may not always be possible with intermittent faults.</p></li>
+<li><p>Be specific: isolate the problem as much as possible and narrow it down to the smallest segment. It’s much easier and quicker if you can pin point a function or line of code, or the exact step that is causing a failure.</p></li>
+<li><p>Check if it is a known issue: it could be that the problem is experienced regularly by others or is a known bug currently being fixed. The place to go to check this will vary on the problem but checking Github issue logs, googling the problem, checking stackoverflow and browsing the Slack channels can often highlight the best next steps to take.</p></li>
 </ol>
-<p>You’ll notice two buckets are created; <strong>use the one prefixed <code>alpha-</code></strong> and ignore the one prefixed <code>dev-</code>.</p>
-<p><strong>The easiest way is to use the search</strong>: <img src="images/s3/s3_bucket_search.gif" alt="" /></p>
-<ol start="4" style="list-style-type: decimal">
-<li>Use the interface to <strong>create folders</strong> or <strong>upload files</strong>. Note: The default settings are fine.</li>
-</ol>
-<div class="figure">
-<img src="images/s3/s3_bucket_upload.gif" alt="" />
+</div>
+<div id="routes-of-support" class="section level2">
+<h2><span class="header-section-number">7.3</span> Routes of Support</h2>
+<div id="platform-support" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Platform Support</h3>
+<p>The MoJ Digitech team is responsible for supporting problems with the underlying analytical platform. If there is a issue relating to the running of the platform or surrounding infrastructure then they can provide support. Examples of this include:</p>
+<ul>
+<li>Bugs or unexpected issues
+<ul>
+<li>Platform crashing or inaccessible</li>
+<li>Deployment of Shiny apps not working</li>
+</ul></li>
+<li>Administration of accounts
+<ul>
+<li>Reset authorisation</li>
+<li>Access priviledges not working as expected</li>
+</ul></li>
+</ul>
+<p>This <strong>does not</strong> include any problems which occur as a result of the limitations or incorrect use of software by users on the platform. If issues occur whilst running code or using version control please see the sections below. Remember the first port of call for using the platform should always be this user document.</p>
+<p>The MoJ Digitech team have a <a href="(https://asdslack.slack.com/messages/C4PF7QAJZ/#)">Slack channel</a> where you can post questions and a Github page where you can raise a formal <a href="https://github.com/ministryofjustice/analytics-platform/issues">issue ticket</a>.</p>
+<p>For only those users who cannot access slack or Github (i.e. some non DOM1 users) there is a direct email address which can be used: <a href="mailto:robin.linacre@digital.justice.gov.uk">robin.linacre@digital.justice.gov.uk</a> - but this will be monitored for emails from non DOM1 users.</p>
+<p>We direct users to Slack for support because that means that users can quickly see whether similar issues are being faced by others, and Slack provides a more efficient way of getting the information we need from users to fix their problems.</p>
+</div>
+<div id="coding-support-r-python" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Coding Support (R &amp; Python)</h3>
+<p>There is no team who is responsible for offering support, but we have an active community of colleagues who offer support voluntarily. Users are responsible for the code they create and are expected to debug and solve problems themselves.</p>
+<p>If you need support, there are a multitude of resources:</p>
+<ul>
+<li><p>This platform user guidance document contains a number of different sections explaining how the platform interfaces with R and common issues that may occur.</p></li>
+<li><p>There is an R <a href="https://asdslack.slack.com/">slack channel</a> which is visited frequently by R users from across ASD, please use this forum to ask questions or post examples of code, putting your problem out in the open is also a great way to help others who may be experiencing the same thing.</p></li>
+<li><p><a href="https://stackoverflow.com/">Stack Overflow</a> and <a href="https://www.google.co.uk/">Google</a> are powerful tools when you encounter a problem - it’s very unlikely that you are the first to come across it. Stack Overflow also has the added benefit of allowing you to sign up and post questions publicly, massively widening the chance of finding someone who can help. Be aware not to publish data with questions and be sure to follow the guidance of reproducable examples <a href="#creating-a-reproducable-example">below</a>.</p></li>
+<li><p>An ASD R training group also exists who can help getting you up to speed with R (unfortunately there isn’t yet one for Python), this is led by Aidan Mews who can be contacted to discuss the option of formal R training or guidance on online based tutorials.</p></li>
+<li><p>If you’ve explored the above options and are still having problems, then the Data Science Hub (DaSH) team will try to provide assistance, although please be aware that team members are under no obligation to do so and appreciate the time this may take away from their other work. Data science team members are active contributors to the Slack channels and creating a post there is the preferred method of contact.</p></li>
+</ul>
+</div>
+<div id="git-support-version-control" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> Git Support (Version control)</h3>
+<p>Similarly using git and interfacing with Github are processes that users are expected to learn and manage themselves. Git and Github are hugely beneficially to analysts as they provide a single version of the truth, incorporate continual QA and allow multiple users to work consectutively on a single file (just to name a few of the benefits). The set up and configuration of Git is covered in this guidance but ff you have any further queries related to the use of git or Github there are the following routes of support:</p>
+<ul>
+<li>There is a Git/Github training course being run by the Data Science Hub which will introduce you to the key concepts and provide you a practical example of how it works. It is highly recommended you take this course when first starting out with git. To find out about when the next session is happening, or ask question about git, you can use the <a href="https://asdslack.slack.com/messages/C1Z8Q18LS/#">data science</a> slack channel.</li>
+</ul>
+</div>
+</div>
+<div id="how-to-ask-for-support-creating-a-reproducable-example" class="section level2">
+<h2><span class="header-section-number">7.4</span> How to ask for support: Creating a Reproducable Example</h2>
+<p>When posting a problem or question on a forum (whether this be the ASD slack channel or a public website such as Stack Overflow) it is vital to ensure that other users can reproduce your example, and therefore understand your issue. Posting a question with no example or an example which is too large will prevent otheres from being able to help effectively. When creating a minimal reproducable example:</p>
+<ul>
+<li><p>Isolate the section of code which is causing the problem, ensure that the example can be run without the need for any prior processing or code.</p></li>
+<li><p>Remove any real data, helpers cannot be expect to have access to the same dataset so providing a small dummy dataset is important. In R you could use the built in datasets such as <a href="https://www.rdocumentation.org/packages/datasets/versions/3.4.3/topics/mtcars">mtcars</a> or <a href="https://rpubs.com/moeransm/intro-iris">iris</a> which all R users have access to.</p></li>
+<li><p>Provide the expected output, be clear as to what you are trying to achieve and what the correct outcome will look like.</p></li>
+</ul>
+<p>Details on how to produce a good reproducible example can be found here: <a href="https://stackoverflow.com/help/mcve" class="uri">https://stackoverflow.com/help/mcve</a> <a href="https://github.com/tidyverse/reprex" class="uri">https://github.com/tidyverse/reprex</a></p>
+</div>
+<div id="raising-issues" class="section level2">
+<h2><span class="header-section-number">7.5</span> Raising Issues</h2>
+<p>Rather than posting questions on Slack you could also visit the analytical platform <a href="https://github.com/ministryofjustice/analytics-platform/issues">Github page</a> and raise a formal issue ticket. This will then flag your issue directly to the MoJ Digitech team who will respond through the issue log on Github. There is a fixed format for raising issues which should be followed to ensure the team can help: <a href="https://github.com/ministryofjustice/analytics-platform/blob/master/.github/ISSUE_TEMPLATE.md" class="uri">https://github.com/ministryofjustice/analytics-platform/blob/master/.github/ISSUE_TEMPLATE.md</a></p>
+<p>This approach of raising issues also applies to any package, model or project that has a Github page. These issue logs are the most common method for highlighting problems in open source project, many R packages for example have a Github page where you can raise issues with the developer or search to see whether your problem has already been raised.</p>
 
-</div>
-</div>
-<div id="manipulating-data" class="section level4">
-<h4><span class="header-section-number">3.2.2.2</span> Manipulating data</h4>
-<p>You can also move, rename and delete data using the S3 management console. Select the files by checking the text box, use the <code>More</code> button so see the options.</p>
-<div class="figure">
-<img src="images/s3/s3_options.png" alt="" />
-
-</div>
-
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -326,8 +341,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="using-github-with-r-studio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="deploying-a-static-web-app.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="common-errors-and-solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
