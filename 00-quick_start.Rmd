@@ -23,6 +23,10 @@ The Platform provides four main services to analysts:
 
 ![](images/quick_start/platform.png)
 
+```{r svgtest, echo = FALSE, fig.cap="Test"}
+knitr::include_graphics("resources/svg/platform.svg")
+```
+
 ## Why should I use the Analytical Platform?
 
 The Platform provides a number of advantages over existing analytical infrastructure:
