@@ -21,10 +21,8 @@ The Platform provides four main services to analysts:
 
 ### High level diagram of the platform:
 
-![](images/quick_start/platform.png)
-
-```{r svgtest, echo = FALSE, fig.cap="Test"}
-knitr::include_graphics("resources/svg/platform.svg")
+```{r results='asis'}
+cat(readLines('resources/svg/platform.svg'), sep = '\n')
 ```
 
 ## Why should I use the Analytical Platform?
