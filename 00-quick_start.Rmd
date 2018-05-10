@@ -9,7 +9,7 @@ The Platform provides four main services to analysts:
 - The ability to create and share interactive data products and websites.
 - Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.
 
-
+If you alraedy have a platform account, you can access the platform [here](https://cpanel-master.services.alpha.mojanalytics.xyz/).
 
 ### High level diagram of the platform:
 
