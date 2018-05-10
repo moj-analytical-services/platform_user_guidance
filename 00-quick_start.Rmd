@@ -10,20 +10,14 @@ The Platform provides four main services to analysts:
 - Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.
 
 
-### Links to components of the Analytical Platform
 
-- [**The Control panel**](http://cpanel-master.services.alpha.mojanalytics.xyz/)   The central portal from which you can access your software etc
-- **R Studio:** Gives you access to R, a popular data analysis package. When using the platform, you'll spend much of your time in R Studio.  Each user has access to R Studio using a personal URL. The address is in the following format:
-  `https://YOUR_GITHUB_USERNAME-rstudio.tools.alpha.mojanalytics.xyz`
-- [**Amazon S3:**](https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y) Shared data storage for large data sets.  You upload secure data to folders, with no limit on storage space. S3 uses the term 'buckets' for folders.
-- [**Jenkins:**](https://jenkins.services.alpha.mojanalytics.xyz/) Allows you to publish your data products - such as R Shiny apps - securely to your customers.
-- [**Github:**](https://github.com/moj-analytical-services) The central store of your work (your code).  Allows you to share your code with others, and collaborate on code projects together.
+### High level diagram of the platform:
 
-### High level diagram of the platform:
 
-```{r results='asis'}
-cat(readLines('resources/svg/platform.svg'), sep = '\n')
+```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+cat(readLines('resources/svg/platform.svg'), sep = '')
 ```
+
 
 ## Why should I use the Analytical Platform?
 
