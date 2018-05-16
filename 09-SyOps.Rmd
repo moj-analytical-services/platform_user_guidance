@@ -1,14 +1,14 @@
 # Acceptable Use Policy (Security Operating Procedures)
 
-- You must not put any sensitive (OFFICIAL) data into the platform without first gaining permission. Sensitive data is classified `OFFICIAL` or higher. To get permission, contact [Robin Linacre](mailto:robin.linacre@digital.justice.gov.uk)
-- Remember that the platform is still in Beta. This means there is no guarantee of stability. Do not use the platform for time-critical tasks. Allow for the possibility of unannounced downtime, which could last up to a week. 
+- You must not put any sensitive (OFFICIAL) data into the platform without first gaining permission. Sensitive data is classified `OFFICIAL` or higher. To get permission, contact [Robin Linacre](mailto:analytical_platform@digital.justice.gov.uk)
+- Remember that the platform is still in Beta. This means there is no guarantee of stability. Do not use the platform for time-critical tasks. Allow for the possibility of unannounced downtime, which could last up to a week.
 - If you are responsible for a team, ensure that users have the [correct permissions](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#team-creation).
 
 ## General security guidance
 
 - Do not access the platform from a non-MoJ computer. For example, do not attempt access from a personally-owned computer.
 - Choose a complex password for your Github account. A complex password cannot be guessed, and is created by following some simple rules and suggestions; see [here](https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0)
-- You must not share your account or your login credentials with anyone else. 
+- You must not share your account or your login credentials with anyone else.
 
 ## Transferring and management of data
 
@@ -32,10 +32,10 @@ In general, you must not use GitHub to store datasets. Specifically, you **MUST 
 
 * To store any large datasets classified at `OFFICIAL` or above. Our working definition is that a large dataset contains over 1,000 records.
 
-* To store any data whatsoever (in code or in datasets) where individuals are potentially identifiable and the data is not already in the public domain.  
+* To store any data whatsoever (in code or in datasets) where individuals are potentially identifiable and the data is not already in the public domain.
 
 * To store credentials such as usernames and passwords, or secrets such as database connection strings.
 
 ## Reporting security incidents
 
-You must report actual, attempted or suspected breaches of security as soon as discovered to: OperationalSecurityTeam@justice.gsi.gov.uk 
+You must report actual, attempted or suspected breaches of security as soon as discovered to: OperationalSecurityTeam@justice.gsi.gov.uk

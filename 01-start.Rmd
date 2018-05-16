@@ -3,7 +3,7 @@
 ## Getting an account
 
 ### Sign up to Github
-You need a Github account to be able to access the platform. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options. 
+You need a Github account to be able to access the platform. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options.
 
 We recommend new users use their `@justice` email address.  If you already have a personal Github account, you may also just use that.
 
@@ -17,15 +17,15 @@ You are given the option of doing this using SMS, or an authentication app such 
 For step-by-step instructions, see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
 
 ### Email us your Github username
-Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:leanne.mills@digital.justice.gov.uk) (or [Robin Linacre](mailto:Robin.Linacre@justice.gsi.gov.uk) if she's out of office) who will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.  
+Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:analytical_platform@digital.justice.gov.uk) (or [Robin Linacre](mailto:analytical_platform@digital.justice.gov.uk) if she's out of office) who will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.
 
-This invitation will trigger an email notification, or you can accept the invitation by visiting [MoJ Analytical Services](github.com/moj-analytical-services/) organisation. 
+This invitation will trigger an email notification, or you can accept the invitation by visiting [MoJ Analytical Services](github.com/moj-analytical-services/) organisation.
 
-Once you've accpted the invitation, you've now completed all the security prerequisites, and you're ready to access the platform. 
+Once you've accpted the invitation, you've now completed all the security prerequisites, and you're ready to access the platform.
 
 ### Read the Security Operating Procedure
 
-Before you start using the platform, please read the [Acceptable use policy](https://moj-analytical-services.github.io/platform_user_guidance/acceptable-use-policy-security-operating-procedures.html).  
+Before you start using the platform, please read the [Acceptable use policy](https://moj-analytical-services.github.io/platform_user_guidance/acceptable-use-policy-security-operating-procedures.html).
 
 ## Accessing the platform
 
@@ -39,7 +39,7 @@ For troubleshooting 2FA issues, please see [this section](https://github.com/moj
 
 ##  Configuring Git and Github for use on the Analytical Platform
 
-Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.  
+Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.
 
 If you are new to Git and Github, it is worth clarifying the difference between Git and Git**hub**. Git is the software that looks after the version control of code, whereas Github is the website on which you publish and share your version controlled code. In practice this means you use Git to track versions of your code, and then submit those changes to Github.
 
@@ -75,7 +75,7 @@ For the next step, you'll need to copy and paste your SSH public key.  You can c
 
 ![](images/start/git-public-key.PNG)
 
-You can find more information about SSH keys in [this](https://help.github.com/articles/connecting-to-github-with-ssh/) guidance.  
+You can find more information about SSH keys in [this](https://help.github.com/articles/connecting-to-github-with-ssh/) guidance.
 
 #### Step 2:  Register the key with Github.
 

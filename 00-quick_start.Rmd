@@ -25,7 +25,7 @@ The Platform provides a number of advantages over existing analytical infrastruc
 
 - It provides access to the latest versions of modern analytical software, such as R Studio,
 - It provides more powerful computational resources (>10Gb RAM and fast CPUs) than DOM1 machines.
-- It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS's system), and MacBooks. 
+- It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS's system), and MacBooks.
 - It allows analysts to securely deploy data products such as R Shiny applications and web sites, including web-base data visualisations.
 - The platform is hosted in the cloud, which means it is scalable and easy to access remotely. Data storage is unlimited, and computational resource can be scaled to demand.
 
@@ -58,4 +58,4 @@ See [Deploying a Shiny App ][Deploying a Shiny App ].
 
 ## Contacting us
 
-For quick support, contact us on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/anaytical_platform/). Alternatively, contact us by [email](mailto:robin.linacre@digital.justice.gov.uk)
+For quick support, contact us on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/anaytical_platform/). Alternatively, contact us by [email](mailto:analytical_platform@digital.justice.gov.uk)
