@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2018-05-11">
+<meta name="date" content="2018-05-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,41 +50,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -276,19 +304,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>Make sure the repo is ‘private’ (this should be the default value):</p></li>
 <li><p>Click ‘Begin import’</p></li>
 </ol>
-<div class="figure">
-<img src="images/shiny/github_shiny_import.gif" alt="" />
-
-</div>
+<p><img src="images/shiny/github_shiny_import.gif" /></p>
 </div>
 <div id="in-r-studio-in-the-platform-create-a-new-project-from-your-new-github-repository" class="section level3">
 <h3><span class="header-section-number">5.1.2</span> In R Studio in the platform, create a new project from your new Github repository</h3>
 <p>In R Studio, navigate through the following menus:</p>
 <p>File -&gt; New project -&gt; Version control -&gt; Git</p>
-<div class="figure">
-<img src="images/shiny/github_shiny_rstudio.gif" alt="" />
-
-</div>
+<p><img src="images/shiny/github_shiny_rstudio.gif" /></p>
 <p>In ‘Repository URL’, enter the URL of the repository you just created. This needs to be the SSH URL (starting with <code>git@github</code>), <strong>NOT</strong> the HTTPS url (which starts with <code>https</code>). Therefore, it is in the following format:</p>
 <pre><code>git@github.com:moj-analytical-services/your_name_goes_here.git</code></pre>
 <p>R Studio will create a new project folder with all the template files in.</p>
@@ -296,14 +318,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="further-notes-if-youre-having-trouble-finding-your-new-repos-url" class="section level4">
 <h4><span class="header-section-number">5.1.2.1</span> Further notes if you’re having trouble finding your new repo’s url</h4>
 <p>If you navigate to your new repository’s home page (which will have a url in the form <code>https://github.com/moj-analytical-services/your_name_goes_here</code>), you can use the following buttons to access this url (make sure you click the ‘ssh’ button):</p>
-<div class="figure">
-<img src="images/shiny/use_ssh.PNG" alt="" />
-
-</div>
-<div class="figure">
-<img src="images/shiny/ssh_url.PNG" alt="" />
-
-</div>
+<p><img src="images/shiny/use_ssh.PNG" /></p>
+<p><img src="images/shiny/ssh_url.PNG" /></p>
 </div>
 </div>
 <div id="work-on-your-app" class="section level3">
@@ -315,10 +331,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Your Shiny app will have dependencies on various third-party R packages (e.g. <code>dplyr</code>). These packages change through time, and sometimes these changes are not backwards compatible. When we deploy your Shiny app, it is therefore essential to include a manifest of all of the package dependencies and their specific versions.</p>
 <p>The R package<code>packrat</code> automates this process. Before deploying your app, you need to call <code>packrat::snapshot()</code> to automatically create this manifest. You may want to call <code>packrat::clean()</code> to remove any dependencies that are no longer in use.</p>
 <p>This creates a file called <code>packrat/packrat.lock</code>. You need to ensure you have committed this to the Github repository prior to deployment.</p>
-<div class="figure">
-<img src="images/shiny/github_packrat_snapshot.gif" alt="" />
-
-</div>
+<p><img src="images/shiny/github_packrat_snapshot.gif" /></p>
 </div>
 <div id="scan-organisation-and-deploy" class="section level3">
 <h3><span class="header-section-number">5.1.5</span> Scan organisation and deploy</h3>
@@ -327,25 +340,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ol style="list-style-type: decimal">
 <li><p>You will see a list of apps that have been detected. Find yours and click on the link with its name (if you’re app isnt listed then click “Scan Organisation Now” on the left hand menu and wait for the scan to complete. This step may take a few minutes.)</p></li>
 <li><p>Then click on the branch you wish to deploy (this will usually be ‘master’)</p></li>
-<li><p>Click ‘Build’.</p></li>
+<li><p>Click ‘Build’.</p>
+<ol style="list-style-type: decimal">
 <li><p>If this is the first time you’ve deployed the webpage it will be setup as a private page (only accessable to users with a given email). If you wish to grant access based on IP or make the website public you’ll need to build again:</p></li>
-<li><p>For the second build you be asked whether email authentication should be enabled (where you grant users access using their email address or if access is restricted based on network). For a ellaboration on this see <a href="deploying-a-static-web-app.html#access-levels-1">Access levels</a>.</p>
+<li><p>For the second build you be asked whether email authentication should be enabled (where you grant users access using their email address or if access is restricted based on network).
+For a ellaboration on this see <a href="deploying-a-static-web-app.html#access-levels-1">Access levels</a>.</p>
 <p>In the example below, I grant unrestricted access to the app.</p></li>
+</ol></li>
 </ol>
-<div class="figure">
-<img src="images/static/static_deploy.gif" alt="" />
-
-</div>
+<p><img src="images/static/static_deploy.gif" /></p>
 </div>
 <div id="grant-secure-access-to-the-app" class="section level3">
 <h3><span class="header-section-number">5.1.6</span> Grant secure access to the app</h3>
 <p>If you deployed with authentication enabled users are granted access to the app using a list of email addresses separated with a space, comma or semicolon.</p>
 <p>To grant access, complete the form <a href="https://controlpanel.services.alpha.mojanalytics.xyz/job/grant-access-to-app/build?delay=0sec">here</a>, and press ‘Build’.</p>
 <p>For example, your form might look like this:</p>
-<div class="figure">
-<img src="images/shiny/jenkins_email.gif" alt="" />
-
-</div>
+<p><img src="images/shiny/jenkins_email.gif" /></p>
 <p>NOTE: Any characters which are not alphanumeric or dashes are converted into dashes.</p>
 </div>
 </div>
@@ -355,10 +365,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>So for the example project above “test-shiny-project”, the deployment url will be <code>https://test-shiny-project.apps.alpha.mojanalytics.xyz</code>.</p>
 <p>Note that characters that are not compatible with website URLs are converted. So, repositories with underscores in their name (e.g. <code>repository_name.apps...</code>) will be converted to dashes for the URL (e.g. <code>repository_name.apps...</code>).</p>
 <p>Users will be prompted to enter their email and, if they are on the approved list, be sent a access link to view the app.</p>
-<div class="figure">
-<img src="images/shiny/shiny_app_auth.gif" alt="" />
-
-</div>
+<p><img src="images/shiny/shiny_app_auth.gif" /></p>
 </div>
 <div id="access-levels" class="section level2">
 <h2><span class="header-section-number">5.3</span> Access Levels</h2>
@@ -393,7 +400,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="can-i-change-my-build" class="section level3">
 <h3><span class="header-section-number">5.4.2</span> Can I change my build?</h3>
-<p>Yes - if you know Docker, you are welcome to change the <a href="https://github.com/moj-analytical-services/rshiny-template/blob/master/Dockerfile">Dockerfile</a>.</p>
+<p>Yes - if you know Docker, you are welcome to change the
+<a href="https://github.com/moj-analytical-services/rshiny-template/blob/master/Dockerfile">Dockerfile</a>.</p>
 </div>
 <div id="how-can-i-troubleshoot-problems" class="section level3">
 <h3><span class="header-section-number">5.4.3</span> How can I troubleshoot problems?</h3>
@@ -428,22 +436,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><code>docker build . -t your_name_here</code> (<code>your_name_here</code> is the tag you want to give to the image)</p>
 <p>By building the image, it will test the installation of the packrat dependencies and package your shiny app into a Linux environment identical to what’s on the platform.</p>
 <p>Remember to refresh Docker if you are re-building a previously built app in the directory (the previous build will show when you view the app otherwise).</p>
-<p>Run the Shiny server in a linux container with <code>docker run -p 80:80 your_name_here</code></p>
+<p>Run the Shiny server in a linux container with
+<code>docker run -p 80:80 your_name_here</code></p>
 <p>You can then go to <a href="http://127.0.0.1:80" class="uri">http://127.0.0.1:80</a> to see if the app is working.</p>
 <p>If it is not, you can investigate what’s going on in the server using:</p>
 <p><code>docker run -it -p 80:80 your_name_here bash</code></p>
 <p>Note this will start a bash session in the container, but it will not start the shiny server. i.e. it starts bash <em>instead</em> of running <code>/bin/shiny-server.sh</code>.</p>
 <p>We can then configure logging in the container, before starting the shiny server as follows:</p>
 <p>Install the nano text editor:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">apt-get</span> update
-<span class="kw">apt-get</span> install nano</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">apt-get</span> update
+<span class="ex">apt-get</span> install nano</code></pre>
 <p>Then edit the config file at <code>nano /etc/shiny-server/shiny-server.conf</code> to add the following two lines at the beginning:</p>
 <pre><code>access_log /var/log/shiny-server/access.log tiny;
 preserve_logs true;</code></pre>
 <p>Save by pressing <code>[CTRL]+[O]</code> and then exit with <code>[CTRL]+[X]</code>.</p>
 <p>Finally change the log level to be more verbose and start the shiny server:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">export</span> <span class="ot">SHINY_LOG_LEVEL=</span>TRACE
-<span class="kw">/bin/shiny-server.sh</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">SHINY_LOG_LEVEL=</span>TRACE
+<span class="ex">/bin/shiny-server.sh</span></code></pre>
 <p>For further details see the <a href="http://docs.rstudio.com/shiny-server">rshiny-server documetation</a></p>
 <p>Now we need another terminal window, to get back into the docker container</p>
 <p><code>docker ps</code> to find the name of the container and then</p>

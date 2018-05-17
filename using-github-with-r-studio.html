@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2018-05-11">
+<meta name="date" content="2018-05-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,41 +50,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -265,10 +293,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>To begin, navigate to www.github.com and make sure you’re logged in.</p>
 <p>Once logged in, go to the MoJ Analytical Services homepage at <a href="https://github.com/moj-analytical-services/" class="uri">https://github.com/moj-analytical-services/</a></p>
 <p>Then follow the steps in this gif to create a new repository.</p>
-<div class="figure">
-<img src="images/github/create_repo.gif" alt="" />
-
-</div>
+<p><img src="images/github/create_repo.gif" /></p>
 <p>Notes:</p>
 <ul>
 <li><p>Make sure that the repository is set to ‘private’. This is the default setting. If you change this setting to ‘public’, your code will be available on the open internet.</p></li>
@@ -279,10 +304,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">4.1.2</span> Step 2: Navigate to your platform R Studio and make a copy of the Github project in your R Studio</h3>
 <p>In this step, we create a copy of the definitive github.com project in your personal R Studio workspace. This means you have a version of the project which you can work on and change.</p>
 <p>Follow the steps in this gif:</p>
-<div class="figure">
-<img src="images/github/clone_repo.gif" alt="" />
-
-</div>
+<p><img src="images/github/clone_repo.gif" /></p>
 <p>Notes:</p>
 <ul>
 <li>When you copy the link to the repo from Github, ensure you use the ssh link, which start <code>git@github.com</code> as opposed to the https one, which start <code>https://github.com/</code></li>
@@ -298,25 +320,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>‘commiting’ does <strong>not</strong> sync your changes with github.com. It just creates a snapshot of your personal files in your R Studio environment.</li>
 <li>Git will only become aware of changes you’ve made after you’ve saved the file as shown in the gif. Unsaved changes are signified when the filename in the code editior tab is red with an asterix.</li>
 </ul>
-<div class="figure">
-<img src="images/github/make_changes_and_stage.gif" alt="" />
-
-</div>
+<p><img src="images/github/make_changes_and_stage.gif" /></p>
 <p>### Step 4: Sync (‘push’) your work with github.com</p>
 <p>In R Studio, click the ‘Push’ button (the green up arrow). This will send any change you have committed to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.</p>
 <p>Notes:</p>
 <ul>
 <li>After pushing, make sure you refresh the GitHub page in your web browser to see changes.</li>
 </ul>
-<div class="figure">
-<img src="images/github/push_to_github.gif" alt="" />
-
-</div>
+<p><img src="images/github/push_to_github.gif" /></p>
 <p><strong>That’s it! If you’re working on a personal project, and are not collaborating with others, those three basic steps will allow you to apply version control to your work with Github</strong></p>
 </div>
 <div id="using-the-shell" class="section level3">
 <h3><span class="header-section-number">4.1.4</span> Using the shell</h3>
-<p>If you are more comfortable using the shell (terminal) you can do steps 3 and 4 using the following git commands: * Select the files you want to commit (known as staging): <code>git add &lt;filename1&gt; &lt;filename2&gt;</code> * Commit the files you have staged: <code>git commit</code>. After calling this command a popup will ask you to write in a commit message. After doing so press enter. * Finally push your changes to GitHub: <code>git push origin &lt;branch_name&gt;</code>. Most likely your branch name will be <code>master</code> which is the default. So your code would be <code>git push origin master</code>.</p>
+<p>If you are more comfortable using the shell (terminal) you can do steps 3 and 4 using the following git commands:
+* Select the files you want to commit (known as staging): <code>git add &lt;filename1&gt; &lt;filename2&gt;</code>
+* Commit the files you have staged: <code>git commit</code>. After calling this command a popup will ask you to write in a commit message. After doing so press enter.
+* Finally push your changes to GitHub: <code>git push origin &lt;branch_name&gt;</code>. Most likely your branch name will be <code>master</code> which is the default. So your code would be <code>git push origin master</code>.</p>
 </div>
 </div>
 <div id="working-on-a-branch." class="section level2">
@@ -333,10 +352,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">4.2.1</span> Step 1 (optional): Create an Issue in github that describes the piece of work you’re about to do (the purpose of the branch)</h3>
 <p>Github ‘issues’ are a central place to maintain a ‘to do’ list for a project, and to discuss them with your team. ‘Issues’ can be bug fixes (such as ‘fix divide by zero errors in output tables’), or features (e.g. ‘add a percentage change column to output table’), or anything else you want.</p>
 <p>By using issues, you can keep track of who is working on what. If you use issues, you automatically preserve a record of <em>why</em> changes were made to code. So you can see when a line of code was last changed, and which issue it related to, and who wrote it.</p>
-<div class="figure">
-<img src="images/github/create_issue.gif" alt="" />
-
-</div>
+<p><img src="images/github/create_issue.gif" /></p>
 </div>
 <div id="step-2-create-a-new-branch-in-r-studio-and-tell-github-about-its-existence" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Step 2: Create a new branch in R Studio and tell Github about its existence</h3>
@@ -347,18 +363,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </li>
 <li><code>git push -u origin my_branch_name</code>. This tells github.com about the existence of the new branch.</li>
 </ul>
-<div class="figure">
-<img src="images/github/checkout_branch.gif" alt="" />
-
-</div>
+<p><img src="images/github/checkout_branch.gif" /></p>
 </div>
 <div id="step-3-make-some-changes-to-address-the-github-issue-and-push-sync-them-with-github" class="section level3">
 <h3><span class="header-section-number">4.2.3</span> Step 3: Make some changes to address the Github issue, and push (sync) them with Github</h3>
 <p>Make changes to the code, commit them, and push them to Github.</p>
-<div class="figure">
-<img src="images/github/make_changes_and_push.gif" alt="" />
-
-</div>
+<p><img src="images/github/make_changes_and_push.gif" /></p>
 </div>
 <div id="step-4-view-changes-on-github-and-create-pull-request" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Step 4: View changes on Github and create pull request</h3>
@@ -366,19 +376,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Github recognises that you’ve synced some code on a branch, and asks you whether you want to merge these changes onto the main ‘master’ branch.</p>
 <p>You merge the changes using something called a ‘pull request’. A ‘pull request’ is a set of suggested changes to your project. You can merge these changes in yourself, or you can ask another collaborator to review the changes.</p>
 <p>One way of using this process is for quality assurance. For instance, a team may agree that each pull request must be reviewed by a second team member before it is merged. The code on the main ‘master’ branch is then considered to be quality assured at all times. Pull requests also allow you and others working on the project to leave comments and feedback about the code. You can also leave comments that reference issues on the issue log (by writing <code>#</code> followed by the issue number). For example you might comment saying “This pull request now fixes issue #102 and completes task #103”.</p>
-<div class="figure">
-<img src="images/github/view_on_github_and_pr.gif" alt="" />
-
-</div>
+<p><img src="images/github/view_on_github_and_pr.gif" /></p>
 </div>
 <div id="step-5-sync-the-changes-you-made-on-github.com-with-your-local-platform" class="section level3">
 <h3><span class="header-section-number">4.2.5</span> Step 5: Sync the changes you made on github.com with your local platform</h3>
 <p>When you merged the pull request, you made changes to your files on Github. Your personal version of the project in your R Studio hasn’t changed, and is unaware of these changes.</p>
 <p>The final step is therefore to switch back to the ‘master’ branch in R Studio, and ‘Pull’ the code. ‘Pulling’ makes R Studio check for changes on Github, and update your local files to incorporate any changes.</p>
-<div class="figure">
-<img src="images/github/pull.gif" alt="" />
-
-</div>
+<p><img src="images/github/pull.gif" /></p>
 </div>
 </div>
 <div id="git-training-resources" class="section level2">
@@ -418,10 +422,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="view-how-files-have-changed-on-the-platform-and-on" class="section level3">
 <h3><span class="header-section-number">4.4.6</span> View how files have changed on the platform and on</h3>
-<div class="figure">
-<img src="images/github/view_history.gif" alt="" />
-
-</div>
+<p><img src="images/github/view_history.gif" /></p>
 
 </div>
 </div>
