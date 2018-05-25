@@ -1,5 +1,7 @@
 ## What's new?
 
+- May 2018: Fixed 'State Mismatch' bug in Control Panel
+- May 2018: 'Analytical Tools' tab now allows you to click to view your resource (CPU and memory) usage
 - May 2018: The control panel now includes a 'data warehouse' tab to manage data access.  This replaces the previous approach using Github teams.
 - April 2018:  Substantial improvements to [`s3tools`](https://github.com/moj-analytical-services/s3tools) and [`s3browser`](https://github.com/moj-analytical-services/s3browser).  s3browser is now much faster, and s3tools has more functionality
 - March 2018:  Users' R Studio 'hibernate' at 22:00 each evening, reducing overall resource utilisation
