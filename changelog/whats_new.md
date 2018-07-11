@@ -1,5 +1,7 @@
 ## What's new?
 
+- July 2018: Increase max RAM limit in R studio.  Users now have a min of 5GB and a max of 20GB (during quieter periods).
+- July 2018: Update to latest version of R Studio, with support for Vega Lite charting using the Altair R package.
 - May 2018: Fixed 'State Mismatch' bug in Control Panel
 - May 2018: 'Analytical Tools' tab now allows you to click to view your resource (CPU and memory) usage
 - May 2018: The control panel now includes a 'data warehouse' tab to manage data access.  This replaces the previous approach using Github teams.
