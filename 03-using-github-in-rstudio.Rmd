@@ -110,7 +110,7 @@ Create a branch with a name of your choosing.  The branch is essentially a label
 
 To create a branch, you need to enter the following two commands into the shell:
 
-* `checkout -b my_branch_name`.  Substitute `my_branch_name` for a name of your choosing. This command simultaneously creates the branch and switches to it, so you are immediately working on it.  
+* `git checkout -b my_branch_name`.  Substitute `my_branch_name` for a name of your choosing. This command simultaneously creates the branch and switches to it, so you are immediately working on it.  
 * `git push -u origin my_branch_name`.  This tells github.com about the existence of the new branch.  
 
 ![](images/github/checkout_branch.gif)
