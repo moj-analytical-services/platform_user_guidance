@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
-  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7.14 and GitBook 2.6.7">
 
   <meta property="og:title" content="Platform Guidance" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2018-07-11">
+<meta name="date" content="2018-07-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -167,9 +167,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html"><i class="fa fa-check"></i><b>4</b> Using Github with R Studio</a><ul>
 <li class="chapter" data-level="4.1" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#syncing-you-r-studio-work-with-github"><i class="fa fa-check"></i><b>4.1</b> Syncing you R Studio work with Github</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-1---create-a-new-project-repo-in-the-moj-analytical-services-github-page"><i class="fa fa-check"></i><b>4.1.1</b> Step 1 - Create a new project (‘repo’) in the moj-analytical-services Github page</a></li>
-<li class="chapter" data-level="4.1.2" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-2-navigate-to-your-platform-r-studio-and-make-a-copy-of-the-github-project-in-your-r-studio"><i class="fa fa-check"></i><b>4.1.2</b> Step 2: Navigate to your platform R Studio and make a copy of the Github project in your R Studio</a></li>
-<li class="chapter" data-level="4.1.3" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-3-edit-your-files-track-them-using-git-and-sync-push-changes-to-github"><i class="fa fa-check"></i><b>4.1.3</b> Step 3: Edit your files, track them using Git, and sync (‘push’) changes to Github</a></li>
-<li class="chapter" data-level="4.1.4" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#using-the-shell"><i class="fa fa-check"></i><b>4.1.4</b> Using the shell</a></li>
+<li class="chapter" data-level="4.1.2" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-2-navigate-to-your-new-repository-on-github-to-decide-who-can-see-your-code"><i class="fa fa-check"></i><b>4.1.2</b> Step 2: Navigate to your new Repository on GitHub to decide who can see your code</a></li>
+<li class="chapter" data-level="4.1.3" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-3-navigate-to-your-platform-r-studio-and-make-a-copy-of-the-github-project-in-your-r-studio"><i class="fa fa-check"></i><b>4.1.3</b> Step 3: Navigate to your platform R Studio and make a copy of the Github project in your R Studio</a></li>
+<li class="chapter" data-level="4.1.4" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-4-edit-your-files-track-them-using-git-and-sync-push-changes-to-github"><i class="fa fa-check"></i><b>4.1.4</b> Step 4: Edit your files, track them using Git, and sync (‘push’) changes to Github</a></li>
+<li class="chapter" data-level="4.1.5" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#using-the-shell"><i class="fa fa-check"></i><b>4.1.5</b> Using the shell</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#working-on-a-branch."><i class="fa fa-check"></i><b>4.2</b> Working on a branch.</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="using-github-with-r-studio.html"><a href="using-github-with-r-studio.html#step-1-optional-create-an-issue-in-github-that-describes-the-piece-of-work-youre-about-to-do-the-purpose-of-the-branch"><i class="fa fa-check"></i><b>4.2.1</b> Step 1 (optional): Create an Issue in github that describes the piece of work you’re about to do (the purpose of the branch)</a></li>
@@ -300,8 +301,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Make sure the owner is set to ‘moj-analytical-services’. This is the default setting, so long as you have clicked on ‘New’ from the <a href="https://github.com/moj-analytical-services" class="uri">https://github.com/moj-analytical-services</a> homepage.</p></li>
 </ul>
 </div>
-<div id="step-2-navigate-to-your-platform-r-studio-and-make-a-copy-of-the-github-project-in-your-r-studio" class="section level3">
-<h3><span class="header-section-number">4.1.2</span> Step 2: Navigate to your platform R Studio and make a copy of the Github project in your R Studio</h3>
+<div id="step-2-navigate-to-your-new-repository-on-github-to-decide-who-can-see-your-code" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Step 2: Navigate to your new Repository on GitHub to decide who can see your code</h3>
+<p>Try to be as open as possible about who can view your code. Go to the Settings section of your repository (top right of the repository’s homepage) and then click on Collaborators &amp; Teams on the left hand side panel. From there you can then decide on one of the four options below. They start with the most private all the way to completely public code:</p>
+<ol style="list-style-type: decimal">
+<li>PRIVATE: Leave the default setting of your repository so its only visible to you as the creator.</li>
+<li>YOUR TEAM: Can the code be shared within your team? If so, add your team to the repository.</li>
+<li>ALL PLATFORM USERS: Can the code be shared with all Analytical Platform users? If so, add the ‘everyone’ team to the repository.</li>
+<li>PUBLIC: Can the code be public? If so, make it a public repository. To do this, click on the ‘Options’ section of the Settings, then scroll down to the ‘Danger Zone’ area that has a ‘Make public’ button.</li>
+</ol>
+<p>We find that for most of our work, there’s no reason not to add the ‘+everyone’ team of all Analytical Platform users with read access to the code. This is possible as sensitive datasets are not stored in Github. By making code more open (either internally or publicly), users can start to get much more value of out the extremely powerful code search in GitHub.</p>
+<ul>
+<li>Note you can add one or more teams to a repository, each with different permissions. For example, your team could have write privileges, but the ‘everyone’ team could be read only.,</li>
+</ul>
+</div>
+<div id="step-3-navigate-to-your-platform-r-studio-and-make-a-copy-of-the-github-project-in-your-r-studio" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Step 3: Navigate to your platform R Studio and make a copy of the Github project in your R Studio</h3>
 <p>In this step, we create a copy of the definitive github.com project in your personal R Studio workspace. This means you have a version of the project which you can work on and change.</p>
 <p>Follow the steps in this gif:</p>
 <p><img src="images/github/clone_repo.gif" /></p>
@@ -310,8 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>When you copy the link to the repo from Github, ensure you use the ssh link, which start <code>git@github.com</code> as opposed to the https one, which start <code>https://github.com/</code></li>
 </ul>
 </div>
-<div id="step-3-edit-your-files-track-them-using-git-and-sync-push-changes-to-github" class="section level3">
-<h3><span class="header-section-number">4.1.3</span> Step 3: Edit your files, track them using Git, and sync (‘push’) changes to Github</h3>
+<div id="step-4-edit-your-files-track-them-using-git-and-sync-push-changes-to-github" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> Step 4: Edit your files, track them using Git, and sync (‘push’) changes to Github</h3>
 <p>Edit your files as usual using R Studio.</p>
 <p>Once you’re happy with your changes, Git enables you to create a ‘commit’. Each git commit creates a snapshot of your personal files on the Platform. You can can always undo changes to your work by reverting back to any of the snapshots. This ‘snapshotting’ ability is why git is a ‘verson control’ system.</p>
 <p>In the following gif, we demonstrate changing a single file, staging the changes, and committing them. In reality, each commit would typically include changes to a number of different files, rather than the single file shown in the gif.</p>
@@ -321,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Git will only become aware of changes you’ve made after you’ve saved the file as shown in the gif. Unsaved changes are signified when the filename in the code editior tab is red with an asterix.</li>
 </ul>
 <p><img src="images/github/make_changes_and_stage.gif" /></p>
-<p>### Step 4: Sync (‘push’) your work with github.com</p>
+<p>### Step 5: Sync (‘push’) your work with github.com</p>
 <p>In R Studio, click the ‘Push’ button (the green up arrow). This will send any change you have committed to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.</p>
 <p>Notes:</p>
 <ul>
@@ -331,7 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>That’s it! If you’re working on a personal project, and are not collaborating with others, those three basic steps will allow you to apply version control to your work with Github</strong></p>
 </div>
 <div id="using-the-shell" class="section level3">
-<h3><span class="header-section-number">4.1.4</span> Using the shell</h3>
+<h3><span class="header-section-number">4.1.5</span> Using the shell</h3>
 <p>If you are more comfortable using the shell (terminal) you can do steps 3 and 4 using the following git commands:
 * Select the files you want to commit (known as staging): <code>git add &lt;filename1&gt; &lt;filename2&gt;</code>
 * Commit the files you have staged: <code>git commit</code>. After calling this command a popup will ask you to write in a commit message. After doing so press enter.
@@ -359,7 +374,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Create a branch with a name of your choosing. The branch is essentially a label for the segment of work you’re doing. If you’re working on an issue, it often makes sense to name the branch after the issue.</p>
 <p>To create a branch, you need to enter the following two commands into the shell:</p>
 <ul>
-<li><code>checkout -b my_branch_name</code>. Substitute <code>my_branch_name</code> for a name of your choosing. This command simultaneously creates the branch and switches to it, so you are immediately working on it.<br />
+<li><code>git checkout -b my_branch_name</code>. Substitute <code>my_branch_name</code> for a name of your choosing. This command simultaneously creates the branch and switches to it, so you are immediately working on it.<br />
 </li>
 <li><code>git push -u origin my_branch_name</code>. This tells github.com about the existence of the new branch.</li>
 </ul>
