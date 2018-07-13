@@ -28,8 +28,23 @@ Notes:
 * Make sure that the repository is set to 'private'.  This is the default setting.  If you change this setting to 'public', your code will be available on the open internet.
 
 * Make sure the owner is set to 'moj-analytical-services'.  This is the default setting, so long as you have clicked on 'New' from the https://github.com/moj-analytical-services homepage.
-  
-### Step 2:  Navigate to your platform R Studio and make a copy of the Github project in your R Studio
+
+
+### Step 2:  Navigate to your new Repository on GitHub to decide who can see your code
+
+Try to be as open as possible about who can view your code. Go to the Settings section of your repository (top right of the repository's homepage) and then click on Collaborators & Teams on the left hand side panel. From there you can then decide on one of the four options below. They start with the most private all the way to completely public code:
+
+1.	PRIVATE: Leave the default setting of your repository so its only visible to you as the creator.
+2.	YOUR TEAM: Can the code be shared within your team? If so, add your team to the repository.
+3.	ALL PLATFORM USERS: Can the code be shared with all Analytical Platform users?  If so, add the ‘everyone’ team to the repository.
+4.	PUBLIC: Can the code be public?  If so, make it a public repository. To do this, click on the 'Options' section of the Settings, then scroll down to the 'Danger Zone' area that has a 'Make public' button.
+
+We find that for most of our work, there’s no reason not to add the ‘+everyone’ team of all Analytical Platform users with read access to the code. This is possible as sensitive datasets are not stored in Github. By making code more open (either internally or publicly), users can start to get much more value of out the extremely powerful code search in GitHub.
+
+* Note you can add one or more teams to a repository, each with different permissions. For example, your team could have write privileges, but the ‘everyone’ team could be read only.,
+
+
+### Step 3:  Navigate to your platform R Studio and make a copy of the Github project in your R Studio
 
 In this step, we create a copy of the definitive github.com project in your personal R Studio workspace.  This means you have a version of the project which you can work on and change.
 
@@ -41,7 +56,7 @@ Notes:
 
 * When you copy the link to the repo from Github, ensure you use the ssh link, which start `git@github.com` as opposed to the https one, which start `https://github.com/`
   
-### Step 3: Edit your files, track them using Git, and sync ('push') changes to Github
+### Step 4: Edit your files, track them using Git, and sync ('push') changes to Github
 
 Edit your files as usual using R Studio.  
 
@@ -57,7 +72,7 @@ Notes:
  ![](images/github/make_changes_and_stage.gif)
  
  
- ### Step 4: Sync ('push') your work with github.com
+ ### Step 5: Sync ('push') your work with github.com
  
  In R Studio, click the 'Push' button (the green up arrow).  This will send any change you have committed to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.
  
@@ -110,7 +125,7 @@ Create a branch with a name of your choosing.  The branch is essentially a label
 
 To create a branch, you need to enter the following two commands into the shell:
 
-* `checkout -b my_branch_name`.  Substitute `my_branch_name` for a name of your choosing. This command simultaneously creates the branch and switches to it, so you are immediately working on it.  
+* `git checkout -b my_branch_name`.  Substitute `my_branch_name` for a name of your choosing. This command simultaneously creates the branch and switches to it, so you are immediately working on it.  
 * `git push -u origin my_branch_name`.  This tells github.com about the existence of the new branch.  
 
 ![](images/github/checkout_branch.gif)
