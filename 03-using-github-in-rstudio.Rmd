@@ -2,6 +2,8 @@
 
 Github enables you to collaborate with colleagues on code and share you work with them. It puts your code in a centralised, searchable place. It enables easier and more robust approaches to quality assurance, and it enables you to version control your work.  More information about the benefits of Github can be found [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it).
 
+If you are new to Git and Github, it is worth clarifying the difference between Git and Git**hub**. Git is the software that looks after the version control of code, whereas Github is the website on which you publish and share your version controlled code. In practice this means you use Git to track versions of your code, and then submit those changes to Github.
+
 This guide provides a step-by-step guide of how to create a project and sync your work with Github.  You can find more in-depth Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html#git-training-resources)
 
 Note:  If any of the animated gifs below do not display correctly, try a different web browser e.g. Microsoft Edge, which is installed on your DOM1 machine.
@@ -14,15 +16,15 @@ This is conceptually similar to setting up a folder on the DOM1 shared drive to 
 
 Note that if you want to contribute to an existing project, you can skip this step.
 
-To begin, navigate to www.github.com and make sure you're logged in.  
+To begin, navigate to www.github.com and make sure you're logged in.
 
 Once logged in, go to the MoJ Analytical Services homepage at https://github.com/moj-analytical-services/
 
 Then follow the steps in this gif to create a new repository.
 
   ![](images/github/create_repo.gif)
-  
-  
+
+
 Notes:
 
 * Make sure that the repository is set to 'private'.  This is the default setting.  If you change this setting to 'public', your code will be available on the open internet.
@@ -51,16 +53,16 @@ In this step, we create a copy of the definitive github.com project in your pers
 Follow the steps in this gif:
 
   ![](images/github/clone_repo.gif)
-  
+
 Notes:
 
 * When you copy the link to the repo from Github, ensure you use the ssh link, which start `git@github.com` as opposed to the https one, which start `https://github.com/`
-  
+
 ### Step 4: Edit your files, track them using Git, and sync ('push') changes to Github
 
-Edit your files as usual using R Studio.  
+Edit your files as usual using R Studio.
 
-Once you're happy with your changes, Git enables you to create a 'commit'. Each git commit creates a snapshot of your personal files on the Platform. You can can always undo changes to your work by reverting back to any of the snapshots.  This 'snapshotting' ability is why git is a 'verson control' system.  
+Once you're happy with your changes, Git enables you to create a 'commit'. Each git commit creates a snapshot of your personal files on the Platform. You can can always undo changes to your work by reverting back to any of the snapshots.  This 'snapshotting' ability is why git is a 'verson control' system.
 
 In the following gif, we demonstrate changing a single file, staging the changes, and committing them.  In reality, each commit would typically include changes to a number of different files, rather than the single file shown in the gif.
 
@@ -70,23 +72,23 @@ Notes:
 * Git will only become aware of changes you've made after you've saved the file as shown in the gif.  Unsaved changes are signified when the filename in the code editior tab is red with an asterix.
 
  ![](images/github/make_changes_and_stage.gif)
- 
- 
+
+
  ### Step 5: Sync ('push') your work with github.com
- 
+
  In R Studio, click the 'Push' button (the green up arrow).  This will send any change you have committed to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.
- 
+
  Notes:
- 
+
  * After pushing, make sure you refresh the GitHub page in your web browser to see changes.
 
- 
+
  ![](images/github/push_to_github.gif)
- 
- 
- 
- 
- 
+
+
+
+
+
 **That's it!  If you're working on a personal project, and are not collaborating with others, those three basic steps will allow you to apply version control to your work with Github**
 
 ### Using the shell
@@ -125,14 +127,14 @@ Create a branch with a name of your choosing.  The branch is essentially a label
 
 To create a branch, you need to enter the following two commands into the shell:
 
-* `git checkout -b my_branch_name`.  Substitute `my_branch_name` for a name of your choosing. This command simultaneously creates the branch and switches to it, so you are immediately working on it.  
-* `git push -u origin my_branch_name`.  This tells github.com about the existence of the new branch.  
+* `git checkout -b my_branch_name`.  Substitute `my_branch_name` for a name of your choosing. This command simultaneously creates the branch and switches to it, so you are immediately working on it.
+* `git push -u origin my_branch_name`.  This tells github.com about the existence of the new branch.
 
 ![](images/github/checkout_branch.gif)
 
 ### Step 3:  Make some changes to address the Github issue, and push (sync) them with Github
 
-Make changes to the code, commit them, and push them to Github.  
+Make changes to the code, commit them, and push them to Github.
 
 ![](images/github/make_changes_and_push.gif)
 
@@ -140,7 +142,7 @@ Make changes to the code, commit them, and push them to Github.
 
 ### Step 4: View changes on Github and create pull request
 
-You can now view the changes in Github.  
+You can now view the changes in Github.
 
 Github recognises that you've synced some code on a branch, and asks you whether you want to merge these changes onto the main 'master' branch.
 
@@ -190,9 +192,9 @@ See [here](https://help.github.com/articles/tracing-changes-in-a-file/).  An exa
 
 ### Assign a reviewer to a pull request, and leave comments.
 
-### View how files have changed on the platform and on 
+### View how files have changed on the platform and on
 
  ![](images/github/view_history.gif)
- 
- 
- 
+
+
+

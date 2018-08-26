@@ -1,24 +1,21 @@
-# Deploying a Static Web App  
+# Deploying a Static Web App
 
-The following steps to deploy a Shiny app are as follows:
+The following steps to deploy a static HTML web site are as follows:
 
 1. Copy the [template project](https://github.com/moj-analytical-services/webapp-template) within Github to a new repository, with a name of your choice.
-2. In R Studio, start a new project from version control (file -> new project -> version control -> git).   TODO:  Remember to make sure the template has a Rproj that enables packrat
-3. Work on your static website - the exposed content will be in the `www/` directory and `www/index.html` will be the landing page.   
-4. When you're ready to share it, access the [services control panel](https://jenkins.services.alpha.mojanalytics.xyz/), find your app, and click 'Build now'. This will prepare your site for deployment.
-5. Set the desired access permissions in `deploy.json` (i.e. whether it should be available for DOM1, Quantum, or external).
-6. When you're ready to share it, in GitHub create a 'release' and it will deploy in a few minutes.
-7. Once deployed, grant users access to the app in the [Control Panel](https://cpanel-master.services.alpha.mojanalytics.xyz/#Webapps).
+2. Work on your static website - the exposed content will be in the `www/` directory and `www/index.html` will be the landing page.
+3. When you're ready to share it, access the [services control panel](https://jenkins.services.alpha.mojanalytics.xyz/), find your app, and click 'Build now'. This will prepare your site for deployment.
+4. Set the desired access permissions in `deploy.json` (i.e. whether it should be available for DOM1, Quantum, or external).
+5. When you're ready to share it, in GitHub create a 'release' and it will deploy in a few minutes.
+6. Ask the Platform team to add and remove users from your app in the [#ap_admin_request](https://asdslack.slack.com/messages/CBLAGCQG6/) Slack channel.
 
 Step-by-step instructions are below.
-
-For advanced users, the guidance [here][Advanced deployment] discusses customisability and options for deployment.  Refer to this guidance if you are already familiar with Docker etc.
 
 ## Step-by-step guide to depolying an static web app
 
 ### Copy the template project into a new Github repository
 
-1. Begin by making a **copy** of the R Shiny template project on Github: https://github.com/new/import
+1. Begin by making a **copy** of the [template project](https://github.com/moj-analytical-services/webapp-template) on Github: https://github.com/new/import
 
 2. Enter `https://github.com/moj-analytical-services/webapp-template` in the input box entitled 'your old repository’s clone URL:'
 
@@ -91,7 +88,7 @@ Depending on the `disable_authentication` setting, the website will either be av
 
 So for the example project above "static-web-deploy", the deployment URL will be `https://static-web-deploy.apps.alpha.mojanalytics.xyz`.
 
-Note that characters that are not compatible with website URLs are converted. So, repositories with underscores in their name (e.g. `repository_name.apps...`) will be converted to dashes for the URL (e.g. `repository_name.apps...`). 
+Note that characters that are not compatible with website URLs are converted. So, repositories with underscores in their name (e.g. `repository_name.apps...`) will be converted to dashes for the URL (e.g. `repository_name.apps...`).
 
 ![](images/static/static_deployed.gif)
 

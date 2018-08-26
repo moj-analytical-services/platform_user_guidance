@@ -9,7 +9,7 @@ The Platform provides four main services to analysts:
 - The ability to create and share interactive data products and websites.
 - Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.
 
-If you alraedy have a platform account, you can access the platform [here](https://cpanel-master.services.alpha.mojanalytics.xyz/).
+If you already have a platform account, you can access the platform [here](https://cpanel-master.services.alpha.mojanalytics.xyz/).
 
 ### High level diagram of the platform:
 
@@ -23,15 +23,15 @@ cat(readLines('resources/svg/platform.svg'), sep = '')
 
 The Platform provides a number of advantages over existing analytical infrastructure:
 
-- It provides access to the latest versions of modern analytical software, such as R Studio,
+- It provides access to the latest versions of modern analytical software, such as R Studio
 - It provides more powerful computational resources (>10Gb RAM and fast CPUs) than DOM1 machines.
 - It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS's system), and MacBooks.
-- It allows analysts to securely deploy data products such as R Shiny applications and web sites, including web-base data visualisations.
-- The platform is hosted in the cloud, which means it is scalable and easy to access remotely. Data storage is unlimited, and computational resource can be scaled to demand.
+- It allows analysts to securely deploy data products such as R Shiny applications and web sites, including web-based data visualisations.
+- The platform is hosted in the cloud, which makes it easy to access remotely. Data storage is unlimited, and computational resource can be scaled to demand.
 
 ##  FAQ: How do I?
 
-This section covers common tasks you may want to complete on the platform. If we've missed something, let us know.
+This section covers common tasks you may want to complete on the platform.
 
 ##### Get access to the platform{-}
 
@@ -39,7 +39,8 @@ See [Getting Started][Getting Started].
 
 ##### Share data or code with a team{-}
 
-If you haven't set up a team yet, see [User Administration][User Administration].
+TODO: Update following rewrite of section on data access groups
+
 If you've got a team but want to upload data see [Uploading data to S3][Uploading data to S3].
 If you want to share code see guidance on [Github][Configuring Git and Github for use on the Analytical Platform].
 
