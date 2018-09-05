@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2018-08-26">
+<meta name="date" content="2018-09-05">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -339,7 +339,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <div id="step-1---create-an-ssh-key" class="section level4">
 <h4><span class="header-section-number">2.3.1.1</span> Step 1 - create an SSH key</h4>
-<p>You can create your SSH key within the platform:</p>
+<p>You can create your SSH key within R Studio:</p>
 <p><code>Tools</code> -&gt; <code>Global options</code> -&gt; <code>Git/SVN</code> -&gt; <code>Create RSA key...</code></p>
 <p><img src="images/start/git_create_key.PNG" /></p>
 <p>You will be presented with dialog showing your key fingerprint, amongst other details. You do not need this information, therefore close the window:</p>
@@ -364,8 +364,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Configure your Git name and email address within the analytical platform.</li>
 </ol>
 <p>To start syncing your work with Github, Git needs to know a bit more about you.</p>
-<p>Within the platform, access the shell using <code>Tools</code> -&gt; <code>Shell...</code></p>
-<p>Then, you need to type the following commands (substitute your name and email):</p>
+<p>Within R Studio, access the shell using <code>Tools</code> -&gt; <code>Shell...</code></p>
+<p>Then, you need to type the following commands (substitute your user name and email):</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> config --global user.name <span class="st">&#39;Your Name&#39;</span>
 <span class="fu">git</span> config --global user.email <span class="st">&#39;your@email.com&#39;</span></code></pre>
 <p>You’re now ready to start using Github!</p>
