@@ -60,7 +60,7 @@ The overview is as follows:
 
 #### Step 1 - create an SSH key
 
-You can create your SSH key within the platform:
+You can create your SSH key within R Studio:
 
 `Tools` -> `Global options` -> `Git/SVN` -> `Create RSA key...`
 
@@ -102,9 +102,9 @@ The link with Github and the Analytical Platform is now established. You can now
 
 To start syncing your work with Github, Git needs to know a bit more about you.
 
-Within the platform, access the shell using `Tools` -> `Shell...`
+Within R Studio, access the shell using `Tools` -> `Shell...`
 
-Then, you need to type the following commands (substitute your name and email):
+Then, you need to type the following commands (substitute your user name and email):
 
 ```bash
 git config --global user.name 'Your Name'
