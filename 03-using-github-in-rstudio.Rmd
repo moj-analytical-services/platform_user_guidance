@@ -1,5 +1,7 @@
 # Using Github with R Studio
 
+Before you can use Github with R Studio, you need to connect them together by creating an 'ssh key'.  Full guidance is [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#configuring-git-and-github-for-use-on-the-analytical-platform)
+
 Github enables you to collaborate with colleagues on code and share you work with them. It puts your code in a centralised, searchable place. It enables easier and more robust approaches to quality assurance, and it enables you to version control your work.  More information about the benefits of Github can be found [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it).
 
 If you are new to Git and Github, it is worth clarifying the difference between Git and Git**hub**. Git is the software that looks after the version control of code, whereas Github is the website on which you publish and share your version controlled code. In practice this means you use Git to track versions of your code, and then submit those changes to Github.
