@@ -2,8 +2,10 @@
 
 - October 2018: Spark local executor in private beta testing
 - October 2018: Idler rewritten to resolve bugs and work for Jupyter. 
+- October 2018: Added geospatial libraries to Jupyter build.
 - October 2018: Jupyter in private beta testing.  
 - September 2018: Resolved websockets issues, so that the terminal works in R Studio and making Shiny apps disconnect less frequently.
+- August 2018: Apache Airflow deployed, enabling job scheduling.
 - July 2018: Additional auth0 2FA no longer required for users coming for corporate IP addresses (e.g. DOM1). 
 - July 2018: Increase max RAM limit in R studio.  Users now have a guaranteed min of 5GB and a max of 20GB (which may only be available during quieter periods).
 - July 2018: Update to latest version of R Studio, with support for Vega Lite charting using the Altair R package.
