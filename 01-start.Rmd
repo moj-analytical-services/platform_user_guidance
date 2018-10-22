@@ -7,10 +7,12 @@ You need a Github account to be able to access the platform. If you do not alrea
 
 We recommend new users use their `@justice` email address.  If you already have a personal Github account, you may also just use that.
 
+You'll receive an email with a verification link - you need to click this before using the platform.
+
 For more information about why we've made Github a core part of the platform, see [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it).
 
 ### Enable two-factor authentication on your Github account
-Once you've signed to Github, you must enable two factor authentication on your Github account to enhance security. You can do this in your Github [settings page](https://github.com/settings/security).
+Once you've signed up to Github, you must enable two factor authentication on your Github account to enhance security. You can do this in your Github [settings page](https://github.com/settings/security).
 
 You are given the option of doing this using SMS, or an authentication app such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) . Choose whichever you prefer. Save a copy of your recovery codes, for example by emailing them to your secure government email address.
 
