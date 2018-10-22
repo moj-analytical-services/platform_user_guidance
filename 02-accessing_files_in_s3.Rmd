@@ -26,13 +26,47 @@ We have also developed a command line tool that provides you with some helper fu
 See the [documentation](https://github.com/moj-analytical-services/s3tools) for
 further details.
 
-## Uploading data to S3
+## Importing data from S3 into JupyterLab
+
+Pandas can import straight from S3:
+
+    pd.read_csv("s3://alpha-everyone/iris.csv")
+
+This requires you to install a couple of libraries:
+
+    pip install pandas s3fs
+
+Or alternatively use the standard python AWS client `boto3`.
+
+If using Spark (and the Jupyter deployment including the Spark libraries):
+
+    spark.read.csv("s3a://blah")
+
+These 'direct reads' should be faster than downloading from S3 to your machine and using JupyterLab to uploading to your home drive.
+
+## Writing data from JupyterLab to S3
+
+pandas won't write files to S3 directly. Instead either:
+* write data to a temporary file on disk and copy the file to S3 with boto3
+* write data to a memory buffer and copy the file to S3 with boto3 like this:
+
+```python
+from io import StringIO
+import boto3
+
+csv_buffer = StringIO()
+df.to_csv(csv_buffer)
+s3_resource = boto3.resource('s3')
+s3_resource.Object(bucket, 'df.csv').put(Body=csv_buffer.getvalue())
+```
+
+## Uploading data to S3 (from your machine)
 
 ### Where data is stored
 
-Data in s3 is stored in 'buckets', which are conceptually very similar to folders. 
+Data in S3 is stored in 'buckets', which are conceptually very similar to folders.
 
-An S3 bucket is automatically created for every team that's created in Github; for how to create and manage teams see [User Administration][User Administration]. By default, all members of a Github team have **read and write** access to their corresponding bucket.
+An S3 bucket is automatically created for every team that's created in GitHub; for how to create and manage teams see [User Administration][User Administration]. By default, all members of a Github team have **read and write** access to their corresponding bucket.
 
 ### Uploading data
 
