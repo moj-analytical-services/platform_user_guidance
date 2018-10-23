@@ -86,9 +86,15 @@ Note that there are two layers of two factor authentication (2FA) in action on t
 
 * Your Github account must have 2FA enabled.  When you log in to Github, your session will stay active for a month before you need to re-enter your 2FA code.  Your Github username identifies you to the platform, and we use this identity to control access to data and other resources once you've logged into the platform.  You therefore must be logged into Github to use the platform.
 
-* You Analytical Platform account has a separate 2FA step.  You will be prompted to set this up the first time you access the platform.  This code must be entered once a day.  This security step lets you log into the platform and use it.
+* Your Analytical Platform account has a separate 2FA step.  You will be prompted to set this up the first time you access the platform and on subsequent uses, depending on the machine you use and the network it's connected to:
 
-Usually, when you log into the platform, you will be prompted to enter your platform 2FA, but you will not need to enter your Github 2FA because this is remembered for a month.
+    * From a corporate-networked machine (DOM1 or QUANTUM) or corporate wifi (e.g. MoJDigital) then you will not be challenged for this.
+
+    * Otherwise (e.g. working from home on a non-corporate-networked machine) you'll be challenged to provide the 2FA code during every sign-in to access each part the platform: Control Panel, R Studio, Grafana etc.
+
+This security step lets you log into the platform and use it.
+
+Whilst you may be prompted to enter your platform 2FA frequently (e.g. when working from home), but you will not need to enter your Github 2FA because this is remembered for a month.
 
 However, if you have not logged into the platform for more than a month, you will first have to login to Github (and enter your Github 2FA code), and you will then also be prompted to enter your platform 2FA code.
 
