@@ -30,11 +30,12 @@ further details.
 
 Pandas can import straight from S3:
 
+    import pandas as pd
     pd.read_csv("s3://alpha-everyone/iris.csv")
 
-This requires you to install a couple of libraries:
+This requires you to install this library:
 
-    pip install pandas s3fs
+    pip install s3fs
 
 Or alternatively use the standard python AWS client `boto3`.
 
