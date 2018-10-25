@@ -1,28 +1,30 @@
 # Acceptable Use Policy (Security Operating Procedures)
 
-- You must not put any sensitive (OFFICIAL) data into the platform without first gaining permission. Sensitive data is classified `OFFICIAL` or higher. To get permission, contact [Robin Linacre](mailto:analytical_platform@digital.justice.gov.uk)
+- The platform is only suitable for information classified at `OFFICIAL` (including material with the SENSITIVE handling caveat). If you have questions about data suitability, [contact the team](mailto:analytical_platform@digital.justice.gov.uk)
+- 
 - Remember that the platform is still in Beta. This means there is no guarantee of stability. Do not use the platform for time-critical tasks. Allow for the possibility of unannounced downtime, which could last up to a week.
 - If you are responsible for a team, ensure that users have the [correct permissions](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#team-creation).
 
 ## General security guidance
 
-- Do not access the platform from a non-MoJ computer. For example, do not attempt access from a personally-owned computer.
+- Do not access the platform from a non-MOJ IT system (such as a personal laptop)
 - Choose a complex password for your Github account. A complex password cannot be guessed, and is created by following some simple rules and suggestions; see [here](https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0)
 - You must not share your account or your login credentials with anyone else.
+- Do not re-use credentials for multiple purposes (use a unique password and/or SSH keypair for each system/purpose).
 
 ## Transferring and management of data
 
 - Transfer to the platform only the minimum possible datasets needed for your work.
-- All data transfers should be made from a secure computer system. The system must be accredited to store `OFFICIAL` data, such as DOM1 or QUANTUM systems.
-- Access to sensitive data should be provided on a 'need to know' basis. Use [data access groups](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups) to control data access.
+- All data transfers should take place safely (both in and out of the platform) to ensure data is protected while in transit and any temporary migration files are adequately protected - [contact the team](mailto:analytical_platform@digital.justice.gov.uk) for advice around this.
+- Access to data should be provided on a 'need to know' basis. Use [data access groups](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups) to control data access.
 
 ## Guidance on the use of Github
 
-The advice in this document relates to private repositories which are part of the [MoJ Analytical Services organisation](https://github.com/moj-analytical-services/) only. **Do not** store `OFFICIAL` work in public repositories unless you are sure it is not sensitive and have prior permission from your line manager.
+The advice in this document relates to private repositories which are part of the [MoJ Analytical Services organisation](https://github.com/moj-analytical-services/) only. **Do not store any work in public repositories** unless you are sure it is not sensitive and can be made public. Have prior permission from your line manager before releasing to a public repository. Read the [Service Manual pages on opensource](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable).
 
 ### What can I use GitHub for?
 
-When you have approval, you may use GitHub to store your analytical code at the `OFFICIAL` level. This means that you can use Git for work where the code itself is sensitive, such as work on court or prison closures.
+When you have approval, you may use GitHub to store your analytical **code** _but not data_ at the `OFFICIAL` level. This means that you can use Git for work where the code itself is sensitive, such as work on court or prison closures.
 
 You may also use GitHub to store project writeups. However, the write ups must not contain information or data which would violate the prohibitions on the use of GitHub set out below.
 
