@@ -31,16 +31,19 @@ Use the [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/#A
 
 Using the control panel, you can also set up and manage team-based data access.
 
-### Accessing the platform from computers outside of DOM1
+### Accessing the platform
 
-You may use secure government computers which are off-network, such as MoJ Digital Macbooks, to access the platform.  There are additional security steps.
+You may use any formal MOJ technology solution such as DOM1, Quantum, MOJ Digital & Technology or Workplace Technology laptops to access the platform.
+
+If you wish to access the platform from another formal HMG technology solution (for example, a laptop provided by another government department) you must ask first (analytical_platform@digital.justice.gov.uk).
+
+You must not access the platform from a non-MOJ device, such as a personal mobile phone or laptop.
 
 When you first access your platform account, you will be asked to set up additional two factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)).  There is no SMS option.
 
 For step by step instructions on setting up this 2FA, see [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#step-by-step-guide-to-setup-of-two-factor-authentication).
 
 For troubleshooting 2FA issues, please see [this section](https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#two-factor-authentication-problems) of the user guidance.
-
 
 ##  Configuring Git and Github for use on the Analytical Platform
 
