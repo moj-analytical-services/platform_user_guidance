@@ -2,26 +2,22 @@
 
 ## Getting an account
 
+You use a specially authenticated Github account to log into the platform, which you can set up as follows:
+
 ### Sign up to Github
-You need a Github account to be able to access the platform. If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options.
+If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options, and make sure you save recovery codes as instructed.
 
-We recommend new users use their `@justice` email address.  If you already have a personal Github account, you may also just use that.
-
-For more information about why we've made Github a core part of the platform, see [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it).
+We recommend new users use their `@justice` email address.  If you already have a personal Github account, you may also use that.
 
 ### Enable two-factor authentication on your Github account
 Once you've signed to Github, you must enable two factor authentication on your Github account to enhance security. You can do this in your Github [settings page](https://github.com/settings/security).
 
-You are given the option of doing this using SMS, or an authentication app such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) . Choose whichever you prefer. Save a copy of your recovery codes, for example by emailing them to your secure government email address.
+You are given the option of doing this using SMS, or an authentication app such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) . Choose whichever you prefer.
 
 For step-by-step instructions, see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
 
 ### Email us your Github username
-Once you've got a Github account setup, email your github username to [Leanne Mills](mailto:analytical_platform@digital.justice.gov.uk) (or [Robin Linacre](mailto:analytical_platform@digital.justice.gov.uk) if she's out of office) who will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.
-
-This invitation will trigger an email notification, or you can accept the invitation by visiting [MoJ Analytical Services](github.com/moj-analytical-services/) organisation.
-
-Once you've accpted the invitation, you've now completed all the security prerequisites, and you're ready to access the platform.
+Once you've got a Github account setup, email your github username to the shared mailbox (analytical_platform@digital.justice.gov.uk) and we will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.  Once we've done this, you can accept the invitation by visiting the [MoJ Analytical Services](github.com/moj-analytical-services/) organisation, or by using the link in the email you'll receive from Github.
 
 ### Read the Security Operating Procedure
 
@@ -29,23 +25,28 @@ Before you start using the platform, please read the [Acceptable use policy](htt
 
 ## Accessing the platform
 
-Click [here](https://cpanel-master.services.alpha.mojanalytics.xyz/#Analytical%20tools) to access the platform.
+Use the [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/#Analytical%20tools) to access R Studio and other parts of the platform.
+
+Using the control panel, you can also set up and manage team-based data access.
+
+### Accessing the platform from computers outside of DOM1
+
+You may use secure government computers which are off-network, such as MoJ Digital Macbooks, to access the platform.  There are additional security steps.
 
 When you first access your platform account, you will be asked to set up additional two factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)).  There is no SMS option.
 
 For step by step instructions on setting up this 2FA, see [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#step-by-step-guide-to-setup-of-two-factor-authentication).
 
-For troubleshooting 2FA issues, please see [this section](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#two-factor-authentication-problems) of the user guidance.
+For troubleshooting 2FA issues, please see [this section](https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#two-factor-authentication-problems) of the user guidance.
+
 
 ##  Configuring Git and Github for use on the Analytical Platform
 
 Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.
 
-If you are new to Git and Github, it is worth clarifying the difference between Git and Git**hub**. Git is the software that looks after the version control of code, whereas Github is the website on which you publish and share your version controlled code. In practice this means you use Git to track versions of your code, and then submit those changes to Github.
+In order to use Github, you need to set up a connection between your Analytical Platform account and Github.  This needs to be done once, after which your Analytical Platform account will permanently be connected.  It is worth doing because it avoids you having to repeatedly type in your username and password every time you interact with Github.
 
-This guide runs through how to set up connectivity between your Analytical Platform account and Github.  This is a one-time set up procedure; you only need to do this once, when you first use the platform.
-
-This page covers only the initial setup.  For guidance on how to use Git to sync your work with Github, please see the information [here](http://happygitwithr.com/) or [here](http://r-pkgs.had.co.nz/git.html#git-rstudio).   We have also published a suggested working pattern [here](https://github.com/moj-analytical-services/our-coding-standards/blob/master/version_control_pattern.md).
+This page covers only the initial setup.  For guidance on how to use Git to sync your work with Github, please see [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html).
 
 You can find more detailed notes about setting up Git with R Studio [here](http://adamwilson.us/RDataScience/GitSSHNotes.html) and [here](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
@@ -59,7 +60,7 @@ The overview is as follows:
 
 #### Step 1 - create an SSH key
 
-You can create your SSH key within the platform:
+You can create your SSH key within R Studio:
 
 `Tools` -> `Global options` -> `Git/SVN` -> `Create RSA key...`
 
@@ -101,9 +102,9 @@ The link with Github and the Analytical Platform is now established. You can now
 
 To start syncing your work with Github, Git needs to know a bit more about you.
 
-Within the platform, access the shell using `Tools` -> `Shell...`
+Within R Studio, access the shell using `Tools` -> `Shell...`
 
-Then, you need to type the following commands (substitute your name and email):
+Then, you need to type the following commands (substitute your user name and email):
 
 ```bash
 git config --global user.name 'Your Name'
@@ -115,7 +116,6 @@ You're now ready to start using Github!
 ### Using Git with the Analytical Platform
 
 We have written an introductory guide to using Git which you can access [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html).
-
 
 ## Guidance on writing code
 Please read the [coding standards](https://github.com/moj-analytical-services/our-coding-standards).

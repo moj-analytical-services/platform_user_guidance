@@ -1,8 +1,8 @@
 # Working with big datasets and sharing them: Accessing data in Amazon S3
 
-[Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) is used as the primary storage area for large data files. In contrast to data in your Platform's home directory, data in S3 can be accessed by multiple Platform users. You will only be able to access S3 buckets (folders) that you have been granted access to (see [User Administration][User Administration]).
+[Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) is used as the primary storage area for large data files. In contrast to data in your Platform's home directory, data in S3 can be accessed by multiple Platform users. You will only be able to access S3 buckets (folders) that you have been granted access to.
 
-## Importing data from S3 into R
+## Accessing data in S3 from R
 
 There are currently two methods of browsing and importing data held in S3 into RStudio.
 
@@ -19,9 +19,9 @@ s3browser::file_explorer_s3()
 
 See the [documentation](https://github.com/moj-analytical-services/s3browser) for further details.
 
-### Command line tool
+### R Package
 
-We have also developed a command line tool that provides you with some helper function. This enables you to do things like write `s3tools::s3_path_to_full_df("alpha-everyone/CW iris.xlsx")` to read directly from S3 into a data frame in R.
+We have also developed an R Package called `s3tools` that makes it easier to interact with s3. This enables you to do things like write `s3tools::s3_path_to_full_df("alpha-everyone/iris.csv")` to read directly from S3 into a data frame in R.
 
 See the [documentation](https://github.com/moj-analytical-services/s3tools) for
 further details.
@@ -67,38 +67,49 @@ s3_resource.Object(bucket, 'df.csv').put(Body=csv_buffer.getvalue())
 
 Data in S3 is stored in 'buckets', which are conceptually very similar to folders.
 
-An S3 bucket is automatically created for every team that's created in GitHub; for how to create and manage teams see [User Administration][User Administration]. By default, all members of a Github team have **read and write** access to their corresponding bucket.
+Each of these 'buckets' has a corresponding 'data access group' which is the group of platform users who have access to the bucket.
+
+Each data access group has one or more administrators, who are able to add and remove people from the group.
+
+Typically, a suitable bucket will already exist for the work you are doing, so you just need to ask the data access group administrator to add you.
+
+If it does not already exist, you may create a new 'bucket'.  In doing so, you will automatically become the administrator of this data access group.
 
 ### Uploading data
 
-To access the buckets you need to visit the Amazon management console with the following link: https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y (if you regularly upload data it may be worth bookmarking this link).
+The easiest way to upload data to an S3 buckets is via the AWS GUI.  Instructions are as follows:
 
-Authentication is managed by GitHub, so if this is the first time you are connecting to the Amazon S3 Management console you may have to approve it.
+- Navigate to the platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/#Warehouse%20data), and click on the 'warehouse data' tab.
+- Look for the bucket you want to upload data to, and click the 'Open on AWS' button, which will take you into the AWS GUI
+- Within AWS, click the blue 'Upload' button
+- Drag files in as instructed
+- Click the 'Upload' button at the bottom *left* of the dialogue.
 
-You'll be able to see all buckets, **including** those you **do not** have access to.  You can only see the _contents_ of buckets to which you have access.
-
-To upload data, find the bucket you want to upload data to. Within the bucket you can create folders and upload files by following the on screen instructions. When uploading files **you will be prompted to set the settings for that file**. If this happens, the default settings are okay.
-
-#### Step-by-step instructions
-
-1. Use the following [link](https://alpha-analytics-moj.eu.auth0.com/samlp/NpfImg4P3ynU6HFx7ivYmqUZWQHfwi3Y) to login
-
-2. Select the S3 service
-   ![](images/s3/s3_service.png)
-
-3. Select the bucket you wish to upload data to (the bucket will have the same name as the team, but spaces are replaced with `-` and all letters are lower case, so `Test Team` will have a bucket called `test-team`). While in **alpha** all buckets will also have the alpha prefix.
-
-   You'll notice two buckets are created; **use the one prefixed `alpha-`** and ignore the one prefixed `dev-`.
-
-   **The easiest way is to use the search**:
-   ![](images/s3/s3_bucket_search.gif)
-
-4. Use the interface to **create folders** or **upload files**. Note: The default settings are fine.
-
-   ![](images/s3/s3_bucket_upload.gif)
-
-#### Manipulating data
-
-You can also move, rename and delete data using the S3 management console. Select the files by checking the text box, use the `More` button so see the options.
+You can also move, rename and delete data using the AWS GUI. Select the files by checking the text box, use the `More` button so see the options.
 
 ![](images/s3/s3_options.png)
+
+## Creating and managing data access groups
+
+Before creating a new S3 bucket and corresponding data access group, please check that a suitable S3 bucket does not already exist.
+
+You can do this by navigating 'up a level' within the AWS S3 GUI, by clicking on 'Amazon S3' at the top left of the screen.  [TODO: Add picture]
+
+This will show you a list of all S3 buckets within the platform, including buckets you do not have access to.
+
+Assuming a suitable bucket does not already exist, you can create a new one as follows:
+
+### Step 1 - Create a new bucket
+
+Navigate to the ['Data Warehouse' tab of the control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/#Warehouse%20data).  At the bottom of the page, click on 'Create new warehouse data source'.
+
+Type a name for your S3 bucket.  Note that for technical reasons, all buckets must start with `alpha-`, which will be populated for you automatically
+
+### Step 2 (optional) Grant access to other users, and set their access level
+
+Navigate to the ['Data Warehouse' tab of the control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/#Warehouse%20data). Click on the name of the bucket you wish to manage.
+
+Scroll to the bottom of the page, and start typing a user's name in the 'Grant access to this data to other users' box.
+
+If you want to grant administrator priviledges on another user click on the 'Edit access level' button next to their name.  This will enable them to manage the data access group.  Each group can have multiple administrators.
+
