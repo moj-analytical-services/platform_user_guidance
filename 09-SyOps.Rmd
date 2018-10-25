@@ -1,7 +1,7 @@
 # Acceptable Use Policy (Security Operating Procedures)
 
 - The platform is only suitable for information classified at `OFFICIAL` (including material with the SENSITIVE handling caveat). If you have questions about data suitability, [contact the team](mailto:analytical_platform@digital.justice.gov.uk)
-- 
+- Teams are responsible for who has access to their data when within the platform, and **must** actively manage personnel changes (Joiners, Movers, Leavers) to ensure the correct people have access to only the data they are currently permitted to access.
 - Remember that the platform is still in Beta. This means there is no guarantee of stability. Do not use the platform for time-critical tasks. Allow for the possibility of unannounced downtime, which could last up to a week.
 - If you are responsible for a team, ensure that users have the [correct permissions](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#team-creation).
 
@@ -17,6 +17,12 @@
 - Transfer to the platform only the minimum possible datasets needed for your work.
 - All data transfers should take place safely (both in and out of the platform) to ensure data is protected while in transit and any temporary migration files are adequately protected - [contact the team](mailto:analytical_platform@digital.justice.gov.uk) for advice around this.
 - Access to data should be provided on a 'need to know' basis. Use [data access groups](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups) to control data access.
+
+## Controlling data access in the platform
+
+- Data Owners are ultimately responsible for who has access to data while in the platform.
+- Data Owners **must** actively manage delegated access for team members (popularly - Joiners, Movers, Leavers)
+- Self-managed permissions through [data access groups](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups) must be used to provision and remove access as suitable - which is solely defined by Data Owners.
 
 ## Guidance on the use of Github
 
