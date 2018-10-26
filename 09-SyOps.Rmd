@@ -18,6 +18,11 @@
 - All data transfers should take place safely (both in and out of the platform) to ensure data is protected while in transit and any temporary migration files are adequately protected - [contact the team](mailto:analytical_platform@digital.justice.gov.uk) for advice around this.
 - Access to data should be provided on a 'need to know' basis. Use [data access groups](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups) to control data access.
 
+### Information Governance
+
+- Before you transfer any data into the platform, you **must** have completed information governance and management assessments, this is likely to include (but not be limited to): a Data Movement Form, a technical data migration/integration document, update Privacy Impact Assessments, update information management and asset logs and applicable privacy notices.
+- Using the platform is likely to require authoriation from your SIRO (Senior Information Risk Owner) and/or IAO (Information Asset Owner).
+
 ## Controlling data access in the platform
 
 - Data Owners are ultimately responsible for who has access to data while in the platform.
