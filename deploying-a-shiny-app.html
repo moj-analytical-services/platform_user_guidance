@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2018-11-06">
+<meta name="date" content="2018-11-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -213,10 +213,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#advanced-deployment"><i class="fa fa-check"></i><b>5.4</b> Advanced deployment</a><ul>
 <li class="chapter" data-level="5.4.1" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#what-is-run-when-i-deploy-a-shiny-app"><i class="fa fa-check"></i><b>5.4.1</b> What is run when I deploy a Shiny app?</a></li>
 <li class="chapter" data-level="5.4.2" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#can-i-change-my-build"><i class="fa fa-check"></i><b>5.4.2</b> Can I change my build?</a></li>
-<li class="chapter" data-level="5.4.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#how-can-i-troubleshoot-problems"><i class="fa fa-check"></i><b>5.4.3</b> How can I troubleshoot problems?</a></li>
-<li class="chapter" data-level="5.4.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#troubleshooting-using-docker-installed-locally-on-a-macbook"><i class="fa fa-check"></i><b>5.4.4</b> Troubleshooting using Docker (installed locally on a Macbook)</a></li>
-<li class="chapter" data-level="5.4.5" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#if-all-else-fails"><i class="fa fa-check"></i><b>5.4.5</b> If all else fails…</a></li>
-<li class="chapter" data-level="5.4.6" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#some-problems-weve-encountered-and-their-solutions"><i class="fa fa-check"></i><b>5.4.6</b> Some problems we’ve encountered and their solutions</a></li>
+<li class="chapter" data-level="5.4.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#diagnosing-problems---logs-provided-by-kibana"><i class="fa fa-check"></i><b>5.4.3</b> Diagnosing problems - logs provided by Kibana</a></li>
+<li class="chapter" data-level="5.4.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#fixing-common-problems"><i class="fa fa-check"></i><b>5.4.4</b> Fixing common problems</a></li>
+<li class="chapter" data-level="5.4.5" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#troubleshooting-using-docker-installed-locally-on-a-macbook"><i class="fa fa-check"></i><b>5.4.5</b> Troubleshooting using Docker (installed locally on a Macbook)</a></li>
+<li class="chapter" data-level="5.4.6" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#if-all-else-fails"><i class="fa fa-check"></i><b>5.4.6</b> If all else fails…</a></li>
+<li class="chapter" data-level="5.4.7" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#some-problems-weve-encountered-and-their-solutions"><i class="fa fa-check"></i><b>5.4.7</b> Some problems we’ve encountered and their solutions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html"><i class="fa fa-check"></i><b>6</b> Deploying a Static Web App</a><ul>
@@ -426,10 +427,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="https://github.com/moj-analytical-services/rshiny-template/blob/master/Dockerfile">Dockerfile</a>.</p>
 <p>Deployment will usually work so long as your app serves HTTP on port 80. Note that the app doesn’t have to be a Shiny app.</p>
 </div>
-<div id="how-can-i-troubleshoot-problems" class="section level3">
-<h3><span class="header-section-number">5.4.3</span> How can I troubleshoot problems?</h3>
-<p>To view the logs, see the <a href="https://kibana.services.alpha.mojanalytics.xyz/login">Kibana dashboard</a>.</p>
-<p>Here are some tips to reduce problems:</p>
+<div id="diagnosing-problems---logs-provided-by-kibana" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Diagnosing problems - logs provided by Kibana</h3>
+<p>To view the app’s log messages, see the <a href="https://kibana.services.alpha.mojanalytics.xyz/login">Kibana dashboard</a>:</p>
+<ol style="list-style-type: decimal">
+<li>In the left hand nav bar, click “Discover”</li>
+<li>On the top bar, click “Open” then click “Application logs (alpha”. This quickly sets up your view:
+<ul>
+<li>index: &quot;logstash-apps-alpha-*&quot; - i.e. logs from app, because Kibana includes logs from other software elsewhere in the Analytical Platform</li>
+<li>field: “message” to display the log messages, rather than all the other data that’s logged</li>
+<li>field: “time_nano” also displayed and sorted, so they are displayed in order</li>
+</ul></li>
+<li>Click “Add a filter+”. Fill in the form:
+<ul>
+<li>Field: <code>app_name</code></li>
+<li>Operator: “is”</li>
+<li>Value: your app name, appended with <code>-webapp</code> e.g. <code>prison-network-app-webapp</code>
+Now: Save.</li>
+</ul></li>
+<li>If it says “No results match your search criteria” it could well be because the timeframe defaults to the last 15 minutes. Try changing it by clicking on “Last 15 minutes” in the top right.</li>
+</ol>
+<p>You log messages are shown in the message column:
+<img src="images/shiny/kibana-logs.png" /></p>
+<p>Kibana tip:
+* The search box has some helpful features like autocomplete which you can switch on. To do this, click “Options” (found inside the search box on the right-hand side) and then enable “Turn on query features”.</p>
+</div>
+<div id="fixing-common-problems" class="section level3">
+<h3><span class="header-section-number">5.4.4</span> Fixing common problems</h3>
+<p>Here are some tips to fix/reduce problems:</p>
 <ol style="list-style-type: decimal">
 <li>Test early and often by deploying work in progress rather that building an entire app and testing</li>
 <li>Explicitly reference all packages (e.g. <code>shiny::hr()</code> rather than <code>hr()</code>. This is particularly important if you’re using loads of packages.</li>
@@ -441,7 +466,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If you’re still having problems, you can deploy the app locally using Docker.</p>
 </div>
 <div id="troubleshooting-using-docker-installed-locally-on-a-macbook" class="section level3">
-<h3><span class="header-section-number">5.4.4</span> Troubleshooting using Docker (installed locally on a Macbook)</h3>
+<h3><span class="header-section-number">5.4.5</span> Troubleshooting using Docker (installed locally on a Macbook)</h3>
 <p>Docker enables us to fully specify a computing environment (an operating system and the software installed on that system). This allows us to test and troubleshoot our Shiny app in Docker on our Macbooks. If it runs in Docker on the Macbook, it will also run on the platform, because Docker guarantees the computing environments will be the same.</p>
 <p>This guarantee only applies if we build the Docker image from exactly the same code (the same Shiny code, and the same Dockerfile).</p>
 <p>When we deploy a Shiny app on the platform, the following steps take place:</p>
@@ -480,7 +505,7 @@ preserve_logs true;</code></pre>
 <p>Logs are then written to <code>cd /var/log/shiny-server/</code></p>
 </div>
 <div id="if-all-else-fails" class="section level3">
-<h3><span class="header-section-number">5.4.5</span> If all else fails…</h3>
+<h3><span class="header-section-number">5.4.6</span> If all else fails…</h3>
 <p>Sometimes, the following steps can resolve problems with <code>packrat.lock</code>:</p>
 <ul>
 <li>Delete the entire <code>packrat</code> directory</li>
@@ -493,9 +518,9 @@ preserve_logs true;</code></pre>
 </ul>
 </div>
 <div id="some-problems-weve-encountered-and-their-solutions" class="section level3">
-<h3><span class="header-section-number">5.4.6</span> Some problems we’ve encountered and their solutions</h3>
+<h3><span class="header-section-number">5.4.7</span> Some problems we’ve encountered and their solutions</h3>
 <div id="shiny-app-deploys-successfully-but-application-failed-to-start-error-occurs" class="section level4">
-<h4><span class="header-section-number">5.4.6.1</span> Shiny app deploys successfully, but ‘application failed to start’ error occurs</h4>
+<h4><span class="header-section-number">5.4.7.1</span> Shiny app deploys successfully, but ‘application failed to start’ error occurs</h4>
 <p>Sometimes, your Shiny app deploys successfully but you get the following error:</p>
 <pre><code>An error has occurred
 The application failed to start.
