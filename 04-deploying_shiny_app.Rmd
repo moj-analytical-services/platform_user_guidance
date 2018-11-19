@@ -152,7 +152,16 @@ Deployment will usually work so long as your app serves HTTP on port 80.  Note t
 
 ### How can I troubleshoot problems?
 
-To view the logs, see the [Kibana dashboard](https://kibana.services.alpha.mojanalytics.xyz/login).
+To view the logs, see the [Kibana dashboard](https://kibana.services.alpha.mojanalytics.xyz/login):
+1. In the main nav, click "Discover"
+2. Click on the dropdown saying "cloudtrail-*" and change it to "logstash-apps-alpha-*". Now you should see all the log messages for all apps, which you can search, but you probably want to filter as follows.
+3. Click "Add a filter+ ". Fill in the form:
+    * Field: `app_name`
+	* Operator: "is"
+	* Value: your app name, appended with `-webapp` e.g. `prison-network-app-webapp`
+   Now: Save.
+4. On the list of fields, click "message" then the "add" button which appears. This now displays the log messages in the main pane. The only problem is that within each timestamped batch the order of the messages is mixed up.
+![](images/shiny/kibana-logs.png)
 
 Here are some tips to reduce problems:
 
