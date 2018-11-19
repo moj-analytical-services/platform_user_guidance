@@ -150,11 +150,31 @@ Yes - if you know Docker, you are welcome to change the
 
 Deployment will usually work so long as your app serves HTTP on port 80.  Note that the app doesn't have to be a Shiny app.
 
-### How can I troubleshoot problems?
+### Diagnosing problems - logs provided by Kibana
 
-To view the logs, see the [Kibana dashboard](https://kibana.services.alpha.mojanalytics.xyz/login).
+To view the app's log messages, see the [Kibana dashboard](https://kibana.services.alpha.mojanalytics.xyz/login):
 
-Here are some tips to reduce problems:
+1. In the left hand nav bar, click "Discover"
+2. On the top bar, click "Open" then click "Application logs (alpha". This quickly sets up your view:
+    * index: "logstash-apps-alpha-*" - i.e. logs from app, because Kibana includes logs from other software elsewhere in the Analytical Platform
+	* field: "message" to display the log messages, rather than all the other data that's logged
+	* field: "time_nano" also displayed and sorted, so they are displayed in order
+3. Click "Add a filter+ ". Fill in the form:
+    * Field: `app_name`
+	* Operator: "is"
+	* Value: your app name, appended with `-webapp` e.g. `prison-network-app-webapp`
+   Now: Save.
+4. If it says "No results match your search criteria" it could well be because the timeframe defaults to the last 15 minutes. Try changing it by clicking on "Last 15 minutes" in the top right.
+
+You log messages are shown in the message column:
+![](images/shiny/kibana-logs.png)
+
+Kibana tip:
+* The search box has some helpful features like autocomplete which you can switch on. To do this, click "Options" (found inside the search box on the right-hand side) and then enable "Turn on query features".
+
+### Fixing common problems
+
+Here are some tips to fix/reduce problems:
 
 1.  Test early and often by deploying work in progress rather  that building an entire app and testing
 2.  Explicitly reference all packages (e.g. `shiny::hr()` rather than `hr()`.  This is particularly important if you’re using loads of packages.
