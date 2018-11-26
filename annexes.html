@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2018-11-19">
+<meta name="date" content="2018-11-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -272,9 +272,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.5" data-path="acceptable-use-policy-security-operating-procedures.html"><a href="acceptable-use-policy-security-operating-procedures.html#reporting-security-incidents"><i class="fa fa-check"></i><b>10.5</b> Reporting security incidents</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="annexes.html"><a href="annexes.html"><i class="fa fa-check"></i><b>11</b> Annexes</a><ul>
-<li class="chapter" data-level="11.1" data-path="annexes.html"><a href="annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it"><i class="fa fa-check"></i><b>11.1</b> What are the benefits of Github and why do we recommend it?</a></li>
-<li class="chapter" data-level="11.2" data-path="annexes.html"><a href="annexes.html#step-by-step-guide-to-setup-two-factor-authentication"><i class="fa fa-check"></i><b>11.2</b> Step by step guide to setup Two Factor Authentication</a><ul>
-<li class="chapter" data-level="11.2.1" data-path="annexes.html"><a href="annexes.html#step-by-step---logging-into-the-platform-for-the-first-time"><i class="fa fa-check"></i><b>11.2.1</b> Step by step - logging into the platform for the first time</a></li>
+<li class="chapter" data-level="11.1" data-path="annexes.html"><a href="annexes.html#memory-limits"><i class="fa fa-check"></i><b>11.1</b> Memory limits</a></li>
+<li class="chapter" data-level="11.2" data-path="annexes.html"><a href="annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it"><i class="fa fa-check"></i><b>11.2</b> What are the benefits of Github and why do we recommend it?</a></li>
+<li class="chapter" data-level="11.3" data-path="annexes.html"><a href="annexes.html#step-by-step-guide-to-setup-two-factor-authentication"><i class="fa fa-check"></i><b>11.3</b> Step by step guide to setup Two Factor Authentication</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="annexes.html"><a href="annexes.html#step-by-step---logging-into-the-platform-for-the-first-time"><i class="fa fa-check"></i><b>11.3.1</b> Step by step - logging into the platform for the first time</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -296,8 +297,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="annexes" class="section level1">
 <h1><span class="header-section-number">Part 11</span> Annexes</h1>
+<div id="memory-limits" class="section level2">
+<h2><span class="header-section-number">11.1</span> Memory limits</h2>
+<p>All the software running on the Analytical Platform has its memory controlled. Each running software container has a minimum and maximum amount available. Here’s an explanation of the key terms:</p>
+<ul>
+<li>‘memory’ is needed for your app and code, but the limiting factor is usually the data that you ‘load into memory’. Data is in memory if it is assigned to a variable, which includes a data frame.</li>
+<li>a ‘container’ is for one user’s instance of a tool (e.g. Sandra’s R Studio or Bob’s Jupyter) or app (e.g. the PQ Shiny App or the KPIs Web App).</li>
+<li>‘Minimum memory’ is the amount the container is guaranteed. It is reserved for it.</li>
+<li>‘Maximum memory’ may be available, but your container is competing for this memory with other containers on the server it happens to be running on. If you try to use more than is available or more than the Maximum then your container will be restarted.</li>
+</ul>
+<p>e.g. Sandra runs her code in R Studio, which loads 8GB of data into a data frame, and she sees in Grafana that this takes 10GB of memory. This is above the minimum of 5GB, and because the servers aren’t too busy the extra 5GB are available. Later the server that her R Studio container is running on happens to get full and when she tries to do something that needs another 1GB memory (i.e. total 11GB) she finds that R Studio restarts, interrupting her work for a few minutes. She restarts her code, but because her R Studio now happens to be running on a different server that is less busy, she finds she can run her code and use 11GB fine.</p>
+<p>You can monitor your memory usage using <a href="https://grafana.services.alpha.mojanalytics.xyz/login">Grafana</a> (there is also a link from the Control Panel). Scroll down to “User RAM usage” and you can click on your name to just show yours. Also useful is to adjust the time period from being the “Last 1 hour”, by clicking on the label at the top-right corner.</p>
+<p><img src="images/annexes/ram-usage.png" /></p>
+<p>Current memory limits:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Container type</th>
+<th>Minimum</th>
+<th>Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R Studio</td>
+<td>5 GB</td>
+<td>20 GB</td>
+</tr>
+<tr class="even">
+<td>Jupyter</td>
+<td>1 GB</td>
+<td>12 GB</td>
+</tr>
+<tr class="odd">
+<td>App</td>
+<td>no limit</td>
+<td>no limit</td>
+</tr>
+</tbody>
+</table>
+<p>You can work on a dataset that is bigger than your memory by reading in a bit of the data at a time and writing results back to disk as you go. If you’re working on big data then consider taking advantage of tech like Amazon Athena or Apache Spark, which are available through the Analytical Platform too.</p>
+<p>Our laptops tend to have only 8GB or 16GB, so it’s an advantage of the AP that we can offer more. We are open to increasing the maximum memory, so let us know if you need more, to help us make a case for covering the additional cost.</p>
+</div>
 <div id="what-are-the-benefits-of-github-and-why-do-we-recommend-it" class="section level2">
-<h2><span class="header-section-number">11.1</span> What are the benefits of Github and why do we recommend it?</h2>
+<h2><span class="header-section-number">11.2</span> What are the benefits of Github and why do we recommend it?</h2>
 <p>Github is a central place to store our analytical projects - particularly those which are built primarily in code.</p>
 <p><strong>Github keeps track of who wrote what, when, why they wrote it, why we can trust its correctness, and which version of the code was run to produce an analytical result.</strong></p>
 <p>This is useful if you’re work on your own, but the benefits are greatest when you’re working in a team.</p>
@@ -319,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Finally, we have chosed git specifically because it seems to be by far the most popular version control system - see <a href="https://insights.stackoverflow.com/survey/2017#work-version-control">here</a> and <a href="https://trends.google.co.uk/trends/explore?date=all&amp;q=tfs,svn,mercurial,git">here</a></p>
 </div>
 <div id="step-by-step-guide-to-setup-two-factor-authentication" class="section level2">
-<h2><span class="header-section-number">11.2</span> Step by step guide to setup Two Factor Authentication</h2>
+<h2><span class="header-section-number">11.3</span> Step by step guide to setup Two Factor Authentication</h2>
 <p>Two factor authentication (2FA) is critical to the security of the platform. We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log into DOM1.</p>
 <p>Note that there are two layers of two factor authentication (2FA) in action on the platform:</p>
 <ul>
@@ -329,23 +372,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Usually, when you log into the platform, you will be prompted to enter your platform 2FA, but you will not need to enter your Github 2FA because this is remembered for a month.</p>
 <p>However, if you have not logged into the platform for more than a month, you will first have to login to Github (and enter your Github 2FA code), and you will then also be prompted to enter your platform 2FA code.</p>
 <div id="step-by-step---logging-into-the-platform-for-the-first-time" class="section level3">
-<h3><span class="header-section-number">11.2.1</span> Step by step - logging into the platform for the first time</h3>
+<h3><span class="header-section-number">11.3.1</span> Step by step - logging into the platform for the first time</h3>
 <p>The first time you log into the Analytical Platform, you will be asked to set up 2FA.</p>
 <p>Your welcome email will direct you to the platform <a href="https://cpanel-master.services.alpha.mojanalytics.xyz/">Control Panel</a>.</p>
 <div id="step-1-log-into-github-to-identify-yourself-to-the-analytical-platform" class="section level4">
-<h4><span class="header-section-number">11.2.1.1</span> Step 1: Log into Github to identify yourself to the Analytical Platform</h4>
+<h4><span class="header-section-number">11.3.1.1</span> Step 1: Log into Github to identify yourself to the Analytical Platform</h4>
 <p><img src="images/2fa/github.gif" /></p>
 <p>If you’re already logged into Github, you will not see the ‘Sign in to GitHub to continue to Analytics platform’ screen.</p>
 </div>
 <div id="step-2-set-up-your-platform-2fa-using-your-smartphone" class="section level4">
-<h4><span class="header-section-number">11.2.1.2</span> Step 2: Set up your Platform 2FA using your smartphone</h4>
+<h4><span class="header-section-number">11.3.1.2</span> Step 2: Set up your Platform 2FA using your smartphone</h4>
 <p>In this step, you set up the second layer of 2FA, your Platform 2FA.</p>
 <p>Scan the code using your smartphone app, and enter the code that comes up on your smartphone.</p>
 <p>Note: If you get the error ‘Wrong or expired code’, you need to make sure that your phone’s clock is accurate. See <a href="https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it">here</a></p>
 <p><img src="images/2fa/platform_2fa.png" /></p>
 </div>
 <div id="youre-now-done" class="section level4">
-<h4><span class="header-section-number">11.2.1.3</span> You’re now done</h4>
+<h4><span class="header-section-number">11.3.1.3</span> You’re now done</h4>
 <p>Once you’re entered your platform 2FA code in the interface above, you should now have access to the platform. You will need to enter your platform 2FA code around once a day as you use the platform.</p>
 
 </div>
@@ -378,6 +421,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
