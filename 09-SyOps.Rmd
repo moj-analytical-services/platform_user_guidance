@@ -29,6 +29,10 @@
 - Data Owners **must** actively manage delegated access for team members (popularly - Joiners, Movers, Leavers)
 - Self-managed permissions through [data access groups](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups) must be used to provision and remove access as suitable - which is solely defined by Data Owners.
 
+## Data Minimisation
+
+- Consider [minimising data](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#data-minimisation) through pseudonymisation and anonymisation techniques.
+
 ## Guidance on the use of Github
 
 The advice in this document relates to private repositories which are part of the [MoJ Analytical Services organisation](https://github.com/moj-analytical-services/) only. **Do not store any work in public repositories** unless you are sure it is not sensitive and can be made public. Have prior permission from your line manager before releasing to a public repository. Read the [Service Manual pages on opensource](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable).
