@@ -2,47 +2,78 @@
 
 ## Summary
 
-Deploy your data processing code to the cloud. Airflow is a tool on the Analytical Platform that is a managed place for your "data pipeline" to run. This can be useful, for example, to:
+You can deploy your data processing code to the cloud. Airflow is a tool on the Analytical Platform that is a managed place for your "data pipeline" to run. This can be useful, for example, to:
+
 * run a long job overnight
 * run it on a regular schedule (e.g. every night)
 * when multiple outputs require the same intermediate result, it can be calculated once for them all
-* people other than yourself can see the job and its output (compared to if you run it in your R Studio or Jupyter)
-* you keep a history of all the job runs, showing what you ran, the logs, what tasks failed and how long it took
+* people other than yourself can see the run and its output (compared to if you run it in your R Studio or Jupyter)
+* you keep a history of all the pipeline runs, showing what you ran, the logs, what tasks failed and how long it took
 
 ## Concepts
 
-* A "data pipeline" is referred to in Airflow as a "DAG". It is made up of "tasks" which are arranged into a Directed Acyclic Graph.
-* A "DAG" is a Directed Acyclic Graph. This could be simple: Task 1 -> Task 2 -> Task 3 (meaning run Task 1 then Task 2 then Task 3). Or a Task can be dependent on multiple previous Tasks, and when its complete it can trigger multiple Tasks. The "Acyclic" bit just means you can't have loops.
-* Each "task" is a GitHub repository, containing code files that will be run (e.g. R or python) plus bits that define the environment it runs in - a Dockerfile and an AWS IAM policy.
+* A **data pipeline** is referred to in Airflow as a "DAG". It is made up of "tasks" which are arranged into a Directed Acyclic Graph.
+* A **DAG** is a Directed Acyclic Graph. This could be simple: Task 1 -> Task 2 -> Task 3 (meaning run Task 1 then Task 2 then Task 3). Or a task can be dependent on multiple previous tasks, and when its complete it can trigger multiple tasks. The "Acyclic" bit just means you can't have loops.
+* Each **task** is a GitHub repository, containing code files that will be run (e.g. R or python) plus bits that define the environment it runs in - a Dockerfile and an AWS IAM policy.
 * You define the DAG to run on a regular schedule, and/or you can run it by clicking the "Play" button on the Airflow web interface
 
-## Details
+## Set up a pipeline
 
-### Task repo
+### Task repository
 
-Each task should be a repository:
+Each task should be a git repository:
 
 * It should be under the https://github.com/moj-analytical-services organization
 * The name of the repo is recommended to start with `airflow-`
 
 The repo should include:
 
-1. deploy.json - This is for Concourse to build the repo into a Docker image
+1. `Dockerfile` - contains commands to set-up a Docker image that does your data processing.
 
-    e.g.
-    ```
-    {
-        "mojanalytics-deploy": "v1.0.0",
-        "type": "airflow_dag",
-        "role_name" : "airflow-enforcement-data-processing"
-    }
-    ```
-    The version number does nothing?! The `role_name` needs to be unique to the Analytical Platform and be prefixed `airflow-`.
+    Here's an example python one:
 
-2. iam_policy.json - This tells Concourse to create an AWS role that gives your code permission to access AWS resource, such as data in S3 buckets. 
+        # Begin with a standard base image (from https://hub.docker.com/_/python/ )
+        FROM python:3.7
+
+        # Update the system libraries
+        # (The python base image is based on debian)
+        RUN apt-get update
+        # Install new system libraries
+        apt-get install -y --no-install-recommends \
+            libatlas-base-dev gfortran
+
+        # Set the default place in the image where files will be copied
+        WORKDIR /usr/src/app
+
+        # Copy files from the repo into the image
+        COPY requirements.txt ./
+        COPY . .
+
+        # Install python dependencies
+        RUN pip install --no-cache-dir -r requirements.txt
+
+        # Run the data processing
+        # This is the equivalent of typing: python ./my-script.py
+        CMD [ "python", "./my-script.py" ]
+
+    Tip: You can put several related scripts in one repo, and choose which one gets run using an environment variable e.g. https://github.com/moj-analytical-services/airflow-magistrates-data-engineering/blob/88986cf7dbcca9b7ebc21bc2d1286464615739d7/Dockerfile#L19
+
+2. `deploy.json` - This is for Concourse to build the repo into a Docker image
+
+    For example:
+
+        {
+            "mojanalytics-deploy": "v1.0.0",
+            "type": "airflow_dag",
+            "role_name" : "airflow-enforcement-data-processing"
+        }
+
+    The version number does nothing. The `role_name` needs to be unique to the Analytical Platform and be prefixed `airflow-`.
+
+3. `iam_policy.json` - This tells Concourse to create an AWS role that gives your code permission to access AWS resource, such as data in S3 buckets. 
 
     e.g. See: https://github.com/moj-analytical-services/airflow-enforcement-data-engineering/blob/master/iam_policy.json
-for listing, reading and writing to S3 buckets.
+    for listing, reading and writing to S3 buckets.
 
 ### Build the image
 
@@ -50,6 +81,7 @@ Concourse will:
 
 * build your GitHub repository into a Docker image
 * upload the Docker image to a private location in AWS Elastic Container Registry
+* creates the AWS Role
 
 To trigger Concourse, make sure your code is committed and pushed to GitHub and then [create a release on GitHub](https://help.github.com/articles/creating-releases/). Call the first release `v0.0.1`, then `v0.0.2` etc. The version should always go up in number, or it won't build. It's good practise to use [semantic versioning](https://semver.org/).
 
@@ -82,6 +114,10 @@ The DAG will appear in the Airflow web interface a couple of minutes after the P
 
 The Airflow web interface allows you to see the data pipelines running, view the logs, see past runs, etc.
 
-    https://airflow.tools.alpha.mojanalytics.xyz
+Link: https://airflow.tools.alpha.mojanalytics.xyz
 
 ![](images/pipelines/airflow.png)
+
+You can manually start ("trigger") the pipeline with this button:
+
+![](images/pipelines/trigger.png)
