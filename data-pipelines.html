@@ -236,8 +236,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7" data-path="data-pipelines.html"><a href="data-pipelines.html"><i class="fa fa-check"></i><b>7</b> Data pipelines</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-pipelines.html"><a href="data-pipelines.html#summary"><i class="fa fa-check"></i><b>7.1</b> Summary</a></li>
 <li class="chapter" data-level="7.2" data-path="data-pipelines.html"><a href="data-pipelines.html#concepts"><i class="fa fa-check"></i><b>7.2</b> Concepts</a></li>
-<li class="chapter" data-level="7.3" data-path="data-pipelines.html"><a href="data-pipelines.html#details"><i class="fa fa-check"></i><b>7.3</b> Details</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="data-pipelines.html"><a href="data-pipelines.html#task-repo"><i class="fa fa-check"></i><b>7.3.1</b> Task repo</a></li>
+<li class="chapter" data-level="7.3" data-path="data-pipelines.html"><a href="data-pipelines.html#set-up-a-pipeline"><i class="fa fa-check"></i><b>7.3</b> Set up a pipeline</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="data-pipelines.html"><a href="data-pipelines.html#task-repository"><i class="fa fa-check"></i><b>7.3.1</b> Task repository</a></li>
 <li class="chapter" data-level="7.3.2" data-path="data-pipelines.html"><a href="data-pipelines.html#build-the-image"><i class="fa fa-check"></i><b>7.3.2</b> Build the image</a></li>
 <li class="chapter" data-level="7.3.3" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-dag"><i class="fa fa-check"></i><b>7.3.3</b> Airflow DAG</a></li>
 <li class="chapter" data-level="7.3.4" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-web-interface"><i class="fa fa-check"></i><b>7.3.4</b> Airflow web interface</a></li>
@@ -309,38 +309,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Part 7</span> Data pipelines</h1>
 <div id="summary" class="section level2">
 <h2><span class="header-section-number">7.1</span> Summary</h2>
-<p>Deploy your data processing code to the cloud. Airflow is a tool on the Analytical Platform that is a managed place for your “data pipeline” to run. This can be useful, for example, to:
-* run a long job overnight
-* run it on a regular schedule (e.g. every night)
-* when multiple outputs require the same intermediate result, it can be calculated once for them all
-* people other than yourself can see the job and its output (compared to if you run it in your R Studio or Jupyter)
-* you keep a history of all the job runs, showing what you ran, the logs, what tasks failed and how long it took</p>
+<p>You can deploy your data processing code to the cloud. Airflow is a tool on the Analytical Platform that is a managed place for your “data pipeline” to run. This can be useful, for example, to:</p>
+<ul>
+<li>run a long job overnight</li>
+<li>run it on a regular schedule (e.g. every night)</li>
+<li>when multiple outputs require the same intermediate result, it can be calculated once for them all</li>
+<li>people other than yourself can see the run and its output (compared to if you run it in your R Studio or Jupyter)</li>
+<li>you keep a history of all the pipeline runs, showing what you ran, the logs, what tasks failed and how long it took</li>
+</ul>
 </div>
 <div id="concepts" class="section level2">
 <h2><span class="header-section-number">7.2</span> Concepts</h2>
 <ul>
-<li>A “data pipeline” is referred to in Airflow as a “DAG”. It is made up of “tasks” which are arranged into a Directed Acyclic Graph.</li>
-<li>A “DAG” is a Directed Acyclic Graph. This could be simple: Task 1 -&gt; Task 2 -&gt; Task 3 (meaning run Task 1 then Task 2 then Task 3). Or a Task can be dependent on multiple previous Tasks, and when its complete it can trigger multiple Tasks. The “Acyclic” bit just means you can’t have loops.</li>
-<li>Each “task” is a GitHub repository, containing code files that will be run (e.g. R or python) plus bits that define the environment it runs in - a Dockerfile and an AWS IAM policy.</li>
+<li>A <strong>data pipeline</strong> is referred to in Airflow as a “DAG”. It is made up of “tasks” which are arranged into a Directed Acyclic Graph.</li>
+<li>A <strong>DAG</strong> is a Directed Acyclic Graph. This could be simple: Task 1 -&gt; Task 2 -&gt; Task 3 (meaning run Task 1 then Task 2 then Task 3). Or a task can be dependent on multiple previous tasks, and when its complete it can trigger multiple tasks. The “Acyclic” bit just means you can’t have loops.</li>
+<li>Each <strong>task</strong> is a GitHub repository, containing code files that will be run (e.g. R or python) plus bits that define the environment it runs in - a Dockerfile and an AWS IAM policy.</li>
 <li>You define the DAG to run on a regular schedule, and/or you can run it by clicking the “Play” button on the Airflow web interface</li>
 </ul>
 </div>
-<div id="details" class="section level2">
-<h2><span class="header-section-number">7.3</span> Details</h2>
-<div id="task-repo" class="section level3">
-<h3><span class="header-section-number">7.3.1</span> Task repo</h3>
-<p>Each task should be a repository:</p>
+<div id="set-up-a-pipeline" class="section level2">
+<h2><span class="header-section-number">7.3</span> Set up a pipeline</h2>
+<div id="task-repository" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Task repository</h3>
+<p>Each task should be a git repository:</p>
 <ul>
 <li>It should be under the <a href="https://github.com/moj-analytical-services" class="uri">https://github.com/moj-analytical-services</a> organization</li>
 <li>The name of the repo is recommended to start with <code>airflow-</code></li>
 </ul>
 <p>The repo should include:</p>
 <ol style="list-style-type: decimal">
-<li><p>deploy.json - This is for Concourse to build the repo into a Docker image</p>
-<p>e.g.
-<code>{      &quot;mojanalytics-deploy&quot;: &quot;v1.0.0&quot;,      &quot;type&quot;: &quot;airflow_dag&quot;,      &quot;role_name&quot; : &quot;airflow-enforcement-data-processing&quot;  }</code>
-The version number does nothing?! The <code>role_name</code> needs to be unique to the Analytical Platform and be prefixed <code>airflow-</code>.</p></li>
-<li><p>iam_policy.json - This tells Concourse to create an AWS role that gives your code permission to access AWS resource, such as data in S3 buckets.</p>
+<li><p><code>Dockerfile</code> - contains commands to set-up a Docker image that does your data processing.</p>
+<p>Here’s an example python one:</p>
+<pre><code> # Begin with a standard base image (from https://hub.docker.com/_/python/ )
+ FROM python:3.7
+
+ # Update the system libraries
+ # (The python base image is based on debian)
+ RUN apt-get update
+ # Install new system libraries
+ apt-get install -y --no-install-recommends \
+     libatlas-base-dev gfortran
+
+ # Set the default place in the image where files will be copied
+ WORKDIR /usr/src/app
+
+ # Copy files from the repo into the image
+ COPY requirements.txt ./
+ COPY . .
+
+ # Install python dependencies
+ RUN pip install --no-cache-dir -r requirements.txt
+
+ # Run the data processing
+ # This is the equivalent of typing: python ./my-script.py
+ CMD [ &quot;python&quot;, &quot;./my-script.py&quot; ]</code></pre>
+<p>Tip: You can put several related scripts in one repo, and choose which one gets run using an environment variable e.g. <a href="https://github.com/moj-analytical-services/airflow-magistrates-data-engineering/blob/88986cf7dbcca9b7ebc21bc2d1286464615739d7/Dockerfile#L19" class="uri">https://github.com/moj-analytical-services/airflow-magistrates-data-engineering/blob/88986cf7dbcca9b7ebc21bc2d1286464615739d7/Dockerfile#L19</a></p></li>
+<li><p><code>deploy.json</code> - This is for Concourse to build the repo into a Docker image</p>
+<p>For example:</p>
+<pre><code> {
+     &quot;mojanalytics-deploy&quot;: &quot;v1.0.0&quot;,
+     &quot;type&quot;: &quot;airflow_dag&quot;,
+     &quot;role_name&quot; : &quot;airflow-enforcement-data-processing&quot;
+ }</code></pre>
+<p>The version number does nothing. The <code>role_name</code> needs to be unique to the Analytical Platform and be prefixed <code>airflow-</code>.</p></li>
+<li><p><code>iam_policy.json</code> - This tells Concourse to create an AWS role that gives your code permission to access AWS resource, such as data in S3 buckets.</p>
 <p>e.g. See: <a href="https://github.com/moj-analytical-services/airflow-enforcement-data-engineering/blob/master/iam_policy.json" class="uri">https://github.com/moj-analytical-services/airflow-enforcement-data-engineering/blob/master/iam_policy.json</a>
 for listing, reading and writing to S3 buckets.</p></li>
 </ol>
@@ -351,6 +383,7 @@ for listing, reading and writing to S3 buckets.</p></li>
 <ul>
 <li>build your GitHub repository into a Docker image</li>
 <li>upload the Docker image to a private location in AWS Elastic Container Registry</li>
+<li>creates the AWS Role</li>
 </ul>
 <p>To trigger Concourse, make sure your code is committed and pushed to GitHub and then <a href="https://help.github.com/articles/creating-releases/">create a release on GitHub</a>. Call the first release <code>v0.0.1</code>, then <code>v0.0.2</code> etc. The version should always go up in number, or it won’t build. It’s good practise to use <a href="https://semver.org/">semantic versioning</a>.</p>
 <p>Concourse starts the build within 30 seconds and takes 5 minutes to an hour. You can track progress and see any errors like this:
@@ -374,8 +407,10 @@ for listing, reading and writing to S3 buckets.</p></li>
 <div id="airflow-web-interface" class="section level3">
 <h3><span class="header-section-number">7.3.4</span> Airflow web interface</h3>
 <p>The Airflow web interface allows you to see the data pipelines running, view the logs, see past runs, etc.</p>
-<pre><code>https://airflow.tools.alpha.mojanalytics.xyz</code></pre>
+<p>Link: <a href="https://airflow.tools.alpha.mojanalytics.xyz" class="uri">https://airflow.tools.alpha.mojanalytics.xyz</a></p>
 <p><img src="images/pipelines/airflow.png" /></p>
+<p>You can manually start (“trigger”) the pipeline with this button:</p>
+<p><img src="images/pipelines/trigger.png" /></p>
 
 </div>
 </div>
