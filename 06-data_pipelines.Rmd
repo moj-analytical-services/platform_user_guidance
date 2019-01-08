@@ -75,6 +75,43 @@ The repo should include:
     e.g. See: https://github.com/moj-analytical-services/airflow-enforcement-data-engineering/blob/master/iam_policy.json
     for listing, reading and writing to S3 buckets.
 
+### Test your image - locally on a Macbook
+
+If you have a Macbook you can use it to test that your Docker image will build, which is much quicker to debug than waiting for Concourse every time you make a change. This can be useful for checking your Dockerfile syntax is right and the dependencies install ok.
+
+However when you run the Docker image, it won't be able to access your project data (from S3), because your machine doesn't have your AP account's AWS credentials. This is right because you shouldn't have sensitive data on your Macbook in general. So the Docker image will fail when it tries to access AWS data, but you've still usefully checked the build works and the install of dependencies.
+
+You need to have installed [Docker for Mac](https://docs.docker.com/docker-for-mac/install/). When it is running you can see its whale icon in the task bar. It consumes 2GB RAM, so you may well not want it to run everytime your machine starts up - change this under "Preferences..." then uncheck "Start Docker when you log in".
+
+To test your Docker image:
+
+1. Clone your repo to your Macbook. e.g. in a terminal:
+
+        git clone git@github.com:moj-analytical-services/airflow-occupeye-scraper.git
+
+   This authenticates GitHub using SSH, so if this is the first time on your machine, you'll need to [create an SSH key and add it to your GitHub account](https://help.github.com/articles/connecting-to-github-with-ssh/) first.
+
+2. Build the repository (from the directory with the Dockefile in it):
+
+        cd airflow-occupeye-scraper
+        docker build . -t my-pipeline:0.1
+
+   (If you get `Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?` you need to start 'Docker' application from your Mac's Launchpad)
+
+   This goes through each line ("step") of the Dockerfile and builds (or executes) each in turn (apart from the final `CMD`). The first build can take a while, but the result of each step is saved to disk, so if you change a step and do another build, it only needs to restart from the step that is changed.
+
+3. You might want to run the image as a container, which runs your data processing code specified in the `CMD` of the Dockerfile:
+
+        docker run my-pipeline:0.1
+
+   Which should hopefully get as far as talking to AWS before failing.
+
+4. You can 'shell into' the linux container to take a look for debug purposes:
+
+        docker run -it my-pipeline:0.1 bash
+
+   And if `bash` is not available, try `sh`.
+
 ### Build the image
 
 Concourse will:
