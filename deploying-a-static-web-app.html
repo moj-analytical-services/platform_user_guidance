@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2018-12-20">
+<meta name="date" content="2019-01-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -348,14 +348,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="scan-organisation-and-deploy-1" class="section level3">
 <h3><span class="header-section-number">6.1.4</span> Scan organisation and deploy</h3>
-<p>The platform automatically scans git repositories in the <a href="https://github.com/moj-analytical-services/">moj-analytical-services</a> Github organisation to find repos that are ready to deploy. It does this by checking whether repositories contains a ‘magic’ file that controls deployment: <code>deploy.json</code>. The scan happens once every 24 hours (or if it is urgent it can be triggered by an admin).</p>
+<p>The platform automatically scans git repositories in the <a href="https://github.com/moj-analytical-services/">moj-analytical-services</a> Github organisation to find repos that are ready to deploy. It does this by checking whether repositories contains a ‘magic’ file (on the <code>master</code> branch) that controls deployment: <code>deploy.json</code>. The scan happens every 24 hours, or sooner if a <a href="https://github.com/moj-analytical-services">repo in moj-analytical-services</a> is tagged with a release on GitHub (or if it is urgent it can be triggered by an admin).</p>
 <p>To deploy your app, make sure your code is committed and pushed to GitHub and then <a href="https://help.github.com/articles/creating-releases/">create a release on GitHub</a>.</p>
-<p>The deployment starts immediately and takes approximately 5 minutes. You can track progress and see any errors on AP’s Concourse:
-1. Open Concourse: <a href="https://concourse.services.alpha.mojanalytics.xyz/" class="uri">https://concourse.services.alpha.mojanalytics.xyz/</a>
-2. Select team ‘main’
-3. Click ‘login with ap-main’ followed by your GitHub login and possibly 2FA for GitHub and possibly 2FA for AP.
-4. Click the hamburger icon (top-left) to see the list of apps that can be built.
-5. Click on an app to see its diagram with the big ‘Deploy’ box in the middle, inputs and outputs. Click on the ‘Deploy’ box to see details of the most recent deployment. Green colours means it passed. Red means it had an error and didn’t complete. You can see previous deployments (numbered - e.g. “8 7 6 5 4 3 2 1”).</p>
+<p>The deployment starts immediately and takes approximately 5 minutes. You can track progress and see any errors on AP’s Concourse:</p>
+<ol style="list-style-type: decimal">
+<li>Open Concourse: <a href="https://concourse.services.alpha.mojanalytics.xyz/" class="uri">https://concourse.services.alpha.mojanalytics.xyz/</a></li>
+<li>Select team ‘main’</li>
+<li>Click ‘login with ap-main’ followed by your GitHub login and possibly 2FA for GitHub and possibly 2FA for AP.</li>
+<li>Click the hamburger icon (top-left) to see the list of apps that can be built.</li>
+<li>Click on an app to see its diagram with the big ‘Deploy’ box in the middle, inputs and outputs. Click on the ‘Deploy’ box to see details of the most recent deployment. Green colours means it passed. Red means it had an error and didn’t complete. You can see previous deployments (numbered - e.g. “8 7 6 5 4 3 2 1”).</li>
+</ol>
 </div>
 <div id="grant-secure-access-to-the-app-1" class="section level3">
 <h3><span class="header-section-number">6.1.5</span> Grant secure access to the app</h3>
