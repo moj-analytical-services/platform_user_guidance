@@ -238,9 +238,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="data-pipelines.html"><a href="data-pipelines.html#concepts"><i class="fa fa-check"></i><b>7.2</b> Concepts</a></li>
 <li class="chapter" data-level="7.3" data-path="data-pipelines.html"><a href="data-pipelines.html#set-up-a-pipeline"><i class="fa fa-check"></i><b>7.3</b> Set up a pipeline</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="data-pipelines.html"><a href="data-pipelines.html#task-repository"><i class="fa fa-check"></i><b>7.3.1</b> Task repository</a></li>
-<li class="chapter" data-level="7.3.2" data-path="data-pipelines.html"><a href="data-pipelines.html#build-the-image"><i class="fa fa-check"></i><b>7.3.2</b> Build the image</a></li>
-<li class="chapter" data-level="7.3.3" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-dag"><i class="fa fa-check"></i><b>7.3.3</b> Airflow DAG</a></li>
-<li class="chapter" data-level="7.3.4" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-web-interface"><i class="fa fa-check"></i><b>7.3.4</b> Airflow web interface</a></li>
+<li class="chapter" data-level="7.3.2" data-path="data-pipelines.html"><a href="data-pipelines.html#test-your-image---locally-on-a-macbook"><i class="fa fa-check"></i><b>7.3.2</b> Test your image - locally on a Macbook</a></li>
+<li class="chapter" data-level="7.3.3" data-path="data-pipelines.html"><a href="data-pipelines.html#build-the-image"><i class="fa fa-check"></i><b>7.3.3</b> Build the image</a></li>
+<li class="chapter" data-level="7.3.4" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-dag"><i class="fa fa-check"></i><b>7.3.4</b> Airflow DAG</a></li>
+<li class="chapter" data-level="7.3.5" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-web-interface"><i class="fa fa-check"></i><b>7.3.5</b> Airflow web interface</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="how-to-get-support.html"><a href="how-to-get-support.html"><i class="fa fa-check"></i><b>8</b> How to get Support</a><ul>
@@ -377,8 +378,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 for listing, reading and writing to S3 buckets.</p></li>
 </ol>
 </div>
+<div id="test-your-image---locally-on-a-macbook" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Test your image - locally on a Macbook</h3>
+<p>If you have a Macbook you can use it to test that your Docker image will build, which is much quicker to debug than waiting for Concourse every time you make a change. This can be useful for checking your Dockerfile syntax is right and the dependencies install ok.</p>
+<p>However when you run the Docker image, it won’t be able to access your project data (from S3), because your machine doesn’t have your AP account’s AWS credentials. This is right because you shouldn’t have sensitive data on your Macbook in general. So the Docker image will fail when it tries to access AWS data, but you’ve still usefully checked the build works and the install of dependencies.</p>
+<p>You need to have installed <a href="https://docs.docker.com/docker-for-mac/install/">Docker for Mac</a>. When it is running you can see its whale icon in the task bar. It consumes 2GB RAM, so you may well not want it to run everytime your machine starts up - change this under “Preferences…” then uncheck “Start Docker when you log in”.</p>
+<p>To test your Docker image:</p>
+<ol style="list-style-type: decimal">
+<li><p>Clone your repo to your Macbook. e.g. in a terminal:</p>
+<pre><code> git clone git@github.com:moj-analytical-services/airflow-occupeye-scraper.git</code></pre>
+<p>This authenticates GitHub using SSH, so if this is the first time on your machine, you’ll need to <a href="https://help.github.com/articles/connecting-to-github-with-ssh/">create an SSH key and add it to your GitHub account</a> first.</p></li>
+<li><p>Build the repository (from the directory with the Dockefile in it):</p>
+<pre><code> cd airflow-occupeye-scraper
+ docker build . -t my-pipeline:0.1</code></pre>
+<p>(If you get <code>Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?</code> you need to start ‘Docker’ application from your Mac’s Launchpad)</p>
+<p>This goes through each line (“step”) of the Dockerfile and builds (or executes) each in turn (apart from the final <code>CMD</code>). The first build can take a while, but the result of each step is saved to disk, so if you change a step and do another build, it only needs to restart from the step that is changed.</p></li>
+<li><p>You might want to run the image as a container, which runs your data processing code specified in the <code>CMD</code> of the Dockerfile:</p>
+<pre><code> docker run my-pipeline:0.1</code></pre>
+<p>Which should hopefully get as far as talking to AWS before failing.</p></li>
+<li><p>You can ‘shell into’ the linux container to take a look for debug purposes:</p>
+<pre><code> docker run -it my-pipeline:0.1 bash</code></pre>
+<p>And if <code>bash</code> is not available, try <code>sh</code>.</p></li>
+</ol>
+</div>
 <div id="build-the-image" class="section level3">
-<h3><span class="header-section-number">7.3.2</span> Build the image</h3>
+<h3><span class="header-section-number">7.3.3</span> Build the image</h3>
 <p>Concourse will:</p>
 <ul>
 <li>build your GitHub repository into a Docker image</li>
@@ -394,7 +418,7 @@ for listing, reading and writing to S3 buckets.</p></li>
 5. Click on a repo name to see its diagram with the big ‘Deploy’ box in the middle, inputs and outputs. Click on the ‘Deploy’ box to see details of the most recent build. Green colours means it passed. Red means it had an error and didn’t complete. You can see previous builds (numbered - e.g. “8 7 6 5 4 3 2 1”).</p>
 </div>
 <div id="airflow-dag" class="section level3">
-<h3><span class="header-section-number">7.3.3</span> Airflow DAG</h3>
+<h3><span class="header-section-number">7.3.4</span> Airflow DAG</h3>
 <p>You need to define a DAG of your Tasks, so that Airflow can run it.</p>
 <p>A DAG is defined in its own .py file in the <a href="airflow-dags%20repository">https://github.com/moj-analytical-services/airflow-dags</a>. Normally you would clone the repo, add the new DAG file, commit it to a branch and create the Pull Request. You can achieve this in R Studio, Jupyter or on your local machine if you have git, and then use GitHub to create the Pull Request. Alternatively you could simply click the “Create new file” button in GitHub and use the web interface to edit it and create a pull request in one go!</p>
 <p>Use an existing DAG as an example: <a href="https://github.com/moj-analytical-services/airflow-dags/blob/master/mags_curated.py" class="uri">https://github.com/moj-analytical-services/airflow-dags/blob/master/mags_curated.py</a></p>
@@ -405,7 +429,7 @@ for listing, reading and writing to S3 buckets.</p></li>
 <p>The DAG will appear in the Airflow web interface a couple of minutes after the Pull Request is merged.</p>
 </div>
 <div id="airflow-web-interface" class="section level3">
-<h3><span class="header-section-number">7.3.4</span> Airflow web interface</h3>
+<h3><span class="header-section-number">7.3.5</span> Airflow web interface</h3>
 <p>The Airflow web interface allows you to see the data pipelines running, view the logs, see past runs, etc.</p>
 <p>Link: <a href="https://airflow.tools.alpha.mojanalytics.xyz" class="uri">https://airflow.tools.alpha.mojanalytics.xyz</a></p>
 <p><img src="images/pipelines/airflow.png" /></p>
