@@ -73,11 +73,12 @@ This creates a file called `packrat/packrat.lock`.  You need to ensure you have 
 
 ### Scan organisation and deploy
 
-The platform automatically scans git repositories in the [moj-analytical-services](https://github.com/moj-analytical-services/) Github organisation to find repos that are ready to deploy.  It does this by checking whether repositories contains a 'magic' file that controls deployment:  `deploy.json`. The scan happens once every 24 hours (or if it is urgent it can be triggered by an admin).
+The platform automatically scans git repositories in the [moj-analytical-services](https://github.com/moj-analytical-services/) Github organisation to find repos that are ready to deploy.  It does this by checking whether repositories contains a 'magic' file (on the `master` branch) that controls deployment:  `deploy.json`. The scan happens nightly (or if it is urgent it can be triggered by an admin).
 
 To deploy your app, make sure your code is committed and pushed to GitHub and then [create a release on GitHub](https://help.github.com/articles/creating-releases/).
 
 The deployment starts immediately and will take between 5 minutes and an hour, depending on how many R packages you've used. You can track progress and see any errors on AP's Concourse:
+
 1. Open Concourse: https://concourse.services.alpha.mojanalytics.xyz/
 2. Select team 'main'
 3. Click 'login with ap-main' followed by your GitHub login and possibly 2FA for GitHub and possibly 2FA for AP.
