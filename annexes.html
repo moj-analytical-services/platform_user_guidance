@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Services">
 
 
-<meta name="date" content="2019-01-20">
+<meta name="date" content="2019-01-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -288,6 +288,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.3" data-path="annexes.html"><a href="annexes.html#step-by-step-guide-to-setup-two-factor-authentication"><i class="fa fa-check"></i><b>12.3</b> Step by step guide to setup Two Factor Authentication</a><ul>
 <li class="chapter" data-level="12.3.1" data-path="annexes.html"><a href="annexes.html#step-by-step---logging-into-the-platform-for-the-first-time"><i class="fa fa-check"></i><b>12.3.1</b> Step by step - logging into the platform for the first time</a></li>
 </ul></li>
+<li class="chapter" data-level="12.4" data-path="annexes.html"><a href="annexes.html#data-minimisation"><i class="fa fa-check"></i><b>12.4</b> Data Minimisation</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="annexes.html"><a href="annexes.html#pseudonymisation"><i class="fa fa-check"></i><b>12.4.1</b> Pseudonymisation</a></li>
+<li class="chapter" data-level="12.4.2" data-path="annexes.html"><a href="annexes.html#anonymisation"><i class="fa fa-check"></i><b>12.4.2</b> Anonymisation</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -401,8 +405,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="youre-now-done" class="section level4">
 <h4><span class="header-section-number">12.3.1.3</span> You’re now done</h4>
 <p>Once you’re entered your platform 2FA code in the interface above, you should now have access to the platform. You will need to enter your platform 2FA code around once a day as you use the platform.</p>
-
 </div>
+</div>
+</div>
+<div id="data-minimisation" class="section level2">
+<h2><span class="header-section-number">12.4</span> Data Minimisation</h2>
+<p>In order to reduce cybersecurity/information risks to data and promote/maintain a privacy-centered approach you should consider how data can be minimised or obfuscated before being imported if you can do so while maintaining analytical usefulness and data integrity.</p>
+<div id="pseudonymisation" class="section level3">
+<h3><span class="header-section-number">12.4.1</span> Pseudonymisation</h3>
+<p>Pseudonymisation is “…the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information…”</p>
+<p>An example of pseudonymisation would be replacing the name of an individual with a unique hashed value. This would preserve the concept of an individual person but would mean their name is not stored in the Analytical Platform when it is not directly needed.</p>
+<p>This is pseudonymisation as the Analytical Platform with the data that it now holds can no longer identify that person without other data that it likely does not have.</p>
+</div>
+<div id="anonymisation" class="section level3">
+<h3><span class="header-section-number">12.4.2</span> Anonymisation</h3>
+<p>Anonymisation is “…information which does not relate to an identified or identifiable natural person or to personal data rendered anonymous in such a manner that the data subject is not or no longer identifiable [even when joined with other accessible data]…”</p>
+<p>Under current data protection legislation, true anonymisation is quite hard to achieve but should be considered.</p>
+<p>An example of anonymisation would be using summary values such as where there are 1000 unique ‘users’ in your database, the Analytical Platform held data only holds the ‘1000’ information, not each individual user record.</p>
+<p>This is anonymisation as the Analytical Platform with the data that it now holds can no longer identify any person at all, as it will be mathematically impossible to use the number ‘1000’ to identify any individual.</p>
+
 </div>
 </div>
 </div>
