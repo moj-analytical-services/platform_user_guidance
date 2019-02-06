@@ -103,7 +103,7 @@ Note: If you get the error 'Wrong or expired code', you need to make sure that y
 
 Once you're entered your platform 2FA code in the interface above, you should now have access to the platform.  You will need to enter your platform 2FA code around once a day as you use the platform.
 
-## Data Minimisation
+## Data Minimisation{#data-minimisation}
 
 In order to reduce cybersecurity/information risks to data and promote/maintain a privacy-centered approach you should consider how data can be minimised or obfuscated before being imported if you can do so while maintaining analytical usefulness and data integrity.
 

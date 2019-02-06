@@ -63,6 +63,7 @@ You may not be required to complete all of the questions below depending on the 
   The Analytical Platform is suitable for data classified as OFFICIAL and OFFICIAL-SENSITIVE. SECRET and TOP SECRET data is not allowed on the Analytical Platform.
   Information on security markings and classifying information can be found [here](https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/classifying-information/).
 * __Will the data be modified or changed in order to mask sensitive content?__  
+  Guidance on masking and anonymisation can be found in section \@ref(data-minimisation).
 * __How will the data be changed or modified in order to mask sensitive content?__
 * __Will the data be modified or changed before or after being moved to the Analytical Platform?__
 
