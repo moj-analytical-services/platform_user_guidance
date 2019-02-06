@@ -85,7 +85,7 @@ The deployment starts immediately and will take between 5 minutes and an hour, d
 4. Click the hamburger icon (top-left) to see the list of apps that can be built.
 5. Click on an app to see its diagram with the big 'Deploy' box in the middle, inputs and outputs. Click on the 'Deploy' box to see details of the most recent deployment. Green colours means it passed. Red means it had an error and didn't complete. You can see previous deployments (numbered - e.g. "8 7 6 5 4 3 2 1").
 
-### Grant secure access to the app
+### Grant secure access to the app{#grant-app-access}
 
 To grant access to someone, in the [Control Panel's Wepapps tag](https://cpanel-master.services.dev.mojanalytics.xyz/#Webapps) find your App and click "Manage App". In the 'App customers' section you can let people view your app by putting one or more email addresses in the text box and clicking "Add customer".
 
