@@ -1,58 +1,52 @@
-# Acceptable Use Policy (Security Operating Procedures)
+# Acceptable use policy
 
-- The platform is only suitable for information classified at `OFFICIAL` (including material with the SENSITIVE handling caveat). If you have questions about data suitability, [contact the team](mailto:analytical_platform@digital.justice.gov.uk)
-- Teams are responsible for who has access to their data when within the platform, and **must** actively manage personnel changes (Joiners, Movers, Leavers) to ensure the correct people have access to only the data they are currently permitted to access.
-- Remember that the platform is still in Beta. This means there is no guarantee of stability. Do not use the platform for time-critical tasks. Allow for the possibility of unannounced downtime, which could last up to a week.
-- If you are responsible for a team, ensure that users have the [correct permissions](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#team-creation).
+## Scope
 
-## General security guidance
+This acceptable use policy covers the use of the Analytical Platform and all associated software and applications.
 
-- Do not access the platform from a non-MOJ IT system (such as a personal laptop)
-- Choose a complex password for your Github account. A complex password cannot be guessed, and is created by following some simple rules and suggestions; see [here](https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0)
-- You must not share your account or your login credentials with anyone else.
-- Do not re-use credentials for multiple purposes (use a unique password and/or SSH keypair for each system/purpose).
+This policy applies in addition to the [MoJ acceptable use policy](https://intranet.justice.gov.uk/guidance/security/it-computer-security/acceptable-use/).
 
-## Transferring and management of data
+## Who this policy applies to
 
-- Transfer to the platform only the minimum possible datasets needed for your work.
-- All data transfers should take place safely (both in and out of the platform) to ensure data is protected while in transit and any temporary migration files are adequately protected - [contact the team](mailto:analytical_platform@digital.justice.gov.uk) for advice around this.
-- Access to data should be provided on a 'need to know' basis. Use [data access groups](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups) to control data access.
+This policy applies to all users of the Analytical Platform.
 
-### Information Governance
+## General principles
 
-- Before you transfer any data into the platform, you **must** have completed information governance and management assessments, this is likely to include (but not be limited to): a Data Movement Form, a technical data migration/integration document, update Privacy Impact Assessments, update information management and asset logs and applicable privacy notices.
-- Using the platform is likely to require authoriation from your SIRO (Senior Information Risk Owner) and/or IAO (Information Asset Owner).
+__All users will:__
 
-## Controlling data access in the platform
+* report any security incidents, including a loss of data, in line with the relevant MoJ, HMPPS or HMCTS procedures;
+* report any breach of this acceptable use policy to the [Analytical Platform team](mailto:analytical-platform@digital.justice.gov.uk);
+* follow all relevant information governance procedures;
+* protect their login credentials appropriately;
+* create secure passwords following best practice guidelines (see [here](https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0));
+* ensure that two-factor authentication is enabled when accessing GitHub and the Analytical Platform;
+* sign out of the Analytical Platform when access is not required;
+* understand they and MoJ have a legal responsibility to protect personal and sensitive information;
+* understand that their use of the Analytical Platform may be monitored;
+* ensure that all transfers of data onto and within the Analytical Platform are conducted safely and securely;
+* not access the Analytical Platform from any non-MoJ IT system, such as a personal computer;
+* not share their account or login credentials with any other person;
+* not use the same login credentials for more than one system or purpose;
+* not store any data on the Analytical Platform that is classified as SECRET or TOP SECRET;
+* not move any data to the Analytical Platform without completing a data movement form;
+* not attempt to access any data, apps or software on the Analytical Platform without the appropriate permission; and
+* not use the Analytical Platform to undertake any illegal activity or any activity that could harm MoJ's reputation or compromise the security of data or IT systems.
 
-- Data Owners are ultimately responsible for who has access to data while in the platform.
-- Data Owners **must** actively manage delegated access for team members (popularly - Joiners, Movers, Leavers)
-- Self-managed permissions through [data access groups](https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups) must be used to provision and remove access as suitable - which is solely defined by Data Owners.
+__App admins and data source admins will:__
 
-## Data Minimisation
+* ensure that app and data source users have the correct read/write permissions;
+* ensure that app and data source users only have access to the minimum data required for them to perform their job; and
+* regularly review access permissions for app and data source users, including when users join or leave MoJ, or move within MoJ.
 
-- Consider [minimising data](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#data-minimisation) through pseudonymisation and anonymisation techniques.
+## GitHub
 
-## Guidance on the use of Github
+GitHub can be used to store code with a security marking of OFFICIAL only. Where possible, you should store data outside of GitHub even when it is not covered by the below restrictions.
 
-The advice in this document relates to private repositories which are part of the [MoJ Analytical Services organisation](https://github.com/moj-analytical-services/) only. **Do not store any work in public repositories** unless you are sure it is not sensitive and can be made public. Have prior permission from your line manager before releasing to a public repository. Read the [Service Manual pages on opensource](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable).
+__All users will:__
 
-### What can I use GitHub for?
-
-When you have approval, you may use GitHub to store your analytical **code** _but not data_ at the `OFFICIAL` level. This means that you can use Git for work where the code itself is sensitive, such as work on court or prison closures.
-
-You may also use GitHub to store project writeups. However, the write ups must not contain information or data which would violate the prohibitions on the use of GitHub set out below.
-
-### Prohibitions: What are the limits on GitHub use?
-
-In general, you must not use GitHub to store datasets. Specifically, you **MUST NOT** use GitHub for the following purposes:
-
-* To store any large datasets classified at `OFFICIAL` or above. Our working definition is that a large dataset contains over 1,000 records.
-
-* To store any data whatsoever (in code or in datasets) where individuals are potentially identifiable and the data is not already in the public domain.
-
-* To store credentials such as usernames and passwords, or secrets such as database connection strings.
-
-## Reporting security incidents
-
-You must report actual, attempted or suspected breaches of security as soon as discovered to: OperationalSecurityTeam@justice.gsi.gov.uk
+* not store any large data sets (> 1,000 records) with a security marking of OFFICIAL or above in GitHub;
+* not store any data containing personal information in GitHub that could be used to identify an individual directly, or indirectly, in combination with other information, where the data is not already in the public domain; or
+* not store any credentials or secrets, such as usernames, passwords, database connection strings or API keys in GitHub;
+* store all work in the [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation;
+* not store any work in public repositories without obtaining prior written permission from their line manager; and
+* ensure that any work stored in public repositories does not contain any sensitive or personal information.
