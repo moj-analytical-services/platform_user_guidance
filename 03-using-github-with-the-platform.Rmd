@@ -6,7 +6,7 @@ Github enables you to collaborate with colleagues on code and share you work wit
 
 If you are new to Git and Github, it is worth clarifying the difference between Git and Git**hub**. Git is the software that looks after the version control of code, whereas Github is the website on which you publish and share your version controlled code. In practice this means you use Git to track versions of your code, and then submit those changes to Github.
 
-This guide provides a step-by-step guide of how to create a GitHub project repo, followed how to sync with it in R Studio and Jupyter.  You can find more in-depth Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html#git-training-resources)
+This guide provides a step-by-step guide of how to create a GitHub project repo, followed by how to sync with it in R Studio and Jupyter.  You can find more in-depth Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html#git-training-resources)
 
 Note:  If any of the animated gifs below do not display correctly, try a different web browser e.g. Microsoft Edge, which is installed on your DOM1 machine.
 
