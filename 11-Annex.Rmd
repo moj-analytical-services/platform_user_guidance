@@ -103,11 +103,11 @@ Note: If you get the error 'Wrong or expired code', you need to make sure that y
 
 Once you're entered your platform 2FA code in the interface above, you should now have access to the platform.  You will need to enter your platform 2FA code around once a day as you use the platform.
 
-## Data Minimisation{#data-minimisation}
+## Data Minimisation
 
 In order to reduce cybersecurity/information risks to data and promote/maintain a privacy-centered approach you should consider how data can be minimised or obfuscated before being imported if you can do so while maintaining analytical usefulness and data integrity.
 
-### Pseudonymisation
+### Pseudonymisation{#pseudonymisation}
 
 Pseudonymisation is "...the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information..."
 
@@ -115,7 +115,7 @@ An example of pseudonymisation would be replacing the name of an individual with
 
 This is pseudonymisation as the Analytical Platform with the data that it now holds can no longer identify that person without other data that it likely does not have.
 
-### Anonymisation
+### Anonymisation{#anonymisation}
 
 Anonymisation is "...information which does not relate to an identified or identifiable natural person or to personal data rendered anonymous in such a manner that the data subject is not or no longer identifiable [even when joined with other accessible data]..."
 
