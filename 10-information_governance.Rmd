@@ -50,10 +50,10 @@ You may not be required to complete all of the questions below depending on the 
 * __Name__
 * __Email address__
 * __Phone number__
-* __Is the person carrying out the data movement the same as the requestor?__
-* __Name of the person carrying out the data movement__
-* __Email address of the person carrying out the data movement__
-* __Phone number of the person carrying out the data movement__
+* __Is the main person carrying out the data movement the same as the requestor?__
+* __Name of the main person carrying out the data movement__
+* __Email address of the main person carrying out the data movement__
+* __Phone number of the main person carrying out the data movement__
     
 #### The data
 
@@ -62,9 +62,9 @@ You may not be required to complete all of the questions below depending on the 
 * __What is the security marking of the data?__  
   The Analytical Platform is suitable for data classified as OFFICIAL and OFFICIAL-SENSITIVE. SECRET and TOP SECRET data is not allowed on the Analytical Platform.
   Information on security markings and classifying information can be found [here](https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/classifying-information/).
-* __Will the data be modified or changed in order to mask sensitive content?__  
+* __Will the data be modified or changed in order to mask sensitive content or personal information?__  
   Guidance on masking and anonymisation can be found in sections \@ref(pseudonymisation) and \@ref(anonymisation).
-* __How will the data be changed or modified in order to mask sensitive content?__
+* __How will the data be changed or modified in order to mask sensitive content or personal information?__
 * __Will the data be modified or changed before or after being moved to the Analytical Platform?__
 
 #### Personal data
@@ -72,12 +72,12 @@ You may not be required to complete all of the questions below depending on the 
 * __Does the data include personal data?__  
   Personal data is information that can be used to identify a person directly or indirectly in combination with other information. Personal data includes names, identification numbers, addresses and online identifiers. Guidance from the Information Commissioner's Office (ICO) on identifying personal data can be found [here](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/key-definitions/what-is-personal-data/). Further information on handling personal data in MoJ can be found [here](https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/personal-data/).
   
-#### Controller
+#### Data controller
 
-* __Is MoJ the controller responsible for the data?__  
-  A controller is an entity registered with the Information Commissioner's Office (ICO) that exercises overall control over the purposes and means of the processing of personal data. MoJ is the controller for MoJ HQ, HMPPS, HMCTS, LAA, OPG and some other agencies and public bodies. If you are unsure whether MoJ is the controller responsible for the data, please contact the Analytical Platform team [here]( mailto:analytical-platform@digital.justice.gov.uk).
-* __Who is the controller responsible for the data?__  
-The controller could be another MoJ agency or public body (for which MoJ is not the responsible controller), another government department or a third party. You can use the [ICO Data Protection Register](https://ico.org.uk/ESDWebPages/Search) to determine whether an entity is a controller. The following agencies and public bodies are controllers:
+* __Is MoJ the data controller responsible for the data?__  
+  A data controller is an entity registered with the Information Commissioner's Office (ICO) that exercises overall control over the purposes and means of the processing of personal data. MoJ is the controller for MoJ HQ, HMPPS, HMCTS, LAA, OPG and some other agencies and public bodies. If you are unsure whether MoJ is the data controller responsible for the data, please contact the Analytical Platform team [here]( mailto:analytical-platform@digital.justice.gov.uk).
+* __Who is the data controller responsible for the data?__  
+The data controller could be another MoJ agency or public body (for which MoJ is not the responsible controller), another government department or a third party. You can use the [ICO Data Protection Register](https://ico.org.uk/ESDWebPages/Search) to determine whether an entity is a controller. The following agencies and public bodies are data controllers:
     + Criminal Injuries Compensation Authority (CICA)
     + Children and Family Court Advisory and Support Service (CAFCASS)
     + Criminal Cases Review Commission (CCRC)
@@ -91,8 +91,8 @@ The controller could be another MoJ agency or public body (for which MoJ is not 
     + The Official Solicitor to the Senior Courts
     + The Public Trustee
     + Prisons and Probation Ombudsman (PPO)
-* __Is a suitable data sharing agreement in place?__
-* __Is the controller aware of the data movement and the intended use of the Analytical Platform?__
+* __Is a suitable data sharing agreement in place with the data controller?__
+* __Is the controller aware of the data movement and the intended use of the Analytical Platform as a data processor?__
 
 #### data protection and privacy
 
@@ -118,8 +118,7 @@ A privacy notice is required to let customers using a product or service know:
 * __What is the source of the data?__
 * __Where will the data be stored on the Analytical Platform?__
 * __Which S3 bucket will the data be stored in?__
-* __Which GitHub repository will the data be stored in?__
-* __What is the approximate size of the data?__
+* __How many records does the data contain?__
 * __Who will have access to the data on the Analytical Platform?__
 * __How will the data be moved?__  
   Describe how the data will be moved from the source location. Will the data be moved electronically, by email or by physical media? Will it be uploaded manually to S3 or a home directory or will there be a direct integration with another system?
@@ -141,24 +140,26 @@ A privacy notice is required to let customers using a product or service know:
 * __How long will the data be retained on the Analytical Platform?__
 * __Is this in line with departmental and Analytical Platform data retention policies?__
 
-#### Senior Information Risk Officer (SIRO)
-
-Information on the responsibilities of SIROs can be found [here](https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/information-assurance-roles/).
-
-* __Does the data movement require approval by a Senior Information Risk Officer?__
-* __SIRO name__
-* __SIRO email address__
-* __Has the SIRO approved this data movement?__
-
 #### Information Asset Owner (IAO)
 
 All data in MoJ is assigned an Information Asset Owner (IAO). The IAO is responsible for the registration, labelling, storage, transfer and retention of that data.
-You should seek approval from the relevant IAO for all data movements.
+You should seek approval from the relevant IAO for __all__ data movements.
 
 * __Does the data movement require approval by an Information Asset Owner (IAO)?__
 * __IAO name__
 * __IAO email address__
 * __Has the IAO approved this data movement?__
+
+#### Senior Information Risk Officer (SIRO)
+
+Information on the responsibilities of SIROs can be found [here](https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/information-assurance-roles/).
+
+SIRO approval may be required depending on local information assurance policies. SIRO approval is usually required when a data movement involves non-routine risks. The relevant IAO should be able to advise if SIRO approval is also required.
+
+* __Does the data movement require approval by a Senior Information Risk Officer?__
+* __SIRO name__
+* __SIRO email address__
+* __Has the SIRO approved this data movement?__
 
 #### Information assurance
 
