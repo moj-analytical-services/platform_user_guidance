@@ -1,6 +1,6 @@
 # Annexes
 
-## Memory limits
+## Memory limits{#memory-limits}
 
 All the software running on the Analytical Platform has its memory controlled. Each running software container has a minimum and maximum amount available. Here's an explanation of the key terms:
 
