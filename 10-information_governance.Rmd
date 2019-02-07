@@ -75,7 +75,7 @@ You may not be required to complete all of the questions below depending on the 
 #### Data controller
 
 * __Is MoJ the data controller responsible for the data?__  
-  A data controller is an entity registered with the Information Commissioner's Office (ICO) that exercises overall control over the purposes and means of the processing of personal data. MoJ is the controller for MoJ HQ, HMPPS, HMCTS, LAA, OPG and some other agencies and public bodies. If you are unsure whether MoJ is the data controller responsible for the data, please contact the Analytical Platform team [here]( mailto:analytical-platform@digital.justice.gov.uk).
+  A data controller is an entity registered with the Information Commissioner's Office (ICO) that exercises overall control over the purposes and means of the processing of personal data. MoJ is the controller for MoJ HQ, HMPPS, HMCTS, LAA, OPG and some other agencies and public bodies. The Analytical Platform guidance contains a list of agencies and arm's length bodies that are data controllers in their own right. The relevant information asset owner (IAO) should also be able to advise who the correct data controller is.
 * __Who is the data controller responsible for the data?__  
 The data controller could be another MoJ agency or public body (for which MoJ is not the responsible controller), another government department or a third party. You can use the [ICO Data Protection Register](https://ico.org.uk/ESDWebPages/Search) to determine whether an entity is a controller. The following agencies and public bodies are data controllers:
     + Criminal Injuries Compensation Authority (CICA)
