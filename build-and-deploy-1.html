@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Part 2 Getting Started | Platform Guidance</title>
+  <title>Part 9 Build and Deploy | Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Part 2 Getting Started | Platform Guidance" />
+  <meta property="og:title" content="Part 9 Build and Deploy | Platform Guidance" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Part 2 Getting Started | Platform Guidance" />
+  <meta name="twitter:title" content="Part 9 Build and Deploy | Platform Guidance" />
   
   <meta name="twitter:description" content="This repository contains user guidance for the Analytical Platform." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="quick-start.html">
-<link rel="next" href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html">
+<link rel="prev" href="how-to-get-support.html">
+<link rel="next" href="common-errors-and-solutions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -319,124 +319,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="getting-started" class="section level1">
-<h1><span class="header-section-number">Part 2</span> Getting Started</h1>
-<div id="getting-an-account" class="section level2">
-<h2><span class="header-section-number">2.1</span> Getting an account</h2>
-<p>You use a specially authenticated Github account to log into the platform, which you can set up as follows:</p>
-<div id="sign-up-to-github" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Sign up to Github</h3>
-<p>If you do not already have an account, head to <a href="https://github.com/" class="uri">https://github.com/</a> and sign up. When signing up, use all the default options, and make sure you save recovery codes as instructed.</p>
-<p>We recommend new users use their <code>@justice</code> email address. If you already have a personal Github account, you may also use that.</p>
-<p>You’ll receive an email with a verification link - you need to click this before using the platform.</p>
+<div id="build-and-deploy-1" class="section level1">
+<h1><span class="header-section-number">Part 9</span> Build and Deploy</h1>
+<p><em>Concourse</em> is the Analytical Platform service that automatically builds and deploys R Shiny apps, Web apps and Airflow data pipelines. This is also known as ‘continuous integration’ and ‘continuous deployment’ (CI/CD).</p>
+<div id="deploy.json-2" class="section level2">
+<h2><span class="header-section-number">9.1</span> deploy.json</h2>
+<p>Concourse automatically scans git repositories in the <a href="https://github.com/moj-analytical-services/">moj-analytical-services</a> Github organisation to find repos that are ready to build/deploy. It does this by checking whether repositories contains a ‘magic’ file (on the <code>master</code> branch) that controls the build/deploy: <code>deploy.json</code>. The scan happens every 24 hours, or sooner if a <a href="https://github.com/moj-analytical-services">repo in moj-analytical-services</a> is tagged with a release on GitHub (or if it is urgent it can be triggered by an admin).</p>
+<p>For the format of deploy.json, see the relevant subject:
+* <a href="https://moj-analytical-services.github.io/platform_user_guidance/deploying-a-shiny-app.html#deploy.json">R Shiny app</a>
+* <a href="https://moj-analytical-services.github.io/platform_user_guidance/deploying-a-static-web-app.html#deploy.json-1">Web app</a>
+* <a href="https://moj-analytical-services.github.io/platform_user_guidance/data-pipelines.html#deploy.json">Airflow pipeline</a></p>
+<p>Changes to deploy.json only take effect when committed to GitHub (master branch), a Release is created and the deploy is successful (see <a href="deploying-a-static-web-app.html#scan-organisation-and-deploy">Scan organisation and deploy</a>).</p>
 </div>
-<div id="enable-two-factor-authentication-on-your-github-account" class="section level3">
-<h3><span class="header-section-number">2.1.2</span> Enable two-factor authentication on your Github account</h3>
-<p>Once you’ve signed up to Github, you must enable two factor authentication on your Github account to enhance security. You can do this in your Github <a href="https://github.com/settings/security">settings page</a>.</p>
-<p>You are given the option of doing this using SMS, or an authentication app such as <a href="https://authy.com/download/">Authy</a> or <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> . Choose whichever you prefer.</p>
-<p>For step-by-step instructions, see the Github guidance for <a href="https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/">authentication apps</a> or <a href="https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/">SMS authentication</a>.</p>
-</div>
-<div id="email-us-your-github-username" class="section level3">
-<h3><span class="header-section-number">2.1.3</span> Email us your Github username</h3>
-<p>Once you’ve got a Github account setup, email your github username to the shared mailbox (<a href="mailto:analytical_platform@digital.justice.gov.uk">analytical_platform@digital.justice.gov.uk</a>) and we will invite you to the private <a href="https://github.com/moj-analytical-services/">MoJ Analytical Services</a> organisation. Once we’ve done this, you can accept the invitation by visiting the <a href="github.com/moj-analytical-services/">MoJ Analytical Services</a> organisation, or by using the link in the email you’ll receive from Github.</p>
-</div>
-<div id="read-the-security-operating-procedure" class="section level3">
-<h3><span class="header-section-number">2.1.4</span> Read the Security Operating Procedure</h3>
-<p>Before you start using the platform, please read the <a href="https://moj-analytical-services.github.io/platform_user_guidance/acceptable-use-policy-security-operating-procedures.html">Acceptable use policy</a>.</p>
-</div>
-</div>
-<div id="accessing-the-platform" class="section level2">
-<h2><span class="header-section-number">2.2</span> Accessing the platform</h2>
-<p>Use the <a href="https://cpanel-master.services.alpha.mojanalytics.xyz/#Analytical%20tools">control panel</a> to access R Studio and other parts of the platform.</p>
-<p>Using the control panel, you can also set up and manage team-based data access.</p>
-<div id="accessing-the-platform-1" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Accessing the platform</h3>
-<p>You may use any formal MOJ technology solution such as DOM1, Quantum, MOJ Digital &amp; Technology or Workplace Technology laptops to access the platform.</p>
-<p>If you wish to access the platform from another formal HMG technology solution (for example, a laptop provided by another government department) you must ask first (<a href="mailto:analytical_platform@digital.justice.gov.uk">analytical_platform@digital.justice.gov.uk</a>).</p>
-<p>You must not access the platform from a non-MOJ device, such as a personal mobile phone or laptop.</p>
-<p>When you first access your platform account, you will be asked to set up additional two factor authentication for the platform itself. You must do this using an authentication app on your personal or work phone (such as <a href="https://authy.com/download/">Authy</a> or <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a>). There is no SMS option.</p>
-<p>For step by step instructions on setting up this 2FA, see <a href="https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#step-by-step-guide-to-setup-of-two-factor-authentication">here</a>.</p>
-<p>For troubleshooting 2FA issues, please see <a href="https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#two-factor-authentication-problems">this section</a> of the user guidance.</p>
-</div>
-</div>
-<div id="configuring-git-and-github-for-use-on-the-analytical-platform" class="section level2">
-<h2><span class="header-section-number">2.3</span> Configuring Git and Github for use on the Analytical Platform</h2>
-<p>Github enables you to collaborate with colleagues on code and share you work with them. It puts your code in a centralised, searchable place. It also enables you to version control your work.</p>
-<p>In order to use Github, you need to set up a connection between your Analytical Platform account and Github. This needs to be done once, after which your Analytical Platform account will permanently be connected. It is worth doing because it avoids you having to repeatedly type in your username and password every time you interact with Github.</p>
-<p>This page covers only the initial setup. For guidance on how to use Git to sync your work with Github, please see <a href="https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html">here</a>.</p>
-<p>You can find more detailed notes about setting up Git with R Studio <a href="http://adamwilson.us/RDataScience/GitSSHNotes.html">here</a> and <a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">here</a></p>
-<div id="instructions" class="section level3">
-<h3><span class="header-section-number">2.3.1</span> Instructions</h3>
-<p>The overview is as follows:</p>
+<div id="starting-a-builddeploy" class="section level2">
+<h2><span class="header-section-number">9.2</span> Starting a build/deploy</h2>
+<p>To trigger a Concourse build/deploy, make sure your code is committed and pushed to GitHub and then <a href="https://help.github.com/articles/creating-releases/">create a release on GitHub</a>. Call the first release <code>v0.0.1</code>, then <code>v0.0.2</code> etc. The version should always go up in number, or it won’t build. It’s good practise to use <a href="https://semver.org/">semantic versioning</a>.</p>
+<p>Your task appears in Concourse within 30 seconds. Find it in Concourse to start it as follows:</p>
 <ol style="list-style-type: decimal">
-<li>Create an ‘SSH key’ within your platform R Studio or Jupyter. This is an unique code that is stored in your account. Having the key means you will not need to enter your password when interacting with Github.</li>
-<li>Register the key with Github.</li>
-<li>Configure git to use your username and email address.</li>
+<li>Open Concourse: <a href="https://concourse.services.alpha.mojanalytics.xyz/" class="uri">https://concourse.services.alpha.mojanalytics.xyz/</a></li>
+<li>Select team ‘main’.</li>
+<li>Click ‘login with ap-main’ followed by your GitHub login and possibly 2FA for GitHub and possibly 2FA for AP.</li>
+<li>Click the hamburger icon: <img src="images/build_and_deploy/concourse_menu.png" /> (top-left) to see the list of repos that can be built.</li>
+<li>Click your repo name to see its diagram with the big ‘Deploy’ box in the middle, inputs and outputs.</li>
+<li>Click on the ‘deploy’ box to see details of its builds. You can see previous builds (numbered - e.g. “8 7 6 5 4 3 2 1”). The colour of the build number box gives the status:
+<ul>
+<li>Grey = paused or pending</li>
+<li>Yellow = in progress</li>
+<li>Green = built ok</li>
+<li>Red = build failed</li>
+</ul></li>
+<li>To start the job (this first time): Click <em>play</em> (on the left, against your repo name) AND the “<em>+</em>”:
+<img src="images/build_and_deploy/concourse_new_build.png" />
+It should go grey (pending)
+<img src="images/build_and_deploy/concourse_pending.png" />
+After 30 seconds it should got yellow (building). If it does not go yellow, check the task is not paused (and possibly the job itself is paused) - press play if is showing.
+<img src="images/build_and_deploy/concourse_in_progress.png" />
+It will build/deploy, taking 5 minutes to an hour. You can track progress and see any errors like this:
+<img src="images/build_and_deploy/concourse_error.png" /></li>
 </ol>
-<div id="step-1---create-an-ssh-key" class="section level4">
-<h4><span class="header-section-number">2.3.1.1</span> Step 1 - create an SSH key</h4>
-<p>You can create your SSH key two ways:</p>
-<div id="method-1-using-r-studio" class="section level5">
-<h5><span class="header-section-number">2.3.1.1.1</span> Method 1: using R Studio:</h5>
-<p><code>Tools</code> -&gt; <code>Global options</code> -&gt; <code>Git/SVN</code> -&gt; <code>Create RSA key...</code></p>
-<p><img src="images/start/git_create_key.PNG" /></p>
-<p>You will be presented with dialog showing your key fingerprint, amongst other details. You do not need this information, therefore close the window:</p>
-<p><img src="images/start/git_close.PNG" /></p>
-<p>For the next step, you’ll need to copy and paste your SSH public key. You can copy this to the clipboard using the following dialogues:</p>
-<p><img src="images/start/git_view_public.PNG" /></p>
-<p><img src="images/start/git-public-key.PNG" /></p>
-</div>
-<div id="method-2-using-jupyter-terminal" class="section level5">
-<h5><span class="header-section-number">2.3.1.1.2</span> Method 2: using Jupyter terminal:</h5>
-<p>In Jupyter open a terminal by clicking the “+” then “Terminal”:</p>
-<p><img src="images/start/jupyter_terminal_open.png" /></p>
-<p>Create a new one, putting in your own email address:</p>
-<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;my.name@justice.gov.uk&quot;</code></pre>
-<p>When it asks for the filename and passphrase, just press Enter (leave them blank):</p>
-<pre><code>Enter file in which to save the key (/home/jovyan/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:</code></pre>
-<p>For the next step, you’ll need to copy and paste you SSH public key. First view it:</p>
-<pre><code>cat /home/jovyan/.ssh/id_rsa.pub</code></pre>
-<p>Then select it and copy it with cmd-C (Mac) or Ctrl-C (PC). It should ressemble this:</p>
-<pre><code>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDsv0c89Bp7aCrMsSSy2en/aW89QRvJF75MZYxRN3As11KNFpYW0ocWxp5sKu5JA7b/h5Hg0Uv+SL11gN3DXZtYVFfX64iXIDoqAzfsdSWG1WaOSkUK3VyX8ByVhLWwisddfwPScQDOfipdYtQXg1574+HPZY6VTnQtksbgsSCULPml4kcEleX9evSBZRPAETBM5tlOTh8TVM2N+0r8G5eksd0F8T6byrXKj2+bRCVVUE5p5q5qryKd7cioOpE8fxU1wbB2Dg8fzsn5wAuySuOjRuuS5iecwfKIMxcIP/RoAimOdXdDMX7tI5wyaHWpLM3kKwYHQ3+JgEQPJPi37m2Ms29/ErZPf9Sa5/G6r2bA3wqz9A9o3z5BOxMGlXk73o1B3+oMGRFiFzefF/JyG92IyZNLYk8e6MShHgXDZvNwwPS318nxH4PtibGCturDH6YTM/V5qN/oV8zKTnuQBSsmjk5G8PAyWxScrPbxXbpRgvykg9NkBWUEVV2Ep9OZSERCxfloBKvSEDNxQTWmksXVAK0S0uz7sy+mEVw6M1GCYiMSLxGzXW03Q9dM8YKvLHAEGXmq1Qi1ZIDSxpzXMJLekKHW9E+Aru+yQI9ESwGh7BOLfBkLXlk9EEsxrh4zfFYM0JvKNO/ETd86JeltmJUFJUt8OS35JvYY00YGaMG86w== alice.jones@digital.justice.gov.uk</code></pre>
-<p>You can find more information about SSH keys in <a href="https://help.github.com/articles/connecting-to-github-with-ssh/">this</a> guidance.</p>
-</div>
-</div>
-<div id="step-2-register-the-key-with-github." class="section level4">
-<h4><span class="header-section-number">2.3.1.2</span> Step 2: Register the key with Github.</h4>
-<p>The next step is to register your SSH public key with Github, using the interface on <a href="https://www.github.com">www.github.com</a>. This guidance assumes you have copied your public key to your computer’s clipboard in the previous step.</p>
-<p>First, navigate to the Github homepage. If you are not logged in already, you will need to log in.</p>
-<p>Access your settings from the menu that appears when you click on your profile picture in the top right. Once in settings, access your SSH and GPG keys. <a href="https://github.com/settings/keys">Here’s</a> a direct link.</p>
-<p><img src="images/start/github_settings.PNG" /></p>
-<p>Click on <code>New SSH key</code>.</p>
-<p><img src="images/start/github_new_ssh.PNG" /></p>
-<p>Paste your key into the dialogue that pops up and click <code>Add SSH key</code>. You can choose any name you like for the ‘title’ of the key.</p>
-<p><img src="images/start/git_paste_key.PNG" /></p>
-<p>The link with Github and the Analytical Platform is now established. You can now return to the analytical platform.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Configure your Git name and email address within the analytical platform.</li>
-</ol>
-<p>To start syncing your work with Github, Git needs to know a bit more about you.</p>
-<p>Within R Studio, access the shell using <code>Tools</code> -&gt; <code>Shell...</code></p>
-<p>Then, you need to type the following commands (substitute your user name and email):</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> config --global user.name <span class="st">&#39;Your Name&#39;</span>
-<span class="fu">git</span> config --global user.email <span class="st">&#39;your@email.com&#39;</span></code></pre>
-<p>You’re now ready to start using Github!</p>
-</div>
-</div>
-<div id="using-git-with-the-analytical-platform" class="section level3">
-<h3><span class="header-section-number">2.3.2</span> Using Git with the Analytical Platform</h3>
-<p>We have written an introductory guide to using Git which you can access <a href="https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html">here</a>.</p>
-</div>
-</div>
-<div id="guidance-on-writing-code" class="section level2">
-<h2><span class="header-section-number">2.4</span> Guidance on writing code</h2>
-<p>Please read the <a href="https://github.com/moj-analytical-services/our-coding-standards">coding standards</a>.</p>
-</div>
-<div id="training-resources" class="section level2">
-<h2><span class="header-section-number">2.5</span> Training Resources</h2>
-<p>The data science team maintain a list of R training <a href="https://docs.google.com/document/d/1R4hBMf26T9HEnCdVz56PpZhwiCv5RhberYL3BxOSKsA/edit#heading=h.3iqas7tttbbd">here</a>.</p>
+<p>Subsequent build/deploys are started about 5 seconds after doing a GitHub release (unless someone pressed the pause button on the Concourse task). You have to refresh Concourse in your browser to see a fresh build.</p>
 
 </div>
 </div>
@@ -445,8 +366,8 @@ Enter same passphrase again:</code></pre>
           </div>
         </div>
       </div>
-<a href="quick-start.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="how-to-get-support.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="common-errors-and-solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
