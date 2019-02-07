@@ -164,7 +164,10 @@ SIRO approval may be required depending on local information assurance policies.
 #### Information assurance
 
 * __Have you discussed the data movement with the relevant information security team(s)?__  
-  The local information security contact for MoJ HQ is [Joel Samuel](mailto:joel.samuel@digital.justice.gov.uk). The relevant team for HMCTS is led by [Michael Hanley](mailto:michael.hanley@justice.gov.uk) and for HMPSS by [Pat Clarke](mailto:patrick.clarke@hmps.gsi.gov.uk).
+  The relevant information security teams are:
+    + __MoJ HQ__ -- [cybersecurity team](mailto:cybersecurity@digital.justice.gov.uk)
+    + __HMCTS__ -- [information assurance team](https://intranet.justice.gov.uk/about-hmcts/digital-change/information-assurance-and-data-security/)
+    + __HMPPS__ -- [information management and security team](mailto:informationmgmtsecurity@noms.gsi.gov.uk)
 * __Have you considered all other information assurance requirements, including, but not limited to, those arising under the Public Records Act, the Official Secrets Act, the Data Protection Act and the Freedom of Information Act?__
 
 #### Confirmation
