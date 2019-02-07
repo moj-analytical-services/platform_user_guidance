@@ -308,14 +308,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="build-and-deploy-1" class="section level1">
 <h1><span class="header-section-number">Part 8</span> Build and Deploy</h1>
-<p><em>Concourse</em> is the Analytical Platform service that automatically builds and deploys R Shiny apps, Web apps and Airflow data pipelines. This is also known as ‘continuous integration’ and ‘continuous deployment’ (CI/CD).</p>
+<p><strong>Concourse</strong> is the Analytical Platform service that automatically builds and deploys R Shiny apps, Web apps and Airflow data pipelines. This is also known as ‘continuous integration’ and ‘continuous deployment’ (CI/CD).</p>
 <div id="deploy.json-2" class="section level2">
 <h2><span class="header-section-number">8.1</span> deploy.json</h2>
 <p>Concourse automatically scans git repositories in the <a href="https://github.com/moj-analytical-services/">moj-analytical-services</a> Github organisation to find repos that are ready to build/deploy. It does this by checking whether repositories contains a ‘magic’ file (on the <code>master</code> branch) that controls the build/deploy: <code>deploy.json</code>. The scan happens every 24 hours, or sooner if a <a href="https://github.com/moj-analytical-services">repo in moj-analytical-services</a> is tagged with a release on GitHub (or if it is urgent it can be triggered by an admin).</p>
-<p>For the format of deploy.json, see the relevant subject:
-* <a href="https://moj-analytical-services.github.io/platform_user_guidance/deploying-a-shiny-app.html#deploy.json">R Shiny app</a>
-* <a href="https://moj-analytical-services.github.io/platform_user_guidance/deploying-a-static-web-app.html#deploy.json-1">Web app</a>
-* <a href="https://moj-analytical-services.github.io/platform_user_guidance/data-pipelines.html#deploy.json">Airflow pipeline</a></p>
+<p>For the format of deploy.json, see the relevant subject:</p>
+<ul>
+<li><a href="https://moj-analytical-services.github.io/platform_user_guidance/deploying-a-shiny-app.html#deploy.json">R Shiny app</a></li>
+<li><a href="https://moj-analytical-services.github.io/platform_user_guidance/deploying-a-static-web-app.html#deploy.json-1">Web app</a></li>
+<li><a href="https://moj-analytical-services.github.io/platform_user_guidance/data-pipelines.html#deploy.json">Airflow pipeline</a></li>
+</ul>
 <p>Changes to deploy.json only take effect when committed to GitHub (master branch), a Release is created and the deploy is successful (see <a href="deploying-a-static-web-app.html#scan-organisation-and-deploy">Scan organisation and deploy</a>).</p>
 </div>
 <div id="starting-a-builddeploy" class="section level2">
