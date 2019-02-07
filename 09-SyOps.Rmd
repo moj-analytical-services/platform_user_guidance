@@ -40,13 +40,28 @@ __App admins and data source admins will:__
 
 ## GitHub
 
-GitHub can be used to store code with a security marking of OFFICIAL only. Where possible, you should store data outside of GitHub even when it is not covered by the below restrictions.
+In almost all cases, work must be stored in private repositories in the [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation. You may only store work in a public repository if you have:
+
+* verified that the work contains __no__ sensitive information or secrets;
+* obtained prior written permission from your line manager; and
+* followed the guidance on [making source code open and reusable](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable).
+
+GitHub may be used to store:
+
+* source code;
+* reports and documentation; and
+* small, non-sensitive data sets (on a temporary basis when alternatives such as S3 are not practical)
+
+in accordance with the following restrictions.
 
 __All users will:__
 
-* not store any large data sets (> 1,000 records) with a security marking of OFFICIAL or above in GitHub;
-* not store any data containing personal information in GitHub that could be used to identify an individual directly, or indirectly, in combination with other information, where the data is not already in the public domain; or
+* not store any large data sets (> 1,000 records) in GitHub;
+* not store any data, source code or documentation containing sensitive information in GitHub;
+* not store any data, source code or documentation containing personal information in GitHub;
 * not store any credentials or secrets, such as usernames, passwords, database connection strings or API keys in GitHub;
-* store all work in the [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation;
-* not store any work in public repositories without obtaining prior written permission from their line manager; and
-* ensure that any work stored in public repositories does not contain any sensitive or personal information.
+* provide access to private repositories on a need-to-know basis;
+* store all MoJ work in the [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation;
+* not store any work in public repositories without obtaining prior written permission from their line manager;
+* verify that any work stored in public repositories does not contain any sensitive or personal information; and
+* follow the guidance on [making source code open and reusable](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable).
