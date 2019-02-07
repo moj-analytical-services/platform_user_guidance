@@ -67,7 +67,7 @@ The repo should include:
         {
             "mojanalytics-deploy": "v1.0.0",
             "type": "airflow_dag",
-            "role_name" : "airflow-enforcement-data-processing"
+            "role_name" : "airflow_enforcement_data_processing"
         }
 
     The version number does nothing. The `role_name` needs to be unique to the Analytical Platform and be prefixed `airflow-`.
