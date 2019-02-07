@@ -1,12 +1,13 @@
 # Build and Deploy
 
-*Concourse* is the Analytical Platform service that automatically builds and deploys R Shiny apps, Web apps and Airflow data pipelines. This is also known as 'continuous integration' and 'continuous deployment' (CI/CD).
+**Concourse** is the Analytical Platform service that automatically builds and deploys R Shiny apps, Web apps and Airflow data pipelines. This is also known as 'continuous integration' and 'continuous deployment' (CI/CD).
 
 ## deploy.json
 
 Concourse automatically scans git repositories in the [moj-analytical-services](https://github.com/moj-analytical-services/) Github organisation to find repos that are ready to build/deploy.  It does this by checking whether repositories contains a 'magic' file (on the `master` branch) that controls the build/deploy: `deploy.json`. The scan happens every 24 hours, or sooner if a [repo in moj-analytical-services](https://github.com/moj-analytical-services) is tagged with a release on GitHub (or if it is urgent it can be triggered by an admin).
 
 For the format of deploy.json, see the relevant subject:
+
 * [R Shiny app](https://moj-analytical-services.github.io/platform_user_guidance/deploying-a-shiny-app.html#deploy.json)
 * [Web app](https://moj-analytical-services.github.io/platform_user_guidance/deploying-a-static-web-app.html#deploy.json-1)
 * [Airflow pipeline](https://moj-analytical-services.github.io/platform_user_guidance/data-pipelines.html#deploy.json)
