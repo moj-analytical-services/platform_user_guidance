@@ -357,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  # (The python base image is based on debian)
  RUN apt-get update
  # Install new system libraries
- apt-get install -y --no-install-recommends \
-     libatlas-base-dev gfortran
+ RUN apt-get install -y --no-install-recommends \
+     python-numpy
 
  # Set the default place in the image where files will be copied
  WORKDIR /usr/src/app
@@ -373,7 +373,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  # Run the data processing
  # This is the equivalent of typing: python ./my-script.py
  CMD [ &quot;python&quot;, &quot;./my-script.py&quot; ]</code></pre>
-<p>Tip: You can put several related scripts in one repo, and choose which one gets run using an environment variable e.g. <a href="https://github.com/moj-analytical-services/airflow-magistrates-data-engineering/blob/88986cf7dbcca9b7ebc21bc2d1286464615739d7/Dockerfile#L19" class="uri">https://github.com/moj-analytical-services/airflow-magistrates-data-engineering/blob/88986cf7dbcca9b7ebc21bc2d1286464615739d7/Dockerfile#L19</a></p></li>
+<p>Tip: You can put several related scripts in one repo, and choose which one gets run using an environment variable e.g. <a href="https://github.com/moj-analytical-services/airflow-magistrates-data-engineering/blob/88986cf7dbcca9b7ebc21bc2d1286464615739d7/Dockerfile#L19" class="uri">https://github.com/moj-analytical-services/airflow-magistrates-data-engineering/blob/88986cf7dbcca9b7ebc21bc2d1286464615739d7/Dockerfile#L19</a></p>
+<p>Tip: Some python packages, such as ‘numpy’ or ‘lxml’, come with C extensions which can cause bother. If installed via pip (requirements.txt) those C extensions are compiled, which can be slow and liable to failure. The Dockerfile example above shows how to avoid these problems with numpy (which is needed by pandas) - it is installed instead using a debian package: <code>python-numpy</code>.</p></li>
 <li><p><code>deploy.json</code> - This is for Concourse to build the repo into a Docker image</p>
 <p>For example:</p>
 <pre><code> {
