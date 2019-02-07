@@ -70,7 +70,10 @@ The repo should include:
             "role_name" : "airflow_enforcement_data_processing"
         }
 
-    The version number does nothing. The `role_name` needs to be unique to the Analytical Platform and be prefixed `airflow-`.
+    The version number does nothing. The `role_name` needs to be:
+
+    * unique to the Analytical Platform
+    * prefixed `airflow_`, otherwise you'll get a build error like this: `An error occurred (AccessDenied) when calling the GetRole operation: User: arn:aws:iam::593291632749:user/dev-concourse-role-putter is not authorized to perform: iam:GetRole on resource: role airflow-prison-population-hub`
 
 3. `iam_policy.json` - This tells Concourse to create an AWS role that gives your code permission to access AWS resource, such as data in S3 buckets. 
 
