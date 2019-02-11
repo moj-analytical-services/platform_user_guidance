@@ -1,26 +1,26 @@
-# Using Github with R Studio
+# Using Github with the platform
 
-Before you can use Github with R Studio, you need to connect them together by creating an 'ssh key'.  Full guidance is [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#configuring-git-and-github-for-use-on-the-analytical-platform)
+Before you can use Github with R Studio or Jupyter, you need to connect them together by creating an 'ssh key'.  Full guidance is [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#configuring-git-and-github-for-use-on-the-analytical-platform)
 
 Github enables you to collaborate with colleagues on code and share you work with them. It puts your code in a centralised, searchable place. It enables easier and more robust approaches to quality assurance, and it enables you to version control your work.  More information about the benefits of Github can be found [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it).
 
 If you are new to Git and Github, it is worth clarifying the difference between Git and Git**hub**. Git is the software that looks after the version control of code, whereas Github is the website on which you publish and share your version controlled code. In practice this means you use Git to track versions of your code, and then submit those changes to Github.
 
-This guide provides a step-by-step guide of how to create a project and sync your work with Github.  You can find more in-depth Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html#git-training-resources)
+This guide provides a step-by-step guide of how to create a GitHub project repo, followed by how to sync with it in R Studio and Jupyter.  You can find more in-depth Git training resources [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html#git-training-resources)
 
 Note:  If any of the animated gifs below do not display correctly, try a different web browser e.g. Microsoft Edge, which is installed on your DOM1 machine.
 
-## Syncing you R Studio work with Github
+## Creating your project repo on GitHub
 
-### Step 1 - Create a new project ('repo') in the moj-analytical-services Github page
+### Step 1 - Create a new project repo in the moj-analytical-services Github page
 
-This is conceptually similar to setting up a folder on the DOM1 shared drive to save your work, and share it with others. The files in this Github repo represent the definitive version of the project. Everyone who works on the project makes contributions to this definitive version from their personal versions.
+A GitHub 'repo' (short for 'repository') is conceptually similar to setting up a project folder on the DOM1 shared drive to save your work, and share it with others. The files in this Github repo represent the definitive version of the project. Everyone who works on the project makes contributions to this definitive version from their personal versions.
 
 Note that if you want to contribute to an existing project, you can skip this step.
 
-To begin, navigate to www.github.com and make sure you're logged in.
+In your web browser go to `github.com` and make sure you're signed in.
 
-Once logged in, go to the MoJ Analytical Services homepage at https://github.com/moj-analytical-services/
+Once signed in, go to the MoJ Analytical Services homepage at https://github.com/moj-analytical-services/
 
 Then follow the steps in this gif to create a new repository.
 
@@ -38,7 +38,7 @@ Notes:
 
 Try to be as open as possible about who can view your code. Go to the Settings section of your repository (top right of the repository's homepage) and then click on Collaborators & Teams on the left hand side panel. From there you can then decide on one of the four options below. They start with the most private all the way to completely public code:
 
-1.	PRIVATE: Leave the default setting of your repository so its only visible to you as the creator.
+1.	PRIVATE: Leave the default setting of your repository so it's only visible to you as the creator.
 2.	YOUR TEAM: Can the code be shared within your team? If so, add your team to the repository.
 3.	ALL PLATFORM USERS: Can the code be shared with all Analytical Platform users?  If so, add the ‘everyone’ team to the repository.
 4.	PUBLIC: Can the code be public?  If so, make it a public repository. To do this, click on the 'Options' section of the Settings, then scroll down to the 'Danger Zone' area that has a 'Make public' button.
@@ -48,9 +48,13 @@ We find that for most of our work, there’s no reason not to add the ‘+everyo
 * Note you can add one or more teams to a repository, each with different permissions. For example, your team could have write privileges, but the ‘everyone’ team could be read only.,
 
 
-### Step 3:  Navigate to your platform R Studio and make a copy of the Github project in your R Studio
+## R Studio
 
-In this step, we create a copy of the definitive github.com project in your personal R Studio workspace.  This means you have a version of the project which you can work on and change.
+Here's how you can sync with your new GitHub repo in R Studio.
+
+### Step 1:  Navigate to your platform R Studio and make a copy of the Github project in your R Studio
+
+In this step, we create a copy of the definitive GitHub project in your personal R Studio workspace.  This means you have a version of the project which you can work on and change.
 
 Follow the steps in this gif:
 
@@ -60,7 +64,7 @@ Notes:
 
 * When you copy the link to the repo from Github, ensure you use the ssh link, which start `git@github.com` as opposed to the https one, which start `https://github.com/`
 
-### Step 4: Edit your files, track them using Git, and sync ('push') changes to Github
+### Step 2: Edit your files, track them using Git, and sync ('push') changes to Github
 
 Edit your files as usual using R Studio.
 
@@ -70,34 +74,36 @@ In the following gif, we demonstrate changing a single file, staging the changes
 
 Notes:
 
-* 'commiting' does **not** sync your changes with github.com.  It just creates a snapshot of your personal files in your R Studio environment.
-* Git will only become aware of changes you've made after you've saved the file as shown in the gif.  Unsaved changes are signified when the filename in the code editior tab is red with an asterix.
+* 'committing' does **not** sync your changes with github.com.  It just creates a snapshot of your personal files in your platform disk.
+* Git will only become aware of changes you've made after you've saved the file as shown in the gif.  Unsaved changes are signified when the filename in the code editior tab is red with an asterisk.
 
  ![](images/github/make_changes_and_stage.gif)
 
 
- ### Step 5: Sync ('push') your work with github.com
+### Step 3: Sync ('push') your work with github.com
 
- In R Studio, click the 'Push' button (the green up arrow).  This will send any change you have committed to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.
+In R Studio, click the 'Push' button (the green up arrow).  This will send any change you have committed to the definitive version of the project on Github. You can then navigate to the project on Github in your web browser and you should see the changes.
 
- Notes:
+Notes:
 
- * After pushing, make sure you refresh the GitHub page in your web browser to see changes.
-
-
- ![](images/github/push_to_github.gif)
+* After pushing, make sure you refresh the GitHub page in your web browser to see changes.
 
 
-
-
+![](images/github/push_to_github.gif)
 
 **That's it!  If you're working on a personal project, and are not collaborating with others, those three basic steps will allow you to apply version control to your work with Github**
 
-### Using the shell
-If you are more comfortable using the shell (terminal) you can do steps 3 and 4 using the following git commands:
-* Select the files you want to commit (known as staging): `git add <filename1> <filename2>`
-* Commit the files you have staged: `git commit`. After calling this command a popup will ask you to write in a commit message. After doing so press enter.
-* Finally push your changes to GitHub: `git push origin <branch_name>`. Most likely your branch name will be `master` which is the default. So your code would be `git push origin master`.
+## Jupyter
+
+There is not the same integration. Use the command-line - see below.
+
+## Command-line
+
+Once you are comfortable using the Terminal (in either R Studio or Jupyter) you can do steps 3 and 4 using the following git commands:
+
+* Select the files that you want to commit: `git add <filename1> <filename2>` ((This will 'add' them to git's 'index' / 'staging' area)
+* 'Commit' the files you have added: `git commit`. After calling this command, you need to provide a commit message: in R Studio it provides a popup; in Jupyter it'll start an editor where you write the message, before saving and exiting it.
+* 'Push' your commits to GitHub: `git push origin <branch_name>`. Most likely your branch name will be `master` which is the default. So your code would be `git push origin master`.
 
 
 ## Working on a branch.
@@ -194,7 +200,7 @@ An example of a code search is [here](https://github.com/search?q=org%3Amoj-anal
 
 ### Hyperlink to a specific line of code in your project
 
-See [here] for how to do this
+See [here](https://stackoverflow.com/a/31282559/) for how to do this.
 
 ### View who made changes to code, when and why using Git blame.
 

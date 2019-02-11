@@ -21,9 +21,9 @@ For step-by-step instructions, see the Github guidance for [authentication apps]
 ### Email us your Github username
 Once you've got a Github account setup, email your github username to the shared mailbox (analytical_platform@digital.justice.gov.uk) and we will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.  Once we've done this, you can accept the invitation by visiting the [MoJ Analytical Services](github.com/moj-analytical-services/) organisation, or by using the link in the email you'll receive from Github.
 
-### Read the Security Operating Procedure
+### Read the acceptable use policy
 
-Before you start using the platform, please read the [Acceptable use policy](https://moj-analytical-services.github.io/platform_user_guidance/acceptable-use-policy-security-operating-procedures.html).
+Before you start using the platform, please read the [acceptable use policy](#acceptable-use-policy).
 
 ## Accessing the platform
 
@@ -59,13 +59,15 @@ You can find more detailed notes about setting up Git with R Studio [here](http:
 
 The overview is as follows:
 
-1. Create an 'SSH key' within your platform R Studio.  This is an unique code that is stored in your account. Having the key means you will not need to enter your password when interacting with Github.
+1. Create an 'SSH key' within your platform R Studio or Jupyter.  This is an unique code that is stored in your account. Having the key means you will not need to enter your password when interacting with Github.
 2. Register the key with Github.
 3. Configure git to use your username and email address.
 
 #### Step 1 - create an SSH key
 
-You can create your SSH key within R Studio:
+You can create your SSH key two ways:
+
+##### Method 1: using R Studio:
 
 `Tools` -> `Global options` -> `Git/SVN` -> `Create RSA key...`
 
@@ -80,6 +82,30 @@ For the next step, you'll need to copy and paste your SSH public key.  You can c
 ![](images/start/git_view_public.PNG)
 
 ![](images/start/git-public-key.PNG)
+
+##### Method 2: using Jupyter terminal:
+
+In Jupyter open a terminal by clicking the "+" then "Terminal":
+
+![](images/start/jupyter_terminal_open.png)
+
+Create a new one, putting in your own email address:
+
+    ssh-keygen -t rsa -b 4096 -C "my.name@justice.gov.uk"
+
+When it asks for the filename and passphrase, just press Enter (leave them blank):
+
+    Enter file in which to save the key (/home/jovyan/.ssh/id_rsa):
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
+
+For the next step, you'll need to copy and paste you SSH public key. First view it:
+
+    cat /home/jovyan/.ssh/id_rsa.pub
+
+Then select it and copy it with cmd-C (Mac) or Ctrl-C (PC). It should ressemble this:
+
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDsv0c89Bp7aCrMsSSy2en/aW89QRvJF75MZYxRN3As11KNFpYW0ocWxp5sKu5JA7b/h5Hg0Uv+SL11gN3DXZtYVFfX64iXIDoqAzfsdSWG1WaOSkUK3VyX8ByVhLWwisddfwPScQDOfipdYtQXg1574+HPZY6VTnQtksbgsSCULPml4kcEleX9evSBZRPAETBM5tlOTh8TVM2N+0r8G5eksd0F8T6byrXKj2+bRCVVUE5p5q5qryKd7cioOpE8fxU1wbB2Dg8fzsn5wAuySuOjRuuS5iecwfKIMxcIP/RoAimOdXdDMX7tI5wyaHWpLM3kKwYHQ3+JgEQPJPi37m2Ms29/ErZPf9Sa5/G6r2bA3wqz9A9o3z5BOxMGlXk73o1B3+oMGRFiFzefF/JyG92IyZNLYk8e6MShHgXDZvNwwPS318nxH4PtibGCturDH6YTM/V5qN/oV8zKTnuQBSsmjk5G8PAyWxScrPbxXbpRgvykg9NkBWUEVV2Ep9OZSERCxfloBKvSEDNxQTWmksXVAK0S0uz7sy+mEVw6M1GCYiMSLxGzXW03Q9dM8YKvLHAEGXmq1Qi1ZIDSxpzXMJLekKHW9E+Aru+yQI9ESwGh7BOLfBkLXlk9EEsxrh4zfFYM0JvKNO/ETd86JeltmJUFJUt8OS35JvYY00YGaMG86w== alice.jones@digital.justice.gov.uk
 
 You can find more information about SSH keys in [this](https://help.github.com/articles/connecting-to-github-with-ssh/) guidance.
 

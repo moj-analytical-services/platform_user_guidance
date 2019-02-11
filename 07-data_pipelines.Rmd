@@ -39,8 +39,8 @@ The repo should include:
         # (The python base image is based on debian)
         RUN apt-get update
         # Install new system libraries
-        apt-get install -y --no-install-recommends \
-            libatlas-base-dev gfortran
+        RUN apt-get install -y --no-install-recommends \
+            python-numpy
 
         # Set the default place in the image where files will be copied
         WORKDIR /usr/src/app
@@ -58,17 +58,22 @@ The repo should include:
 
     Tip: You can put several related scripts in one repo, and choose which one gets run using an environment variable e.g. https://github.com/moj-analytical-services/airflow-magistrates-data-engineering/blob/88986cf7dbcca9b7ebc21bc2d1286464615739d7/Dockerfile#L19
 
-2. `deploy.json` - This is for Concourse to build the repo into a Docker image
+    Tip: Some python packages, such as 'numpy' or 'lxml', come with C extensions which can cause bother. If installed via pip (requirements.txt) those C extensions are compiled, which can be slow and liable to failure. The Dockerfile example above shows how to avoid these problems with numpy (which is needed by pandas) - it is installed instead using a debian package: `python-numpy`.
+
+2. <a name="deploy.json"></a>`deploy.json` - This is for Concourse to build the repo into a Docker image
 
     For example:
 
         {
             "mojanalytics-deploy": "v1.0.0",
             "type": "airflow_dag",
-            "role_name" : "airflow-enforcement-data-processing"
+            "role_name" : "airflow_enforcement_data_processing"
         }
 
-    The version number does nothing. The `role_name` needs to be unique to the Analytical Platform and be prefixed `airflow-`.
+    The version number does nothing. The `role_name` needs to be:
+
+    * unique to the Analytical Platform
+    * prefixed `airflow_`, otherwise you'll get a build error like this: `An error occurred (AccessDenied) when calling the GetRole operation: User: arn:aws:iam::593291632749:user/dev-concourse-role-putter is not authorized to perform: iam:GetRole on resource: role airflow-prison-population-hub`
 
 3. `iam_policy.json` - This tells Concourse to create an AWS role that gives your code permission to access AWS resource, such as data in S3 buckets. 
 
@@ -120,14 +125,8 @@ Concourse will:
 * upload the Docker image to a private location in AWS Elastic Container Registry
 * creates the AWS Role
 
-To trigger Concourse, make sure your code is committed and pushed to GitHub and then [create a release on GitHub](https://help.github.com/articles/creating-releases/). Call the first release `v0.0.1`, then `v0.0.2` etc. The version should always go up in number, or it won't build. It's good practise to use [semantic versioning](https://semver.org/).
+For more about the build see: [Build and deploy guidance](https://moj-analytical-services.github.io/platform_user_guidance/build-and-deploy.html)
 
-Concourse starts the build within 30 seconds and takes 5 minutes to an hour. You can track progress and see any errors like this:
-1. Open Concourse: https://concourse.services.alpha.mojanalytics.xyz/
-2. Select team 'main'
-3. Click 'login with ap-main' followed by your GitHub login and possibly 2FA for GitHub and possibly 2FA for AP.
-4. Click the hamburger icon (top-left) to see the list of repos that can be built.
-5. Click on a repo name to see its diagram with the big 'Deploy' box in the middle, inputs and outputs. Click on the 'Deploy' box to see details of the most recent build. Green colours means it passed. Red means it had an error and didn't complete. You can see previous builds (numbered - e.g. "8 7 6 5 4 3 2 1").
 
 ### Airflow DAG
 
