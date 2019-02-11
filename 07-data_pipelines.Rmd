@@ -132,7 +132,7 @@ For more about the build see: [Build and deploy guidance](https://moj-analytical
 
 You need to define a DAG of your Tasks, so that Airflow can run it.
 
-A DAG is defined in its own .py file in the [airflow-dags repo](https://github.com/moj-analytical-services/airflow-dags]).
+A DAG is defined in its own .py file in the [airflow-dags repository](https://github.com/moj-analytical-services/airflow-dags). Normally you would clone the repo, add the new DAG file, commit it to a branch and create the Pull Request. You can achieve this in R Studio, Jupyter or on your local machine if you have git, and then use GitHub to create the Pull Request. Alternatively you could simply click the "Create new file" button in GitHub and use the web interface to edit it and create a pull request in one go!
 
 The airflow-dags repo uses the "Fork & Pull" model of GitHub workflow, so you will need to **fork** the airflow-dags repo to give yourself a personal copy of it (e.g. `github.com/joebloggs/airflow-dags`). The idea is that you clone and push your commits to your own fork of the airflow-dags repo. Then you create a Pull Request to the central airflow-dags repo, which will be reviewed by admins and merged. You should also locally add the central repo as a remote, and pull from there to keep up to date. Here's how to do it in detail: [Github’s Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
 
