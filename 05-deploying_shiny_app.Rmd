@@ -75,7 +75,7 @@ This creates a file called `packrat/packrat.lock`.  You need to ensure you have 
 
 Include a `deploy.json` file so that Concourse will automatically build and deploy your app, so that it is running and customers can access it. For more about this see: [Build and deploy guidance](https://moj-analytical-services.github.io/platform_user_guidance/build-and-deploy.html)
 
-### Grant secure access to the app
+### Grant secure access to the app{#grant-app-access}
 
 To grant access to someone, in the [Control Panel's Wepapps tag](https://cpanel-master.services.dev.mojanalytics.xyz/#Webapps) find your App and click "Manage App". In the 'App customers' section you can let people view your app by putting one or more email addresses in the text box and clicking "Add customer".
 
