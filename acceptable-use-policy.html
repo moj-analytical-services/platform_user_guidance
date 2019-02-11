@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="user-administration.html">
-<link rel="next" href="annexes.html">
+<link rel="next" href="common-errors-and-solutions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -210,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#work-on-your-app"><i class="fa fa-check"></i><b>5.1.3</b> Work on your app</a></li>
 <li class="chapter" data-level="5.1.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#snapshot-dependencies-using-packrat"><i class="fa fa-check"></i><b>5.1.4</b> Snapshot dependencies using packrat</a></li>
 <li class="chapter" data-level="5.1.5" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#build-and-deploy"><i class="fa fa-check"></i><b>5.1.5</b> Build and deploy</a></li>
-<li class="chapter" data-level="5.1.6" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#grant-secure-access-to-the-app"><i class="fa fa-check"></i><b>5.1.6</b> Grant secure access to the app</a></li>
+<li class="chapter" data-level="5.1.6" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#grant-app-access"><i class="fa fa-check"></i><b>5.1.6</b> Grant secure access to the app</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#accessing-the-app"><i class="fa fa-check"></i><b>5.2</b> Accessing the app</a></li>
 <li class="chapter" data-level="5.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#addingremoving-people-from-the-list-of-users"><i class="fa fa-check"></i><b>5.3</b> Adding/removing people from the list of users</a></li>
@@ -230,7 +230,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#in-your-chosen-development-enviroment-clone-the-git-repository"><i class="fa fa-check"></i><b>6.1.2</b> In your chosen development enviroment, clone the git repository</a></li>
 <li class="chapter" data-level="6.1.3" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#work-on-your-web-app"><i class="fa fa-check"></i><b>6.1.3</b> Work on your web app</a></li>
 <li class="chapter" data-level="6.1.4" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#scan-organisation-and-deploy"><i class="fa fa-check"></i><b>6.1.4</b> Scan organisation and deploy</a></li>
-<li class="chapter" data-level="6.1.5" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#grant-secure-access-to-the-app-1"><i class="fa fa-check"></i><b>6.1.5</b> Grant secure access to the app</a></li>
+<li class="chapter" data-level="6.1.5" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#grant-secure-access-to-the-app"><i class="fa fa-check"></i><b>6.1.5</b> Grant secure access to the app</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#accessing-the-app-1"><i class="fa fa-check"></i><b>6.2</b> Accessing the app</a></li>
 <li class="chapter" data-level="6.3" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#advanced-deployment-1"><i class="fa fa-check"></i><b>6.3</b> Advanced deployment</a><ul>
@@ -256,40 +256,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="user-administration.html"><a href="user-administration.html#teams-and-data-access-groups"><i class="fa fa-check"></i><b>9.1</b> Teams and data access groups</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html"><i class="fa fa-check"></i><b>10</b> Acceptable use policy</a><ul>
-<li class="chapter" data-level="10.1" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#general-security-guidance"><i class="fa fa-check"></i><b>10.1</b> General security guidance</a></li>
-<li class="chapter" data-level="10.2" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#transferring-and-management-of-data"><i class="fa fa-check"></i><b>10.2</b> Transferring and management of data</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#information-governance"><i class="fa fa-check"></i><b>10.2.1</b> Information Governance</a></li>
+<li class="chapter" data-level="10.1" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#scope"><i class="fa fa-check"></i><b>10.1</b> Scope</a></li>
+<li class="chapter" data-level="10.2" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#who-this-policy-applies-to"><i class="fa fa-check"></i><b>10.2</b> Who this policy applies to</a></li>
+<li class="chapter" data-level="10.3" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#general-principles"><i class="fa fa-check"></i><b>10.3</b> General principles</a></li>
+<li class="chapter" data-level="10.4" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#github"><i class="fa fa-check"></i><b>10.4</b> GitHub</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#controlling-data-access-in-the-platform"><i class="fa fa-check"></i><b>10.3</b> Controlling data access in the platform</a></li>
-<li class="chapter" data-level="10.4" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#data-minimisation"><i class="fa fa-check"></i><b>10.4</b> Data Minimisation</a></li>
-<li class="chapter" data-level="10.5" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#guidance-on-the-use-of-github"><i class="fa fa-check"></i><b>10.5</b> Guidance on the use of Github</a><ul>
-<li class="chapter" data-level="10.5.1" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#what-can-i-use-github-for"><i class="fa fa-check"></i><b>10.5.1</b> What can I use GitHub for?</a></li>
-<li class="chapter" data-level="10.5.2" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#prohibitions-what-are-the-limits-on-github-use"><i class="fa fa-check"></i><b>10.5.2</b> Prohibitions: What are the limits on GitHub use?</a></li>
+<li class="chapter" data-level="11" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html"><i class="fa fa-check"></i><b>11</b> Common Errors and Solutions</a><ul>
+<li class="chapter" data-level="11.1" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#failed-to-lock-directory"><i class="fa fa-check"></i><b>11.1</b> Failed to lock directory</a></li>
+<li class="chapter" data-level="11.2" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#rsession-username-error-session-hadabend"><i class="fa fa-check"></i><b>11.2</b> <code>rsession-username ERROR session hadabend</code></a></li>
+<li class="chapter" data-level="11.3" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#status-code-502-error-message"><i class="fa fa-check"></i><b>11.3</b> Status Code 502 error message</a></li>
+<li class="chapter" data-level="11.4" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#unable-to-access-data-using-aws.s3-package."><i class="fa fa-check"></i><b>11.4</b> Unable to access data using <code>aws.s3</code> package.</a></li>
+<li class="chapter" data-level="11.5" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#s3toolss3_path_to_full_df-fails-on-excel-file"><i class="fa fa-check"></i><b>11.5</b> <code>s3tools::s3_path_to_full_df()</code> fails on Excel file</a></li>
+<li class="chapter" data-level="11.6" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#two-factor-authentication-problems"><i class="fa fa-check"></i><b>11.6</b> Two Factor Authentication problems</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#ive-lost-my-platform-2fa"><i class="fa fa-check"></i><b>11.6.1</b> I’ve lost my platform 2FA</a></li>
+<li class="chapter" data-level="11.6.2" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it"><i class="fa fa-check"></i><b>11.6.2</b> I have entered my 2FA code, but the platform will not accept it</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#reporting-security-incidents"><i class="fa fa-check"></i><b>10.6</b> Reporting security incidents</a></li>
+<li class="chapter" data-level="11.7" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#im-having-problems-deploying-a-shiny-app"><i class="fa fa-check"></i><b>11.7</b> I’m having problems deploying a Shiny app</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="annexes.html"><a href="annexes.html"><i class="fa fa-check"></i><b>11</b> Annexes</a><ul>
-<li class="chapter" data-level="11.1" data-path="annexes.html"><a href="annexes.html#memory-limits"><i class="fa fa-check"></i><b>11.1</b> Memory limits</a></li>
-<li class="chapter" data-level="11.2" data-path="annexes.html"><a href="annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it"><i class="fa fa-check"></i><b>11.2</b> What are the benefits of Github and why do we recommend it?</a></li>
-<li class="chapter" data-level="11.3" data-path="annexes.html"><a href="annexes.html#step-by-step-guide-to-setup-two-factor-authentication"><i class="fa fa-check"></i><b>11.3</b> Step by step guide to setup Two Factor Authentication</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="annexes.html"><a href="annexes.html#step-by-step---logging-into-the-platform-for-the-first-time"><i class="fa fa-check"></i><b>11.3.1</b> Step by step - logging into the platform for the first time</a></li>
+<li class="chapter" data-level="12" data-path="information-governance.html"><a href="information-governance.html"><i class="fa fa-check"></i><b>12</b> Information governance</a><ul>
+<li class="chapter" data-level="12.1" data-path="information-governance.html"><a href="information-governance.html#data-management"><i class="fa fa-check"></i><b>12.1</b> Data management</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="information-governance.html"><a href="information-governance.html#permissions-and-access"><i class="fa fa-check"></i><b>12.1.1</b> Permissions and access</a></li>
+<li class="chapter" data-level="12.1.2" data-path="information-governance.html"><a href="information-governance.html#data-retention"><i class="fa fa-check"></i><b>12.1.2</b> Data retention</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="annexes.html"><a href="annexes.html#data-minimisation-1"><i class="fa fa-check"></i><b>11.4</b> Data Minimisation</a><ul>
-<li class="chapter" data-level="11.4.1" data-path="annexes.html"><a href="annexes.html#pseudonymisation"><i class="fa fa-check"></i><b>11.4.1</b> Pseudonymisation</a></li>
-<li class="chapter" data-level="11.4.2" data-path="annexes.html"><a href="annexes.html#anonymisation"><i class="fa fa-check"></i><b>11.4.2</b> Anonymisation</a></li>
+<li class="chapter" data-level="12.2" data-path="information-governance.html"><a href="information-governance.html#data-movements"><i class="fa fa-check"></i><b>12.2</b> Data movements</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="information-governance.html"><a href="information-governance.html#data-movement-form"><i class="fa fa-check"></i><b>12.2.1</b> Data movement form guidance</a></li>
+<li class="chapter" data-level="12.2.2" data-path="information-governance.html"><a href="information-governance.html#data-minimisation"><i class="fa fa-check"></i><b>12.2.2</b> Data Minimisation</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html"><i class="fa fa-check"></i><b>12</b> Common Errors and Solutions</a><ul>
-<li class="chapter" data-level="12.1" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#failed-to-lock-directory"><i class="fa fa-check"></i><b>12.1</b> Failed to lock directory</a></li>
-<li class="chapter" data-level="12.2" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#rsession-username-error-session-hadabend"><i class="fa fa-check"></i><b>12.2</b> <code>rsession-username ERROR session hadabend</code></a></li>
-<li class="chapter" data-level="12.3" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#status-code-502-error-message"><i class="fa fa-check"></i><b>12.3</b> Status Code 502 error message</a></li>
-<li class="chapter" data-level="12.4" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#unable-to-access-data-using-aws.s3-package."><i class="fa fa-check"></i><b>12.4</b> Unable to access data using <code>aws.s3</code> package.</a></li>
-<li class="chapter" data-level="12.5" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#s3toolss3_path_to_full_df-fails-on-excel-file"><i class="fa fa-check"></i><b>12.5</b> <code>s3tools::s3_path_to_full_df()</code> fails on Excel file</a></li>
-<li class="chapter" data-level="12.6" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#two-factor-authentication-problems"><i class="fa fa-check"></i><b>12.6</b> Two Factor Authentication problems</a><ul>
-<li class="chapter" data-level="12.6.1" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#ive-lost-my-platform-2fa"><i class="fa fa-check"></i><b>12.6.1</b> I’ve lost my platform 2FA</a></li>
-<li class="chapter" data-level="12.6.2" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it"><i class="fa fa-check"></i><b>12.6.2</b> I have entered my 2FA code, but the platform will not accept it</a></li>
-</ul></li>
-<li class="chapter" data-level="12.7" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#im-having-problems-deploying-a-shiny-app"><i class="fa fa-check"></i><b>12.7</b> I’m having problems deploying a Shiny app</a></li>
+<li class="chapter" data-level="12.3" data-path="information-governance.html"><a href="information-governance.html#reporting-security-incidents"><i class="fa fa-check"></i><b>12.3</b> Reporting security incidents</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="how-to-get-support.html"><a href="how-to-get-support.html"><i class="fa fa-check"></i><b>13</b> How to get Support</a><ul>
 <li class="chapter" data-level="13.1" data-path="how-to-get-support.html"><a href="how-to-get-support.html#summary-1"><i class="fa fa-check"></i><b>13.1</b> Summary</a></li>
@@ -301,6 +294,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="13.4" data-path="how-to-get-support.html"><a href="how-to-get-support.html#how-to-ask-for-support-creating-a-reproducable-example"><i class="fa fa-check"></i><b>13.4</b> How to ask for support: Creating a Reproducable Example</a></li>
 <li class="chapter" data-level="13.5" data-path="how-to-get-support.html"><a href="how-to-get-support.html#raising-issues"><i class="fa fa-check"></i><b>13.5</b> Raising Issues</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="annexes.html"><a href="annexes.html"><i class="fa fa-check"></i><b>14</b> Annexes</a><ul>
+<li class="chapter" data-level="14.1" data-path="annexes.html"><a href="annexes.html#memory-limits"><i class="fa fa-check"></i><b>14.1</b> Memory limits</a></li>
+<li class="chapter" data-level="14.2" data-path="annexes.html"><a href="annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it"><i class="fa fa-check"></i><b>14.2</b> What are the benefits of Github and why do we recommend it?</a></li>
+<li class="chapter" data-level="14.3" data-path="annexes.html"><a href="annexes.html#step-by-step-guide-to-setup-two-factor-authentication"><i class="fa fa-check"></i><b>14.3</b> Step by step guide to setup Two Factor Authentication</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="annexes.html"><a href="annexes.html#step-by-step---logging-into-the-platform-for-the-first-time"><i class="fa fa-check"></i><b>14.3.1</b> Step by step - logging into the platform for the first time</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="annexes.html"><a href="annexes.html#data-minimisation-1"><i class="fa fa-check"></i><b>14.4</b> Data Minimisation</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="annexes.html"><a href="annexes.html#pseudonymisation"><i class="fa fa-check"></i><b>14.4.1</b> Pseudonymisation</a></li>
+<li class="chapter" data-level="14.4.2" data-path="annexes.html"><a href="annexes.html#anonymisation"><i class="fa fa-check"></i><b>14.4.2</b> Anonymisation</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -321,71 +325,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="acceptable-use-policy" class="section level1">
 <h1><span class="header-section-number">Part 10</span> Acceptable use policy</h1>
-<ul>
-<li>The platform is only suitable for information classified at <code>OFFICIAL</code> (including material with the SENSITIVE handling caveat). If you have questions about data suitability, <a href="mailto:analytical_platform@digital.justice.gov.uk">contact the team</a></li>
-<li>Teams are responsible for who has access to their data when within the platform, and <strong>must</strong> actively manage personnel changes (Joiners, Movers, Leavers) to ensure the correct people have access to only the data they are currently permitted to access.</li>
-<li>Remember that the platform is still in Beta. This means there is no guarantee of stability. Do not use the platform for time-critical tasks. Allow for the possibility of unannounced downtime, which could last up to a week.</li>
-<li>If you are responsible for a team, ensure that users have the <a href="https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#team-creation">correct permissions</a>.</li>
-</ul>
-<div id="general-security-guidance" class="section level2">
-<h2><span class="header-section-number">10.1</span> General security guidance</h2>
-<ul>
-<li>Do not access the platform from a non-MOJ IT system (such as a personal laptop)</li>
-<li>Choose a complex password for your Github account. A complex password cannot be guessed, and is created by following some simple rules and suggestions; see <a href="https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0">here</a></li>
-<li>You must not share your account or your login credentials with anyone else.</li>
-<li>Do not re-use credentials for multiple purposes (use a unique password and/or SSH keypair for each system/purpose).</li>
-</ul>
+<div id="scope" class="section level2">
+<h2><span class="header-section-number">10.1</span> Scope</h2>
+<p>This acceptable use policy covers the use of the Analytical Platform and all associated software and applications.</p>
+<p>This policy applies in addition to the <a href="https://intranet.justice.gov.uk/guidance/security/it-computer-security/acceptable-use/">MoJ acceptable use policy</a>.</p>
 </div>
-<div id="transferring-and-management-of-data" class="section level2">
-<h2><span class="header-section-number">10.2</span> Transferring and management of data</h2>
-<ul>
-<li>Transfer to the platform only the minimum possible datasets needed for your work.</li>
-<li>All data transfers should take place safely (both in and out of the platform) to ensure data is protected while in transit and any temporary migration files are adequately protected - <a href="mailto:analytical_platform@digital.justice.gov.uk">contact the team</a> for advice around this.</li>
-<li>Access to data should be provided on a ‘need to know’ basis. Use <a href="https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups">data access groups</a> to control data access.</li>
-</ul>
-<div id="information-governance" class="section level3">
-<h3><span class="header-section-number">10.2.1</span> Information Governance</h3>
-<ul>
-<li>Before you transfer any data into the platform, you <strong>must</strong> have completed information governance and management assessments, this is likely to include (but not be limited to): a Data Movement Form, a technical data migration/integration document, update Privacy Impact Assessments, update information management and asset logs and applicable privacy notices.</li>
-<li>Using the platform is likely to require authoriation from your SIRO (Senior Information Risk Owner) and/or IAO (Information Asset Owner).</li>
-</ul>
+<div id="who-this-policy-applies-to" class="section level2">
+<h2><span class="header-section-number">10.2</span> Who this policy applies to</h2>
+<p>This policy applies to all users of the Analytical Platform.</p>
 </div>
-</div>
-<div id="controlling-data-access-in-the-platform" class="section level2">
-<h2><span class="header-section-number">10.3</span> Controlling data access in the platform</h2>
+<div id="general-principles" class="section level2">
+<h2><span class="header-section-number">10.3</span> General principles</h2>
+<p><strong>All users will:</strong></p>
 <ul>
-<li>Data Owners are ultimately responsible for who has access to data while in the platform.</li>
-<li>Data Owners <strong>must</strong> actively manage delegated access for team members (popularly - Joiners, Movers, Leavers)</li>
-<li>Self-managed permissions through <a href="https://moj-analytical-services.github.io/platform_user_guidance/user-administration.html#teams-and-data-access-groups">data access groups</a> must be used to provision and remove access as suitable - which is solely defined by Data Owners.</li>
+<li>report any security incidents, including a loss of data, in line with the relevant MoJ, HMPPS or HMCTS procedures;</li>
+<li>report any breach of this acceptable use policy to the <a href="mailto:analytical-platform@digital.justice.gov.uk">Analytical Platform team</a>;</li>
+<li>follow all relevant information governance procedures;</li>
+<li>protect their login credentials appropriately;</li>
+<li>create secure passwords following best practice guidelines (see <a href="https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0">here</a>);</li>
+<li>ensure that two-factor authentication is enabled when accessing GitHub and the Analytical Platform;</li>
+<li>sign out of the Analytical Platform when access is not required;</li>
+<li>understand they and MoJ have a legal responsibility to protect personal and sensitive information;</li>
+<li>understand that their use of the Analytical Platform may be monitored;</li>
+<li>ensure that all transfers of data onto and within the Analytical Platform are conducted safely and securely;</li>
+<li>not access the Analytical Platform from any non-MoJ IT system, such as a personal computer;</li>
+<li>not share their account or login credentials with any other person;</li>
+<li>not use the same login credentials for more than one system or purpose;</li>
+<li>not store any data on the Analytical Platform that is classified as SECRET or TOP SECRET;</li>
+<li>not move any data to the Analytical Platform without completing a data movement form;</li>
+<li>not attempt to access any data, apps or software on the Analytical Platform without the appropriate permission; and</li>
+<li>not use the Analytical Platform to undertake any illegal activity or any activity that could harm MoJ’s reputation or compromise the security of data or IT systems.</li>
 </ul>
-</div>
-<div id="data-minimisation" class="section level2">
-<h2><span class="header-section-number">10.4</span> Data Minimisation</h2>
+<p><strong>App admins and data source admins will:</strong></p>
 <ul>
-<li>Consider <a href="https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#data-minimisation">minimising data</a> through pseudonymisation and anonymisation techniques.</li>
+<li>ensure that app and data source users have the correct read/write permissions;</li>
+<li>ensure that app and data source users only have access to the minimum data required for them to perform their job; and</li>
+<li>regularly review access permissions for app and data source users, including when users join or leave MoJ, or move within MoJ.</li>
 </ul>
 </div>
-<div id="guidance-on-the-use-of-github" class="section level2">
-<h2><span class="header-section-number">10.5</span> Guidance on the use of Github</h2>
-<p>The advice in this document relates to private repositories which are part of the <a href="https://github.com/moj-analytical-services/">MoJ Analytical Services organisation</a> only. <strong>Do not store any work in public repositories</strong> unless you are sure it is not sensitive and can be made public. Have prior permission from your line manager before releasing to a public repository. Read the <a href="https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable">Service Manual pages on opensource</a>.</p>
-<div id="what-can-i-use-github-for" class="section level3">
-<h3><span class="header-section-number">10.5.1</span> What can I use GitHub for?</h3>
-<p>When you have approval, you may use GitHub to store your analytical <strong>code</strong> <em>but not data</em> at the <code>OFFICIAL</code> level. This means that you can use Git for work where the code itself is sensitive, such as work on court or prison closures.</p>
-<p>You may also use GitHub to store project writeups. However, the write ups must not contain information or data which would violate the prohibitions on the use of GitHub set out below.</p>
-</div>
-<div id="prohibitions-what-are-the-limits-on-github-use" class="section level3">
-<h3><span class="header-section-number">10.5.2</span> Prohibitions: What are the limits on GitHub use?</h3>
-<p>In general, you must not use GitHub to store datasets. Specifically, you <strong>MUST NOT</strong> use GitHub for the following purposes:</p>
+<div id="github" class="section level2">
+<h2><span class="header-section-number">10.4</span> GitHub</h2>
+<p>In almost all cases, work must be stored in private repositories in the <a href="https://github.com/moj-analytical-services/">MoJ Analytical Services</a> organisation. You may only store work in a public repository if you have:</p>
 <ul>
-<li><p>To store any large datasets classified at <code>OFFICIAL</code> or above. Our working definition is that a large dataset contains over 1,000 records.</p></li>
-<li><p>To store any data whatsoever (in code or in datasets) where individuals are potentially identifiable and the data is not already in the public domain.</p></li>
-<li><p>To store credentials such as usernames and passwords, or secrets such as database connection strings.</p></li>
+<li>verified that the work contains <strong>no</strong> sensitive information or secrets;</li>
+<li>obtained prior written permission from your line manager; and</li>
+<li>followed the guidance on <a href="https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable">making source code open and reusable</a>.</li>
 </ul>
-</div>
-</div>
-<div id="reporting-security-incidents" class="section level2">
-<h2><span class="header-section-number">10.6</span> Reporting security incidents</h2>
-<p>You must report actual, attempted or suspected breaches of security as soon as discovered to: <a href="mailto:OperationalSecurityTeam@justice.gsi.gov.uk">OperationalSecurityTeam@justice.gsi.gov.uk</a></p>
+<p>GitHub may be used to store:</p>
+<ul>
+<li>source code;</li>
+<li>reports and documentation; and</li>
+<li>small, non-sensitive data sets (on a temporary basis when alternatives such as S3 are not practical)</li>
+</ul>
+<p>in accordance with the following restrictions.</p>
+<p><strong>All users will:</strong></p>
+<ul>
+<li>not store any large data sets (&gt; 1,000 records) in GitHub;</li>
+<li>not store any data, source code or documentation containing sensitive information in GitHub;</li>
+<li>not store any data, source code or documentation containing personal information in GitHub;</li>
+<li>not store any credentials or secrets, such as usernames, passwords, database connection strings or API keys in GitHub;</li>
+<li>provide access to private repositories on a need-to-know basis;</li>
+<li>store all MoJ work in the <a href="https://github.com/moj-analytical-services/">MoJ Analytical Services</a> organisation;</li>
+<li>not store any work in public repositories without obtaining prior written permission from their line manager;</li>
+<li>verify that any work stored in public repositories does not contain any sensitive or personal information; and</li>
+<li>follow the guidance on <a href="https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable">making source code open and reusable</a>.</li>
+</ul>
 
 </div>
 </div>
@@ -395,7 +399,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="user-administration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="annexes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="common-errors-and-solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
