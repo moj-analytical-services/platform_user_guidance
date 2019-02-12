@@ -134,7 +134,7 @@ You need to define a DAG of your Tasks, so that Airflow can run it.
 
 A DAG is defined in its own .py file in the [airflow-dags repository](https://github.com/moj-analytical-services/airflow-dags). Normally you would clone the repo, add the new DAG file, commit it to a branch and create the Pull Request. You can achieve this in R Studio, Jupyter or on your local machine if you have git, and then use GitHub to create the Pull Request. Alternatively you could simply click the "Create new file" button in GitHub and use the web interface to edit it and create a pull request in one go!
 
-The airflow-dags repo has protected merges, requiring a review from the data engineering team before you can merge. Ask for a review from `moj-analytical-services/data-engineers`.
+The airflow-dags repo has [protected](https://help.github.com/articles/about-protected-branches/) master branch, so it requires a review from the data engineering team before you can merge. Ask for a review from `moj-analytical-services/data-engineers`.
 
 Use an existing DAG as an example: https://github.com/moj-analytical-services/airflow-dags/blob/master/mags_curated.py
 
