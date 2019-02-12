@@ -21,9 +21,9 @@ For step-by-step instructions, see the Github guidance for [authentication apps]
 ### Email us your Github username
 Once you've got a Github account setup, email your github username to the shared mailbox (analytical_platform@digital.justice.gov.uk) and we will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.  Once we've done this, you can accept the invitation by visiting the [MoJ Analytical Services](github.com/moj-analytical-services/) organisation, or by using the link in the email you'll receive from Github.
 
-### Read the Security Operating Procedure
+### Read the acceptable use policy
 
-Before you start using the platform, please read the [Acceptable use policy](https://moj-analytical-services.github.io/platform_user_guidance/acceptable-use-policy-security-operating-procedures.html).
+Before you start using the platform, please read the [acceptable use policy](#acceptable-use-policy).
 
 ## Accessing the platform
 
