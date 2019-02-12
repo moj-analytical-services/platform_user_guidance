@@ -134,7 +134,20 @@ You need to define a DAG of your Tasks, so that Airflow can run it.
 
 A DAG is defined in its own .py file in the [airflow-dags repo](https://github.com/moj-analytical-services/airflow-dags]).
 
-The airflow-dags repo uses the "Fork & Pull" model of GitHub workflow, so you will need to **fork** the airflow-dags repo to give yourself a personal copy of it (e.g. `github.com/joebloggs/airflow-dags`). The idea is that you clone and push your commits to your own fork of the airflow-dags repo. Then you create a Pull Request to the central airflow-dags repo, which will be reviewed by admins and merged. You should also locally add the central repo as a remote, and pull from there to keep up to date. Here's how to do it in detail: [Github’s Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
+The airflow-dags repo is protected. Unless you are an admin you should use the ["Fork & Pull" model of GitHub workflow](https://reflectoring.io/github-fork-and-pull/):
+
+1. Clone the main repo
+2. **Fork** the airflow-dags repo to give yourself a personal copy of it (e.g. `github.com/davidread/airflow-dags`)
+3. Make your changes on a branch and commit them, as usual.
+4. Push your commits to your own fork of the airflow-dags repo. The first time you need to add the remote eg:
+
+       git remote add davidread git@github.com:davidread/airflow-dags.git
+
+   Then push it to this new remote (instead of 'origin'):
+
+       git push -u davidread add-prison-dag
+
+5. Create the Pull Request to the central airflow-dags repo, and ask for a review from `moj-analytical-services/data-engineers` and remind them to merge it too.
 
 Use an existing DAG as an example: https://github.com/moj-analytical-services/airflow-dags/blob/master/mags_curated.py
 
