@@ -5,7 +5,7 @@
 You use a specially authenticated Github account to log into the platform, which you can set up as follows:
 
 ### Sign up to Github
-If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options, and make sure you save recovery codes as instructed.
+If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options, and make sure you save recovery codes as instructed. It's good practice to choose a username that does not feature upper case characters.
 
 We recommend new users use their `@justice` email address.  If you already have a personal Github account, you may also use that.
 
