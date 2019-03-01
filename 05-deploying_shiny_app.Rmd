@@ -48,6 +48,16 @@ You should provide the URL of the app's GitHub repository as well as any existin
 
 Develop the app in RStudio.
 
+Your app can take one of several forms:
+
+1.  A directory containing `server.R`, plus, either `ui.R` or a www directory that contains the file `index.html`.
+2.  A directory containing `app.R`.
+3.  An `.R` file containing a Shiny application, ending with an expression that produces a Shiny app object.
+4.  A list with `ui` and `server` components.
+5.  A Shiny app object created by `shinyApp`.
+
+By default, the template contains `server.R` and `ui.R` files, however, you may wish to take a different approach depending on your requirements. For example, using `app.R`, it is possible to deploy Shiny apps from within a package, as [here](https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20).
+
 ### Manage dependencies
 
 Most apps will have dependencies on various third-party packages. Changes to these packages may not always be backwards-compatible. To avoid compatibility issues and ensure reproducible outputs, it is necessary to use a package management system, such as packrat or conda.
@@ -99,292 +109,131 @@ If the repository name contains underscores, these will be converted to dahses i
 
 ## Advanced deployment
 
+## Editing the Dockerfile
+
+A `Dockerfile` is a text document that contains all the commands a user could call on the command line to assemble an image.
+
+In most cases, you will not need to change the `Dockerfile` when deploying your app.
+
+If your app uses packages that have additional system dependencies, you will need to add these in the `Dockerfile`. If you are unsure how to do this, contact the Analytical Platform team.
+
+A `Dockerfile` reference can be found [here](https://docs.docker.com/engine/reference/builder/).
+
 ## Troubleshooting
+
+### Common errors
+
+Sometimes, a Shiny app can deploy successfully but result in the following error:
+```{bash error, eval=FALSE}
+An error has occurred
+The application failed to start
+
+The application exited during initialization
+```
+This is generic error that means there is an error in your R code or there are missing packages.
+
+To try to fix this you should:
+
+*   explicitly reference all third-party packages using the double colon operator (i.e. use `shiny::hr()` as opposed to `hr()`);
+*   ensure that you have called `packrat::snapshot()` and committed `packrat.lock` to GitHub, if using `packrat`.
+
+In general, it is also good practice to:
+
+*   minimise the number of packages you use in your project;
+*   test your app early and often; and
+*   test using a cloned copy of the app's repository to avoid issues arising as a result of uncomitted local changes.
+
+### Packrat
+
+If you are having issues with `packrat.lock`, follow these steps:
+
+1.  Delete the entire `packrat` directory.
+2.  Comment out all code in the project.
+3.  Enable packrat using `packrat::init()`.
+4.  Capture all package dependencies using `packrat::snapshot()`.
+5.  Uncomment all code in the project and install package dependencies one by one.
+5.  Rerun `packrat::snapshot()`.
+6.  Redeploy the app.
 
 ### Kibana
 
-### Hints and tips
+All logs from deployed apps can be viewed in [Kibana](https://kibana.services.alpha.mojanalytics.xyz).
+
+To view all app logs:
+1.  select 'Discover' from the left sidebar; then
+2.  select 'Open' from the menu bar; then 
+3.  select 'Application logs (alpha)' from the saved searches.
+
+To view the logs for a specific app:
+1.  select 'Add a filter'; then
+2.  select 'app_name' as the field; then
+3.  select 'is' as the operator; then
+4.  insert the app name followed by '-webapp' as the value; then
+5.  click 'Save'.
+
+Log messages are displayed in the 'message' column.
+
+By default, Kibana only shows logs for the last 15 minutes. If no logs are available for that time range, you will receive the warning 'No results match your search criteria'.
+
+To change the time range, select the clock icon in the menu bar. There are several presets or you can define a custom time range.
+
+Kibana also has experimental autocomplete and simple syntax tools that you can use to build custom searches. To enable these features, select 'Options' from within the search bar, then toggle 'Turn on query features'.
 
 ### Deploying locally
 
-## Common issues
-
-## OLD
-
-The following sumamrizes the steps to deploy a Shiny app are as follows:
-
-1. Copy the [template project](https://github.com/moj-analytical-services/rshiny-example) within Github to a new repository, with a name of your choice.
-2. In R Studio, checkout this copy (file -> new project -> version control -> git).   (TODO:  Remember to make sure the template has a Rproj that enables packrat)
-3. Work on your Shiny app, using the template `ui.R` and `server.R` files.
-4. Ensure that packrat is enabled and your package dependencies are snapshotted using `packrat::snapshot()`
-5. Set the desired access permissions in `deploy.json` (i.e. whether it should be available for DOM1, Quantum, or external).
-6. When you're ready to share it, in GitHub create a 'release' and it will deploy in a few minutes.
-7. Ask the Platform team to add and remove users from your app in the [#ap_admin_request](https://asdslack.slack.com/messages/CBLAGCQG6/) Slack channel.
-
-Step-by-step instructions are below.
-
-## Step-by-step guide to deploying an app
-
-### Copy the template project into a new Github repository
-
-1. Begin by making a **copy** of the R Shiny template project on Github: https://github.com/new/import.
-
-2. Enter `https://github.com/moj-analytical-services/rshiny-template` in the input box entitled 'your old repository’s clone URL:'
-
-3. Ensure the 'owner' of the new repository is 'moj-analytical-services' and choose a name for your repository:
-
-4. Make sure the repo is 'private' (this should be the default value):
-
-5. Click 'Begin import'
-
-
-![](images/shiny/github_shiny_import.gif)
-
-
-### In R Studio in the platform, create a new project from your new Github repository
-
-In R Studio, navigate through the following menus:
-
-File -> New project -> Version control -> Git
-
-![](images/shiny/github_shiny_rstudio.gif)
-
-In 'Repository URL', enter the URL of the repository you just created.  This needs to be the SSH URL (starting with `git@github`), **NOT** the HTTPS url (which starts with `https`). Therefore, it is in the following format:
-
-```
-git@github.com:moj-analytical-services/your_name_goes_here.git
-```
-
-R Studio will create a new project folder with all the template files in.
-
-You can now start building your Shiny app by editing `server.R` and `ui.R` files.
-
-#### Further notes if you're having trouble finding your new repo's url
-
-If you navigate to your new repository's home page (which will have a url in the form `https://github.com/moj-analytical-services/your_name_goes_here`), you can use the following buttons to access this url (make sure you click the 'ssh' button):
-
-![](images/shiny/use_ssh.PNG)
-
-![](images/shiny/ssh_url.PNG)
-
-
-### Work on your app
-
-You can now work on your Shiny app in R Studio as normal.  As you work, commit your changes to Github using your chosen Github workflow.
-
-### Snapshot dependencies using packrat
-
-Your Shiny app will have dependencies on various third-party R packages (e.g. `dplyr`).  These packages change through time, and sometimes these changes are not backwards compatible.  When we deploy your Shiny app, it is therefore essential to include a manifest of all of the package dependencies and their specific versions.
-
-The R package`packrat` automates this process.  Before deploying your app, you need to call `packrat::snapshot()` to automatically create this manifest.  You may want to call `packrat::clean()` to remove any dependencies that are no longer in use.
-
-This creates a file called `packrat/packrat.lock`.  You need to ensure you have committed this to the Github repository prior to deployment.
-
-![](images/shiny/github_packrat_snapshot.gif)
-
-### Build and deploy
-
-Include a `deploy.json` file so that Concourse will automatically build and deploy your app, so that it is running and customers can access it. For more about this see: [Build and deploy guidance](https://moj-analytical-services.github.io/platform_user_guidance/build-and-deploy.html)
-
-### Grant secure access to the app{#grant-app-access}
-
-To grant access to someone, in the [Control Panel's Wepapps tag](https://cpanel-master.services.dev.mojanalytics.xyz/#Webapps) find your App and click "Manage App". In the 'App customers' section you can let people view your app by putting one or more email addresses in the text box and clicking "Add customer".
-
-You can also let anyone access it by setting `"disable_authentication": true` in the `deploy.json` and redeploying it - see above.
-
-**Note** that users can only access the app from a computer on a specified corporate network. These are defined in the `deploy.json` under the parameter `allowed_ip_ranges` - see below.
-
-#### deploy.json
-
-| parameter | notes |
-| --------- | ------- |
-| `allowed_ip_ranges` | e.g. `["DOM1", "QUANTUM", "102PF Wifi"]` or `["Any"]`|
-| `disable_authentication` | To let anyone access the app, set this to `true`, otherwise `false` restricts it to people authorized for the app in the Control Panel |
-
-If you deployed with authentication enabled users are granted access to the app using a list of email addresses separated with a space, comma or semicolon.
-
-Changes to deploy.json only take effect when committed to GitHub, a Release is created and the deploy is successful (see [Scan organisation and deploy][Scan organisation and deploy])
-
-## Accessing the app
-
-Depending on the `disable_authentication` setting, the website will either be available directly or authenticated via email. The URL for the app will be the `respository-name` followed by `apps.alpha.mojanalytics.xyz`.
-
-So for the example project above "test-shiny-project", the deployment URL will be `https://test-shiny-project.apps.alpha.mojanalytics.xyz`.
-
-Note that characters that are not compatible with website URLs are converted. So, repositories with underscores in their name (e.g. `repository_name.apps...`) will be converted to dashes for the URL (e.g. `repository_name.apps...`).
-
-Users will be prompted to enter their email and, if they are on the approved list, be sent a access link to view the app.
-
-![](images/shiny/shiny_app_auth.gif)
-
-## Adding/removing people from the list of users
-
-If email authentication is enabled in you `deploy.json` file (this is the default setting), then the user list starts with no-one on it.  Users cannot currently modify this list themselves, so you will need to request changes on the [#ap_admin_request](https://asdslack.slack.com/messages/CBLAGCQG6/) Slack channel.
-
-## Advanced deployment
-
-This section contains guidance for advanced users on app deployment.
-
-### What is run when I deploy a Shiny app?
-
-When you deploy an app, the R Shiny server runs `shiny::runApp()` within the project.  This is equivalent to when you press 'run' in a R Shiny project within R Studio.
-
-To understand how you can use this to deploy apps of different types, we can refer to the `runApp` [docs](https://shiny.rstudio.com/reference/shiny/latest/runApp.html).  Specifically, the 'arguments' section is useful:
-
-```
-Arguments
-	appDir	The application to run. Should be one of the following:
-		A directory containing server.R, plus, either ui.R or a www directory that contains the file index.html.
-		A directory containing app.R.
-		An .R file containing a Shiny application, ending with an expression that produces a Shiny app object.
-		A list with ui and server components.
-		A Shiny app object created by shinyApp.
-```
-
-One of those options is `A directory containing app.R.`, which should contain: `An .R file containing a Shiny application, ending with an expression that produces a Shiny app object.`.
-
-This gives the developer a wider range of options of how to deploy a Shiny app, and makes it possible to deploy shiny apps that are bundled into pre-existing packages e.g. see [here](https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20).
-
-### Can I change my build?
-
-Yes - if you know Docker, you are welcome to change the
-[Dockerfile](https://github.com/moj-analytical-services/rshiny-template/blob/master/Dockerfile).
-
-Deployment will usually work so long as your app serves HTTP on port 80.  Note that the app doesn't have to be a Shiny app.
-
-### Diagnosing problems - logs provided by Kibana
-
-To view the app's log messages, see the [Kibana dashboard](https://kibana.services.alpha.mojanalytics.xyz/login):
-
-1. In the left hand nav bar, click "Discover"
-2. On the top bar, click "Open" then click "Application logs (alpha". This quickly sets up your view:
-    * index: "logstash-apps-alpha-*" - i.e. logs from app, because Kibana includes logs from other software elsewhere in the Analytical Platform
-	* field: "message" to display the log messages, rather than all the other data that's logged
-	* field: "time_nano" also displayed and sorted, so they are displayed in order
-3. Click "Add a filter+ ". Fill in the form:
-    * Field: `app_name`
-	* Operator: "is"
-	* Value: your app name, appended with `-webapp` e.g. `prison-network-app-webapp`
-   Now: Save.
-4. If it says "No results match your search criteria" it could well be because the timeframe defaults to the last 15 minutes. Try changing it by clicking on "Last 15 minutes" in the top right.
-
-You log messages are shown in the message column:
-![](images/shiny/kibana-logs.png)
-
-Kibana tip:
-* The search box has some helpful features like autocomplete which you can switch on. To do this, click "Options" (found inside the search box on the right-hand side) and then enable "Turn on query features".
-
-### Fixing common problems
-
-Here are some tips to fix/reduce problems:
-
-1.  Test early and often by deploying work in progress rather  that building an entire app and testing
-2.  Explicitly reference all packages (e.g. `shiny::hr()` rather than `hr()`.  This is particularly important if you’re using loads of packages.
-3. If you’re having problems, delete everything in `packrat/` and re-run `packrat::init()`.
-4. The most useful logs which Shiny produces are in Kibana.  You can also access them by locally building Docker on your mac, but it’s a bit of a faff.
-5. Try to minimise the number of packages you’re using, each additional package is another source of problems
-6. When testing, clone the repo to another folder and test the cloned code.  This guarantees that the code you’re testing is the same code which will be deployed on the platform
-
-If you're still having problems, you can deploy the app locally using Docker.
-
-### Troubleshooting using Docker (installed locally on a Macbook)
-
-Docker enables us to fully specify a computing environment (an operating system and the software installed on that system).  This allows us to test and troubleshoot our Shiny app in Docker on our Macbooks.  If it runs in Docker on the Macbook, it will also run on the platform, because Docker guarantees the computing environments will be the same.
-
-This guarantee only applies if we build the Docker image from exactly the same code (the same Shiny code, and the same Dockerfile).
-
-When we deploy a Shiny app on the platform, the following steps take place:
-
-- The platform clones your git repository
-- The platform runs docker build on the resultant code
-- The platform runs resultant the docker image.
-
-**To test your Shiny app in Docker on your Macbook, we highly recommend that you `git clone` your repository to a new folder on your macbook.  This guarantees that the code used to build your Docker image is exactly the same code that is checked into github.  If you build from your local working copy, your build may rely on local modifications to files which you haven't committed to github, and therefore may differ from what is built on the platform.**
-
-The following provides more detailed instructions.
-
-First `cd` into the directory containing the Dockerfile.  Then run:
-
-`docker build . -t your_name_here`    (`your_name_here` is the tag you want to give to the image)
-
-By building the image, it will test the installation of the packrat dependencies and package your shiny app into a Linux environment identical to what's on the platform.
-
-Remember to refresh Docker if you are re-building a previously built app in the directory (the previous build will show when you view the app otherwise).
-
-Run the Shiny server in a linux container with
-`docker run -p 80:80 your_name_here`
-
-You can then go to http://127.0.0.1:80 to see if the app is working.
-
-If it is not, you can investigate what's going on in the server using:
-
-`docker run -it -p 80:80 your_name_here bash`
-
-Note this will start a bash session in the container, but it will not start the shiny server. i.e. it starts bash *instead* of running `/bin/shiny-server.sh`.
-
-We can then configure logging in the container, before starting the shiny server as follows:
-
-Install the nano text editor:
-
-```bash
-apt-get update
-apt-get install nano
-```
-
-Then edit the config file at `nano /etc/shiny-server/shiny-server.conf` to add the following two lines at the beginning:
-
-```
-access_log /var/log/shiny-server/access.log tiny;
-preserve_logs true;
-```
-
-Save by pressing `[CTRL]+[O]` and then exit with `[CTRL]+[X]`.
-
-Finally change the log level to be more verbose and start the shiny server:
-
-```bash
-export SHINY_LOG_LEVEL=TRACE
-/bin/shiny-server.sh
-```
-For further details see the  [rshiny-server documetation](http://docs.rstudio.com/shiny-server)
-
-Now we need another terminal window, to get back into the docker container
-
-`docker ps` to find the name of the container and then
-
-`docker exec -it container_name bash `
-
-Logs are then written to `cd /var/log/shiny-server/`
-
-### If all else fails...
-
-Sometimes, the following steps can resolve problems with `packrat.lock`:
-
-- Delete the entire `packrat` directory
-- Comment out all code in the project
-- Enable packrat with `packrat::init()`
-- Freeze packrat dependencies with `packrat::snapshot()`
-- Uncomment all code in project, and install dependencies one at a time using `install.packages()`
-- `packrat::snapshot()` again
-- Try redeploying
-
-### Some problems we've encountered and their solutions
-
-#### Shiny app deploys successfully, but 'application failed to start' error occurs
-
-Sometimes, your Shiny app deploys successfully but you get the following error:
-
-```
-An error has occurred
-The application failed to start.
-
-The application exited during initialization.
-```
-
-This is a generic error which means that there is an error in your R code or there are missing packages (e.g. your code includes references to packages which aren't in your `packrat.lock`.
-
-Try the following two steps:
-
-- Make sure you've run `packrat::snapshot()` and committed the resultant `packrat.lock` file to Github
-- We've encountered issues due to ambiguous references to function calls.  Make sure that function calls include the full reference (e.g. `shiny::hr()` rather than just `hr()`).  For an example of this type of problems, see [here](https://stackoverflow.com/questions/33408878/shinyapps-shinythemes-package-not-loading-when-deployed-on-shinyapps-io)
-
+If you have a MacBook, you can use Docker locally to test and troubleshoot your Shiny app. You can download Docker Desktop for Mac [here](https://hub.docker.com/editions/community/docker-ce-desktop-mac).
+
+To build and run your Shiny app locally, follow these steps:
+
+1.  Clone your app's repository to a new folder on your MacBook. This guarantees that the app will be built using the same code as on the Analytical Platform.
+2.  Open a terminal session and navigate to the directory containing the `Dockerfile`.
+3.  Build the Docker image using:
+    ```{bash docker build, eval=FALSE}
+    docker build . -t <image tag>
+    ```
+    where `image tag` is a tag you want to give the image.
+4.  Run a Docker container created from the Docker image using:
+    ```{bash docker run, eval=FALSE}
+    docker run -p 80:80 <image tag>
+    ```
+5.  Go to [127.0.0.1:80](127.0.0.1:80) to view the app.
+
+If the app does not work, follow these steps:
+
+1.  Start a bash session in a Docker container created from the Docker image using:
+    ```{bash docker bash run, eval=FALSE}
+    docker run -it -p 80:80 <image tag> bash
+    ```
+2.  Install the `nano` text editor using:
+    ```{bash install nano, eval=FALSE}
+    apt-get update
+    apt-get install nano
+    ```
+3.  Open `shiny-server.conf` using:
+    ```{bash open conf, eval=FALSE}
+    nano /etc/shiny-server/shiny-server.conf
+    ```
+4.  Add the following lines at the beginning of `shiny-server.conf`:
+    ```{bash add lines, eval=FALSE}
+    access_log /var/log/shiny-server/access.log tiny;
+    preserve_logs true;
+    ```
+5.  Write the changes by pressing `Ctrl+O`.
+6.  Exit the `nano` text editor by pressing `Ctrl+X`.
+7.  Increase the verbosity of logging and start the Shiny server using:
+    ```{bash increase verbosity, eval=FALSE}
+    export SHINY_LOG_LEVEL=TRACE
+    /bin/shiny-server.sh
+    ```
+8.  Open a new terminal session.
+9.  Start a new bash session in the Docker container using:
+    ```{bash run bash, eval=FALSE}
+    docker exec -it <CONTAINER ID> bash
+    ```
+    You can find the `CONTAINER ID` by running `docker ps`.
+10. View the logs using:
+    ```{bash view logs, eval=FALSE}
+    cat /var/log/shiny-server/access.log
+    ```
+    
+For further details, see the [Shiny server documentation](https://docs.rstudio.com/shiny-server/).
