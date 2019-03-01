@@ -2,24 +2,29 @@
 
 ## Getting an account
 
-You use a specially authenticated Github account to log into the platform, which you can set up as follows:
+You use a specially authenticated GitHub account to log into the platform, which you can set up as follows:
 
-### Sign up to Github
+### Sign up to GitHub
 If you do not already have an account, head to https://github.com/ and sign up. When signing up, use all the default options, and make sure you save recovery codes as instructed. It's good practice to choose a username that does not feature upper case characters.
 
-We recommend new users use their `@justice` email address.  If you already have a personal Github account, you may also use that.
+We recommend new users use their `@justice` email address.  If you already have a personal GitHub account, you may also use that.
 
 You'll receive an email with a verification link - you need to click this before using the platform.
 
-### Enable two-factor authentication on your Github account
-Once you've signed up to Github, you must enable two factor authentication on your Github account to enhance security. You can do this in your Github [settings page](https://github.com/settings/security).
+### Enable two-factor authentication on your GitHub account{#two-factor-authentication}
+Once you've signed up to GitHub, you must enable two-factor authentication (2FA) on your GitHub account to enhance security. You can do this in your GitHub [settings page](https://github.com/settings/security).
 
-You are given the option of doing this using SMS, or an authentication app such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) . Choose whichever you prefer.
+You are given the option of doing this using SMS, or an authentication app, such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en). We recommend that you use __Authy__ for the following reasons:
 
-For step-by-step instructions, see the Github guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
+1.  You can sync 2FA tokens across multiple devices, including mobiles, tablets and computers.
+2.  You can create encrypted recovery backups in case you lose your device.
+3.  You can use Touch ID, PIN codes and passwords to protect access to your 2FA tokens.
+4.  You can still access secure websites when you are offline.
 
-### Email us your Github username
-Once you've got a Github account setup, email your github username to the shared mailbox (analytical_platform@digital.justice.gov.uk) and we will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.  Once we've done this, you can accept the invitation by visiting the [MoJ Analytical Services](github.com/moj-analytical-services/) organisation, or by using the link in the email you'll receive from Github.
+For step-by-step instructions on setting up 2FA, see the GitHub guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
+
+### Email us your GitHub username
+Once you've got a GitHub account setup, email your GitHub username to the shared mailbox (analytical_platform@digital.justice.gov.uk) and we will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.  Once we've done this, you can accept the invitation by visiting the [MoJ Analytical Services](github.com/moj-analytical-services/) organisation, or by using the link in the email you'll receive from GitHub.
 
 ### Read the acceptable use policy
 
@@ -39,19 +44,19 @@ If you wish to access the platform from another formal HMG technology solution (
 
 You must not access the platform from a non-MOJ device, such as a personal mobile phone or laptop.
 
-When you first access your platform account, you will be asked to set up additional two factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone (such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)).  There is no SMS option.
+When you first access your platform account, you will be asked to set up additional two-factor authentication for the platform itself.  You must do this using an authentication app, as no SMS option is available. For the reasons described in Section \@ref(two-factor-authentication), we recommend that you use [Authy](https://authy.com/download/).
 
 For step by step instructions on setting up this 2FA, see [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#step-by-step-guide-to-setup-of-two-factor-authentication).
 
 For troubleshooting 2FA issues, please see [this section](https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#two-factor-authentication-problems) of the user guidance.
 
-##  Configuring Git and Github for use on the Analytical Platform
+##  Configuring Git and GitHub for use on the Analytical Platform
 
-Github enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.
+GitHub enables you to collaborate with colleagues on code and share you work with them.  It puts your code in a centralised, searchable place. It also enables you to version control your work.
 
-In order to use Github, you need to set up a connection between your Analytical Platform account and Github.  This needs to be done once, after which your Analytical Platform account will permanently be connected.  It is worth doing because it avoids you having to repeatedly type in your username and password every time you interact with Github.
+In order to use GitHub, you need to set up a connection between your Analytical Platform account and GitHub.  This needs to be done once, after which your Analytical Platform account will permanently be connected.  It is worth doing because it avoids you having to repeatedly type in your username and password every time you interact with GitHub.
 
-This page covers only the initial setup.  For guidance on how to use Git to sync your work with Github, please see [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html).
+This page covers only the initial setup.  For guidance on how to use Git to sync your work with GitHub, please see [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html).
 
 You can find more detailed notes about setting up Git with R Studio [here](http://adamwilson.us/RDataScience/GitSSHNotes.html) and [here](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
@@ -59,8 +64,8 @@ You can find more detailed notes about setting up Git with R Studio [here](http:
 
 The overview is as follows:
 
-1. Create an 'SSH key' within your platform R Studio or Jupyter.  This is an unique code that is stored in your account. Having the key means you will not need to enter your password when interacting with Github.
-2. Register the key with Github.
+1. Create an 'SSH key' within your platform R Studio or Jupyter.  This is an unique code that is stored in your account. Having the key means you will not need to enter your password when interacting with GitHub.
+2. Register the key with GitHub.
 3. Configure git to use your username and email address.
 
 #### Step 1 - create an SSH key
@@ -109,11 +114,11 @@ Then select it and copy it with cmd-C (Mac) or Ctrl-C (PC). It should ressemble 
 
 You can find more information about SSH keys in [this](https://help.github.com/articles/connecting-to-github-with-ssh/) guidance.
 
-#### Step 2:  Register the key with Github.
+#### Step 2: Register the key with GitHub.
 
-The next step is to register your SSH public key with Github, using the interface on [www.github.com](https://www.github.com).  This guidance assumes you have copied your public key to your computer's clipboard in the previous step.
+The next step is to register your SSH public key with GitHub, using the interface on [www.github.com](https://www.github.com).  This guidance assumes you have copied your public key to your computer's clipboard in the previous step.
 
-First, navigate to the Github homepage.  If you are not logged in already, you will need to log in.
+First, navigate to the GitHub homepage.  If you are not logged in already, you will need to log in.
 
 Access your settings from the menu that appears when you click on your profile picture in the top right.  Once in settings, access your SSH and GPG keys.  [Here's](https://github.com/settings/keys) a direct link.
 
@@ -127,11 +132,11 @@ Paste your key into the dialogue that pops up and click `Add SSH key`. You can c
 
 ![](images/start/git_paste_key.PNG)
 
-The link with Github and the Analytical Platform is now established. You can now return to the analytical platform.
+The link with GitHub and the Analytical Platform is now established. You can now return to the analytical platform.
 
 3. Configure your Git name and email address within the analytical platform.
 
-To start syncing your work with Github, Git needs to know a bit more about you.
+To start syncing your work with GitHub, Git needs to know a bit more about you.
 
 Within R Studio, access the shell using `Tools` -> `Shell...`
 
@@ -142,7 +147,7 @@ git config --global user.name 'Your Name'
 git config --global user.email 'your@email.com'
 ```
 
-You're now ready to start using Github!
+You're now ready to start using GitHub!
 
 ### Using Git with the Analytical Platform
 
