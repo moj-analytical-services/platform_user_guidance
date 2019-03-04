@@ -78,7 +78,7 @@ and then read it in using e.g.
 
 Note, it's best to avoid using `aws.s3` directly, see [here](https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#unable-to-access-data-using-awss3-package)
 
-## Two Factor Authentication problems
+## Two Factor Authentication problems {#two-factor-auth-issues}
 
 Two factor authentication is critical to the security of the platform.  We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log in to DOM1.
 

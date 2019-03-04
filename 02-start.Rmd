@@ -12,7 +12,7 @@ We recommend new users use their `@justice` email address.  If you already have 
 You'll receive an email with a verification link - you need to click this before using the platform.
 
 ### Enable two-factor authentication on your GitHub account{#two-factor-authentication}
-Once you've signed up to GitHub, you must enable two-factor authentication (2FA) on your GitHub account to enhance security. You can do this in your GitHub [settings page](https://github.com/settings/security).
+Once you've signed up to GitHub, you must enable two-factor authentication (2FA) on your GitHub account to enhance security. You can do this from your GitHub [settings page](https://github.com/settings/security).
 
 You are given the option of doing this using SMS, or an authentication app, such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en). We recommend that you use __Authy__ for the following reasons:
 
@@ -22,6 +22,8 @@ You are given the option of doing this using SMS, or an authentication app, such
 4.  You can still access secure websites when you are offline.
 
 For step-by-step instructions on setting up 2FA, see the GitHub guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
+
+For more information on the use of 2FA with the Analytical Platform and for troubleshooting tips, see Section \@ref(two-factor-auth-issues).
 
 ### Email us your GitHub username
 Once you've got a GitHub account setup, email your GitHub username to the shared mailbox (analytical_platform@digital.justice.gov.uk) and we will invite you to the private [MoJ Analytical Services](https://github.com/moj-analytical-services/) organisation.  Once we've done this, you can accept the invitation by visiting the [MoJ Analytical Services](github.com/moj-analytical-services/) organisation, or by using the link in the email you'll receive from GitHub.
