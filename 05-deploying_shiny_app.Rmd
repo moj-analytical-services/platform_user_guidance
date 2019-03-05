@@ -4,7 +4,7 @@
 
 ### Summary
 
-In order to deploy an R Shiny app, you should follow these steps:
+To create and deploy a Shiny app, you should follow these steps:
 
 1.  Copy the app template
 2.  Create a new webapp
@@ -42,7 +42,7 @@ You should provide the URL of the app's GitHub repository as well as any existin
 ### Clone the repository
 
 1.  Navigate to the app's repository on GitHub.
-2.  Select 'Clone or download'.
+2.  Click 'Clone or download'.
 3.  Ensure that the dialogue says 'Clone with SSH'. If the dialogue says 'Clone with HTTPS' select 'Use SSH'.
 4.  Copy the SSH URL. This should start with `git@`.
 5.  In RStudio, select 'File' > 'New project...' > 'Version control' > 'Git'.
@@ -85,7 +85,7 @@ You can set some access permissions for your app in the `deploy.json` file.
 
 The `allowed_ip_ranges` parameter controls where your app can be accessed from. It can take any combination of the following values `["DOM1", "QUANTUM", "102PF WiFi"]` or `["Any"]`.
 
-The `disable_authenication` parameter controls whether sign-in is required for users to access the app. It can take the values `true` or `false`. In general, this should be set to `false`. If you wish to disable authentication, you should first discuss this with the Analytical Platform team.
+The `disable_authentication` parameter controls whether sign-in is required for users to access the app. It can take the values `true` or `false`. In general, this should be set to `false`. If you wish to disable authentication, you should first discuss this with the Analytical Platform team.
 
 ### Create a release in GitHub
 
@@ -114,7 +114,7 @@ If `disable_authentication` is set to `false` in the `deploy.json` file, access 
 
 Your deployed app can be accessed at `repository-name.apps.alpha.mojanalytics.xyz`, where `repository-name` is the name of the relevant GitHub repository.
 
-If the repository name contains underscores, these will be converted to dahses in the app URL. For example, an app with a repository called `repository_name` would have the URL `repository-name.apps.alpha.mojanalytics.xyz`.
+If the repository name contains underscores, these will be converted to dashes in the app URL. For example, an app with a repository called `repository_name` would have the URL `repository-name.apps.alpha.mojanalytics.xyz`.
 
 When accessing an app, you can choose whether to sign in using an email link (defult) or a one-time passcode. To sign in with a one-time passcode, add `/login?method=code` to the end of the app's URL.
 
