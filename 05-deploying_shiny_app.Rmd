@@ -19,12 +19,17 @@ In order to deploy an R Shiny app, you should follow these steps:
 
 ### Copy the app template
 
-1.  Go to [github.com/new/import](https://github.com/new/import).
-2.  Enter `https://github.com/moj-analytical-services/rshiny-template` in the field titled 'Your old repository’s clone URL'.
-3.  Select `moj-analytical-services` as the owner of the new repository.
-4.  Add a name for the new repository.
-5.  Set the privacy of the new repository to private.
-6.  Select 'Begin import'.
+1.  Go to [github.com/new/import](https://github.com/new/import)
+2.  Fill in the form:
+    +   Your old repository’s clone URL: `https://github.com/moj-analytical-services/rshiny-template`
+    +   Owner: `moj-analytical-services`
+    +   Name: The name of your app, e.g., `my-app`
+    +   Privacy: Private
+6.  Click 'Begin import'
+
+This copies the entire contents of the app template to a new repository.
+
+![](images/shiny/copy-template.png)
 
 ### Create a new webapp
 
