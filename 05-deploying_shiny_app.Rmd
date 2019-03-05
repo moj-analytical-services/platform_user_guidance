@@ -105,7 +105,7 @@ If `disable_authentication` is set to `false` in the `deploy.json` file, access 
 
 Your deployed app can be accessed at `repository-name.apps.alpha.mojanalytics.xyz`, where `repository-name` is the name of the relevant GitHub repository.
 
-If the repository name contains underscores, these will be converted to dahses in the app URL. For example, an app with a repository called `repository_name` would have the URL `repository-name.apps.alpha.mojanalytics.xyz`.
+If the repository name contains underscores, these will be converted to dashes in the app URL. For example, an app with a repository called `repository_name` would have the URL `repository-name.apps.alpha.mojanalytics.xyz`.
 
 When accessing an app, you can choose whether to sign in using an email link (defult) or a one-time passcode. To sign in with a one-time passcode, add `/login?method=code` to the end of the app's URL.
 
