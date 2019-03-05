@@ -78,7 +78,7 @@ You can set some access permissions for your app in the `deploy.json` file.
 
 The `allowed_ip_ranges` parameter controls where your app can be accessed from. It can take any combination of the following values `["DOM1", "QUANTUM", "102PF WiFi"]` or `["Any"]`.
 
-The `disable_authenication` parameter controls whether sign-in is required for users to access the app. It can take the values `true` or `false`. In general, this should be set to `false`. If you wish to disable authentication, you should first discuss this with the Analytical Platform team.
+The `disable_authentication` parameter controls whether sign-in is required for users to access the app. It can take the values `true` or `false`. In general, this should be set to `false`. If you wish to disable authentication, you should first discuss this with the Analytical Platform team.
 
 ### Create a release in GitHub
 
