@@ -44,10 +44,12 @@ You should provide the URL of the app's GitHub repository as well as any existin
 1.  Navigate to the app's repository on GitHub.
 2.  Select 'Clone or download'.
 3.  Ensure that the dialogue says 'Clone with SSH'. If the dialogue says 'Clone with HTTPS' select 'Use SSH'.
-4.  Copy the SSH URL.
+4.  Copy the SSH URL. This should start with `git@`.
 5.  In RStudio, select 'File' > 'New project...' > 'Version control' > 'Git'.
 7.  Paste the SSH URL in the 'Repository URL' field.
 8.  Select 'Create Project'.
+
+![](images/shiny/ssh-key.png)
 
 ### Develop the app
 
