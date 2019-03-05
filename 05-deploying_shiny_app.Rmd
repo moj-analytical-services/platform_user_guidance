@@ -6,18 +6,18 @@
 
 To create and deploy a Shiny app, you should follow these steps:
 
-1.  Copy the app template
-2.  Create a new webapp
-3.  Clone the repository
-4.  Develop the app
-5.  Manage dependencies
-6.  Set access permissions
-7.  Create a release in GitHub
-8.  Deploy in Concourse
-9.  Add users to the app
-10. Access the app
+1.  [Copy the app template](#copy-template)
+2.  [Create a new webapp](#create-webapp)
+3.  [Clone the repository](#clone-repo)
+4.  [Develop the app](#develop-the-app)
+5.  [Manage dependencies](#manage-dependencies)
+6.  [Set access permissions](#rshiny-deploy)
+7.  [Create a release in GitHub](#create-release)
+8.  [Deploy in Concourse](#deploy-in-concourse)
+9.  [Add users to the app](#add-users)
+10. [Access the app](#access-the-app)
 
-### Copy the app template
+### Copy the app template{#copy-template}
 
 1.  Go to [github.com/new/import](https://github.com/new/import)
 2.  Fill in the form:
@@ -31,7 +31,7 @@ This copies the entire contents of the app template to a new repository.
 
 ![](images/shiny/copy-template.png)
 
-### Create a new webapp
+### Create a new webapp{#create-webapp}
 
 Standard users are not able to create new webapps or webapp data sources themselves.
 
@@ -39,7 +39,7 @@ To create a new webapp or webapp data source, ask the Analytical Platform team o
 
 You should provide the URL of the app's GitHub repository as well as any existing webapp data sources it should be connected to.
 
-### Clone the repository
+### Clone the repository{#clone-repo}
 
 1.  Navigate to the app's repository on GitHub.
 2.  Click 'Clone or download'.
@@ -51,7 +51,7 @@ You should provide the URL of the app's GitHub repository as well as any existin
 
 ![](images/shiny/ssh-key.png)
 
-### Develop the app
+### Develop the app{#develop-the-app}
 
 Develop the app in RStudio.
 
@@ -65,7 +65,7 @@ Your app can take one of several forms:
 
 By default, the template contains `server.R` and `ui.R` files, however, you may wish to take a different approach depending on your requirements. For example, using `app.R`, it is possible to deploy R Shiny apps from within a package, as [here](https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20).
 
-### Manage dependencies
+### Manage dependencies{#manage-dependencies}
 
 Most apps will have dependencies on various third-party packages (e.g., `dplyr`). These packages change through time and may not always be backwards-compatible. To avoid compatibility issues and ensure reproducible outputs, it is necessary to use a package management system, such as packrat or conda.
 
@@ -89,7 +89,7 @@ The `disable_authentication` parameter controls whether sign-in (using a link or
 
 When `disable_authentication` is set to `true`, users do not need to go through a sign-in process but can still only access an app using a system specified in `allowed_ip_ranges`. This is a relatively weak security measure, as discussed [here](https://ministryofjustice.github.io/security-guidance/standards/authentication/#ip-addresses). As such, if you wish to disable authentication, you should first discuss this with the Analytical Platform team.
 
-### Create a release in GitHub
+### Create a release in GitHub{#create-release}
 
 When you're ready to share your app, you should create a release in GitHub. When you create a release, this is detected by Concourse, which will automatically begin the build/deploy process for your app. Each time you create a new release, Concourse will create a new build.
 
@@ -100,7 +100,7 @@ When you're ready to share your app, you should create a release in GitHub. When
 5.  Describe the contents of the release.
 6.  Select 'Publish release'.
 
-### Deploy in Concourse
+### Deploy in Concourse{#deploy-in-concourse}
 
 Once you have created a release in GitHub, Concourse should automatically start to deploy your app within a few minutes.
 
@@ -110,11 +110,11 @@ If the app still does not deploy automatically, you can manually trigger a build
 
 For more information about using Concourse, see Section \@ref(build-and-deploy).
 
-### Add users to the app
+### Add users to the app{#add-users}
 
 If `disable_authentication` is set to `false` in the `deploy.json` file, access to the app will be controlled by email address. You can ask the Analytical Platform team to add or remove users to the access list on the [#ap_admin_request](https://asdslack.slack.com/messages/CBLAGCQG6/) Slack channel or by [email](mailto:analytical_platform@digital.justice.gov.uk), if you are a Quantum user.
 
-### Access the app
+### Access the app{#access-the-app}
 
 Your deployed app can be accessed at `repository-name.apps.alpha.mojanalytics.xyz`, where `repository-name` is the name of the relevant GitHub repository.
 
