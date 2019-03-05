@@ -1,10 +1,10 @@
-# Deploying a shiny app
+# Deploying an R Shiny app
 
 ## Basic deployment
 
 ### Summary
 
-In order to deploy a Shiny app, you should follow these steps:
+In order to deploy an R Shiny app, you should follow these steps:
 
 1.  Copy the app template
 2.  Create a new webapp
@@ -52,11 +52,11 @@ Your app can take one of several forms:
 
 1.  A directory containing `server.R`, plus, either `ui.R` or a www directory that contains the file `index.html`.
 2.  A directory containing `app.R`.
-3.  An `.R` file containing a Shiny application, ending with an expression that produces a Shiny app object.
+3.  An `.R` file containing an R Shiny application, ending with an expression that produces an R Shiny app object.
 4.  A list with `ui` and `server` components.
-5.  A Shiny app object created by `shinyApp`.
+5.  an R Shiny app object created by `shinyApp`.
 
-By default, the template contains `server.R` and `ui.R` files, however, you may wish to take a different approach depending on your requirements. For example, using `app.R`, it is possible to deploy Shiny apps from within a package, as [here](https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20).
+By default, the template contains `server.R` and `ui.R` files, however, you may wish to take a different approach depending on your requirements. For example, using `app.R`, it is possible to deploy R Shiny apps from within a package, as [here](https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20).
 
 ### Manage dependencies
 
@@ -125,7 +125,7 @@ A `Dockerfile` reference can be found [here](https://docs.docker.com/engine/refe
 
 ### Common errors
 
-Sometimes, a Shiny app can deploy successfully but result in the following error:
+Sometimes, an R Shiny app can deploy successfully but result in the following error:
 ```{bash error, eval=FALSE}
 An error has occurred
 The application failed to start
@@ -183,9 +183,9 @@ Kibana also has experimental autocomplete and simple syntax tools that you can u
 
 ### Deploying locally
 
-If you have a MacBook, you can use Docker locally to test and troubleshoot your Shiny app. You can download Docker Desktop for Mac [here](https://hub.docker.com/editions/community/docker-ce-desktop-mac).
+If you have a MacBook, you can use Docker locally to test and troubleshoot your R Shiny app. You can download Docker Desktop for Mac [here](https://hub.docker.com/editions/community/docker-ce-desktop-mac).
 
-To build and run your Shiny app locally, follow these steps:
+To build and run your R Shiny app locally, follow these steps:
 
 1.  Clone your app's repository to a new folder on your MacBook. This guarantees that the app will be built using the same code as on the Analytical Platform.
 2.  Open a terminal session and navigate to the directory containing the `Dockerfile`.
