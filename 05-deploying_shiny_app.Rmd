@@ -99,7 +99,7 @@ If the app still does not deploy automatically, you can manually trigger a build
 
 ### Add users to the app
 
-If `disable_authentication` is set to `false` in the `deploy.json` file, access to the app will be controlled by email address. You can ask the Analytical Platform team to add or remove users to the access list on the [[#ap_admin_request Slack channel](https://asdslack.slack.com/messages/CBLAGCQG6/) or by [email](mailto:analytical_platform@digital.justice.gov.uk), if you are a Quantum user.
+If `disable_authentication` is set to `false` in the `deploy.json` file, access to the app will be controlled by email address. You can ask the Analytical Platform team to add or remove users to the app's access list on the [[#ap_admin_request Slack channel](https://asdslack.slack.com/messages/CBLAGCQG6/) or by [email](mailto:analytical_platform@digital.justice.gov.uk), if you are a Quantum user.
 
 ### Access the app
 
