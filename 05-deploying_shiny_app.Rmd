@@ -104,6 +104,8 @@ If your app does not deploy automatically, you should first check that the pipel
 
 If the app still does not deploy automatically, you can manually trigger a build by pressing the `+` icon in the top right corner of Concourse.
 
+For more information about using Concourse, see Section \@ref(build-and-deploy).
+
 ### Add users to the app
 
 If `disable_authentication` is set to `false` in the `deploy.json` file, access to the app will be controlled by email address. You can ask the Analytical Platform team to add or remove users to the access list on the [[#ap_admin_request Slack channel](https://asdslack.slack.com/messages/CBLAGCQG6/) or by [email](mailto:analytical_platform@digital.justice.gov.uk), if you are a Quantum user.
