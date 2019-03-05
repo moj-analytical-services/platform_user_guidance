@@ -169,16 +169,16 @@ If you are having issues with `packrat.lock`, follow these steps:
 All logs from deployed apps can be viewed in [Kibana](https://kibana.services.alpha.mojanalytics.xyz).
 
 To view all app logs:
-1.  select 'Discover' from the left sidebar; then
-2.  select 'Open' from the menu bar; then 
-3.  select 'Application logs (alpha)' from the saved searches.
+1.  select 'Discover' from the left sidebar
+2.  select 'Open' from the menu bar 
+3.  select 'Application logs (alpha)' from the saved searches
 
 To view the logs for a specific app:
-1.  select 'Add a filter'; then
-2.  select 'app_name' as the field; then
-3.  select 'is' as the operator; then
-4.  insert the app name followed by '-webapp' as the value; then
-5.  click 'Save'.
+1.  select 'Add a filter'
+2.  select 'app_name' as the field
+3.  select 'is' as the operator
+4.  insert the app name followed by '-webapp' as the value
+5.  click 'Save'
 
 Log messages are displayed in the 'message' column.
 
