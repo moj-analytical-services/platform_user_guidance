@@ -91,6 +91,8 @@ When `disable_authentication` is set to `true`, users do not need to go through 
 
 ### Create a release in GitHub
 
+When you're ready to share your app, you should create a release in GitHub. When you create a release, this is detected by Concourse, which will automatically begin the build/deploy process for your app. Each time you create a new release, Concourse will create a new build.
+
 1.  To create a release in GitHub, navigate to the app's repository.
 2.  Select 'release' > 'Draft a new release'.
 3.  Choose a tag version for the release. GitHub provides tagging suggestions at the right of the screen that we advise you to follow.
