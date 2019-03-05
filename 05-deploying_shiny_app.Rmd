@@ -79,7 +79,7 @@ You may also wish to run `packrat::clean()` to remove unused packages from the l
 
 The list is stored in a file called `packrat/packrat.lock`. You must ensure that you have committed this file to GitHub before deploying your app.
 
-### Set access permissions
+### Set access permissions{#rshiny-deploy}
 
 You can set some access permissions for your app in the `deploy.json` file that is included with the app template. This file is used by Concourse to detect apps that are ready to build and deploy.
 
