@@ -4,7 +4,7 @@
 
 ### Summary
 
-In order to deploy a Shiny app, you should follow these steps:
+To create and deploy a Shiny app, you should follow these steps:
 
 1.  Copy the app template
 2.  Create a new webapp
