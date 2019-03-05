@@ -67,7 +67,7 @@ By default, the template contains `server.R` and `ui.R` files, however, you may 
 
 ### Manage dependencies
 
-Most apps will have dependencies on various third-party packages. Changes to these packages may not always be backwards-compatible. To avoid compatibility issues and ensure reproducible outputs, it is necessary to use a package management system, such as packrat or conda.
+Most apps will have dependencies on various third-party packages (e.g., `dplyr`). These packages change through time and may not always be backwards-compatible. To avoid compatibility issues and ensure reproducible outputs, it is necessary to use a package management system, such as packrat or conda.
 
 If using packrat, ensure that it is enabled for your project in RStudio.
 
