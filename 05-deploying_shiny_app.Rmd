@@ -81,7 +81,7 @@ The list is stored in a file called `packrat/packrat.lock`. You must ensure that
 
 ### Set access permissions
 
-You can set some access permissions for your app in the `deploy.json` file.
+You can set some access permissions for your app in the `deploy.json` file that is included with the app template. This file is used by Concourse to detect apps that are ready to build and deploy.
 
 The `allowed_ip_ranges` parameter controls where your app can be accessed from. It can take any combination of the following values `["DOM1", "QUANTUM", "102PF WiFi"]` or `["Any"]`.
 
