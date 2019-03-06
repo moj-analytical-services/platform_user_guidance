@@ -14,7 +14,7 @@ You'll receive an email with a verification link - you need to click this before
 ### Enable two-factor authentication on your GitHub account{#two-factor-authentication}
 Once you've signed up to GitHub, you must enable two-factor authentication (2FA) on your GitHub account to enhance security. You can do this from your GitHub [settings page](https://github.com/settings/security).
 
-You are given the option of doing this using SMS, or an authentication app, such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en). We recommend that you use __Authy__ for the following reasons:
+You are given the option of doing this using SMS, or an authentication app on your personal or work phone, such as [Authy](https://authy.com/download/) or [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en). We recommend that you use __Authy__ for the following reasons:
 
 1.  You can sync 2FA tokens across multiple devices, including mobiles, tablets and computers.
 2.  You can create encrypted recovery backups in case you lose your device.
@@ -46,7 +46,7 @@ If you wish to access the platform from another formal HMG technology solution (
 
 You must not access the platform from a non-MOJ device, such as a personal mobile phone or laptop.
 
-When you first access your platform account, you will be asked to set up additional two-factor authentication for the platform itself.  You must do this using an authentication app, as no SMS option is available. For the reasons described in Section \@ref(two-factor-authentication), we recommend that you use [Authy](https://authy.com/download/).
+When you first access your platform account, you will be asked to set up additional two-factor authentication for the platform itself.  You must do this using an authentication app on your personal or work phone, as no SMS option is available. For the reasons described in Section \@ref(two-factor-authentication), we recommend that you use [Authy](https://authy.com/download/).
 
 For step by step instructions on setting up this 2FA, see [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#step-by-step-guide-to-setup-of-two-factor-authentication).
 
