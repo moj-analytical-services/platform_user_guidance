@@ -141,15 +141,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting Started</a><ul>
 <li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#getting-an-account"><i class="fa fa-check"></i><b>2.1</b> Getting an account</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="getting-started.html"><a href="getting-started.html#sign-up-to-github"><i class="fa fa-check"></i><b>2.1.1</b> Sign up to Github</a></li>
-<li class="chapter" data-level="2.1.2" data-path="getting-started.html"><a href="getting-started.html#enable-two-factor-authentication-on-your-github-account"><i class="fa fa-check"></i><b>2.1.2</b> Enable two-factor authentication on your Github account</a></li>
-<li class="chapter" data-level="2.1.3" data-path="getting-started.html"><a href="getting-started.html#email-us-your-github-username"><i class="fa fa-check"></i><b>2.1.3</b> Email us your Github username</a></li>
+<li class="chapter" data-level="2.1.1" data-path="getting-started.html"><a href="getting-started.html#sign-up-to-github"><i class="fa fa-check"></i><b>2.1.1</b> Sign up to GitHub</a></li>
+<li class="chapter" data-level="2.1.2" data-path="getting-started.html"><a href="getting-started.html#two-factor-authentication"><i class="fa fa-check"></i><b>2.1.2</b> Enable two-factor authentication on your GitHub account</a></li>
+<li class="chapter" data-level="2.1.3" data-path="getting-started.html"><a href="getting-started.html#email-us-your-github-username"><i class="fa fa-check"></i><b>2.1.3</b> Email us your GitHub username</a></li>
 <li class="chapter" data-level="2.1.4" data-path="getting-started.html"><a href="getting-started.html#read-the-acceptable-use-policy"><i class="fa fa-check"></i><b>2.1.4</b> Read the acceptable use policy</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#accessing-the-platform"><i class="fa fa-check"></i><b>2.2</b> Accessing the platform</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="getting-started.html"><a href="getting-started.html#accessing-the-platform-1"><i class="fa fa-check"></i><b>2.2.1</b> Accessing the platform</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#configuring-git-and-github-for-use-on-the-analytical-platform"><i class="fa fa-check"></i><b>2.3</b> Configuring Git and Github for use on the Analytical Platform</a><ul>
+<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#configuring-git-and-github-for-use-on-the-analytical-platform"><i class="fa fa-check"></i><b>2.3</b> Configuring Git and GitHub for use on the Analytical Platform</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="getting-started.html"><a href="getting-started.html#instructions"><i class="fa fa-check"></i><b>2.3.1</b> Instructions</a></li>
 <li class="chapter" data-level="2.3.2" data-path="getting-started.html"><a href="getting-started.html#using-git-with-the-analytical-platform"><i class="fa fa-check"></i><b>2.3.2</b> Using Git with the Analytical Platform</a></li>
 </ul></li>
@@ -292,7 +292,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#status-code-502-error-message"><i class="fa fa-check"></i><b>13.3</b> Status Code 502 error message</a></li>
 <li class="chapter" data-level="13.4" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#unable-to-access-data-using-aws.s3-package."><i class="fa fa-check"></i><b>13.4</b> Unable to access data using <code>aws.s3</code> package.</a></li>
 <li class="chapter" data-level="13.5" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#s3toolss3_path_to_full_df-fails-on-excel-file"><i class="fa fa-check"></i><b>13.5</b> <code>s3tools::s3_path_to_full_df()</code> fails on Excel file</a></li>
-<li class="chapter" data-level="13.6" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#two-factor-authentication-problems"><i class="fa fa-check"></i><b>13.6</b> Two Factor Authentication problems</a><ul>
+<li class="chapter" data-level="13.6" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#two-factor-auth-issues"><i class="fa fa-check"></i><b>13.6</b> Two-factor authentication problems</a><ul>
 <li class="chapter" data-level="13.6.1" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#ive-lost-my-platform-2fa"><i class="fa fa-check"></i><b>13.6.1</b> I’ve lost my platform 2FA</a></li>
 <li class="chapter" data-level="13.6.2" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it"><i class="fa fa-check"></i><b>13.6.2</b> I have entered my 2FA code, but the platform will not accept it</a></li>
 </ul></li>
@@ -380,12 +380,12 @@ aws.s3::save_object(&quot;my_excel.xlsx&quot;, &quot;alpha-everyone&quot;, &quot
 <p>Note, it’s best to avoid using <code>aws.s3</code> directly, see <a href="https://github.com/moj-analytical-services/platform_user_guidance/blob/master/05-errors.Rmd#unable-to-access-data-using-awss3-package">here</a></p>
 </div>
 </div>
-<div id="two-factor-authentication-problems" class="section level2">
-<h2><span class="header-section-number">13.6</span> Two Factor Authentication problems</h2>
-<p>Two factor authentication is critical to the security of the platform. We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log in to DOM1.</p>
-<p>Note that there are two layers of two factor authentication (2FA) in action on the platform:</p>
+<div id="two-factor-auth-issues" class="section level2">
+<h2><span class="header-section-number">13.6</span> Two-factor authentication problems</h2>
+<p>Two-factor authentication (2FA) is critical to the security of the platform. We have opted to use smartphone-based authentication apps as hardware tokens, like the RSA device you use to log in to DOM1, are expensive and SMS codes are susceptible to interception.</p>
+<p>Note that there are two layers of 2FA in action on the platform:</p>
 <ul>
-<li><p>Your Github account must have 2FA enabled. When you log in to Github, your session will stay active for a month before you need to re-enter your 2FA code. Your Github username identifies you to the platform, and we use this identity to control access to data and other resources once you’ve logged into the platform. You therefore must be logged into Github to use the platform.</p></li>
+<li><p>Your GitHub account must have 2FA enabled. When you log in to GitHub, your session will stay active for a month before you need to re-enter your 2FA code. Your GitHub username identifies you to the platform, and we use this identity to control access to data and other resources once you’ve logged into the platform. You therefore must be logged into GitHub to use the platform.</p></li>
 <li><p>Your Analytical Platform account has a separate 2FA step. You will be prompted to set this up the first time you access the platform and on subsequent uses, depending on the machine you use and the network it’s connected to:</p>
 <ul>
 <li><p>From a corporate-networked machine (DOM1 or QUANTUM) or corporate wifi (e.g. MoJDigital) then you will not be challenged for this.</p></li>
@@ -393,8 +393,8 @@ aws.s3::save_object(&quot;my_excel.xlsx&quot;, &quot;alpha-everyone&quot;, &quot
 </ul></li>
 </ul>
 <p>This security step lets you log into the platform and use it.</p>
-<p>Whilst you may be prompted to enter your platform 2FA frequently (e.g. when working from home), but you will not need to enter your Github 2FA because this is remembered for a month.</p>
-<p>However, if you have not logged into the platform for more than a month, you will first have to login to Github (and enter your Github 2FA code), and you will then also be prompted to enter your platform 2FA code.</p>
+<p>Whilst you may be prompted to enter your platform 2FA frequently (e.g. when working from home), but you will not need to enter your GitHub 2FA because this is remembered for a month.</p>
+<p>However, if you have not logged into the platform for more than a month, you will first have to login to GitHub (and enter your GitHub 2FA code), and you will then also be prompted to enter your platform 2FA code.</p>
 <div id="ive-lost-my-platform-2fa" class="section level3">
 <h3><span class="header-section-number">13.6.1</span> I’ve lost my platform 2FA</h3>
 <p>If you’ve lost your platform 2FA code because e.g. you’ve broken or lost your phone, please contact the Analytical Platform team and we will reset it for you.</p>
