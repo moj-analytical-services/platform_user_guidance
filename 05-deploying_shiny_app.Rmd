@@ -158,6 +158,10 @@ In general, it is also good practice to:
 *   test your app early and often; and
 *   test using a cloned copy of the app's repository to avoid issues arising as a result of uncomitted local changes.
 
+### App sign-in
+
+Some anti-virus software and spam filters pre-click links in emails, meaning that app sign-in links do work. In this case, you should sign in using a one-time passcode, as described in Section \@ref(access-the-app).
+
 ### Packrat
 
 If you are having issues with `packrat.lock`, follow these steps:
