@@ -124,7 +124,7 @@ When accessing an app, you can choose whether to sign in using an email link (de
 
 ## Advanced deployment
 
-## Editing the Dockerfile
+### Editing the Dockerfile
 
 A `Dockerfile` is a text document that contains all the commands a user could call on the command line to assemble an image.
 
