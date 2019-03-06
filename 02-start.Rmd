@@ -19,7 +19,7 @@ You are given the option of doing this using SMS, or an authentication app, such
 1.  You can sync 2FA tokens across multiple devices, including mobiles, tablets and computers.
 2.  You can create encrypted recovery backups in case you lose your device.
 3.  You can use Touch ID, PIN codes and passwords to protect access to your 2FA tokens.
-4.  You can still access secure websites when you are offline.
+4.  You can still access secure websites when you don't have phone signal.
 
 For step-by-step instructions on setting up 2FA, see the GitHub guidance for [authentication apps](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) or [SMS authentication](https://help.github.com/articles/configuring-two-factor-authentication-via-text-message/).
 
