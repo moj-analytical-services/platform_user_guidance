@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Part 5 Deploying a Shiny App | Platform Guidance</title>
-  <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Part 8 Build and Deploy | Platform Guidance</title>
+  <meta name="description" content="This repository contains user guidance for the Analytical Platform." />
+  <meta name="generator" content="bookdown  and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Part 5 Deploying a Shiny App | Platform Guidance" />
+  <meta property="og:title" content="Part 8 Build and Deploy | Platform Guidance" />
   <meta property="og:type" content="book" />
   
   
@@ -17,23 +16,23 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Part 5 Deploying a Shiny App | Platform Guidance" />
+  <meta name="twitter:title" content="Part 8 Build and Deploy | Platform Guidance" />
   
   <meta name="twitter:description" content="This repository contains user guidance for the Analytical Platform." />
   
 
-<meta name="author" content="MoJ Analytical Services">
+<meta name="author" content="MoJ Analytical Services" />
 
 
-<meta name="date" content="2019-03-01">
+<meta name="date" content="2019-03-06" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="using-github-with-the-platform.html">
-<link rel="next" href="deploying-a-static-web-app.html">
+<link rel="prev" href="data-pipelines.html">
+<link rel="next" href="user-administration.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -203,42 +202,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.6" data-path="using-github-with-the-platform.html"><a href="using-github-with-the-platform.html#view-how-files-have-changed-on-the-platform-and-on"><i class="fa fa-check"></i><b>4.8.6</b> View how files have changed on the platform and on</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html"><i class="fa fa-check"></i><b>5</b> Deploying a Shiny App</a><ul>
-<li class="chapter" data-level="5.1" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#step-by-step-guide-to-deploying-an-app"><i class="fa fa-check"></i><b>5.1</b> Step-by-step guide to deploying an app</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#copy-the-template-project-into-a-new-github-repository"><i class="fa fa-check"></i><b>5.1.1</b> Copy the template project into a new Github repository</a></li>
-<li class="chapter" data-level="5.1.2" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#in-r-studio-in-the-platform-create-a-new-project-from-your-new-github-repository"><i class="fa fa-check"></i><b>5.1.2</b> In R Studio in the platform, create a new project from your new Github repository</a></li>
-<li class="chapter" data-level="5.1.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#work-on-your-app"><i class="fa fa-check"></i><b>5.1.3</b> Work on your app</a></li>
-<li class="chapter" data-level="5.1.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#snapshot-dependencies-using-packrat"><i class="fa fa-check"></i><b>5.1.4</b> Snapshot dependencies using packrat</a></li>
-<li class="chapter" data-level="5.1.5" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#build-and-deploy"><i class="fa fa-check"></i><b>5.1.5</b> Build and deploy</a></li>
-<li class="chapter" data-level="5.1.6" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#grant-app-access"><i class="fa fa-check"></i><b>5.1.6</b> Grant secure access to the app</a></li>
+<li class="chapter" data-level="5" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html"><i class="fa fa-check"></i><b>5</b> Deploying an R Shiny app</a><ul>
+<li class="chapter" data-level="5.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#basic-deployment"><i class="fa fa-check"></i><b>5.1</b> Basic deployment</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#summary"><i class="fa fa-check"></i><b>5.1.1</b> Summary</a></li>
+<li class="chapter" data-level="5.1.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#copy-template"><i class="fa fa-check"></i><b>5.1.2</b> Copy the app template</a></li>
+<li class="chapter" data-level="5.1.3" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#create-webapp"><i class="fa fa-check"></i><b>5.1.3</b> Create a new webapp</a></li>
+<li class="chapter" data-level="5.1.4" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#clone-repo"><i class="fa fa-check"></i><b>5.1.4</b> Clone the repository</a></li>
+<li class="chapter" data-level="5.1.5" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#develop-the-app"><i class="fa fa-check"></i><b>5.1.5</b> Develop the app</a></li>
+<li class="chapter" data-level="5.1.6" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#manage-dependencies"><i class="fa fa-check"></i><b>5.1.6</b> Manage dependencies</a></li>
+<li class="chapter" data-level="5.1.7" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#rshiny-deploy"><i class="fa fa-check"></i><b>5.1.7</b> Set access permissions</a></li>
+<li class="chapter" data-level="5.1.8" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#create-release"><i class="fa fa-check"></i><b>5.1.8</b> Create a release in GitHub</a></li>
+<li class="chapter" data-level="5.1.9" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#deploy-in-concourse"><i class="fa fa-check"></i><b>5.1.9</b> Deploy in Concourse</a></li>
+<li class="chapter" data-level="5.1.10" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#add-users"><i class="fa fa-check"></i><b>5.1.10</b> Add users to the app</a></li>
+<li class="chapter" data-level="5.1.11" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#access-the-app"><i class="fa fa-check"></i><b>5.1.11</b> Access the app</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#accessing-the-app"><i class="fa fa-check"></i><b>5.2</b> Accessing the app</a></li>
-<li class="chapter" data-level="5.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#addingremoving-people-from-the-list-of-users"><i class="fa fa-check"></i><b>5.3</b> Adding/removing people from the list of users</a></li>
-<li class="chapter" data-level="5.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#advanced-deployment"><i class="fa fa-check"></i><b>5.4</b> Advanced deployment</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#what-is-run-when-i-deploy-a-shiny-app"><i class="fa fa-check"></i><b>5.4.1</b> What is run when I deploy a Shiny app?</a></li>
-<li class="chapter" data-level="5.4.2" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#can-i-change-my-build"><i class="fa fa-check"></i><b>5.4.2</b> Can I change my build?</a></li>
-<li class="chapter" data-level="5.4.3" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#diagnosing-problems---logs-provided-by-kibana"><i class="fa fa-check"></i><b>5.4.3</b> Diagnosing problems - logs provided by Kibana</a></li>
-<li class="chapter" data-level="5.4.4" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#fixing-common-problems"><i class="fa fa-check"></i><b>5.4.4</b> Fixing common problems</a></li>
-<li class="chapter" data-level="5.4.5" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#troubleshooting-using-docker-installed-locally-on-a-macbook"><i class="fa fa-check"></i><b>5.4.5</b> Troubleshooting using Docker (installed locally on a Macbook)</a></li>
-<li class="chapter" data-level="5.4.6" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#if-all-else-fails"><i class="fa fa-check"></i><b>5.4.6</b> If all else fails…</a></li>
-<li class="chapter" data-level="5.4.7" data-path="deploying-a-shiny-app.html"><a href="deploying-a-shiny-app.html#some-problems-weve-encountered-and-their-solutions"><i class="fa fa-check"></i><b>5.4.7</b> Some problems we’ve encountered and their solutions</a></li>
+<li class="chapter" data-level="5.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#advanced-deployment"><i class="fa fa-check"></i><b>5.2</b> Advanced deployment</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#editing-the-dockerfile"><i class="fa fa-check"></i><b>5.2.1</b> Editing the Dockerfile</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#troubleshooting"><i class="fa fa-check"></i><b>5.3</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#common-errors"><i class="fa fa-check"></i><b>5.3.1</b> Common errors</a></li>
+<li class="chapter" data-level="5.3.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#app-sign-in"><i class="fa fa-check"></i><b>5.3.2</b> App sign-in</a></li>
+<li class="chapter" data-level="5.3.3" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#packrat"><i class="fa fa-check"></i><b>5.3.3</b> Packrat</a></li>
+<li class="chapter" data-level="5.3.4" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#kibana"><i class="fa fa-check"></i><b>5.3.4</b> Kibana</a></li>
+<li class="chapter" data-level="5.3.5" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#deploying-locally"><i class="fa fa-check"></i><b>5.3.5</b> Deploying locally</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html"><i class="fa fa-check"></i><b>6</b> Deploying a Static Web App</a><ul>
 <li class="chapter" data-level="6.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#step-by-step-guide-to-depolying-an-static-web-app"><i class="fa fa-check"></i><b>6.1</b> Step-by-step guide to depolying an static web app</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#copy-the-template-project-into-a-new-github-repository-1"><i class="fa fa-check"></i><b>6.1.1</b> Copy the template project into a new Github repository</a></li>
+<li class="chapter" data-level="6.1.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#copy-the-template-project-into-a-new-github-repository"><i class="fa fa-check"></i><b>6.1.1</b> Copy the template project into a new Github repository</a></li>
 <li class="chapter" data-level="6.1.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#in-your-chosen-development-enviroment-clone-the-git-repository"><i class="fa fa-check"></i><b>6.1.2</b> In your chosen development enviroment, clone the git repository</a></li>
 <li class="chapter" data-level="6.1.3" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#work-on-your-web-app"><i class="fa fa-check"></i><b>6.1.3</b> Work on your web app</a></li>
 <li class="chapter" data-level="6.1.4" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#scan-organisation-and-deploy"><i class="fa fa-check"></i><b>6.1.4</b> Scan organisation and deploy</a></li>
 <li class="chapter" data-level="6.1.5" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#grant-secure-access-to-the-app"><i class="fa fa-check"></i><b>6.1.5</b> Grant secure access to the app</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#accessing-the-app-1"><i class="fa fa-check"></i><b>6.2</b> Accessing the app</a></li>
+<li class="chapter" data-level="6.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#accessing-the-app"><i class="fa fa-check"></i><b>6.2</b> Accessing the app</a></li>
 <li class="chapter" data-level="6.3" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#advanced-deployment-1"><i class="fa fa-check"></i><b>6.3</b> Advanced deployment</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#can-i-change-my-build-1"><i class="fa fa-check"></i><b>6.3.1</b> Can I change my build?</a></li>
+<li class="chapter" data-level="6.3.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#can-i-change-my-build"><i class="fa fa-check"></i><b>6.3.1</b> Can I change my build?</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-pipelines.html"><a href="data-pipelines.html"><i class="fa fa-check"></i><b>7</b> Data pipelines</a><ul>
-<li class="chapter" data-level="7.1" data-path="data-pipelines.html"><a href="data-pipelines.html#summary"><i class="fa fa-check"></i><b>7.1</b> Summary</a></li>
+<li class="chapter" data-level="7.1" data-path="data-pipelines.html"><a href="data-pipelines.html#summary-1"><i class="fa fa-check"></i><b>7.1</b> Summary</a></li>
 <li class="chapter" data-level="7.2" data-path="data-pipelines.html"><a href="data-pipelines.html#concepts"><i class="fa fa-check"></i><b>7.2</b> Concepts</a></li>
 <li class="chapter" data-level="7.3" data-path="data-pipelines.html"><a href="data-pipelines.html#set-up-a-pipeline"><i class="fa fa-check"></i><b>7.3</b> Set up a pipeline</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="data-pipelines.html"><a href="data-pipelines.html#task-repository"><i class="fa fa-check"></i><b>7.3.1</b> Task repository</a></li>
@@ -248,9 +251,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.5" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-web-interface"><i class="fa fa-check"></i><b>7.3.5</b> Airflow web interface</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="build-and-deploy-1.html"><a href="build-and-deploy-1.html"><i class="fa fa-check"></i><b>8</b> Build and Deploy</a><ul>
-<li class="chapter" data-level="8.1" data-path="build-and-deploy-1.html"><a href="build-and-deploy-1.html#deploy.json-2"><i class="fa fa-check"></i><b>8.1</b> deploy.json</a></li>
-<li class="chapter" data-level="8.2" data-path="build-and-deploy-1.html"><a href="build-and-deploy-1.html#starting-a-builddeploy"><i class="fa fa-check"></i><b>8.2</b> Starting a build/deploy</a></li>
+<li class="chapter" data-level="8" data-path="build-and-deploy.html"><a href="build-and-deploy.html"><i class="fa fa-check"></i><b>8</b> Build and Deploy</a><ul>
+<li class="chapter" data-level="8.1" data-path="build-and-deploy.html"><a href="build-and-deploy.html#deploy.json-1"><i class="fa fa-check"></i><b>8.1</b> deploy.json</a></li>
+<li class="chapter" data-level="8.2" data-path="build-and-deploy.html"><a href="build-and-deploy.html#starting-a-builddeploy"><i class="fa fa-check"></i><b>8.2</b> Starting a build/deploy</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="user-administration.html"><a href="user-administration.html"><i class="fa fa-check"></i><b>9</b> User Administration</a><ul>
 <li class="chapter" data-level="9.1" data-path="user-administration.html"><a href="user-administration.html#teams-and-data-access-groups"><i class="fa fa-check"></i><b>9.1</b> Teams and data access groups</a></li>
@@ -273,7 +276,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="information-governance.html"><a href="information-governance.html#reporting-security-incidents"><i class="fa fa-check"></i><b>11.3</b> Reporting security incidents</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="how-to-get-support.html"><a href="how-to-get-support.html"><i class="fa fa-check"></i><b>12</b> How to get Support</a><ul>
-<li class="chapter" data-level="12.1" data-path="how-to-get-support.html"><a href="how-to-get-support.html#summary-1"><i class="fa fa-check"></i><b>12.1</b> Summary</a></li>
+<li class="chapter" data-level="12.1" data-path="how-to-get-support.html"><a href="how-to-get-support.html#summary-2"><i class="fa fa-check"></i><b>12.1</b> Summary</a></li>
 <li class="chapter" data-level="12.2" data-path="how-to-get-support.html"><a href="how-to-get-support.html#intro"><i class="fa fa-check"></i><b>12.2</b> Intro</a></li>
 <li class="chapter" data-level="12.3" data-path="how-to-get-support.html"><a href="how-to-get-support.html#routes-of-support"><i class="fa fa-check"></i><b>12.3</b> Routes of Support</a><ul>
 <li class="chapter" data-level="12.3.1" data-path="how-to-get-support.html"><a href="how-to-get-support.html#platform-support"><i class="fa fa-check"></i><b>12.3.1</b> Platform Support</a></li>
@@ -323,240 +326,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="deploying-a-shiny-app" class="section level1">
-<h1><span class="header-section-number">Part 5</span> Deploying a Shiny App</h1>
-<p>The following sumamrizes the steps to deploy a Shiny app are as follows:</p>
-<ol style="list-style-type: decimal">
-<li>Copy the <a href="https://github.com/moj-analytical-services/rshiny-example">template project</a> within Github to a new repository, with a name of your choice.</li>
-<li>In R Studio, checkout this copy (file -&gt; new project -&gt; version control -&gt; git). (TODO: Remember to make sure the template has a Rproj that enables packrat)</li>
-<li>Work on your Shiny app, using the template <code>ui.R</code> and <code>server.R</code> files.</li>
-<li>Ensure that packrat is enabled and your package dependencies are snapshotted using <code>packrat::snapshot()</code></li>
-<li>Set the desired access permissions in <code>deploy.json</code> (i.e. whether it should be available for DOM1, Quantum, or external).</li>
-<li>When you’re ready to share it, in GitHub create a ‘release’ and it will deploy in a few minutes.</li>
-<li>Ask the Platform team to add and remove users from your app in the <a href="https://asdslack.slack.com/messages/CBLAGCQG6/">#ap_admin_request</a> Slack channel.</li>
-</ol>
-<p>Step-by-step instructions are below.</p>
-<div id="step-by-step-guide-to-deploying-an-app" class="section level2">
-<h2><span class="header-section-number">5.1</span> Step-by-step guide to deploying an app</h2>
-<div id="copy-the-template-project-into-a-new-github-repository" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Copy the template project into a new Github repository</h3>
-<ol style="list-style-type: decimal">
-<li><p>Begin by making a <strong>copy</strong> of the R Shiny template project on Github: <a href="https://github.com/new/import" class="uri">https://github.com/new/import</a>.</p></li>
-<li><p>Enter <code>https://github.com/moj-analytical-services/rshiny-template</code> in the input box entitled ‘your old repository’s clone URL:’</p></li>
-<li><p>Ensure the ‘owner’ of the new repository is ‘moj-analytical-services’ and choose a name for your repository:</p></li>
-<li><p>Make sure the repo is ‘private’ (this should be the default value):</p></li>
-<li><p>Click ‘Begin import’</p></li>
-</ol>
-<p><img src="images/shiny/github_shiny_import.gif" /></p>
-</div>
-<div id="in-r-studio-in-the-platform-create-a-new-project-from-your-new-github-repository" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> In R Studio in the platform, create a new project from your new Github repository</h3>
-<p>In R Studio, navigate through the following menus:</p>
-<p>File -&gt; New project -&gt; Version control -&gt; Git</p>
-<p><img src="images/shiny/github_shiny_rstudio.gif" /></p>
-<p>In ‘Repository URL’, enter the URL of the repository you just created. This needs to be the SSH URL (starting with <code>git@github</code>), <strong>NOT</strong> the HTTPS url (which starts with <code>https</code>). Therefore, it is in the following format:</p>
-<pre><code>git@github.com:moj-analytical-services/your_name_goes_here.git</code></pre>
-<p>R Studio will create a new project folder with all the template files in.</p>
-<p>You can now start building your Shiny app by editing <code>server.R</code> and <code>ui.R</code> files.</p>
-<div id="further-notes-if-youre-having-trouble-finding-your-new-repos-url" class="section level4">
-<h4><span class="header-section-number">5.1.2.1</span> Further notes if you’re having trouble finding your new repo’s url</h4>
-<p>If you navigate to your new repository’s home page (which will have a url in the form <code>https://github.com/moj-analytical-services/your_name_goes_here</code>), you can use the following buttons to access this url (make sure you click the ‘ssh’ button):</p>
-<p><img src="images/shiny/use_ssh.PNG" /></p>
-<p><img src="images/shiny/ssh_url.PNG" /></p>
-</div>
-</div>
-<div id="work-on-your-app" class="section level3">
-<h3><span class="header-section-number">5.1.3</span> Work on your app</h3>
-<p>You can now work on your Shiny app in R Studio as normal. As you work, commit your changes to Github using your chosen Github workflow.</p>
-</div>
-<div id="snapshot-dependencies-using-packrat" class="section level3">
-<h3><span class="header-section-number">5.1.4</span> Snapshot dependencies using packrat</h3>
-<p>Your Shiny app will have dependencies on various third-party R packages (e.g. <code>dplyr</code>). These packages change through time, and sometimes these changes are not backwards compatible. When we deploy your Shiny app, it is therefore essential to include a manifest of all of the package dependencies and their specific versions.</p>
-<p>The R package<code>packrat</code> automates this process. Before deploying your app, you need to call <code>packrat::snapshot()</code> to automatically create this manifest. You may want to call <code>packrat::clean()</code> to remove any dependencies that are no longer in use.</p>
-<p>This creates a file called <code>packrat/packrat.lock</code>. You need to ensure you have committed this to the Github repository prior to deployment.</p>
-<p><img src="images/shiny/github_packrat_snapshot.gif" /></p>
-</div>
-<div id="build-and-deploy" class="section level3">
-<h3><span class="header-section-number">5.1.5</span> Build and deploy</h3>
-<p>Include a <code>deploy.json</code> file so that Concourse will automatically build and deploy your app, so that it is running and customers can access it. For more about this see: <a href="https://moj-analytical-services.github.io/platform_user_guidance/build-and-deploy.html">Build and deploy guidance</a></p>
-</div>
-<div id="grant-app-access" class="section level3">
-<h3><span class="header-section-number">5.1.6</span> Grant secure access to the app</h3>
-<p>To grant access to someone, in the <a href="https://cpanel-master.services.dev.mojanalytics.xyz/#Webapps">Control Panel’s Wepapps tag</a> find your App and click “Manage App”. In the ‘App customers’ section you can let people view your app by putting one or more email addresses in the text box and clicking “Add customer”.</p>
-<p>You can also let anyone access it by setting <code>&quot;disable_authentication&quot;: true</code> in the <code>deploy.json</code> and redeploying it - see above.</p>
-<p><strong>Note</strong> that users can only access the app from a computer on a specified corporate network. These are defined in the <code>deploy.json</code> under the parameter <code>allowed_ip_ranges</code> - see below.</p>
-<div id="deploy.json" class="section level4">
-<h4><span class="header-section-number">5.1.6.1</span> deploy.json</h4>
-<table>
-<colgroup>
-<col width="56%" />
-<col width="43%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>parameter</th>
-<th>notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>allowed_ip_ranges</code></td>
-<td>e.g. <code>[&quot;DOM1&quot;, &quot;QUANTUM&quot;, &quot;102PF Wifi&quot;]</code> or <code>[&quot;Any&quot;]</code></td>
-</tr>
-<tr class="even">
-<td><code>disable_authentication</code></td>
-<td>To let anyone access the app, set this to <code>true</code>, otherwise <code>false</code> restricts it to people authorized for the app in the Control Panel</td>
-</tr>
-</tbody>
-</table>
-<p>If you deployed with authentication enabled users are granted access to the app using a list of email addresses separated with a space, comma or semicolon.</p>
-<p>Changes to deploy.json only take effect when committed to GitHub, a Release is created and the deploy is successful (see <a href="deploying-a-static-web-app.html#scan-organisation-and-deploy">Scan organisation and deploy</a>)</p>
-</div>
-</div>
-</div>
-<div id="accessing-the-app" class="section level2">
-<h2><span class="header-section-number">5.2</span> Accessing the app</h2>
-<p>Depending on the <code>disable_authentication</code> setting, the website will either be available directly or authenticated via email. The URL for the app will be the <code>respository-name</code> followed by <code>apps.alpha.mojanalytics.xyz</code>.</p>
-<p>So for the example project above “test-shiny-project”, the deployment URL will be <code>https://test-shiny-project.apps.alpha.mojanalytics.xyz</code>.</p>
-<p>Note that characters that are not compatible with website URLs are converted. So, repositories with underscores in their name (e.g. <code>repository_name.apps...</code>) will be converted to dashes for the URL (e.g. <code>repository_name.apps...</code>).</p>
-<p>Users will be prompted to enter their email and, if they are on the approved list, be sent a access link to view the app.</p>
-<p><img src="images/shiny/shiny_app_auth.gif" /></p>
-</div>
-<div id="addingremoving-people-from-the-list-of-users" class="section level2">
-<h2><span class="header-section-number">5.3</span> Adding/removing people from the list of users</h2>
-<p>If email authentication is enabled in you <code>deploy.json</code> file (this is the default setting), then the user list starts with no-one on it. Users cannot currently modify this list themselves, so you will need to request changes on the <a href="https://asdslack.slack.com/messages/CBLAGCQG6/">#ap_admin_request</a> Slack channel.</p>
-</div>
-<div id="advanced-deployment" class="section level2">
-<h2><span class="header-section-number">5.4</span> Advanced deployment</h2>
-<p>This section contains guidance for advanced users on app deployment.</p>
-<div id="what-is-run-when-i-deploy-a-shiny-app" class="section level3">
-<h3><span class="header-section-number">5.4.1</span> What is run when I deploy a Shiny app?</h3>
-<p>When you deploy an app, the R Shiny server runs <code>shiny::runApp()</code> within the project. This is equivalent to when you press ‘run’ in a R Shiny project within R Studio.</p>
-<p>To understand how you can use this to deploy apps of different types, we can refer to the <code>runApp</code> <a href="https://shiny.rstudio.com/reference/shiny/latest/runApp.html">docs</a>. Specifically, the ‘arguments’ section is useful:</p>
-<pre><code>Arguments
-    appDir  The application to run. Should be one of the following:
-        A directory containing server.R, plus, either ui.R or a www directory that contains the file index.html.
-        A directory containing app.R.
-        An .R file containing a Shiny application, ending with an expression that produces a Shiny app object.
-        A list with ui and server components.
-        A Shiny app object created by shinyApp.</code></pre>
-<p>One of those options is <code>A directory containing app.R.</code>, which should contain: <code>An .R file containing a Shiny application, ending with an expression that produces a Shiny app object.</code>.</p>
-<p>This gives the developer a wider range of options of how to deploy a Shiny app, and makes it possible to deploy shiny apps that are bundled into pre-existing packages e.g. see <a href="https://github.com/RobinL/costmodelr/blob/b328902026bd1cce5d17b487e310c59725ea4d62/R/shiny_explorer.r#L20">here</a>.</p>
-</div>
-<div id="can-i-change-my-build" class="section level3">
-<h3><span class="header-section-number">5.4.2</span> Can I change my build?</h3>
-<p>Yes - if you know Docker, you are welcome to change the
-<a href="https://github.com/moj-analytical-services/rshiny-template/blob/master/Dockerfile">Dockerfile</a>.</p>
-<p>Deployment will usually work so long as your app serves HTTP on port 80. Note that the app doesn’t have to be a Shiny app.</p>
-</div>
-<div id="diagnosing-problems---logs-provided-by-kibana" class="section level3">
-<h3><span class="header-section-number">5.4.3</span> Diagnosing problems - logs provided by Kibana</h3>
-<p>To view the app’s log messages, see the <a href="https://kibana.services.alpha.mojanalytics.xyz/login">Kibana dashboard</a>:</p>
-<ol style="list-style-type: decimal">
-<li>In the left hand nav bar, click “Discover”</li>
-<li>On the top bar, click “Open” then click “Application logs (alpha”. This quickly sets up your view:
+<div id="build-and-deploy" class="section level1">
+<h1><span class="header-section-number">Part 8</span> Build and Deploy</h1>
+<p><strong>Concourse</strong> is the Analytical Platform service that automatically builds and deploys R Shiny apps, Web apps and Airflow data pipelines. This is also known as ‘continuous integration’ and ‘continuous deployment’ (CI/CD).</p>
+<div id="deploy.json-1" class="section level2">
+<h2><span class="header-section-number">8.1</span> deploy.json</h2>
+<p>Concourse automatically scans git repositories in the <a href="https://github.com/moj-analytical-services/">moj-analytical-services</a> Github organisation to find repos that are ready to build/deploy. It does this by checking whether repositories contains a ‘magic’ file (on the <code>master</code> branch) that controls the build/deploy: <code>deploy.json</code>. The scan happens every 24 hours, or sooner if a <a href="https://github.com/moj-analytical-services">repo in moj-analytical-services</a> is tagged with a release on GitHub (or if it is urgent it can be triggered by an admin).</p>
+<p>For the format of deploy.json, see the relevant subject:</p>
 <ul>
-<li>index: &quot;logstash-apps-alpha-*&quot; - i.e. logs from app, because Kibana includes logs from other software elsewhere in the Analytical Platform</li>
-<li>field: “message” to display the log messages, rather than all the other data that’s logged</li>
-<li>field: “time_nano” also displayed and sorted, so they are displayed in order</li>
+<li><a href="deploying-an-r-shiny-app.html#rshiny-deploy">R Shiny app</a></li>
+<li><a href="https://moj-analytical-services.github.io/platform_user_guidance/deploying-a-static-web-app.html#deploy.json-1">Web app</a></li>
+<li><a href="https://moj-analytical-services.github.io/platform_user_guidance/data-pipelines.html#deploy.json">Airflow pipeline</a></li>
+</ul>
+<p>Changes to deploy.json only take effect when committed to GitHub (master branch), a Release is created and the deploy is successful (see <a href="deploying-a-static-web-app.html#scan-organisation-and-deploy">Scan organisation and deploy</a>).</p>
+</div>
+<div id="starting-a-builddeploy" class="section level2">
+<h2><span class="header-section-number">8.2</span> Starting a build/deploy</h2>
+<p>To trigger a Concourse build/deploy, make sure your code is committed and pushed to GitHub and then <a href="https://help.github.com/articles/creating-releases/">create a release on GitHub</a>. Call the first release <code>v0.0.1</code>, then <code>v0.0.2</code> etc. The version should always go up in number, or it won’t build. It’s good practise to use <a href="https://semver.org/">semantic versioning</a>.</p>
+<p>Your task appears in Concourse within 30 seconds. Find it in Concourse to start it as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Open Concourse: <a href="https://concourse.services.alpha.mojanalytics.xyz/" class="uri">https://concourse.services.alpha.mojanalytics.xyz/</a></li>
+<li>Select team ‘main’.</li>
+<li>Click ‘login with ap-main’ followed by your GitHub login and possibly 2FA for GitHub and possibly 2FA for AP.</li>
+<li>Click the hamburger icon: <img src="images/build_and_deploy/concourse_menu.png" /> (top-left) to see the list of repos that can be built.</li>
+<li>Click your repo name to see its diagram with the big ‘Deploy’ box in the middle, inputs and outputs.</li>
+<li>Click on the ‘deploy’ box to see details of its builds. You can see previous builds (numbered - e.g. “8 7 6 5 4 3 2 1”). The colour of the build number box gives the status:
+<ul>
+<li>Grey = paused or pending</li>
+<li>Yellow = in progress</li>
+<li>Green = built ok</li>
+<li>Red = build failed</li>
 </ul></li>
-<li>Click “Add a filter+”. Fill in the form:
-<ul>
-<li>Field: <code>app_name</code></li>
-<li>Operator: “is”</li>
-<li>Value: your app name, appended with <code>-webapp</code> e.g. <code>prison-network-app-webapp</code>
-Now: Save.</li>
-</ul></li>
-<li>If it says “No results match your search criteria” it could well be because the timeframe defaults to the last 15 minutes. Try changing it by clicking on “Last 15 minutes” in the top right.</li>
+<li>To start the job (this first time): Click <em>play</em> (on the left, against your repo name) AND the “<em>+</em>”:
+<img src="images/build_and_deploy/concourse_new_build.png" />
+It should go grey (pending)
+<img src="images/build_and_deploy/concourse_pending.png" />
+After 30 seconds it should got yellow (building). If it does not go yellow, check the task is not paused (and possibly the job itself is paused) - press play if is showing.
+<img src="images/build_and_deploy/concourse_in_progress.png" />
+It will build/deploy, taking 5 minutes to an hour. You can track progress and see any errors like this:
+<img src="images/build_and_deploy/concourse_error.png" /></li>
 </ol>
-<p>You log messages are shown in the message column:
-<img src="images/shiny/kibana-logs.png" /></p>
-<p>Kibana tip:
-* The search box has some helpful features like autocomplete which you can switch on. To do this, click “Options” (found inside the search box on the right-hand side) and then enable “Turn on query features”.</p>
-</div>
-<div id="fixing-common-problems" class="section level3">
-<h3><span class="header-section-number">5.4.4</span> Fixing common problems</h3>
-<p>Here are some tips to fix/reduce problems:</p>
-<ol style="list-style-type: decimal">
-<li>Test early and often by deploying work in progress rather that building an entire app and testing</li>
-<li>Explicitly reference all packages (e.g. <code>shiny::hr()</code> rather than <code>hr()</code>. This is particularly important if you’re using loads of packages.</li>
-<li>If you’re having problems, delete everything in <code>packrat/</code> and re-run <code>packrat::init()</code>.</li>
-<li>The most useful logs which Shiny produces are in Kibana. You can also access them by locally building Docker on your mac, but it’s a bit of a faff.</li>
-<li>Try to minimise the number of packages you’re using, each additional package is another source of problems</li>
-<li>When testing, clone the repo to another folder and test the cloned code. This guarantees that the code you’re testing is the same code which will be deployed on the platform</li>
-</ol>
-<p>If you’re still having problems, you can deploy the app locally using Docker.</p>
-</div>
-<div id="troubleshooting-using-docker-installed-locally-on-a-macbook" class="section level3">
-<h3><span class="header-section-number">5.4.5</span> Troubleshooting using Docker (installed locally on a Macbook)</h3>
-<p>Docker enables us to fully specify a computing environment (an operating system and the software installed on that system). This allows us to test and troubleshoot our Shiny app in Docker on our Macbooks. If it runs in Docker on the Macbook, it will also run on the platform, because Docker guarantees the computing environments will be the same.</p>
-<p>This guarantee only applies if we build the Docker image from exactly the same code (the same Shiny code, and the same Dockerfile).</p>
-<p>When we deploy a Shiny app on the platform, the following steps take place:</p>
-<ul>
-<li>The platform clones your git repository</li>
-<li>The platform runs docker build on the resultant code</li>
-<li>The platform runs resultant the docker image.</li>
-</ul>
-<p><strong>To test your Shiny app in Docker on your Macbook, we highly recommend that you <code>git clone</code> your repository to a new folder on your macbook. This guarantees that the code used to build your Docker image is exactly the same code that is checked into github. If you build from your local working copy, your build may rely on local modifications to files which you haven’t committed to github, and therefore may differ from what is built on the platform.</strong></p>
-<p>The following provides more detailed instructions.</p>
-<p>First <code>cd</code> into the directory containing the Dockerfile. Then run:</p>
-<p><code>docker build . -t your_name_here</code> (<code>your_name_here</code> is the tag you want to give to the image)</p>
-<p>By building the image, it will test the installation of the packrat dependencies and package your shiny app into a Linux environment identical to what’s on the platform.</p>
-<p>Remember to refresh Docker if you are re-building a previously built app in the directory (the previous build will show when you view the app otherwise).</p>
-<p>Run the Shiny server in a linux container with
-<code>docker run -p 80:80 your_name_here</code></p>
-<p>You can then go to <a href="http://127.0.0.1:80" class="uri">http://127.0.0.1:80</a> to see if the app is working.</p>
-<p>If it is not, you can investigate what’s going on in the server using:</p>
-<p><code>docker run -it -p 80:80 your_name_here bash</code></p>
-<p>Note this will start a bash session in the container, but it will not start the shiny server. i.e. it starts bash <em>instead</em> of running <code>/bin/shiny-server.sh</code>.</p>
-<p>We can then configure logging in the container, before starting the shiny server as follows:</p>
-<p>Install the nano text editor:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">apt-get</span> update
-<span class="ex">apt-get</span> install nano</code></pre>
-<p>Then edit the config file at <code>nano /etc/shiny-server/shiny-server.conf</code> to add the following two lines at the beginning:</p>
-<pre><code>access_log /var/log/shiny-server/access.log tiny;
-preserve_logs true;</code></pre>
-<p>Save by pressing <code>[CTRL]+[O]</code> and then exit with <code>[CTRL]+[X]</code>.</p>
-<p>Finally change the log level to be more verbose and start the shiny server:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">SHINY_LOG_LEVEL=</span>TRACE
-<span class="ex">/bin/shiny-server.sh</span></code></pre>
-<p>For further details see the <a href="http://docs.rstudio.com/shiny-server">rshiny-server documetation</a></p>
-<p>Now we need another terminal window, to get back into the docker container</p>
-<p><code>docker ps</code> to find the name of the container and then</p>
-<p><code>docker exec -it container_name bash</code></p>
-<p>Logs are then written to <code>cd /var/log/shiny-server/</code></p>
-</div>
-<div id="if-all-else-fails" class="section level3">
-<h3><span class="header-section-number">5.4.6</span> If all else fails…</h3>
-<p>Sometimes, the following steps can resolve problems with <code>packrat.lock</code>:</p>
-<ul>
-<li>Delete the entire <code>packrat</code> directory</li>
-<li>Comment out all code in the project</li>
-<li>Enable packrat with <code>packrat::init()</code></li>
-<li>Freeze packrat dependencies with <code>packrat::snapshot()</code></li>
-<li>Uncomment all code in project, and install dependencies one at a time using <code>install.packages()</code></li>
-<li><code>packrat::snapshot()</code> again</li>
-<li>Try redeploying</li>
-</ul>
-</div>
-<div id="some-problems-weve-encountered-and-their-solutions" class="section level3">
-<h3><span class="header-section-number">5.4.7</span> Some problems we’ve encountered and their solutions</h3>
-<div id="shiny-app-deploys-successfully-but-application-failed-to-start-error-occurs" class="section level4">
-<h4><span class="header-section-number">5.4.7.1</span> Shiny app deploys successfully, but ‘application failed to start’ error occurs</h4>
-<p>Sometimes, your Shiny app deploys successfully but you get the following error:</p>
-<pre><code>An error has occurred
-The application failed to start.
+<p>Subsequent build/deploys are started about 5 seconds after doing a GitHub release (unless someone pressed the pause button on the Concourse task). You have to refresh Concourse in your browser to see a fresh build.</p>
 
-The application exited during initialization.</code></pre>
-<p>This is a generic error which means that there is an error in your R code or there are missing packages (e.g. your code includes references to packages which aren’t in your <code>packrat.lock</code>.</p>
-<p>Try the following two steps:</p>
-<ul>
-<li>Make sure you’ve run <code>packrat::snapshot()</code> and committed the resultant <code>packrat.lock</code> file to Github</li>
-<li>We’ve encountered issues due to ambiguous references to function calls. Make sure that function calls include the full reference (e.g. <code>shiny::hr()</code> rather than just <code>hr()</code>). For an example of this type of problems, see <a href="https://stackoverflow.com/questions/33408878/shinyapps-shinythemes-package-not-loading-when-deployed-on-shinyapps-io">here</a></li>
-</ul>
-
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -564,8 +375,8 @@ The application exited during initialization.</code></pre>
           </div>
         </div>
       </div>
-<a href="using-github-with-the-platform.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="deploying-a-static-web-app.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-pipelines.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="user-administration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
