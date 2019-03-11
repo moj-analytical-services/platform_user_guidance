@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Part 14 Annexes | Platform Guidance</title>
+  <title>A Conda Package Management | Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform." />
   <meta name="generator" content="bookdown  and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Part 14 Annexes | Platform Guidance" />
+  <meta property="og:title" content="A Conda Package Management | Platform Guidance" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Part 14 Annexes | Platform Guidance" />
+  <meta name="twitter:title" content="A Conda Package Management | Platform Guidance" />
   
   <meta name="twitter:description" content="This repository contains user guidance for the Analytical Platform." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="common-errors-and-solutions.html">
-<link rel="next" href="conda-package-management.html">
+<link rel="prev" href="annexes.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -344,119 +344,147 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="annexes" class="section level1">
-<h1><span class="header-section-number">Part 14</span> Annexes</h1>
-<div id="memory-limits" class="section level2">
-<h2><span class="header-section-number">14.1</span> Memory limits</h2>
-<p>All the software running on the Analytical Platform has its memory controlled. Each running software container has a minimum and maximum amount available. Here’s an explanation of the key terms:</p>
-<ul>
-<li>‘memory’ is needed for your app and code, but the limiting factor is usually the data that you ‘load into memory’. Data is in memory if it is assigned to a variable, which includes a data frame.</li>
-<li>a ‘container’ is for one user’s instance of a tool (e.g. Sandra’s R Studio or Bob’s Jupyter) or app (e.g. the PQ Shiny App or the KPIs Web App).</li>
-<li>‘Minimum memory’ is the amount the container is guaranteed. It is reserved for it.</li>
-<li>‘Maximum memory’ may be available, but your container is competing for this memory with other containers on the server it happens to be running on. If you try to use more than is available or more than the Maximum then your container will be restarted.</li>
-</ul>
-<p>e.g. Sandra runs her code in R Studio, which loads 8GB of data into a data frame, and she sees in Grafana that this takes 10GB of memory. This is above the minimum of 5GB, and because the servers aren’t too busy the extra 5GB are available. Later the server that her R Studio container is running on happens to get full and when she tries to do something that needs another 1GB memory (i.e. total 11GB) she finds that R Studio restarts, interrupting her work for a few minutes. She restarts her code, but because her R Studio now happens to be running on a different server that is less busy, she finds she can run her code and use 11GB fine.</p>
-<p>You can monitor your memory usage using <a href="https://grafana.services.alpha.mojanalytics.xyz/login">Grafana</a> (there is also a link from the Control Panel). Scroll down to “User RAM usage” and you can click on your name to just show yours. Also useful is to adjust the time period from being the “Last 1 hour”, by clicking on the label at the top-right corner.</p>
-<p><img src="images/annexes/ram-usage.png" /></p>
-<p>Current memory limits:</p>
+<div id="conda-package-management" class="section level1">
+<h1><span class="header-section-number">A</span> Conda Package Management</h1>
+<div id="unified-package-management-for-both-r-and-python" class="section level2">
+<h2><span class="header-section-number">A.1</span> Unified package management for both R and Python</h2>
+<div id="faster-builds" class="section level3">
+<h3><span class="header-section-number">A.1.1</span> Faster builds</h3>
+<p>CRAN<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> mirrors do not provide linux<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> compiled binaries
+for packages. This means a long wait when doing <code>install.packages</code> both in an R
+Studio session and when running a Docker build for a <code>shiny</code> application.</p>
+</div>
+<div id="cross-language" class="section level3">
+<h3><span class="header-section-number">A.1.2</span> Cross Language</h3>
+<p>Both <code>dbtools</code> and <code>s3tools</code> rely on Python packages through the <code>reticulate</code> R
+to Python bridge. <code>packrat</code> only handles R dependencies, this means that
+<code>packrat</code> is not enough to reproducibly and reliably manage all of your
+application’s dependencies.</p>
+<p><code>conda</code> supports managing both Python and R dependencies in a single
+<code>environment</code>. It can make sure all of these libraries are compatible with each
+other.</p>
+</div>
+</div>
+<div id="installing-packages" class="section level2">
+<h2><span class="header-section-number">A.2</span> Installing Packages</h2>
+<p>If you need to find a package name you can use the <a href="https://anaconda.org/search">anaconda search</a> to find the
+name. Run <code>conda install PACKAGENAME</code> in the <code>Terminal</code> tab to install it. For
+more advanced usage have a look at the <a href="https://conda.io/projects/conda/en/latest/user-guide/cheatsheet.html">conda cheat sheet</a>.</p>
+<div id="r" class="section level3">
+<h3><span class="header-section-number">A.2.1</span> R</h3>
+<p>Most CRAN (around 95%) are available through <code>conda</code>, they have the same name as
+the CRAN package name with an additional <code>r-</code> prefix. This is to avoid clashes
+with Python packages with the same name.</p>
+<div id="examples" class="section level4">
+<h4><span class="header-section-number">A.2.1.1</span> Examples:</h4>
+<div id="install-a-package" class="section level5">
+<h5><span class="header-section-number">A.2.1.1.1</span> Install a package</h5>
 <table>
 <thead>
 <tr class="header">
-<th>Container type</th>
-<th>Minimum</th>
-<th>Maximum</th>
+<th><code>install.packages</code> (in R-Console)</th>
+<th><code>conda install</code> (in Terminal)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>R Studio</td>
-<td>5 GB</td>
-<td>20 GB</td>
-</tr>
-<tr class="even">
-<td>Jupyter</td>
-<td>1 GB</td>
-<td>12 GB</td>
-</tr>
-<tr class="odd">
-<td>App</td>
-<td>no limit</td>
-<td>no limit</td>
+<td><code>install.packages('Rcpp')</code></td>
+<td><code>conda install r-Rcpp</code></td>
 </tr>
 </tbody>
 </table>
-<p>You can work on a dataset that is bigger than your memory by reading in a bit of the data at a time and writing results back to disk as you go. If you’re working on big data then consider taking advantage of tech like Amazon Athena or Apache Spark, which are available through the Analytical Platform too.</p>
-<p>Our laptops tend to have only 8GB or 16GB, so it’s an advantage of the AP that we can offer more. We are open to increasing the maximum memory, so let us know if you need more, to help us make a case for covering the additional cost.</p>
+<p><img src="images/conda/conda_install_rcpp.gif" /></p>
 </div>
-<div id="what-are-the-benefits-of-github-and-why-do-we-recommend-it" class="section level2">
-<h2><span class="header-section-number">14.2</span> What are the benefits of Github and why do we recommend it?</h2>
-<p>Github is a central place to store our analytical projects - particularly those which are built primarily in code.</p>
-<p><strong>Github keeps track of who wrote what, when, why they wrote it, why we can trust its correctness, and which version of the code was run to produce an analytical result.</strong></p>
-<p>This is useful if you’re work on your own, but the benefits are greatest when you’re working in a team.</p>
-<p>Here is some more details of what Git offers:</p>
-<ul>
-<li><p>It provides a single, unambigous master version of a project. No more <code>model_final.r</code>, <code>model_finalv2_final.r</code>. etc.</p></li>
-<li><p>It enables you and collaborators to work on the same project and files <em>concurrently</em>, resolving conflicts if you edit the same parts of the same files, whilst keeping track of who made what edits and when.</p></li>
-<li><p>It enables work in progress to be shared with team members, without compromising the master version. You never get confused between what’s not yet final, and what’s trusted, quality assured code. The work in progress can be seemlessly merged into the master version when it’s ready.</p></li>
-<li><p>It provides a history of all previous versions of the projects, which can be meaningfully tagged, and reverted to (undo points). e.g. we may wish to revert to the exact code that was tagged ‘model run 2015Q1’.</p></li>
-<li><p>It reduces the likelihood of code being lost in messy file systems, such as on DOM1. Files sits within defined project ‘repositories’, with all code accessible from this location.</p></li>
-<li><p>It provides an extremely powerful search function. The ability to search all code written by Ministry of Justice analysts in milliseconds. Or all code written by anyone, for that matter.</p></li>
-<li><p>It enables an easier, more robust, more enjoyable approach to quality assurance. In particular, it offers the potential to continuously quality assure a project as it’s built, rather than QA being an activity that’s only done once the work is complete. For example, all additions to the codebase can be reviewed and accepted by a peer before being integrated into the master version.</p></li>
-<li><p>It includes productivity tools like Github issues (essentially a tagged to-do list), and a trello style workflow (Github projects), with automation.</p></li>
-<li><p>Git stores a huge amount of meta data about <em>why</em> changes were made and by whom. This dramatically reduces the danger of code becoming a ‘black box’. The to-do list is automatically linked to the implementation - e.g. The issue of ‘improve number formatting’ is automatically linked to the specific changes in the code that fixed the number formatting.</p></li>
-<li><p>It makes it much easier to build reusable components, and make parts of our code open source (available to the public). For example, we use R code written by statisticians around the world that’s been put on Github, and we know that people across government have been using some of our R code. We can collaborate easily with other government deparments and anyone else for that matter.</p></li>
-<li><p>It makes it easier to ask for help with your work, particularly with colleagues who are working remotely. You can hyperlink and comment on specific lines of code.</p></li>
-<li><p>You can write rich, searchable documentation - e.g. this user guide is hosted on Github!</p></li>
-</ul>
-<p>Finally, we have chosed git specifically because it seems to be by far the most popular version control system - see <a href="https://insights.stackoverflow.com/survey/2017#work-version-control">here</a> and <a href="https://trends.google.co.uk/trends/explore?date=all&amp;q=tfs,svn,mercurial,git">here</a></p>
-</div>
-<div id="step-by-step-guide-to-setup-two-factor-authentication" class="section level2">
-<h2><span class="header-section-number">14.3</span> Step by step guide to setup Two Factor Authentication</h2>
-<p>Two factor authentication (2FA) is critical to the security of the platform. We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log into DOM1.</p>
-<p>Note that there are two layers of two factor authentication (2FA) in action on the platform:</p>
-<ul>
-<li><p><em>Github Account 2FA</em> Your Github account must have 2FA enabled. When you log in to Github, your session will stay active for a month before you need to re-enter your 2FA code. Your Github username identifies you to the platform, and we use this identity to control access to data and other resources once you’ve logged into the platform. You therefore must be logged into Github to use the platform.</p></li>
-<li><p><em>Analytical Platform 2FA</em> Your Analytical Platform account has a separate 2FA step. You will be prompted to set this up the first time you access the platform. This code must be entered once a day. This security step lets you log into the platform and use it.</p></li>
-</ul>
-<p>Usually, when you log into the platform, you will be prompted to enter your platform 2FA, but you will not need to enter your Github 2FA because this is remembered for a month.</p>
-<p>However, if you have not logged into the platform for more than a month, you will first have to login to Github (and enter your Github 2FA code), and you will then also be prompted to enter your platform 2FA code.</p>
-<div id="step-by-step---logging-into-the-platform-for-the-first-time" class="section level3">
-<h3><span class="header-section-number">14.3.1</span> Step by step - logging into the platform for the first time</h3>
-<p>The first time you log into the Analytical Platform, you will be asked to set up 2FA.</p>
-<p>Your welcome email will direct you to the platform <a href="https://cpanel-master.services.alpha.mojanalytics.xyz/">Control Panel</a>.</p>
-<div id="step-1-log-into-github-to-identify-yourself-to-the-analytical-platform" class="section level4">
-<h4><span class="header-section-number">14.3.1.1</span> Step 1: Log into Github to identify yourself to the Analytical Platform</h4>
-<p><img src="images/2fa/github.gif" /></p>
-<p>If you’re already logged into Github, you will not see the ‘Sign in to GitHub to continue to Analytics platform’ screen.</p>
-</div>
-<div id="step-2-set-up-your-platform-2fa-using-your-smartphone" class="section level4">
-<h4><span class="header-section-number">14.3.1.2</span> Step 2: Set up your Platform 2FA using your smartphone</h4>
-<p>In this step, you set up the second layer of 2FA, your Platform 2FA.</p>
-<p>Scan the code using your smartphone app, and enter the code that comes up on your smartphone.</p>
-<p>Note: If you get the error ‘Wrong or expired code’, you need to make sure that your phone’s clock is accurate. See <a href="https://moj-analytical-services.github.io/platform_user_guidance/common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it">here</a></p>
-<p><img src="images/2fa/platform_2fa.png" /></p>
-</div>
-<div id="youre-now-done" class="section level4">
-<h4><span class="header-section-number">14.3.1.3</span> You’re now done</h4>
-<p>Once you’re entered your platform 2FA code in the interface above, you should now have access to the platform. You will need to enter your platform 2FA code around once a day as you use the platform.</p>
+<div id="install-a-specific-version-of-a-package" class="section level5">
+<h5><span class="header-section-number">A.2.1.1.2</span> Install a specific version of a package</h5>
+<table>
+<colgroup>
+<col width="78%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>install.packages</code></th>
+<th>conda install</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>require(devtools)</code><br> <code>install_version(&quot;ggplot2&quot;, version = &quot;2.2.1&quot;, repos = &quot;http://cran.us.r-project.org&quot;)</code></td>
+<td><code>conda install r-ggplot2=2.2.1</code></td>
+</tr>
+</tbody>
+</table>
+<p><img src="images/conda/conda_install_specific_version.gif" /></p>
 </div>
 </div>
 </div>
-<div id="data-minimisation-1" class="section level2">
-<h2><span class="header-section-number">14.4</span> Data Minimisation</h2>
-<p>In order to reduce cybersecurity/information risks to data and promote/maintain a privacy-centered approach you should consider how data can be minimised or obfuscated before being imported if you can do so while maintaining analytical usefulness and data integrity.</p>
-<div id="pseudonymisation" class="section level3">
-<h3><span class="header-section-number">14.4.1</span> Pseudonymisation</h3>
-<p>Pseudonymisation is “…the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information…”</p>
-<p>An example of pseudonymisation would be replacing the name of an individual with a unique hashed value. This would preserve the concept of an individual person but would mean their name is not stored in the Analytical Platform when it is not directly needed.</p>
-<p>This is pseudonymisation as the Analytical Platform with the data that it now holds can no longer identify that person without other data that it likely does not have.</p>
+<div id="python" class="section level3">
+<h3><span class="header-section-number">A.2.2</span> Python</h3>
+<p>Python packages do not require a prefix and can simply be installed using their
+name.</p>
+<div id="examples-1" class="section level4">
+<h4><span class="header-section-number">A.2.2.1</span> Examples</h4>
+<div id="install-a-package-1" class="section level5">
+<h5><span class="header-section-number">A.2.2.1.1</span> Install a package</h5>
+<p>In the terminal run: <code>conda install numpy</code></p>
+<p>which you can now access in your R session</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(reticulate)
+np &lt;-<span class="st"> </span><span class="kw">import</span>(<span class="st">&quot;numpy&quot;</span>)
+np<span class="op">$</span><span class="kw">arange</span>(<span class="dv">15</span>)</code></pre>
+<p><img src="images/conda/np_from_conda.gif" /></p>
 </div>
-<div id="anonymisation" class="section level3">
-<h3><span class="header-section-number">14.4.2</span> Anonymisation</h3>
-<p>Anonymisation is “…information which does not relate to an identified or identifiable natural person or to personal data rendered anonymous in such a manner that the data subject is not or no longer identifiable [even when joined with other accessible data]…”</p>
-<p>Under current data protection legislation, true anonymisation is quite hard to achieve but should be considered.</p>
-<p>An example of anonymisation would be using summary values such as where there are 1000 unique ‘users’ in your database, the Analytical Platform held data only holds the ‘1000’ information, not each individual user record.</p>
-<p>This is anonymisation as the Analytical Platform with the data that it now holds can no longer identify any person at all, as it will be mathematically impossible to use the number ‘1000’ to identify any individual.</p>
+</div>
+</div>
+<div id="operating-system-packages" class="section level3">
+<h3><span class="header-section-number">A.2.3</span> Operating System Packages</h3>
+<p>Even if you want to continue using <code>packrat</code> to manage your R packages you can
+use conda to resolve operating system dependencies like libxml2.</p>
+<div id="examples-2" class="section level4">
+<h4><span class="header-section-number">A.2.3.1</span> Examples</h4>
+<div id="installing-a-package-that-relies-on-os-dependency" class="section level5">
+<h5><span class="header-section-number">A.2.3.1.1</span> Installing a package that relies on OS dependency</h5>
+<p>Suppose you want to install the R package <code>bigIntegerAlgos</code> but it fails because
+it depends on a system level library called <code>gmp</code>. Switch to the terminal and
+use <code>conda</code> to install it. Then switch back to the R console and try to use
+<code>install.packages</code> again.</p>
+<p><img src="images/conda/conda_install_with_os_dep_v2.gif" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="platform-limitations" class="section level2">
+<h2><span class="header-section-number">A.3</span> Platform limitations</h2>
+<p>Usually when using Conda, it makes sense to have one environment per project,
+but because we are using the Open Source version of R Studio, there is only a
+single Conda environment available.</p>
+<p>This means having to be careful to make sure packages don’t pollute your
+environment from another project. The
+<a href="conda-package-management.html#environment-management">following section</a> explains how to manage your
+environments.</p>
+</div>
+<div id="environment-management" class="section level2">
+<h2><span class="header-section-number">A.4</span> Environment Management</h2>
+<div id="reset-your-environment-to-default" class="section level3">
+<h3><span class="header-section-number">A.4.1</span> Reset your <em>Environment</em> to default</h3>
+<p>Recommended before starting a new project. Will ensure that no unused
+dependencies are exported when you export an <code>environment.yml</code> for this project.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> env export -n base<span class="kw">|</span> <span class="fu">grep</span> -v <span class="st">&quot;^prefix: &quot;</span> <span class="op">&gt;</span> /tmp/base.yml <span class="kw">&amp;&amp;</span> <span class="ex">conda</span> env update --prune -n rstudio -f /tmp/base.yml <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> /tmp/base.yml</code></pre>
+</div>
+<div id="exporting-your-environment" class="section level3">
+<h3><span class="header-section-number">A.4.2</span> Exporting your <em>Environment</em></h3>
+<p>This is similar to making a <code>packrat.lock</code> file, it catalogues all of the
+dependencies installed in your environment so that another user can restore a
+working environment for your application. Check this <code>environment.yml</code> file into
+your git repository.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> env export <span class="kw">|</span> <span class="fu">grep</span> -v <span class="st">&quot;^prefix: &quot;</span> <span class="op">&gt;</span> environment.yml</code></pre>
+</div>
+<div id="making-your-r-studio-environment-match-an-environment.yml" class="section level3">
+<h3><span class="header-section-number">A.4.3</span> Making your R Studio Environment match an <code>environment.yml</code></h3>
+<p>When checking out a project that has an <code>environment.yml</code> do this to install any
+packages required by the project that you don’t have in your working
+environment.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> env update -f environment.yml --prune</code></pre>
 
 </div>
 </div>
@@ -464,13 +492,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>The “Comprehensive R Archive Network” (CRAN) is a collection of sites which
+carry identical material, consisting of the R distribution(s), the contributed
+packages and binaries.<a href="conda-package-management.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Linux (Debian) is the environment that applications in the Analytical Platform
+run on.<a href="conda-package-management.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="common-errors-and-solutions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="conda-package-management.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="annexes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
