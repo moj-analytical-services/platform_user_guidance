@@ -24,7 +24,7 @@
 <meta name="author" content="MoJ Analytical Services" />
 
 
-<meta name="date" content="2019-03-11" />
+<meta name="date" content="2019-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -366,23 +366,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Open Concourse: <a href="https://concourse.services.alpha.mojanalytics.xyz/" class="uri">https://concourse.services.alpha.mojanalytics.xyz/</a></li>
 <li>Select team ‘main’.</li>
 <li>Click ‘login with ap-main’ followed by your GitHub login and possibly 2FA for GitHub and possibly 2FA for AP.</li>
-<li>Click the hamburger icon: <img src="images/build_and_deploy/concourse_menu.png" /> (top-left) to see the list of repos that can be built.</li>
+<li>Click the hamburger icon: <img src="images/build_and_deploy/concourse_menu.png" alt="Hamburger menu icon" /> (top-left) to see the list of repos that can be built.</li>
 <li>Click your repo name to see its diagram with the big ‘Deploy’ box in the middle, inputs and outputs.</li>
 <li>Click on the ‘deploy’ box to see details of its builds. You can see previous builds (numbered - e.g. “8 7 6 5 4 3 2 1”). The colour of the build number box gives the status:
 <ul>
 <li>Grey = paused or pending</li>
 <li>Yellow = in progress</li>
+<li>Blue = paused</li>
 <li>Green = built ok</li>
 <li>Red = build failed</li>
+<li>Brown = aborted</li>
+<li>Orange = errored</li>
 </ul></li>
-<li>To start the job (this first time): Click <em>play</em> (on the left, against your repo name) AND the “<em>+</em>”:
-<img src="images/build_and_deploy/concourse_new_build.png" />
-It should go grey (pending)
-<img src="images/build_and_deploy/concourse_pending.png" />
-After 30 seconds it should got yellow (building). If it does not go yellow, check the task is not paused (and possibly the job itself is paused) - press play if is showing.
-<img src="images/build_and_deploy/concourse_in_progress.png" />
-It will build/deploy, taking 5 minutes to an hour. You can track progress and see any errors like this:
-<img src="images/build_and_deploy/concourse_error.png" /></li>
+<li><p>To start the job (this first time): Click <em>play</em> (on the left, against your repo name) AND the “<em>+</em>”:
+<img src="images/build_and_deploy/concourse_new_build.png" alt="Play and “+” buttons" /></p>
+<p>It should go grey (pending)
+<img src="images/build_and_deploy/concourse_pending.png" alt="Pending state" /></p>
+<p>After 30 seconds it should got yellow (building). If it does not go yellow, check the task is not paused (and possibly the job itself is paused) - press play if is showing.
+<img src="images/build_and_deploy/concourse_in_progress.png" alt="In progress state" /></p>
+<p>It will build/deploy, taking 5 minutes to an hour. You can track progress and see any errors like this:
+<img src="images/build_and_deploy/concourse_error.png" alt="Error state" /></p></li>
 </ol>
 <p>Subsequent build/deploys are started about 5 seconds after doing a GitHub release (unless someone pressed the pause button on the Concourse task). You have to refresh Concourse in your browser to see a fresh build.</p>
 
