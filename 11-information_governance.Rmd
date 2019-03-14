@@ -205,6 +205,10 @@ Data minimisation is also a princicple of GDPR. Any personal data used should be
 
 In practice, you may want to consider whether a subset of a larger data set (removing irrelevant fields or observations) is sufficient for your analysis.
 
+## Data Offshoring
+
+The Analytical Platform is hosted on [Amazon Web Services (AWS)](https://aws.amazon.com/) (a US company part of the Amazon group) with primary data storage and processing locations in their [European regions](https://aws.amazon.com/about-aws/global-infrastructure/).
+
 ## Reporting security incidents
 
 As soon as you become aware of an actual or potential security incident, including a loss of data, you should follow the guidance [here](https://intranet.justice.gov.uk/guidance/security/report-a-security-incident/) and [here](https://intranet.justice.gov.uk/guidance/security/report-a-security-incident/reporting-a-data-incident/).
