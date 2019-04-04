@@ -218,9 +218,10 @@ A Personal Access Token (PAT) is provided by GitHub through each user's profile,
   ![](images/pat/pat-settings.png)
   
   2. Select **_Generate new token_** and select the **scope** of access you want to grant using this token. **IMPORTANT: Unless you have specific reasons to need more control, just select the first group, `repo`--granting other rights can be dangerous if your PAT falls into the wrong hands, allowing someone else to irrevocably delete your repos, read and change your user profile settings, or even access billing information.**
-  ![](images/pat/pa-scope.png)
+  ![](images/pat/pat-scope.png)
   
   3. Copy your PAT into a `.txt` file that you can keep somewhere securely. You won't be able to come back to this page to see this PAT again, and will have to generate a new one if you lose track of it.
+  ![](images/pat/pat-copy.png)
   
   ### Using a PAT to Authenticate in R/RStudio
 
