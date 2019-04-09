@@ -143,7 +143,7 @@ A privacy notice is required to let customers using a product or service know:
 * __Is a technical migration form required?__  
   A technical migration form is __not required__ for one-off data movements of static files (such as .zip files and .csv files) that are carried out manually (i.e. by email or direct upload to S3 or a home directory). __A technical migration form is required for all other data movements.__ If you are unsure whether your data movement requires a technical migration form, please contact the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk). A template technical migration form can be found [here](https://justiceuk.sharepoint.com/:w:/s/AnalyticalPlatform/EafJPVHk2NRCjZm1WGFPOJcBpkJ-pH8L2o0hKma2bsbWow?e=0pWGjc).
 * __Technical migration form__  
-  Upload the complete technical migration form (maximum size 1GB). If you do not have an @digital email address and cannot upload a file to the form, please send the form as an attachment to the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk).
+  Please send your form as an attachment to the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk).
 * __Is this a one-off or recurring data movement?__
 * __When is the data movement expected to occur?__
 * __What is the intended frequency of the data movement?__
