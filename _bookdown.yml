@@ -1,4 +1,5 @@
 book_filename: "Platform-Guidance"
+delete_merged_file: true
 output_dir: "docs"
 repo: https://github.com/moj-analytical-services/platform_user_guidance
 language:
