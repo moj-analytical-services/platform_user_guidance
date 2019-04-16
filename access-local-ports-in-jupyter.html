@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Part 3 Working with big datasets and sharing them: Accessing data in Amazon S3 | Platform Guidance</title>
+  <title>B Access Local Ports in Jupyter | Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform." />
   <meta name="generator" content="bookdown  and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Part 3 Working with big datasets and sharing them: Accessing data in Amazon S3 | Platform Guidance" />
+  <meta property="og:title" content="B Access Local Ports in Jupyter | Platform Guidance" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Part 3 Working with big datasets and sharing them: Accessing data in Amazon S3 | Platform Guidance" />
+  <meta name="twitter:title" content="B Access Local Ports in Jupyter | Platform Guidance" />
   
   <meta name="twitter:description" content="This repository contains user guidance for the Analytical Platform." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="getting-started.html">
-<link rel="next" href="github.html">
+<link rel="prev" href="conda-package-management.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -354,103 +354,159 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3" class="section level1">
-<h1><span class="header-section-number">Part 3</span> Working with big datasets and sharing them: Accessing data in Amazon S3</h1>
-<p><a href="https://en.wikipedia.org/wiki/Amazon_S3">Amazon S3</a> is used as the primary storage area for large data files. In contrast to data in your Platform’s home directory, data in S3 can be accessed by multiple Platform users. You will only be able to access S3 buckets (folders) that you have been granted access to.</p>
-<div id="accessing-data-in-s3-from-r" class="section level2">
-<h2><span class="header-section-number">3.1</span> Accessing data in S3 from R</h2>
-<p>There are currently two methods of browsing and importing data held in S3 into RStudio.</p>
-<div id="user-interface" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> User Interface</h3>
-<p>We have developed a user interface that allows you to search and browse the files that you have been given access to.</p>
-<p><img src="images/s3/s3browser.png" /></p>
-<p>You can access this interface by typing the following command into your R Studio console:</p>
-<pre class="sourceCode r"><code class="sourceCode r">s3browser<span class="op">::</span><span class="kw">file_explorer_s3</span>()</code></pre>
-<p>See the <a href="https://github.com/moj-analytical-services/s3browser">documentation</a> for further details.</p>
-</div>
-<div id="r-package" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> R Package</h3>
-<p>We have also developed an R Package called <code>s3tools</code> that makes it easier to interact with s3. This enables you to do things like write <code>s3tools::s3_path_to_full_df(&quot;alpha-everyone/iris.csv&quot;)</code> to read directly from S3 into a data frame in R.</p>
-<p>See the <a href="https://github.com/moj-analytical-services/s3tools">documentation</a> for
-further details.</p>
-</div>
-</div>
-<div id="importing-data-from-s3-into-jupyterlab" class="section level2">
-<h2><span class="header-section-number">3.2</span> Importing data from S3 into JupyterLab</h2>
-<p>Pandas can import straight from S3:</p>
-<pre><code>import pandas as pd
-pd.read_csv(&quot;s3://alpha-everyone/iris.csv&quot;)</code></pre>
-<p>This requires you to install this library:</p>
-<pre><code>pip install s3fs</code></pre>
-<p>Or alternatively use the standard python AWS client <code>boto3</code>.</p>
-<p>If using Spark (and the Jupyter deployment including the Spark libraries):</p>
-<pre><code>spark.read.csv(&quot;s3a://blah&quot;)</code></pre>
-<p>These ‘direct reads’ should be faster than downloading from S3 to your machine and using JupyterLab to uploading to your home drive.</p>
-</div>
-<div id="writing-data-from-jupyterlab-to-s3" class="section level2">
-<h2><span class="header-section-number">3.3</span> Writing data from JupyterLab to S3</h2>
-<p>pandas won’t write files to S3 directly. Instead either:
-* write data to a temporary file on disk and copy the file to S3 with boto3
-* write data to a memory buffer and copy the file to S3 with boto3 like this:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> io <span class="im">import</span> StringIO
-<span class="im">import</span> boto3
-
-csv_buffer <span class="op">=</span> StringIO()
-df.to_csv(csv_buffer)
-s3_resource <span class="op">=</span> boto3.resource(<span class="st">&#39;s3&#39;</span>)
-s3_resource.Object(bucket, <span class="st">&#39;df.csv&#39;</span>).put(Body<span class="op">=</span>csv_buffer.getvalue())</code></pre>
-</div>
-<div id="uploading-data-to-s3-from-your-machine" class="section level2">
-<h2><span class="header-section-number">3.4</span> Uploading data to S3 (from your machine)</h2>
-<div id="where-data-is-stored" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> Where data is stored</h3>
-<p>Data in S3 is stored in ‘buckets’, which are conceptually very similar to folders.</p>
-<p>Each of these ‘buckets’ has a corresponding ‘data access group’ which is the group of platform users who have access to the bucket.</p>
-<p>Each data access group has one or more administrators, who are able to add and remove people from the group.</p>
-<p>Typically, a suitable bucket will already exist for the work you are doing, so you just need to ask the data access group administrator to add you.</p>
-<p>If it does not already exist, you may create a new ‘bucket’. In doing so, you will automatically become the administrator of this data access group.</p>
-</div>
-<div id="uploading-data" class="section level3">
-<h3><span class="header-section-number">3.4.2</span> Uploading data</h3>
-<p>The easiest way to upload data to an S3 buckets is via the AWS GUI. Instructions are as follows:</p>
+<div id="access-local-ports-in-jupyter" class="section level1">
+<h1><span class="header-section-number">B</span> Access Local Ports in Jupyter</h1>
+<p>If you are developing a web application using Jupyter you will probably want to
+preview that web app before you deploy it. The Analytical Platform provides a special set of
+endpoints under <code>/_tunnel_/&lt;portNumber&gt;/</code> that route to exposed HTTP ports on
+the localhost. There are a few things you need to keep in mind:</p>
 <ul>
-<li>Navigate to the platform <a href="https://cpanel-master.services.alpha.mojanalytics.xyz/#Warehouse%20data">control panel</a>, and click on the ‘warehouse data’ tab.</li>
-<li>Look for the bucket you want to upload data to, and click the ‘Open on AWS’ button, which will take you into the AWS GUI</li>
-<li>Within AWS, click the blue ‘Upload’ button</li>
-<li>Drag files in as instructed</li>
-<li>Click the ‘Upload’ button at the bottom <em>left</em> of the dialogue.</li>
+<li><code>&lt;portNumber&gt;</code> can only be one from a limited range. By default, you can only route
+to ports 8050 and 4040–4050 inclusive. You should make your web app listen on
+one of those.</li>
+<li>The <code>/_tunnel_/&lt;portNumber&gt;/</code> endpoint will only tunnel to services bound to a
+non–public IP address. By default, many web frameworks bind to host <code>127.0.0.1</code>.
+You will need to change this to <code>0.0.0.0</code> or the tunnel won’t work. This is to
+prevent inadvertently exposing webapps to the tunnel.</li>
 </ul>
-<p>You can also move, rename and delete data using the AWS GUI. Select the files by checking the text box, use the <code>More</code> button so see the options.</p>
-<p><img src="images/s3/s3_options.png" /></p>
+<div id="running-plotly-dash-apps" class="section level2">
+<h2><span class="header-section-number">B.1</span> Running Plotly <a href="https://dash.plot.ly/">Dash</a> apps</h2>
+<div id="install-dependencies" class="section level3">
+<h3><span class="header-section-number">B.1.1</span> Install dependencies</h3>
+<p>In the terminal, install the Dash dependencies:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pip</span> install --user dash==0.39.0  # The core dash backend
+<span class="ex">pip</span> install --user dash-daq==0.1.0  # DAQ components (newly open-sourced!)</code></pre>
+<p>The demo code in this document is known to work with these versions but you can
+install any version you like for your own code.</p>
+<p><img src="images/dash/dash_install_deps.gif" /></p>
+<p>If you are planning on turning this into a project, you’ll need to manage your
+dependencies by adding these to either <code>requirements.txt</code> and <code>pip</code> or
+<code>environment.yaml</code> and <code>conda</code>.</p>
+</div>
+<div id="example-code" class="section level3">
+<h3><span class="header-section-number">B.1.2</span> Example code</h3>
+<p>Save the Dash hello world app to a new python file called <code>app.py</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> dash
+<span class="im">from</span> dash.dependencies <span class="im">import</span> Input, Output
+<span class="im">import</span> dash_core_components <span class="im">as</span> dcc
+<span class="im">import</span> dash_html_components <span class="im">as</span> html
+
+<span class="im">import</span> flask
+<span class="im">import</span> pandas <span class="im">as</span> pd
+<span class="im">import</span> time
+<span class="im">import</span> os
+
+server <span class="op">=</span> flask.Flask(<span class="st">&#39;app&#39;</span>)
+server.secret_key <span class="op">=</span> os.environ.get(<span class="st">&#39;secret_key&#39;</span>, <span class="st">&#39;secret&#39;</span>)
+
+df <span class="op">=</span> pd.read_csv(<span class="st">&#39;https://raw.githubusercontent.com/plotly/datasets/master/hello-world-stock.csv&#39;</span>)
+
+app <span class="op">=</span> dash.Dash(<span class="st">&#39;app&#39;</span>, server<span class="op">=</span>server, url_base_pathname<span class="op">=</span><span class="st">&#39;/_tunnel_/8050/&#39;</span>)
+
+app.scripts.config.serve_locally <span class="op">=</span> <span class="va">False</span>
+dcc._js_dist[<span class="dv">0</span>][<span class="st">&#39;external_url&#39;</span>] <span class="op">=</span> <span class="st">&#39;https://cdn.plot.ly/plotly-basic-latest.min.js&#39;</span>
+
+app.layout <span class="op">=</span> html.Div([
+    html.H1(<span class="st">&#39;Stock Tickers&#39;</span>),
+    dcc.Dropdown(
+        <span class="bu">id</span><span class="op">=</span><span class="st">&#39;my-dropdown&#39;</span>,
+        options<span class="op">=</span>[
+            {<span class="st">&#39;label&#39;</span>: <span class="st">&#39;Tesla&#39;</span>, <span class="st">&#39;value&#39;</span>: <span class="st">&#39;TSLA&#39;</span>},
+            {<span class="st">&#39;label&#39;</span>: <span class="st">&#39;Apple&#39;</span>, <span class="st">&#39;value&#39;</span>: <span class="st">&#39;AAPL&#39;</span>},
+            {<span class="st">&#39;label&#39;</span>: <span class="st">&#39;Coke&#39;</span>, <span class="st">&#39;value&#39;</span>: <span class="st">&#39;COKE&#39;</span>}
+        ],
+        value<span class="op">=</span><span class="st">&#39;TSLA&#39;</span>
+    ),
+    dcc.Graph(<span class="bu">id</span><span class="op">=</span><span class="st">&#39;my-graph&#39;</span>)
+], className<span class="op">=</span><span class="st">&quot;container&quot;</span>)
+
+<span class="at">@app.callback</span>(Output(<span class="st">&#39;my-graph&#39;</span>, <span class="st">&#39;figure&#39;</span>),
+              [Input(<span class="st">&#39;my-dropdown&#39;</span>, <span class="st">&#39;value&#39;</span>)])
+
+<span class="kw">def</span> update_graph(selected_dropdown_value):
+    dff <span class="op">=</span> df[df[<span class="st">&#39;Stock&#39;</span>] <span class="op">==</span> selected_dropdown_value]
+    <span class="cf">return</span> {
+        <span class="st">&#39;data&#39;</span>: [{
+            <span class="st">&#39;x&#39;</span>: dff.Date,
+            <span class="st">&#39;y&#39;</span>: dff.Close,
+            <span class="st">&#39;line&#39;</span>: {
+                <span class="st">&#39;width&#39;</span>: <span class="dv">3</span>,
+                <span class="st">&#39;shape&#39;</span>: <span class="st">&#39;spline&#39;</span>
+            }
+        }],
+        <span class="st">&#39;layout&#39;</span>: {
+            <span class="st">&#39;margin&#39;</span>: {
+                <span class="st">&#39;l&#39;</span>: <span class="dv">30</span>,
+                <span class="st">&#39;r&#39;</span>: <span class="dv">20</span>,
+                <span class="st">&#39;b&#39;</span>: <span class="dv">30</span>,
+                <span class="st">&#39;t&#39;</span>: <span class="dv">20</span>
+            }
+        }
+    }
+
+<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
+    app.run_server(host<span class="op">=</span><span class="st">&#39;0.0.0.0&#39;</span>)</code></pre>
+<p>There are two important things to note here, where this code differs from the
+Plotly Dash example:</p>
+<ol style="list-style-type: decimal">
+<li><p>The <code>Dash</code> class must be instantiated with a <code>url_base_pathname</code>. This should
+always be <code>/_tunnel_/8050/</code> e.g.
+<code>app = dash.Dash('app', server=server, url_base_pathname='/_tunnel_/8050/')</code>.</p></li>
+<li><p>When you run the server, it must be bound to <code>0.0.0.0</code>, e.g., <code>app.run_server(host='0.0.0.0')</code>.</p></li>
+</ol>
+<p><img src="images/dash/save_example.gif" /></p>
+</div>
+<div id="run-server-from-the-terminal" class="section level3">
+<h3><span class="header-section-number">B.1.3</span> Run server from the terminal</h3>
+<pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">yovyan@jupyter-lab-r4vi-jupyter-7cb4bb58cf-6hngf</span>:~$ python3 app.py
+ <span class="ex">*</span> Serving Flask app <span class="st">&quot;app&quot;</span> (lazy loading)
+ <span class="ex">*</span> Environment: production
+   <span class="ex">WARNING</span>: Do not use the development server in a production environment.
+   <span class="ex">Use</span> a production WSGI server instead.
+ <span class="ex">*</span> Debug mode: off
+ <span class="ex">*</span> Running on http://0.0.0.0:8050/ (Press CTRL+C to quit)</code></pre>
+</div>
+<div id="access-via-_tunnel_-url" class="section level3">
+<h3><span class="header-section-number">B.1.4</span> Access via <code>_tunnel_</code> URL</h3>
+<p>Copy your <code>jupyter</code> URL and append <code>/_tunnel_/8050/</code> to access your running Dash
+app. If your <code>jupyter</code> URL is <code>https://r4vi-jupyter-lab.tools.alpha.mojanalytics.xyz/lab?</code>,
+then your Dash app will be available at
+<code>https://r4vi-jupyter-lab.tools.alpha.mojanalytics.xyz/_tunnel_/8050/</code>.</p>
+<p><img src="images/dash/visit_url.gif" /></p>
+<div id="who-can-access-this-_tunnel_-url" class="section level4">
+<h4><span class="header-section-number">B.1.4.1</span> Who can access this <code>/_tunnel_/</code> URL?</h4>
+<p>Only you can access the URL and it can not be shared with other members of your
+team. It is intended for testing while developing an application.</p>
 </div>
 </div>
-<div id="creating-and-managing-data-access-groups" class="section level2">
-<h2><span class="header-section-number">3.5</span> Creating and managing data access groups</h2>
-<p>Before creating a new S3 bucket and corresponding data access group, please check that a suitable S3 bucket does not already exist.</p>
-<p>You can do this by navigating ‘up a level’ within the AWS S3 GUI, by clicking on ‘Amazon S3’ at the top left of the screen. [TODO: Add picture]</p>
-<p>This will show you a list of all S3 buckets within the platform, including buckets you do not have access to.</p>
-<p>Assuming a suitable bucket does not already exist, you can create a new one as follows:</p>
-<div id="step-1---create-a-new-bucket" class="section level3">
-<h3><span class="header-section-number">3.5.1</span> Step 1 - Create a new bucket</h3>
-<p>Navigate to the <a href="https://cpanel-master.services.alpha.mojanalytics.xyz/#Warehouse%20data">‘Data Warehouse’ tab of the control panel</a>. At the bottom of the page, click on ‘Create new warehouse data source’.</p>
-<p>Type a name for your S3 bucket. Note that for technical reasons, all buckets must start with <code>alpha-</code>, which will be populated for you automatically</p>
 </div>
-<div id="step-2-optional-grant-access-to-other-users-and-set-their-access-level" class="section level3">
-<h3><span class="header-section-number">3.5.2</span> Step 2 (optional) Grant access to other users, and set their access level</h3>
-<p>Navigate to the <a href="https://cpanel-master.services.alpha.mojanalytics.xyz/#Warehouse%20data">‘Data Warehouse’ tab of the control panel</a>. Click on the name of the bucket you wish to manage.</p>
-<p>Scroll to the bottom of the page, and start typing a user’s name in the ‘Grant access to this data to other users’ box.</p>
-<p>If you want to grant administrator priviledges on another user click on the ‘Edit access level’ button next to their name. This will enable them to manage the data access group. Each group can have multiple administrators.</p>
+<div id="troubleshooting-1" class="section level2">
+<h2><span class="header-section-number">B.2</span> Troubleshooting</h2>
+<p>This feature has been introduced in the v0.6.5 jupyer-lab helm chart. If following
+this guide doesn’t work for you it is likely that you’re on an older version.
+Contact us on the <code>#analytical_platform</code> <a href="(https://asdslack.slack.com/messages/anaytical_platform/">Slack channel</a>,
+alternatively, contact us by <a href="mailto:analytical_platform@digital.justice.gov.uk">email</a>
+to request an upgrade.</p>
 
 </div>
 </div>
-</div>
+
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="github.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="conda-package-management.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
