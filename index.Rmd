@@ -1,7 +1,7 @@
 ---
-title: "Platform Guidance"
+title: "Analytical Platform user guidance"
 subtitle: ""
-author: "MoJ Analytical Services"
+author: "MoJ Analytical Platform Team"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output:
@@ -14,25 +14,10 @@ link-citations: yes
 description: "This repository contains user guidance for the Analytical Platform."
 ---
 
-
 # About this guidance {-}
 
-This guidance provides information about how the use the various features of the Analytical Platform.  Please use the contents navigation bar on the left to find what you're looking for, or click the magnifying glass icon above to search the guidance.
+This guidance provides information on how to use the Analytical Platform.
 
-Some online training recommendations are provided throughout.
+## Feedback {-}
 
-### Platform is in early development {-}
-The platform is being actively developed. We have given early access to the platform in order to receive feedback from the users. Please get in contact to **tell us what you like, what you don’t like, and what doesn’t work**.
-
-For bugs and problem reports, please raise a ticket via Github, [here](https://github.com/ministryofjustice/analytics-platform/issues).
-
-For immediate support, contact us by [email](mailto:analytical_platform@digital.justice.gov.uk), or on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/anaytical_platform/)
-
-If you find any issues with the guidance, please report them [here](https://github.com/moj-analytical-services/platform_user_guidance/issues).
-
-## What's new?
-
-- May 2018: The control panel now includes a 'data warehouse' tab to manage data access.  This replaces the previous approach using Github teams.
-- April 2018:  Substantial improvements to [`s3tools`](github.com/moj-analytical-services/s3tools) and [`s3browser`](github.com/moj-analytical-services/s3tools).  s3browser is now much faster, and s3tools has more functionality
-- March 2018:  Users' R Studio 'hibernate' at 22:00 each evening, reducing overall resource utilisation
-- Jan 2018:  Users can restart their own R Studio in the event of a crash using the [Control Panel](http://cpanel-master.services.alpha.mojanalytics.xyz/)
+If you have any feedback on this guidance, please get in touch by [email](mailto:analytical_platform@digital.justice.gov.uk) or on [Slack](https://asdslack.slack.com/messages/C4PF7QAJZ/). You can also report any issues on [GitHub](https://github.com/moj-analytical-services/platform_user_guidance/issues).
