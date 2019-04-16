@@ -31,7 +31,7 @@ further details.
 Pandas can import straight from S3:
 
     import pandas as pd
-    pd.read_csv("s3://alpha-everyone/iris.csv")
+    pd.read_csv("s3a://alpha-everyone/iris.csv")
 
 This requires you to install this library:
 
@@ -41,7 +41,7 @@ Or alternatively use the standard python AWS client `boto3`.
 
 If using Spark (and the Jupyter deployment including the Spark libraries):
 
-    spark.read.csv("s3a://blah")
+    spark.read.csv("s3://blah")
 
 These 'direct reads' should be faster than downloading from S3 to your machine and using JupyterLab to uploading to your home drive.
 
