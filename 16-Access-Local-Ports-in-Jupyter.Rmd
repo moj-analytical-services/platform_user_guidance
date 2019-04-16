@@ -4,22 +4,22 @@
 # Access Local Ports in Jupyter
 
 If you are developing a web application using Jupyter you will probably want to
-preview that webapp before you deploy it. The platform provides a special set of
-endpoints under `/_tunnnel_/<portNumber>/` that route to exposed HTTP ports on
+preview that web app before you deploy it. The Analytical Platform provides a special set of
+endpoints under `/_tunnel_/<portNumber>/` that route to exposed HTTP ports on
 the localhost. There are a few things you need to keep in mind:
 
-* `<portNumber>` can only be one from a limited rage. By default you can only route
-  to ports 8050 and 4040-4050 inclusive. You should make your webapp listen on
+* `<portNumber>` can only be one from a limited range. By default, you can only route
+  to ports 8050 and 4040--4050 inclusive. You should make your web app listen on
   one of those.
 * The `/_tunnel_/<portNumber>/` endpoint will only tunnel to services bound to a
-  non public IP address. By default many web frameworks bind to host `127.0.0.1`
-  you will need to change this to `0.0.0.0` or the tunnel won't work. This is to
+  non--public IP address. By default, many web frameworks bind to host `127.0.0.1`.
+  You will need to change this to `0.0.0.0` or the tunnel won't work. This is to
   prevent inadvertently exposing webapps to the tunnel.
 
 ## Running Plotly [Dash] apps
 
 ### Install dependencies
-In the terminal install the dash dependencies:
+In the terminal, install the Dash dependencies:
 
 ```bash
 pip install --user dash==0.39.0  # The core dash backend
@@ -31,12 +31,12 @@ install any version you like for your own code.
 
 ![](images/dash/dash_install_deps.gif)
 
-If you are planning on turning this into a project you'll need to manage your
-dependencies by adding these to either `requirements.txt` & `pip` or
-`environment.yaml` & `conda`.
+If you are planning on turning this into a project, you'll need to manage your
+dependencies by adding these to either `requirements.txt` and `pip` or
+`environment.yaml` and `conda`.
 
 ### Example code
-Save the dash hello world to a new python file called `app.py`:
+Save the Dash hello world app to a new python file called `app.py`:
 
 ```python
 import dash
@@ -103,13 +103,13 @@ if __name__ == '__main__':
 ```
 
 There are two important things to note here, where this code differs from the
-plotly dash example:
+Plotly Dash example:
 
-The `Dash` class must be instantiated with a `url_base_pathname`. This should
+1. The `Dash` class must be instantiated with a `url_base_pathname`. This should
 always be `/_tunnel_/8050/` e.g.
 `app = dash.Dash('app', server=server, url_base_pathname='/_tunnel_/8050/')`.
 
-When you run the server it must be bound to a `0.0.0.0` e.g. `app.run_server(host='0.0.0.0')`
+2. When you run the server, it must be bound to `0.0.0.0`, e.g., `app.run_server(host='0.0.0.0')`.
 
 ![](images/dash/save_example.gif)
 
@@ -125,7 +125,7 @@ yovyan@jupyter-lab-r4vi-jupyter-7cb4bb58cf-6hngf:~$ python3 app.py
  * Running on http://0.0.0.0:8050/ (Press CTRL+C to quit)
 ```
 
-### Access via `_tunnel_` url
+### Access via `_tunnel_` URL
 
 Copy your `jupyter` URL and append `/_tunnel_/8050/` to access your running Dash
 app. If your `jupyter` URL is `https://r4vi-jupyter-lab.tools.alpha.mojanalytics.xyz/lab?`,
