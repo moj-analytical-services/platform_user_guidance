@@ -1,62 +1,122 @@
-# Quick Start
+# Introduction
 
-## What is the Analytical Platform?
+## About the Analytical Platform
 
-The Platform provides four main services to analysts:
+__The Analytical Platform is a cloud–based system that provides a range of services, tools and resources to analysts across MoJ.__
 
-- Access to analytical software.
-- Data storage and access to datasets.
-- The ability to create and share interactive data products and websites.
-- Collaboration tools for analysts that enable teams to work concurrently on complex analytical projects, and perform QA incrementally.
+The Analytical Platform:
+*   provides access to the latest versions of open–source analytical software, such as RStudio and JupyterLab, allowing analysts to work in the way that suits them best. Analysts can also freely install packages from CRAN and PyPI, enabling them to utilise advanced analytical tools and techniques, including text mining, predictive analytics and data visualisation.
+*   uses Amazon S3 and Athena to provide a single location for all of our data, including a growing set of curated data, and GitHub to provide a single location for all of our code. This enables analysts to collaborate more effectively, share knowledge and produce high–quality reproducible analysis. Analysts can also build and deploy interactive apps and web pages that can be used to communicate analysis and insight to decision–makers.
+*   gives analysts the tools to develop reproducible analytical pipelines (RAPs) to automate time–consuming and repetitive tasks, allowing them to focus on interpreting the results.
+*   is built in a cloud–based ecosystem that is easy to access remotely from all MoJ IT systems and provides analysts with access to powerful computational resources that can be scaled to meet demand. This allows analysts to quickly and easily work with big data and perform complex analytical tasks.
+*   is secure, resilient and has high availability. This means analysts can depend on it to store their work and data, and to complete time–sensitive and business–critical projects.
 
-If you already have a platform account, you can access the platform [here](https://cpanel-master.services.alpha.mojanalytics.xyz/).
+## Get started
 
-### High level diagram of the platform:
+To get started on the Analytical Platform, you must complete the following steps:
+
+1.  [Read our acceptable use policy.](#read-our-acceptable-use-policy)
+2.  [Sign up for a GitHub account.](#sign-up-for-a-github-account)
+3.  [Verify your email address for GitHub.](#verify-your-email-address-for-github)
+4.  [Configure two-factor authentication for GitHub.](#configure-two-factor-authentication-for-github)
+5.  [Request an account from the Analytical Platform team.](#request-an-account-from-the-analytical-platform-team)
+6.  [Accept your invitation to the MoJ Analytical Services GitHub organisation.](#accept-your-invitation-to-the-moj-analytical-services-github-organisation)
+7.  [Configure two-factor authentication for the Analytical Platform.](#configure-two-factor-authentication-for-the-analytical-platform)
+
+### Read our acceptable use policy
+
+Use of the Analytical Platform is subject to our [acceptable use policy](#acceptable-use-policy). You should ensure that you have read and understood this before getting started on the Analytical Platform.
+
+### Sign up for a GitHub account
+
+To sign up for a GitHub account, go to GitHub's [join page](https://github.com/join) and follow the instructions.
+
+*   When signing up, we recommend that you use your work email address.
+*   When instructed to choose your subscription, you should select the free plan. 
+
+### Verify your email address for GitHub
+
+Verifying you email address for GitHub ensures that your account is secure and gives you access to all of GitHub's features.
+
+You will be prompted to verify your email address after signing up for an account.
+
+If you do not verify your email address at this stage, you can do it later by following the instructions [here](https://help.github.com/en/articles/verifying-your-email-address).
+
+### Configure two-factor authentication for GitHub
+
+You can configure two-factor authentication (2FA) for GitHub using a mobile app (on your personal or work phone) or via text message. To configure 2FA for GitHub, follow the instructions [here](https://help.github.com/en/articles/configuring-two-factor-authentication).
+
+We recommend that you configure 2FA using a mobile app. In particular, we recommend that you use [__Authy__](https://authy.com/) for the following reasons:
+
+1.  You can sync 2FA tokens across multiple devices, including mobiles, tablets and computers.
+2.  You can create encrypted recovery backups in case you lose your device.
+3.  You can use Touch ID, PIN codes and passwords to protect access to your 2FA tokens.
+4.  You can still access secure websites when you don't have phone signal.
+
+### Request an account from the Analytical Platform team
+
+To request an account for the Analytical Platform, you should send an email with your GitHub username to the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk). The team will then invite you to join the [MoJ Analytical Services](https://github.com/moj-analytical-services) GitHub organisation.
+
+### Accept your invitation to the MoJ Analytical Services GitHub organisation
+
+When you are invited to join the MoJ Analytical Services GitHub organisation, you will receive an email with a link to accept the invitation.
+
+You can also accept your invitation by signing in to GitHub and visiting the [organisation page](https://github.com/moj-analytical-services).
+
+### Configure two-factor authentication for the Analytical Platform
+
+When you sign in to the Analytical Platform for the first time, you will be prompted to configure additional two-factor authentication (2FA) for the Analytical Platform itself.
+
+To sign in , go to the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
+
+You must configure 2FA for the Analytical Platform using a mobile app (on your personal or work phone). As described in Section \@ref(configure-two-factor-authentication-for-github), we recommend that you use __Authy__.
+
+## Access the Analytical Platform
+
+We recommend that you access the Analytical Platform from the [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
+
+*   [AWS](http://aws.services.alpha.mojanalytics.xyz)
+*   [Concourse](https://concourse.services.alpha.mojanalytics.xyz)
+*   [Control panel](https://cpanel-master.services.alpha.mojanalytics.xyz)
+*   [GitHub](https://github.com/moj-analytical-services)
+*   [Grafana](https://grafana.services.alpha.mojanalytics.xyz)
+*   [Kibana](http://kibana.services.alpha.mojanalytics.xyz)
+*   [Prometheus](https://prometheus.services.alpha.mojanalytics.xyz)
+
+## Deploy RStudio and JupyterLab
+
+You should complete the following steps to deploy RStudio and JupyterLab on the Analytical Platform:
+
+1.  Go the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
+2.  Click on the 'Analytical tools' tab.
+3.  Click the 'Deploy' buttons next to RStudio and JupyterLab.
+
+It may take a few minutes for RStudio and JupyterLab to deploy.
+
+*   To open RStudio or JupyterLab, click the 'Open' button to the right of the tool's name.
+*   To restart RStudio or JupyterLab, click the 'Restart' button to the right of the tool's name.
+*   If your RStudio or JupyterLab instance is inactive for an extended period of time (e.g., overnight) it will be idled. To unidle RStudio or JupyterLab, click the 'Unidle' button next to the tool's name. Unidling usually only takes a few seconds, however, it can take up to several minutes.
+
+## Configure Git and GitHub
+
+To configure Git and GitHub for the Analytical Platform, you must complete the following steps:
+
+1.  [Create an SSH key.](#create-an-ssh-key)
+2.  [Add the SSH key to GitHub.](#add-the-ssh-key-to-github)
+3.  [Configure your username and email in Git on the Analytical Platform.](#configure-your-username-and-email-in-git-on-the-analytical-platform)
+
+### Create an SSH key
+
+You can create an SSH key in RStudio or JupyterLab. We recommend that you use RStudio.
+
+#### RStudio
+
+To create an SSH key in 
+
+#### JupyterLab
+
+### Add the SSH key to GitHub
 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
-cat(readLines('resources/svg/platform.svg'), sep = '')
-```
 
-
-## Why should I use the Analytical Platform?
-
-The Platform provides a number of advantages over existing analytical infrastructure:
-
-- It provides access to the latest versions of modern analytical software, such as R Studio
-- It provides more powerful computational resources (>10Gb RAM and fast CPUs) than DOM1 machines.
-- It can be accessed from multiple computer systems - DOM1, Quantum (HMPPS's system), and MacBooks.
-- It allows analysts to securely deploy data products such as R Shiny applications and web sites, including web-based data visualisations.
-- The platform is hosted in the cloud, which makes it easy to access remotely. Data storage is unlimited, and computational resource can be scaled to demand.
-
-##  FAQ: How do I?
-
-This section covers common tasks you may want to complete on the platform.
-
-##### Get access to the platform{-}
-
-See [Getting Started][Getting Started].
-
-##### Share data or code with a team{-}
-
-TODO: Update following rewrite of section on data access groups
-
-If you've got a team but want to upload data see [Uploading data to S3][Uploading data to S3].
-If you want to share code see guidance on [Github][Configuring Git and Github for use on the Analytical Platform].
-
-##### Upload and work with data{-}
-
-If the data isn't shared, and is less than 100 MB, you can upload it directly to R Studio. See 'uploading files' [here](https://support.rstudio.com/hc/en-us/articles/200713893-Uploading-and-Downloading-Files).
-
-If you want to share the data, or if it's more than 100 MB, you'll need to [set up a team][User Administration], then upload data (see [Uploading data to S3][Uploading data to S3] ).
-
-To import data from S3 into R for analysis, see [Importing data from S3 into R][Importing data from S3 into R].
-
-##### Make an interactive dashboard and deploy it securely{-}
-
-See [Deploying a Shiny App ][Deploying a Shiny App ].
-
-
-## Contacting us
-
-For quick support, contact us on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/anaytical_platform/). Alternatively, contact us by [email](mailto:analytical_platform@digital.justice.gov.uk)
+### Configure you username and email in Git on the Analytical Platform
