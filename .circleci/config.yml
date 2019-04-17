@@ -1,0 +1,39 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: rocker/r-ver:3.5.1
+      
+    steps:
+      - checkout
+      
+      - run:
+          name: Install package dependencies
+          command: |
+            apt-get update
+            apt-get install -y git libssl-dev libcurl4-openssl-dev libxml2-dev pandoc
+            R -e "install.packages(c('remotes'), dependencies = TRUE)"
+            R -e "remotes::install_github('rstudio/bookdown')"
+
+      - run:
+          name: Build the book
+          command: |
+            R -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+            
+      - run:
+          name: Deploy to GitHub
+          command: |
+            set -e
+            [ -z "${GITHUB_TOKEN}" ] && exit 0
+            [ "${CIRCLE_BRANCH}" != "master" ] && exit 0
+            git config --global user.name calumabarnett
+            git config --global user.email calum.barnett@digital.justice.gov.uk
+            git clone -b gh-pages \
+              https://${GITHUB_TOKEN}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git \
+              book-output
+            cd book-output
+            git rm -rf *
+            cp -r ../_book/* ./
+            git add --all *
+            git commit -m "Circle CI: updated book"
+            git push -q origin gh-pages
