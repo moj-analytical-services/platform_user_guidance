@@ -5,6 +5,7 @@
 __The Analytical Platform is a cloud–based system that provides a range of services, tools and resources to analysts across MoJ.__
 
 The Analytical Platform:
+
 *   provides access to the latest versions of open–source analytical software, such as RStudio and JupyterLab, allowing analysts to work in the way that suits them best. Analysts can also freely install packages from CRAN and PyPI, enabling them to utilise advanced analytical tools and techniques, including text mining, predictive analytics and data visualisation.
 *   uses Amazon S3 and Athena to provide a single location for all of our data, including a growing set of curated data, and GitHub to provide a single location for all of our code. This enables analysts to collaborate more effectively, share knowledge and produce high–quality reproducible analysis. Analysts can also build and deploy interactive apps and web pages that can be used to communicate analysis and insight to decision–makers.
 *   gives analysts the tools to develop reproducible analytical pipelines (RAPs) to automate time–consuming and repetitive tasks, allowing them to focus on interpreting the results.
@@ -13,7 +14,7 @@ The Analytical Platform:
 
 ## Get started
 
-To get started on the Analytical Platform, you must complete the following steps:
+To get started on the Analytical Platform, you should complete the following steps:
 
 1.  [Read our acceptable use policy.](#read-our-acceptable-use-policy)
 2.  [Sign up for a GitHub account.](#sign-up-for-a-github-account)
@@ -67,35 +68,53 @@ You can also accept your invitation by signing in to GitHub and visiting the [or
 
 When you sign in to the Analytical Platform for the first time, you will be prompted to configure additional two-factor authentication (2FA) for the Analytical Platform itself.
 
-To sign in , go to the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
+To sign in, go to the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
 
 You must configure 2FA for the Analytical Platform using a mobile app (on your personal or work phone). As described in Section \@ref(configure-two-factor-authentication-for-github), we recommend that you use __Authy__.
 
 ## Access the Analytical Platform
 
-We recommend that you access the Analytical Platform from the [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
-
-*   [AWS](http://aws.services.alpha.mojanalytics.xyz)
-*   [Concourse](https://concourse.services.alpha.mojanalytics.xyz)
-*   [Control panel](https://cpanel-master.services.alpha.mojanalytics.xyz)
-*   [GitHub](https://github.com/moj-analytical-services)
-*   [Grafana](https://grafana.services.alpha.mojanalytics.xyz)
-*   [Kibana](http://kibana.services.alpha.mojanalytics.xyz)
-*   [Prometheus](https://prometheus.services.alpha.mojanalytics.xyz)
+The main entry point to the Analytical Platform is the [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz). From here, you can access RStudio and JupyterLab and can manage your warehouse data sources.
 
 ## Deploy RStudio and JupyterLab
 
-You should complete the following steps to deploy RStudio and JupyterLab on the Analytical Platform:
+Before using RStudio and JupyterLab, you must first deploy them.
+
+ To deploy RStudio and JupyterLab on the Analytical Platform, you should complete the following steps:
 
 1.  Go the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
-2.  Click on the 'Analytical tools' tab.
-3.  Click the 'Deploy' buttons next to RStudio and JupyterLab.
+2.  Select the 'Analytical tools' tab.
+3.  Select the 'Deploy' buttons next to RStudio and JupyterLab.
 
 It may take a few minutes for RStudio and JupyterLab to deploy.
 
-*   To open RStudio or JupyterLab, click the 'Open' button to the right of the tool's name.
-*   To restart RStudio or JupyterLab, click the 'Restart' button to the right of the tool's name.
-*   If your RStudio or JupyterLab instance is inactive for an extended period of time (e.g., overnight) it will be idled. To unidle RStudio or JupyterLab, click the 'Unidle' button next to the tool's name. Unidling usually only takes a few seconds, however, it can take up to several minutes.
+## Open RStudio and JupyterLab
+
+To open RStudio or JupyterLab:
+
+1.  Go the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
+2.  Select the 'Analytical tools' tab.
+3.  Select the 'Open' button to the right of the tool's name.
+
+## Restart RStudio and JupyterLab
+
+If your RStudio or JupyterLab is not working as expected, you may wish to restart it.
+
+To restart RStudio or JupyterLab:
+
+1.  Go the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
+2.  Select the 'Analytical tools' tab.
+3.  Select the 'Open' button to the right of the tool's name.
+
+## Unidle Rstudio and JupyterLab
+
+If your RStudio or JupyterLab instance is inactive for an extended period of time (e.g., overnight) it will be idled.
+
+1.  Go the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
+2.  Select the 'Analytical tools' tab.
+3.  Select the 'Unidle' button to the right of the tool's name. 
+
+Unidling usually only takes a few seconds, however, it can take up to several minutes.
 
 ## Configure Git and GitHub
 
@@ -111,12 +130,40 @@ You can create an SSH key in RStudio or JupyterLab. We recommend that you use RS
 
 #### RStudio
 
-To create an SSH key in 
+To create an SSH key in RStudio, you should complete the following steps:
+
+1.  Open RStudio from the Analytical Platform control panel.
+2.  In the menu bar, select 'Tools' then 'Global Options...'.
+3.  In the options window, select 'Git/SVN' in the navigation menu.
+4.  Select 'Create RSA key...'.
+5.  Select 'Create'.
+6.  Select 'Close' when the information window appears.
+7.  Select 'View public key'.
+8.  Copy the SSH key to the clipboard by pressing Ctrl+C on Windows or ⌘C on Mac.
 
 #### JupyterLab
 
+To create an SSH key in JupyterLab, you should complete the following steps:
+
+1.  Open JupyerLab from the Analytical Platform control panel.
+2.  Select the '+' icon in the file browser to open a new Launcher tab.
+3.  Select 'Terminal' from the 'Other' section.
+4.  Create an SSH by running `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`, substituting the email address you used to sign up to GitHub.
+5.  When prompted to enter a file in which to save the key, press Enter to accept the default location.
+6.  When prompted to enter a passphrase, press Enter to not set a passphrase.
+6.  View the SSH key by running `cat /home/jovyan/.ssh/id_rsa.pub`.
+7.  Select the SSH key and copy it to the clipboard by pressing Ctrl+C on windows or ⌘C on Mac.
+
 ### Add the SSH key to GitHub
 
-
+To add the SSH key to GitHub, you should follow the guidance [here](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account).
 
 ### Configure you username and email in Git on the Analytical Platform
+
+To configure your username and email in Git on the Analytical Platform using RStudio or JupyterLab, you should complete the following steps:
+
+1.  Open a new terminal:
+    +   In RStudio, select 'Tools' in the menu bar and then 'Shell...'.
+    +   In JupyterLap, select the '+' icon in the file browser and then select 'Terminal' from the 'Other' section in the new Launcher tab.
+2.  Run `git config --global user.name 'Your Name'`, substituting your GitHub username.
+3.  Run `git config --global user.email 'your_email@example.com`, substituting the email address you used to sign up to GitHub.
