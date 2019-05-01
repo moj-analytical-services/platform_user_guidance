@@ -1,4 +1,72 @@
-# Using Github with the platform{#github}
+# Git and GitHub
+
+## What is Git?
+
+## What is GitHub?
+
+## Create a new repository in GitHub
+
+## Clone a repository from GitHub
+
+## Snapshot changes
+
+### Add
+
+### Commit
+
+### Stash
+
+### Status
+
+### Reset
+
+## Work with branches
+
+### Branch
+
+### Checkout
+
+### Merge
+
+## Sync changes with GitHub
+
+### Pull
+
+### Fetch
+
+### Push
+
+## Issues
+
+### Create an issue
+
+### Label an issue
+
+### Assign an issue
+
+### Comment on an issue
+
+### Close an issue
+
+## Pull requests
+
+### Create a pull request
+
+### Request a review on a pull request
+
+### Review a pull request
+
+### Merge a pull request
+
+### Status checks
+
+## Releases
+
+### Create a release
+
+*   Difference between a release and a tag.
+
+## Troubleshooting
 
 Before you can use Github with R Studio or Jupyter, you need to connect them together by creating an 'ssh key'.  Full guidance is [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#configuring-git-and-github-for-use-on-the-analytical-platform)
 
