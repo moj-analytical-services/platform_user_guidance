@@ -1,4 +1,43 @@
-# Working with big datasets and sharing them: Accessing data in Amazon S3
+# Amazon S3
+
+## What is Amazon S3?
+
+## Working with Amazon S3 buckets
+
+### Types of buckets
+
+*   Warehouse data sources
+*   App data sources
+
+What is the distinction and what can users do?
+
+### Create a new bucket
+
+### Request access to a bucket
+
+### Manage access to a bucket
+
+## Upload data to Amazon S3
+
+*   You should follow information governance procedures when uploading data to Amazon S3.
+
+### Amazon S3 Console
+
+### RStudio
+
+### JupyterLab
+
+## Download data from Amazon S3
+
+### Amazon S3 Console
+
+### RStudio
+
+#### `s3tools`
+
+#### `s3browser`
+
+### JupyterLab
 
 [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) is used as the primary storage area for large data files. In contrast to data in your Platform's home directory, data in S3 can be accessed by multiple Platform users. You will only be able to access S3 buckets (folders) that you have been granted access to.
 
