@@ -2,6 +2,12 @@
 
 ## What is Amazon S3?
 
+[Amazon S3](https://aws.amazon.com/s3/) is a web-based cloud storage platform. It is one of the primary file storage locations on the Analytical Platform, alongside individual users' home directories.
+
+Amazon S3 should be used to store large files and any files that need to be accessed by muliple users.
+
+Data stored in Amazon S3 can be seamlessly integrated with other AWS services such as Amazon Athena and Amazon Glue.
+
 ## Working with Amazon S3 buckets
 
 ### Types of buckets
@@ -13,9 +19,62 @@ What is the distinction and what can users do?
 
 ### Create a new bucket
 
+Standard users can currently only create new warehouse data sources in the Analytical Platform control panel. __You cannot create new buckets directly in the Amazon S3 console.__
+
+To create a new warehouse data source:
+
+1.  Go to the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
+2.  Select the 'Warehouse data' tab.
+3.  Select 'Create a new warehouse data source'.
+4.  Enter a name for the warehouse data source -- this must be prefixed with '-alpha'.
+5.  Select 'Create'.
+
+When you create a new warehouse data source, only you will initially have access. As an admin of the data source, you will be able to add and remove other users from the data access group as required. Further information on managing data access groups can be found in Section \@ref(manage-access-to-a-bucket).
+
+### Access levels
+
+Every bucket has three access levels:
+
+*   Read only
+*   Read/write
+*   Admin
+
 ### Request access to a bucket
 
-### Manage access to a bucket
+To gain access to a bucket (warehouse data source or app data source), you must be added to the relevant data access group.
+
+If you know an admin of the bucket you require access to, you can ask them to add you to the data access group.
+
+If you do not know any of the admins of the bucket you require access to, you can ask the Analytical Platform team to add you to the data access group on the [#ap_admin_request](https://asdslack.slack.com/messages/CBLAGCQG6/) Slack channel or by [email](mailto:analytical_platform@digital.justice.gov.uk).
+
+When requesting access to a bucket, you should specify the name of the bucket and the level of access you require.
+
+### Manage access to a bucket{#manage-access-to-a-bucket}
+
+Bucket admins can currently only manage access to warehouse data sources in the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/). __You cannot manage access to buckets directly in the Amazon S3 console.__
+
+To manage access to a warehouse data source:
+
+1.  Go to the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
+2.  Select the 'Warehouse data' tab.
+3.  Select the name of the warehouse data source you wish to manage.
+
+To add a new user to the data access group:
+
+1.  Type their GitHub username into the input field labelled 'Grant access to this data to other users'.
+2.  Select the user from the drop-down list.
+3.  Select 'Grant access'.
+
+To edit the access level of a user:
+
+1.  Select 'Edit access level' next to the name of the user.
+2.  Select the checkbox next to the access level you wish to grant the user.
+3.  Select 'Save'.
+
+To remove a user from the data access group:
+
+1.  Select 'Edit access level' next to the name of the user.
+2.  Select 'Revoke access'.
 
 ## Upload data to Amazon S3
 
