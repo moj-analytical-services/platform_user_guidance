@@ -8,7 +8,7 @@ This policy applies in addition to the [MoJ acceptable use policy](https://intra
 
 ## Who this policy applies to
 
-This policy applies to all users of the Analytical Platform.
+This policy applies to all users of the Analytical Platform (excluding apps hosted by the platform).
 
 ## General principles
 
