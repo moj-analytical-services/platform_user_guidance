@@ -12,10 +12,12 @@ Data stored in Amazon S3 can be seamlessly integrated with other AWS services su
 
 ### Types of buckets
 
+Amazon S3 buckets are separated into two categories on the Analytical Platform:
+
 *   Warehouse data sources
 *   App data sources
 
-What is the distinction and what can users do?
+Warehouse data sources are are suitable for storing files in all cases, except where the files need to be accessed by a webapp. In this case, files should be stored in an app data source.
 
 ### Create a new bucket
 
@@ -76,138 +78,167 @@ To remove a user from the data access group:
 1.  Select 'Edit access level' next to the name of the user.
 2.  Select 'Revoke access'.
 
-## Upload data to Amazon S3
+## Upload files to Amazon S3
+
+You can upload files to Amazon S3 from your local computer or from your home 
 
 *   You should follow information governance procedures when uploading data to Amazon S3.
 
 ### Amazon S3 Console
 
+You can use the Amazon S3 Console to upload files from your local computer (e.g., personal or shared storage on DOM1 or Quantum) only.
+
+To upload files using the Amazon S3 Console:
+
+1.  Log in to the [AWS Management Console](https://http://aws.services.alpha.mojanalytics.xyz) using your Analytical Platform account.
+2.  Select 'Services' from the menu bar.
+3.  Select 'S3' from the drop down menu.
+4.  Select the folder you want to upload files to.
+5.  Select 'Upload'.
+6.  Select 'Add files' or drag and drop the files you want to upload.
+7.  Select 'Upload' -- you do not need to complete steps 2, 3 or 4.
+
+You can also directly navigate to a bucket in the AWS S3 Console by selecting 'Open on AWS' in the Analytical Platform control panel.
+
 ### RStudio
+
+You can upload files in RStudio on the Analytical Platform to Amazon S3 using the `s3tools` package.
+
+`s3tools` should be preinstalled for all users of the Analytical Platform. If you find that `s3tools` is not installed, you can install it by running the following code:
+
+```{r install-s3-tools, eval=FALSE}
+install.packages('remotes')
+library(remotes)
+remotes::install_github('moj-analytical-services/s3tools')
+```
+
+`s3tools` contains three functions for uploading files to Amazon S3:
+
+*   `write_file_to_s3`
+*   `write_df_to_csv_in_s3`
+*   `write_df_to_table_in_s3`
+
+You can find out more about how to use these functions on [GitHub](https://github.com/moj-analytical-services/s3tools) or by using the help operator in RStudio (e.g., `?s3tools::write_file_to_s3`).
 
 ### JupyterLab
 
-## Download data from Amazon S3
+You can upload files in JupyterLab on the Analytical Platform to Amazon S3 using the `boto3` package.
+
+You can install `boto3` by running the following code in a terminal:
+
+```{python install-boto3, eval=FALSE}
+pip install boto3
+```
+
+To upload a file to Amazon S3, you should use the following code:
+
+```{python python-upload-s3, eval=FALSE}
+import boto3
+
+s3 = boto3.resource('s3')
+s3.object('bucket_name', 'key').put(Body=object)
+```
+
+Here, you should substitute `'bucket_name'` with the name of the bucket, `'key'` with the path of the object in Amazon S3 and `object` with the object you want to upload.
+
+You can find more information in the [package documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Object.put).
+
+## Download or read files from Amazon S3
 
 ### Amazon S3 Console
 
+You can use the Amazon S3 Console to download files to your local computer (e.g., personal or shared storage on DOM1 or Quantum) only.
+
+To download a file using the Amazon S3 Console:
+
+1.  Log in to the [AWS Management Console](https://http://aws.services.alpha.mojanalytics.xyz) using your Analytical Platform account.
+2.  Select 'Services' from the menu bar.
+3.  Select 'S3' from the drop down menu.
+4.  Select the file you want to download.
+5.  Select 'Download' or 'Download as' as appropriate.
+
+You can also directly navigate to a bucket in the AWS S3 Console by selecting 'Open on AWS' in the Analytical Platform control panel.
+
 ### RStudio
+
+You can download or read files in RStudio on the Analytical Platform from Amazon S3 using the `s3tools` or `s3browser` packages.
 
 #### `s3tools`
 
+`s3tools` should be preinstalled for all users of the Analytical Platform. If you find that `s3tools` is not installed, you can install it by running the following code:
+
+```{r install-s3-tools-2, eval=FALSE}
+install.packages('remotes')
+library(remotes)
+remotes::install_github('moj-analytical-services/s3tools')
+```
+
+`s3tools` contains four functions for downloading or reading files from Amazon S3:
+
+*   `download_file_from_s3`
+*   `s3_path_to_df`
+*   `s3_path_to_full_df`
+*   `s3_path_to_preview_df`
+
+You can find out more about how to use these functions on [GitHub](https://github.com/moj-analytical-services/s3tools) or by using the help operator in RStudio (e.g., `?s3tools::download_file_from_s3`).
+
 #### `s3browser`
+
+`s3browser` provides a user interface within R that allows you to browse files you have access to in Amazon S3.
+
+You can install `s3browser` by running the following code:
+
+```{r install-s3-browser, eval=FALSE}
+install.packages('remotes')
+library(remotes)
+remotes::install_github('moj-analytical-services/s3browser')
+```
+
+To open the browser, run:
+
+```{r run-s3browser, eval=FALSE}
+s3browser::file_explorer_s3()
+```
+You can find out more about how to use `s3browser` on [GitHub](https://github.com/moj-analytical-services/s3browser).
 
 ### JupyterLab
 
-[Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) is used as the primary storage area for large data files. In contrast to data in your Platform's home directory, data in S3 can be accessed by multiple Platform users. You will only be able to access S3 buckets (folders) that you have been granted access to.
+#### `pandas`
 
-## Accessing data in S3 from R
+You can use any of the `pandas` read functions (e.g., `read_csv` or `read_json`) to download data directly from Amazon S3. This requires that you have installed the `s3fs` package. To install the `s3fs` package, run the following code in a terminal:
 
-There are currently two methods of browsing and importing data held in S3 into RStudio.
-
-### User Interface
-
-We have developed a user interface that allows you to search and browse the files that you have been given access to.
-
-![](images/s3/s3browser.png)
-
-You can access this interface by typing the following command into your R Studio console:
-```r
-s3browser::file_explorer_s3()
+```{python install-s3fs, eval=FALSE}
+pip install s3fs
 ```
 
-See the [documentation](https://github.com/moj-analytical-services/s3browser) for further details.
+As an example, to read a CSV, you should run the following code:
 
-### R Package
+```{python read-pandas, eval=FALSE}
+import pandas as pd
+pd.read_csv('s3://bucket_name/key')
+```
 
-We have also developed an R Package called `s3tools` that makes it easier to interact with s3. This enables you to do things like write `s3tools::s3_path_to_full_df("alpha-everyone/iris.csv")` to read directly from S3 into a data frame in R.
+Here, you should substitute `bucket_name` with the name of the bucket and `key` with the path of the object in Amazon S3.
 
-See the [documentation](https://github.com/moj-analytical-services/s3tools) for
-further details.
+#### `boto3`
 
-## Importing data from S3 into JupyterLab
+You can also download or read objects using the `boto3` package.
 
-Pandas can import straight from S3:
+You can install `boto3` by running the following code in a terminal:
 
-    import pandas as pd
-    pd.read_csv("s3://alpha-everyone/iris.csv")
+```{python install-boto3, eval=FALSE}
+pip install boto3
+```
 
-This requires you to install this library:
+To download a file from Amazon S3, you should use the following code:
 
-    pip install s3fs
-
-Or alternatively use the standard python AWS client `boto3`.
-
-If using Spark (and the Jupyter deployment including the Spark libraries):
-
-    spark.read.csv("s3a://blah")
-
-These 'direct reads' should be faster than downloading from S3 to your machine and using JupyterLab to uploading to your home drive.
-
-## Writing data from JupyterLab to S3
-
-pandas won't write files to S3 directly. Instead either:
-* write data to a temporary file on disk and copy the file to S3 with boto3
-* write data to a memory buffer and copy the file to S3 with boto3 like this:
-
-```python
-from io import StringIO
+```{python python-upload-s3, eval=FALSE}
 import boto3
 
-csv_buffer = StringIO()
-df.to_csv(csv_buffer)
-s3_resource = boto3.resource('s3')
-s3_resource.Object(bucket, 'df.csv').put(Body=csv_buffer.getvalue())
+s3 = boto3.resource('s3')
+s3.Object('bucket_name', 'key').download_file('local_path')
 ```
 
-## Uploading data to S3 (from your machine)
+Here, you should substitute `'bucket_name'` with the name of the bucket, `'key'` with the path of the object in Amazon S3 and `local_path` with the local path where you would like to save the downloaded file.
 
-### Where data is stored
-
-Data in S3 is stored in 'buckets', which are conceptually very similar to folders.
-
-Each of these 'buckets' has a corresponding 'data access group' which is the group of platform users who have access to the bucket.
-
-Each data access group has one or more administrators, who are able to add and remove people from the group.
-
-Typically, a suitable bucket will already exist for the work you are doing, so you just need to ask the data access group administrator to add you.
-
-If it does not already exist, you may create a new 'bucket'.  In doing so, you will automatically become the administrator of this data access group.
-
-### Uploading data
-
-The easiest way to upload data to an S3 buckets is via the AWS GUI.  Instructions are as follows:
-
-- Navigate to the platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/#Warehouse%20data), and click on the 'warehouse data' tab.
-- Look for the bucket you want to upload data to, and click the 'Open on AWS' button, which will take you into the AWS GUI
-- Within AWS, click the blue 'Upload' button
-- Drag files in as instructed
-- Click the 'Upload' button at the bottom *left* of the dialogue.
-
-You can also move, rename and delete data using the AWS GUI. Select the files by checking the text box, use the `More` button so see the options.
-
-![](images/s3/s3_options.png)
-
-## Creating and managing data access groups
-
-Before creating a new S3 bucket and corresponding data access group, please check that a suitable S3 bucket does not already exist.
-
-You can do this by navigating 'up a level' within the AWS S3 GUI, by clicking on 'Amazon S3' at the top left of the screen.  [TODO: Add picture]
-
-This will show you a list of all S3 buckets within the platform, including buckets you do not have access to.
-
-Assuming a suitable bucket does not already exist, you can create a new one as follows:
-
-### Step 1 - Create a new bucket
-
-Navigate to the ['Data Warehouse' tab of the control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/#Warehouse%20data).  At the bottom of the page, click on 'Create new warehouse data source'.
-
-Type a name for your S3 bucket.  Note that for technical reasons, all buckets must start with `alpha-`, which will be populated for you automatically
-
-### Step 2 (optional) Grant access to other users, and set their access level
-
-Navigate to the ['Data Warehouse' tab of the control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/#Warehouse%20data). Click on the name of the bucket you wish to manage.
-
-Scroll to the bottom of the page, and start typing a user's name in the 'Grant access to this data to other users' box.
-
-If you want to grant administrator priviledges on another user click on the 'Edit access level' button next to their name.  This will enable them to manage the data access group.  Each group can have multiple administrators.
-
+You can find more information in the [package documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Object.download_file).
