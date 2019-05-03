@@ -210,6 +210,7 @@ Example Dag file contents:
             task_id="task",
             get_logs=True,
             dag=dag,
+            is_delete_operator_pod=True,
             annotations={"iam.amazonaws.com/role": "alpha_user_###YOUR_GITHUB_USERNAME###"},
         )
 
