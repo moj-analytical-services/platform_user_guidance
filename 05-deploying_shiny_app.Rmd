@@ -4,7 +4,7 @@
 
 ### Summary
 
-To create and deploy a Shiny app, you should follow these steps:
+To create and deploy a Shiny app, you should complete the following steps:
 
 1.  [Copy the app template](#copy-template)
 2.  [Create a new webapp](#create-webapp)
@@ -19,13 +19,15 @@ To create and deploy a Shiny app, you should follow these steps:
 
 ### Copy the app template{#copy-template}
 
+To copy the app template:
+
 1.  Go to [github.com/new/import](https://github.com/new/import)
 2.  Fill in the form:
     +   Your old repository’s clone URL: `https://github.com/moj-analytical-services/rshiny-template`
     +   Owner: `moj-analytical-services`
     +   Name: The name of your app, e.g., `my-app`
     +   Privacy: Private
-6.  Click 'Begin import'
+6.  Select 'Begin import'
 
 This copies the entire contents of the app template to a new repository.
 
@@ -41,8 +43,10 @@ You should provide the URL of the app's GitHub repository as well as any existin
 
 ### Clone the repository{#clone-repo}
 
+To clone the repository:
+
 1.  Navigate to the app's repository on GitHub.
-2.  Click 'Clone or download'.
+2.  Select 'Clone or download'.
 3.  Ensure that the dialogue says 'Clone with SSH'. If the dialogue says 'Clone with HTTPS' select 'Use SSH'.
 4.  Copy the SSH URL. This should start with `git@`.
 5.  In RStudio, select 'File' > 'New project...' > 'Version control' > 'Git'.
@@ -164,7 +168,7 @@ Some anti-virus software and spam filters pre-click links in emails, meaning tha
 
 ### Packrat
 
-If you are having issues with `packrat.lock`, follow these steps:
+If you are having issues with `packrat.lock`, complete the following steps:
 
 1.  Delete the entire `packrat` directory.
 2.  Comment out all code in the project.
@@ -180,17 +184,17 @@ All logs from deployed apps can be viewed in [Kibana](https://kibana.services.al
 
 To view all app logs:
 
-1.  select 'Discover' from the left sidebar
-2.  select 'Open' from the menu bar 
-3.  select 'Application logs (alpha)' from the saved searches
+1.  Select 'Discover' from the left sidebar.
+2.  Select 'Open' from the menu bar.
+3.  Select 'Application logs (alpha)' from the saved searches.
 
 To view the logs for a specific app:
 
-1.  select 'Add a filter'
-2.  select 'app_name' as the field
-3.  select 'is' as the operator
-4.  insert the app name followed by '-webapp' as the value
-5.  click 'Save'
+1.  Select 'Add a filter'.
+2.  Select 'app_name' as the field.
+3.  Select 'is' as the operator.
+4.  Insert the app name followed by '-webapp' as the value.
+5.  Select 'Save'.
 
 Log messages are displayed in the 'message' column.
 
