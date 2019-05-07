@@ -87,15 +87,15 @@ You can deploy your own sandboxed version of Airflow to test DAGs and docker ima
 
 ### Start Airflow sandbox
 
-Click the `Deploy` button next to `airflow-sqlite` in the Analytical tools section of the control panel. This should take a few minutes to deploy. Then Click the `Open` button to open your Airflow sandbox in a new window.
+Click the `Deploy` button next to `airflow-sqlite` in the Analytical tools section of the control panel. This should take a few minutes to deploy. Then click the `Open` button to open your Airflow sandbox in a new window.
 
-This will create an `airflow` directory in your home directory on the Analytical Platform. In this airflow directory there are three more directories `db`, `dags` and `logs`. The `dags` directory is where you will store your test dag files.
+This will create an `airflow` directory in your home directory on the Analytical Platform. In this airflow directory there are three more directories `db`, `dags` and `logs`. The `dags` directory is where you will store your test DAG files.
 
 ### Create a test DAG
 
-Using JupiterLab on the Analytical Platform create a python file in the `airflow/dags` directory in your home directory in the Analytical Platform (eg. `test_dag.py`). Airflow will automatically scan this directory for dag files every three minutes.
+Using JupyterLab on the Analytical Platform create a python file in the `airflow/dags` directory in your home directory in the Analytical Platform (eg. `test_dag.py`). Airflow will automatically scan this directory for DAG files every three minutes.
 
-See above for creating a Docker image to run the dag if you are using `KubernetesPodOperator`. Concourse will automatically build images of PR's to github airflow repos and will be tagged with the name of the PR.
+See above for creating a Docker image to run the DAG if you are using `KubernetesPodOperator`. Concourse will automatically build images of PR's to GitHub Airflow repos and will be tagged with the name of the PR.
 
 Example DAG file contents:
 
@@ -137,15 +137,15 @@ Example DAG file contents:
 
 
 
-You will have to set the dag namespace to your namespace and the aws role to your role, see `###YOUR_GITHUB_USERNAME###` in the above example code.
+You will have to set the DAG namespace to your namespace and the AWS role to your role, see `###YOUR_GITHUB_USERNAME###` in the above example code.
 
-You will also need to update the image with your dag image from AWS ECR and add any environment variables etc. as you would with a normal DAG.
+You will also need to update the image with your DAG image from AWS ECR and add any environment variables etc. as you would with a normal DAG.
 
 ### IMPORTANT
 
 This sandbox Airflow is meant for testing. You should not use it to run regular tasks and should not be relied on for running production pipelines. It is likely that the sandbox will be idled when it is not being used.
 
-Because you are running this DAG as your own `alpha_user_...`, the dag will have the access that your user has. It does not run with the `iam_policy.json` that you may have created in the task github repo. This means that you might need to either grant yourself access to any buckets or copy data in to a bucket you have created in the Warehouse data section of the Analytical Platform.
+Because you are running this DAG as your own `alpha_user_...`, the DAG will have the access that your user has. It does not run with the `iam_policy.json` that you may have created in the task GitHub repo. This means that you might need to either grant yourself access to any buckets or copy data in to a bucket you have created in the Warehouse data section of the Analytical Platform.
 
 
 
