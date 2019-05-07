@@ -93,7 +93,7 @@ This will create an `airflow` directory in your home directory on the Analytical
 
 ### Create a test DAG
 
-Using Jupiter lab on the Analytical Platform create a python file in the `airflow/dags` directory in your home directory in the Analytical Platform (eg. `test_dag.py`). Airflow will automatically scan this directory for dag files every three minutes.
+Using JupiterLab on the Analytical Platform create a python file in the `airflow/dags` directory in your home directory in the Analytical Platform (eg. `test_dag.py`). Airflow will automatically scan this directory for dag files every three minutes.
 
 See above for creating a Docker image to run the dag if you are using `KubernetesPodOperator`. Concourse will automatically build images of PR's to github airflow repos and will be tagged with the name of the PR.
 
@@ -143,7 +143,7 @@ You will also need to update the image with your dag image from AWS ECR and add 
 
 ### IMPORTANT
 
-This sandbox Airflow is meant for testing. You should not use it to run regular tasks and s should not be relied on for running production pipelines. It is likely that the sandbox will be idled when it is not being used.
+This sandbox Airflow is meant for testing. You should not use it to run regular tasks and should not be relied on for running production pipelines. It is likely that the sandbox will be idled when it is not being used.
 
 Because you are running this DAG as your own `alpha_user_...`, the dag will have the access that your user has. It does not run with the `iam_policy.json` that you may have created in the task github repo. This means that you might need to either grant yourself access to any buckets or copy data in to a bucket you have created in the Warehouse data section of the Analytical Platform.
 
