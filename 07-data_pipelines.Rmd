@@ -89,7 +89,7 @@ You can deploy your own sandboxed version of Airflow to test DAGs and docker ima
 
 Click the `Deploy` button next to `airflow-sqlite` in the Analytical tools section of the control panel. This should take a few minutes to deploy. Then click the `Open` button to open your Airflow sandbox in a new window.
 
-This will create an `airflow` directory in your home directory on the Analytical Platform. In this airflow directory there are three more directories `db`, `dags` and `logs`. The `dags` directory is where you will store your test DAG files.
+This will create an `airflow` directory in your home directory on the Analytical Platform. In this `airflow` directory there are three more directories: `db`, `dags` and `logs`. The `dags` directory is where you will store your test DAG files.
 
 ### Create a test DAG
 
