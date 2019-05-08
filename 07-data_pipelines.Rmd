@@ -93,11 +93,13 @@ This will create an `airflow` directory in your home directory on the Analytical
 
 ### Create a test DAG
 
-Using JupyterLab on the Analytical Platform create a python file in the `airflow/dags` directory in your home directory in the Analytical Platform (eg. `test_dag.py`). Airflow will automatically scan this directory for DAG files every three minutes.
+Using JupyterLab on the Analytical Platform, create a Python file in the `airflow/dags` directory in your home directory on the Analytical Platform (e.g., `test_dag.py`). Airflow will automatically scan this directory for DAG files every three minutes.
 
-See above for creating a Docker image to run the DAG if you are using `KubernetesPodOperator`. Concourse will automatically build images of PR's to GitHub Airflow repos and will be tagged with the name of the PR.
+You must use you own IAM role and set the namespace in the dag to your own Kubernetes namespace.
 
-Example DAG file contents:
+See above for creating a Docker image to run the DAG if you are using `KubernetesPodOperator`. Concourse will automatically build images from pull requests for Airflow repositories in GitHub that will be tagged with the name of the pull request. For example, if your pull request branch is named `test-dev` then your image will be named `my_repositiry:test-dev`.
+
+Example DAG file contents: {#ex-code}
 
 
     from datetime import datetime
@@ -139,14 +141,15 @@ Example DAG file contents:
 
 You will have to set the DAG namespace to your namespace and the AWS role to your role, see `###YOUR_GITHUB_USERNAME###` in the above example code.
 
-You will also need to update the image with your DAG image from AWS ECR and add any environment variables etc. as you would with a normal DAG.
+You will also need to update the image with your DAG image from the AWS Elastic Container Registry and add any environment variables, etc., as you would with a normal DAG.
 
-### IMPORTANT
+### Important considerations
 
-This sandbox Airflow is meant for testing. You should not use it to run regular tasks and should not be relied on for running production pipelines. It is likely that the sandbox will be idled when it is not being used.
+This sandbox Airflow is meant for testing. You should not use it to run regular tasks and should not rely on it for running production pipelines. It is likely that the sandbox will be idled when it is not being used.
 
-Because you are running this DAG as your own `alpha_user_...`, the DAG will have the access that your user has. It does not run with the `iam_policy.json` that you may have created in the task GitHub repo. This means that you might need to either grant yourself access to any buckets or copy data in to a bucket you have created in the Warehouse data section of the Analytical Platform.
+Because DAGs are run as your own `alpha_user_...`, they will have the same access permissions. DAGs are not run using an `iam_policy.json`, even if one exists in the task GitHub repository. This means that you may need to either obtain access to any required buckets or copy data into a bucket that you already have access to.
 
+You should still be very careful with what you do as even with your role you may still have access to do a lot of damage.
 
 
 ### Test your image - locally on a Macbook
