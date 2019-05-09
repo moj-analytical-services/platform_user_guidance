@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Part 7 Data pipelines | Platform Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform." />
-  <meta name="generator" content="bookdown  and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.9.15 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Part 7 Data pipelines | Platform Guidance" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="MoJ Analytical Services" />
 
 
-<meta name="date" content="2019-05-02" />
+<meta name="date" content="2019-05-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,10 +217,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.2" data-path="data-pipelines.html"><a href="data-pipelines.html#concepts"><i class="fa fa-check"></i><b>7.2</b> Concepts</a></li>
 <li class="chapter" data-level="7.3" data-path="data-pipelines.html"><a href="data-pipelines.html#set-up-a-pipeline"><i class="fa fa-check"></i><b>7.3</b> Set up a pipeline</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="data-pipelines.html"><a href="data-pipelines.html#task-repository"><i class="fa fa-check"></i><b>7.3.1</b> Task repository</a></li>
-<li class="chapter" data-level="7.3.2" data-path="data-pipelines.html"><a href="data-pipelines.html#test-your-image---locally-on-a-macbook"><i class="fa fa-check"></i><b>7.3.2</b> Test your image - locally on a Macbook</a></li>
-<li class="chapter" data-level="7.3.3" data-path="data-pipelines.html"><a href="data-pipelines.html#build-the-image"><i class="fa fa-check"></i><b>7.3.3</b> Build the image</a></li>
-<li class="chapter" data-level="7.3.4" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-dag"><i class="fa fa-check"></i><b>7.3.4</b> Airflow DAG</a></li>
-<li class="chapter" data-level="7.3.5" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-web-interface"><i class="fa fa-check"></i><b>7.3.5</b> Airflow web interface</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="data-pipelines.html"><a href="data-pipelines.html#test-pipeline-in-your-own-airflow-sandbox"><i class="fa fa-check"></i><b>7.4</b> Test pipeline in your own Airflow sandbox</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="data-pipelines.html"><a href="data-pipelines.html#start-airflow-sandbox"><i class="fa fa-check"></i><b>7.4.1</b> Start Airflow sandbox</a></li>
+<li class="chapter" data-level="7.4.2" data-path="data-pipelines.html"><a href="data-pipelines.html#create-a-test-dag"><i class="fa fa-check"></i><b>7.4.2</b> Create a test DAG</a></li>
+<li class="chapter" data-level="7.4.3" data-path="data-pipelines.html"><a href="data-pipelines.html#important-considerations"><i class="fa fa-check"></i><b>7.4.3</b> Important considerations</a></li>
+<li class="chapter" data-level="7.4.4" data-path="data-pipelines.html"><a href="data-pipelines.html#test-your-image---locally-on-a-macbook"><i class="fa fa-check"></i><b>7.4.4</b> Test your image - locally on a Macbook</a></li>
+<li class="chapter" data-level="7.4.5" data-path="data-pipelines.html"><a href="data-pipelines.html#build-the-image"><i class="fa fa-check"></i><b>7.4.5</b> Build the image</a></li>
+<li class="chapter" data-level="7.4.6" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-dag"><i class="fa fa-check"></i><b>7.4.6</b> Airflow DAG</a></li>
+<li class="chapter" data-level="7.4.7" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-web-interface"><i class="fa fa-check"></i><b>7.4.7</b> Airflow web interface</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="build-and-deploy.html"><a href="build-and-deploy.html"><i class="fa fa-check"></i><b>8</b> Build and Deploy</a><ul>
@@ -402,8 +407,66 @@ CMD [ &quot;python&quot;, &quot;./my-script.py&quot; ]</code></pre>
 <p>e.g. See: <a href="https://github.com/moj-analytical-services/airflow-enforcement-data-engineering/blob/master/iam_policy.json" class="uri">https://github.com/moj-analytical-services/airflow-enforcement-data-engineering/blob/master/iam_policy.json</a> for listing, reading and writing to S3 buckets.</p></li>
 </ol>
 </div>
+</div>
+<div id="test-pipeline-in-your-own-airflow-sandbox" class="section level2">
+<h2><span class="header-section-number">7.4</span> Test pipeline in your own Airflow sandbox</h2>
+<p>You can deploy your own sandboxed version of Airflow to test DAGs and docker images on.</p>
+<div id="start-airflow-sandbox" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> Start Airflow sandbox</h3>
+<p>Click the <code>Deploy</code> button next to <code>airflow-sqlite</code> in the Analytical tools section of the control panel. This should take a few minutes to deploy. Then click the <code>Open</code> button to open your Airflow sandbox in a new window.</p>
+<p>This will create an <code>airflow</code> directory in your home directory on the Analytical Platform. In this <code>airflow</code> directory there are three more directories: <code>db</code>, <code>dags</code> and <code>logs</code>. The <code>dags</code> directory is where you will store your test DAG files.</p>
+</div>
+<div id="create-a-test-dag" class="section level3">
+<h3><span class="header-section-number">7.4.2</span> Create a test DAG</h3>
+<p>Using JupyterLab on the Analytical Platform, create a Python file in the <code>airflow/dags</code> directory in your home directory on the Analytical Platform (e.g., <code>test_dag.py</code>). Airflow will automatically scan this directory for DAG files every three minutes.</p>
+<p>You must use you own IAM role and set the namespace in the dag to your own Kubernetes namespace.</p>
+<p>See above for creating a Docker image to run the DAG if you are using <code>KubernetesPodOperator</code>. Concourse will automatically build images from pull requests for Airflow repositories in GitHub that will be tagged with the name of the pull request. For example, if your pull request branch is named <code>test-dev</code> then your image will be named <code>my_repositiry:test-dev</code>.</p>
+<p>Example DAG file contents: {#ex-code}</p>
+<pre><code>from datetime import datetime
+
+from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
+from airflow.utils.log.logging_mixin import LoggingMixin
+from airflow.models import DAG
+
+log = LoggingMixin().log
+
+args = {&quot;owner&quot;: &quot;airflow&quot;, &quot;start_date&quot;: datetime(2019, 3, 18)}
+
+dag = DAG(
+    dag_id=&quot;example_kubernetes_operator_assume_role&quot;,
+    default_args=args,
+    schedule_interval=None,
+)
+
+k = KubernetesPodOperator(
+    namespace=&quot;user-###YOUR_GITHUB_USERNAME###&quot;,
+    image=&quot;governmentpaas/awscli:latest&quot;,
+    cmds=[&quot;aws&quot;, &quot;--debug&quot;],
+    arguments=[&quot;s3api&quot;, &quot;list-objects&quot;, &quot;--bucket&quot;, &quot;###YOUR_TEST_BUCKET###&quot;],
+    env_vars={
+        &quot;AWS_METADATA_SERVICE_TIMEOUT&quot;: &quot;60&quot;,
+        &quot;AWS_METADATA_SERVICE_NUM_ATTEMPTS&quot;: &quot;5&quot;,
+    },
+    labels={&quot;foo&quot;: &quot;bar&quot;},
+    name=&quot;airflow-test-pod&quot;,
+    in_cluster=True,
+    task_id=&quot;task&quot;,
+    get_logs=True,
+    dag=dag,
+    is_delete_operator_pod=True,
+    annotations={&quot;iam.amazonaws.com/role&quot;: &quot;alpha_user_###YOUR_GITHUB_USERNAME###&quot;},
+)</code></pre>
+<p>You will have to set the DAG namespace to your namespace and the AWS role to your role, see <code>###YOUR_GITHUB_USERNAME###</code> in the above example code.</p>
+<p>You will also need to update the image with your DAG image from the AWS Elastic Container Registry and add any environment variables, etc., as you would with a normal DAG.</p>
+</div>
+<div id="important-considerations" class="section level3">
+<h3><span class="header-section-number">7.4.3</span> Important considerations</h3>
+<p>This sandbox Airflow is meant for testing. You should not use it to run regular tasks and should not rely on it for running production pipelines. It is likely that the sandbox will be idled when it is not being used.</p>
+<p>Because DAGs are run as your own <code>alpha_user_...</code>, they will have the same access permissions. DAGs are not run using an <code>iam_policy.json</code>, even if one exists in the task GitHub repository. This means that you may need to either obtain access to any required buckets or copy data into a bucket that you already have access to.</p>
+<p>You should still be very careful with what you do as even with your role you may still have access to do a lot of damage.</p>
+</div>
 <div id="test-your-image---locally-on-a-macbook" class="section level3">
-<h3><span class="header-section-number">7.3.2</span> Test your image - locally on a Macbook</h3>
+<h3><span class="header-section-number">7.4.4</span> Test your image - locally on a Macbook</h3>
 <p>If you have a Macbook you can use it to test that your Docker image will build, which is much quicker to debug than waiting for Concourse every time you make a change. This can be useful for checking your Dockerfile syntax is right and the dependencies install ok.</p>
 <p>However when you run the Docker image, it won’t be able to access your project data (from S3), because your machine doesn’t have your AP account’s AWS credentials. This is right because you shouldn’t have sensitive data on your Macbook in general. So the Docker image will fail when it tries to access AWS data, but you’ve still usefully checked the build works and the install of dependencies.</p>
 <p>You need to have installed <a href="https://docs.docker.com/docker-for-mac/install/">Docker for Mac</a>. When it is running you can see its whale icon in the task bar. It consumes 2GB RAM, so you may well not want it to run everytime your machine starts up - change this under “Preferences…” then uncheck “Start Docker when you log in”.</p>
@@ -432,7 +495,7 @@ docker build . -t my-pipeline:0.1</code></pre></li>
 <p>And if <code>bash</code> is not available, try <code>sh</code>.</p>
 </div>
 <div id="build-the-image" class="section level3">
-<h3><span class="header-section-number">7.3.3</span> Build the image</h3>
+<h3><span class="header-section-number">7.4.5</span> Build the image</h3>
 <p>Concourse will:</p>
 <ul>
 <li>build your GitHub repository into a Docker image</li>
@@ -442,7 +505,7 @@ docker build . -t my-pipeline:0.1</code></pre></li>
 <p>For more about the build see: <a href="https://moj-analytical-services.github.io/platform_user_guidance/build-and-deploy.html">Build and deploy guidance</a></p>
 </div>
 <div id="airflow-dag" class="section level3">
-<h3><span class="header-section-number">7.3.4</span> Airflow DAG</h3>
+<h3><span class="header-section-number">7.4.6</span> Airflow DAG</h3>
 <p>You need to define a DAG of your Tasks, so that Airflow can run it.</p>
 <p>A DAG is defined in its own .py file in the <a href="https://github.com/moj-analytical-services/airflow-dags">airflow-dags repository</a>. Normally you would clone the repo, add the new DAG file, commit it to a branch and create the Pull Request. You can achieve this in R Studio, Jupyter or on your local machine if you have git, and then use GitHub to create the Pull Request. Alternatively you could simply click the “Create new file” button in GitHub and use the web interface to edit it and create a pull request in one go!</p>
 <p>Use an existing DAG as an example: <a href="https://github.com/moj-analytical-services/airflow-dags/blob/master/mags_curated.py" class="uri">https://github.com/moj-analytical-services/airflow-dags/blob/master/mags_curated.py</a></p>
@@ -453,7 +516,7 @@ docker build . -t my-pipeline:0.1</code></pre></li>
 <p>The DAG will appear in the Airflow web interface a couple of minutes after the Pull Request is merged.</p>
 </div>
 <div id="airflow-web-interface" class="section level3">
-<h3><span class="header-section-number">7.3.5</span> Airflow web interface</h3>
+<h3><span class="header-section-number">7.4.7</span> Airflow web interface</h3>
 <p>The Airflow web interface allows you to see the data pipelines running, view the logs, see past runs, etc.</p>
 <p>Link: <a href="https://airflow.tools.alpha.mojanalytics.xyz" class="uri">https://airflow.tools.alpha.mojanalytics.xyz</a></p>
 <div class="figure">
