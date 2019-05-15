@@ -58,7 +58,7 @@ GitHub enables you to collaborate with colleagues on code and share you work wit
 
 In order to use GitHub, you need to set up a connection between your Analytical Platform account and GitHub.  This needs to be done once, after which your Analytical Platform account will permanently be connected.  It is worth doing because it avoids you having to repeatedly type in your username and password every time you interact with GitHub.
 
-This page covers only the initial setup.  For guidance on how to use Git to sync your work with GitHub, please see [here](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-r-studio.html).
+This page covers only the initial setup.  For guidance on how to use Git to sync your work with GitHub, please see [here](https://moj-analytical-services.github.io/platform_user_guidance/github.html#r-studio).
 
 You can find more detailed notes about setting up Git with R Studio [here](http://adamwilson.us/RDataScience/GitSSHNotes.html) and [here](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
