@@ -3,23 +3,23 @@ jobs:
   build:
     docker:
       - image: rocker/r-ver:3.5.1
-      
+
     steps:
       - checkout
-      
+
       - run:
           name: Install package dependencies
           command: |
             apt-get update
             apt-get install -y git libssl-dev libcurl4-openssl-dev libxml2-dev pandoc
-            R -e "install.packages(c('remotes'), dependencies = TRUE)"
-            R -e "remotes::install_github('rstudio/bookdown')"
+            R -e "install.packages(c('remotes', 'bookdown'), dependencies = TRUE)"
+
 
       - run:
           name: Build the book
           command: |
             R -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
-            
+
       - run:
           name: Deploy to GitHub
           command: |
