@@ -33,7 +33,10 @@ Use of the Analytical Platform is subject to our [acceptable use policy](#accept
 To sign up for a GitHub account, go to GitHub's [join page](https://github.com/join) and follow the instructions.
 
 *   When signing up, we recommend that you use your work email address.
-*   When instructed to choose your subscription, you should select the free plan. 
+*   When instructed to choose your subscription, you should select the free plan.
+*   It is good practice to choose a username that does not contain upper-case characters.
+*   You should use a secure password following best [practice guidelines](https://github.com/ministryofjustice/itpolicycontent/blob/master/content/security/framework/password-standard.md).
+*   We recommend that you use a password manager, such as [LastPass](https://www.lastpass.com/).
 
 ### Verify your email address for GitHub
 
