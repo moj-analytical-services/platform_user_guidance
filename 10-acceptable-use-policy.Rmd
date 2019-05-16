@@ -8,7 +8,7 @@ This policy applies in addition to the [MoJ acceptable use policy](https://intra
 
 ## Who this policy applies to
 
-This policy applies to all users of the Analytical Platform.
+This policy applies to all users of the Analytical Platform (excluding users of apps hosted by the platform).
 
 ## General principles
 
@@ -18,8 +18,8 @@ __All users will:__
 * report any breach of this acceptable use policy to the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk);
 * follow all relevant information governance procedures;
 * protect their login credentials appropriately;
-* create secure passwords following best practice guidelines (see [here](https://www.ncsc.gov.uk/blog-post/three-random-words-or-thinkrandom-0));
-* ensure that two-factor authentication is enabled when accessing GitHub and the Analytical Platform;
+* create secure passwords following best practice guidelines (see [here](https://github.com/ministryofjustice/itpolicycontent/blob/master/content/security/framework/password-standard.md));
+* ensure that two-factor authentication is enabled when accessing GitHub and the Analytical Platform (see [here](https://ministryofjustice.github.io/security-guidance/standards/authentication/#multi-factor-authentication) the MoJ security guidance about multi-factor authentication);
 * sign out of the Analytical Platform when access is not required;
 * understand they and MoJ have a legal responsibility to protect personal and sensitive information;
 * understand that their use of the Analytical Platform may be monitored;
