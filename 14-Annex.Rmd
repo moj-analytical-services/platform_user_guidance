@@ -103,41 +103,6 @@ Note: If you get the error 'Wrong or expired code', you need to make sure that y
 
 Once you're entered your platform 2FA code in the interface above, you should now have access to the platform.  You will need to enter your platform 2FA code around once a day as you use the platform.
 
-## Password Manager
-
-A password manager assists in generating and retrieving complex password, potentially storing such passwords in an encrypted database, or calculating them on demand. We do encourage the use of them as they would give some huge advantages such as:
-
-* They make it easy for you to use long, complex, unique passwords across different sites and services
-* They are better than humans at spotting fake websites and can auto-logon
-* They can generate new passwords when you need them and automatically paste them into the right places
-* They can sync your passwords across all your devices
-* They can securely store password recovery questions
-* They can be help to share secrets between team members
-
-Password managers do have some drawbacks when using them:
-
-* They are single point of failure: if you lose your master password, you could lose access to all your passwords at once
-* They are attractive targets in themselves. They've been successfully attacked in the past, and realistically they will be again. So all your passwords could get stolen in one go
-* They might not support all your devices and browsers
-
-For more information, you can read [here](https://www.ncsc.gov.uk/blog-post/what-does-ncsc-think-password-managers) what does NCSC think about password manager. The following section would present a list of the most popular Password Managers at the moment.
-
-### 1Password
-
-1Password is a password manager developed by AgileBits Inc. It provides a place for users to store various passwords, software licenses, and other sensitive information in a virtual vault that is locked with a PBKDF2-guarded master password. By default, this encrypted vault is stored on the company's servers, for a monthly fee.
-
-### LastPass
-
-LastPass is a freemium password manager that stores encrypted passwords online. The standard version of LastPass comes with a web interface, but also includes plugins for various web browsers and apps for many smartphones. It also includes support for bookmarklets.
-
-### Dashlane
-
-Dashlane is a password manager app and secure digital wallet. The app is available on Mac, Windows, iOS and Android. The app's premium tier enables users to securely sync their data between an unlimited number of devices on all platforms. A free version is available, with syncing disabled after the first month. By default, the wallet is stored on the company's servers, but there is an option to keep it on the user's device instead.
-
-### KeePass
-
-KeePass Password Safe is a free and open-source password manager primarily for Windows. It officially supports macOS and Linux operating systems through the use of Mono. Additionally, there are several unofficial ports for Windows Phone, Android, iOS, and BlackBerry devices. KeePass stores usernames, passwords, and other fields, including free-form notes and file attachments, in an encrypted file. This file can be protected by any combination of a master password, a key file, and the current Windows account details. By default, the KeePass database is stored on a local file system (as opposed to cloud storage).
-
 ## Data Minimisation
 
 In order to reduce cybersecurity/information risks to data and promote/maintain a privacy-centered approach you should consider how data can be minimised or obfuscated before being imported if you can do so while maintaining analytical usefulness and data integrity.
