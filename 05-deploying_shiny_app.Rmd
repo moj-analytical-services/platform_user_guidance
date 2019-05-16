@@ -27,7 +27,7 @@ To copy the app template:
     +   Owner: `moj-analytical-services`
     +   Name: The name of your app, e.g., `my-app`
     +   Privacy: Private
-6.  Select 'Begin import'.
+6.  Select __Begin import__.
 
 This copies the entire contents of the app template to a new repository.
 
@@ -46,12 +46,12 @@ You should provide the URL of the app's GitHub repository as well as any existin
 To clone the repository:
 
 1.  Navigate to the app's repository on GitHub.
-2.  Select 'Clone or download'.
-3.  Ensure that the dialogue says 'Clone with SSH'. If the dialogue says 'Clone with HTTPS' select 'Use SSH'.
+2.  Select __Clone or download__.
+3.  Ensure that the dialogue says 'Clone with SSH'. If the dialogue says 'Clone with HTTPS' select __Use SSH__.
 4.  Copy the SSH URL. This should start with `git@`.
-5.  In RStudio, select 'File' > 'New project...' > 'Version control' > 'Git'.
-7.  Paste the SSH URL in the 'Repository URL' field.
-8.  Select 'Create Project'.
+5.  In RStudio, select __File__ > __New project...__ > __Version control__ > __Git__.
+7.  Paste the SSH URL in the __Repository URL__ field.
+8.  Select __Create Project__.
 
 ![](images/shiny/ssh-key.png)
 
@@ -75,7 +75,7 @@ Most apps will have dependencies on various third-party packages (e.g., `dplyr`)
 
 If using packrat, ensure that it is enabled for your project in RStudio.
 
-To enable packrat, select 'Tools' > 'Project Options...' > ' Packrat' > 'Use packrat with this project'.
+To enable packrat, select __Tools__ > __Project Options...__ > __Packrat__ > __Use packrat with this project__.
 
 When packrat is enabled, run `packrat::snapshot()` to generate a list of packages used in the project, their sources and their current versions.
 
@@ -100,11 +100,11 @@ When you're ready to share your app, you should create a release in GitHub. When
 To create a release in GitHub:
 
 1.  Navigate to the app's repository.
-2.  Select 'release' > 'Draft a new release'.
+2.  Select __release__ > __Draft a new release__.
 3.  Choose a tag version for the release -- GitHub provides tagging suggestions at the right of the screen that we advise you to follow.
 4.  Choose a title for the release.
 5.  Describe the contents of the release.
-6.  Select 'Publish release'.
+6.  Select __Publish release__.
 
 ### Deploy in Concourse{#deploy-in-concourse}
 
@@ -186,25 +186,25 @@ All logs from deployed apps can be viewed in [Kibana](https://kibana.services.al
 
 To view all app logs:
 
-1.  Select 'Discover' from the left sidebar.
-2.  Select 'Open' from the menu bar.
-3.  Select 'Application logs (alpha)' from the saved searches.
+1.  Select __Discover__ from the left sidebar.
+2.  Select __Open__ from the menu bar.
+3.  Select __Application logs (alpha)__ from the saved searches.
 
 To view the logs for a specific app:
 
-1.  Select 'Add a filter'.
-2.  Select 'app_name' as the field.
-3.  Select 'is' as the operator.
+1.  Select __Add a filter__.
+2.  Select __app_name__ as the field.
+3.  Select __is__ as the operator.
 4.  Insert the app name followed by '-webapp' as the value.
-5.  Select 'Save'.
+5.  Select __Save__.
 
-Log messages are displayed in the 'message' column.
+Log messages are displayed in the __message__ column.
 
 By default, Kibana only shows logs for the last 15 minutes. If no logs are available for that time range, you will receive the warning 'No results match your search criteria'.
 
 To change the time range, select the clock icon in the menu bar. There are several presets or you can define a custom time range.
 
-Kibana also has experimental autocomplete and simple syntax tools that you can use to build custom searches. To enable these features, select 'Options' from within the search bar, then toggle 'Turn on query features'.
+Kibana also has experimental autocomplete and simple syntax tools that you can use to build custom searches. To enable these features, select __Options___ from within the search bar, then toggle __Turn on query features__.
 
 ### Deploying locally
 
@@ -212,14 +212,14 @@ If you have a MacBook, you can use Docker locally to test and troubleshoot your 
 
 To build and run your R Shiny app locally, follow the steps below:
 
-1.  Clone your app's repository to a new folder on your MacBook. This guarantees that the app will be built using the same code as on the Analytical Platform.
-2.  Open a terminal session and navigate to the directory containing the `Dockerfile`.
-3.  Build the Docker image using:
+1.  Clone your app's repository to a new folder on your MacBook -- this guarantees that the app will be built using the same code as on the Analytical Platform.
+2.  Open a terminal session and navigate to the directory containing the `Dockerfile` using the `cd` command.
+3.  Build the Docker image by running:
     ```{bash docker build, eval=FALSE}
     docker build . -t <image tag>
     ```
     where `image tag` is a tag you want to give the image.
-4.  Run a Docker container created from the Docker image using:
+4.  Run a Docker container created from the Docker image by running:
     ```{bash docker run, eval=FALSE}
     docker run -p 80:80 <image tag>
     ```
@@ -227,16 +227,16 @@ To build and run your R Shiny app locally, follow the steps below:
 
 If the app does not work, follow the steps below to troubleshoot it:
 
-1.  Start a bash session in a Docker container created from the Docker image using:
+1.  Start a bash session in a Docker container created from the Docker image by running:
     ```{bash docker bash run, eval=FALSE}
     docker run -it -p 80:80 <image tag> bash
     ```
-2.  Install the `nano` text editor using:
+2.  Install the `nano` text editor by running:
     ```{bash install nano, eval=FALSE}
     apt-get update
     apt-get install nano
     ```
-3.  Open `shiny-server.conf` using:
+3.  Open `shiny-server.conf` in the `nano` text editor by running:
     ```{bash open conf, eval=FALSE}
     nano /etc/shiny-server/shiny-server.conf
     ```
@@ -247,18 +247,18 @@ If the app does not work, follow the steps below to troubleshoot it:
     ```
 5.  Write the changes by pressing `Ctrl+O`.
 6.  Exit the `nano` text editor by pressing `Ctrl+X`.
-7.  Increase the verbosity of logging and start the Shiny server using:
+7.  Increase the verbosity of logging and start the Shiny server by running:
     ```{bash increase verbosity, eval=FALSE}
     export SHINY_LOG_LEVEL=TRACE
     /bin/shiny-server.sh
     ```
 8.  Open a new terminal session.
-9.  Start a new bash session in the Docker container using:
+9.  Start a new bash session in the Docker container by running:
     ```{bash run bash, eval=FALSE}
     docker exec -it <CONTAINER ID> bash
     ```
     You can find the `CONTAINER ID` by running `docker ps`.
-10. View the logs using:
+10. View the logs by running:
     ```{bash view logs, eval=FALSE}
     cat /var/log/shiny-server/access.log
     ```
