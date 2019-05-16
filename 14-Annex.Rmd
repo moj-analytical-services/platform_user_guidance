@@ -63,7 +63,7 @@ Here is some more details of what Git offers:
 
 Finally, we have chosed git specifically because it seems to be by far the most popular version control system - see [here](https://insights.stackoverflow.com/survey/2017#work-version-control) and [here](https://trends.google.co.uk/trends/explore?date=all&q=tfs,svn,mercurial,git)
 
-## Step by step guide to setup Two Factor Authentication 
+## Step by step guide to setup Two Factor Authentication
 
 Two factor authentication (2FA) is critical to the security of the platform.  We have opted to use smartphone based 2FA apps due to the expense of giving out hardware tokens like the RSA device you use to log into DOM1.
 

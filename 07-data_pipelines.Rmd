@@ -80,6 +80,78 @@ The repo should include:
     e.g. See: https://github.com/moj-analytical-services/airflow-enforcement-data-engineering/blob/master/iam_policy.json
     for listing, reading and writing to S3 buckets.
 
+
+## Test pipeline in your own Airflow sandbox
+
+You can deploy your own sandboxed version of Airflow to test DAGs and docker images on.
+
+### Start Airflow sandbox
+
+Click the `Deploy` button next to `airflow-sqlite` in the Analytical tools section of the control panel. This should take a few minutes to deploy. Then click the `Open` button to open your Airflow sandbox in a new window.
+
+This will create an `airflow` directory in your home directory on the Analytical Platform. In this `airflow` directory there are three more directories: `db`, `dags` and `logs`. The `dags` directory is where you will store your test DAG files.
+
+### Create a test DAG
+
+Using JupyterLab on the Analytical Platform, create a Python file in the `airflow/dags` directory in your home directory on the Analytical Platform (e.g., `test_dag.py`). Airflow will automatically scan this directory for DAG files every three minutes.
+
+You must use you own IAM role and set the namespace in the dag to your own Kubernetes namespace.
+
+See above for creating a Docker image to run the DAG if you are using `KubernetesPodOperator`. Concourse will automatically build images from pull requests for Airflow repositories in GitHub that will be tagged with the name of the pull request. For example, if your pull request branch is named `test-dev` then your image will be named `my_repositiry:test-dev`.
+
+Example DAG file contents: {#ex-code}
+
+
+    from datetime import datetime
+
+    from airflow.contrib.operators.kubernetes_pod_operator import KubernetesPodOperator
+    from airflow.utils.log.logging_mixin import LoggingMixin
+    from airflow.models import DAG
+
+    log = LoggingMixin().log
+
+    args = {"owner": "airflow", "start_date": datetime(2019, 3, 18)}
+
+    dag = DAG(
+        dag_id="example_kubernetes_operator_assume_role",
+        default_args=args,
+        schedule_interval=None,
+    )
+
+    k = KubernetesPodOperator(
+        namespace="user-###YOUR_GITHUB_USERNAME###",
+        image="governmentpaas/awscli:latest",
+        cmds=["aws", "--debug"],
+        arguments=["s3api", "list-objects", "--bucket", "###YOUR_TEST_BUCKET###"],
+        env_vars={
+            "AWS_METADATA_SERVICE_TIMEOUT": "60",
+            "AWS_METADATA_SERVICE_NUM_ATTEMPTS": "5",
+        },
+        labels={"foo": "bar"},
+        name="airflow-test-pod",
+        in_cluster=True,
+        task_id="task",
+        get_logs=True,
+        dag=dag,
+        is_delete_operator_pod=True,
+        annotations={"iam.amazonaws.com/role": "alpha_user_###YOUR_GITHUB_USERNAME###"},
+    )
+
+
+
+You will have to set the DAG namespace to your namespace and the AWS role to your role, see `###YOUR_GITHUB_USERNAME###` in the above example code.
+
+You will also need to update the image with your DAG image from the AWS Elastic Container Registry and add any environment variables, etc., as you would with a normal DAG.
+
+### Important considerations
+
+This sandbox Airflow is meant for testing. You should not use it to run regular tasks and should not rely on it for running production pipelines. It is likely that the sandbox will be idled when it is not being used.
+
+Because DAGs are run as your own `alpha_user_...`, they will have the same access permissions. DAGs are not run using an `iam_policy.json`, even if one exists in the task GitHub repository. This means that you may need to either obtain access to any required buckets or copy data into a bucket that you already have access to.
+
+You should still be very careful with what you do as even with your role you may still have access to do a lot of damage.
+
+
 ### Test your image - locally on a Macbook
 
 If you have a Macbook you can use it to test that your Docker image will build, which is much quicker to debug than waiting for Concourse every time you make a change. This can be useful for checking your Dockerfile syntax is right and the dependencies install ok.

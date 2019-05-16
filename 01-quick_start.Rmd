@@ -60,3 +60,5 @@ See [Deploying a Shiny App ][Deploying a Shiny App ].
 ## Contacting us
 
 For quick support, contact us on the `#analytical_platform` [Slack channel](https://asdslack.slack.com/messages/anaytical_platform/). Alternatively, contact us by [email](mailto:analytical_platform@digital.justice.gov.uk)
+
+For full details of support, including incident response, please see the [AP Runbook's Key Support Information](https://github.com/ministryofjustice/analytics-platform-ops/wiki/Key-support-information).
