@@ -338,24 +338,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">5.1</span> Basic deployment</h2>
 <div id="summary" class="section level3">
 <h3><span class="header-section-number">5.1.1</span> Summary</h3>
-<p>To create and deploy a Shiny app, you should follow these steps:</p>
+<p>To create and deploy a Shiny app, you should complete the following steps:</p>
 <ol style="list-style-type: decimal">
-<li><a href="deploying-an-r-shiny-app.html#copy-template">Copy the app template</a></li>
-<li><a href="deploying-an-r-shiny-app.html#create-webapp">Create a new webapp</a></li>
-<li><a href="deploying-an-r-shiny-app.html#clone-repo">Clone the repository</a></li>
-<li><a href="deploying-an-r-shiny-app.html#develop-the-app">Develop the app</a></li>
-<li><a href="deploying-an-r-shiny-app.html#manage-dependencies">Manage dependencies</a></li>
-<li><a href="deploying-an-r-shiny-app.html#rshiny-deploy">Set access permissions</a></li>
-<li><a href="deploying-an-r-shiny-app.html#create-release">Create a release in GitHub</a></li>
-<li><a href="deploying-an-r-shiny-app.html#deploy-in-concourse">Deploy in Concourse</a></li>
-<li><a href="deploying-an-r-shiny-app.html#add-users">Add users to the app</a></li>
-<li><a href="deploying-an-r-shiny-app.html#access-the-app">Access the app</a></li>
+<li><a href="deploying-an-r-shiny-app.html#copy-template">Copy the app template</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#create-webapp">Create a new webapp</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#clone-repo">Clone the repository</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#develop-the-app">Develop the app</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#manage-dependencies">Manage dependencies</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#rshiny-deploy">Set access permissions</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#create-release">Create a release in GitHub</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#deploy-in-concourse">Deploy in Concourse</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#add-users">Add users to the app</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#access-the-app">Access the app</a>.</li>
 </ol>
 </div>
 <div id="copy-template" class="section level3">
 <h3><span class="header-section-number">5.1.2</span> Copy the app template</h3>
+<p>To copy the app template:</p>
 <ol style="list-style-type: decimal">
-<li>Go to <a href="https://github.com/new/import">github.com/new/import</a></li>
+<li>Go to <a href="https://github.com/new/import">github.com/new/import</a>.</li>
 <li>Fill in the form:
 <ul>
 <li>Your old repository’s clone URL: <code>https://github.com/moj-analytical-services/rshiny-template</code></li>
@@ -363,7 +364,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Name: The name of your app, e.g., <code>my-app</code></li>
 <li>Privacy: Private</li>
 </ul></li>
-<li>Click ‘Begin import’</li>
+<li>Select <strong>Begin import</strong>.</li>
 </ol>
 <p>This copies the entire contents of the app template to a new repository.</p>
 <div class="figure">
@@ -379,14 +380,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="clone-repo" class="section level3">
 <h3><span class="header-section-number">5.1.4</span> Clone the repository</h3>
+<p>To clone the repository:</p>
 <ol style="list-style-type: decimal">
 <li>Navigate to the app’s repository on GitHub.</li>
-<li>Click ‘Clone or download’.</li>
-<li>Ensure that the dialogue says ‘Clone with SSH’. If the dialogue says ‘Clone with HTTPS’ select ‘Use SSH’.</li>
+<li>Select <strong>Clone or download</strong>.</li>
+<li>Ensure that the dialogue says ‘Clone with SSH’. If the dialogue says ‘Clone with HTTPS’ select <strong>Use SSH</strong>.</li>
 <li>Copy the SSH URL. This should start with <code>git@</code>.</li>
-<li>In RStudio, select ‘File’ &gt; ‘New project…’ &gt; ‘Version control’ &gt; ‘Git’.</li>
-<li>Paste the SSH URL in the ‘Repository URL’ field.</li>
-<li>Select ‘Create Project’.</li>
+<li>In RStudio, select <strong>File</strong> &gt; <strong>New project…</strong> &gt; <strong>Version control</strong> &gt; <strong>Git</strong>.</li>
+<li>Paste the SSH URL in the <strong>Repository URL</strong> field.</li>
+<li>Select <strong>Create Project</strong>.</li>
 </ol>
 <div class="figure">
 <img src="images/shiny/ssh-key.png" />
@@ -408,9 +410,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="manage-dependencies" class="section level3">
 <h3><span class="header-section-number">5.1.6</span> Manage dependencies</h3>
-<p>Most apps will have dependencies on various third-party packages (e.g., <code>dplyr</code>). These packages change through time and may not always be backwards-compatible. To avoid compatibility issues and ensure reproducible outputs, it is necessary to use a package management system, such as packrat or conda.</p>
+<p>Most apps will have dependencies on various third-party packages (e.g., <code>dplyr</code>). These packages change through time and may not always be backwards compatible. To avoid compatibility issues and ensure reproducible outputs, it is necessary to use a package management system, such as packrat or Conda.</p>
 <p>If using packrat, ensure that it is enabled for your project in RStudio.</p>
-<p>To enable packrat, select ‘Tools’ &gt; ‘Project Options…’ &gt; ‘Packrat’ &gt; ‘Use packrat with this project’.</p>
+<p>To enable packrat, select <strong>Tools</strong> &gt; <strong>Project Options…</strong> &gt; <strong>Packrat</strong> &gt; <strong>Use packrat with this project</strong>.</p>
 <p>When packrat is enabled, run <code>packrat::snapshot()</code> to generate a list of packages used in the project, their sources and their current versions.</p>
 <p>You may also wish to run <code>packrat::clean()</code> to remove unused packages from the list.</p>
 <p>The list is stored in a file called <code>packrat/packrat.lock</code>. You must ensure that you have committed this file to GitHub before deploying your app.</p>
@@ -425,13 +427,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="create-release" class="section level3">
 <h3><span class="header-section-number">5.1.8</span> Create a release in GitHub</h3>
 <p>When you’re ready to share your app, you should create a release in GitHub. When you create a release, this is detected by Concourse, which will automatically begin the build/deploy process for your app. Each time you create a new release, Concourse will create a new build.</p>
+<p>To create a release in GitHub:</p>
 <ol style="list-style-type: decimal">
-<li>To create a release in GitHub, navigate to the app’s repository.</li>
-<li>Select ‘release’ &gt; ‘Draft a new release’.</li>
-<li>Choose a tag version for the release. GitHub provides tagging suggestions at the right of the screen that we advise you to follow.</li>
+<li>Navigate to the app’s repository.</li>
+<li>Select <strong>release</strong> &gt; <strong>Draft a new release</strong>.</li>
+<li>Choose a tag version for the release – GitHub provides tagging suggestions at the right of the screen that we advise you to follow.</li>
 <li>Choose a title for the release.</li>
 <li>Describe the contents of the release.</li>
-<li>Select ‘Publish release’.</li>
+<li>Select <strong>Publish release</strong>.</li>
 </ol>
 </div>
 <div id="deploy-in-concourse" class="section level3">
@@ -474,14 +477,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This is generic error that means there is an error in your R code or there are missing packages.</p>
 <p>To try to fix this you should:</p>
 <ul>
-<li>explicitly reference all third-party packages using the double colon operator (i.e. use <code>shiny::hr()</code> as opposed to <code>hr()</code>);</li>
-<li>ensure that you have called <code>packrat::snapshot()</code> and committed <code>packrat.lock</code> to GitHub, if using <code>packrat</code>.</li>
+<li>explicitly reference all third-party packages using the double colon operator (i.e. use <code>shiny::hr()</code> as opposed to <code>hr()</code>)</li>
+<li>ensure that you have called <code>packrat::snapshot()</code> and committed <code>packrat.lock</code> to GitHub, if using <code>packrat</code></li>
 </ul>
 <p>In general, it is also good practice to:</p>
 <ul>
-<li>minimise the number of packages you use in your project;</li>
-<li>test your app early and often; and</li>
-<li>test using a cloned copy of the app’s repository to avoid issues arising as a result of uncomitted local changes.</li>
+<li>minimise the number of packages you use in your project</li>
+<li>test your app early and often</li>
+<li>test using a cloned copy of the app’s repository to avoid issues arising as a result of uncomitted local changes</li>
 </ul>
 </div>
 <div id="app-sign-in" class="section level3">
@@ -490,7 +493,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="packrat" class="section level3">
 <h3><span class="header-section-number">5.3.3</span> Packrat</h3>
-<p>If you are having issues with <code>packrat.lock</code>, follow these steps:</p>
+<p>If you are having issues with <code>packrat.lock</code>, follow the steps below:</p>
 <ol style="list-style-type: decimal">
 <li>Delete the entire <code>packrat</code> directory.</li>
 <li>Comment out all code in the project.</li>
@@ -506,59 +509,59 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>All logs from deployed apps can be viewed in <a href="https://kibana.services.alpha.mojanalytics.xyz">Kibana</a>.</p>
 <p>To view all app logs:</p>
 <ol style="list-style-type: decimal">
-<li>select ‘Discover’ from the left sidebar</li>
-<li>select ‘Open’ from the menu bar</li>
-<li>select ‘Application logs (alpha)’ from the saved searches</li>
+<li>Select <strong>Discover</strong> from the left sidebar.</li>
+<li>Select <strong>Open</strong> from the menu bar.</li>
+<li>Select <strong>Application logs (alpha)</strong> from the saved searches.</li>
 </ol>
 <p>To view the logs for a specific app:</p>
 <ol style="list-style-type: decimal">
-<li>select ‘Add a filter’</li>
-<li>select ‘app_name’ as the field</li>
-<li>select ‘is’ as the operator</li>
-<li>insert the app name followed by ‘-webapp’ as the value</li>
-<li>click ‘Save’</li>
+<li>Select <strong>Add a filter</strong>.</li>
+<li>Select <strong>app_name</strong> as the field.</li>
+<li>Select <strong>is</strong> as the operator.</li>
+<li>Insert the app name followed by ‘-webapp’ as the value.</li>
+<li>Select <strong>Save</strong>.</li>
 </ol>
-<p>Log messages are displayed in the ‘message’ column.</p>
+<p>Log messages are displayed in the <strong>message</strong> column.</p>
 <p>By default, Kibana only shows logs for the last 15 minutes. If no logs are available for that time range, you will receive the warning ‘No results match your search criteria’.</p>
 <p>To change the time range, select the clock icon in the menu bar. There are several presets or you can define a custom time range.</p>
-<p>Kibana also has experimental autocomplete and simple syntax tools that you can use to build custom searches. To enable these features, select ‘Options’ from within the search bar, then toggle ‘Turn on query features’.</p>
+<p>Kibana also has experimental autocomplete and simple syntax tools that you can use to build custom searches. To enable these features, select <strong>Options</strong>_ from within the search bar, then toggle <strong>Turn on query features</strong>.</p>
 </div>
 <div id="deploying-locally" class="section level3">
 <h3><span class="header-section-number">5.3.5</span> Deploying locally</h3>
 <p>If you have a MacBook, you can use Docker locally to test and troubleshoot your R Shiny app. You can download Docker Desktop for Mac <a href="https://hub.docker.com/editions/community/docker-ce-desktop-mac">here</a>.</p>
-<p>To build and run your R Shiny app locally, follow these steps:</p>
+<p>To build and run your R Shiny app locally, follow the steps below:</p>
 <ol style="list-style-type: decimal">
-<li>Clone your app’s repository to a new folder on your MacBook. This guarantees that the app will be built using the same code as on the Analytical Platform.</li>
-<li>Open a terminal session and navigate to the directory containing the <code>Dockerfile</code>.</li>
-<li><p>Build the Docker image using:</p>
+<li>Clone your app’s repository to a new folder on your MacBook – this guarantees that the app will be built using the same code as on the Analytical Platform.</li>
+<li>Open a terminal session and navigate to the directory containing the <code>Dockerfile</code> using the <code>cd</code> command.</li>
+<li><p>Build the Docker image by running:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> build . -t <span class="op">&lt;</span>image tag<span class="op">&gt;</span></code></pre></div>
 where <code>image tag</code> is a tag you want to give the image.</li>
-<li><p>Run a Docker container created from the Docker image using:</p>
+<li><p>Run a Docker container created from the Docker image by running:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run -p 80:80 <span class="op">&lt;</span>image tag<span class="op">&gt;</span></code></pre></div></li>
 <li><p>Go to <a href="127.0.0.1:80" class="uri">127.0.0.1:80</a> to view the app.</p></li>
 </ol>
-<p>If the app does not work, follow these steps:</p>
+<p>If the app does not work, follow the steps below to troubleshoot it:</p>
 <ol style="list-style-type: decimal">
-<li><p>Start a bash session in a Docker container created from the Docker image using:</p>
+<li><p>Start a bash session in a Docker container created from the Docker image by running:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run -it -p 80:80 <span class="op">&lt;</span>image tag<span class="op">&gt;</span> bash</code></pre></div></li>
-<li><p>Install the <code>nano</code> text editor using:</p>
+<li><p>Install the <code>nano</code> text editor by running:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">apt-get</span> update
 <span class="ex">apt-get</span> install nano</code></pre></div></li>
-<li><p>Open <code>shiny-server.conf</code> using:</p>
+<li><p>Open <code>shiny-server.conf</code> in the <code>nano</code> text editor by running:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">nano</span> /etc/shiny-server/shiny-server.conf</code></pre></div></li>
 <li><p>Add the following lines at the beginning of <code>shiny-server.conf</code>:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">access_log</span> /var/log/shiny-server/access.log tiny<span class="kw">;</span>
 <span class="ex">preserve_logs</span> true<span class="kw">;</span></code></pre></div></li>
 <li>Write the changes by pressing <code>Ctrl+O</code>.</li>
 <li>Exit the <code>nano</code> text editor by pressing <code>Ctrl+X</code>.</li>
-<li><p>Increase the verbosity of logging and start the Shiny server using:</p>
+<li><p>Increase the verbosity of logging and start the Shiny server by running:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">SHINY_LOG_LEVEL=</span>TRACE
 <span class="ex">/bin/shiny-server.sh</span></code></pre></div></li>
 <li>Open a new terminal session.</li>
-<li><p>Start a new bash session in the Docker container using:</p>
+<li><p>Start a new bash session in the Docker container by running:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> exec -it <span class="op">&lt;</span>CONTAINER ID<span class="op">&gt;</span> bash</code></pre></div>
 You can find the <code>CONTAINER ID</code> by running <code>docker ps</code>.</li>
-<li><p>View the logs using:</p>
+<li><p>View the logs by running:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> /var/log/shiny-server/access.log</code></pre></div></li>
 </ol>
 <p>For further details, see the <a href="https://docs.rstudio.com/shiny-server/">Shiny server documentation</a>.</p>
