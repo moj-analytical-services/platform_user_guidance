@@ -14,22 +14,22 @@ Data stored in Amazon S3 can be seamlessly integrated with other AWS services su
 
 Amazon S3 buckets are separated into two categories on the Analytical Platform:
 
-*   Warehouse data sources
-*   App data sources
+*   warehouse data sources
+*   app data sources
 
 Warehouse data sources are are suitable for storing files in all cases, except where the files need to be accessed by a webapp. In this case, files should be stored in an app data source.
 
 ### Create a new bucket
 
-Standard users can currently only create new warehouse data sources in the Analytical Platform control panel. __You cannot create new buckets directly in the Amazon S3 console.__
+Standard users can currently only create new warehouse data sources in the Analytical Platform control panel. You cannot create new buckets directly in the Amazon S3 console.
 
 To create a new warehouse data source:
 
 1.  Go to the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
-2.  Select the 'Warehouse data' tab.
-3.  Select 'Create a new warehouse data source'.
+2.  Select the __Warehouse data__ tab.
+3.  Select __Create a new warehouse data source__.
 4.  Enter a name for the warehouse data source -- this must be prefixed with '-alpha'.
-5.  Select 'Create'.
+5.  Select __Create__.
 
 When you create a new warehouse data source, only you will initially have access. As an admin of the data source, you will be able to add and remove other users from the data access group as required. Further information on managing data access groups can be found in Section \@ref(manage-access-to-a-bucket).
 
@@ -53,30 +53,30 @@ When requesting access to a bucket, you should specify the name of the bucket an
 
 ### Manage access to a bucket{#manage-access-to-a-bucket}
 
-Bucket admins can currently only manage access to warehouse data sources in the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/). __You cannot manage access to buckets directly in the Amazon S3 console.__
+Bucket admins can currently only manage access to warehouse data sources in the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz/). You cannot manage access to buckets directly in the Amazon S3 console.
 
 To manage access to a warehouse data source:
 
 1.  Go to the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
-2.  Select the 'Warehouse data' tab.
-3.  Select the name of the warehouse data source you wish to manage.
+2.  Select the __Warehouse data__ tab.
+3.  Select the name of the warehouse data source you want to manage.
 
 To add a new user to the data access group:
 
-1.  Type their GitHub username into the input field labelled 'Grant access to this data to other users'.
+1.  Type the user's GitHub username into the input field labelled __Grant access to this data to other users__.
 2.  Select the user from the drop-down list.
-3.  Select 'Grant access'.
+3.  Select __Grant access__.
 
 To edit the access level of a user:
 
-1.  Select 'Edit access level' next to the name of the user.
+1.  Select __Edit access level__ next to the name of the user.
 2.  Select the checkbox next to the access level you wish to grant the user.
-3.  Select 'Save'.
+3.  Select __Save__.
 
 To remove a user from the data access group:
 
-1.  Select 'Edit access level' next to the name of the user.
-2.  Select 'Revoke access'.
+1.  Select __Edit access level__ next to the name of the user.
+2.  Select __Revoke access__.
 
 ## Upload files to Amazon S3
 
@@ -91,14 +91,14 @@ You can use the Amazon S3 Console to upload files from your local computer (e.g.
 To upload files using the Amazon S3 Console:
 
 1.  Log in to the [AWS Management Console](https://http://aws.services.alpha.mojanalytics.xyz) using your Analytical Platform account.
-2.  Select 'Services' from the menu bar.
-3.  Select 'S3' from the drop down menu.
+2.  Select __Services__ from the menu bar.
+3.  Select __S3__ from the drop down menu.
 4.  Select the folder you want to upload files to.
-5.  Select 'Upload'.
-6.  Select 'Add files' or drag and drop the files you want to upload.
-7.  Select 'Upload' -- you do not need to complete steps 2, 3 or 4.
+5.  Select __Upload__.
+6.  Select __Add files__ or drag and drop the files you want to upload.
+7.  Select __Upload__ -- you do not need to complete steps 2, 3 or 4.
 
-You can also directly navigate to a bucket in the AWS S3 Console by selecting 'Open on AWS' in the Analytical Platform control panel.
+You can also directly navigate to a bucket in the AWS S3 Console by selecting __Open on AWS__ in the Analytical Platform control panel.
 
 ### RStudio
 
@@ -130,7 +130,7 @@ You can install `boto3` by running the following code in a terminal:
 pip install boto3
 ```
 
-To upload a file to Amazon S3, you should use the following code:
+To upload a file to Amazon S3, use the following code:
 
 ```{python python-upload-s3, eval=FALSE}
 import boto3
@@ -152,12 +152,12 @@ You can use the Amazon S3 Console to download files to your local computer (e.g.
 To download a file using the Amazon S3 Console:
 
 1.  Log in to the [AWS Management Console](https://http://aws.services.alpha.mojanalytics.xyz) using your Analytical Platform account.
-2.  Select 'Services' from the menu bar.
-3.  Select 'S3' from the drop down menu.
+2.  Select __Services__ from the menu bar.
+3.  Select __S3__ from the drop down menu.
 4.  Select the file you want to download.
-5.  Select 'Download' or 'Download as' as appropriate.
+5.  Select __Download__ or __Download as__ as appropriate.
 
-You can also directly navigate to a bucket in the AWS S3 Console by selecting 'Open on AWS' in the Analytical Platform control panel.
+You can also directly navigate to a bucket in the AWS S3 Console by selecting __Open on AWS__ in the Analytical Platform control panel.
 
 ### RStudio
 
