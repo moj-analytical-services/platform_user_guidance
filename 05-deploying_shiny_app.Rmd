@@ -6,28 +6,28 @@
 
 To create and deploy a Shiny app, you should complete the following steps:
 
-1.  [Copy the app template](#copy-template)
-2.  [Create a new webapp](#create-webapp)
-3.  [Clone the repository](#clone-repo)
-4.  [Develop the app](#develop-the-app)
-5.  [Manage dependencies](#manage-dependencies)
-6.  [Set access permissions](#rshiny-deploy)
-7.  [Create a release in GitHub](#create-release)
-8.  [Deploy in Concourse](#deploy-in-concourse)
-9.  [Add users to the app](#add-users)
-10. [Access the app](#access-the-app)
+1.  [Copy the app template](#copy-template).
+2.  [Create a new webapp](#create-webapp).
+3.  [Clone the repository](#clone-repo).
+4.  [Develop the app](#develop-the-app).
+5.  [Manage dependencies](#manage-dependencies).
+6.  [Set access permissions](#rshiny-deploy).
+7.  [Create a release in GitHub](#create-release).
+8.  [Deploy in Concourse](#deploy-in-concourse).
+9.  [Add users to the app](#add-users).
+10. [Access the app](#access-the-app).
 
 ### Copy the app template{#copy-template}
 
 To copy the app template:
 
-1.  Go to [github.com/new/import](https://github.com/new/import)
+1.  Go to [github.com/new/import](https://github.com/new/import).
 2.  Fill in the form:
     +   Your old repository’s clone URL: `https://github.com/moj-analytical-services/rshiny-template`
     +   Owner: `moj-analytical-services`
     +   Name: The name of your app, e.g., `my-app`
     +   Privacy: Private
-6.  Select 'Begin import'
+6.  Select 'Begin import'.
 
 This copies the entire contents of the app template to a new repository.
 
@@ -71,7 +71,7 @@ By default, the template contains `server.R` and `ui.R` files, however, you may 
 
 ### Manage dependencies{#manage-dependencies}
 
-Most apps will have dependencies on various third-party packages (e.g., `dplyr`). These packages change through time and may not always be backwards-compatible. To avoid compatibility issues and ensure reproducible outputs, it is necessary to use a package management system, such as packrat or conda.
+Most apps will have dependencies on various third-party packages (e.g., `dplyr`). These packages change through time and may not always be backwards compatible. To avoid compatibility issues and ensure reproducible outputs, it is necessary to use a package management system, such as packrat or Conda.
 
 If using packrat, ensure that it is enabled for your project in RStudio.
 
@@ -97,9 +97,11 @@ When `disable_authentication` is set to `true`, users do not need to go through 
 
 When you're ready to share your app, you should create a release in GitHub. When you create a release, this is detected by Concourse, which will automatically begin the build/deploy process for your app. Each time you create a new release, Concourse will create a new build.
 
-1.  To create a release in GitHub, navigate to the app's repository.
+To create a release in GitHub:
+
+1.  Navigate to the app's repository.
 2.  Select 'release' > 'Draft a new release'.
-3.  Choose a tag version for the release. GitHub provides tagging suggestions at the right of the screen that we advise you to follow.
+3.  Choose a tag version for the release -- GitHub provides tagging suggestions at the right of the screen that we advise you to follow.
 4.  Choose a title for the release.
 5.  Describe the contents of the release.
 6.  Select 'Publish release'.
@@ -153,14 +155,14 @@ This is generic error that means there is an error in your R code or there are m
 
 To try to fix this you should:
 
-*   explicitly reference all third-party packages using the double colon operator (i.e. use `shiny::hr()` as opposed to `hr()`);
-*   ensure that you have called `packrat::snapshot()` and committed `packrat.lock` to GitHub, if using `packrat`.
+*   explicitly reference all third-party packages using the double colon operator (i.e. use `shiny::hr()` as opposed to `hr()`)
+*   ensure that you have called `packrat::snapshot()` and committed `packrat.lock` to GitHub, if using `packrat`
 
 In general, it is also good practice to:
 
-*   minimise the number of packages you use in your project;
-*   test your app early and often; and
-*   test using a cloned copy of the app's repository to avoid issues arising as a result of uncomitted local changes.
+*   minimise the number of packages you use in your project
+*   test your app early and often
+*   test using a cloned copy of the app's repository to avoid issues arising as a result of uncomitted local changes
 
 ### App sign-in
 
@@ -168,7 +170,7 @@ Some anti-virus software and spam filters pre-click links in emails, meaning tha
 
 ### Packrat
 
-If you are having issues with `packrat.lock`, complete the following steps:
+If you are having issues with `packrat.lock`, follow the steps below:
 
 1.  Delete the entire `packrat` directory.
 2.  Comment out all code in the project.
@@ -208,7 +210,7 @@ Kibana also has experimental autocomplete and simple syntax tools that you can u
 
 If you have a MacBook, you can use Docker locally to test and troubleshoot your R Shiny app. You can download Docker Desktop for Mac [here](https://hub.docker.com/editions/community/docker-ce-desktop-mac).
 
-To build and run your R Shiny app locally, follow these steps:
+To build and run your R Shiny app locally, follow the steps below:
 
 1.  Clone your app's repository to a new folder on your MacBook. This guarantees that the app will be built using the same code as on the Analytical Platform.
 2.  Open a terminal session and navigate to the directory containing the `Dockerfile`.
@@ -223,7 +225,7 @@ To build and run your R Shiny app locally, follow these steps:
     ```
 5.  Go to [127.0.0.1:80](127.0.0.1:80) to view the app.
 
-If the app does not work, follow these steps:
+If the app does not work, follow the steps below to troubleshoot it:
 
 1.  Start a bash session in a Docker container created from the Docker image using:
     ```{bash docker bash run, eval=FALSE}
