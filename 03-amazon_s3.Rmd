@@ -80,9 +80,9 @@ To remove a user from the data access group:
 
 ## Upload files to Amazon S3
 
-You can upload files to Amazon S3 from your local computer or from your home 
+You can upload files to Amazon S3 from your local computer or from RStudio or JupyterLab.
 
-*   You should follow information governance procedures when uploading data to Amazon S3.
+When uploading files to Amazon S3, you should ensure that you follow all necessary [information governance]() procedures. In particular, you must complete a data movement form when moving any data onto the Analytical Platform.
 
 ### Amazon S3 Console
 
@@ -126,7 +126,7 @@ You can upload files in JupyterLab on the Analytical Platform to Amazon S3 using
 
 You can install `boto3` by running the following code in a terminal:
 
-```{python install-boto3, eval=FALSE}
+```{python install-boto3-1, eval=FALSE}
 pip install boto3
 ```
 
@@ -226,13 +226,13 @@ You can also download or read objects using the `boto3` package.
 
 You can install `boto3` by running the following code in a terminal:
 
-```{python install-boto3, eval=FALSE}
+```{python install-boto3-2, eval=FALSE}
 pip install boto3
 ```
 
 To download a file from Amazon S3, you should use the following code:
 
-```{python python-upload-s3, eval=FALSE}
+```{python python-download-s3, eval=FALSE}
 import boto3
 
 s3 = boto3.resource('s3')
