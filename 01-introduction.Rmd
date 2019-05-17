@@ -196,7 +196,7 @@ To configure your username and email in Git on the Analytical Platform using RSt
     Here, you should substitute your GitHub username.
 3.  Configure your email address by runnung:
     ```
-    git config --global user.email 'your_email@example.com
+    git config --global user.email 'your_email@example.com'
     ```
     Here, you should substitute the email address you used to sign up to GitHub.
 
