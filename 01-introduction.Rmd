@@ -44,15 +44,15 @@ To sign up for a GitHub account, go to GitHub's [join page](https://github.com/j
 
 ### Verify your email address for GitHub
 
-Verifying you email address for GitHub ensures that your account is secure and gives you access to all of GitHub's features.
+Verifying your email address for GitHub ensures that your account is secure and gives you access to all of GitHub's features. Veryifying your email address is also required to sign in to the Analytical Platform.
 
-You will be prompted to verify your email address after signing up for an account.
+During sign up, GitHub will send you an email with a link to verify your email address.
 
 If you do not verify your email address at this stage, you can do it later by following the instructions [here](https://help.github.com/en/articles/verifying-your-email-address).
 
 ### Configure two-factor authentication for GitHub
 
-You can configure two-factor authentication (2FA) for GitHub using a mobile app (on your personal or work phone) or via text message. To configure 2FA for GitHub, follow the instructions [here](https://help.github.com/en/articles/configuring-two-factor-authentication).
+To get access to the Analytical Platform, you must first configure two-factor authentication (2FA) for GitHub using a mobile app (on your personal or work phone) or via text message. To configure 2FA for GitHub, follow the instructions [here](https://help.github.com/en/articles/configuring-two-factor-authentication).
 
 We recommend that you configure 2FA using a mobile app. In particular, we recommend that you use [__Authy__](https://authy.com/) for the following reasons:
 
@@ -125,7 +125,7 @@ To restart RStudio, JupyterLab or Airflow:
 
 ### Unidle analytical tools
 
-If your RStudio, JupyterLab or Airflow instance is inactive for an extended period of time (e.g., overnight) it will be idled.
+If your RStudio, JupyterLab or Airflow instance is inactive for an extended period of time (for example, overnight) it will be idled.
 
 1.  Go the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
 2.  Select the __Analytical tools__ tab.
