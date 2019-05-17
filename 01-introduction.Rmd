@@ -97,7 +97,7 @@ You may also need to access other services and tools on the Analytical Platform:
 
 Before using RStudio, JupyterLab and Airflow, you must first deploy them.
 
- To deploy RStudio, JupyterLab and Airflow on the Analytical Platform, you should complete the following steps:
+To deploy RStudio, JupyterLab and Airflow on the Analytical Platform, you should complete the following steps:
 
 1.  Go the Analytical Platform [control panel](https://cpanel-master.services.alpha.mojanalytics.xyz).
 2.  Select the __Analytical tools__ tab.
