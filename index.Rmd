@@ -1,5 +1,5 @@
 ---
-title: "Analytical Platform user guidance"
+title: "Analytical Platform User Guidance"
 subtitle: ""
 author: "MoJ Analytical Platform Team"
 date: "`r Sys.Date()`"
