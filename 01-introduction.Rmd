@@ -165,7 +165,7 @@ To create an SSH key in JupyterLab, follow the steps below:
 1.  Open JupyerLab from the Analytical Platform control panel.
 2.  Select the __+__ icon in the file browser to open a new Launcher tab.
 3.  Select __Terminal__ from the 'Other' section.
-4.  Create an SSH by running:
+4.  Create an SSH key by running:
     ```
     ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
     ```
