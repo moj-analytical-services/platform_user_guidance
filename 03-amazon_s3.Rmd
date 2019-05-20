@@ -4,7 +4,7 @@
 
 [Amazon S3](https://aws.amazon.com/s3/) is a web-based cloud storage platform. It is one of the primary file storage locations on the Analytical Platform, alongside individual users' home directories.
 
-Amazon S3 should be used to store large files and any files that need to be accessed by muliple users.
+You should use your home directory to store working copies of code and analytical outputs. Where possible, you should store all data and final analytical outputs in Amazon S3, and final code in GitHub to facilitate collaboration.
 
 Data stored in Amazon S3 can be seamlessly integrated with other AWS services such as Amazon Athena and Amazon Glue.
 
@@ -39,7 +39,7 @@ Every bucket has three access levels:
 
 *   Read only
 *   Read/write
-*   Admin
+*   Admin -- this provides read/write access and allows the user to add and remove other users from the bucket's data access group
 
 ### Request access to a bucket
 
@@ -49,7 +49,7 @@ If you know an admin of the bucket you require access to, you can ask them to ad
 
 If you do not know any of the admins of the bucket you require access to, you can ask the Analytical Platform team to add you to the data access group on the [#ap_admin_request](https://asdslack.slack.com/messages/CBLAGCQG6/) Slack channel or by [email](mailto:analytical_platform@digital.justice.gov.uk).
 
-When requesting access to a bucket, you should specify the name of the bucket and the level of access you require.
+When requesting access to a bucket, you should specify the name of the bucket and the level of access you require. You should only request access to data that you have a genuine business need to access and should only request the lowest level of access required for you to complete your work. You may be required to demonstrate the business need for you to access a bucket if requested by a bucket admin or an information asset owner (IAO).
 
 ### Manage access to a bucket{#manage-access-to-a-bucket}
 
@@ -82,18 +82,18 @@ To remove a user from the data access group:
 
 You can upload files to Amazon S3 from your local computer or from RStudio or JupyterLab.
 
-When uploading files to Amazon S3, you should ensure that you follow all necessary [information governance]() procedures. In particular, you must complete a data movement form when moving any data onto the Analytical Platform.
+When uploading files to Amazon S3, you should ensure that you follow all necessary [information governance](#information-governance) procedures. In particular, you must complete a data movement form when moving any data onto the Analytical Platform.
 
 ### Amazon S3 Console
 
-You can use the Amazon S3 Console to upload files from your local computer (e.g., personal or shared storage on DOM1 or Quantum) only.
+You can use the Amazon S3 Console to upload files from your local computer (for example, personal or shared storage on DOM1 or Quantum) only.
 
 To upload files using the Amazon S3 Console:
 
 1.  Log in to the [AWS Management Console](https://http://aws.services.alpha.mojanalytics.xyz) using your Analytical Platform account.
 2.  Select __Services__ from the menu bar.
 3.  Select __S3__ from the drop down menu.
-4.  Select the folder you want to upload files to.
+4.  Select the bucket and folder you want to upload files to.
 5.  Select __Upload__.
 6.  Select __Add files__ or drag and drop the files you want to upload.
 7.  Select __Upload__ -- you do not need to complete steps 2, 3 or 4.
@@ -118,7 +118,7 @@ remotes::install_github('moj-analytical-services/s3tools')
 *   `write_df_to_csv_in_s3`
 *   `write_df_to_table_in_s3`
 
-You can find out more about how to use these functions on [GitHub](https://github.com/moj-analytical-services/s3tools) or by using the help operator in RStudio (e.g., `?s3tools::write_file_to_s3`).
+You can find out more about how to use these functions on [GitHub](https://github.com/moj-analytical-services/s3tools) or by using the help operator in RStudio (for example, `?s3tools::write_file_to_s3`).
 
 ### JupyterLab
 
@@ -139,6 +139,8 @@ s3 = boto3.resource('s3')
 s3.object('bucket_name', 'key').put(Body=object)
 ```
 
+If you receive an `ImportError`, try restarting your kernel, so that Python recognises your `boto3` installation.
+
 Here, you should substitute `'bucket_name'` with the name of the bucket, `'key'` with the path of the object in Amazon S3 and `object` with the object you want to upload.
 
 You can find more information in the [package documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Object.put).
@@ -147,7 +149,7 @@ You can find more information in the [package documentation](https://boto3.amazo
 
 ### Amazon S3 Console
 
-You can use the Amazon S3 Console to download files to your local computer (e.g., personal or shared storage on DOM1 or Quantum) only.
+You can use the Amazon S3 Console to download files to your local computer (for example, personal or shared storage on DOM1 or Quantum) only.
 
 To download a file using the Amazon S3 Console:
 
@@ -180,7 +182,7 @@ remotes::install_github('moj-analytical-services/s3tools')
 *   `s3_path_to_full_df`
 *   `s3_path_to_preview_df`
 
-You can find out more about how to use these functions on [GitHub](https://github.com/moj-analytical-services/s3tools) or by using the help operator in RStudio (e.g., `?s3tools::download_file_from_s3`).
+You can find out more about how to use these functions on [GitHub](https://github.com/moj-analytical-services/s3tools) or by using the help operator in RStudio (for example, `?s3tools::download_file_from_s3`).
 
 #### `s3browser`
 
@@ -205,7 +207,7 @@ You can find out more about how to use `s3browser` on [GitHub](https://github.co
 
 #### `pandas`
 
-You can use any of the `pandas` read functions (e.g., `read_csv` or `read_json`) to download data directly from Amazon S3. This requires that you have installed the `s3fs` package. To install the `s3fs` package, run the following code in a terminal:
+You can use any of the `pandas` read functions (for example, `read_csv` or `read_json`) to download data directly from Amazon S3. This requires that you have installed the `s3fs` package. To install the `s3fs` package, run the following code in a terminal:
 
 ```{python install-s3fs, eval=FALSE}
 pip install s3fs
@@ -238,6 +240,8 @@ import boto3
 s3 = boto3.resource('s3')
 s3.Object('bucket_name', 'key').download_file('local_path')
 ```
+
+If you receive an `ImportError`, try restarting your kernel, so that Python recognises your `boto3` installation.
 
 Here, you should substitute `'bucket_name'` with the name of the bucket, `'key'` with the path of the object in Amazon S3 and `local_path` with the local path where you would like to save the downloaded file.
 
