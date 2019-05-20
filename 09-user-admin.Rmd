@@ -1,7 +1,0 @@
-# User Administration
-
-## Teams and data access groups
-
-We updated the [control panel](http://cpanel-master.services.alpha.mojanalytics.xyz/) on 4th May 2018.  You can now manage data access groups directly in the control panel.  Github teams no long have any effect on data access permissions.
-
-We are working on updating the documentation, which will appear here when complete.
