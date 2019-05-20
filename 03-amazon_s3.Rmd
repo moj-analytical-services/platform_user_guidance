@@ -126,13 +126,13 @@ You can upload files in JupyterLab on the Analytical Platform to Amazon S3 using
 
 You can install `boto3` by running the following code in a terminal:
 
-```{python install-boto3-1, eval=FALSE}
+```
 pip install boto3
 ```
 
 To upload a file to Amazon S3, use the following code:
 
-```{python python-upload-s3, eval=FALSE}
+```
 import boto3
 
 s3 = boto3.resource('s3')
@@ -209,13 +209,13 @@ You can find out more about how to use `s3browser` on [GitHub](https://github.co
 
 You can use any of the `pandas` read functions (for example, `read_csv` or `read_json`) to download data directly from Amazon S3. This requires that you have installed the `s3fs` package. To install the `s3fs` package, run the following code in a terminal:
 
-```{python install-s3fs, eval=FALSE}
+```
 pip install s3fs
 ```
 
 As an example, to read a CSV, you should run the following code:
 
-```{python read-pandas, eval=FALSE}
+```
 import pandas as pd
 pd.read_csv('s3://bucket_name/key')
 ```
@@ -228,13 +228,13 @@ You can also download or read objects using the `boto3` package.
 
 You can install `boto3` by running the following code in a terminal:
 
-```{python install-boto3-2, eval=FALSE}
+```
 pip install boto3
 ```
 
 To download a file from Amazon S3, you should use the following code:
 
-```{python python-download-s3, eval=FALSE}
+```
 import boto3
 
 s3 = boto3.resource('s3')
