@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Part 5 Deploying a Static Web App | Analytical Platform User Guidance</title>
+  <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Part 5 Deploying a Static Web App | Analytical Platform User Guidance />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This repository contains user guidance for the Analytical Platform." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Part 5 Deploying a Static Web App | Analytical Platform User Guidance />
+  
+  <meta name="twitter:description" content="This repository contains user guidance for the Analytical Platform." />
+  
+
+<meta name="author" content="MoJ Analytical Platform Team">
+
+
+<meta name="date" content="2019-05-20">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="deploying-an-r-shiny-app.html">
+<link rel="next" href="data-pipelines.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this guidance</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-the-analytical-platform"><i class="fa fa-check"></i><b>1.1</b> What is the Analytical Platform?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#get-started"><i class="fa fa-check"></i><b>1.2</b> Get started</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#read-our-acceptable-use-policy-and-coding-standards"><i class="fa fa-check"></i><b>1.2.1</b> Read our acceptable use policy and coding standards</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#sign-up-for-a-github-account"><i class="fa fa-check"></i><b>1.2.2</b> Sign up for a GitHub account</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#verify-your-email-address-for-github"><i class="fa fa-check"></i><b>1.2.3</b> Verify your email address for GitHub</a></li>
+<li class="chapter" data-level="1.2.4" data-path="introduction.html"><a href="introduction.html#configure-two-factor-authentication-for-github"><i class="fa fa-check"></i><b>1.2.4</b> Configure two-factor authentication for GitHub</a></li>
+<li class="chapter" data-level="1.2.5" data-path="introduction.html"><a href="introduction.html#request-an-account-from-the-analytical-platform-team"><i class="fa fa-check"></i><b>1.2.5</b> Request an account from the Analytical Platform team</a></li>
+<li class="chapter" data-level="1.2.6" data-path="introduction.html"><a href="introduction.html#accept-your-invitation-to-the-moj-analytical-services-github-organisation"><i class="fa fa-check"></i><b>1.2.6</b> Accept your invitation to the MoJ Analytical Services GitHub organisation</a></li>
+<li class="chapter" data-level="1.2.7" data-path="introduction.html"><a href="introduction.html#configure-two-factor-authentication-for-the-analytical-platform"><i class="fa fa-check"></i><b>1.2.7</b> Configure two-factor authentication for the Analytical Platform</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#access-the-analytical-platform"><i class="fa fa-check"></i><b>1.3</b> Access the Analytical Platform</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#work-with-analytical-tools"><i class="fa fa-check"></i><b>1.4</b> Work with analytical tools</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="introduction.html"><a href="introduction.html#deploy-analytical-tools"><i class="fa fa-check"></i><b>1.4.1</b> Deploy analytical tools</a></li>
+<li class="chapter" data-level="1.4.2" data-path="introduction.html"><a href="introduction.html#open-analytical-tools"><i class="fa fa-check"></i><b>1.4.2</b> Open analytical tools</a></li>
+<li class="chapter" data-level="1.4.3" data-path="introduction.html"><a href="introduction.html#restart-analytical-tools"><i class="fa fa-check"></i><b>1.4.3</b> Restart analytical tools</a></li>
+<li class="chapter" data-level="1.4.4" data-path="introduction.html"><a href="introduction.html#unidle-analytical-tools"><i class="fa fa-check"></i><b>1.4.4</b> Unidle analytical tools</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#configure-git-and-github"><i class="fa fa-check"></i><b>1.5</b> Configure Git and GitHub</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#create-an-ssh-key"><i class="fa fa-check"></i><b>1.5.1</b> Create an SSH key</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#add-the-ssh-key-to-github"><i class="fa fa-check"></i><b>1.5.2</b> Add the SSH key to GitHub</a></li>
+<li class="chapter" data-level="1.5.3" data-path="introduction.html"><a href="introduction.html#configure-you-username-and-email-in-git-on-the-analytical-platform"><i class="fa fa-check"></i><b>1.5.3</b> Configure you username and email in Git on the Analytical Platform</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#contact-us"><i class="fa fa-check"></i><b>1.6</b> Contact us</a></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#slack"><i class="fa fa-check"></i><b>1.7</b> Slack</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#what-is-slack"><i class="fa fa-check"></i><b>1.7.1</b> What is Slack?</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction.html"><a href="introduction.html#access-slack"><i class="fa fa-check"></i><b>1.7.2</b> Access Slack</a></li>
+<li class="chapter" data-level="1.7.3" data-path="introduction.html"><a href="introduction.html#channels"><i class="fa fa-check"></i><b>1.7.3</b> Channels</a></li>
+<li class="chapter" data-level="1.7.4" data-path="introduction.html"><a href="introduction.html#further-information"><i class="fa fa-check"></i><b>1.7.4</b> Further information</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="amazon-s3.html"><a href="amazon-s3.html"><i class="fa fa-check"></i><b>2</b> Amazon S3</a><ul>
+<li class="chapter" data-level="2.1" data-path="amazon-s3.html"><a href="amazon-s3.html#what-is-amazon-s3"><i class="fa fa-check"></i><b>2.1</b> What is Amazon S3?</a></li>
+<li class="chapter" data-level="2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#working-with-amazon-s3-buckets"><i class="fa fa-check"></i><b>2.2</b> Working with Amazon S3 buckets</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="amazon-s3.html"><a href="amazon-s3.html#types-of-buckets"><i class="fa fa-check"></i><b>2.2.1</b> Types of buckets</a></li>
+<li class="chapter" data-level="2.2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#create-a-new-bucket"><i class="fa fa-check"></i><b>2.2.2</b> Create a new bucket</a></li>
+<li class="chapter" data-level="2.2.3" data-path="amazon-s3.html"><a href="amazon-s3.html#access-levels"><i class="fa fa-check"></i><b>2.2.3</b> Access levels</a></li>
+<li class="chapter" data-level="2.2.4" data-path="amazon-s3.html"><a href="amazon-s3.html#request-access-to-a-bucket"><i class="fa fa-check"></i><b>2.2.4</b> Request access to a bucket</a></li>
+<li class="chapter" data-level="2.2.5" data-path="amazon-s3.html"><a href="amazon-s3.html#manage-access-to-a-bucket"><i class="fa fa-check"></i><b>2.2.5</b> Manage access to a bucket</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="amazon-s3.html"><a href="amazon-s3.html#upload-files-to-amazon-s3"><i class="fa fa-check"></i><b>2.3</b> Upload files to Amazon S3</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="amazon-s3.html"><a href="amazon-s3.html#amazon-s3-console"><i class="fa fa-check"></i><b>2.3.1</b> Amazon S3 Console</a></li>
+<li class="chapter" data-level="2.3.2" data-path="amazon-s3.html"><a href="amazon-s3.html#rstudio-1"><i class="fa fa-check"></i><b>2.3.2</b> RStudio</a></li>
+<li class="chapter" data-level="2.3.3" data-path="amazon-s3.html"><a href="amazon-s3.html#jupyterlab-1"><i class="fa fa-check"></i><b>2.3.3</b> JupyterLab</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="amazon-s3.html"><a href="amazon-s3.html#download-or-read-files-from-amazon-s3"><i class="fa fa-check"></i><b>2.4</b> Download or read files from Amazon S3</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="amazon-s3.html"><a href="amazon-s3.html#amazon-s3-console-1"><i class="fa fa-check"></i><b>2.4.1</b> Amazon S3 Console</a></li>
+<li class="chapter" data-level="2.4.2" data-path="amazon-s3.html"><a href="amazon-s3.html#rstudio-2"><i class="fa fa-check"></i><b>2.4.2</b> RStudio</a></li>
+<li class="chapter" data-level="2.4.3" data-path="amazon-s3.html"><a href="amazon-s3.html#jupyterlab-2"><i class="fa fa-check"></i><b>2.4.3</b> JupyterLab</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>3</b> Using Github with the platform</a><ul>
+<li class="chapter" data-level="3.1" data-path="github.html"><a href="github.html#creating-your-project-repo-on-github"><i class="fa fa-check"></i><b>3.1</b> Creating your project repo on GitHub</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="github.html"><a href="github.html#step-1---create-a-new-project-repo-in-the-moj-analytical-services-github-page"><i class="fa fa-check"></i><b>3.1.1</b> Step 1 - Create a new project repo in the moj-analytical-services Github page</a></li>
+<li class="chapter" data-level="3.1.2" data-path="github.html"><a href="github.html#step-2-navigate-to-your-new-repository-on-github-to-decide-who-can-see-your-code"><i class="fa fa-check"></i><b>3.1.2</b> Step 2: Navigate to your new Repository on GitHub to decide who can see your code</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="github.html"><a href="github.html#r-studio"><i class="fa fa-check"></i><b>3.2</b> R Studio</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="github.html"><a href="github.html#step-1-navigate-to-your-platform-r-studio-and-make-a-copy-of-the-github-project-in-your-r-studio"><i class="fa fa-check"></i><b>3.2.1</b> Step 1: Navigate to your platform R Studio and make a copy of the Github project in your R Studio</a></li>
+<li class="chapter" data-level="3.2.2" data-path="github.html"><a href="github.html#step-2-edit-your-files-track-them-using-git-and-sync-push-changes-to-github"><i class="fa fa-check"></i><b>3.2.2</b> Step 2: Edit your files, track them using Git, and sync (‘push’) changes to Github</a></li>
+<li class="chapter" data-level="3.2.3" data-path="github.html"><a href="github.html#step-3-sync-push-your-work-with-github.com"><i class="fa fa-check"></i><b>3.2.3</b> Step 3: Sync (‘push’) your work with github.com</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="github.html"><a href="github.html#jupyter"><i class="fa fa-check"></i><b>3.3</b> Jupyter</a></li>
+<li class="chapter" data-level="3.4" data-path="github.html"><a href="github.html#command-line"><i class="fa fa-check"></i><b>3.4</b> Command-line</a></li>
+<li class="chapter" data-level="3.5" data-path="github.html"><a href="github.html#working-on-a-branch."><i class="fa fa-check"></i><b>3.5</b> Working on a branch.</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="github.html"><a href="github.html#step-1-optional-create-an-issue-in-github-that-describes-the-piece-of-work-youre-about-to-do-the-purpose-of-the-branch"><i class="fa fa-check"></i><b>3.5.1</b> Step 1 (optional): Create an Issue in github that describes the piece of work you’re about to do (the purpose of the branch)</a></li>
+<li class="chapter" data-level="3.5.2" data-path="github.html"><a href="github.html#step-2-create-a-new-branch-in-r-studio-and-tell-github-about-its-existence"><i class="fa fa-check"></i><b>3.5.2</b> Step 2: Create a new branch in R Studio and tell Github about its existence</a></li>
+<li class="chapter" data-level="3.5.3" data-path="github.html"><a href="github.html#step-3-make-some-changes-to-address-the-github-issue-and-push-sync-them-with-github"><i class="fa fa-check"></i><b>3.5.3</b> Step 3: Make some changes to address the Github issue, and push (sync) them with Github</a></li>
+<li class="chapter" data-level="3.5.4" data-path="github.html"><a href="github.html#step-4-view-changes-on-github-and-create-pull-request"><i class="fa fa-check"></i><b>3.5.4</b> Step 4: View changes on Github and create pull request</a></li>
+<li class="chapter" data-level="3.5.5" data-path="github.html"><a href="github.html#step-5-sync-the-changes-you-made-on-github.com-with-your-local-platform"><i class="fa fa-check"></i><b>3.5.5</b> Step 5: Sync the changes you made on github.com with your local platform</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="github.html"><a href="github.html#git-training-resources"><i class="fa fa-check"></i><b>3.6</b> Git training Resources</a></li>
+<li class="chapter" data-level="3.7" data-path="github.html"><a href="github.html#safety-barriers"><i class="fa fa-check"></i><b>3.7</b> Safety barriers</a></li>
+<li class="chapter" data-level="3.8" data-path="github.html"><a href="github.html#other-tips-and-tricks-work-in-progress"><i class="fa fa-check"></i><b>3.8</b> Other tips and tricks [Work in progress!]:</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="github.html"><a href="github.html#search-the-code-in-moj-analytical-services-to-see-who-else-has-used-a-package."><i class="fa fa-check"></i><b>3.8.1</b> Search the code in MoJ Analytical Services to see who else has used a package.</a></li>
+<li class="chapter" data-level="3.8.2" data-path="github.html"><a href="github.html#hyperlink-to-a-specific-line-of-code-in-your-project"><i class="fa fa-check"></i><b>3.8.2</b> Hyperlink to a specific line of code in your project</a></li>
+<li class="chapter" data-level="3.8.3" data-path="github.html"><a href="github.html#view-who-made-changes-to-code-when-and-why-using-git-blame."><i class="fa fa-check"></i><b>3.8.3</b> View who made changes to code, when and why using Git blame.</a></li>
+<li class="chapter" data-level="3.8.4" data-path="github.html"><a href="github.html#make-your-project-available-to-people-on-different-teams"><i class="fa fa-check"></i><b>3.8.4</b> Make your project available to people on different teams</a></li>
+<li class="chapter" data-level="3.8.5" data-path="github.html"><a href="github.html#assign-a-reviewer-to-a-pull-request-and-leave-comments."><i class="fa fa-check"></i><b>3.8.5</b> Assign a reviewer to a pull request, and leave comments.</a></li>
+<li class="chapter" data-level="3.8.6" data-path="github.html"><a href="github.html#view-how-files-have-changed-on-the-platform-and-on"><i class="fa fa-check"></i><b>3.8.6</b> View how files have changed on the platform and on</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html"><i class="fa fa-check"></i><b>4</b> Deploying an R Shiny app</a><ul>
+<li class="chapter" data-level="4.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#basic-deployment"><i class="fa fa-check"></i><b>4.1</b> Basic deployment</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#summary"><i class="fa fa-check"></i><b>4.1.1</b> Summary</a></li>
+<li class="chapter" data-level="4.1.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#copy-template"><i class="fa fa-check"></i><b>4.1.2</b> Copy the app template</a></li>
+<li class="chapter" data-level="4.1.3" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#create-webapp"><i class="fa fa-check"></i><b>4.1.3</b> Create a new webapp</a></li>
+<li class="chapter" data-level="4.1.4" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#clone-repo"><i class="fa fa-check"></i><b>4.1.4</b> Clone the repository</a></li>
+<li class="chapter" data-level="4.1.5" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#develop-the-app"><i class="fa fa-check"></i><b>4.1.5</b> Develop the app</a></li>
+<li class="chapter" data-level="4.1.6" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#manage-dependencies"><i class="fa fa-check"></i><b>4.1.6</b> Manage dependencies</a></li>
+<li class="chapter" data-level="4.1.7" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#rshiny-deploy"><i class="fa fa-check"></i><b>4.1.7</b> Set access permissions</a></li>
+<li class="chapter" data-level="4.1.8" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#create-release"><i class="fa fa-check"></i><b>4.1.8</b> Create a release in GitHub</a></li>
+<li class="chapter" data-level="4.1.9" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#deploy-in-concourse"><i class="fa fa-check"></i><b>4.1.9</b> Deploy in Concourse</a></li>
+<li class="chapter" data-level="4.1.10" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#add-users"><i class="fa fa-check"></i><b>4.1.10</b> Add users to the app</a></li>
+<li class="chapter" data-level="4.1.11" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#access-the-app"><i class="fa fa-check"></i><b>4.1.11</b> Access the app</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#advanced-deployment"><i class="fa fa-check"></i><b>4.2</b> Advanced deployment</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#editing-the-dockerfile"><i class="fa fa-check"></i><b>4.2.1</b> Editing the Dockerfile</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#troubleshooting"><i class="fa fa-check"></i><b>4.3</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#common-errors"><i class="fa fa-check"></i><b>4.3.1</b> Common errors</a></li>
+<li class="chapter" data-level="4.3.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#app-sign-in"><i class="fa fa-check"></i><b>4.3.2</b> App sign-in</a></li>
+<li class="chapter" data-level="4.3.3" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#packrat"><i class="fa fa-check"></i><b>4.3.3</b> Packrat</a></li>
+<li class="chapter" data-level="4.3.4" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#kibana"><i class="fa fa-check"></i><b>4.3.4</b> Kibana</a></li>
+<li class="chapter" data-level="4.3.5" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#deploying-locally"><i class="fa fa-check"></i><b>4.3.5</b> Deploying locally</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html"><i class="fa fa-check"></i><b>5</b> Deploying a Static Web App</a><ul>
+<li class="chapter" data-level="5.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#step-by-step-guide-to-depolying-an-static-web-app"><i class="fa fa-check"></i><b>5.1</b> Step-by-step guide to depolying an static web app</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#copy-the-template-project-into-a-new-github-repository"><i class="fa fa-check"></i><b>5.1.1</b> Copy the template project into a new Github repository</a></li>
+<li class="chapter" data-level="5.1.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#in-your-chosen-development-enviroment-clone-the-git-repository"><i class="fa fa-check"></i><b>5.1.2</b> In your chosen development enviroment, clone the git repository</a></li>
+<li class="chapter" data-level="5.1.3" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#work-on-your-web-app"><i class="fa fa-check"></i><b>5.1.3</b> Work on your web app</a></li>
+<li class="chapter" data-level="5.1.4" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#scan-organisation-and-deploy"><i class="fa fa-check"></i><b>5.1.4</b> Scan organisation and deploy</a></li>
+<li class="chapter" data-level="5.1.5" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#grant-secure-access-to-the-app"><i class="fa fa-check"></i><b>5.1.5</b> Grant secure access to the app</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#accessing-the-app"><i class="fa fa-check"></i><b>5.2</b> Accessing the app</a></li>
+<li class="chapter" data-level="5.3" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#advanced-deployment-1"><i class="fa fa-check"></i><b>5.3</b> Advanced deployment</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#can-i-change-my-build"><i class="fa fa-check"></i><b>5.3.1</b> Can I change my build?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-pipelines.html"><a href="data-pipelines.html"><i class="fa fa-check"></i><b>6</b> Data pipelines</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-pipelines.html"><a href="data-pipelines.html#summary-1"><i class="fa fa-check"></i><b>6.1</b> Summary</a></li>
+<li class="chapter" data-level="6.2" data-path="data-pipelines.html"><a href="data-pipelines.html#concepts"><i class="fa fa-check"></i><b>6.2</b> Concepts</a></li>
+<li class="chapter" data-level="6.3" data-path="data-pipelines.html"><a href="data-pipelines.html#set-up-a-pipeline"><i class="fa fa-check"></i><b>6.3</b> Set up a pipeline</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-pipelines.html"><a href="data-pipelines.html#task-repository"><i class="fa fa-check"></i><b>6.3.1</b> Task repository</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-pipelines.html"><a href="data-pipelines.html#test-pipeline-in-your-own-airflow-sandbox"><i class="fa fa-check"></i><b>6.4</b> Test pipeline in your own Airflow sandbox</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="data-pipelines.html"><a href="data-pipelines.html#start-airflow-sandbox"><i class="fa fa-check"></i><b>6.4.1</b> Start Airflow sandbox</a></li>
+<li class="chapter" data-level="6.4.2" data-path="data-pipelines.html"><a href="data-pipelines.html#create-a-test-dag"><i class="fa fa-check"></i><b>6.4.2</b> Create a test DAG</a></li>
+<li class="chapter" data-level="6.4.3" data-path="data-pipelines.html"><a href="data-pipelines.html#important-considerations"><i class="fa fa-check"></i><b>6.4.3</b> Important considerations</a></li>
+<li class="chapter" data-level="6.4.4" data-path="data-pipelines.html"><a href="data-pipelines.html#test-your-image---locally-on-a-macbook"><i class="fa fa-check"></i><b>6.4.4</b> Test your image - locally on a Macbook</a></li>
+<li class="chapter" data-level="6.4.5" data-path="data-pipelines.html"><a href="data-pipelines.html#build-the-image"><i class="fa fa-check"></i><b>6.4.5</b> Build the image</a></li>
+<li class="chapter" data-level="6.4.6" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-dag"><i class="fa fa-check"></i><b>6.4.6</b> Airflow DAG</a></li>
+<li class="chapter" data-level="6.4.7" data-path="data-pipelines.html"><a href="data-pipelines.html#airflow-web-interface"><i class="fa fa-check"></i><b>6.4.7</b> Airflow web interface</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="build-and-deploy.html"><a href="build-and-deploy.html"><i class="fa fa-check"></i><b>7</b> Build and Deploy</a><ul>
+<li class="chapter" data-level="7.1" data-path="build-and-deploy.html"><a href="build-and-deploy.html#deploy.json-1"><i class="fa fa-check"></i><b>7.1</b> deploy.json</a></li>
+<li class="chapter" data-level="7.2" data-path="build-and-deploy.html"><a href="build-and-deploy.html#starting-a-builddeploy"><i class="fa fa-check"></i><b>7.2</b> Starting a build/deploy</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="user-administration.html"><a href="user-administration.html"><i class="fa fa-check"></i><b>8</b> User Administration</a><ul>
+<li class="chapter" data-level="8.1" data-path="user-administration.html"><a href="user-administration.html#teams-and-data-access-groups"><i class="fa fa-check"></i><b>8.1</b> Teams and data access groups</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html"><i class="fa fa-check"></i><b>9</b> Acceptable use policy</a><ul>
+<li class="chapter" data-level="9.1" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#scope"><i class="fa fa-check"></i><b>9.1</b> Scope</a></li>
+<li class="chapter" data-level="9.2" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#who-this-policy-applies-to"><i class="fa fa-check"></i><b>9.2</b> Who this policy applies to</a></li>
+<li class="chapter" data-level="9.3" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html#general-principles"><i class="fa fa-check"></i><b>9.3</b> General principles</a></li>
+<li class="chapter" data-level="9.4" data-path="github.html"><a href="github.html#github"><i class="fa fa-check"></i><b>9.4</b> GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="information-governance.html"><a href="information-governance.html"><i class="fa fa-check"></i><b>10</b> Information governance</a><ul>
+<li class="chapter" data-level="10.1" data-path="information-governance.html"><a href="information-governance.html#data-management"><i class="fa fa-check"></i><b>10.1</b> Data management</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="information-governance.html"><a href="information-governance.html#permissions-and-access"><i class="fa fa-check"></i><b>10.1.1</b> Permissions and access</a></li>
+<li class="chapter" data-level="10.1.2" data-path="information-governance.html"><a href="information-governance.html#data-retention"><i class="fa fa-check"></i><b>10.1.2</b> Data retention</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="information-governance.html"><a href="information-governance.html#data-movements"><i class="fa fa-check"></i><b>10.2</b> Data movements</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="information-governance.html"><a href="information-governance.html#data-movement-form"><i class="fa fa-check"></i><b>10.2.1</b> Data movement form guidance</a></li>
+<li class="chapter" data-level="10.2.2" data-path="information-governance.html"><a href="information-governance.html#data-minimisation"><i class="fa fa-check"></i><b>10.2.2</b> Data Minimisation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="information-governance.html"><a href="information-governance.html#data-offshoring"><i class="fa fa-check"></i><b>10.3</b> Data Offshoring</a></li>
+<li class="chapter" data-level="10.4" data-path="information-governance.html"><a href="information-governance.html#reporting-security-incidents"><i class="fa fa-check"></i><b>10.4</b> Reporting security incidents</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="how-to-get-support.html"><a href="how-to-get-support.html"><i class="fa fa-check"></i><b>11</b> How to get Support</a><ul>
+<li class="chapter" data-level="11.1" data-path="how-to-get-support.html"><a href="how-to-get-support.html#summary-2"><i class="fa fa-check"></i><b>11.1</b> Summary</a></li>
+<li class="chapter" data-level="11.2" data-path="how-to-get-support.html"><a href="how-to-get-support.html#intro"><i class="fa fa-check"></i><b>11.2</b> Intro</a></li>
+<li class="chapter" data-level="11.3" data-path="how-to-get-support.html"><a href="how-to-get-support.html#routes-of-support"><i class="fa fa-check"></i><b>11.3</b> Routes of Support</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="how-to-get-support.html"><a href="how-to-get-support.html#platform-support"><i class="fa fa-check"></i><b>11.3.1</b> Platform Support</a></li>
+<li class="chapter" data-level="11.3.2" data-path="how-to-get-support.html"><a href="how-to-get-support.html#coding-support-r-python"><i class="fa fa-check"></i><b>11.3.2</b> Coding Support (R &amp; Python)</a></li>
+<li class="chapter" data-level="11.3.3" data-path="how-to-get-support.html"><a href="how-to-get-support.html#git-support-version-control"><i class="fa fa-check"></i><b>11.3.3</b> Git Support (Version control)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="how-to-get-support.html"><a href="how-to-get-support.html#how-to-ask-for-support-creating-a-reproducable-example"><i class="fa fa-check"></i><b>11.4</b> How to ask for support: Creating a Reproducable Example</a></li>
+<li class="chapter" data-level="11.5" data-path="how-to-get-support.html"><a href="how-to-get-support.html#raising-issues"><i class="fa fa-check"></i><b>11.5</b> Raising Issues</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html"><i class="fa fa-check"></i><b>12</b> Common Errors and Solutions</a><ul>
+<li class="chapter" data-level="12.1" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#failed-to-lock-directory"><i class="fa fa-check"></i><b>12.1</b> Failed to lock directory</a></li>
+<li class="chapter" data-level="12.2" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#rsession-username-error-session-hadabend"><i class="fa fa-check"></i><b>12.2</b> <code>rsession-username ERROR session hadabend</code></a></li>
+<li class="chapter" data-level="12.3" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#status-code-502-error-message"><i class="fa fa-check"></i><b>12.3</b> Status Code 502 error message</a></li>
+<li class="chapter" data-level="12.4" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#unable-to-access-data-using-aws.s3-package."><i class="fa fa-check"></i><b>12.4</b> Unable to access data using <code>aws.s3</code> package.</a></li>
+<li class="chapter" data-level="12.5" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#s3toolss3_path_to_full_df-fails-on-excel-file"><i class="fa fa-check"></i><b>12.5</b> <code>s3tools::s3_path_to_full_df()</code> fails on Excel file</a></li>
+<li class="chapter" data-level="12.6" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#two-factor-auth-issues"><i class="fa fa-check"></i><b>12.6</b> Two-factor authentication problems</a><ul>
+<li class="chapter" data-level="12.6.1" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#ive-lost-my-platform-2fa"><i class="fa fa-check"></i><b>12.6.1</b> I’ve lost my platform 2FA</a></li>
+<li class="chapter" data-level="12.6.2" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#i-have-entered-my-2fa-code-but-the-platform-will-not-accept-it"><i class="fa fa-check"></i><b>12.6.2</b> I have entered my 2FA code, but the platform will not accept it</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="common-errors-and-solutions.html"><a href="common-errors-and-solutions.html#im-having-problems-deploying-a-shiny-app"><i class="fa fa-check"></i><b>12.7</b> I’m having problems deploying a Shiny app</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="annexes.html"><a href="annexes.html"><i class="fa fa-check"></i><b>13</b> Annexes</a><ul>
+<li class="chapter" data-level="13.1" data-path="annexes.html"><a href="annexes.html#memory-limits"><i class="fa fa-check"></i><b>13.1</b> Memory limits</a></li>
+<li class="chapter" data-level="13.2" data-path="annexes.html"><a href="annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it"><i class="fa fa-check"></i><b>13.2</b> What are the benefits of Github and why do we recommend it?</a></li>
+<li class="chapter" data-level="13.3" data-path="annexes.html"><a href="annexes.html#step-by-step-guide-to-setup-two-factor-authentication"><i class="fa fa-check"></i><b>13.3</b> Step by step guide to setup Two Factor Authentication</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="annexes.html"><a href="annexes.html#step-by-step---logging-into-the-platform-for-the-first-time"><i class="fa fa-check"></i><b>13.3.1</b> Step by step - logging into the platform for the first time</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="annexes.html"><a href="annexes.html#data-minimisation-1"><i class="fa fa-check"></i><b>13.4</b> Data Minimisation</a><ul>
+<li class="chapter" data-level="13.4.1" data-path="annexes.html"><a href="annexes.html#pseudonymisation"><i class="fa fa-check"></i><b>13.4.1</b> Pseudonymisation</a></li>
+<li class="chapter" data-level="13.4.2" data-path="annexes.html"><a href="annexes.html#anonymisation"><i class="fa fa-check"></i><b>13.4.2</b> Anonymisation</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="conda-package-management.html"><a href="conda-package-management.html"><i class="fa fa-check"></i><b>A</b> Conda Package Management</a><ul>
+<li class="chapter" data-level="A.1" data-path="conda-package-management.html"><a href="conda-package-management.html#unified-package-management-for-both-r-and-python"><i class="fa fa-check"></i><b>A.1</b> Unified package management for both R and Python</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="conda-package-management.html"><a href="conda-package-management.html#faster-builds"><i class="fa fa-check"></i><b>A.1.1</b> Faster builds</a></li>
+<li class="chapter" data-level="A.1.2" data-path="conda-package-management.html"><a href="conda-package-management.html#cross-language"><i class="fa fa-check"></i><b>A.1.2</b> Cross Language</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="conda-package-management.html"><a href="conda-package-management.html#installing-packages"><i class="fa fa-check"></i><b>A.2</b> Installing Packages</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="conda-package-management.html"><a href="conda-package-management.html#r"><i class="fa fa-check"></i><b>A.2.1</b> R</a></li>
+<li class="chapter" data-level="A.2.2" data-path="conda-package-management.html"><a href="conda-package-management.html#python"><i class="fa fa-check"></i><b>A.2.2</b> Python</a></li>
+<li class="chapter" data-level="A.2.3" data-path="conda-package-management.html"><a href="conda-package-management.html#operating-system-packages"><i class="fa fa-check"></i><b>A.2.3</b> Operating System Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="conda-package-management.html"><a href="conda-package-management.html#platform-limitations"><i class="fa fa-check"></i><b>A.3</b> Platform limitations</a></li>
+<li class="chapter" data-level="A.4" data-path="conda-package-management.html"><a href="conda-package-management.html#environment-management"><i class="fa fa-check"></i><b>A.4</b> Environment Management</a><ul>
+<li class="chapter" data-level="A.4.1" data-path="conda-package-management.html"><a href="conda-package-management.html#reset-your-environment-to-default"><i class="fa fa-check"></i><b>A.4.1</b> Reset your <em>Environment</em> to default</a></li>
+<li class="chapter" data-level="A.4.2" data-path="conda-package-management.html"><a href="conda-package-management.html#exporting-your-environment"><i class="fa fa-check"></i><b>A.4.2</b> Exporting your <em>Environment</em></a></li>
+<li class="chapter" data-level="A.4.3" data-path="conda-package-management.html"><a href="conda-package-management.html#making-your-r-studio-environment-match-an-environment.yml"><i class="fa fa-check"></i><b>A.4.3</b> Making your R Studio Environment match an <code>environment.yml</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="access-local-ports-in-jupyter.html"><a href="access-local-ports-in-jupyter.html"><i class="fa fa-check"></i><b>B</b> Access Local Ports in Jupyter</a><ul>
+<li class="chapter" data-level="B.1" data-path="access-local-ports-in-jupyter.html"><a href="access-local-ports-in-jupyter.html#running-plotly-dash-apps"><i class="fa fa-check"></i><b>B.1</b> Running Plotly <a href="https://dash.plot.ly/">Dash</a> apps</a><ul>
+<li class="chapter" data-level="B.1.1" data-path="access-local-ports-in-jupyter.html"><a href="access-local-ports-in-jupyter.html#install-dependencies"><i class="fa fa-check"></i><b>B.1.1</b> Install dependencies</a></li>
+<li class="chapter" data-level="B.1.2" data-path="access-local-ports-in-jupyter.html"><a href="access-local-ports-in-jupyter.html#example-code"><i class="fa fa-check"></i><b>B.1.2</b> Example code</a></li>
+<li class="chapter" data-level="B.1.3" data-path="access-local-ports-in-jupyter.html"><a href="access-local-ports-in-jupyter.html#run-server-from-the-terminal"><i class="fa fa-check"></i><b>B.1.3</b> Run server from the terminal</a></li>
+<li class="chapter" data-level="B.1.4" data-path="access-local-ports-in-jupyter.html"><a href="access-local-ports-in-jupyter.html#access-via-_tunnel_-url"><i class="fa fa-check"></i><b>B.1.4</b> Access via <code>_tunnel_</code> URL</a></li>
+</ul></li>
+<li class="chapter" data-level="B.2" data-path="access-local-ports-in-jupyter.html"><a href="access-local-ports-in-jupyter.html#troubleshooting-1"><i class="fa fa-check"></i><b>B.2</b> Troubleshooting</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Analytical Platform User Guidance</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="deploying-a-static-web-app" class="section level1">
+<h1><span class="header-section-number">Part 5</span> Deploying a Static Web App</h1>
+<p>The following steps to deploy a static HTML web site are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Copy the <a href="https://github.com/moj-analytical-services/webapp-template">template project</a> within Github to a new repository, with a name of your choice.</li>
+<li>Work on your static website - the exposed content will be in the <code>www/</code> directory and <code>www/index.html</code> will be the landing page.</li>
+<li>When you’re ready to share it, access the <a href="https://jenkins.services.alpha.mojanalytics.xyz/">services control panel</a>, find your app, and click ‘Build now’. This will prepare your site for deployment.</li>
+<li>Set the desired access permissions in <code>deploy.json</code> (i.e. whether it should be available for DOM1, Quantum, or external).</li>
+<li>When you’re ready to share it, in GitHub create a ‘release’ and it will deploy in a few minutes.</li>
+<li>Ask the Platform team to add and remove users from your app in the <a href="https://asdslack.slack.com/messages/CBLAGCQG6/">#ap_admin_request</a> Slack channel.</li>
+</ol>
+<p>Step-by-step instructions are below.</p>
+<div id="step-by-step-guide-to-depolying-an-static-web-app" class="section level2">
+<h2><span class="header-section-number">5.1</span> Step-by-step guide to depolying an static web app</h2>
+<div id="copy-the-template-project-into-a-new-github-repository" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Copy the template project into a new Github repository</h3>
+<ol style="list-style-type: decimal">
+<li><p>Begin by making a <strong>copy</strong> of the <a href="https://github.com/moj-analytical-services/webapp-template">template project</a> on Github: <a href="https://github.com/new/import" class="uri">https://github.com/new/import</a></p></li>
+<li><p>Enter <code>https://github.com/moj-analytical-services/webapp-template</code> in the input box entitled ‘your old repository’s clone URL:’</p></li>
+<li><p>Ensure the ‘owner’ of the new repository is ‘moj-analytical-services’ and choose a name for your repository:</p></li>
+<li><p>Make sure the repo is ‘private’ (this should be the default value):</p></li>
+<li><p>Click ‘Begin import’</p></li>
+</ol>
+<div class="figure">
+<img src="images/static/static_clone.gif" />
+
+</div>
+</div>
+<div id="in-your-chosen-development-enviroment-clone-the-git-repository" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> In your chosen development enviroment, clone the git repository</h3>
+<p>You can find the clone link on the Github repository.</p>
+<p>To download a copy to start editing on your local machine, you need to ‘clone’ the repositry. If you’re using a shell: <code>git clone git@github.com:moj-analytical-services/YOUR-REPO-NAME.git</code></p>
+<div class="figure">
+<img src="images/static/static_git_clone.gif" />
+
+</div>
+<div id="further-notes-if-youre-having-trouble-finding-your-new-repos-url" class="section level4">
+<h4><span class="header-section-number">5.1.2.1</span> Further notes if you’re having trouble finding your new repo’s url</h4>
+<p>If you navigate to your new repository’s home page (which will have a url in the form <code>https://github.com/moj-analytical-services/your_name_goes_here</code>), you can use the following buttons to access this url (make sure you click the ‘ssh’ button):</p>
+<div class="figure">
+<img src="images/static/use_ssh.PNG" />
+
+</div>
+<div class="figure">
+<img src="images/static/ssh_url.PNG" />
+
+</div>
+</div>
+</div>
+<div id="work-on-your-web-app" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Work on your web app</h3>
+<p>Work on your web app using your chosen development enviroment. As you work, commit your changes to Github using your chosen Github workflow.</p>
+</div>
+<div id="scan-organisation-and-deploy" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> Scan organisation and deploy</h3>
+<p>Include a <code>deploy.json</code> file so that Concourse will automatically build and deploy your app, so that it is running and customers can access it. For more about this see: <a href="https://moj-analytical-services.github.io/platform_user_guidance/build-and-deploy.html">Build and deploy guidance</a></p>
+</div>
+<div id="grant-secure-access-to-the-app" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Grant secure access to the app</h3>
+<p>To grant access to someone, in the <a href="https://cpanel-master.services.dev.mojanalytics.xyz/#Webapps">Control Panel’s Wepapps tag</a> find your App and click “Manage App”. In the ‘App customers’ section you can let people view your app by putting one or more email addresses in the text box and clicking “Add customer”.</p>
+<p>You can also let anyone access it by setting <code>&quot;disable_authentication&quot;: true</code> in the <code>deploy.json</code> and redeploying it - see above.</p>
+<p><strong>Note</strong> that users can only access the app from a computer on a specified corporate network. These are defined in the <code>deploy.json</code> under the parameter <code>allowed_ip_ranges</code> - see below.</p>
+<div id="deploy.json" class="section level4">
+<h4><span class="header-section-number">5.1.5.1</span> deploy.json</h4>
+<table style="width:25%;">
+<colgroup>
+<col width="13%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>parameter</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>allowed_ip_ranges</code></td>
+<td>e.g. <code>[&quot;DOM1&quot;, &quot;QUANTUM&quot;, &quot;102PF Wifi&quot;]</code> or <code>[&quot;Any&quot;]</code></td>
+</tr>
+<tr class="even">
+<td><code>disable_authentication</code></td>
+<td>To let anyone access the app, set this to <code>true</code>, otherwise <code>false</code> restricts it to people authorized for the app in the Control Panel</td>
+</tr>
+</tbody>
+</table>
+<p>If you deployed with authentication enabled users are granted access to the app using a list of email addresses separated with a space, comma or semicolon.</p>
+<p>Changes to deploy.json only take effect when committed to GitHub, a Release is created and the deploy is successful (see <a href="deploying-a-static-web-app.html#scan-organisation-and-deploy">Scan organisation and deploy</a>)</p>
+</div>
+</div>
+</div>
+<div id="accessing-the-app" class="section level2">
+<h2><span class="header-section-number">5.2</span> Accessing the app</h2>
+<p>Depending on the <code>disable_authentication</code> setting, the website will either be available directly or authenticated via email. The URL for the app will be the <code>respository-name</code> followed by <code>apps.alpha.mojanalytics.xyz</code>.</p>
+<p>So for the example project above “static-web-deploy”, the deployment URL will be <code>https://static-web-deploy.apps.alpha.mojanalytics.xyz</code>.</p>
+<p>Note that characters that are not compatible with website URLs are converted. So, repositories with underscores in their name (e.g. <code>repository_name.apps...</code>) will be converted to dashes for the URL (e.g. <code>repository_name.apps...</code>).</p>
+<div class="figure">
+<img src="images/static/static_deployed.gif" />
+
+</div>
+</div>
+<div id="advanced-deployment-1" class="section level2">
+<h2><span class="header-section-number">5.3</span> Advanced deployment</h2>
+<p>This section contains guidance for advanced users on app deployment.</p>
+<div id="can-i-change-my-build" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Can I change my build?</h3>
+<p>Yes - if you know Docker, you are welcome to change the <a href="https://github.com/moj-analytical-services/webapp-template/blob/master/Dockerfile">Dockerfile</a>.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="deploying-an-r-shiny-app.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-pipelines.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
