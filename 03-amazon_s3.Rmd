@@ -17,7 +17,7 @@ Amazon S3 buckets are separated into two categories on the Analytical Platform:
 *   warehouse data sources
 *   app data sources
 
-Warehouse data sources are are suitable for storing files in all cases, except where the files need to be accessed by a webapp. In this case, files should be stored in an app data source.
+Warehouse data sources are suitable for storing files in all cases, except where the files need to be accessed by a webapp. In this case, files should be stored in an app data source.
 
 ### Create a new bucket
 
@@ -45,7 +45,7 @@ Every bucket has three access levels:
 
 To gain access to a bucket (warehouse data source or app data source), you must be added to the relevant data access group.
 
-If you know an admin of the bucket you require access to, you can ask them to add you to the data access group.
+If you know an admin of the bucket you require access to, you should ask them to add you to the data access group.
 
 If you do not know any of the admins of the bucket you require access to, you can ask the Analytical Platform team to add you to the data access group on the [#ap_admin_request](https://asdslack.slack.com/messages/CBLAGCQG6/) Slack channel or by [email](mailto:analytical_platform@digital.justice.gov.uk).
 
