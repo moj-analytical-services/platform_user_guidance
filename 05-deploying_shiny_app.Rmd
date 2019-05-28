@@ -128,7 +128,7 @@ If the repository name contains underscores, these will be converted to dashes i
 
 When accessing an app, you can choose whether to sign in using an email link (default) or a one-time passcode. To sign in with a one-time passcode, add `/login?method=code` to the end of the app's URL e.g. https://kpi-s3-proxy.apps.alpha.mojanalytics.xyz/login?method=code. (This requires the app to have been deployed since the auth-proxy [release on 30/1/19](https://github.com/ministryofjustice/analytics-platform-auth-proxy/releases/tag/v0.1.8).)
 
-## Advanced deployment
+## Advanced
 
 ### Editing the Dockerfile
 
@@ -139,6 +139,12 @@ In most cases, you will not need to change the `Dockerfile` when deploying your 
 If your app uses packages that have additional system dependencies, you will need to add these in the `Dockerfile`. If you are unsure how to do this, contact the Analytical Platform team.
 
 A `Dockerfile` reference can be found [here](https://docs.docker.com/engine/reference/builder/).
+
+### Getting the current user of the app
+
+A Shiny app can find out who is using it. This can be useful to log an audit trail of significant events. Specifically it can determine the email address that the user logged into the app with. (Obviously this is sensitive data and needs data protection concerns looking after - e.g. proportionate, transparent, consent, secure etc).
+
+See the example: https://github.com/moj-analytical-services/shiny-headers-demo
 
 ## Troubleshooting
 
