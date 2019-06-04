@@ -47,7 +47,7 @@ The relevant information asset owner (IAO) should be able to advise if any addit
 
 ## Data movements
 
-All data movements should take place safely and securely to ensure that data is protected at all times, including when in transit. To facilitate this, when moving any data onto the Analytical Platform, you __must__ complete a data movement form. The data movement form can be found <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=KEeHxuZx_kGp4S6MNndq2I8ebMaq5PFBoMAkkhrMYHBUMFk5MlBaVDQ2MjlWMDNSRlc3NDk4NkE1VS4u" target="_blank">here</a>. Guidance on completing the form can be found in Section \@ref(data-movement-form).
+All data movements should take place safely and securely to ensure that data is protected at all times, including when in transit. To facilitate this, when moving any data onto the Analytical Platform, you __must__ complete a data movement form. The data movement form can be found <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=KEeHxuZx_kGp4S6MNndq2I8ebMaq5PFBoMAkkhrMYHBUQVY2VUczTUNPUzlZQTJTNjFWVUowWUxUMS4u" target="_blank">here</a>. Guidance on completing the form can be found in Section \@ref(data-movement-form).
 
 Depending on the details of the data movement, you may also be required to complete or update:
 
@@ -141,9 +141,9 @@ A privacy notice is required to let customers using a product or service know:
 * __How will the data be moved?__  
   Describe how the data will be moved from the source location. Will the data be moved electronically, by email or by physical media? Will it be uploaded manually to S3 or a home directory or will there be a direct integration with another system?
 * __Is a technical migration form required?__  
-  A technical migration form is __not required__ for one-off data movements of static files (such as .zip files and .csv files) that are carried out manually (i.e. by email or direct upload to S3 or a home directory). __A technical migration form is required for all other data movements.__ If you are unsure whether your data movement requires a technical migration form, please contact the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk).
+  A technical migration form is __not required__ for one-off data movements of static files (such as .zip files and .csv files) that are carried out manually (i.e. by email or direct upload to S3 or a home directory). __A technical migration form is required for all other data movements.__ If you are unsure whether your data movement requires a technical migration form, please contact the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk). A template technical migration form can be found [here](https://justiceuk.sharepoint.com/:w:/s/AnalyticalPlatform/EafJPVHk2NRCjZm1WGFPOJcBpkJ-pH8L2o0hKma2bsbWow?e=0pWGjc). To access this template, you must be signed in to Office 365. If you are unable to access the template, please contact the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk).
 * __Technical migration form__  
-  Upload the complete technical migration form (maximum size 1GB). If you do not have an @digital email address and cannot upload a file to the form, please send the form as an attachment to the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk).
+  Please send your form as an attachment to the [Analytical Platform team](mailto:analytical_platform@digital.justice.gov.uk).
 * __Is this a one-off or recurring data movement?__
 * __When is the data movement expected to occur?__
 * __What is the intended frequency of the data movement?__
