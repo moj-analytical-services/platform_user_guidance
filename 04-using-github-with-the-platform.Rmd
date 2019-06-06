@@ -196,37 +196,55 @@ The platform has configured simple "safety barriers" to reduce risk of accidenta
 
 ### Private and Public Repositories
 
-GitHub repositories can be public or private:
+GitHub repositories can be public or private.
+In either case, they should contain **no passwords/secrets and no data** (apart from small reference tables) - this is particulary important for public repos.
+Think carefully about what a determined outsider could infer from your code, and whether you'd be comfortable telling them yourself.
 
-*Public repos* means visible to the world. A repo should contain no passwords/secrets and no data (apart from small reference tables) - these are particulary important for public repos.
+A *Public repo* means visible to the world outside the organisation. Again, here it is especially crucial that no passwords, secrets or personal tokens are included in your code, whether you think they're visible or buried deep. 
+Remember that GitHub shows the full history of *everything that has ever been in your repo*, however fleeting, so even if you 'just include it for now' a password or secret token will **always be available**. 
 
-*Private repos* are always internal to the moj-analytical-services GitHub organisation. The repo's Owners and Admins can control which people / teams can see the repo on GitHub by going to **_Settings_ > _Collaborators & Teams_** and adding teams to read/write/admin access groups. To maximise collaboration _within_ the organisation but still keep code that shouldn't be in the public domain (e.g. unpublished commentary on a `.Rmd` file) hidden from anyone _outside_ the organisation, you can add the group `everyone` here. This also makes your code [searchable.](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-the-platform.html#other-tips-and-tricks-work-in-progress)
+A *Private repo* is internal to the `moj-analytical-services` GitHub organisation and not visible to the outside world.
+The repo's Owners and Admins can control which people / teams can see the repo on GitHub by going to **_Settings_ > _Collaborators & Teams_** and adding teams to read/write/admin access groups.
+To maximise collaboration _within_ the organisation but still keep code that shouldn't be in the public domain (e.g. unpublished commentary on a `.Rmd` file) hidden from anyone _outside_ the organisation, you can add the group `everyone` here.
+This also makes your code [searchable.](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-the-platform.html#other-tips-and-tricks-work-in-progress)
 
-#### Choosing public or private
+#### Choosing Public or Private
 
-As an organization we aspire to use public repos by default. There are a host of [benefits of coding in the open](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open/). With research and analysis it builds trust with the public for the state to be transparent. And reproducible methods allows others to test and build on the work. However it requires more discipline to avoid mistakes like checking in secrets and sensitive information, so tends to require more experienced developers. And you need to be conscious of any political sensitivities related to the topics.
+As an organization we aspire to use public repos by default.
+There are a host of [benefits of coding in the open](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open/).
+With research and analysis it builds trust and transparency with the public, and reproducible methods allows others to test and build on your work.
+However, it requires more discipline to avoid mistakes like slipping secrets and sensitive information, so tends to require more experienced developers and care over any political sensitivities related to the topics your analysis covers: open-source coding is continuous and worldwide publishing.
 
-Private repos can be necessary, for example when it reveals a sensitive policy change that is not yet announced.
+As a result, sometime Private repos can be necessary, for example when it reveals a sensitive policy change that is not yet announced.
 
-If in doubt, consult someone more senior, or the AP team.
+If in doubt, discuss with your manager and/or the AP team.
 
 ### Private R Packages for Reproducible Analysis
 
-When a repo is private you need to use a 'token' called a PAT to access it from R. If you don't use the token then you get: `Error: HTTP error 404. Not Found`. (GitHub doesn't even acknowledge the existence of the repo, to avoid speculative searching for private repositories.)
+When a repo that forms a package for reproduceable analysis is private, a 'token' called a PAT is required to access it from R, which acts much likea limited-access password to your GitHub account.
+This prevents unauthorised access to the organisation's repos.
+Without the right token, trying to install a Private package return the error: `Error: HTTP error 404. Not Found`.
+(GitHub doesn't even acknowledge the existence of the repo, to avoid speculative searching for private repositories.)
 
 ### Generating a PAT
 
-A Personal Access Token (PAT) is provided by GitHub through each user's profile, and in fact a user can generate a number of tokens that grant various different levels of permission. **The PAT is a password, and should be protected as such: only generate a PAT that has the minimum permissions you need for the job.** To generate your PAT and use it in `R`,
+A Personal Access Token (PAT) is provided by GitHub through each user's profile, and in fact a user can generate a number of tokens that grant various different levels of permission.
+**The PAT is a password, and should be protected as such: only generate a PAT that has the minimum permissions you need for the job.**
+To generate your PAT and use it in `R`,
 
   1. Navigate to **_Settings > Developer Settings > Personal Access Tokens_**
   ![](images/pat/pat-settings.png)
   
-  2. Select **_Generate new token_** and select the **scope** of access you want to grant using this token. **IMPORTANT: Unless you have specific reasons to need more control, just select the first group, `repo`--granting other rights can be dangerous if your PAT falls into the wrong hands, allowing someone else to irrevocably delete your repos, read and change your user profile settings, or even access billing information.**
+  2. Select **_Generate new token_** and select the **scope** of access you want to grant using this token.
+  **IMPORTANT: Unless you have specific reasons to need more control, just select the first group, `repo`--granting other rights can be dangerous if your PAT falls into the wrong hands, allowing someone else to irrevocably delete your repos, read and change your user profile settings, or even access billing information.**
   ![](images/pat/pat-scope.png)
   
   3. Copy your PAT to the clipboard, for immediate use - see the next section.
   
-     Note: GitHub won't show this PAT to you ever again BUT you shouldn't save it in a file or anything. If you were to have passwords in plain text lying around your hard disk then it becomes a security hazard. If you need a PAT in future (eg you wiped your .simply create a new one, and invalidate the previous one.
+     Note: GitHub won't show this PAT to you again BUT do **not** save it in a file.
+     Leaving passwords in plain text lying around your hard disk is a security hazard.
+     If you need a PAT in future (e.g. you wiped your current one or need different access rights), simply create a new one, and invalidate the previous one.
+     You can revoke a PAT at any time, so that it no longer works for anyone with access to it.
   ![](images/pat/pat-copy.png)
   
 ### Using a PAT to Authenticate in R/RStudio
