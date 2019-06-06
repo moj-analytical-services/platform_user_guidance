@@ -196,19 +196,23 @@ The platform has configured simple "safety barriers" to reduce risk of accidenta
 
 ### Private and Public Repositories
 
-The majority of repos in the DASD GitHub organisation are **Private**: this keeps visibility, access and editing rights controlled to particular groups within the MoJ network and is sensible in most cases. Owners and Admins of a repository can control this visibility by going to **_Settings_ > _Collaborators & Teams_** and adding teams to read/write/admin access groups. To maximise collaboration _within_ the organsiation but still keep code that shouldn't be in the public domain (e.g. unpublished commentary on a `.Rmd` file) hidden from anyone _outside_ the organisation, you can add the group `everyone` here. This also makes your code [searchable.](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-the-platform.html#other-tips-and-tricks-work-in-progress)
+GitHub repositories can be public or private:
+
+*Public repos* means visible to the world. A repo should contain no passwords/secrets and no data (apart from small reference tables) - these are particulary important for public repos.
+
+*Private repos* are always internal to the moj-analytical-services GitHub organisation. The repo's Owners and Admins can control which people / teams can see the repo on GitHub by going to **_Settings_ > _Collaborators & Teams_** and adding teams to read/write/admin access groups. To maximise collaboration _within_ the organisation but still keep code that shouldn't be in the public domain (e.g. unpublished commentary on a `.Rmd` file) hidden from anyone _outside_ the organisation, you can add the group `everyone` here. This also makes your code [searchable.](https://moj-analytical-services.github.io/platform_user_guidance/using-github-with-the-platform.html#other-tips-and-tricks-work-in-progress)
+
+#### Choosing public or private
+
+As an organization we aspire to use public repos by default. There are a host of [benefits of coding in the open](https://gds.blog.gov.uk/2017/09/04/the-benefits-of-coding-in-the-open/). With research and analysis it builds trust with the public for the state to be transparent. And reproducible methods allows others to test and build on the work. However it requires more discipline to avoid mistakes like checking in secrets and sensitive information, so tends to require more experienced developers. And you need to be conscious of any political sensitivities related to the topics.
+
+Private repos can be necessary, for example when it reveals a sensitive policy change that is not yet announced.
+
+If in doubt, consult someone more senior, or the AP team.
 
 ### Private R Packages for Reproducible Analysis
 
-For the most part, this private group-based access works well and seamlessly. 
-Where it can rub is in building **R Packages** for high-quality reproducable analysis either across small teams or across the organisation.
-The AP team have built a number of _generic_ tools that are non-sensitive in nature (e.g. [`s3tools`](github.com/moj-analytical-services/s3tools) and [`dbtools`](github.com/moj-analytical-services/dbtools)) and as such are in fact **Public** repos that anyone, inside or outside the organisation, can view, access, and install to their library.
-If an internal package is being used for a specific project, RAP or other analytical work, the chances are that it will not be appropriate to make these codebases public, as some combination of the structure, code and comments can be revealing, however [sensibly the data are stored](https://moj-analytical-services.github.io/platform_user_guidance/working-with-big-datasets-and-sharing-them-accessing-data-in-amazon-s3.html).
-However, when another user tries to install a _Private_ package in RStudio using [`remotes`](https://remotes.r-lib.org/) or (less commonly, now) `devtools`, _regardless_ of how the access groups are organised on GitHub, they will throw the infuriating error `Error: HTTP error 404. Not Found`. 
-
-This is a protection mechanism.
-The `R` environment isn't party to all of the access groups on GitHub, so it doesn't know who should have access to which repositories; for anything Private it returns this blanket `404` to prevent speculative searching for private repositories--the names alone could be revealing!
-Fortunately, by providing `R` with a 'token' called a PAT, it can inherit access to all of the knowledge and access rights to the repositories available on your GitHub account.
+When a repo is private you need to use a 'token' called a PAT to access it from R. If you don't use the token then you get: `Error: HTTP error 404. Not Found`. (GitHub doesn't even acknowledge the existence of the repo, to avoid speculative searching for private repositories.)
 
 ### Generating a PAT
 
@@ -220,35 +224,41 @@ A Personal Access Token (PAT) is provided by GitHub through each user's profile,
   2. Select **_Generate new token_** and select the **scope** of access you want to grant using this token. **IMPORTANT: Unless you have specific reasons to need more control, just select the first group, `repo`--granting other rights can be dangerous if your PAT falls into the wrong hands, allowing someone else to irrevocably delete your repos, read and change your user profile settings, or even access billing information.**
   ![](images/pat/pat-scope.png)
   
-  3. Copy your PAT into a `.txt` file that you can keep somewhere securely. You won't be able to come back to this page to see this PAT again, and will have to generate a new one if you lose track of it.
+  3. Copy your PAT to the clipboard, for immediate use - see the next section.
+  
+     Note: GitHub won't show this PAT to you ever again BUT you shouldn't save it in a file or anything. If you were to have passwords in plain text lying around your hard disk then it becomes a security hazard. If you need a PAT in future (eg you wiped your .simply create a new one, and invalidate the previous one.
   ![](images/pat/pat-copy.png)
   
-  ### Using a PAT to Authenticate in R/RStudio
+### Using a PAT to Authenticate in R/RStudio
 
 A safe, fast, and reliable method is to store the PAT in the so-called **system environment**.
 This is an area where basic, 'long-term' variables are kept, like your Operating System details, that do not change, even as you switch between analyses, sessions or projects.
-Conveniently, most [`r-lib`-style](https://github.com/r-lib) packages (those built by the inimitable Hadley Wickham and friends--for most people a backbone of R infrastructure) including `remotes` and `devtools`, will look for a PAT in the system environment by default, under the name `GITHUB_PAT`, so no modifications need be made to any project code once a user has registered a PAT in this location.
+Conveniently, most [`r-lib`-style](https://github.com/r-lib) packages (those built by Hadley Wickham and friends--for most people a backbone of R infrastructure) including `remotes` and `devtools`, will look for a PAT in the system environment by default, under the name `GITHUB_PAT`, so no modifications need be made to any project code once a user has registered a PAT in this location.
 This is the approach we'll make use of:
 
   1. Set the system environment variable `GITHUB_PAT` by pasting in your PAT Token into the below:
-  ```{r, eval = FALSE}
-  Sys.setenv("GITHUB_PAT" = "ax451...8838b1")
-  ```
   
+      ```{r, eval = FALSE}
+      Sys.setenv("GITHUB_PAT" = "ax451...8838b1")
+      ```
+
   2. Any call to `remotes::install_github` will use it without having to be asked!
-  ```{r, eval = FALSE}
-  remotes::install_github("moj-analytical-services/[private-package]@v1.6")
-  ```
+
+      ```{r, eval = FALSE}
+      remotes::install_github("moj-analytical-services/[private-package]@v1.6")
+      ```
+
 This approach means that install lines like (2) above can be freely saved in shared code without compromising GitHub security.
 
-### Advanced 
-The way `remotes::install_github` is through the parameter `auth_token`, to which the PAT can be supplied manually as a string if desired. The default is a call to `auth_token = github_pat()` which simply searches for a PAT in the system environment as above.
-However, this approach leaves users **liable to leaving the PAT lying around in code**. As discussed above this is **not a good idea,** not to mention the fact that it requires the PAT to be copied-and-pasted a number of times across different projects and analyses. 
+**Security reminder**
+
+Never put a secret or password in your code. Even when the repo is private. See MOJ policy: https://ministryofjustice.github.io/security-guidance/standards/secrets-management/#application--infrastructure-secrets
 
 ### A Note on Impermanence
-Because of the pod system on which the Platform works, system environment variables are _not_ always as persisent as hoped. It's worth putting the `setenv` call above (1) into an `.RProfile` or other file **that you do not upload to GitHub** to give easy, but private access. Keep a copy of your PAT on your local machine. You can use `Sys.getenv("GITHUB_PAT")` to check whether a PAT is loaded.
 
-## Other tips and tricks [Work in progress!]:
+Because of the pod system on which the Platform works, system environment variables are _not_ always as persistent as hoped. It's worth putting the `setenv` call above (1) into an `.RProfile` or other file **that you do not upload to GitHub** to give easy, but private access. Keep a copy of your PAT on your local machine. You can use `Sys.getenv("GITHUB_PAT")` to check whether a PAT is loaded.
+
+## Other tips and tricks [Work in progress!]
 
 ### Search the code in MoJ Analytical Services to see who else has used a package.
 
