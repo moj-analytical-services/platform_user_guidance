@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-05-29">
+<meta name="date" content="2019-06-10">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -519,6 +519,7 @@ docker build . -t my-pipeline:0.1</code></pre></li>
 <h3><span class="header-section-number">6.4.6</span> Airflow DAG</h3>
 <p>You need to define a DAG of your Tasks, so that Airflow can run it.</p>
 <p>A DAG is defined in its own .py file in the <a href="https://github.com/moj-analytical-services/airflow-dags">airflow-dags repository</a>. Normally you would clone the repo, add the new DAG file, commit it to a branch and create the Pull Request. You can achieve this in R Studio, Jupyter or on your local machine if you have git, and then use GitHub to create the Pull Request. Alternatively you could simply click the “Create new file” button in GitHub and use the web interface to edit it and create a pull request in one go!</p>
+<p>The airflow-dags repo has <a href="https://help.github.com/articles/about-protected-branches/">protected</a> master branch, so it requires a review from the data engineering team before you can merge. Ask for a review from <code>moj-analytical-services/data-engineers</code>.</p>
 <p>Use an existing DAG as an example: <a href="https://github.com/moj-analytical-services/airflow-dags/blob/master/mags_curated.py" class="uri">https://github.com/moj-analytical-services/airflow-dags/blob/master/mags_curated.py</a></p>
 <p>The <code>image</code> is the address of the Docker image - look in the Concourse build log:</p>
 <pre><code>successfully tagged ...</code></pre>
