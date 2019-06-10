@@ -275,10 +275,6 @@ Putting the secret in ~/.Rprofile - a file outside your repo directories - avoid
 
 Never put a secret or password in your code. Even when the repo is private. See MOJ policy: <https://ministryofjustice.github.io/security-guidance/standards/secrets-management/#application--infrastructure-secrets>
 
-### A Note on Impermanence
-
-Because of the pod system on which the Platform works, system environment variables are _not_ always as persistent as hoped. It's worth putting the `setenv` call above (1) into an `.RProfile` or other file **that you do not upload to GitHub** to give easy, but private access. Keep a copy of your PAT on your local machine. You can use `Sys.getenv("GITHUB_PAT")` to check whether a PAT is loaded.
-
 ## Other tips and tricks [Work in progress!]
 
 ### Search the code in MoJ Analytical Services to see who else has used a package.
