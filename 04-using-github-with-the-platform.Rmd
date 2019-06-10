@@ -249,10 +249,10 @@ To generate your PAT for reading private repos in R:
 
 You should store your PAT in an R profile file in your *home directory* (on AP). This file gets run when you start R, putting the PAT into the system environment variable `GITHUB_PAT`. This is where common R packages (e.g. remotes and devtools) will look for it.
 
-Set this up by running this in your linux terminal (ie R Studio's 'terminal') and substitute your own PAT Token:
+Set this up by running this in your R console and substitute your own PAT Token:
   
-```{bash}
-echo 'Sys.setenv("GITHUB_PAT" = "ax451...8838b1")' >> ~/.Rprofile
+```{r, eval = FALSE}
+writeLines('Sys.setenv("GITHUB_PAT" = "ax451...8838b1"', con = "~/.Rprofile")
 ```
 
 **Warning: This line should not be put in any repo. And this .Rprofile file should not be added to any repo.**
