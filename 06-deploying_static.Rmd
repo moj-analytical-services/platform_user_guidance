@@ -13,20 +13,19 @@ Step-by-step instructions are below.
 
 ## Step-by-step guide to depolying an static web app
 
-### Copy the template project into a new Github repository
+### Use the webapp template
 
-1. Begin by making a **copy** of the [template project](https://github.com/moj-analytical-services/webapp-template) on Github: https://github.com/new/import
+To create a new repo for the app, use the webapp template:
 
-2. Enter `https://github.com/moj-analytical-services/webapp-template` in the input box entitled 'your old repository’s clone URL:'
+1. Go to the [webapp-template repo](https://github.com/moj-analytical-services/webapp-template).
+2. Click __Use this template__.
+3. Fill in the form:
+    + Owner: `moj-analytical-services`
+    + Name: The name of your app, e.g., `my-app`
+    + Privacy: Private
+4. Select __Create repository from template__.
 
-3. Ensure the 'owner' of the new repository is 'moj-analytical-services' and choose a name for your repository:
-
-4. Make sure the repo is 'private' (this should be the default value):
-
-5. Click 'Begin import'
-
-
-   ![](images/static/static_clone.gif)
+This copies the entire contents of the app template to a new repository.
 
 ### In your chosen development enviroment, clone the git repository
 
