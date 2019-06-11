@@ -252,7 +252,7 @@ You should store your PAT in an R profile file in your *home directory* (on AP).
 Set this up by running this in your R console and substitute your own PAT Token:
   
 ```{r, eval = FALSE}
-writeLines('Sys.setenv("GITHUB_PAT" = "ax451...8838b1"', con = "~/.Rprofile")
+writeLines('Sys.setenv("GITHUB_PAT" = "ax451...8838b1")', con = "~/.Rprofile")
 ```
 
 **Warning: This line should not be put in any repo. And this .Rprofile file should not be added to any repo.**
