@@ -475,6 +475,7 @@ k = KubernetesPodOperator(
 )</code></pre>
 <p>You will have to set the DAG namespace to your namespace and the AWS role to your role, see <code>###YOUR_GITHUB_USERNAME###</code> in the above example code.</p>
 <p>You will also need to update the image with your DAG image from the AWS Elastic Container Registry and add any environment variables, etc., as you would with a normal DAG.</p>
+<p>If you update the image it is likely you will not need to add the arguments <code>cmds</code> and <code>arguments</code> to the <code>KubernetesPodOperator</code> so those lines should be removed. They are the command and arguments that are run on the pod at startup.</p>
 </div>
 <div id="important-considerations" class="section level3">
 <h3><span class="header-section-number">6.4.3</span> Important considerations</h3>
