@@ -143,6 +143,8 @@ You will have to set the DAG namespace to your namespace and the AWS role to you
 
 You will also need to update the image with your DAG image from the AWS Elastic Container Registry and add any environment variables, etc., as you would with a normal DAG.
 
+If you update the image it is likely you will not need to add the arguments `cmds` and `arguments` to the `KubernetesPodOperator` so those lines should be removed. They are the command and arguments that are run on the pod at startup.
+
 ### Important considerations
 
 This sandbox Airflow is meant for testing. You should not use it to run regular tasks and should not rely on it for running production pipelines. It is likely that the sandbox will be idled when it is not being used.
