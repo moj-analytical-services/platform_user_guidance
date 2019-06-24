@@ -1,6 +1,6 @@
 # Using Github with the platform{#github}
 
-Before you can use Github with R Studio or Jupyter, you need to connect them together by creating an 'ssh key'.  Full guidance is [here](https://moj-analytical-services.github.io/platform_user_guidance/getting-started.html#configuring-git-and-github-for-use-on-the-analytical-platform)
+Before you can use Github with R Studio or Jupyter, you need to connect them together by creating an 'ssh key'.  Full guidance is [here](https://moj-analytical-services.github.io/platform_user_guidance/introduction.html#configure-git-and-github)
 
 Github enables you to collaborate with colleagues on code and share you work with them. It puts your code in a centralised, searchable place. It enables easier and more robust approaches to quality assurance, and it enables you to version control your work.  More information about the benefits of Github can be found [here](https://moj-analytical-services.github.io/platform_user_guidance/annexes.html#what-are-the-benefits-of-github-and-why-do-we-recommend-it).
 
