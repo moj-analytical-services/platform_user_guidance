@@ -2,11 +2,52 @@
 
 ## What is Git?
 
+Git is a distributed version control system (DVCS)
+
 ## What is GitHub?
 
 ## Create a new repository in GitHub
 
+A repository in GitHub is used to organise a single project and can contain folders and files, including code, images and data.
+
+To create a new repository in GitHub, follow the steps below:
+
+1.  Go to the [MoJ Analytical Services](https://github.com/moj-analytical-services) page on GitHub.
+2.  Select the green __New__ button to the right of the page below the pinned repositories.  
+    ![](images/github/github-1.png)
+3.  Ensure that the __Owner__ of the repository is 'MoJ Analytical Services'.
+4.  Enter a __Repository name__ -- you should follow best practice guidelines below when choosing a name:
+    +   Use lowercase characters only
+    +   Separate words with dashes not underscores
+    +   Be specific and descriptive but succinct
+    +   Suffix app repositories with '-app'
+    +   Prefix Airflow repositories with 'airflow-'
+5.  Enter a __Description__ -- this is optional, however, we recommend that you provide a description to help others understand what your repository is for.
+6.  Ensure that the visibility of the repository is set to __Private__.
+7.  Select the checkbox marked __Initialize this repository with a README__ -- this will allow you to clone the repository immediately.
+8.  Select __Create repository__.
+
+### Ignoring files
+
+When creating a repository, you can also choose to add a `.gitignore` file -- this tells Git to ignore certain files, such as temporary files and metadata, when tracking changes. GitHub allows you to initialise repositories with recommended `.gitignore` files for a large number of languages, environments and operating systems, including R and Python.
+
+You can find more information on how to format `.gitignore` files [here](https://git-scm.com/docs/gitignore).
+
+### Public and private repositories
+
+### Manage access to a repository
+
+By default, members of the MoJ Analytical Services GitHub organisation have access to 
+
 ## Clone a repository from GitHub
+
+You can clone a repository from GitHub into your home directory using either RStudio or JupyterLab.
+
+### RStudio
+
+
+
+### JupyterLab
 
 ## Snapshot changes
 
