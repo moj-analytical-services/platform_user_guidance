@@ -6,7 +6,7 @@
 
 To create and deploy a Shiny app, you should complete the following steps:
 
-1.  [Copy the app template](#copy-template).
+1.  [Use the app template](#use-template).
 2.  [Create a new webapp](#create-webapp).
 3.  [Clone the repository](#clone-repo).
 4.  [Develop the app](#develop-the-app).
@@ -17,21 +17,19 @@ To create and deploy a Shiny app, you should complete the following steps:
 9.  [Add users to the app](#add-users).
 10. [Access the app](#access-the-app).
 
-### Copy the app template{#copy-template}
+### Use the app template{#use-template}
 
-To copy the app template:
+To create a new repository based on the Shiny app template:
 
-1.  Go to [github.com/new/import](https://github.com/new/import).
-2.  Fill in the form:
-    +   Your old repository’s clone URL: `https://github.com/moj-analytical-services/rshiny-template`
-    +   Owner: `moj-analytical-services`
-    +   Name: The name of your app, e.g., `my-app`
-    +   Privacy: Private
-6.  Select __Begin import__.
+1. Go to the [rshiny-template](https://github.com/moj-analytical-services/rshiny-template) repository.
+2. Select __Use this template__.
+3. Fill in the form:
+    + Owner: `moj-analytical-services`
+    + Name: The name of your app, for example, `my-app`
+    + Privacy: Private
+4. Select __Create repository from template__.
 
 This copies the entire contents of the app template to a new repository.
-
-![](images/shiny/copy-template.png)
 
 ### Create a new webapp{#create-webapp}
 
