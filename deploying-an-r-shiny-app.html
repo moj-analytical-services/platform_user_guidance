@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-06-26">
+<meta name="date" content="2019-07-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -193,7 +193,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html"><i class="fa fa-check"></i><b>4</b> Deploying an R Shiny app</a><ul>
 <li class="chapter" data-level="4.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#basic-deployment"><i class="fa fa-check"></i><b>4.1</b> Basic deployment</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#summary"><i class="fa fa-check"></i><b>4.1.1</b> Summary</a></li>
-<li class="chapter" data-level="4.1.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#copy-template"><i class="fa fa-check"></i><b>4.1.2</b> Copy the app template</a></li>
+<li class="chapter" data-level="4.1.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#use-template"><i class="fa fa-check"></i><b>4.1.2</b> Use the app template</a></li>
 <li class="chapter" data-level="4.1.3" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#create-webapp"><i class="fa fa-check"></i><b>4.1.3</b> Create a new webapp</a></li>
 <li class="chapter" data-level="4.1.4" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#clone-repo"><i class="fa fa-check"></i><b>4.1.4</b> Clone the repository</a></li>
 <li class="chapter" data-level="4.1.5" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#develop-the-app"><i class="fa fa-check"></i><b>4.1.5</b> Develop the app</a></li>
@@ -218,7 +218,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html"><i class="fa fa-check"></i><b>5</b> Deploying a Static Web App</a><ul>
 <li class="chapter" data-level="5.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#step-by-step-guide-to-depolying-an-static-web-app"><i class="fa fa-check"></i><b>5.1</b> Step-by-step guide to depolying an static web app</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#copy-the-template-project-into-a-new-github-repository"><i class="fa fa-check"></i><b>5.1.1</b> Copy the template project into a new Github repository</a></li>
+<li class="chapter" data-level="5.1.1" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#use-the-webapp-template"><i class="fa fa-check"></i><b>5.1.1</b> Use the webapp template</a></li>
 <li class="chapter" data-level="5.1.2" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#in-your-chosen-development-enviroment-clone-the-git-repository"><i class="fa fa-check"></i><b>5.1.2</b> In your chosen development enviroment, clone the git repository</a></li>
 <li class="chapter" data-level="5.1.3" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#work-on-your-web-app"><i class="fa fa-check"></i><b>5.1.3</b> Work on your web app</a></li>
 <li class="chapter" data-level="5.1.4" data-path="deploying-a-static-web-app.html"><a href="deploying-a-static-web-app.html#scan-organisation-and-deploy"><i class="fa fa-check"></i><b>5.1.4</b> Scan organisation and deploy</a></li>
@@ -353,7 +353,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">4.1.1</span> Summary</h3>
 <p>To create and deploy a Shiny app, you should complete the following steps:</p>
 <ol style="list-style-type: decimal">
-<li><a href="deploying-an-r-shiny-app.html#copy-template">Copy the app template</a>.</li>
+<li><a href="deploying-an-r-shiny-app.html#use-template">Use the app template</a>.</li>
 <li><a href="deploying-an-r-shiny-app.html#create-webapp">Create a new webapp</a>.</li>
 <li><a href="deploying-an-r-shiny-app.html#clone-repo">Clone the repository</a>.</li>
 <li><a href="deploying-an-r-shiny-app.html#develop-the-app">Develop the app</a>.</li>
@@ -365,25 +365,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="deploying-an-r-shiny-app.html#access-the-app">Access the app</a>.</li>
 </ol>
 </div>
-<div id="copy-template" class="section level3">
-<h3><span class="header-section-number">4.1.2</span> Copy the app template</h3>
-<p>To copy the app template:</p>
+<div id="use-template" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Use the app template</h3>
+<p>To create a new repository based on the Shiny app template:</p>
 <ol style="list-style-type: decimal">
-<li>Go to <a href="https://github.com/new/import">github.com/new/import</a>.</li>
+<li>Go to the <a href="https://github.com/moj-analytical-services/rshiny-template">rshiny-template</a> repository.</li>
+<li>Select <strong>Use this template</strong>.</li>
 <li>Fill in the form:
 <ul>
-<li>Your old repository’s clone URL: <code>https://github.com/moj-analytical-services/rshiny-template</code></li>
 <li>Owner: <code>moj-analytical-services</code></li>
-<li>Name: The name of your app, e.g., <code>my-app</code></li>
+<li>Name: The name of your app, for example, <code>my-app</code></li>
 <li>Privacy: Private</li>
 </ul></li>
-<li>Select <strong>Begin import</strong>.</li>
+<li>Select <strong>Create repository from template</strong>.</li>
 </ol>
 <p>This copies the entire contents of the app template to a new repository.</p>
-<div class="figure">
-<img src="images/shiny/copy-template.png" />
-
-</div>
 </div>
 <div id="create-webapp" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> Create a new webapp</h3>
