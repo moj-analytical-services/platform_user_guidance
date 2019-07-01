@@ -21,7 +21,7 @@ To create a new repo for the app, use the webapp template:
 2. Select __Use this template__.
 3. Fill in the form:
     + Owner: `moj-analytical-services`
-    + Name: The name of your app, e.g., `my-app`
+    + Name: The name of your app, for example, `my-app`
     + Privacy: Private
 4. Select __Create repository from template__.
 
