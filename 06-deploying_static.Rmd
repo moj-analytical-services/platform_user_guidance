@@ -17,7 +17,7 @@ Step-by-step instructions are below.
 
 To create a new repository based on the webapp template:
 
-1. Go to the [webapp-template repo](https://github.com/moj-analytical-services/webapp-template).
+1. Go to the [webapp-template](https://github.com/moj-analytical-services/webapp-template) repository.
 2. Select __Use this template__.
 3. Fill in the form:
     + Owner: `moj-analytical-services`
