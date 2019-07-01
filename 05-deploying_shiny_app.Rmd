@@ -19,7 +19,7 @@ To create and deploy a Shiny app, you should complete the following steps:
 
 ### Use the app template{#use-template}
 
-To create a new repo for the app, use the R Shiny app template:
+To create a new repository based on the Shiny app template:
 
 1. Go to the [rshiny-template repo](https://github.com/moj-analytical-services/rshiny-template).
 2. Click __Use this template__.
