@@ -107,7 +107,7 @@ Recommended before starting a new project. Will ensure that no unused
 dependencies are exported when you export an `environment.yml` for this project.
 
 ```bash
-conda env export -n base| grep -v "^prefix: " > /tmp/base.yml && conda env update --prune -n rstudio -f /tmp/base.yml && rm /tmp/base.yml
+conda deactivate; conda env remove -n rstudio; rm -rf ~/.conda/envs/rstudio/; conda create --use-index-cache --clone root -n rstudio --copy -y --offline; conda activate rstudio
 ```
 
 ### Exporting your _Environment_
