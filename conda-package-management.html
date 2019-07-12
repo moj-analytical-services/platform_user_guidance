@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-07-01">
+<meta name="date" content="2019-07-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -460,7 +460,7 @@ np$<span class="kw">arange</span>(<span class="dv">15</span>)</code></pre></div>
 <div id="reset-your-environment-to-default" class="section level3">
 <h3><span class="header-section-number">A.4.1</span> Reset your <em>Environment</em> to default</h3>
 <p>Recommended before starting a new project. Will ensure that no unused dependencies are exported when you export an <code>environment.yml</code> for this project.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> env export -n base<span class="kw">|</span> <span class="fu">grep</span> -v <span class="st">&quot;^prefix: &quot;</span> <span class="op">&gt;</span> /tmp/base.yml <span class="kw">&amp;&amp;</span> <span class="ex">conda</span> env update --prune -n rstudio -f /tmp/base.yml <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> /tmp/base.yml</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> deactivate<span class="kw">;</span> <span class="ex">conda</span> env remove -n rstudio<span class="kw">;</span> <span class="fu">rm</span> -rf ~/.conda/envs/rstudio/<span class="kw">;</span> <span class="ex">conda</span> create --use-index-cache --clone root -n rstudio --copy -y --offline<span class="kw">;</span> <span class="ex">conda</span> activate rstudio</code></pre></div>
 </div>
 <div id="exporting-your-environment" class="section level3">
 <h3><span class="header-section-number">A.4.2</span> Exporting your <em>Environment</em></h3>
