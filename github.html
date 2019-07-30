@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-07-12">
+<meta name="date" content="2019-07-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -440,8 +440,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="command-line" class="section level2">
 <h2><span class="header-section-number">3.4</span> Command-line</h2>
-<p>Once you are comfortable using the Terminal (in either R Studio or Jupyter) you can do steps 3 and 4 using the following git commands:</p>
+<p>Once you are comfortable using the Terminal (in either R Studio or Jupyter) you can do steps 1 to 3 above using the following git commands:</p>
 <ul>
+<li>Clone the repo (using the SSH link from Github) to copy it to a new folder in your working directory: <code>git clone &lt;SSH link&gt;</code></li>
+<li>Change directory to the new folder: <code>cd &lt;repo_name&gt;</code></li>
 <li>Select the files that you want to commit: <code>git add &lt;filename1&gt; &lt;filename2&gt;</code> ((This will ‘add’ them to git’s ‘index’ / ‘staging’ area)</li>
 <li>‘Commit’ the files you have added: <code>git commit</code>. After calling this command, you need to provide a commit message: in R Studio it provides a popup; in Jupyter it’ll start an editor where you write the message, before saving and exiting it.</li>
 <li>‘Push’ your commits to GitHub: <code>git push origin &lt;branch_name&gt;</code>. Most likely your branch name will be <code>master</code> which is the default. So your code would be <code>git push origin master</code>.</li>
