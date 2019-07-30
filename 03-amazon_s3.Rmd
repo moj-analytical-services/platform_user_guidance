@@ -14,10 +14,17 @@ Data stored in Amazon S3 can be seamlessly integrated with other AWS services su
 
 Amazon S3 buckets are separated into two categories on the Analytical Platform:
 
-*   warehouse data sources
-*   webapp data sources
+* **Warehouse data source** - This is for when data is accessed by code **run by users**, such as when you are working in **R Studio** or **Jupyter**, including when you are **running web apps from within R Studio / Jupyter**. These data sources can be created by users themselves and shared with colleagues.
 
-Warehouse data sources are suitable for storing files in all cases, except where the files need to be accessed by a webapp. In this case, files should be stored in a webapp data source.
+* **App data source** - This is for when data is accessed by code **run by the platform** - a **deployed web app** or an **Airflow job**. Users cannot create these or add user permissions - these must be [requested](#create-webapp). Data is uploaded to them either by the app developer(s) or the Data Engineering team.
+
+If you're building a web app then typically you request permissions for both your user and your app to access the app data source. This allows you to run the app from within R Studio or JupyterLab using the app data source, the same as the deployed version.
+
+The Data Engineering team also have some buckets, which are not shown on the Control Panel. They are used for incoming raw data to be received, archived, processed and curated. For more info, contact the [Data Engineering](https://asdslack.slack.com/messages/C8X3PP1TN) team.
+
+You can see data sources in the control panel, for the ones that you have permissions to access.
+
+### Create a new bucket
 
 ### Create a new warehouse data source
 
