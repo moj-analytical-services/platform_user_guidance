@@ -102,8 +102,10 @@ There is not the same integration. Use the command-line - see below.
 
 ## Command-line
 
-Once you are comfortable using the Terminal (in either R Studio or Jupyter) you can do steps 3 and 4 using the following git commands:
+Once you are comfortable using the Terminal (in either R Studio or Jupyter) you can do steps 1 to 3 above using the following git commands:
 
+* Clone the repo (using the SSH link from Github) to copy it to a new folder in your working directory: `git clone <SSH link>`
+* Change directory to the new folder: `cd <repo_name>`
 * Select the files that you want to commit: `git add <filename1> <filename2>` ((This will 'add' them to git's 'index' / 'staging' area)
 * 'Commit' the files you have added: `git commit`. After calling this command, you need to provide a commit message: in R Studio it provides a popup; in Jupyter it'll start an editor where you write the message, before saving and exiting it.
 * 'Push' your commits to GitHub: `git push origin <branch_name>`. Most likely your branch name will be `master` which is the default. So your code would be `git push origin master`.
