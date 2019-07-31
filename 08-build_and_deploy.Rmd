@@ -27,7 +27,7 @@ Your task appears in Concourse within 30 seconds. Find it in Concourse to start 
 5. Click your repo name to see its diagram with the big 'Deploy' box in the middle, inputs and outputs.
 6. Click on the 'deploy' box to see details of its builds. You can see previous builds (numbered - e.g. "8 7 6 5 4 3 2 1"). The colour of the build number box gives the status:
     * Grey = paused or pending
-    * Yellow = in progress
+    * Yellow = in progress (building/deploying)
     * Blue = paused
     * Green = built ok
     * Red = build failed
@@ -39,7 +39,7 @@ Your task appears in Concourse within 30 seconds. Find it in Concourse to start 
    It should go grey (pending)
    ![Pending state](images/build_and_deploy/concourse_pending.png)
 
-   After 30 seconds it should got yellow (building). If it does not go yellow, check the task is not paused (and possibly the job itself is paused) - press play if is showing.
+   After 30 seconds it should go yellow (building/deploying). If it does not go yellow, check the task is not paused (and possibly the job itself is paused) - press play if it is showing.
    ![In progress state](images/build_and_deploy/concourse_in_progress.png)
 
    It will build/deploy, taking 5 minutes to an hour. You can track progress and see any errors like this:
