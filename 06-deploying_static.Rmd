@@ -1,5 +1,14 @@
 # Deploying a Static Web App
 
+There are two ways to deploy a static web app.
+
+## Option 1
+
+Uses [this template](https://github.com/moj-analytical-services/webapp-template) to deploy is to deploy the full static web app from GitHub. You might want to do this when it is imperitive to version the full app. It would also make it easier for and collaborators to understand how the app works make edits and vett changes.
+
+## Option 2
+
+This 
 The following steps to deploy a static HTML web site are as follows:
 
 1. Copy the [template project](https://github.com/moj-analytical-services/webapp-template) within Github to a new repository, with a name of your choice.
