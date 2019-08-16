@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-08-01">
+<meta name="date" content="2019-08-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -477,6 +477,49 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">4.2.2</span> Getting the current user of the app</h3>
 <p>A Shiny app can find out who is using it. This can be useful to log an audit trail of significant events. Specifically it can determine the email address that the user logged into the app with. (Obviously this is sensitive data and needs data protection concerns looking after - e.g. proportionate, transparent, consent, secure etc).</p>
 <p>See the example: <a href="https://github.com/moj-analytical-services/shiny-headers-demo" class="uri">https://github.com/moj-analytical-services/shiny-headers-demo</a></p>
+<p>Note: these features require you to be using the Analytical platform’s version of <code>shiny-server</code>.</p>
+<div id="email-address" class="section level4">
+<h4><span class="header-section-number">4.2.2.1</span> Email address</h4>
+<p>You can obtain the logged in user’s email address by using the following code in the <code>server</code> function of your app:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get</span>(<span class="st">&quot;HTTP_USER_EMAIL&quot;</span>, <span class="dt">envir=</span>session$request)</code></pre></div>
+<p><a href="https://github.com/moj-analytical-services/shiny-headers-demo/blob/c274d864e5ee020d3a41497b347b299c07305271/app.R#L58">This line</a> in <code>shiny-headers-demo</code> shows the code in context.</p>
+</div>
+<div id="full-user-profile" class="section level4">
+<h4><span class="header-section-number">4.2.2.2</span> Full user profile</h4>
+<p>You can access the full user profile by making a request directly from the shiny app to the auth-proxy’s <code>/userinfo</code> endpoint using the following code inside your <code>server</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># these libraries are required</span>
+<span class="co"># library(httr)</span>
+<span class="co"># library(jsonlite)</span>
+
+profile &lt;-<span class="st"> </span><span class="kw">fromJSON</span>(<span class="kw">content</span>(<span class="kw">GET</span>(<span class="st">&quot;http://localhost:3001/userinfo&quot;</span>, <span class="kw">add_headers</span>(<span class="dt">cookie=</span><span class="kw">get</span>(<span class="st">&quot;HTTP_COOKIE&quot;</span>, <span class="dt">envir=</span>session$request))), <span class="st">&quot;text&quot;</span>))</code></pre></div>
+<p><a href="https://github.com/moj-analytical-services/shiny-headers-demo/blob/c274d864e5ee020d3a41497b347b299c07305271/app.R#L61">This line</a> shows the code in context.</p>
+<div id="example-user-info-response" class="section level5">
+<h5><span class="header-section-number">4.2.2.2.1</span> Example User Info Response</h5>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;name@example.gov.uk&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;email_verified&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span>
+    <span class="dt">&quot;user_id&quot;</span><span class="fu">:</span> <span class="st">&quot;email|12345121312&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;picture&quot;</span><span class="fu">:</span> <span class="st">&quot;https://s.gravatar.com/avatar/94deebe3b87fc5e9b3b4469112573cc0?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fna.png&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;nickname&quot;</span><span class="fu">:</span> <span class="st">&quot;name&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;identities&quot;</span><span class="fu">:</span> <span class="ot">[</span>
+        <span class="fu">{</span>
+            <span class="dt">&quot;user_id&quot;</span><span class="fu">:</span> <span class="st">&quot;12345121312&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;provider&quot;</span><span class="fu">:</span> <span class="st">&quot;email&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;connection&quot;</span><span class="fu">:</span> <span class="st">&quot;email&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;isSocial&quot;</span><span class="fu">:</span> <span class="kw">false</span>
+        <span class="fu">}</span>
+    <span class="ot">]</span><span class="fu">,</span>
+    <span class="dt">&quot;updated_at&quot;</span><span class="fu">:</span> <span class="st">&quot;2019-07-15T09:54:34.353Z&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;created_at&quot;</span><span class="fu">:</span> <span class="st">&quot;2018-07-12T14:26:45.663Z&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;name@example.gov.uk&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;last_ip&quot;</span><span class="fu">:</span> <span class="st">&quot;1.1.1.1&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;last_login&quot;</span><span class="fu">:</span> <span class="st">&quot;2019-07-15T09:54:34.353Z&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;logins_count&quot;</span><span class="fu">:</span> <span class="dv">20</span><span class="fu">,</span>
+    <span class="dt">&quot;blocked_for&quot;</span><span class="fu">:</span> <span class="ot">[]</span><span class="fu">,</span>
+    <span class="dt">&quot;guardian_authenticators&quot;</span><span class="fu">:</span> <span class="ot">[]</span>
+<span class="fu">}</span></code></pre></div>
+</div>
+</div>
 </div>
 </div>
 <div id="troubleshooting" class="section level2">
