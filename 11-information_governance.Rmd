@@ -115,7 +115,7 @@ The data controller could be another MoJ agency or public body (for which MoJ is
 #### Data protection and privacy
 
 * __Have the relevant Data Protection Impact Assessments (DPIAs) and Privact Impact Assessments (PIAs) been created or updated and reviewd by the data protection team?__  
-If you are unsure whether a DPIA or PIA already exists or needs to be created, you should contact the relevant Information Asset Owner (IAO). Further information on DPIAs and PIAs can be found [here](https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/data-protection-impact-assessments-dpias/). You can also contact the Data Protection Officer mailbox [here](mailto:data.compliance@justice.gov.uk).
+If you are unsure whether a DPIA or PIA already exists or needs to be created, you should contact the relevant Information Asset Owner (IAO). Further information on DPIAs and PIAs can be found [here](https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/privacy-reform/data-protection-impact-assessments-dpias/). You can also contact the Data Protection Officer mailbox [here](mailto:data.compliance@justice.gov.uk).
 * __Have the relevant privacy notices been updated to reflect use of the Analytical Platform?__  
 A privacy notice is required to let customers using a product or service know:
     + who is collecting the data;
