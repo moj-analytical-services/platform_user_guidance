@@ -110,6 +110,33 @@ dependencies are exported when you export an `environment.yml` for this project.
 conda env export -n base| grep -v "^prefix: " > /tmp/base.yml && conda env update --prune -n rstudio -f /tmp/base.yml && rm /tmp/base.yml
 ```
 
+#### r-pillar error
+
+If you get an error like this: 
+
+```bash
+Solving environment: failed
+
+ResolvePackageNotFound:
+  - r-pillar==1.4.2=h6115d3f_0
+  ```
+  
+Then the above command needs to be split up. 
+
+1) Run: 
+
+```bash
+conda env export -n base| grep -v "^prefix: " > /tmp/base.yml
+```
+
+2) Delete the r-pillar line from `/tmp/base.yml`. You can do this in RStudio by going to `File >> Open File`, typing in `/tmp`, and then finding the relevant file. 
+
+3) Run the rest of the command: 
+
+```bash
+echo > $CONDA_PREFIX/conda-meta/history && conda env update --prune -n rstudio -f /tmp/base.yml && rm /tmp/base.yml
+```
+
 ### Exporting your _Environment_
 
 This is similar to making a `packrat.lock` file, it catalogues all of the
