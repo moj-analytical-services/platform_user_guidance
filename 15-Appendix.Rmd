@@ -121,7 +121,7 @@ ResolvePackageNotFound:
   - r-pillar==1.4.2=h6115d3f_0
   ```
   
-Then the above command needs to be split up. 
+Then follow the steps below. 
 
 1. Run the following in a terminal:
 
