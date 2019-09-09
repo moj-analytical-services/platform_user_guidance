@@ -123,15 +123,15 @@ ResolvePackageNotFound:
   
 Then the above command needs to be split up. 
 
-1) Run: 
+1. Run the following in a terminal:
 
 ```bash
 conda env export -n base| grep -v "^prefix: " > /tmp/base.yml
 ```
 
-2) Delete the r-pillar line from `/tmp/base.yml`. You can do this in RStudio by going to `File >> Open File`, typing in `/tmp`, and then finding the relevant file. 
+2. Delete the r-pillar line from `/tmp/base.yml`. You can do this in RStudio by selecting __File__ > __Open File__, typing in `/tmp`, and then finding the relevant file. 
 
-3) Run the rest of the command: 
+3. Run the following in a terminal: 
 
 ```bash
 echo > $CONDA_PREFIX/conda-meta/history && conda env update --prune -n rstudio -f /tmp/base.yml && rm /tmp/base.yml
