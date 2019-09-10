@@ -16,36 +16,7 @@ The Analytical Platform:
 
 ## Get started
 
-To get started on the Analytical Platform, you should complete the following steps:
-
-- [Introduction](#introduction)
-  - [What is the Analytical Platform?](#what-is-the-analytical-platform)
-  - [Get started](#get-started)
-    - [Read our acceptable use policy and coding standards](#read-our-acceptable-use-policy-and-coding-standards)
-    - [Sign up for a GitHub account](#sign-up-for-a-github-account)
-    - [Verify your email address for GitHub](#verify-your-email-address-for-github)
-    - [Configure two-factor authentication for GitHub](#configure-two-factor-authentication-for-github)
-    - [Request an account from the Analytical Platform team](#request-an-account-from-the-analytical-platform-team)
-    - [Accept your invitation to the MoJ Analytical Services GitHub organisation](#accept-your-invitation-to-the-moj-analytical-services-github-organisation)
-    - [Configure two-factor authentication for the Analytical Platform](#configure-two-factor-authentication-for-the-analytical-platform)
-  - [Access the Analytical Platform](#access-the-analytical-platform)
-  - [Work with analytical tools](#work-with-analytical-tools)
-    - [Deploy analytical tools](#deploy-analytical-tools)
-    - [Open analytical tools](#open-analytical-tools)
-    - [Restart analytical tools](#restart-analytical-tools)
-    - [Unidle analytical tools](#unidle-analytical-tools)
-  - [Configure Git and GitHub](#configure-git-and-github)
-    - [Create an SSH key](#create-an-ssh-key)
-      - [RStudio](#rstudio)
-      - [JupyterLab](#jupyterlab)
-    - [Add the SSH key to GitHub](#add-the-ssh-key-to-github)
-    - [Configure you username and email in Git on the Analytical Platform](#configure-you-username-and-email-in-git-on-the-analytical-platform)
-  - [Contact us](#contact-us)
-  - [Slack](#slack)
-    - [What is Slack?](#what-is-slack)
-    - [Access Slack](#access-slack)
-    - [Channels](#channels)
-    - [Further information](#further-information)
+To get started on the Analytical Platform, you should complete the following steps.
 
 ### Read our acceptable use policy and coding standards
 
