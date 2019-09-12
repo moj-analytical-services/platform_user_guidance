@@ -2,23 +2,17 @@
 
 There are two ways to deploy a static web app.
 
-## Option 1
+## Choice of Static Web App Deployment
 
-Uses [this template](https://github.com/moj-analytical-services/webapp-template) to deploy is to deploy the full static web app from GitHub. You might want to do this when it is imperitive to version the full app. It would also make it easier for and collaborators to understand how the app works make edits and vett changes.
+### Option 1
 
-## Option 2
+Uses [this template](https://github.com/moj-analytical-services/webapp-template) to deploy the full static web app from GitHub. You might want to do this when it is imperitive to version the full app. It would also make it easier for you and collaborators to understand how the app works make edits and vett changes.
 
-This 
-The following steps to deploy a static HTML web site are as follows:
+### Option 2
 
-1. Copy the [template project](https://github.com/moj-analytical-services/webapp-template) within Github to a new repository, with a name of your choice.
-2. Work on your static website - the exposed content will be in the `www/` directory and `www/index.html` will be the landing page.
-3. When you're ready to share it, access the [services control panel](https://jenkins.services.alpha.mojanalytics.xyz/), find your app, and click 'Build now'. This will prepare your site for deployment.
-4. Set the desired access permissions in `deploy.json` (i.e. whether it should be available for DOM1, Quantum, or external).
-5. When you're ready to share it, in GitHub create a 'release' and it will deploy in a few minutes.
-6. Ask the Platform team to add and remove users from your app in the [#ap_admin_request](https://asdslack.slack.com/messages/CBLAGCQG6/) Slack channel.
+Uses [this template](https://github.com/moj-analytical-services/s3-proxy-webapp-template) to deploy a static web app that is dependent on the data it points to in S3. Use this one if you are less worried about versioning and want to automatically update your app frontend based on whatever data is the the apps bucket (e.g. if you have an airflow job that auto generates the HTML for this app).
 
-Step-by-step instructions are below.
+After you have chosen a template to use, Step-by-step instructions are below on how to deploy your app.
 
 ## Step-by-step guide to depolying an static web app
 
@@ -26,7 +20,7 @@ Step-by-step instructions are below.
 
 To create a new repository based on the webapp template:
 
-1. Go to the [webapp-template](https://github.com/moj-analytical-services/webapp-template) repository.
+1. Go one of the webapp templates [option 1](https://github.com/moj-analytical-services/webapp-template) or [option 2](https://github.com/moj-analytical-services/s3-proxy-webapp-template) repository.
 2. Select __Use this template__.
 3. Fill in the form:
     + Owner: `moj-analytical-services`
@@ -56,6 +50,14 @@ If you navigate to your new repository's home page (which will have a url in the
 ### Work on your web app
 
 Work on your web app using your chosen development enviroment. As you work, commit your changes to Github using your chosen Github workflow.
+
+#### Option 1
+
+Add the webapp structure, htmls, javascript, etc to your repository making sure that the files to serve are in the `www/` directory as these will be served by the web server (NGINX).
+
+#### Option 2
+
+In your Dockerfile set the line `ENV AWS_S3_BUCKET=alpha-app-your-app-bucket` to your apps bucket name. Once your webapp is deployed you can setup your app to read data from the bucket you spefied. The app will look for and host a `index.html` that should be in the root directory of your app's S3 bucket.
 
 ### Scan organisation and deploy
 
