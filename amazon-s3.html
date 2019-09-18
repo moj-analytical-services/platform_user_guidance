@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-08-19">
+<meta name="date" content="2019-09-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -138,8 +138,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1" data-path="amazon-s3.html"><a href="amazon-s3.html#what-is-amazon-s3"><i class="fa fa-check"></i><b>2.1</b> What is Amazon S3?</a></li>
 <li class="chapter" data-level="2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#working-with-amazon-s3-buckets"><i class="fa fa-check"></i><b>2.2</b> Working with Amazon S3 buckets</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="amazon-s3.html"><a href="amazon-s3.html#types-of-buckets"><i class="fa fa-check"></i><b>2.2.1</b> Types of buckets</a></li>
-<li class="chapter" data-level="2.2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#create-a-new-bucket"><i class="fa fa-check"></i><b>2.2.2</b> Create a new bucket</a></li>
-<li class="chapter" data-level="2.2.3" data-path="amazon-s3.html"><a href="amazon-s3.html#access-levels"><i class="fa fa-check"></i><b>2.2.3</b> Access levels</a></li>
+<li class="chapter" data-level="2.2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#create-a-new-warehouse-data-source"><i class="fa fa-check"></i><b>2.2.2</b> Create a new warehouse data source</a></li>
+<li class="chapter" data-level="2.2.3" data-path="amazon-s3.html"><a href="amazon-s3.html#data-access-levels"><i class="fa fa-check"></i><b>2.2.3</b> Data access levels</a></li>
 <li class="chapter" data-level="2.2.4" data-path="amazon-s3.html"><a href="amazon-s3.html#request-access-to-a-bucket"><i class="fa fa-check"></i><b>2.2.4</b> Request access to a bucket</a></li>
 <li class="chapter" data-level="2.2.5" data-path="amazon-s3.html"><a href="amazon-s3.html#manage-access-to-a-bucket"><i class="fa fa-check"></i><b>2.2.5</b> Manage access to a bucket</a></li>
 </ul></li>
@@ -201,7 +201,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.1.7" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#rshiny-deploy"><i class="fa fa-check"></i><b>4.1.7</b> Set access permissions</a></li>
 <li class="chapter" data-level="4.1.8" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#create-release"><i class="fa fa-check"></i><b>4.1.8</b> Create a release in GitHub</a></li>
 <li class="chapter" data-level="4.1.9" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#deploy-in-concourse"><i class="fa fa-check"></i><b>4.1.9</b> Deploy in Concourse</a></li>
-<li class="chapter" data-level="4.1.10" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#add-users"><i class="fa fa-check"></i><b>4.1.10</b> Add users to the app</a></li>
+<li class="chapter" data-level="4.1.10" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#manage-users"><i class="fa fa-check"></i><b>4.1.10</b> Manage app users</a></li>
 <li class="chapter" data-level="4.1.11" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#access-the-app"><i class="fa fa-check"></i><b>4.1.11</b> Access the app</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#advanced"><i class="fa fa-check"></i><b>4.2</b> Advanced</a><ul>
@@ -360,26 +360,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Amazon S3 buckets are separated into two categories on the Analytical Platform:</p>
 <ul>
 <li>warehouse data sources</li>
-<li>app data sources</li>
+<li>webapp data sources</li>
 </ul>
-<p>Warehouse data sources are suitable for storing files in all cases, except where the files need to be accessed by a webapp. In this case, files should be stored in an app data source.</p>
+<p>Warehouse data sources are suitable for storing files in all cases, except where the files need to be accessed by a webapp. In this case, files should be stored in a webapp data source.</p>
 </div>
-<div id="create-a-new-bucket" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> Create a new bucket</h3>
-<p>Standard users can currently only create new warehouse data sources in the Analytical Platform control panel. You cannot create new buckets directly in the Amazon S3 console.</p>
+<div id="create-a-new-warehouse-data-source" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Create a new warehouse data source</h3>
+<p>You can only create new warehouse data sources in the Analytical Platform control panel. You cannot create new buckets directly in the Amazon S3 console.</p>
 <p>To create a new warehouse data source:</p>
 <ol style="list-style-type: decimal">
-<li>Go to the Analytical Platform <a href="https://cpanel-master.services.alpha.mojanalytics.xyz">control panel</a>.</li>
+<li>Go to the Analytical Platform <a href="https://controlpanel.services.alpha.mojanalytics.xyz">control panel</a>.</li>
 <li>Select the <strong>Warehouse data</strong> tab.</li>
-<li>Select <strong>Create a new warehouse data source</strong>.</li>
-<li>Enter a name for the warehouse data source – this must be prefixed with ‘-alpha’.</li>
-<li>Select <strong>Create</strong>.</li>
+<li>Select <strong>Create new warehouse data source</strong>.</li>
+<li>Enter a name for the warehouse data source – this must be prefixed with ‘alpha-’.</li>
+<li>Select <strong>Create data source</strong>.</li>
 </ol>
 <p>When you create a new warehouse data source, only you will initially have access. As an admin of the data source, you will be able to add and remove other users from the data access group as required. Further information on managing data access groups can be found in Section <a href="amazon-s3.html#manage-access-to-a-bucket">2.2.5</a>.</p>
 </div>
-<div id="access-levels" class="section level3">
-<h3><span class="header-section-number">2.2.3</span> Access levels</h3>
-<p>Every bucket has three access levels:</p>
+<div id="data-access-levels" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Data access levels</h3>
+<p>Every bucket has three data access levels:</p>
 <ul>
 <li>Read only</li>
 <li>Read/write</li>
@@ -388,30 +388,31 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="request-access-to-a-bucket" class="section level3">
 <h3><span class="header-section-number">2.2.4</span> Request access to a bucket</h3>
-<p>To gain access to a bucket (warehouse data source or app data source), you must be added to the relevant data access group.</p>
+<p>To gain access to a bucket (warehouse data source or webapp data source), you must be added to the relevant data access group.</p>
 <p>If you know an admin of the bucket you require access to, you should ask them to add you to the data access group.</p>
-<p>If you do not know any of the admins of the bucket you require access to, you can ask the Analytical Platform team to add you to the data access group on the <a href="https://asdslack.slack.com/messages/CBLAGCQG6/">#ap_admin_request</a> Slack channel or by <a href="mailto:analytical_platform@digital.justice.gov.uk">email</a>.</p>
+<p>If you do not know any of the admins of the bucket you require access to, you can ask the Analytical Platform team to add you to the data access group on the <a href="https://asdslack.slack.com/messages/CBLAGCQG6/">#ap_admin_request</a> Slack channel or by email (<a href="mailto:analytical_platform@digital.justice.gov.uk">analytical_platform@digital.justice.gov.uk</a>).</p>
 <p>When requesting access to a bucket, you should specify the name of the bucket and the level of access you require. You should only request access to data that you have a genuine business need to access and should only request the lowest level of access required for you to complete your work. You may be required to demonstrate the business need for you to access a bucket if requested by a bucket admin or an information asset owner (IAO).</p>
 </div>
 <div id="manage-access-to-a-bucket" class="section level3">
 <h3><span class="header-section-number">2.2.5</span> Manage access to a bucket</h3>
-<p>Bucket admins can currently only manage access to warehouse data sources in the Analytical Platform <a href="https://cpanel-master.services.alpha.mojanalytics.xyz/">control panel</a>. You cannot manage access to buckets directly in the Amazon S3 console.</p>
-<p>To manage access to a warehouse data source:</p>
+<p>Bucket admins can manage access to warehouse data sources and webapp data sources in the Analytical Platform <a href="https://controlpanel.services.alpha.mojanalytics.xyz/">control panel</a>. You cannot manage access to buckets directly in the Amazon S3 console.</p>
+<p>To manage access to a data source:</p>
 <ol style="list-style-type: decimal">
-<li>Go to the Analytical Platform <a href="https://cpanel-master.services.alpha.mojanalytics.xyz">control panel</a>.</li>
-<li>Select the <strong>Warehouse data</strong> tab.</li>
-<li>Select the name of the warehouse data source you want to manage.</li>
+<li>Go to the Analytical Platform <a href="https://controlpanel.services.alpha.mojanalytics.xyz">control panel</a>.</li>
+<li>Select the <strong>Warehouse data</strong> tab or the <strong>Webapp data</strong> tab, as relevant.</li>
+<li>Select the name of the data source you want to manage.</li>
 </ol>
 <p>To add a new user to the data access group:</p>
 <ol style="list-style-type: decimal">
 <li>Type the user’s GitHub username into the input field labelled <strong>Grant access to this data to other users</strong>.</li>
 <li>Select the user from the drop-down list.</li>
+<li>Select the required data access level.</li>
 <li>Select <strong>Grant access</strong>.</li>
 </ol>
 <p>To edit the access level of a user:</p>
 <ol style="list-style-type: decimal">
 <li>Select <strong>Edit access level</strong> next to the name of the user.</li>
-<li>Select the checkbox next to the access level you wish to grant the user.</li>
+<li>Select required data access level.</li>
 <li>Select <strong>Save</strong>.</li>
 </ol>
 <p>To remove a user from the data access group:</p>

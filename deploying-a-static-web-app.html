@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-08-19">
+<meta name="date" content="2019-09-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -138,8 +138,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1" data-path="amazon-s3.html"><a href="amazon-s3.html#what-is-amazon-s3"><i class="fa fa-check"></i><b>2.1</b> What is Amazon S3?</a></li>
 <li class="chapter" data-level="2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#working-with-amazon-s3-buckets"><i class="fa fa-check"></i><b>2.2</b> Working with Amazon S3 buckets</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="amazon-s3.html"><a href="amazon-s3.html#types-of-buckets"><i class="fa fa-check"></i><b>2.2.1</b> Types of buckets</a></li>
-<li class="chapter" data-level="2.2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#create-a-new-bucket"><i class="fa fa-check"></i><b>2.2.2</b> Create a new bucket</a></li>
-<li class="chapter" data-level="2.2.3" data-path="amazon-s3.html"><a href="amazon-s3.html#access-levels"><i class="fa fa-check"></i><b>2.2.3</b> Access levels</a></li>
+<li class="chapter" data-level="2.2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#create-a-new-warehouse-data-source"><i class="fa fa-check"></i><b>2.2.2</b> Create a new warehouse data source</a></li>
+<li class="chapter" data-level="2.2.3" data-path="amazon-s3.html"><a href="amazon-s3.html#data-access-levels"><i class="fa fa-check"></i><b>2.2.3</b> Data access levels</a></li>
 <li class="chapter" data-level="2.2.4" data-path="amazon-s3.html"><a href="amazon-s3.html#request-access-to-a-bucket"><i class="fa fa-check"></i><b>2.2.4</b> Request access to a bucket</a></li>
 <li class="chapter" data-level="2.2.5" data-path="amazon-s3.html"><a href="amazon-s3.html#manage-access-to-a-bucket"><i class="fa fa-check"></i><b>2.2.5</b> Manage access to a bucket</a></li>
 </ul></li>
@@ -201,7 +201,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.1.7" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#rshiny-deploy"><i class="fa fa-check"></i><b>4.1.7</b> Set access permissions</a></li>
 <li class="chapter" data-level="4.1.8" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#create-release"><i class="fa fa-check"></i><b>4.1.8</b> Create a release in GitHub</a></li>
 <li class="chapter" data-level="4.1.9" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#deploy-in-concourse"><i class="fa fa-check"></i><b>4.1.9</b> Deploy in Concourse</a></li>
-<li class="chapter" data-level="4.1.10" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#add-users"><i class="fa fa-check"></i><b>4.1.10</b> Add users to the app</a></li>
+<li class="chapter" data-level="4.1.10" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#manage-users"><i class="fa fa-check"></i><b>4.1.10</b> Manage app users</a></li>
 <li class="chapter" data-level="4.1.11" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#access-the-app"><i class="fa fa-check"></i><b>4.1.11</b> Access the app</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="deploying-an-r-shiny-app.html"><a href="deploying-an-r-shiny-app.html#advanced"><i class="fa fa-check"></i><b>4.2</b> Advanced</a><ul>
@@ -406,7 +406,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="grant-secure-access-to-the-app" class="section level3">
 <h3><span class="header-section-number">5.1.5</span> Grant secure access to the app</h3>
-<p>To grant access to someone, in the <a href="https://cpanel-master.services.dev.mojanalytics.xyz/#Webapps">Control Panel’s Wepapps tag</a> find your App and click “Manage App”. In the ‘App customers’ section you can let people view your app by putting one or more email addresses in the text box and clicking “Add customer”.</p>
+<p>To grant access to someone, in the <a href="https://controlpanel.services.alpha.mojanalytics.xyz/webapps">Control Panel’s Wepapps tag</a> find your App and click “Manage App”. In the ‘App customers’ section you can let people view your app by putting one or more email addresses in the text box and clicking “Add customer”.</p>
 <p>You can also let anyone access it by setting <code>&quot;disable_authentication&quot;: true</code> in the <code>deploy.json</code> and redeploying it - see above.</p>
 <p><strong>Note</strong> that users can only access the app from a computer on a specified corporate network. These are defined in the <code>deploy.json</code> under the parameter <code>allowed_ip_ranges</code> - see below.</p>
 <div id="deploy.json" class="section level4">
