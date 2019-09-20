@@ -32,7 +32,7 @@ When requesting access to a data source, you should provide the GitHub usernames
 
 ## Data movements
 
-You can move data classified as OFFICIAL and OFFICIAL-SENSITIVE onto the Analytical Platform. SECRET and TOP SECRET data is not allowed on the Analytical Platform.
+You can move data classified as OFFICIAL (including OFFICIAL-SENSITIVE) onto the Analytical Platform. SECRET and TOP SECRET data is not allowed on the Analytical Platform.
 
 All data movements should take place safely and securely to ensure that data is protected at all times, including when in transit.
 
@@ -40,7 +40,7 @@ The process of moving data to the Analytical Platform is different depending on 
 
 ### Personal data
 
-If you are working with personal data you have a responsibility to ensure that you are compliant with the requirements of the General Data Protection Regulation (GDPR) and the Data Protection Act (DPA) 2018.
+If you are working with personal data you have a responsibility to ensure that you are compliant with the requirements of the General Data Protection Regulation (GDPR) and the Data Protection Act (DPA) 2018. This responsibility applies regardless of where you are processing the data.
 
 In practice, this means you must ensure that:
 
@@ -110,9 +110,9 @@ The data controller could be another MoJ agency or public body (for which MoJ is
 
 If you want to move personal data onto the Analytical Platform, you should check if a [Data Protection Impact Assessment (DPIA)](https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/privacy-reform/data-protection-impact-assessments-dpias/) or Privacy Impact Assessment (PIA) already exists for the processing of the personal data. The Information Asset Owner (IAO) of the data should be able to advise you if a DPIA or PIA already exists.
 
-If a DPIA or PIA already exists, you should update the document to reflect use of the Analytical Platform.
+If a DPIA or PIA already exists, you should update the document to reflect use of the Analytical Platform. You should ensure that any changes are reviewed and approved by the IAO.
 
-If a DPIA or PIA does not already exist, you should complete a [DPIA screening document](https://intranet.justice.gov.uk/documents/2018/05/data-protection-impact-assessments-screening-template.doc) and submit this to the Data Protection Officer (DPO) at [data.compliance@justice.gov.uk](mailto:data.compliance@justice.gov.uk).
+If a DPIA or PIA does not already exist, you should complete a [DPIA screening document](https://intranet.justice.gov.uk/documents/2018/05/data-protection-impact-assessments-screening-template.doc) and submit this to the Data Protection Officer (DPO) at [data.compliance@justice.gov.uk](mailto:data.compliance@justice.gov.uk). You should also submit a final copy of the document to the Analytical Platform team at [analytical_platform@digital.justice.gov.uk](mailto:analytical_platform@digital.justice.gov.uk).
 
 You should also check if a [privacy notice](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-be-informed/) already exists. A privacy notice provides information to individuals about how and why their personal data is being collected and processed.
 
