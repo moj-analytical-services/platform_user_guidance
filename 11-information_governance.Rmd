@@ -36,7 +36,7 @@ You can move data classified as OFFICIAL (including OFFICIAL-SENSITIVE) onto the
 
 All data movements should take place safely and securely to ensure that data is protected at all times, including when in transit.
 
-The process of moving data to the Analytical Platform is different depending on whether you are working with personal data.
+If you want to move personal data onto the Analytical Platform, you may need to complete some additional steps.
 
 ### Personal data
 
