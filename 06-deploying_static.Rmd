@@ -1,26 +1,25 @@
 # Deploying a static webapp
 
-There are two ways to deploy a static web app.
+There are two ways to deploy a static webapp.
 
 ## Choice of Static Web App Deployment
 
 ### Option 1
 
-Uses [this template](https://github.com/moj-analytical-services/webapp-template) to deploy the full static web app from GitHub. You might want to do this when it is imperitive to version the full app. It would also make it easier for you and collaborators to understand how the app works make edits and vett changes.
+This option uses [this template](https://github.com/moj-analytical-services/webapp-template) to deploy a full static webapp from GitHub. You may want to use this option if it is important to maintain version history for the full webapp. It also makes it easier for you and your collaborators to understand how the webapp works, make edits and review changes.
 
 ### Option 2
 
-Uses [this template](https://github.com/moj-analytical-services/s3-proxy-webapp-template) to deploy a static web app that is dependent on the data it points to in S3. Use this one if you are less worried about versioning and want to automatically update your app frontend based on whatever data is the the apps bucket (e.g. if you have an airflow job that auto generates the HTML for this app).
+This option uses [this template](https://github.com/moj-analytical-services/s3-proxy-webapp-template) to deploy a static webapp from S3. You may want to use this option if you are less worried about versioning the content of your webapp and want to automatically update the frontend of your webapp based on data in S3 (for example, using an Airflow task to automatically generate HTML content).
 
-After you have chosen a template to use, Step-by-step instructions are below on how to deploy your app.
 
-## Step-by-step guide to depolying an static web app
+## Step-by-step guide to deploying a static webapp
 
 ### Use the webapp template
 
 To create a new repository based on the webapp template:
 
-1. Go one of the webapp templates [option 1](https://github.com/moj-analytical-services/webapp-template) or [option 2](https://github.com/moj-analytical-services/s3-proxy-webapp-template) repository.
+1. Go to the [webapp-template](https://github.com/moj-analytical-services/webapp-template) repository (option 1) or the [s3-proxy-webapp-template](https://github.com/moj-analytical-services/s3-proxy-webapp-template) repository (option 2).
 2. Select __Use this template__.
 3. Fill in the form:
     + Owner: `moj-analytical-services`
@@ -53,11 +52,11 @@ Work on your web app using your chosen development environment. As you work, com
 
 #### Option 1
 
-Add the webapp structure, htmls, javascript, etc to your repository making sure that the files to serve are in the `www/` directory as these will be served by the web server (NGINX).
+Add the webapp files (HTML, CSS, JavaScript, etc.) to the `www/` directory of your repository. This will be the root directory of the webapp.
 
 #### Option 2
 
-In your Dockerfile set the line `ENV AWS_S3_BUCKET=alpha-app-your-app-bucket` to your apps bucket name. Once your webapp is deployed you can setup your app to read data from the bucket you spefied. The app will look for and host a `index.html` that should be in the root directory of your app's S3 bucket.
+In your Dockerfile, set the line `ENV AWS_S3_BUCKET=alpha-app-your-app-bucket` to the name of your webapp's S3 bucket. Once your webapp is deployed you can set up your app to read data from the bucket you specified. The webapp will look for and host a `index.html` file that should be located in the root directory of your app's S3 bucket.
 
 ### Scan organisation and deploy
 
