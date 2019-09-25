@@ -49,7 +49,7 @@ If you navigate to your new repository's home page (which will have a url in the
 
 ### Work on your web app
 
-Work on your web app using your chosen development enviroment. As you work, commit your changes to Github using your chosen Github workflow.
+Work on your web app using your chosen development environment. As you work, commit your changes to GitHub using your chosen GitHub workflow.
 
 #### Option 1
 
