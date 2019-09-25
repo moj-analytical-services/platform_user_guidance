@@ -1,4 +1,4 @@
-# Deploying a Static Web App
+# Deploying a static webapp
 
 There are two ways to deploy a static web app.
 
