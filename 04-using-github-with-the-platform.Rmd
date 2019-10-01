@@ -100,6 +100,8 @@ Notes:
 
 There is not the same integration. Use the command-line - see below.
 
+**Important:** Notebook files include not just the python code, but it saves the **output** too. Output likely contains data, which should *not* be committed to GitHub. Use [nbstripout](https://pypi.org/project/nbstripout/0.3.1/), to strip out the output before committing. Configure this to be run automatically on commit by using a git hook/filter. Any existing commits that have output need [stripping](https://rtyley.github.io/bfg-repo-cleaner/) from the repo and a [breach reported](https://intranet.justice.gov.uk/guidance/security/report-a-security-incident/).
+
 ## Command-line
 
 Once you are comfortable using the Terminal (in either R Studio or Jupyter) you can do steps 1 to 3 above using the following git commands:
