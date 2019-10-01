@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-09-25">
+<meta name="date" content="2019-10-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -438,6 +438,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="jupyter" class="section level2">
 <h2><span class="header-section-number">3.3</span> Jupyter</h2>
 <p>There is not the same integration. Use the command-line - see below.</p>
+<p><strong>Important:</strong> Notebook files include not just the python code, but it saves the <strong>output</strong> too. Output likely contains data, which should <em>not</em> be committed to GitHub. Use <a href="https://pypi.org/project/nbstripout/0.3.1/">nbstripout</a>, to strip out the output before committing. Configure this to be run automatically on commit by using a git hook/filter. Any existing commits that have output need <a href="https://rtyley.github.io/bfg-repo-cleaner/">stripping</a> from the repo and a <a href="https://intranet.justice.gov.uk/guidance/security/report-a-security-incident/">breach reported</a>.</p>
 </div>
 <div id="command-line" class="section level2">
 <h2><span class="header-section-number">3.4</span> Command-line</h2>
