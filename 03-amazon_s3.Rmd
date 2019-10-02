@@ -41,6 +41,17 @@ Every bucket has three data access levels:
 *   Read/write
 *   Admin -- this provides read/write access and allows the user to add and remove other users from the bucket's data access group
 
+### Path specific access{#path-specific-access}
+
+Along with choosing the access level, you can also specify paths which the user should have access to by entering each path in a bucket as a new line in the `Paths` textarea field.
+
+    /folder-one/*
+    /folder-two/*
+
+The above would give the user access to only `/folder-one` and `/folder-two` in the bucket and nothing else.
+
+If you leave this field blank then the access is for the whole bucket.
+
 ### Request access to a bucket
 
 To gain access to a bucket (warehouse data source or webapp data source), you must be added to the relevant data access group.
@@ -66,13 +77,15 @@ To add a new user to the data access group:
 1.  Type the user's GitHub username into the input field labelled __Grant access to this data to other users__.
 2.  Select the user from the drop-down list.
 3.  Select the required data access level.
-4.  Select __Grant access__.
+4.  Either leave the `Paths` field blank or enter path specific access as described in \@ref(path-specific-access)
+5.  Select __Grant access__.
 
 To edit the access level of a user:
 
 1.  Select __Edit access level__ next to the name of the user.
 2.  Select required data access level.
-3.  Select __Save__.
+3.  Either leave the `Paths` field blank or enter path specific access as described in \@ref(path-specific-access)
+4.  Select __Save__.
 
 To remove a user from the data access group:
 
