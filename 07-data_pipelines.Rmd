@@ -26,6 +26,10 @@ Each task should be a git repository:
 * It should be under the https://github.com/moj-analytical-services organization
 * The name of the repo is recommended to start with `airflow-`
 
+You can create a new repo from the [template](https://github.com/moj-analytical-services/template-airflow-python).
+
+![](images/pipelines/airflow-python-template.png)
+
 The repo should include:
 
 1. `Dockerfile` - contains commands to set-up a Docker image that does your data processing.
