@@ -48,7 +48,7 @@ Along with choosing the access level, you can also specify paths which the user 
     /folder-one/*
     /folder-two/*
 
-The above would give the user access to only `/folder-one` and `/folder-two` in the bucket and nothing else.
+This would give the user access to only `/folder-one` and `/folder-two` in the bucket and nothing else.
 
 If you leave this field blank then the access is for the whole bucket.
 
