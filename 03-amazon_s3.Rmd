@@ -84,7 +84,7 @@ To edit the access level of a user:
 
 1.  Select __Edit access level__ next to the name of the user.
 2.  Select required data access level.
-3.  Either leave the `Paths` field blank or enter path specific access as described in \@ref(path-specific-access)
+3.  Either leave the 'Paths' field blank or enter a list of paths to provide restricted access, as described in \@ref(path-specific-access).
 4.  Select __Save__.
 
 To remove a user from the data access group:
