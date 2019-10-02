@@ -43,7 +43,7 @@ Every bucket has three data access levels:
 
 ### Path specific access{#path-specific-access}
 
-Along with choosing the access level, you can also specify paths which the user should have access to by entering each path in a bucket as a new line in the `Paths` textarea field.
+As well as choosing an access level, you can also restrict a user's access to specific paths in a bucket by entering each path on a new line in the 'Paths' textarea field when adding the user to a data access group. For example:
 
     /folder-one/*
     /folder-two/*
