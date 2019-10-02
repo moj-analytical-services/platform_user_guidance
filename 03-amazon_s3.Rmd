@@ -77,7 +77,7 @@ To add a new user to the data access group:
 1.  Type the user's GitHub username into the input field labelled __Grant access to this data to other users__.
 2.  Select the user from the drop-down list.
 3.  Select the required data access level.
-4.  Either leave the `Paths` field blank or enter path specific access as described in \@ref(path-specific-access)
+4.  Either leave the 'Paths' field blank or enter a list of paths to provide restricted access, as described in \@ref(path-specific-access).
 5.  Select __Grant access__.
 
 To edit the access level of a user:
