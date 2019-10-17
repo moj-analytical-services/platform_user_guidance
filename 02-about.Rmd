@@ -1,16 +1,16 @@
 # About the Analytical Platform
 
-The Analytical Platform is a data analysis environment, providing modern tools and key datasets for MoJ analysts and data scientists.
+The Analytical Platform is a data analysis environment, providing modern tools and key datasets for MoJ analysts.
 
 ## Modern data tools and services
 
-AP provides access to the latest versions of open–source analytical software, such as RStudio and JupyterLab, allowing analysts to work in the way that suits them best.
+The Analytical Platform (AP) provides access to recent versions of open–source analytical software, such as RStudio and JupyterLab, allowing analysts to work in the way that suits them best.
 
 Analysts can freely install packages from CRAN and PyPI, enabling them to utilise advanced analytical tools and techniques, including text mining, predictive analytics and data visualisation. They can also make use of the latest cloud data services, such as Amazon Athena, Glue and Redshift, generally offering scalability and a managed service at commodity pay-as-you-go prices.
 
 Interactive apps and web pages can also be built and deployed by analysts, to communicate analysis and insight to decision–makers.
 
-## Data is centralized
+## Centralised data
 
 Data is brought onto the Analytical Platform ideally in an automated way. The Data Engineering team setup pipelines that takes raw data from operational systems, and converts it to data structures and excerpts that are convenient for use by analysts. Analysts can also upload data to AP from other sources and share them with other analysts.
 
@@ -32,9 +32,9 @@ Reproducible analytical pipelines are achieved in AP with three elements:
 
 GitHub provides a single location for all of our code -- this enables analysts to collaborate more effectively, share knowledge, do peer review and produce high–quality reproducible analysis
 
-## Secure and well-engineered platform
+## Secure and well-engineered environment
 
-AP is built in a cloud–based ecosystem that is easy to access remotely from all MoJ IT systems. It provides analysts with access to powerful computational resources that can be scaled to meet demand -- this allows analysts to quickly and easily work with big data and perform complex analytical tasks
+AP is built in a cloud–based ecosystem that is easy to access remotely from all MoJ IT systems. It provides analysts with access to powerful computational resources that can be scaled to meet demand -- this allows analysts to quickly and easily work with big data and perform complex analytical tasks.
 
 AP is designed for data at security classification OFFICIAL and has successfully gained assurance for significant datasets marked OFFICIAL-SENSITIVE. It follows NCSC Cloud Security Principles, implementing features such as:
 
@@ -46,35 +46,41 @@ AP is designed for data at security classification OFFICIAL and has successfully
   
 Resilience and high availability means analysts can depend on AP to store their work and data, and to complete time–sensitive and business–critical projects.
 
-## What it isn't for
+## Extent of the platform
 
 AP does a lot, but data is a big subject and AP doesn't try to do everything. These things are currently outside scope:
 
 ### Production apps at scale
 
-Apps on AP should be restricted to private prototypes or for small numbers of staff users (e.g. less than 50). A key benefit of AP is that analysts and data scientists have all the tools to be creative and experimental with interactive dashboards and apps, in a safe sandbox environment. In addition, simple apps for a few staff e.g. for searching through data are fine. However the AP team aims to rapidly change and improve the apps deployment and hosting, so sets an apps availability expectation of only 95% at this stage. Once an app is proven as an AP prototype then it should be adopted by a MoJ Digital & Technology service team to be developed by a multi-disciplinary team and meet the Service Standard.
+Apps on AP should be restricted to private prototypes or used by a small number of staff users (e.g. less than 50). In particular they should not be used for critical or official line of business uses.
 
-### MI (Management Information) systems
+A key benefit of AP is that analysts and data scientists have all the tools to be creative and experimental with interactive dashboards and apps, in a safe sandbox environment. In addition, simple apps for a few staff e.g. for searching through data are fine. And whilst AP's tools like RStudio and Jupyter can be relied upon:
 
-MI is data collected and used by a service team to track and manage their service day-to-day. In contrast AP has been designed for analysts who produce official statistics and generally work on longer term decision-making with policy teams. There is a view that the user needs differ between these two groups - a service team's business/performance analyst might look at standard performance metrics, suited to standard business spreadsheet or BI software. In contrast, an analyst supporting policy decisions tends to use complex methods that are more suited to being expressed in code, and require more formal methods to ensure quality, such as reproducibility.
+* AP's app deployment system is not designed for production and subject to change. We're looking to add security scanning, auto-scalability, dev deployments, so expect occasional turbulence. Please assume apps will be available only 95% of the time.
+* AP offers no support outside office hours, which is not suitable for many web services that are available 24h.
+* Analysts are experts in the data aspects of a web service, and should let other specialists tackle the challenges along the delivery path to production-grade software. Running a production service needs support, patching dependencies, adjusting it to changing user and business needs, and offering support, often outside office hours. Making a service good enough to run at scale [involves](https://www.gov.uk/service-manual/agile-delivery/how-the-beta-phase-works) everything from accessibility, user research and design patterns to performance metrics. Before you invest in building that, you need the confidence that comes of doing an [alpha phase](https://www.gov.uk/service-manual/agile-delivery/how-the-alpha-phase-works), iterating a variety of prototypes with experts like a user researcher and designer. So analysts should use AP as an environment to rapidly prototype or provide non-critical tools, for use with a restricted pool of staff users, and if successful, work with an MoJ Digital & Technology service team to take it further.
 
-In addition, MI is something that nearly every team in the department needs to do, is likely to be closely coupled with the service's systems and business needs. Understanding this environment and user needs across the department is not something that has been the focus of AP. So whilst there is considerable overlap - data storage, processing and dashboards - AP has not been designed for this environment. Indeed there is resistance to adding point-and-click BI software to AP, since the analysts are being encouraged to work in a reproducible way.
+### MI (Management Information)
+
+MI is data that is collected and used by a service team to monitor and manage their service day-to-day. Typically a business analyst does ad-hoc queries or sets up KPI dashboards, using point-and-click BI (Business Intelligence) software. Whilst this has considerable overlap with AP, such as data storage, it does not currently provide point-and-click BI for queries and dashboards. This is because AP's current focus are analyst users, who do more complex analysis and seek a high quality for national statistics and policy formation, which leads to writing code and ensuring it is reproducible.
+
+In addition, MI is something that nearly every team in the department needs to do, and is likely to be closely coupled with the service's systems and business needs. It is not therefore anticipated that BI will be directly integrated into AP. However AP data is accessible by secure internet API, making it accessible to BI systems (although not BI restricted to internal networks).
 
 ### Real time data
 
 AP has Airflow, which can schedule data flows and processing as frequently as every few minutes. However as you move towards on-going data processing like this you start to benefit from data streaming technology, to provide real-time results, cope with disturbances in the flow rate, manage processing in small batches etc. 
 
-Technically there is a clear route to enabling data streaming on AP, such as with Apache Kafka or managed cloud services. However it has not yet been explored yet.
+Technically there is a clear route to enabling data streaming on AP, such as with Apache Kafka or managed cloud services, which we can explore when the need arises.
 
-### Data archival
+### Pure data archival
 
-Data often needs to be retained safely for long periods, for possible use in the future. On one hand, AP offers an assured place for storing data, with durability, backups, security and access controls. However brief analysis shows some archival needs not fully met:
+Data often needs to be retained safely for long periods, for possible use in the future. AP offers an assured place for storing data, with durability, backups, security and access controls. Here are some considerations to bear in mind:
 
-* Archival tends to require an index and search facility. S3 doesn't offer these, so a way to extract text from files and provide an index & search interface would need to be found.
-* S3 is not the cheapest storage, although a custom bucket could be set-up with a policy to archive it to S3-IA or Glacier.
+* Index and search facility - S3 doesn't offer these, so a way to extract text from files and provide an index & search interface would need to be found.
+* S3 is not the cheapest storage, however we can set-up a custom bucket policy to archive it to S3-IA or Glacier.
 
-SaaS alternatives, typified by Sharepoint or Google Drive, are often more suited to archival.
+SaaS alternatives, typified by Sharepoint or Google Drive, may suit pure archival needs better.
 
 ## Who it is for
 
-AP is primarily for analysts and data scientists within the Ministry of Justice, including CICA, HMCTS, HMPPS, LAA and OPG. Access for other justice organizations is considered - [contact us](mailto:analytical_platform@digital.justice.gov.uk) to discuss.
+AP is primarily for analysts in the Data and Analytical Services Directorate in the Ministry of Justice. We also have users from CICA, HMCTS, HMPPS, LAA, and OPG. Access for other justice organizations is considered - [contact us](mailto:analytical_platform@digital.justice.gov.uk) to discuss.

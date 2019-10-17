@@ -2,14 +2,14 @@
 
 ## What is the Analytical Platform?
 
-__The Analytical Platform is a data analysis environment, providing modern tools and key datasets for MoJ analysts and data scientists__
+__The Analytical Platform is a data analysis environment, providing modern tools and key datasets for MoJ analysts__
 
 It offers:
 
 * Modern data tools and services
-* Data is centralized
+* Centralised data
 * Reproducible analysis
-* Secure and well-engineered platform
+* Secure and well-engineered environment
 
 Read more: [About the Analytical Platform](#about)
 
