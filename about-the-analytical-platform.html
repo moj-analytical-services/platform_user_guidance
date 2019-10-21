@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Part 1 Introduction | Analytical Platform User Guidance</title>
+  <title>Part 2 About the Analytical Platform | Analytical Platform User Guidance</title>
   <meta name="description" content="This repository contains user guidance for the Analytical Platform.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Part 1 Introduction | Analytical Platform User Guidance />
+  <meta property="og:title" content="Part 2 About the Analytical Platform | Analytical Platform User Guidance />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Part 1 Introduction | Analytical Platform User Guidance />
+  <meta name="twitter:title" content="Part 2 About the Analytical Platform | Analytical Platform User Guidance />
   
   <meta name="twitter:description" content="This repository contains user guidance for the Analytical Platform." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="about-the-analytical-platform.html">
+<link rel="prev" href="introduction.html">
+<link rel="next" href="amazon-s3.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -360,242 +360,83 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Part 1</span> Introduction</h1>
-<div id="what-is-the-analytical-platform" class="section level2">
-<h2><span class="header-section-number">1.1</span> What is the Analytical Platform?</h2>
-<p><strong>The Analytical Platform is a data analysis environment, providing modern tools and key datasets for MoJ analysts</strong></p>
-<p>It offers:</p>
+<div id="about-the-analytical-platform" class="section level1">
+<h1><span class="header-section-number">Part 2</span> About the Analytical Platform</h1>
+<p>The Analytical Platform is a data analysis environment, providing modern tools and key datasets for MoJ analysts.</p>
+<div id="modern-data-tools-and-services" class="section level2">
+<h2><span class="header-section-number">2.1</span> Modern data tools and services</h2>
+<p>The Analytical Platform (AP) provides access to recent versions of open–source analytical software, such as RStudio and JupyterLab, allowing analysts to work in the way that suits them best.</p>
+<p>Analysts can freely install packages from CRAN and PyPI, enabling them to utilise advanced analytical tools and techniques, including text mining, predictive analytics and data visualisation. They can also make use of the latest cloud data services, such as Amazon Athena, Glue and Redshift, generally offering scalability and a managed service at commodity pay-as-you-go prices.</p>
+<p>Interactive apps and web pages can also be built and deployed by analysts, to communicate analysis and insight to decision–makers.</p>
+</div>
+<div id="centralised-data" class="section level2">
+<h2><span class="header-section-number">2.2</span> Centralised data</h2>
+<p>Data is brought onto the Analytical Platform ideally in an automated way. The Data Engineering team set up a pipeline that takes raw data from operational systems, and converts it to data structures and excerpts that are convenient for use by analysts. Analysts can also upload data to AP from other sources and share them with other analysts, subject to normal data protection processes.</p>
+<p>Data files are held in Amazon S3 and are available for analysts to load into their code, or run SQL queries directly using Amazon Athena.</p>
+<p>Data governance is achieved with a clear process for getting approval to put data on the platform for a given use, and fine-grained access controls. AP’s centralization of data storage, sharing and usage allows the department to more easily manage and track compliance.</p>
+</div>
+<div id="reproducible-analysis" class="section level2">
+<h2><span class="header-section-number">2.3</span> Reproducible analysis</h2>
+<p>‘Reproducibility’ is essential for producing high quality, fully accountible analysis. It facilitates peer-review during production, makes it possible to go back over the method if it is called into question and allows the analysis to be easily built on in the future. Conversely, unreproducible analysis is a poor foundation for any decision-making or future work.</p>
+<p>AP gives analysts the tools to develop reproducible analytical pipelines (RAPs) to automate time–consuming and repetitive tasks, allowing them to focus on interpreting the results.</p>
+<p>Reproducible analytical pipelines are achieved in AP with three elements:</p>
 <ul>
-<li>Modern data tools and services</li>
-<li>Centralised data</li>
-<li>Reproducible analysis</li>
-<li>Secure and well-engineered environment</li>
+<li>datasets are versioned - snapshots of the data are taken when imported into AP with automated pipelines</li>
+<li>code is versioned - in GitHub</li>
+<li>system libraries are standardized - a standardized virtual machine running R Studio/Jupyter, or code running in an explicitly defined Dockerfile</li>
 </ul>
-<p>Read more: <a href="#about">About the Analytical Platform</a></p>
+<p>GitHub provides a single location for all of our code – this enables analysts to collaborate more effectively, share knowledge, do peer review and produce high–quality reproducible analysis</p>
 </div>
-<div id="get-started" class="section level2">
-<h2><span class="header-section-number">1.2</span> Get started</h2>
-<p>To get started on the Analytical Platform, you should complete the following steps.</p>
-<div id="read-our-acceptable-use-policy-and-coding-standards" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> Read our acceptable use policy and coding standards</h3>
-<p>Use of the Analytical Platform is subject to our <a href="acceptable-use-policy.html#acceptable-use-policy">acceptable use policy</a>. You should ensure that you have read and understood this before getting started on the Analytical Platform.</p>
-<p>You should also follow our <a href="https://github.com/moj-analytical-services/our-coding-standards">coding standards</a> when working on the Analytical Platform. These set out principles that you should follow when writing and reviewing code.</p>
-</div>
-<div id="sign-up-for-a-github-account" class="section level3">
-<h3><span class="header-section-number">1.2.2</span> Sign up for a GitHub account</h3>
-<p>To sign up for a GitHub account, go to GitHub’s <a href="https://github.com/join">join page</a> and follow the instructions.</p>
+<div id="secure-and-well-engineered-environment" class="section level2">
+<h2><span class="header-section-number">2.4</span> Secure and well-engineered environment</h2>
+<p>AP is built in a cloud–based ecosystem that is easy to access remotely from all MoJ IT systems. It provides analysts with access to powerful computational resources that can be scaled to meet demand – this allows analysts to quickly and easily work with big data and perform complex analytical tasks.</p>
+<p>AP is designed for data at security classification OFFICIAL and has successfully gained assurance for significant datasets marked OFFICIAL-SENSITIVE. It follows NCSC Cloud Security Principles, implementing features such as:</p>
 <ul>
-<li>When signing up, we recommend that you use your work email address.</li>
-<li>When instructed to choose your subscription, you should select the free plan.</li>
-<li>It is good practice to choose a username that does not contain upper-case characters.</li>
-<li>You should use a secure password following best <a href="https://github.com/ministryofjustice/itpolicycontent/blob/master/content/security/framework/password-standard.md">practice guidelines</a>.</li>
-<li>We recommend that you use a password manager, such as <a href="https://www.lastpass.com/">LastPass</a>, to generate and store strong passwords.</li>
+<li>2 factor authentication for user sign-in</li>
+<li>encryption of data at rest and in transit</li>
+<li>fine-grained access control</li>
+<li>extensive tracking of user behaviour, user privilege requests/changes and data flows</li>
+<li>multiple levels of isolation between users and system components</li>
 </ul>
+<p>Resilience and high availability means analysts can depend on AP to store their work and data, and to complete time–sensitive and business–critical projects.</p>
 </div>
-<div id="verify-your-email-address-for-github" class="section level3">
-<h3><span class="header-section-number">1.2.3</span> Verify your email address for GitHub</h3>
-<p>Verifying your email address for GitHub ensures that your account is secure and gives you access to all of GitHub’s features. Veryifying your email address is also required to sign in to the Analytical Platform.</p>
-<p>During sign up, GitHub will send you an email with a link to verify your email address.</p>
-<p>If you do not verify your email address at this stage, you can do it later by following the instructions <a href="https://help.github.com/en/articles/verifying-your-email-address">here</a>.</p>
-</div>
-<div id="configure-two-factor-authentication-for-github" class="section level3">
-<h3><span class="header-section-number">1.2.4</span> Configure two-factor authentication for GitHub</h3>
-<p>To get access to the Analytical Platform, you must first configure two-factor authentication (2FA) for GitHub using a mobile app (on your personal or work phone) or via text message. To configure 2FA for GitHub, follow the instructions <a href="https://help.github.com/en/articles/configuring-two-factor-authentication">here</a>.</p>
-<p>We recommend that you configure 2FA using a mobile app. In particular, we recommend that you use <a href="https://authy.com/"><strong>Authy</strong></a> for the following reasons:</p>
-<ol style="list-style-type: decimal">
-<li>You can sync 2FA tokens across multiple devices, including mobiles, tablets and computers.</li>
-<li>You can create encrypted recovery backups in case you lose your device.</li>
-<li>You can use Touch ID, PIN codes and passwords to protect access to your 2FA tokens.</li>
-<li>You can still access secure websites when you don’t have phone signal.</li>
-</ol>
-</div>
-<div id="request-an-account-from-the-analytical-platform-team" class="section level3">
-<h3><span class="header-section-number">1.2.5</span> Request an account from the Analytical Platform team</h3>
-<p>To request an account for the Analytical Platform, you should send an email with your GitHub username to the <a href="mailto:analytical_platform@digital.justice.gov.uk">Analytical Platform team</a>. The team will then invite you to join the <a href="https://github.com/moj-analytical-services">MoJ Analytical Services</a> GitHub organisation.</p>
-</div>
-<div id="accept-your-invitation-to-the-moj-analytical-services-github-organisation" class="section level3">
-<h3><span class="header-section-number">1.2.6</span> Accept your invitation to the MoJ Analytical Services GitHub organisation</h3>
-<p>When you are invited to join the MoJ Analytical Services GitHub organisation, you will receive an email with a link to accept the invitation.</p>
-<p>You can also accept your invitation by signing in to GitHub and visiting the <a href="https://github.com/moj-analytical-services">organisation page</a>.</p>
-</div>
-<div id="configure-two-factor-authentication-for-the-analytical-platform" class="section level3">
-<h3><span class="header-section-number">1.2.7</span> Configure two-factor authentication for the Analytical Platform</h3>
-<p>When you sign in to the Analytical Platform for the first time, you will be prompted to configure additional two-factor authentication (2FA) for the Analytical Platform itself.</p>
-<p>To sign in, go to the Analytical Platform <a href="https://controlpanel.services.alpha.mojanalytics.xyz">control panel</a>.</p>
-<p>You must configure 2FA for the Analytical Platform using a mobile app (on your personal or work phone). As described in Section <a href="introduction.html#configure-two-factor-authentication-for-github">1.2.4</a>, we recommend that you use <strong>Authy</strong>.</p>
-</div>
-</div>
-<div id="access-the-analytical-platform" class="section level2">
-<h2><span class="header-section-number">1.3</span> Access the Analytical Platform</h2>
-<p>The main entry point to the Analytical Platform is the <a href="https://controlpanel.services.alpha.mojanalytics.xyz">control panel</a>. From here, you can access RStudio and JupyterLab and can manage your warehouse data sources.</p>
-<p>You may also need to access other services and tools on the Analytical Platform:</p>
+<div id="extent-of-the-platform" class="section level2">
+<h2><span class="header-section-number">2.5</span> Extent of the platform</h2>
+<p>AP does a lot, but data is a big subject and AP doesn’t try to do everything. These things are currently outside scope:</p>
+<div id="production-apps-at-scale" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Production apps at scale</h3>
+<p>Apps on AP should be restricted to private prototypes or used by a small number of staff users (e.g. less than 50). In particular they should not be used for critical or official line of business uses.</p>
+<p>A key benefit of AP is that analysts and data scientists have all the tools to be creative and experimental with interactive dashboards and apps, in a safe sandbox environment. In addition, simple apps for a few staff e.g. for searching through data are fine. And whilst AP’s tools like RStudio and Jupyter can be relied upon:</p>
 <ul>
-<li><a href="https://airflow.tools.alpha.mojanalytics.xyz">Airflow</a></li>
-<li><a href="https://aws.services.alpha.mojanalytics.xyz">AWS console</a></li>
-<li><a href="https://concourse.services.alpha.mojanalytics.xyz">Concourse</a></li>
-<li><a href="https://grafana.services.alpha.mojanalytics.xyz">Grafana</a></li>
-<li><a href="https://kibana.services.alpha.mojanalytics.xyz">Kibana</a></li>
+<li>AP’s app deployment system is not designed for production and subject to change. We’re looking to add security scanning, auto-scalability, dev deployments, so expect occasional turbulence. Please assume apps will be available only 95% of the time.</li>
+<li>AP offers no support outside office hours, which is not suitable for many web services that are available 24h.</li>
+<li>Analysts are experts in the data aspects of a web service, and should let other specialists tackle the challenges along the delivery path to production-grade software. Running a production service needs support, patching dependencies, adjusting it to changing user and business needs, and offering support, often outside office hours. Making a service good enough to run at scale <a href="https://www.gov.uk/service-manual/agile-delivery/how-the-beta-phase-works">involves</a> everything from accessibility, user research and design patterns to performance metrics. Before you invest in building that, you need the confidence that comes of doing an <a href="https://www.gov.uk/service-manual/agile-delivery/how-the-alpha-phase-works">alpha phase</a>, iterating a variety of prototypes with experts like a user researcher and designer. So analysts should use AP as an environment to rapidly prototype or provide non-critical tools, for use with a restricted pool of staff users, and if successful, work with an MoJ Digital &amp; Technology service team to take it further.</li>
 </ul>
 </div>
-<div id="work-with-analytical-tools" class="section level2">
-<h2><span class="header-section-number">1.4</span> Work with analytical tools</h2>
-<div id="deploy-analytical-tools" class="section level3">
-<h3><span class="header-section-number">1.4.1</span> Deploy analytical tools</h3>
-<p>Before using RStudio, JupyterLab and Airflow, you must first deploy them.</p>
-<p>To deploy RStudio, JupyterLab and Airflow on the Analytical Platform, you should complete the following steps:</p>
-<ol style="list-style-type: decimal">
-<li>Go the Analytical Platform <a href="https://controlpanel.services.alpha.mojanalytics.xyz">control panel</a>.</li>
-<li>Select the <strong>Analytical tools</strong> tab.</li>
-<li>Select the <strong>Deploy</strong> buttons next to RStudio, JupyterLab and Airflow.</li>
-</ol>
-<p>It may take a few minutes for the tools to deploy.</p>
+<div id="mi-management-information" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> MI (Management Information)</h3>
+<p>MI is data that is collected and used by a service team to monitor and manage their service day-to-day. Typically a business analyst does ad-hoc queries or sets up KPI dashboards, using point-and-click BI (Business Intelligence) software. Whilst this has considerable overlap with AP, such as data storage, it does not currently provide point-and-click BI for queries and dashboards. This is because AP’s current focus are analyst users, who do more complex analysis and seek a high quality for national statistics and policy formation, which leads to writing code and ensuring it is reproducible.</p>
+<p>In addition, MI is something that nearly every team in the department needs to do, and is likely to be closely coupled with the service’s systems and business needs. It is not therefore anticipated that BI will be directly integrated into AP. However AP data is accessible by secure internet API, making it accessible to BI systems (although not BI restricted to internal networks).</p>
 </div>
-<div id="open-analytical-tools" class="section level3">
-<h3><span class="header-section-number">1.4.2</span> Open analytical tools</h3>
-<p>To open RStudio, JupyterLab or Airflow:</p>
-<ol style="list-style-type: decimal">
-<li>Go the Analytical Platform <a href="https://controlpanel.services.alpha.mojanalytics.xyz">control panel</a>.</li>
-<li>Select the <strong>Analytical tools</strong> tab.</li>
-<li>Select the <strong>Open</strong> button to the right of the tool’s name.</li>
-</ol>
+<div id="real-time-data" class="section level3">
+<h3><span class="header-section-number">2.5.3</span> Real time data</h3>
+<p>AP has Airflow, which can schedule data flows and processing as frequently as every few minutes. However as you move towards on-going data processing like this you start to benefit from data streaming technology, to provide real-time results, cope with disturbances in the flow rate, manage processing in small batches etc.</p>
+<p>Technically there is a clear route to enabling data streaming on AP, such as with Apache Kafka or managed cloud services, which we can explore when the need arises.</p>
 </div>
-<div id="restart-analytical-tools" class="section level3">
-<h3><span class="header-section-number">1.4.3</span> Restart analytical tools</h3>
-<p>If your RStudio, JupyterLab or Airflow is not working as expected, it may help to restart it.</p>
-<p>To restart RStudio, JupyterLab or Airflow:</p>
-<ol style="list-style-type: decimal">
-<li>Go the Analytical Platform <a href="https://controlpanel.services.alpha.mojanalytics.xyz">control panel</a>.</li>
-<li>Select the <strong>Analytical tools</strong> tab.</li>
-<li>Select the <strong>Restart</strong> button to the right of the tool’s name.</li>
-</ol>
-</div>
-<div id="unidle-analytical-tools" class="section level3">
-<h3><span class="header-section-number">1.4.4</span> Unidle analytical tools</h3>
-<p>If your RStudio, JupyterLab or Airflow instance is inactive for an extended period of time (for example, overnight) it will be idled.</p>
-<ol style="list-style-type: decimal">
-<li>Go the Analytical Platform <a href="https://controlpanel.services.alpha.mojanalytics.xyz">control panel</a>.</li>
-<li>Select the <strong>Analytical tools</strong> tab.</li>
-<li>Select the <strong>Open</strong> button to the right of the tool’s name.</li>
-</ol>
-<p>Unidling usually only takes a few seconds, however, it can take up to several minutes.</p>
-</div>
-</div>
-<div id="configure-git-and-github" class="section level2">
-<h2><span class="header-section-number">1.5</span> Configure Git and GitHub</h2>
-<p>To configure Git and GitHub for the Analytical Platform, you must complete the following steps:</p>
-<ol style="list-style-type: decimal">
-<li><a href="introduction.html#create-an-ssh-key">Create an SSH key</a>.</li>
-<li><a href="introduction.html#add-the-ssh-key-to-github">Add the SSH key to GitHub</a>.</li>
-<li><a href="#configure-your-username-and-email-in-git-on-the-analytical-platform">Configure your username and email in Git on the Analytical Platform</a>.</li>
-</ol>
-<div id="create-an-ssh-key" class="section level3">
-<h3><span class="header-section-number">1.5.1</span> Create an SSH key</h3>
-<p>You can create an SSH key in RStudio or JupyterLab. We recommend that you use RStudio.</p>
-<div id="rstudio" class="section level4">
-<h4><span class="header-section-number">1.5.1.1</span> RStudio</h4>
-<p>To create an SSH key in RStudio, follow the steps below:</p>
-<ol style="list-style-type: decimal">
-<li>Open RStudio from the Analytical Platform control panel.</li>
-<li>In the menu bar, select <strong>Tools</strong> then <strong>Global Options…</strong></li>
-<li>In the options window, select <strong>Git/SVN</strong> in the navigation menu.</li>
-<li>Select <strong>Create RSA key…</strong></li>
-<li>Select <strong>Create</strong>.</li>
-<li>Select <strong>Close</strong> when the information window appears.</li>
-<li>Select <strong>View public key</strong>.</li>
-<li>Copy the SSH key to the clipboard by pressing Ctrl+C on Windows or ⌘C on Mac.</li>
-</ol>
-</div>
-<div id="jupyterlab" class="section level4">
-<h4><span class="header-section-number">1.5.1.2</span> JupyterLab</h4>
-<p>To create an SSH key in JupyterLab, follow the steps below:</p>
-<ol style="list-style-type: decimal">
-<li>Open JupyerLab from the Analytical Platform control panel.</li>
-<li>Select the <strong>+</strong> icon in the file browser to open a new Launcher tab.</li>
-<li>Select <strong>Terminal</strong> from the ‘Other’ section.</li>
-<li><p>Create an SSH key by running:</p>
-<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code></pre>
-Here, you should substitute the email address you used to sign up to GitHub.</li>
-<li>When prompted to enter a file in which to save the key, press Enter to accept the default location.</li>
-<li>When prompted to enter a passphrase, press Enter to not set a passphrase.</li>
-<li><p>View the SSH key by running:</p>
-<pre><code>cat /home/jovyan/.ssh/id_rsa.pub</code></pre></li>
-<li><p>Select the SSH key and copy it to the clipboard by pressing Ctrl+C on windows or ⌘C on Mac.</p></li>
-</ol>
-</div>
-</div>
-<div id="add-the-ssh-key-to-github" class="section level3">
-<h3><span class="header-section-number">1.5.2</span> Add the SSH key to GitHub</h3>
-<p>To add the SSH key to GitHub, you should follow the guidance <a href="https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account">here</a>.</p>
-</div>
-<div id="configure-you-username-and-email-in-git-on-the-analytical-platform" class="section level3">
-<h3><span class="header-section-number">1.5.3</span> Configure you username and email in Git on the Analytical Platform</h3>
-<p>To configure your username and email in Git on the Analytical Platform using RStudio or JupyterLab, follow the steps below:</p>
-<ol style="list-style-type: decimal">
-<li>Open a new terminal:
+<div id="pure-data-archival" class="section level3">
+<h3><span class="header-section-number">2.5.4</span> Pure data archival</h3>
+<p>Data often needs to be retained safely for long periods, for possible use in the future. AP offers an assured place for storing data, with durability, backups, security and access controls. Here are some considerations to bear in mind:</p>
 <ul>
-<li>In RStudio, select <strong>Tools</strong> in the menu bar and then <strong>Shell…</strong></li>
-<li>In JupyterLap, select the <strong>+</strong> icon in the file browser and then select <strong>Terminal</strong> from the <strong>Other</strong> section in the new Launcher tab.</li>
-</ul></li>
-<li><p>Configure your username by running:</p>
-<pre><code>git config --global user.name &#39;Your Name&#39;</code></pre>
-Here, you should substitute your GitHub username.</li>
-<li><p>Configure your email address by runnung:</p>
-<pre><code>git config --global user.email &#39;your_email@example.com&#39;</code></pre>
-<p>Here, you should substitute the email address you used to sign up to GitHub.</p></li>
-</ol>
-<p>Further guidance on using Git and GitHub with the Analytical Platform can be found in Section <a href="github.html#github">4</a>.</p>
-</div>
-</div>
-<div id="contact-us" class="section level2">
-<h2><span class="header-section-number">1.6</span> Contact us</h2>
-<p>To get support, you can contact the Analytical Platform team on the <a href="https://asdslack.slack.com/messages/C1PTUTC3F/">#analytical_platform</a> Slack channel or by <a href="mailto:analytical_platform@digital.justice.gov.uk">email</a>. You can get more information on Slack in Section <a href="introduction.html#slack">1.7</a>.</p>
-<p>For more information on support, including incident response, please see our <a href="https://github.com/ministryofjustice/analytics-platform-ops/wiki/Key-support-information">key support information</a>.</p>
-</div>
-<div id="slack" class="section level2">
-<h2><span class="header-section-number">1.7</span> Slack</h2>
-<div id="what-is-slack" class="section level3">
-<h3><span class="header-section-number">1.7.1</span> What is Slack?</h3>
-<p>Slack is a collaboration tool that helps teams work more effectively together. You can use Slack in several ways:</p>
-<ul>
-<li>to get technical support for the Analytical Platform and analytical tools, such as R, Python and Git</li>
-<li>to submit admin requests relating to apps and data sources on the Analytical Platform</li>
-<li>to share knowledge, expertise and best practice</li>
-<li>to communicate quickly with other Analytical Platform users as an alternative to email</li>
+<li>Index and search facility - S3 doesn’t offer these, so a way to extract text from files and provide an index &amp; search interface would need to be found.</li>
+<li>S3 is not the cheapest storage, however we can set-up a custom bucket policy to archive it to S3-IA or Glacier.</li>
 </ul>
+<p>SaaS alternatives, typified by Sharepoint or Google Drive, may suit pure archival needs better.</p>
 </div>
-<div id="access-slack" class="section level3">
-<h3><span class="header-section-number">1.7.2</span> Access Slack</h3>
-<p>You can access our Slack workspace <a href="https://asdslack.slack.com">here</a>.</p>
-<p>To create an account, you will need an email address ending in <span class="citation">@justice.gsi.gov.uk</span>, <span class="citation">@digital.justice.gov.uk</span>, <span class="citation">@cjs.gsi.gov.uk</span>, <span class="citation">@noms.gsi.gov.uk</span>, <span class="citation">@legalaid.gsi.gov.uk</span>, <span class="citation">@justice.gov.uk</span> or <span class="citation">@judiciary.uk</span>.</p>
-<p>It is not mandatory to join or use Slack (although we highly recommend it) so you shouldn’t use it to make any important announcements and should ensure that you are not excluding anyone from the discussion.</p>
-<p>You may have to access Slack differently depending on the IT system you use:</p>
-<ul>
-<li>if you use DOM1, you can access Slack from a browser or using the mobile app on your personal or work phone</li>
-<li>if you use an MoJ Digital and Technology MacBook, you can access Slack from a browser or using the desktop app. You can also access Slack using the mobile app on your personal or work phone</li>
-<li>if you use Quantum, you will not currently be able to access Slack from your computer, however, you can use the mobile app on your personal or work phone</li>
-</ul>
 </div>
-<div id="channels" class="section level3">
-<h3><span class="header-section-number">1.7.3</span> Channels</h3>
-<p>Conversations in Slack are organised into channels, which each have a specific topic. Channels can be public (all users can join) or private (users can only join by invitation) and can be created based on teams, projects, locations, tools and techniques among others.</p>
-<p>There are several public channels that are widely used and may be useful to join:</p>
-<ul>
-<li>the <a href="">#git</a>, <a href="">#r</a> and <a href="">#python</a> channels can be used to get support from other users with any technical queries or questions – the #<a href="">intro_r channel</a> is aimed specifically at new users of R</li>
-<li>the <a href="">#analytical_platform</a> channel is used for general discussion of the Analytical Platform – it is also monitored by the Analytical Platform team, who can help out with any technical queries</li>
-<li>the <a href="">#ap_admin_request</a> channel is used to request new apps and app data sources as well as access to existing apps and data sources</li>
-<li>the <a href="">#data_engineers</a> channel is used for general discussion of data engineering and for getting in touch with the data engineering team as well as to submit Airflow DAG pull requests for review</li>
-<li>the <a href="">#data_science</a> channel is used for general discussion of data science tools and techniques</li>
-<li>the <a href="">#general</a> channel is used for any discussions that don’t fit anywhere else</li>
-<li>the <a href="">#10sc</a> channel can be used to get in touch with other people working at 10SC and to ask any questions about the building</li>
-</ul>
-<p>There are lots of other channels you can join or you can set up a new one if you think something is missing. You may also wish to set up private channels to discuss specific projects and can direct message individual users.</p>
-</div>
-<div id="further-information" class="section level3">
-<h3><span class="header-section-number">1.7.4</span> Further information</h3>
-<p>You can find out more about Slack and how to use it in the <a href="https://get.slack.help/hc/en-gb/">Slack Help Centre</a>.</p>
+<div id="who-it-is-for" class="section level2">
+<h2><span class="header-section-number">2.6</span> Who it is for</h2>
+<p>AP is primarily for analysts in the Data and Analytical Services Directorate in the Ministry of Justice. We also have users from CICA, HMCTS, HMPPS, LAA, and OPG. Access for other justice organizations is considered - <a href="mailto:analytical_platform@digital.justice.gov.uk">contact us</a> to discuss.</p>
 
-</div>
 </div>
 </div>
             </section>
@@ -603,8 +444,8 @@ Here, you should substitute your GitHub username.</li>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="about-the-analytical-platform.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="amazon-s3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
