@@ -20,7 +20,7 @@ Data governance is achieved with a clear process for getting approval to put dat
 
 ## Reproducible analysis
 
-'Reproducibility' is essential for producing high quality, fully accountible analysis. It facilitates peer-review during production, makes it possible to go back over the method if it is called into question and allows the analysis to be easily built on in the future. Conversely, unreproducible analysis is a poor foundation for any decision-making or future work.
+'Reproducibility' is essential for producing high quality, fully accountable analysis. It facilitates peer-review during production, makes it possible to go back over the method if it is called into question and allows the analysis to be easily built on in the future. Conversely, unreproducible analysis is a poor foundation for any decision-making or future work.
 
 AP gives analysts the tools to develop reproducible analytical pipelines (RAPs) to automate time–consuming and repetitive tasks, allowing them to focus on interpreting the results.
 
