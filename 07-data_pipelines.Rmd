@@ -20,18 +20,23 @@ You can deploy your data processing code to the cloud. Airflow is a tool on the 
 ## Set up a pipeline (how to start Airflow)
 The steps to setting up an airflow pipeline are as follows
 
+Local airflow
+
 1. Set up a Github repository.
 2. Create a Dockerfile, deploy.json, iam_policy.json and requirements/environment.
 3. Write a DAG script. (Also write the local script).
 4. Commit and push these to a secondary branch in your repo.
-5. Issue a PR (do not merge!).
+5. Issue a pull request (do not merge!).
 6. Watch your test build on concourse.
-7. Merge PR.
+7. Merge pull request.
 8. Publish a new release.
 9. Watch the deploy on concourse.
 10. Test in the airflow sandbox.
+
+MoJ-Analytics airflow
+
 11. Clone the airflow-dags repo from Github.
-12. Create ypur own branch.
+12. Create your own branch.
 13. Commit and push your DAG script to this branch. 
 14. Issue a PR and watch your code (hopefully) pass all the required tests.
 15. Ask Data Engineering to approve your request.
@@ -40,8 +45,12 @@ The steps to setting up an airflow pipeline are as follows
 
 ![](images/pipelines/full_flow_chart.png)
 
+Blue - local airflow
+Orange - moj-analytics airflow
 
-### 1. Set up the Github repository.
+### Running DAG in local airflow
+
+#### 1. Set up the Github repository.
 
 Each DAG should be a git repository:
 
@@ -53,13 +62,12 @@ You can create a new repo from the [template](https://github.com/moj-analytical-
 ![](images/pipelines/airflow-python-template.png)
 
 
-### 2. Create a Dockerfile, deploy.json, iam_policy.json and requirements/environment.
+#### 2. Create a Dockerfile, deploy.json, iam_policy.json and requirements/environment.
 The repo should include:
 
 a. The `Dockerfile` - contains commands to set-up a Docker image that does your data processing. This is what concourse will build to create your data pipeline.
 
-    Here's an example python one:
-    Some sections are written for Python and R, choose which to keep.
+    Here's an example python one in Python. 
 
         # Begin with a standard base image (from https://hub.docker.com/_/python/ )
         FROM python:3.7
@@ -98,6 +106,9 @@ a. The `Dockerfile` - contains commands to set-up a Docker image that does your 
     Tip: You can put several related scripts in one repo, and choose which one gets run using an environment variable e.g. https://github.com/moj-analytical-services/airflow-magistrates-data-engineering/blob/88986cf7dbcca9b7ebc21bc2d1286464615739d7/Dockerfile#L19
 
     Tip: Some python packages, such as 'numpy' or 'lxml', come with C extensions which can cause bother. If installed via pip (requirements.txt) those C extensions are compiled, which can be slow and liable to failure. The Dockerfile example above shows how to avoid these problems with numpy (which is needed by pandas) - it is installed instead using a debian package: `python-numpy`.
+    
+    Here is an example in R.
+        ### INSERT R DOCKERFILE HERE ###
 
 b. <a name="deploy.json"></a>`deploy.json` - This is for Concourse to build the repo into a Docker image
 
@@ -112,8 +123,7 @@ b. <a name="deploy.json"></a>`deploy.json` - This is for Concourse to build the 
     The version number does nothing. The `role_name` needs to be:
 
     * unique to the Analytical Platform
-    * prefixed `airflow_`, otherwise you'll get a build error like this: `An error occurred (AccessDenied) when calling the GetRole operation: User: arn:aws:iam::593291632749:user/dev-concourse-role-putter is not authorized to perform: iam:GetRole on resource: role airflow-prison-population-hub`
-
+    * prefixed `airflow_`, otherwise you'll get a build error like this: `An error occurred (AccessDenied) when calling the GetRole operation: User: arn:aws:iam::593291632749:user/dev-concourse-role-putter is not authorized to perform: iam:GetRole on resource: role airflow-prison-population-hub`.
 
 c. `iam_policy.json` - This tells Concourse to create an AWS role that gives your code permission to access AWS resource, such as data in S3 buckets. 
     
@@ -123,7 +133,7 @@ e.g. See: https://github.com/moj-analytical-services/airflow-enforcement-data-en
     
   
 d. `requirements.txt` or `environment.yml`
-If you are using python you will need a `requirements.txt` file. If youare using R you will need an `environment.yml`, yaml file.
+If you are using python you will need a `requirements.txt` file. If you are using R you will need an `environment.yml`, yaml file.
   
     `requirements.txt`
     This is a file containing the names of the modules used in your script you intend to run using airflow (the first one you wrote before getting into airflow).
@@ -142,9 +152,13 @@ If you are using python you will need a `requirements.txt` file. If youare using
     `environment.yml`
     [###INSERT HOW TO CREATE AN ENVIRONMENT HERE###]
     
+    ### ALSO INSERT PACKRAT GUIDANCE BELOW IT ###
+    
 
-### 3. Write a DAG script. (Also write the local script.)
+#### 3. Write a DAG script. (Also write the local script.)
 Next write your DAG script. This will define what tasks Airflow will run, the order in which they are run and the variables to run them with (e.g. schedule).
+
+A local DAG script will also be required. This is what your local airflow will read and run. But it is not what the test will build from. It is very similar to the main DAG script. More on that later.
 
 Example DAG script:
     
@@ -209,7 +223,7 @@ Things to note about this script:
 * The image version must be the same as that as your planned release number. For example if you had previously released `v0.0.9` you must commit this version with `v1.0.0` before the build and release process otherwise Airflow won't run your most recent image.
 * The pod can be triggered by other factors if there are other pods in the script using `trigger_rules`. See http://airflow.apache.org/concepts.html for examples.
 * Different callbacks can be triggered on success or failure. The standard failure callback will send the email address, defined above, an email containing links to the logs of the failure, but custom emails can be sent. See https://github.com/moj-analytical-services/airflow-serious-violence-briefings/blob/master/serious_violence_briefings_airflow.py for an example.
-* if you want to run several pods in one script you must define there order as one final line in the DAG. For example, `task_1 >> task_2 >> task_3`.
+* if you want to run several pods in one script you must define their order as one final line in the DAG. For example, `task_1 >> task_2 >> task_3`.
 * There must also be one blank line at the bottom following this (a quirk of the system or it will raise a pep8 error - as you will learn later).
 * Their must also be a local version of this DAG script in your `airflow/dags` folder. This requires a different `ROLE` and `NAMESPACE` as shown below. The rest can remain the same.
 
@@ -223,7 +237,7 @@ This must be saved in your `airflow/dags` folder.
     NAMESPACE = "user-###YOUR GH USERNAME###"
     
     
-#### 3a. Test your image - locally on a Macbook
+##### 3a. Test your image - locally on a Macbook
 
 If you have a Macbook you can use it to test that your Docker image will build, which is much quicker to debug than waiting for Concourse every time you make a change. This can be useful for checking your Dockerfile syntax is right and the dependencies install ok.
 
@@ -261,7 +275,7 @@ iv. You can 'shell into' the linux container to take a look for debug purposes:
    And if `bash` is not available, try `sh`.
 
 
-### 4. Commit and push to Github.
+#### 4. Commit and push to Github.
 Now commit all the above files to a secondary branch (which you will probably need to create) on Github. Ensuring the version number has been increased.
 
 See the Github guidance for creating and pushing to branches: https://docs.google.com/presentation/d/1dRhbprKugJUrN39AKdmSitSaw7dnRaAZROJlymXSQ-U/edit
@@ -292,18 +306,18 @@ Concourse will:
 For more about the build see: [Build and deploy guidance](https://moj-analytical-services.github.io/platform_user_guidance/build-and-deploy.html)
 
 
-### 7. Merge your PR.
+#### 7. Merge your PR.
 Once your test builds successfully merge your secondary branch into the master. 
 
-### 8. Publish a new release.
+#### 8. Publish a new release.
 Once you have merged the pull request, draft and publish a new release. Make sure the version number of your release matches the committed one in the image version of your DAG script.
 
-### 9. Watch the deploy on concourse.
+#### 9. Watch the deploy on concourse.
 Once your release is published concourse will pick this up and start building the deploy. 98% of the time this is automatic so you should be able to watch it run. However, if concourse is having a slow day you may need to trigger it yourself.
 
 Again, it should turn green once it is successfully deployed.
 
-### 10. Test your DAG in the airflow sandbox.
+#### 10. Test your DAG in the airflow sandbox.
 Now you have successfully got a DAG that has been built and the image has been sent to your private airflow. Open your local airflow through the Analytical Platform Control Panel. You can manually start ("trigger") the pipeline with this button:
 
 ![](images/pipelines/trigger.png)
@@ -315,21 +329,24 @@ Some important considerations when testing:
 * You should still be very careful with what you do as even with your role you may still have access to do a lot of damage. It can still run and move things from buckets etc (if you have provided the right access).
 * It will still run on the schedule you defined. So make sure you don't leave it alone to be destructive.
 
-### 11. Clone the moj-analytical-services/airflow-dags repo.
+
+### Running DAG in MoJ-Analytics airflow
+
+#### 11. Clone the moj-analytical-services/airflow-dags repo.
 Once your DAG runs successfully in your sandbox you are ready to move onto the airflow 'big time'. 
 
 Firstly clone the moj-analytical-services/airflow-dags repo (https://github.com/moj-analytical-services/airflow-dags):
 
 `git clone git@github.com:moj-analytical-services/airflow-dags.git`
 
-### 12. Create your own branch.
+#### 12. Create your own branch.
 Once you have cloned the repo you need to create your own branch. This is done in the terminal by:
 
 `git branch <your_branch name>`
 
 * Make your branch name unique to the repo and recognisable as your project.
 
-### 13. Commit and push your DAG script to this branch.
+#### 13. Commit and push your DAG script to this branch.
 After creating your branch you can either push to that branch each time:
 
 `git commit -m 'description of your commit'`
@@ -346,12 +363,12 @@ Or `checkout` and always be operating on that branch:
     
 Or it can be done using the user interface in R.
 
-### 14. Issue a pull request.
+#### 14. Issue a pull request.
 Once you have pushed your changes to the branch you will see it appear as a branch on Github. On this branch issue a pull request to the master branch. You will not be allowed to merge this just yet.
 
 Once you have issued the pull request you will see it attempting to pass requirements. You can follow these tests in by clicking on `details` next to each one.
 
-### 15. Ask Data Engineering to approve your pull request.
+#### 15. Ask Data Engineering to approve your pull request.
 Once the scripts pass the requirements you will see a green tick next to each. However, you still cannot merge the branch without the approval of Data Engineering. You will see that the `Code owner review required` remains. 
 
 Ask them to review your pull request by posting a link to your pull request in the `#data_engineers` slack channel.
@@ -359,10 +376,10 @@ Ask them to review your pull request by posting a link to your pull request in t
 If this isn't your inital version make sure you include a link to the updates between your last merged version and your new version so it can be done more quickly (reducing the amount of time you spend sitting around waiting). See the example below:
     https://github.com/moj-analytical-services/airflow-dags/pull/481
 
-### 16. Merge your pull request into the master branch.
+#### 16. Merge your pull request into the master branch.
 After Data Engineering approve your pull request you can merge your branch into the master (as you did with your repo). 
 
-### 17. Run your DAG on the MoJ-analytics airflow.
+#### 17. Run your DAG on the MoJ-analytics airflow.
 Once merged airflow will pick up your DAG. 
 MoJ-analytics airflow: https://airflow.tools.alpha.mojanalytics.xyz
 
