@@ -18,7 +18,7 @@ You can deploy your data processing code to the cloud. Airflow is a tool on the 
 * You define the DAG to run on a regular schedule, and/or run it by clicking the "Play" button on the Airflow web interface
 
 ## Set up a pipeline (how to start Airflow)
-The steps to setting up an airflow pipeline are as follows
+The steps to setting up an airflow pipeline given below. It may appear like a lot of steps but it is broken down into small sections to avoid confusion.
 
 Local airflow
 
@@ -46,7 +46,11 @@ MoJ-Analytics airflow
 ![](images/pipelines/full_flow_chart.png)
 
 Blue - local airflow
-Orange - moj-analytics airflow
+
+Orange - MoJ-analytics airflow
+
+Note: You cannot skip straight to the MoJ-analytics airflow section. You will still need to do all the steps in the local airflow section (other than test in the sandbox if you are confident it will work).
+
 
 ### Running DAG in local airflow
 
@@ -71,9 +75,6 @@ a. The `Dockerfile` - contains commands to set-up a Docker image that does your 
 
         # Begin with a standard base image (from https://hub.docker.com/_/python/ )
         FROM python:3.7
-
-        # R
-        FROM quay.io/mojanalytics/docker-conda-base:v1.0.0
         
         # Update the system libraries
         # (The python base image is based on debian)
@@ -85,20 +86,14 @@ a. The `Dockerfile` - contains commands to set-up a Docker image that does your 
         # Set the default place in the image where files will be copied
         WORKDIR /usr/src/app
 
-        # Copy files from the repo into the image. Note this will be different if you use R code and dependencies.
+        # Copy files from the repo into the image.
         # Python
         COPY requirements.txt ./
         COPY . .
-        
-        # R
-        ADD environment.yml environment.yml
 
         # Install python/R dependencies.
         # Python
         RUN pip install --no-cache-dir -r requirements.txt
-
-        # R
-        RUN conda env update --file environment.yml -n base
 
         # Run the data processing
         # This is the equivalent of typing: python ./my_script.py
