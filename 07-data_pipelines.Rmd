@@ -103,7 +103,24 @@ a. The `Dockerfile` - contains commands to set-up a Docker image that does your 
     Tip: Some python packages, such as 'numpy' or 'lxml', come with C extensions which can cause bother. If installed via pip (requirements.txt) those C extensions are compiled, which can be slow and liable to failure. The Dockerfile example above shows how to avoid these problems with numpy (which is needed by pandas) - it is installed instead using a debian package: `python-numpy`.
     
     Here is an example in R.
-        ### INSERT R DOCKERFILE HERE ###
+    
+        FROM quay.io/mojanalytics/docker-conda-base:v1.0.0
+        
+        # CMD bash
+        CMD ./run.sh
+        
+        # Add environment file individually so that next install command
+        # can be cached as an image layer separate from application code
+        ADD environment.yml environment.yml
+        
+        # conda
+        RUN conda env update --file environment.yml -n base
+        
+        # load the files we will need to run
+        COPY r_files/ r_files/
+        
+        ##run the task
+        ENTRYPOINT Rscript r_files/main.R
 
 b. <a name="deploy.json"></a>`deploy.json` - This is for Concourse to build the repo into a Docker image
 
