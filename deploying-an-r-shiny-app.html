@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-10-21">
+<meta name="date" content="2019-11-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -264,7 +264,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="build-and-deploy.html"><a href="build-and-deploy.html"><i class="fa fa-check"></i><b>8</b> Build and Deploy</a><ul>
-<li class="chapter" data-level="8.1" data-path="build-and-deploy.html"><a href="build-and-deploy.html#deploy.json-1"><i class="fa fa-check"></i><b>8.1</b> deploy.json</a></li>
+<li class="chapter" data-level="8.1" data-path="build-and-deploy.html"><a href="build-and-deploy.html#deploy.json"><i class="fa fa-check"></i><b>8.1</b> deploy.json</a></li>
 <li class="chapter" data-level="8.2" data-path="build-and-deploy.html"><a href="build-and-deploy.html#starting-a-builddeploy"><i class="fa fa-check"></i><b>8.2</b> Starting a build/deploy</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html"><i class="fa fa-check"></i><b>9</b> Acceptable use policy</a><ul>
@@ -449,9 +449,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="rshiny-deploy" class="section level3">
 <h3><span class="header-section-number">5.1.7</span> Set access permissions</h3>
 <p>You can set some access permissions for your app in the <code>deploy.json</code> file that is included with the app template. This file is used by Concourse to detect apps that are ready to build and deploy.</p>
-<p>The <code>allowed_ip_ranges</code> parameter controls where your app can be accessed from. It can take any combination of the following values <code>[&quot;DOM1&quot;, &quot;QUANTUM&quot;, &quot;102PF Wifi&quot;]</code> or <code>[&quot;Any&quot;]</code>.</p>
-<p>The <code>disable_authentication</code> parameter controls whether sign-in (using a link or one-time passcode sent to an authorised email address) is required for users to access the app. It can take the values <code>true</code> or <code>false</code>. In general, this should be set to <code>false</code>.</p>
+<p>The <code>allowed_ip_ranges</code> parameter controls where your app can be accessed from. It can take any combination of <code>[&quot;DOM1&quot;, &quot;QUANTUM&quot;, &quot;102PF Wifi&quot;, &quot;Digital Wifi and VPN&quot;]</code> or <code>[&quot;Any&quot;]</code>.</p>
+<p>The <code>disable_authentication</code> parameter controls whether sign-in (using a link or one-time passcode sent to an authorised email address) is required for users to access the app when on an allowed network. It can take the values <code>true</code> or <code>false</code>. In general, this should be set to <code>false</code>.</p>
 <p>When <code>disable_authentication</code> is set to <code>true</code>, users do not need to go through a sign-in process but can still only access an app using a system specified in <code>allowed_ip_ranges</code>. This is a relatively weak security measure, as discussed <a href="https://ministryofjustice.github.io/security-guidance/standards/authentication/#ip-addresses">here</a>. As such, if you wish to disable authentication, you should first discuss this with the Analytical Platform team.</p>
+<p>Changes to <code>deploy.json</code> only take effect when they are committed to GitHub, a release is created and the deployment is successful (see <a href="deploying-a-static-webapp.html#scan-organisation-and-deploy">Scan organisation and deploy</a>).</p>
 </div>
 <div id="create-release" class="section level3">
 <h3><span class="header-section-number">5.1.8</span> Create a release in GitHub</h3>

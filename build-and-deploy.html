@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-10-21">
+<meta name="date" content="2019-11-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -264,7 +264,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="build-and-deploy.html"><a href="build-and-deploy.html"><i class="fa fa-check"></i><b>8</b> Build and Deploy</a><ul>
-<li class="chapter" data-level="8.1" data-path="build-and-deploy.html"><a href="build-and-deploy.html#deploy.json-1"><i class="fa fa-check"></i><b>8.1</b> deploy.json</a></li>
+<li class="chapter" data-level="8.1" data-path="build-and-deploy.html"><a href="build-and-deploy.html#deploy.json"><i class="fa fa-check"></i><b>8.1</b> deploy.json</a></li>
 <li class="chapter" data-level="8.2" data-path="build-and-deploy.html"><a href="build-and-deploy.html#starting-a-builddeploy"><i class="fa fa-check"></i><b>8.2</b> Starting a build/deploy</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="acceptable-use-policy.html"><a href="acceptable-use-policy.html"><i class="fa fa-check"></i><b>9</b> Acceptable use policy</a><ul>
@@ -363,7 +363,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="build-and-deploy" class="section level1">
 <h1><span class="header-section-number">Part 8</span> Build and Deploy</h1>
 <p><strong>Concourse</strong> is the Analytical Platform service that automatically builds and deploys R Shiny apps, Web apps and Airflow data pipelines. This is also known as ‘continuous integration’ and ‘continuous deployment’ (CI/CD).</p>
-<div id="deploy.json-1" class="section level2">
+<div id="deploy.json" class="section level2">
 <h2><span class="header-section-number">8.1</span> deploy.json</h2>
 <p>Concourse automatically scans git repositories in the <a href="https://github.com/moj-analytical-services/">moj-analytical-services</a> Github organisation to find repos that are ready to build/deploy. It does this by checking whether repositories contains a ‘magic’ file (on the <code>master</code> branch) that controls the build/deploy: <code>deploy.json</code>. The scan happens every 24 hours, or sooner if a <a href="https://github.com/moj-analytical-services">repo in moj-analytical-services</a> is tagged with a release on GitHub (or if it is urgent it can be triggered by an admin).</p>
 <p>For the format of deploy.json, see the relevant subject:</p>
@@ -387,7 +387,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Click on the ‘deploy’ box to see details of its builds. You can see previous builds (numbered - e.g. “8 7 6 5 4 3 2 1”). The colour of the build number box gives the status:
 <ul>
 <li>Grey = paused or pending</li>
-<li>Yellow = in progress</li>
+<li>Yellow = in progress (building/deploying)</li>
 <li>Blue = paused</li>
 <li>Green = built ok</li>
 <li>Red = build failed</li>
@@ -397,7 +397,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>To start the job (this first time): Click <em>play</em> (on the left, against your repo name) AND the “<em>+</em>”: <img src="images/build_and_deploy/concourse_new_build.png" alt="Play and + buttons" /></li>
 </ol>
 <p>It should go grey (pending) <img src="images/build_and_deploy/concourse_pending.png" alt="Pending state" /></p>
-<p>After 30 seconds it should got yellow (building). If it does not go yellow, check the task is not paused (and possibly the job itself is paused) - press play if is showing. <img src="images/build_and_deploy/concourse_in_progress.png" alt="In progress state" /></p>
+<p>After 30 seconds it should go yellow (building/deploying). If it does not go yellow, check the task is not paused (and possibly the job itself is paused) - press play if it is showing. <img src="images/build_and_deploy/concourse_in_progress.png" alt="In progress state" /></p>
 <p>It will build/deploy, taking 5 minutes to an hour. You can track progress and see any errors like this: <img src="images/build_and_deploy/concourse_error.png" alt="Error state" /></p>
 <p>Subsequent build/deploys are started about 5 seconds after doing a GitHub release (unless someone pressed the pause button on the Concourse task). You have to refresh Concourse in your browser to see a fresh build.</p>
 
