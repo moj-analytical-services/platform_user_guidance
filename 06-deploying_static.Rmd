@@ -70,17 +70,17 @@ You can also let anyone access it by setting `"disable_authentication": true` in
 
 **Note** that users can only access the app from a computer on a specified corporate network. These are defined in the `deploy.json` under the parameter `allowed_ip_ranges` - see below.
 
-#### deploy.json
+#### Set access permissions
 
-| parameter | notes |
-| --------- | ------- |
-| `allowed_ip_ranges` | e.g. `["DOM1", "QUANTUM", "102PF Wifi"]` or `["Any"]`|
-| `disable_authentication` | To let anyone access the app, set this to `true`, otherwise `false` restricts it to people authorized for the app in the Control Panel |
+You can set some access permissions for your app in the `deploy.json` file that is included with the app template. This file is used by Concourse to detect apps that are ready to build and deploy.
 
-If you deployed with authentication enabled users are granted access to the app using a list of email addresses separated with a space, comma or semicolon.
+The `allowed_ip_ranges` parameter controls where your app can be accessed from. It can take any combination of `["DOM1", "QUANTUM", "102PF Wifi", "Digital Wifi and VPN"]` or `["Any"]`.
 
-Changes to deploy.json only take effect when committed to GitHub, a Release is created and the deploy is successful (see [Scan organisation and deploy][Scan organisation and deploy])
+The `disable_authentication` parameter controls whether sign-in (using a link or one-time passcode sent to an authorised email address) is required for users to access the app when on an allowed network. It can take the values `true` or `false`. In general, this should be set to `false`.
 
+When `disable_authentication` is set to `true`, users do not need to go through a sign-in process but can still only access an app using a system specified in `allowed_ip_ranges`. This is a relatively weak security measure, as discussed [here](https://ministryofjustice.github.io/security-guidance/standards/authentication/#ip-addresses). As such, if you wish to disable authentication, you should first discuss this with the Analytical Platform team.
+
+Changes to `deploy.json` only take effect when they are committed to GitHub, a release is created and the deployment is successful (see [Scan organisation and deploy][Scan organisation and deploy]).
 
 ## Accessing the app
 
