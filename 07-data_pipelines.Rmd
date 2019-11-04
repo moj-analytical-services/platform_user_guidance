@@ -145,9 +145,7 @@ If you are using python you will need a `requirements.txt` file. If you are usin
     **You can find the list of locally installed packages and their version numbers by typing `pip freeze` into your terminal.**
       
     `environment.yml`
-    [###INSERT HOW TO CREATE AN ENVIRONMENT HERE###]
-    
-    ### ALSO INSERT PACKRAT GUIDANCE BELOW IT ###
+    See the section of the guidance [here](https://moj-analytical-services.github.io/platform_user_guidance/conda-package-management.html) on how to create the `environment.yml`.
     
 
 #### 3. Write a DAG script. (Also write the local script.)
