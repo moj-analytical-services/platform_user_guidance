@@ -7,7 +7,11 @@ View the user guidance here: https://moj-analytical-services.github.io/platform_
 
 Make changes to ##-chapter.Rmd files in a branch and pull request into master to publish.
 
-Travis will build the book for you automatically and check that each commit renders in bookdown. Travis will only publish changes on the `master` branch, which are committed to the `gh-pages` branch.
+CI - each commit is checked by CircleCI automatically rendering the bookdown
+
+CD - commits to the `master` branch are deployed by CircleCI, by pushing the rendered book on the `gh-pages` branch, which is what is displayed at https://moj-analytical-services.github.io/platform_user_guidance/
+
+CD - additionally, commits to the `master` branch are deployed (how?) to https://user-guidance.services.alpha.mojanalytics.xyz/
 
 ## To render book locally
 
