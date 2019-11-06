@@ -1,5 +1,5 @@
 # Platform User Guidance
-[![Build Status](https://travis-ci.org/moj-analytical-services/platform_user_guidance.svg?branch=master)](https://travis-ci.org/moj-analytical-services/platform_user_guidance)
+[![CircleCI](https://circleci.com/gh/moj-analytical-services/platform_user_guidance.svg?style=svg)](https://circleci.com/gh/moj-analytical-services/platform_user_guidance)
 
 View the user guidance here: https://moj-analytical-services.github.io/platform_user_guidance/
 
@@ -7,11 +7,13 @@ View the user guidance here: https://moj-analytical-services.github.io/platform_
 
 Make changes to ##-chapter.Rmd files in a branch and pull request into master to publish.
 
-Travis will build the book for you automatically and check that each commit renders in bookdown. Travis will only publish changes on the `master` branch, which are committed to the `gh-pages` branch.
+CI – each commit is checked by CircleCI automatically rendering the bookdown.
 
-## To render book locally
+CD – commits to the `master` branch are deployed by CircleCI, by pushing the rendered book to the `gh-pages` branch, which is what is displayed at https://moj-analytical-services.github.io/platform_user_guidance/.
 
-From R:
+## To render the guidance locally
+
+In R, run:
 ```r
 bookdown::render_book('index.Rmd', 'bookdown::gitbook')
 ```
@@ -19,6 +21,3 @@ bookdown::render_book('index.Rmd', 'bookdown::gitbook')
 or from shell/terminal `make` (requires GNU Make):
 
 Rendered bookdown content will be in `/docs/`
-
-### Notes on Travis
-Auto building requires Travis to be set up with and encrypted SSH key - see [here](https://oncletom.io/2016/travis-ssh-deploy/).
