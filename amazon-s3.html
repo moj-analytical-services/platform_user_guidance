@@ -25,7 +25,7 @@
 <meta name="author" content="MoJ Analytical Platform Team">
 
 
-<meta name="date" content="2019-11-06">
+<meta name="date" content="2019-11-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -151,11 +151,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.1" data-path="amazon-s3.html"><a href="amazon-s3.html#what-is-amazon-s3"><i class="fa fa-check"></i><b>3.1</b> What is Amazon S3?</a></li>
 <li class="chapter" data-level="3.2" data-path="amazon-s3.html"><a href="amazon-s3.html#working-with-amazon-s3-buckets"><i class="fa fa-check"></i><b>3.2</b> Working with Amazon S3 buckets</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="amazon-s3.html"><a href="amazon-s3.html#types-of-buckets"><i class="fa fa-check"></i><b>3.2.1</b> Types of buckets</a></li>
-<li class="chapter" data-level="3.2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#create-a-new-warehouse-data-source"><i class="fa fa-check"></i><b>3.2.2</b> Create a new warehouse data source</a></li>
-<li class="chapter" data-level="3.2.3" data-path="amazon-s3.html"><a href="amazon-s3.html#data-access-levels"><i class="fa fa-check"></i><b>3.2.3</b> Data access levels</a></li>
-<li class="chapter" data-level="3.2.4" data-path="amazon-s3.html"><a href="amazon-s3.html#path-specific-access"><i class="fa fa-check"></i><b>3.2.4</b> Path specific access</a></li>
-<li class="chapter" data-level="3.2.5" data-path="amazon-s3.html"><a href="amazon-s3.html#request-access-to-a-bucket"><i class="fa fa-check"></i><b>3.2.5</b> Request access to a bucket</a></li>
-<li class="chapter" data-level="3.2.6" data-path="amazon-s3.html"><a href="amazon-s3.html#manage-access-to-a-bucket"><i class="fa fa-check"></i><b>3.2.6</b> Manage access to a bucket</a></li>
+<li class="chapter" data-level="3.2.2" data-path="amazon-s3.html"><a href="amazon-s3.html#create-a-new-bucket"><i class="fa fa-check"></i><b>3.2.2</b> Create a new bucket</a></li>
+<li class="chapter" data-level="3.2.3" data-path="amazon-s3.html"><a href="amazon-s3.html#create-a-new-warehouse-data-source"><i class="fa fa-check"></i><b>3.2.3</b> Create a new warehouse data source</a></li>
+<li class="chapter" data-level="3.2.4" data-path="amazon-s3.html"><a href="amazon-s3.html#data-access-levels"><i class="fa fa-check"></i><b>3.2.4</b> Data access levels</a></li>
+<li class="chapter" data-level="3.2.5" data-path="amazon-s3.html"><a href="amazon-s3.html#path-specific-access"><i class="fa fa-check"></i><b>3.2.5</b> Path specific access</a></li>
+<li class="chapter" data-level="3.2.6" data-path="amazon-s3.html"><a href="amazon-s3.html#request-access-to-a-bucket"><i class="fa fa-check"></i><b>3.2.6</b> Request access to a bucket</a></li>
+<li class="chapter" data-level="3.2.7" data-path="amazon-s3.html"><a href="amazon-s3.html#manage-access-to-a-bucket"><i class="fa fa-check"></i><b>3.2.7</b> Manage access to a bucket</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="amazon-s3.html"><a href="amazon-s3.html#upload-files-to-amazon-s3"><i class="fa fa-check"></i><b>3.3</b> Upload files to Amazon S3</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="amazon-s3.html"><a href="amazon-s3.html#amazon-s3-console"><i class="fa fa-check"></i><b>3.3.1</b> Amazon S3 Console</a></li>
@@ -374,13 +375,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">3.2.1</span> Types of buckets</h3>
 <p>Amazon S3 buckets are separated into two categories on the Analytical Platform:</p>
 <ul>
-<li>warehouse data sources</li>
-<li>webapp data sources</li>
+<li><p><strong>Warehouse data source</strong> - This is for when data is accessed by code <strong>run by users</strong>, such as when you are working in <strong>R Studio</strong> or <strong>Jupyter</strong>, including when you are <strong>running web apps from within R Studio / Jupyter</strong>. These data sources can be created by users themselves and shared with colleagues.</p></li>
+<li><p><strong>App data source</strong> - This is for when data is accessed by code <strong>run by the platform</strong> - a <strong>deployed web app</strong> or an <strong>Airflow job</strong>. Users cannot create these or add user permissions - these must be <a href="deploying-an-r-shiny-app.html#create-webapp">requested</a>. Data is uploaded to them either by the app developer(s) or the Data Engineering team.</p></li>
 </ul>
-<p>Warehouse data sources are suitable for storing files in all cases, except where the files need to be accessed by a webapp. In this case, files should be stored in a webapp data source.</p>
+<p>If you’re building a web app then typically you request permissions for both your user and your app to access the app data source. This allows you to run the app from within R Studio or JupyterLab using the app data source, the same as the deployed version.</p>
+<p>The Data Engineering team also have some buckets, which are not shown on the Control Panel. They are used for incoming raw data to be received, archived, processed and curated. For more info, contact the <a href="https://asdslack.slack.com/messages/C8X3PP1TN">Data Engineering</a> team.</p>
+<p>You can see data sources in the control panel, for the ones that you have permissions to access.</p>
+</div>
+<div id="create-a-new-bucket" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Create a new bucket</h3>
 </div>
 <div id="create-a-new-warehouse-data-source" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Create a new warehouse data source</h3>
+<h3><span class="header-section-number">3.2.3</span> Create a new warehouse data source</h3>
 <p>You can only create new warehouse data sources in the Analytical Platform control panel. You cannot create new buckets directly in the Amazon S3 console.</p>
 <p>To create a new warehouse data source:</p>
 <ol style="list-style-type: decimal">
@@ -390,10 +396,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Enter a name for the warehouse data source – this must be prefixed with ‘alpha-’.</li>
 <li>Select <strong>Create data source</strong>.</li>
 </ol>
-<p>When you create a new warehouse data source, only you will initially have access. As an admin of the data source, you will be able to add and remove other users from the data access group as required. Further information on managing data access groups can be found in Section <a href="amazon-s3.html#manage-access-to-a-bucket">3.2.6</a>.</p>
+<p>When you create a new warehouse data source, only you will initially have access. As an admin of the data source, you will be able to add and remove other users from the data access group as required. Further information on managing data access groups can be found in Section <a href="amazon-s3.html#manage-access-to-a-bucket">3.2.7</a>.</p>
 </div>
 <div id="data-access-levels" class="section level3">
-<h3><span class="header-section-number">3.2.3</span> Data access levels</h3>
+<h3><span class="header-section-number">3.2.4</span> Data access levels</h3>
 <p>Every bucket has three data access levels:</p>
 <ul>
 <li>Read only</li>
@@ -402,7 +408,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </div>
 <div id="path-specific-access" class="section level3">
-<h3><span class="header-section-number">3.2.4</span> Path specific access</h3>
+<h3><span class="header-section-number">3.2.5</span> Path specific access</h3>
 <p>As well as choosing an access level, you can also restrict a user’s access to specific paths in a bucket by entering each path on a new line in the ‘Paths’ textarea field when adding the user to a data access group. For example:</p>
 <pre><code>/folder-one/*
 /folder-two/*</code></pre>
@@ -410,14 +416,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>If you leave this field blank, the user will be able to access everything in the bucket.</p>
 </div>
 <div id="request-access-to-a-bucket" class="section level3">
-<h3><span class="header-section-number">3.2.5</span> Request access to a bucket</h3>
+<h3><span class="header-section-number">3.2.6</span> Request access to a bucket</h3>
 <p>To gain access to a bucket (warehouse data source or webapp data source), you must be added to the relevant data access group.</p>
 <p>If you know an admin of the bucket you require access to, you should ask them to add you to the data access group.</p>
 <p>If you do not know any of the admins of the bucket you require access to, you can ask the Analytical Platform team to add you to the data access group on the <a href="https://asdslack.slack.com/messages/CBLAGCQG6/">#ap_admin_request</a> Slack channel or by email (<a href="mailto:analytical_platform@digital.justice.gov.uk">analytical_platform@digital.justice.gov.uk</a>).</p>
 <p>When requesting access to a bucket, you should specify the name of the bucket and the level of access you require. You should only request access to data that you have a genuine business need to access and should only request the lowest level of access required for you to complete your work. You may be required to demonstrate the business need for you to access a bucket if requested by a bucket admin or an information asset owner (IAO).</p>
 </div>
 <div id="manage-access-to-a-bucket" class="section level3">
-<h3><span class="header-section-number">3.2.6</span> Manage access to a bucket</h3>
+<h3><span class="header-section-number">3.2.7</span> Manage access to a bucket</h3>
 <p>Bucket admins can manage access to warehouse data sources and webapp data sources in the Analytical Platform <a href="https://controlpanel.services.alpha.mojanalytics.xyz/">control panel</a>. You cannot manage access to buckets directly in the Amazon S3 console.</p>
 <p>To manage access to a data source:</p>
 <ol style="list-style-type: decimal">
@@ -430,14 +436,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Type the user’s GitHub username into the input field labelled <strong>Grant access to this data to other users</strong>.</li>
 <li>Select the user from the drop-down list.</li>
 <li>Select the required data access level.</li>
-<li>Either leave the ‘Paths’ field blank or enter a list of paths to provide restricted access, as described in <a href="amazon-s3.html#path-specific-access">3.2.4</a>.</li>
+<li>Either leave the ‘Paths’ field blank or enter a list of paths to provide restricted access, as described in <a href="amazon-s3.html#path-specific-access">3.2.5</a>.</li>
 <li>Select <strong>Grant access</strong>.</li>
 </ol>
 <p>To edit the access level of a user:</p>
 <ol style="list-style-type: decimal">
 <li>Select <strong>Edit access level</strong> next to the name of the user.</li>
 <li>Select required data access level.</li>
-<li>Either leave the ‘Paths’ field blank or enter a list of paths to provide restricted access, as described in <a href="amazon-s3.html#path-specific-access">3.2.4</a>.</li>
+<li>Either leave the ‘Paths’ field blank or enter a list of paths to provide restricted access, as described in <a href="amazon-s3.html#path-specific-access">3.2.5</a>.</li>
 <li>Select <strong>Save</strong>.</li>
 </ol>
 <p>To remove a user from the data access group:</p>
