@@ -14,12 +14,16 @@ jobs:
             apt-get install -y git libssl-dev libcurl4-openssl-dev libxml2-dev pandoc
             R -e "install.packages(c('remotes', 'bookdown'), dependencies = TRUE)"
 
-
       - run:
           name: Build the book
           command: |
             R -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
 
+      - run:
+          name: Add redirects to the new guidance
+          command: |
+            cat redirect.html | tee _book/*.html
+            
       - run:
           name: Deploy to GitHub
           command: |
